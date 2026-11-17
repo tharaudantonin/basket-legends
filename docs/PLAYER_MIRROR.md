@@ -137,6 +137,8 @@ La préférence ne modifie jamais les données stockées : elle ne fait que choi
 - Fichier de données : `data/rosters/2026-27/phoenix-scorpions.json`.
 - Oklahoma City Storm Riders (référence : Oklahoma City Thunder) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
 - Fichier de données : `data/rosters/2026-27/oklahoma-city-storm-riders.json`.
+- Minnesota Borealis (référence : Minnesota Timberwolves) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
+- Fichier de données : `data/rosters/2026-27/minnesota-borealis.json`.
 - Le statut « validé par l'utilisateur » ne vaut pas certification indépendante du statut contractuel ou de l'affiliation NBA au 30 juin 2026. Les identifiants NBA, contrats, statuts two-way et statistiques restent à vérifier séparément.
 - Les pseudonymes, notes, attributs et commentaires de scouting ne sont pas encore renseignés ; ils feront l'objet d'une étape dédiée après validation des effectifs.
 
