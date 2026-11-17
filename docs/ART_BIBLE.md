@@ -50,3 +50,18 @@ Maillots V1 : Association ivoire/vert, Icon vert profond, Statement charbon/vert
 
 ## Statut particulier : Washington Capitals
 Le nom correspond déjà à une franchise NHL et à des marques revendiquées par Lincoln Hockey. La création d'une identité visuelle pour ce nom est bloquée en attendant une revue juridique ou un changement de nom. Ne pas reprendre les codes visuels de la franchise de hockey. Sources : https://www.nhl.com/capitals/ et https://www.nhl.com/fr/capitals/roster.
+
+
+## Règle de construction des maillots — validée
+- Le col doit être d'une seule couleur unie, sans liseré bicolore ni mélange de couleurs.
+- Les emmanchures peuvent reprendre les couleurs secondaires, mais restent nettes et séparées du col.
+- Les trois coupes Association / Icon / Statement doivent partager une silhouette cohérente.
+- Les logos et marques d'équipementiers tiers sont exclus des concepts.
+
+## Boston Beacons — direction vintage V2
+Palette validée et conservée : Harbor Green `#0F4B3A`, Warm Ivory `#F2EFE5`, Antique Brass `#B69A62`, Ink Charcoal `#1D2523`.
+Le logo devient un roundel simple inspiré des insignes sportifs historiques : phare minimal, deux vagues, lettrage serif. Le monogramme principal est un B isolé. Les maillots reprennent la coupe épurée et les panneaux latéraux de la gamme Washington, mais dans le langage patrimonial Boston. Pas de mélange de couleurs au col.
+
+## Washington Capitals — concept original V1
+Palette conceptuelle : Navy `#0B2D5B`, Red `#E31837`, White `#FFFFFF`.
+Territoire graphique : monument abstrait, étoile et géométrie civique américaine. Les éléments sont créés spécifiquement pour Basket Legends et ne reprennent pas le logo ou les maillots de la franchise NHL. Sur le maillot Icon, des étoiles blanches sont placées sur les deux panneaux latéraux. Le col du maillot Icon est navy uni, sans liseré contrastant.
