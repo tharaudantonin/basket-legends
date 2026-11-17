@@ -19,16 +19,17 @@ Chevalerie, armure stylisée et héritage texan
 Cette piste constitue un point de départ à discuter. Les symboles précis, le récit, le style graphique et les éléments à éviter restent à valider.
 
 ## 3. Palette chromatique
-**Statut : proposition du registre — à confirmer.**
 
-| Rôle | HEX |
-|---|---|
-| Principale | #202329 |
-| Secondaire | #B9BEC3 |
-| Accent | #F2F0E9 |
-| Sombre / complémentaire | #8B6B4D |
+**Palette définitive — validée par l'utilisateur le 17 novembre 2026.**
 
-Les proportions d'usage, contrastes et associations autorisées restent à définir. Aucune couleur n'est définitive avant validation explicite.
+| Rôle | Nom | HEX |
+|---|---|---|
+| Principale | Knight Navy | `#344C68` |
+| Secondaire | Armor Silver | `#B8BEC4` |
+| Accent | Crimson Banner | `#8B343A` |
+| Neutre | Parchment White | `#F0EDE5` |
+
+Les quatre couleurs et leurs valeurs HEX sont celles du registre canonique `data/franchises.json`. Toute ancienne proposition est obsolète ; aucune modification ne peut être faite sans nouvel arbitrage utilisateur.
 
 ## 4. Système de logos
 - Logo principal : concept, silhouette et composition à concevoir.
