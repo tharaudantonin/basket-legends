@@ -68,9 +68,28 @@
       "country": "Canada",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 84,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 84,
+        "mental": 82,
+        "tactical": 83,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "Two-Way Guard",
+        "nba2k27": {
+          "overall": 83,
+          "threePoint": 86,
+          "dunk": 60,
+          "status": "published-2kratings"
+        }
+      }
     },
     {
       "id": "atl-dyson-daniels",
@@ -97,9 +116,28 @@
       "country": "Australia",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 86,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 75,
+        "physical": 91,
+        "mental": 84,
+        "tactical": 92,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "Defensive Playmaker",
+        "nba2k27": {
+          "overall": 83,
+          "threePoint": 50,
+          "dunk": 75,
+          "status": "published-2kratings"
+        }
+      }
     },
     {
       "id": "atl-rayj-dennis",
@@ -126,9 +164,28 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 74,
+        "physical": 81,
+        "mental": 70,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "Floor General",
+        "nba2k27": {
+          "overall": 71,
+          "threePoint": 75,
+          "dunk": 55,
+          "status": "published-2kratings"
+        }
+      }
     },
     {
       "id": "atl-luguentz-dort",
@@ -155,9 +212,28 @@
       "country": "Canada",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 84,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 88,
+        "mental": 86,
+        "tactical": 85,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "Defensive Specialist",
+        "nba2k27": {
+          "overall": 80,
+          "threePoint": 77,
+          "dunk": 85,
+          "status": "published-2kratings"
+        }
+      }
     },
     {
       "id": "atl-zuby-ejiofor",
@@ -184,9 +260,26 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 70,
+        "physical": 83,
+        "mental": 70,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "Rim Protector",
+        "nba2k27": {
+          "overall": 71,
+          "status": "estimated-no-published-rating"
+        }
+      }
     },
     {
       "id": "atl-dorian-finney-smith",
@@ -213,9 +306,26 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 81,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 75,
+        "physical": 79,
+        "mental": 85,
+        "tactical": 84,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "3&D Forward",
+        "nba2k27": {
+          "overall": 74,
+          "status": "estimated-not-listed-on-atlanta-team-page"
+        }
+      }
     },
     {
       "id": "atl-kingston-flemings",
@@ -242,9 +352,26 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 86,
+        "mental": 73,
+        "tactical": 78,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "Scoring Guard",
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings-partial"
+        }
+      }
     },
     {
       "id": "atl-mouhamed-gueye",
@@ -271,9 +398,28 @@
       "country": "Senegal",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 73,
+        "physical": 83,
+        "mental": 76,
+        "tactical": 75,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "Athletic Stretch Four",
+        "nba2k27": {
+          "overall": 74,
+          "threePoint": 73,
+          "dunk": 80,
+          "status": "published-2kratings"
+        }
+      }
     },
     {
       "id": "atl-jalen-johnson",
@@ -300,9 +446,28 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 88,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 86,
+        "mental": 87,
+        "tactical": 89,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "Two-Way Point Forward",
+        "nba2k27": {
+          "overall": 89,
+          "threePoint": 77,
+          "dunk": 96,
+          "status": "published-2kratings"
+        }
+      }
     },
     {
       "id": "atl-corey-kispert",
@@ -329,9 +494,28 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 78,
+        "mental": 78,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "Sharpshooter",
+        "nba2k27": {
+          "overall": 76,
+          "threePoint": 80,
+          "dunk": 60,
+          "status": "published-2kratings"
+        }
+      }
     },
     {
       "id": "atl-jock-landale",
@@ -358,9 +542,28 @@
       "country": "Australia",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 70,
+        "mental": 78,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "Stretch Five",
+        "nba2k27": {
+          "overall": 78,
+          "threePoint": 82,
+          "dunk": 65,
+          "status": "published-2kratings"
+        }
+      }
     },
     {
       "id": "atl-cj-mccollum",
@@ -387,9 +590,28 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 85,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 91,
+        "physical": 73,
+        "mental": 87,
+        "tactical": 88,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "Shot Creator",
+        "nba2k27": {
+          "overall": 83,
+          "threePoint": 82,
+          "dunk": 40,
+          "status": "published-2kratings"
+        }
+      }
     },
     {
       "id": "atl-asa-newell",
@@ -416,9 +638,28 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 75,
+        "physical": 84,
+        "mental": 70,
+        "tactical": 75,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "Stretch Four",
+        "nba2k27": {
+          "overall": 75,
+          "threePoint": 86,
+          "dunk": 85,
+          "status": "published-2kratings"
+        }
+      }
     },
     {
       "id": "atl-onyeka-okongwu",
@@ -445,9 +686,28 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 83,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 83,
+        "physical": 86,
+        "mental": 80,
+        "tactical": 84,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "Two-Way Inside Scorer",
+        "nba2k27": {
+          "overall": 82,
+          "threePoint": 81,
+          "dunk": 85,
+          "status": "published-2kratings"
+        }
+      }
     },
     {
       "id": "atl-henri-veesaar",
@@ -474,9 +734,26 @@
       "country": "Estonia",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 77,
+        "physical": 78,
+        "mental": 70,
+        "tactical": 75,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "Stretch Five",
+        "nba2k27": {
+          "overall": 70,
+          "status": "estimated-no-published-rating"
+        }
+      }
     },
     {
       "id": "atl-aaron-wiggins",
@@ -503,9 +780,28 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 82,
+        "mental": 78,
+        "tactical": 79,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "Two-Way Wing",
+        "nba2k27": {
+          "overall": 78,
+          "threePoint": 79,
+          "dunk": 70,
+          "status": "published-2kratings"
+        }
+      }
     },
     {
       "id": "atl-jalen-wilson",
@@ -532,9 +828,28 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 75,
+        "physical": 82,
+        "mental": 72,
+        "tactical": 75,
+        "scale": 100
+      },
+      "notes": {
+        "archetype": "Athletic Forward",
+        "nba2k27": {
+          "overall": 74,
+          "threePoint": 79,
+          "dunk": 75,
+          "status": "published-2kratings"
+        }
+      }
     }
   ]
 }
