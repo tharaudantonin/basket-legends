@@ -24,18 +24,16 @@ Cette piste est un point de départ enregistré. Les symboles précis, le récit
 
 ## 3. Palette chromatique
 
-**Statut : Proposition issue du registre — à confirmer.**
+**Palette définitive — validée par l'utilisateur le 17 novembre 2026.**
 
-| Rôle | HEX |
-|---|---|
-| Principale | #1A4D85 |
-| Secondaire | #9AA8B7 |
-| Accent | #171B26 |
-| Sombre / complémentaire | #F3F4F1 |
+| Rôle | Nom | HEX |
+|---|---|---|
+| Principale | Cosmic Purple | `#5C4B91` |
+| Secondaire | Stardust Silver | `#C5C8D2` |
+| Accent | Nebula Blue | `#344E78` |
+| Neutre | Space White | `#F1F0F5` |
 
-Ces valeurs sont des propositions de travail provenant du registre des franchises. Elles ne sont pas définitives et devront être discutées, corrigées puis validées.
-
-Les proportions d'usage, contrastes, associations autorisées et variantes restent à spécifier.
+Les quatre couleurs et leurs valeurs HEX sont celles du registre canonique `data/franchises.json`. Toute ancienne proposition est obsolète ; aucune modification ne peut être faite sans nouvel arbitrage utilisateur.
 
 ## 4. Système de logos
 
