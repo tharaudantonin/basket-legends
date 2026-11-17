@@ -1,135 +1,115 @@
 # Milwaukee Stags
 
 > Dossier de direction artistique — Milwaukee  
-> Statut : Ouvert — à co-concevoir  
-> Franchise de référence sportive : Milwaukee Bucks
+> Statut : **direction artistique validée** — 17 novembre 2026  
+> Franchise sportive de référence : Milwaukee Bucks  
+> Ce document décrit la direction approuvée. Les visuels finaux et fichiers vectoriels restent à produire.
 
 ## 1. Identité et positionnement
 
-- **Nom de franchise :** Milwaukee Stags
-- **Ville / marché :** Milwaukee
-- **Franchise sportive de référence :** Milwaukee Bucks
-- **Territoire créatif inscrit au registre :** Cerf, forêts et paysages du Wisconsin
-- **Personnalité de marque :** à définir ensemble.
-- **Positionnement :** à définir ensemble.
-- **Culture supporters et récit de franchise :** à définir ensemble.
+- **Franchise :** Milwaukee Stags
+- **Territoire créatif :** Cerf majestueux, forêts du Wisconsin, Grands Lacs et héritage industriel de Milwaukee
+- **Personnalité :** Majestueuse, puissante, disciplinée et résistante.
+- **Signature :** **Stand Tall. Strike Strong.**
 
-Le club réel sert de référence sportive et historique, pas de modèle graphique à reproduire. L'identité de Milwaukee Stags doit être originale.
+La franchise de référence sert uniquement de repère sportif et historique. Aucun logo, wordmark, uniforme ou élément graphique de cette organisation ne doit être reproduit.
 
-## 2. Territoire créatif
+## 2. Palette officielle — Great Lakes Heritage
 
-Cerf, forêts et paysages du Wisconsin
+| Couleur | HEX | Fonction |
+|---|---|---|
+| **Lakefront Navy** | `#243B4A` | Dominante — Grands Lacs |
+| **Antler Copper** | `#B7774D` | Cuivre, bois et héritage industriel |
+| **Forest Pine** | `#526B56` | Forêts du Wisconsin |
+| **Cream City** | `#EEE6D6` | Clair — architecture historique de Milwaukee |
 
-Cette piste est un point de départ enregistré. Les symboles précis, le récit, le style graphique et les éléments à éviter restent à définir et valider.
+Les quatre valeurs HEX ci-dessus sont les couleurs approuvées. Les proportions et contrastes doivent être respectés sur les logos, maillots, parquet et supports numériques.
 
-## 3. Palette chromatique
+## 3. Logo principal — A — The Great Stag
 
-**Statut : Proposition issue du registre — à confirmer.**
+Une tête de cerf frontale, majestueuse et symétrique, aux bois imposants. L’expression traduit la force tranquille et la vigilance, jamais la chasse ou le fantastique.
 
-| Rôle | HEX |
-|---|---|
-| Principale | #174B3C |
-| Secondaire | #E9E4D5 |
-| Accent | #315A80 |
-| Sombre / complémentaire | #191F22 |
+**Construction :**
+- Tête frontale légèrement anguleuse.
+- Bois larges et symétriques, ramifications lisibles.
+- Contours Lakefront Navy ; zones principales Cream City ; accents Antler Copper.
+- Écusson sportif compact, sans détails naturalistes superflus.
 
-Ces valeurs sont des propositions de travail provenant du registre des franchises. Elles ne sont pas définitives et devront être discutées, corrigées puis validées.
+**Typographie :** capitales sportives personnalisées, lisibles à distance et à petite taille ; aucun traitement décoratif ne doit nuire à la reconnaissance du symbole.
 
-Les proportions d'usage, contrastes, associations autorisées et variantes restent à spécifier.
+## 4. Logos secondaires
 
-## 4. Système de logos
+- **The Antler Icon :** Bois de cerf simplifiés, autonomes.
+- **Milwaukee M :** Monogramme M intégrant les ramifications des bois.
+- **Stags Wordmark :** Signature typographique sportive.
+- **Great Lakes Badge :** Écusson patrimonial associant cerf et territoire.
 
-- **Logo principal :** concept à concevoir.
-- **Logo secondaire :** à concevoir.
-- **Monogramme :** à concevoir.
-- **Wordmark :** à concevoir.
-- **Version monochrome :** à spécifier.
-- **Version petite taille / icône :** à spécifier.
-- **Silhouette et règles de construction :** à spécifier.
+Le logo principal reste prioritaire. Les marques secondaires sont des déclinaisons complémentaires et doivent conserver la même grammaire graphique.
 
-Aucun asset graphique n'est créé ou validé par ce dossier à ce stade.
+## 5. Direction esthétique — Heritage-modern
 
-## 5. Typographie et langage graphique
+Les blasons et typographies sportives traditionnelles sont modernisés par des formes géométriques, des silhouettes nettes et des références industrielles discrètes.
 
-- Typographie de titrage : à définir.
-- Typographie secondaire : à définir.
-- Dessin des chiffres : à définir.
-- Motifs et textures : à définir.
-- Iconographie et éléments décoratifs : à définir.
+## 6. Collection de maillots — Heritage
 
-## 6. Collection de maillots
+Tous les maillots suivent une construction cohérente. **Chaque col est constitué d'une seule couleur unie**, sans bicolore, dégradé ni liseré contrastant. Les cols restent distincts des emmanchures et des panneaux latéraux.
 
-Les quatre tenues restent à concevoir en détail :
+### Association — Cream City
+- Fond Cream City ; MILWAUKEE en Lakefront Navy.
+- Numéros navy avec contour Antler Copper.
+- Col et emmanchures navy ; bandes latérales navy et cuivre.
+- The Antler Icon sur le short.
 
-- **Association :** base, panneaux, bandes, inscriptions, numéros, short et chaussettes à définir.
-- **Icon :** base, panneaux, bandes, inscriptions, numéros, short et chaussettes à définir.
-- **Statement :** concept distinctif et construction à définir.
-- **City Edition :** référence locale et narrative à définir.
+### Icon — Lakefront Navy
+- Fond Lakefront Navy ; STAGS en Cream City.
+- Numéros crème avec contour cuivre.
+- Col et emmanchures crème ; bandes latérales cuivre et crème.
+- Milwaukee M sur le short.
 
-**Règle impérative de la ligue : chaque col est d'une seule couleur unie.** Aucun col bicolore, dégradé, liseré contrastant ou mélange de couleurs. Les détails du col doivent rester séparés des emmanchures et des panneaux latéraux.
+### Statement — Forest Pine
+- Fond Forest Pine ; MILWAUKEE en Cream City.
+- Numéros crème avec contour Antler Copper.
+- Col et emmanchures Lakefront Navy ; panneaux latéraux navy et cuivre.
+- The Great Stag sur le short.
 
-## 7. Parquet
+### City Edition — Great Lakes
+- Fond Lakefront Navy ; GREAT LAKES en Cream City.
+- Numéros Antler Copper.
+- Motifs géométriques des rivages et forêts du Wisconsin.
+- Détails Forest Pine et Cream City.
 
-- Teinte du bois : à définir.
-- Couleurs des zones : à définir.
-- Logo central : à définir.
-- Marquages et lignes : à définir.
-- Motifs périphériques : à définir.
-- Variante événementielle : à définir.
+## 7. Terrain — The Stags Court
 
-## 8. Salle et ambiance
+Parquet naturel moyen, lignes Lakefront Navy, raquettes Forest Pine, Great Stag au cercle central et détails Antler Copper.
 
-- Nom de la salle : à définir.
-- Architecture : à définir.
-- Couleurs des sièges et tribunes : à définir.
-- Éclairage et écrans : à définir.
-- Ambiance supporters : à définir.
+## 8. Arène — The Antler Arena (provisoire)
 
-## 9. Mascotte et culture
+Architecture contemporaine inspirée de l’industrie de Milwaukee : métal apparent, bois sombre, éclairage cuivre et signalétique navy / Cream City.
 
-- Mascotte : à décider (une mascotte n'est pas obligatoire).
-- Traditions et rituels : à définir.
-- Chants et ambiance : à définir.
-- Rivalités narratives : à définir.
+Le nom de l'arène est un nom de travail, non un contrat de naming définitif.
 
-## 10. Déclinaisons numériques
+## 9. Système graphique et production
 
-- Avatar / icône : à définir.
-- Bannière : à définir.
-- Carte de franchise : à définir.
-- Habillage d'avant-match : à définir.
-- Scoreboard et éléments broadcast : à définir.
-- Affiches et réseaux sociaux : à définir.
+- Motifs : Ramifications des bois, lignes des rivages des Grands Lacs et structures métalliques industrielles.
+- Déclinaisons : avatar, icône, bannière, carte de franchise, écran d'avant-match, scoreboard, affiches et merchandising.
+- Formats maîtres : SVG pour logos et wordmarks ; sources éditables pour les maillots et le terrain.
+- Prévoir versions couleur, monochrome, inversée et petite taille.
+- Vérifier contraste, lisibilité et accessibilité.
+- Ne pas créer d'assets à partir d'éléments protégés de la franchise de référence.
 
-## 11. Règles de production
+## 10. Validation
 
-- Logos vectoriels et variantes : à spécifier.
-- Tailles minimales et zones de protection : à spécifier.
-- Contrastes et accessibilité : à respecter.
-- Assets desktop et mobile : à prévoir.
-- Aucun actif de la franchise réelle de référence ne doit être copié.
-- Les éléments graphiques finaux seront créés uniquement après validation de la direction.
+- [x] Nom de franchise
+- [x] Palette et codes HEX
+- [x] Concept de logo principal
+- [x] Intensité vintage et style des maillots
+- [x] Quatre concepts de maillots
+- [x] Direction du parquet et de l'arène
+- [ ] Production et validation des fichiers graphiques finaux
+- [ ] Revue juridique des noms et actifs avant commercialisation
 
-## 12. Validation
-
-- [ ] Identité et positionnement validés
-- [ ] Territoire créatif validé
-- [ ] Palette validée
-- [ ] Logo principal validé
-- [ ] Logos secondaires, monogramme et wordmark validés
-- [ ] Typographies et motifs validés
-- [ ] Maillot Association validé
-- [ ] Maillot Icon validé
-- [ ] Maillot Statement validé
-- [ ] Maillot City Edition validé
-- [ ] Parquet validé
-- [ ] Salle validée
-- [ ] Déclinaisons numériques validées
-- [ ] Revue juridique effectuée
-
-## 13. Historique des décisions
+## 11. Historique des décisions
 
 | Date | Décision | Statut |
 |---|---|---|
-| 2026-11-17 | Création du dossier initial à partir du registre des franchises | Ouvert |
-
+| 2026-11-17 | Arbitrages utilisateur et direction artistique définitive | Validé |

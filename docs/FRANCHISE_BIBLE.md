@@ -1,11 +1,11 @@
 # Franchise Bible — registre des 30 organisations
 
-Les noms du tableau reprennent les choix de l'utilisateur au **17 novembre 2026**. Les palettes sont conceptuelles et provisoires. Les noms ne sont pas encore soumis à une recherche juridique exhaustive.
+Les 30 noms de franchise ci-dessous sont les choix retenus pour Basket Legends. Les identités créatives ont été validées au cours des sessions de conception du 17 novembre 2026. Les palettes exactes transcrites sont marquées comme validées dans `data/franchises.json`; neuf palettes du groupe bleu doivent encore être retranscrites depuis leurs arbitrages détaillés avant de considérer les codes HEX du registre historique comme définitifs.
 
 | Ville | Club de référence | Franchise Basket Legends | Territoire créatif |
 |---|---|---|---|
 | Boston | Celtics | **Boston Beacons** | Phare, port historique, faisceau lumineux |
-| Brooklyn | Nets | **Brooklyn Bridges** | Ponts, architecture, connexions urbaines |
+| Brooklyn | Nets | **Brooklyn Bridges** | Ponts, architecture et connexions urbaines |
 | New York | Knicks | **New York Skyliners** | Skyline, verticalité et énergie métropolitaine |
 | Philadelphia | 76ers | **Philadelphia Founders** | Histoire civique, indépendance et géométrie |
 | Toronto | Raptors | **Toronto Bears** | Faune nordique et nature canadienne |
@@ -13,33 +13,40 @@ Les noms du tableau reprennent les choix de l'utilisateur au **17 novembre 2026*
 | Cleveland | Cavaliers | **Cleveland Sentinels** | Sentinelle, veille et protection |
 | Detroit | Pistons | **Detroit Cylinders** | Mécanique automobile et ingénierie |
 | Indianapolis | Pacers | **Indianapolis Racers** | Compétition automobile, ovales et vitesse |
-| Milwaukee | Bucks | **Milwaukee Stags** | Cerf, forêts et paysages du Wisconsin |
+| Milwaukee | Bucks | **Milwaukee Stags** | Cerf majestueux, forêts, Grands Lacs et héritage industriel |
 | Atlanta | Hawks | **Atlanta Eagles** | Aigle, aviation et puissance |
 | Charlotte | Hornets | **Charlotte Bees** | Abeille stylisée et motifs hexagonaux |
-| Miami | Heat | **Miami Tropics** | Végétation tropicale, chaleur côtière, Art déco abstrait |
+| Miami | Heat | **Miami Tropics** | Végétation tropicale, chaleur côtière et Art déco abstrait |
 | Orlando | Magic | **Orlando Comets** | Comètes, orbites et espace |
-| Washington | Wizards | **Washington Capitals** | Monument abstrait, étoile et géométrie civique américaine — identité originale, revue juridique du nom obligatoire |
+| Washington | Wizards | **Washington Capitals** | Monument abstrait, étoile et géométrie civique — revue juridique du nom obligatoire |
 | Denver | Nuggets | **Denver Summit** | Altitude, relief et sommets |
 | Minneapolis | Timberwolves | **Minnesota Borealis** | Aurore boréale, froid et forêts |
 | Oklahoma City | Thunder | **Oklahoma City Storm Riders** | Tempête, énergie et mouvement |
 | Portland | Trail Blazers | **Portland Timberbears** | Forêts du Nord-Ouest, ours et nature |
-| Salt Lake City | Jazz | **Utah Desert Raptors** | Rapace, relief désertique et paysages de l'Utah |
+| Salt Lake City | Jazz | **Utah Desert Raptors** | Rapace en vol, canyons et grès rouge |
 | San Francisco / Bay Area | Warriors | **San Francisco Golden Seals** | Otarie, baie, littoral et héritage maritime |
 | Los Angeles | Clippers | **Los Angeles Beachers** | Plage, littoral et culture balnéaire |
 | Los Angeles | Lakers | **Los Angeles Stars** | Étoiles, spectacle et ciel nocturne |
 | Phoenix | Suns | **Phoenix Scorpions** | Scorpion, désert et chaleur minérale |
-| Sacramento | Kings | **Sacramento Capital** | Capitale et géométrie institutionnelle |
+| Sacramento | Kings | **Sacramento Diggers** | Ruée vers l’or californienne, pépites et esprit pionnier |
 | Dallas | Mavericks | **Dallas Outriders** | Grandes plaines et mouvement |
-| Houston | Rockets | **Houston Commanders** | Exploration spatiale, commandement et conquête |
+| Houston | Rockets | **Houston Commanders** | Exploration spatiale et conquête |
 | Memphis | Grizzlies | **Memphis Rhythm** | Musique et rythme du Mississippi |
 | New Orleans | Pelicans | **New Orleans Royal** | Héritage cérémoniel, fleuve et patrimoine musical |
 | San Antonio | Spurs | **San Antonio Knights** | Chevalerie, armure stylisée et héritage texan |
 
-## Doublon à arbitrer
-**Cleveland Sentinels** et **Washington Capitals** partagent le surnom Sentinels. Les deux choix sont conservés tels quels dans le registre pour le moment ; le doublon doit être tranché avant le gel définitif des identités et wordmarks.
-
 ## Règles d'identité
-Chaque franchise dispose à terme d'un logo principal, d'un logo secondaire, d'un monogramme, d'un wordmark, d'une palette officielle, de quatre maillots (Association, Icon, Statement, City), d'un terrain et d'une identité d'arène. Les logos doivent être des emblèmes sportifs modernes, pas des logos commerciaux.
 
-## Héritage sportif
-Chaque franchise fictive est reliée par identifiant à son club réel analogue. Elle reprend les titres, bilans historiques, records, grandes rivalités, grandes couleurs et profil statistique du club réel lorsque les données sont sourcées. À partir du début de la sauvegarde, les résultats sont produits par le moteur de simulation.
+Chaque franchise possède une direction artistique approuvée comprenant un territoire créatif, un système de logos, une palette, quatre maillots, un parquet et une direction d'arène. Les noms d'arènes indiqués comme provisoires ne constituent pas des contrats de naming.
+
+Les franchises sportives de référence servent de repères historiques et statistiques, jamais de modèles graphiques à copier. Les logos, wordmarks, uniformes et autres actifs doivent être originaux.
+
+## Statut des couleurs et des assets
+
+- Les valeurs HEX confirmées et leur statut sont dans `data/franchises.json`.
+- Les neuf entrées New York, Philadelphia, Detroit, Indianapolis, Orlando, Washington, Denver, Minnesota et Oklahoma City conservent les valeurs historiques du registre en attendant la retranscription des codes exacts approuvés.
+- La validation d'une direction artistique ne signifie pas que les fichiers graphiques finaux existent : les SVG, maquettes de maillots et terrains restent à produire ou à contrôler.
+
+## Revue juridique
+
+Tous les noms et actifs doivent faire l'objet d'une recherche de disponibilité avant diffusion publique ou commerciale. **Washington Capitals** présente un conflit évident de dénomination avec une franchise NHL : revue juridique prioritaire et aucun emprunt d'actifs graphiques à cette franchise.

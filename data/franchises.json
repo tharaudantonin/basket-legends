@@ -1,13 +1,13 @@
 {
   "schemaVersion": 2,
-  "status": "selected-name-register",
+  "status": "art-direction-register",
   "updatedAt": "2026-11-17",
   "snapshotProposal": {
     "season": "2025-2026",
     "date": "2026-06-30",
     "status": "to-confirm"
   },
-  "note": "Washington Capitals est un nom déjà utilisé par une franchise NHL : le choix créatif de l'utilisateur est conservé, mais une revue juridique est obligatoire avant diffusion. Le concept graphique Basket Legends est original et ne doit reprendre aucun actif de la franchise NHL. Boston Beacons : palette validée, logo simplifié vintage demandé, maillots à réviser avec cols unis. Washington : maillot Icon navy avec étoiles blanches sur les deux côtés ; cols unis.",
+  "note": "Les 30 directions artistiques ont été validées dans la conception. Les palettes sont transcrites et marquées validées pour les 21 franchises dont les codes exacts sont disponibles dans l'historique consolidé. Pour 9 franchises, les valeurs HEX du registre antérieur sont conservées comme données non encore retranscrites depuis les arbitrages ; elles ne doivent pas être traitées comme codes définitifs. Les assets graphiques finaux restent à produire. Washington Capitals : collision de nom avec la franchise NHL, revue juridique obligatoire avant diffusion publique ou commerciale. Aucune identité graphique de club réel ne doit être copiée.",
   "franchises": [
     {
       "id": "boston",
@@ -23,7 +23,7 @@
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "concept-v2-vintage-created",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -43,6 +43,14 @@
         "assets/franchises/boston-beacons/monogram.svg",
         "assets/franchises/boston-beacons/wordmark.svg",
         "assets/franchises/boston-beacons/uniform-concepts.svg"
+      ],
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Harbor Green",
+        "Warm Ivory",
+        "Antique Brass",
+        "Ink Charcoal"
       ]
     },
     {
@@ -52,14 +60,14 @@
       "fictionalName": "Brooklyn Bridges",
       "creativeTerritory": "Ponts, architecture et connexions urbaines",
       "paletteProposal": {
-        "primary": "#17191C",
-        "secondary": "#F1F0EC",
-        "accent": "#87909A",
-        "dark": "#546170"
+        "primary": "#31566D",
+        "secondary": "#C47B50",
+        "accent": "#252B30",
+        "dark": "#EAE4D8"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -72,7 +80,15 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Bridge Blue",
+        "Brick Copper",
+        "Concrete Charcoal",
+        "Bridge Ivory"
+      ]
     },
     {
       "id": "new-york",
@@ -88,7 +104,7 @@
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -101,7 +117,9 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated-values-not-yet-transcribed"
     },
     {
       "id": "philadelphia",
@@ -117,7 +135,7 @@
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -130,7 +148,9 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated-values-not-yet-transcribed"
     },
     {
       "id": "toronto",
@@ -139,14 +159,14 @@
       "fictionalName": "Toronto Bears",
       "creativeTerritory": "Faune nordique, force et nature canadienne",
       "paletteProposal": {
-        "primary": "#B32336",
-        "secondary": "#1A1D24",
-        "accent": "#E7E6E1",
-        "dark": "#6B4C83"
+        "primary": "#173B3D",
+        "secondary": "#A9C4C2",
+        "accent": "#D9D9D2",
+        "dark": "#20262A"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -159,7 +179,15 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Deep Teal",
+        "Ice Teal",
+        "Silver Mist",
+        "Charcoal"
+      ]
     },
     {
       "id": "chicago",
@@ -168,14 +196,14 @@
       "fictionalName": "Chicago Horses",
       "creativeTerritory": "Cheval stylisé, mouvement et patrimoine urbain",
       "paletteProposal": {
-        "primary": "#C42B36",
+        "primary": "#C52233",
         "secondary": "#17191D",
-        "accent": "#F5F3EF",
-        "dark": "#777D83"
+        "accent": "#F3F0E9",
+        "dark": "#858B91"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -188,7 +216,15 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Chicago Red",
+        "Black",
+        "Vintage White",
+        "Steel"
+      ]
     },
     {
       "id": "cleveland",
@@ -197,14 +233,14 @@
       "fictionalName": "Cleveland Sentinels",
       "creativeTerritory": "Sentinelle, veille et protection des rives du lac Érié",
       "paletteProposal": {
-        "primary": "#762C42",
-        "secondary": "#C6A45A",
-        "accent": "#142B46",
-        "dark": "#F2EEE5"
+        "primary": "#263C50",
+        "secondary": "#A64B3C",
+        "accent": "#B6A27D",
+        "dark": "#EAE7DF"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -217,7 +253,15 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Guardian Navy",
+        "Sentinel Red",
+        "Foundry Bronze",
+        "Stone White"
+      ]
     },
     {
       "id": "detroit",
@@ -233,7 +277,7 @@
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -246,7 +290,9 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated-values-not-yet-transcribed"
     },
     {
       "id": "indianapolis",
@@ -262,7 +308,7 @@
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -275,23 +321,25 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated-values-not-yet-transcribed"
     },
     {
       "id": "milwaukee",
       "city": "Milwaukee",
       "referenceClub": "Milwaukee Bucks",
       "fictionalName": "Milwaukee Stags",
-      "creativeTerritory": "Cerf, forêts et paysages du Wisconsin",
+      "creativeTerritory": "Cerf majestueux, forêts du Wisconsin, Grands Lacs et héritage industriel de Milwaukee",
       "paletteProposal": {
-        "primary": "#174B3C",
-        "secondary": "#E9E4D5",
-        "accent": "#315A80",
-        "dark": "#191F22"
+        "primary": "#243B4A",
+        "secondary": "#B7774D",
+        "accent": "#526B56",
+        "dark": "#EEE6D6"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -304,6 +352,28 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Lakefront Navy",
+        "Antler Copper",
+        "Forest Pine",
+        "Cream City"
+      ],
+      "artDirection": {
+        "primaryLogo": "A — The Great Stag",
+        "vintageIntensity": "heritage-modern",
+        "jerseyStyle": "heritage",
+        "court": "The Stags Court",
+        "arena": "The Antler Arena (provisional)",
+        "signature": "Stand Tall. Strike Strong.",
+        "secondaryMarks": [
+          "The Antler Icon",
+          "Milwaukee M",
+          "Stags Wordmark",
+          "Great Lakes Badge"
+        ]
       }
     },
     {
@@ -313,14 +383,14 @@
       "fictionalName": "Atlanta Eagles",
       "creativeTerritory": "Aigle, aviation, mouvement et puissance",
       "paletteProposal": {
-        "primary": "#B7353E",
-        "secondary": "#D8AE42",
-        "accent": "#171B20",
-        "dark": "#F4F1E9"
+        "primary": "#D5A52E",
+        "secondary": "#202329",
+        "accent": "#F2EFE6",
+        "dark": "#777D85"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -333,7 +403,15 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Aviation Gold",
+        "Midnight Black",
+        "Warm White",
+        "Steel Grey"
+      ]
     },
     {
       "id": "charlotte",
@@ -342,14 +420,14 @@
       "fictionalName": "Charlotte Bees",
       "creativeTerritory": "Abeille stylisée, motifs hexagonaux et énergie locale",
       "paletteProposal": {
-        "primary": "#147B86",
-        "secondary": "#70508B",
-        "accent": "#F4F2EA",
-        "dark": "#20272D"
+        "primary": "#E0AC32",
+        "secondary": "#252B30",
+        "accent": "#A8B9B0",
+        "dark": "#F3EFE4"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -362,7 +440,15 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Queen Gold",
+        "Hive Black",
+        "Carolina Sage",
+        "Honeycomb Cream"
+      ]
     },
     {
       "id": "miami",
@@ -371,14 +457,14 @@
       "fictionalName": "Miami Tropics",
       "creativeTerritory": "Végétation tropicale, chaleur côtière et Art déco abstrait",
       "paletteProposal": {
-        "primary": "#C43C42",
-        "secondary": "#171B20",
-        "accent": "#F2EFE5",
-        "dark": "#7BC3C6"
+        "primary": "#159B9A",
+        "secondary": "#F07869",
+        "accent": "#F5E9D5",
+        "dark": "#17232B"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -391,7 +477,15 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Tropical Teal",
+        "Coral",
+        "Sand",
+        "Midnight"
+      ]
     },
     {
       "id": "orlando",
@@ -407,7 +501,7 @@
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -420,7 +514,9 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated-values-not-yet-transcribed"
     },
     {
       "id": "washington",
@@ -436,7 +532,7 @@
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "existing-professional-team-name-conflict-review-required",
-      "visualStatus": "concept-specified-assets-pending",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -456,7 +552,9 @@
         "assets/franchises/washington-capitals/monogram.svg",
         "assets/franchises/washington-capitals/wordmark.svg",
         "assets/franchises/washington-capitals/uniform-concepts.svg"
-      ]
+      ],
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated-values-not-yet-transcribed"
     },
     {
       "id": "denver",
@@ -472,7 +570,7 @@
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -485,7 +583,9 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated-values-not-yet-transcribed"
     },
     {
       "id": "minnesota",
@@ -501,7 +601,7 @@
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -514,7 +614,9 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated-values-not-yet-transcribed"
     },
     {
       "id": "oklahoma-city",
@@ -530,7 +632,7 @@
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -543,7 +645,9 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated-values-not-yet-transcribed"
     },
     {
       "id": "portland",
@@ -552,14 +656,14 @@
       "fictionalName": "Portland Timberbears",
       "creativeTerritory": "Forêts du Nord-Ouest, ours et patrimoine naturel",
       "paletteProposal": {
-        "primary": "#B63D42",
-        "secondary": "#17191C",
-        "accent": "#F2EEE5",
-        "dark": "#70767D"
+        "primary": "#A75A35",
+        "secondary": "#D4B98D",
+        "accent": "#333B35",
+        "dark": "#EEE9DC"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -572,23 +676,31 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Timber Copper",
+        "Wood Beige",
+        "Forest Charcoal",
+        "Parchment"
+      ]
     },
     {
       "id": "utah",
       "city": "Salt Lake City",
       "referenceClub": "Utah Jazz",
       "fictionalName": "Utah Desert Raptors",
-      "creativeTerritory": "Rapace, relief désertique et paysages de l'Utah",
+      "creativeTerritory": "Rapace en vol, canyons et formations de grès rouge de l’Utah",
       "paletteProposal": {
-        "primary": "#352B5F",
-        "secondary": "#C6A24E",
-        "accent": "#1D405C",
-        "dark": "#F0EDE5"
+        "primary": "#B85D43",
+        "secondary": "#D1A45C",
+        "accent": "#303943",
+        "dark": "#EEE8DC"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -601,6 +713,28 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Canyon Rust",
+        "Desert Ochre",
+        "Night Slate",
+        "Bone White"
+      ],
+      "artDirection": {
+        "primaryLogo": "B — The Raptor Flight",
+        "vintageIntensity": "modern",
+        "jerseyStyle": "modern",
+        "court": "The Red Rock Court",
+        "arena": "The Raptor’s Nest (provisional)",
+        "signature": "Rule the Red Rocks.",
+        "secondaryMarks": [
+          "The Talon Icon",
+          "The Utah U",
+          "Raptors Wordmark",
+          "Red Rock Badge"
+        ]
       }
     },
     {
@@ -610,14 +744,14 @@
       "fictionalName": "San Francisco Golden Seals",
       "creativeTerritory": "Otarie, baie, littoral et héritage maritime",
       "paletteProposal": {
-        "primary": "#1A4F89",
-        "secondary": "#D9AD43",
+        "primary": "#D9AD43",
+        "secondary": "#173D56",
         "accent": "#F3F1EA",
-        "dark": "#202833"
+        "dark": "#A9B9C4"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -630,7 +764,15 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Pacific Gold",
+        "Deep Sea",
+        "Salt White",
+        "Sea Mist"
+      ]
     },
     {
       "id": "clippers",
@@ -639,14 +781,14 @@
       "fictionalName": "Los Angeles Beachers",
       "creativeTerritory": "Plage, littoral et culture balnéaire californienne",
       "paletteProposal": {
-        "primary": "#1C3F72",
-        "secondary": "#B73A42",
-        "accent": "#F4F3EF",
-        "dark": "#111A26"
+        "primary": "#65A9C8",
+        "secondary": "#E9D9BE",
+        "accent": "#163C53",
+        "dark": "#F6F2E8"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -659,7 +801,15 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Coastal Sky",
+        "Sand",
+        "Pacific Navy",
+        "Foam White"
+      ]
     },
     {
       "id": "lakers",
@@ -668,14 +818,14 @@
       "fictionalName": "Los Angeles Stars",
       "creativeTerritory": "Étoiles, spectacle et ciel nocturne",
       "paletteProposal": {
-        "primary": "#573B79",
-        "secondary": "#E4B84F",
-        "accent": "#F4F1E8",
-        "dark": "#1E1D2A"
+        "primary": "#D6AD55",
+        "secondary": "#20232B",
+        "accent": "#8D263D",
+        "dark": "#F2EBDD"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -688,7 +838,15 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Hollywood Gold",
+        "Premiere Black",
+        "Velvet Red",
+        "Marquee Ivory"
+      ]
     },
     {
       "id": "phoenix",
@@ -697,14 +855,14 @@
       "fictionalName": "Phoenix Scorpions",
       "creativeTerritory": "Scorpion, désert et chaleur minérale",
       "paletteProposal": {
-        "primary": "#D95C32",
-        "secondary": "#4B3472",
-        "accent": "#1B1D24",
-        "dark": "#F2E9D8"
+        "primary": "#C65B3F",
+        "secondary": "#292B32",
+        "accent": "#D5B477",
+        "dark": "#EDE5D5"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -717,23 +875,31 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Desert Ember",
+        "Scorpion Black",
+        "Sonoran Sand",
+        "Desert Bone"
+      ]
     },
     {
       "id": "sacramento",
       "city": "Sacramento",
       "referenceClub": "Sacramento Kings",
-      "fictionalName": "Sacramento Capital",
-      "creativeTerritory": "Capitale, architecture et géométrie institutionnelle",
+      "fictionalName": "Sacramento Diggers",
+      "creativeTerritory": "Ruée vers l’or californienne, pépites, filons aurifères et esprit pionnier",
       "paletteProposal": {
-        "primary": "#52366F",
-        "secondary": "#BBC0C6",
-        "accent": "#171A21",
-        "dark": "#F1EFE8"
+        "primary": "#D5A43A",
+        "secondary": "#79543A",
+        "accent": "#394B56",
+        "dark": "#F0E7D5"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -746,6 +912,28 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Gold Nugget",
+        "Prospector Brown",
+        "River Slate",
+        "Canvas Cream"
+      ],
+      "artDirection": {
+        "primaryLogo": "C — The Golden Nugget",
+        "vintageIntensity": "heritage-modern",
+        "jerseyStyle": "classic",
+        "court": "The Gold Fields Court",
+        "arena": "The Gold Mine (provisional)",
+        "signature": "Strike Gold. Earn Greatness.",
+        "secondaryMarks": [
+          "The Nugget Icon",
+          "The D Monogram",
+          "Diggers Wordmark",
+          "The Mining Badge"
+        ]
       }
     },
     {
@@ -755,14 +943,14 @@
       "fictionalName": "Dallas Outriders",
       "creativeTerritory": "Grandes plaines, mouvement et étoile géométrique",
       "paletteProposal": {
-        "primary": "#1C3C68",
-        "secondary": "#8EA2B6",
-        "accent": "#F2F2ED",
-        "dark": "#222A32"
+        "primary": "#8A5B3D",
+        "secondary": "#D2B17C",
+        "accent": "#252A2E",
+        "dark": "#F1E8D8"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -775,7 +963,15 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Saddle Brown",
+        "Prairie Tan",
+        "Rider Charcoal",
+        "Canvas Ivory"
+      ]
     },
     {
       "id": "houston",
@@ -784,14 +980,14 @@
       "fictionalName": "Houston Commanders",
       "creativeTerritory": "Exploration spatiale, commandement et conquête",
       "paletteProposal": {
-        "primary": "#B6363E",
-        "secondary": "#AEB5BC",
-        "accent": "#1B2028",
-        "dark": "#F2F0EA"
+        "primary": "#292E35",
+        "secondary": "#E87532",
+        "accent": "#B9C1C9",
+        "dark": "#F1EFE9"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -804,7 +1000,15 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Mission Charcoal",
+        "Rocket Orange",
+        "Space Silver",
+        "Mission White"
+      ]
     },
     {
       "id": "memphis",
@@ -820,7 +1024,7 @@
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -833,7 +1037,15 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Rhythm Blue",
+        "Brass Gold",
+        "Stage Midnight",
+        "Cream"
+      ]
     },
     {
       "id": "new-orleans",
@@ -842,14 +1054,14 @@
       "fictionalName": "New Orleans Royal",
       "creativeTerritory": "Héritage cérémoniel, fleuve et patrimoine musical",
       "paletteProposal": {
-        "primary": "#173958",
-        "secondary": "#B63B4A",
-        "accent": "#B89B5E",
-        "dark": "#F3EEE3"
+        "primary": "#24566B",
+        "secondary": "#B99A57",
+        "accent": "#F1EBDD",
+        "dark": "#25252B"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -862,7 +1074,15 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "River Teal",
+        "Antique Gold",
+        "Ivory",
+        "Charcoal"
+      ]
     },
     {
       "id": "san-antonio",
@@ -871,14 +1091,14 @@
       "fictionalName": "San Antonio Knights",
       "creativeTerritory": "Chevalerie, armure stylisée et héritage texan",
       "paletteProposal": {
-        "primary": "#202329",
-        "secondary": "#B9BEC3",
-        "accent": "#F2F0E9",
-        "dark": "#8B6B4D"
+        "primary": "#344C68",
+        "secondary": "#B8BEC4",
+        "accent": "#8B343A",
+        "dark": "#F0EDE5"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -891,7 +1111,15 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "artDirectionStatus": "approved-in-conversation",
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Knight Navy",
+        "Armor Silver",
+        "Crimson Banner",
+        "Parchment White"
+      ]
     }
   ]
 }

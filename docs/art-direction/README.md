@@ -1,63 +1,67 @@
 # Basket Legends — Dossiers de direction artistique des franchises
 
-**30 dossiers de travail — créés le 17 novembre 2026.**
+**30 directions artistiques approuvées — 17 novembre 2026.**
 
-Ce répertoire centralise les directions artistiques des 30 franchises. Il sert de référence à la conception, puis à l'implémentation. Il ne constitue pas une validation automatique des éléments encore proposés.
+Ce répertoire centralise les décisions créatives validées et sert de référence de production. Il faut distinguer strictement la validation d'une direction et la création des assets : les logos SVG définitifs, planches de maillots, terrains et rendus d'arènes restent à produire ou à contrôler.
 
-## Contrôle de cohérence transversal
+## Références canoniques
+- [Franchise Bible](../FRANCHISE_BIBLE.md) — noms et territoires.
+- [Art Bible](../ART_BIBLE.md) — règles transversales.
+- [Registre JSON](../../data/franchises.json) — données structurées, palettes et statuts.
+- [Audit de cohérence](./COHERENCE_AUDIT.md) — risques visuels et contrôles avant production.
 
-- [Audit de cohérence des 30 franchises](./COHERENCE_AUDIT.md) — comparaison préliminaire des territoires créatifs, palettes chromatiques et risques de confusion. Les palettes non validées restent des propositions ; aucune n'est modifiée automatiquement.
-
-## Règles de lecture
-- **Validé** : choix explicitement confirmé par l'utilisateur.
-- **Proposition existante** : valeur déjà présente dans le registre, à faire confirmer.
-- **À concevoir** : décision à prendre ensemble.
-- **À vérifier** : disponibilité juridique, cohérence ou provenance à examiner.
-
-Les palettes préexistantes sont qualifiées de propositions, sauf Boston Beacons et Washington Capitals dont les couleurs ont été explicitement validées. Les territoires créatifs préexistants sont des pistes de départ, pas des concepts finaux.
+## Statuts
+- **Direction approuvée** : nom, concept et arbitrages créatifs validés en conversation.
+- **Palette transcrite** : les quatre valeurs HEX ont été retrouvées et inscrites dans le registre.
+- **Palette à retranscrire** : direction approuvée, mais les quatre valeurs HEX exactes de l'arbitrage ne sont pas disponibles dans la consolidation courante ; les anciennes valeurs ne sont pas réputées officielles.
+- **Assets à produire** : les décisions ne constituent pas des fichiers graphiques finis.
 
 ## Dossiers
 
-| Franchise | Dossier | Statut initial |
-|---|---|---|
-| Boston Beacons | [boston.md](./franchises/boston.md) | Décisions partielles validées |
-| Brooklyn Bridges | [brooklyn.md](./franchises/brooklyn.md) | À co-concevoir |
-| New York Skyliners | [new-york.md](./franchises/new-york.md) | À co-concevoir |
-| Philadelphia Founders | [philadelphia.md](./franchises/philadelphia.md) | À co-concevoir |
-| Toronto Bears | [toronto.md](./franchises/toronto.md) | À co-concevoir |
-| Chicago Horses | [chicago.md](./franchises/chicago.md) | À co-concevoir |
-| Cleveland Sentinels | [cleveland.md](./franchises/cleveland.md) | À co-concevoir |
-| Detroit Cylinders | [detroit.md](./franchises/detroit.md) | À co-concevoir |
-| Indianapolis Racers | [indianapolis.md](./franchises/indianapolis.md) | À co-concevoir |
-| Milwaukee Stags | [milwaukee.md](./franchises/milwaukee.md) | À co-concevoir |
-| Atlanta Eagles | [atlanta.md](./franchises/atlanta.md) | À co-concevoir |
-| Charlotte Bees | [charlotte.md](./franchises/charlotte.md) | À co-concevoir |
-| Miami Tropics | [miami.md](./franchises/miami.md) | À co-concevoir |
-| Orlando Comets | [orlando.md](./franchises/orlando.md) | À co-concevoir |
-| Washington Capitals | [washington.md](./franchises/washington.md) | Décisions partielles validées |
-| Denver Summit | [denver.md](./franchises/denver.md) | À co-concevoir |
-| Minnesota Borealis | [minnesota.md](./franchises/minnesota.md) | À co-concevoir |
-| Oklahoma City Storm Riders | [oklahoma-city.md](./franchises/oklahoma-city.md) | À co-concevoir |
-| Portland Timberbears | [portland.md](./franchises/portland.md) | À co-concevoir |
-| Utah Desert Raptors | [utah.md](./franchises/utah.md) | À co-concevoir |
-| San Francisco Golden Seals | [golden-state.md](./franchises/golden-state.md) | À co-concevoir |
-| Los Angeles Beachers | [clippers.md](./franchises/clippers.md) | À co-concevoir |
-| Los Angeles Stars | [lakers.md](./franchises/lakers.md) | À co-concevoir |
-| Phoenix Scorpions | [phoenix.md](./franchises/phoenix.md) | À co-concevoir |
-| Sacramento Capital | [sacramento.md](./franchises/sacramento.md) | À co-concevoir |
-| Dallas Outriders | [dallas.md](./franchises/dallas.md) | À co-concevoir |
-| Houston Commanders | [houston.md](./franchises/houston.md) | À co-concevoir |
-| Memphis Rhythm | [memphis.md](./franchises/memphis.md) | À co-concevoir |
-| New Orleans Royal | [new-orleans.md](./franchises/new-orleans.md) | À co-concevoir |
-| San Antonio Knights | [san-antonio.md](./franchises/san-antonio.md) | À co-concevoir |
+| Franchise | Dossier |
+|---|---|
+| Boston Beacons | [boston.md](./franchises/boston.md) |
+| Brooklyn Bridges | [brooklyn.md](./franchises/brooklyn.md) |
+| New York Skyliners | [new-york.md](./franchises/new-york.md) |
+| Philadelphia Founders | [philadelphia.md](./franchises/philadelphia.md) |
+| Toronto Bears | [toronto.md](./franchises/toronto.md) |
+| Chicago Horses | [chicago.md](./franchises/chicago.md) |
+| Cleveland Sentinels | [cleveland.md](./franchises/cleveland.md) |
+| Detroit Cylinders | [detroit.md](./franchises/detroit.md) |
+| Indianapolis Racers | [indianapolis.md](./franchises/indianapolis.md) |
+| Milwaukee Stags | [milwaukee.md](./franchises/milwaukee.md) |
+| Atlanta Eagles | [atlanta.md](./franchises/atlanta.md) |
+| Charlotte Bees | [charlotte.md](./franchises/charlotte.md) |
+| Miami Tropics | [miami.md](./franchises/miami.md) |
+| Orlando Comets | [orlando.md](./franchises/orlando.md) |
+| Washington Capitals | [washington.md](./franchises/washington.md) |
+| Denver Summit | [denver.md](./franchises/denver.md) |
+| Minnesota Borealis | [minnesota.md](./franchises/minnesota.md) |
+| Oklahoma City Storm Riders | [oklahoma-city.md](./franchises/oklahoma-city.md) |
+| Portland Timberbears | [portland.md](./franchises/portland.md) |
+| Utah Desert Raptors | [utah.md](./franchises/utah.md) |
+| San Francisco Golden Seals | [golden-state.md](./franchises/golden-state.md) |
+| Los Angeles Beachers | [clippers.md](./franchises/clippers.md) |
+| Los Angeles Stars | [lakers.md](./franchises/lakers.md) |
+| Phoenix Scorpions | [phoenix.md](./franchises/phoenix.md) |
+| Sacramento Diggers | [sacramento.md](./franchises/sacramento.md) |
+| Dallas Outriders | [dallas.md](./franchises/dallas.md) |
+| Houston Commanders | [houston.md](./franchises/houston.md) |
+| Memphis Rhythm | [memphis.md](./franchises/memphis.md) |
+| New Orleans Royal | [new-orleans.md](./franchises/new-orleans.md) |
+| San Antonio Knights | [san-antonio.md](./franchises/san-antonio.md) |
 
-## Méthode de validation
-Chaque franchise est travaillée et validée séparément. Aucun logo, maillot ou parquet ne doit être considéré comme définitif avant validation explicite. Les identités doivent rester originales et ne pas reproduire les actifs des franchises réelles de référence.
-
-## Standards communs
+## Standards de production
 - Quatre tenues : Association, Icon, Statement et City Edition.
 - Col de chaque tenue : une seule couleur unie, sans bicolore, dégradé ni liseré contrastant.
 - Identités lisibles en petit format et en monochrome.
 - Logos originaux, sans copie de marque, mascotte ou composition existante.
-- Déclinaisons conçues pour interface desktop et mobile.
-- Les assets ne sont pas créés à ce stade : ce répertoire documente les directions et spécifications.
+- Déclinaisons desktop et mobile.
+- Formats maîtres vectoriels et variantes couleur, monochrome et inversée.
+
+## Points de contrôle avant gel des assets
+1. Retranscrire les palettes HEX exactes des neuf franchises signalées dans le registre.
+2. Produire une planche comparative des 30 logos en silhouette monochrome.
+3. Comparer les 30 maillots Icon et Association côte à côte.
+4. Vérifier contrastes, daltonisme, tailles minimales et cols unis.
+5. Effectuer la revue juridique des noms, logos et droits d'image.

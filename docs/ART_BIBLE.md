@@ -3,6 +3,9 @@
 ## Positionnement
 Simulation sportive réaliste, premium et contemporaine. Interface desktop-first de management, dense mais lisible, avec une hiérarchie de données proche d'un centre de commandement sportif.
 
+## Statut de la direction artistique
+Les directions créatives des 30 franchises ont été arbitrées et validées dans les sessions de conception du 17 novembre 2026. Les dossiers individuels sont les références de production. Cette validation porte sur les concepts et spécifications ; elle ne signifie pas que les logos vectoriels, maillots rendus, terrains ou habillages d'arène sont déjà produits.
+
 ## Système d'identité des franchises
 Chaque franchise reçoit :
 - logo principal, logo secondaire, monogramme et wordmark ;
@@ -11,62 +14,36 @@ Chaque franchise reçoit :
 - maillots Association, Icon, Statement et City Edition ;
 - terrain, arène et éléments d'habillage UI.
 
-Les logos doivent être des emblèmes de franchises sportives professionnelles : mascotte stylisée, symbole territorial, monogramme ou écusson. Ils ne doivent pas ressembler à des logos de marques commerciales. Ne jamais copier les logos, mascottes, wordmarks ou compositions des équipes réelles.
+Les logos doivent être des emblèmes de franchises sportives professionnelles : mascotte stylisée, symbole territorial, monogramme ou écusson. Ils doivent être originaux et ne jamais copier les logos, mascottes, wordmarks, silhouettes ou compositions des équipes réelles.
 
 ## Maillots — règles non négociables
 - Chaque col est constitué d'une seule couleur unie.
 - Aucun col bicolore, dégradé, liseré contrastant ou mélange de couleurs.
 - Le col reste visuellement séparé des emmanchures et panneaux latéraux.
-- La coupe doit être cohérente entre les quatre tenues d'une franchise.
-- Les numéros et wordmarks doivent rester lisibles à distance.
-- Les motifs latéraux sont autorisés, à condition de ne pas altérer le col.
+- La coupe et le langage graphique restent cohérents entre les quatre tenues d'une franchise.
+- Les numéros et wordmarks doivent rester lisibles à distance et en miniature.
+- Les motifs latéraux sont autorisés s'ils ne dégradent pas la lisibilité ni la règle du col.
 
-## Boston Beacons — direction validée
-Référence sportive : Boston Celtics.
-Palette validée :
-- Harbor Green — `#0F4B3A`
-- Warm Ivory — `#F2EFE5`
-- Antique Brass — `#B69A62`
-- Ink Charcoal — `#1D2523`
+## Palette et cohérence
+- Les codes HEX sont définis dans le registre canonique `data/franchises.json`.
+- Une couleur validée ne peut pas être modifiée sans arbitrage explicite.
+- Ne pas déduire ou inventer les codes exacts manquants depuis une image ou une ancienne proposition.
+- Les contrôles de contraste, de daltonisme, de lisibilité en niveaux de gris et de différenciation des maillots Icon doivent précéder la production finale.
 
-### Logo Boston — révision demandée
-Abandonner le phare complexe dans un écusson. Produire un emblème beaucoup plus simple, vintage et historique :
-- roundel classique ou insigne circulaire sobre ;
-- phare réduit à quelques formes géométriques ;
-- lettrage rétro inspiré des identités sportives américaines historiques ;
-- pas de petits détails décoratifs inutiles ;
-- logo lisible en monochrome et à petite taille.
-La palette ci-dessus est validée et ne doit pas être changée sans demande.
+## Boston Beacons
+Palette validée : Harbor Green `#0F4B3A`, Warm Ivory `#F2EFE5`, Antique Brass `#B69A62`, Ink Charcoal `#1D2523`. Le concept validé est un roundel historique sobre avec phare géométrique minimal et typographie rétro ; les détails inutiles sont exclus. Les cols des quatre tenues sont unis.
 
-### Maillots Boston
-S'inspirer de la construction des maillots Washington : silhouette sportive nette, panneaux latéraux simples, wordmark et numérotation lisibles. Adapter les détails à l'identité patrimoniale de Boston. Les quatre cols doivent être chacun d'une seule couleur unie.
+## Washington Capitals
+Concept de basketball original : monument abstrait, étoile et géométrie civique. Le maillot Icon navy comporte des étoiles blanches répétées sur les deux panneaux latéraux. Ne reprendre aucun actif de la franchise NHL Washington Capitals. Le nom exige une revue juridique prioritaire avant publication commerciale.
 
-## Washington Capitals — direction créative demandée
-Référence sportive : Washington Wizards pour la ville et la place dans la ligue. Nom choisi par l'utilisateur : Washington Capitals.
-
-Palette de concept :
-- Navy — `#0B2D5B`
-- Red — `#E31837`
-- White — `#FFFFFF`
-- Dark Navy — `#172333`
-
-Territoire graphique : monument abstrait, étoile et géométrie civique américaine. Concevoir un logo de basketball original, moderne et professionnel, sans reprendre le logo, les couleurs en composition, le wordmark ou les maillots de la franchise Washington Capitals de NHL.
-
-### Maillots Washington
-- Association : base blanche, accents navy et rouge.
-- Icon : base navy, étoiles blanches répétées verticalement sur les deux panneaux latéraux, de l'aisselle jusqu'à l'ourlet. Les étoiles sont bien visibles et ne doivent pas être placées sur le col.
-- Statement : base rouge, accents navy et blancs.
-- City Edition : concept à définir, ancré dans l'architecture et la culture de Washington.
-- Tous les cols sont unis, d'une seule couleur, sans mélange ni liseré bicolore.
-
-## Statut juridique
-Le nom Washington Capitals est déjà utilisé par une franchise de hockey NHL. Le nom est conservé comme choix de travail, mais il faut une revue juridique avant publication ou commercialisation. Ne jamais reprendre les actifs de la franchise NHL. Tous les autres noms de franchises sont également à vérifier avant diffusion.
-
-## Joueurs et portraits
-Les personnages de départ sont des correspondances individuelles fictives de joueurs réels. Les caractéristiques physiques documentées peuvent guider les proportions générales, mais les portraits et modèles doivent être créés spécifiquement pour le jeu. Aucun scan facial, photo, tatouage ou asset tiers ne doit être utilisé sans droits et provenance appropriés. Revue des droits à l'image/personnalité requise avant toute diffusion publique/commerciale si les personnages demeurent identifiables.
+## Sacramento Diggers, Milwaukee Stags et Utah Desert Raptors
+Les dossiers individuels sont désormais définitifs :
+- Sacramento : California Gold, logo The Golden Nugget (C), Heritage-modern, maillots Classic.
+- Milwaukee : Great Lakes Heritage, logo The Great Stag (A), Heritage-modern, maillots Heritage.
+- Utah : Red Rock Flight, logo The Raptor Flight (B), Modern, maillots Modern.
 
 ## Interface
-- Navigation latérale persistante.
+- Navigation latérale persistante sur desktop ; navigation adaptée au mobile.
 - Bandeau supérieur avec date, prochain match et notifications.
 - Tableaux analytiques denses, typographie lisible, chiffres tabulaires.
 - Base graphite ou bleu nuit ; couleurs de franchise utilisées comme accents.

@@ -1,42 +1,49 @@
-# Roadmap — premières étapes
+# Roadmap — Basket Legends
 
-## Sprint 0 — Préproduction
-- Stabiliser la nomenclature des franchises et arbitrer le doublon Sentinels.
-- Confirmer la saison et la date de snapshot.
-- Définir la provenance et la revue des droits des données individuelles.
-- Collecter les sources historiques, statistiques et visuelles.
-- Finaliser GDD, TDD et Art Bible.
+## Phase 0 — Préproduction créative (terminée côté arbitrages)
+- [x] Stabiliser les 30 noms de franchises.
+- [x] Valider les 30 directions artistiques.
+- [x] Définir les règles transversales de logo et de maillots.
+- [x] Documenter les trois derniers dossiers.
+- [ ] Retranscrire les codes HEX exacts des neuf franchises signalées dans le registre.
+- [ ] Revue juridique des noms, en priorité Washington Capitals.
+- [ ] Confirmer le snapshot de référence (proposition : saison 2025-2026 au 30 juin 2026).
 
-## Sprint 1 — Socle technique
-- Monorepo TypeScript, lint, format, tests, CI et Prisma.
-- Types partagés et modèles de carrière/franchise/joueur.
-- Shell UI : navigation, bandeau et dashboard.
-- Création de carrière et choix de franchise.
+## Phase 1 — Production du système visuel
+- [ ] Créer les 30 logos principaux en SVG.
+- [ ] Créer logos secondaires, monogrammes et wordmarks.
+- [ ] Produire les 120 maillots (Association, Icon, Statement, City Edition).
+- [ ] Produire les 30 parquets et les directions d'arènes.
+- [ ] Construire les planches comparatives et contrôler la différenciation.
+- [ ] Intégrer les assets dans le kit UI desktop et mobile.
 
-## Sprint 2 — Données sportives
-- Chargement des 30 franchises.
-- Import des effectifs de référence joueur par joueur.
-- Noms fictifs à initiales conservées.
-- Mensurations, postes, statistiques, attributs et sources.
-- Ligue de développement, joueurs libres et prospects.
+## Phase 2 — Référentiel sportif et données de départ
+- [ ] Définir le snapshot NBA de référence et les règles de collecte.
+- [ ] Constituer les 30 historiques de franchise (titres, bilans, records, rivalités).
+- [ ] Constituer les effectifs initiaux et mappings individuels sourcés.
+- [ ] Documenter statistiques, mensurations, attributs estimés et niveau de confiance.
+- [ ] Préparer les joueurs de développement, libres et prospects générés.
+- [ ] Effectuer la revue des droits, de la provenance et de la confidentialité des données.
 
-## Sprint 3 — Moteur de match
-- Moteur de possession, règles versionnées, box score et événements.
-- Trois modes de présentation.
+## Phase 3 — Gel du GDD/TDD et architecture exécutable
+- [ ] Convertir les décisions de gameplay en critères d'acceptation testables.
+- [ ] Finaliser schéma Prisma, contrats API et frontières des modules.
+- [ ] Définir stratégie de simulation déterministe et tests de calibration.
+- [ ] Définir sauvegardes, snapshots, migrations et observabilité.
+- [ ] Préparer les issues techniques et la séquence de développement Claude Code.
 
-## Sprint 4 — Management et IA
-- Contrats, transferts, Draft, free agency.
-- GM IA, Coach IA, scouting et développement.
-- Calendrier, classements et playoffs.
+## Phase 4 — Implémentation V1
+- [ ] Monorepo, CI, lint, tests et base de données.
+- [ ] Shell UI et création de carrière.
+- [ ] Référentiel des franchises, joueurs et saisons.
+- [ ] Moteur de match et trois modes de présentation.
+- [ ] Management, recrutement, contrats, Draft et free agency.
+- [ ] IA GM/coach/scouting/développement.
+- [ ] Calendrier, playoffs, carrière multi-saisons et sauvegardes.
 
-## Sprint 5 — Carrière et robustesse
-- Progression, retraites et générations suivantes.
-- Sauvegardes, snapshots et migrations.
-- Calibrage sur de nombreuses saisons.
-
-## Sprint 6 — Direction artistique
-- Logos, monogrammes, wordmarks, maillots, terrains, arènes et médias.
-- Vérification de cohérence et d'originalité des 30 identités.
-
-## Sprint 7 — Validation V1
-- Tests fonctionnels, équilibre, non-régression et revue des données/droits.
+## Phase 5 — Validation V1
+- [ ] Tests fonctionnels et de non-régression.
+- [ ] Calibration de milliers de matchs et saisons simulées.
+- [ ] Tests de cohérence statistique et économique.
+- [ ] Revue des données, licences et droits.
+- [ ] Validation jouabilité, accessibilité et responsive.
