@@ -8,7 +8,8 @@ Construire Basket Legends, un jeu web de management basketball profond, jouable 
 - `docs/TDD.md` : architecture technique.
 - `docs/03-basketball-rules/GAME_RULES.md` : règles sportives NBA et exigences de simulation.
 - `docs/ART_BIBLE.md` : direction artistique.
-- `docs/FRANCHISE_BIBLE.md` et `data/franchises.json` : noms et univers des franchises.
+- `docs/FRANCHISE_BIBLE.md` : noms et univers des franchises.
+- `data/franchises.json` : source canonique des 30 franchises et de leurs palettes (`primary`, `secondary`, `accent`, `neutral`). `data/franchises.csv` est un miroir ; ne jamais utiliser un code HEX d'un dossier Markdown en cas de divergence.
 - `docs/PLAYER_MIRROR.md` : données et correspondance individuelle des joueurs.
 - `docs/DATA_PARITY.md` : héritage historique et profils statistiques des franchises.
 - `docs/IDENTITY_CONCEPTS.md` : décisions graphiques et état des assets.
