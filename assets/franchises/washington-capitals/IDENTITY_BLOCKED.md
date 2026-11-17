@@ -1,12 +1,16 @@
-# Washington Capitals — identité suspendue
+# Washington Capitals — concept graphique original V1
 
-Le nom est conservé dans le registre à la demande de l'utilisateur, mais il correspond à une franchise professionnelle de la NHL. Le site officiel précise que Washington Capitals et ses déclinaisons sont des marques de Lincoln Hockey.
+Le nom reste un choix de travail demandé par l'utilisateur et présente un risque de conflit avec la franchise NHL homonyme. Les actifs ci-dessous sont des concepts originaux pour Basket Legends : monument abstrait, étoile et géométrie civique. Ils ne doivent pas reprendre le logo, les wordmarks, les maillots ou les compositions de la franchise NHL.
 
-- Aucun logo, emblème, wordmark ou maillot n'est créé ici.
-- Ne pas s'inspirer des logos ou de la composition de la franchise NHL.
-- Faire vérifier juridiquement la disponibilité de l'appellation pour le jeu, ou choisir un autre nom avant la création.
+Palette de concept : Navy `#0B2D5B`, Red `#E31837`, White `#FFFFFF`.
 
-Sources :
+Maillots :
+- Association : blanc, accents navy/rouge, col blanc uni.
+- Icon : navy, étoiles blanches sur les deux panneaux latéraux, col navy uni.
+- Statement : rouge, accents navy/blanc, col rouge uni.
+
+**Règle générale :** aucun col bicolore ou à liseré multicolore. Revue juridique du nom requise avant publication.
+
+Sources de vigilance sur le nom :
 - https://www.nhl.com/capitals/
 - https://www.nhl.com/fr/capitals/roster
-- https://revenue.delaware.gov/trade-name-details/?tradename_id=8755
