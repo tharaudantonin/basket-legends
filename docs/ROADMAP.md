@@ -40,7 +40,8 @@
   - [x] Recevoir et enregistrer l'effectif Dallas Outriders (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Brooklyn Bridges (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Denver Summit (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
-  - [ ] Recevoir et valider les 12 autres effectifs avant leur intégration.
+  - [x] Recevoir et enregistrer l'effectif Indianapolis Racers (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [ ] Recevoir et valider les 11 autres effectifs avant leur intégration.
 - [x] Spécifier statistiques, mensurations, attributs estimés, contrôles qualité et niveaux de confiance.
 - [ ] Implémenter le modèle de données et produire les imports joueurs sourcés.
 - [ ] Préparer les joueurs de développement, libres et prospects générés.
