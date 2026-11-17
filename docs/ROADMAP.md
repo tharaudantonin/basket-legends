@@ -22,6 +22,8 @@
 - [x] Définir la hiérarchie des sources, la provenance et les règles de collecte.
 - [ ] Constituer les 30 historiques de franchise (titres, bilans, records, rivalités).
 - [ ] Constituer les effectifs initiaux et mappings individuels sourcés.
+  - [x] Recevoir et enregistrer l'effectif Philadelphia Founders (17 joueurs, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [ ] Recevoir et valider les 29 autres effectifs avant leur intégration.
 - [x] Spécifier statistiques, mensurations, attributs estimés, contrôles qualité et niveaux de confiance.
 - [ ] Implémenter le modèle de données et produire les imports joueurs sourcés.
 - [ ] Préparer les joueurs de développement, libres et prospects générés.
