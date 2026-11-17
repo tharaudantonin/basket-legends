@@ -51,7 +51,7 @@
   - [x] Recevoir et enregistrer l'effectif Portland Timberbears (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif San Francisco Golden Seals (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Washington Capitals (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
-  - [ ] Recevoir et valider le dernier effectif avant son intégration.
+  - [x] Recevoir et enregistrer l'effectif Toronto Bears (17 joueurs, saison 2026-2027, validation utilisateur ; numéro 9 conservé provisoirement pour RJ Barrett et Kevin McCullar Jr. ; vérification NBA officielle détaillée encore à faire).
 - [x] Spécifier statistiques, mensurations, attributs estimés, contrôles qualité et niveaux de confiance.
 - [ ] Implémenter le modèle de données et produire les imports joueurs sourcés.
 - [ ] Préparer les joueurs de développement, libres et prospects générés.
