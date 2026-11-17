@@ -19,16 +19,26 @@ Forêts du Nord-Ouest, ours et patrimoine naturel
 Cette piste est un point de départ, pas un concept final. Symboles précis, récit de marque, style graphique et éléments à éviter restent à valider.
 
 ## 3. Palette chromatique
-**Statut : proposition issue du registre — à confirmer.**
 
-| Rôle | HEX |
-|---|---|
-| Principale | #B63D42 |
-| Secondaire | #17191C |
-| Accent | #F2EEE5 |
-| Sombre / complémentaire | #70767D |
+**Statut : Palette validée par l'utilisateur le 17 novembre 2026.**
 
-Les proportions, contrastes et associations autorisées restent à définir. Aucune de ces couleurs ne doit être considérée comme définitive avant validation explicite.
+| Rôle | Nom | HEX |
+|---|---|---|
+| Principale | Timber Copper | `#A75A35` |
+| Secondaire | Wood Beige | `#D4B98D` |
+| Accent | Forest Charcoal | `#333B35` |
+| Clair | Parchment | `#EEE9DC` |
+
+**Territoire chromatique :** Forêt du Nord-Ouest, bois, ours et tradition artisanale.
+
+**Hiérarchie d'utilisation :** Forest Charcoal et Timber Copper structurent l'identité ; Parchment sert aux inscriptions sur fonds sombres.
+
+**Règles d'application :**
+- La couleur principale doit rester identifiable sur le maillot Icon et dans le logo principal.
+- Les couleurs d'accent ne doivent pas concurrencer la couleur dominante.
+- Les inscriptions et numéros doivent conserver un contraste élevé avec leur fond.
+- Les associations seront contrôlées sur fonds clairs et sombres, en monochrome et en simulation de déficiences de perception des couleurs.
+- Les couleurs exactes ci-dessus ne peuvent être modifiées sans nouvelle validation explicite.
 
 ## 4. Système de logos
 - Logo principal : concept et silhouette à concevoir.
