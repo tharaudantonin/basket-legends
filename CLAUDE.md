@@ -6,6 +6,7 @@ Construire Basket Legends, un jeu web de management basketball profond, jouable 
 ## Source de vérité
 - `docs/GDD.md` : règles de conception et périmètre produit.
 - `docs/TDD.md` : architecture technique.
+- `docs/03-basketball-rules/GAME_RULES.md` : règles sportives NBA et exigences de simulation.
 - `docs/ART_BIBLE.md` : direction artistique.
 - `docs/FRANCHISE_BIBLE.md` et `data/franchises.json` : noms et univers des franchises.
 - `docs/PLAYER_MIRROR.md` : données et correspondance individuelle des joueurs.
@@ -27,7 +28,7 @@ En cas de contradiction, les décisions les plus récentes et explicitement vali
 
 ## Franchise mirror
 Chaque franchise fictive hérite de son club analogue : palmarès, records, bilans historiques, couleurs de référence et profil statistique collectif. Les résultats des saisons jouées sont ensuite déterminés par la simulation.
-Snapshot de travail proposé : saison 2025-2026, date 2026-06-30, à confirmer avant import de données.
+Snapshot de référence : saison 2025-2026, arrêté au 30 juin 2026. La carrière commence à l'intersaison 2026 et conduit à la saison 2026-2027.
 
 ## Direction artistique — contraintes
 - Logos de franchises sportives modernes, pas de logos commerciaux.
@@ -38,6 +39,14 @@ Snapshot de travail proposé : saison 2025-2026, date 2026-06-30, à confirmer a
 
 ## Architecture cible
 React + TypeScript + Tailwind ; Node.js + TypeScript ; PostgreSQL + Prisma ; Zod ; Vitest + Playwright ; monolithe modulaire ; pnpm workspaces/Turborepo. Le moteur de simulation est indépendant de l'interface et tourne côté serveur.
+
+## Isolation stricte du dépôt
+- Ce dépôt et ce projet sont exclusivement Basket Legends.
+- Ne jamais modifier, synchroniser, déplacer, supprimer ou réutiliser des fichiers dans le dépôt Rugby Legends.
+- Ne jamais ouvrir une PR ou pousser un commit vers Rugby Legends depuis ce projet.
+- Toute réutilisation de logique issue de Rugby Legends doit être spécifiée et réimplémentée/adaptée dans ce dépôt, sans dépendance implicite ni modification de l'autre dépôt.
+- Avant chaque opération Git, vérifier le dépôt courant, la branche et les fichiers modifiés.
+- Ne jamais supprimer un document de référence sans validation explicite de l'utilisateur.
 
 ## Méthode de développement
 1. Avant de coder, examiner l'arborescence et les documents existants.
