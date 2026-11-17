@@ -19,16 +19,17 @@ Tempête, énergie et mouvement dynamique
 Cette piste constitue un point de départ à discuter. Les symboles précis, le récit, le style graphique et les éléments à éviter restent à valider.
 
 ## 3. Palette chromatique
-**Statut : proposition du registre — à confirmer.**
 
-| Rôle | HEX |
-|---|---|
-| Principale | #1A4C86 |
-| Secondaire | #E36F32 |
-| Accent | #E8B943 |
-| Sombre / complémentaire | #F4F1E8 |
+**Palette définitive — validée par l'utilisateur le 17 novembre 2026.**
 
-Les proportions d'usage, contrastes et associations autorisées restent à définir. Aucune couleur n'est définitive avant validation explicite.
+| Rôle | Nom | HEX |
+|---|---|---|
+| Principale | Storm Orange | `#E36F32` |
+| Secondaire | Storm Graphite | `#30343B` |
+| Accent | Thunder Blue | `#42647C` |
+| Neutre | Cloud White | `#F0F1ED` |
+
+Les quatre couleurs et leurs valeurs HEX sont celles du registre canonique `data/franchises.json`. Toute ancienne proposition est obsolète ; aucune modification ne peut être faite sans nouvel arbitrage utilisateur.
 
 ## 4. Système de logos
 - Logo principal : concept, silhouette et composition à concevoir.
