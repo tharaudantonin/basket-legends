@@ -18,7 +18,7 @@ Les noms du tableau reprennent les choix de l'utilisateur au **17 novembre 2026*
 | Charlotte | Hornets | **Charlotte Bees** | Abeille stylisée et motifs hexagonaux |
 | Miami | Heat | **Miami Tropics** | Végétation tropicale, chaleur côtière, Art déco abstrait |
 | Orlando | Magic | **Orlando Comets** | Comètes, orbites et espace |
-| Washington | Wizards | **Washington Sentinels** | Architecture civique, vigilance et monuments |
+| Washington | Wizards | **Washington Capitals** | Identité civique et architecture fédérale — visuels suspendus à la revue du nom |
 | Denver | Nuggets | **Denver Summit** | Altitude, relief et sommets |
 | Minneapolis | Timberwolves | **Minnesota Borealis** | Aurore boréale, froid et forêts |
 | Oklahoma City | Thunder | **Oklahoma City Storm Riders** | Tempête, énergie et mouvement |
