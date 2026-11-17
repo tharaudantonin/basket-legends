@@ -22,3 +22,19 @@ Les codes HEX exacts des neuf franchises suivantes doivent être retranscrits de
 
 ## Prochaine phase
 Passer de la conception aux assets : planches de comparaison, logos vectoriels, maillots, terrains et kit d'interface. Après gel visuel, lancer la constitution du référentiel sportif et des effectifs de départ.
+
+## Validation finale des palettes — neuf franchises
+
+L'utilisateur a validé définitivement les neuf palettes proposées pour New York Skyliners, Philadelphia Founders, Detroit Cylinders, Indianapolis Racers, Orlando Comets, Washington Capitals, Denver Summit, Minnesota Borealis et Oklahoma City Storm Riders. Les quatre couleurs et codes HEX approuvés sont consignés dans `data/franchises.json`, `data/franchises.csv` et la bible artistique. Le registre compte désormais 30 palettes validées sur 30.
+
+- New York Skyliners : Skyline Blue `#2878A5`, Urban White `#F1F3F4`, Metro Silver `#AEB8C2`, Night Graphite `#252D35`.
+- Philadelphia Founders : Founders Parchment `#E7DDC8`, Liberty Brick `#A64B3C`, Colonial Navy `#293B50`, Ink Black `#252525`.
+- Detroit Cylinders : Industrial Charcoal `#343B43`, Foundry Steel `#A7B0B8`, Volt Yellow `#D6E342`, Machine White `#F0F1ED`.
+- Indianapolis Racers : Racing Blue `#2455A4`, Victory Gold `#D5A63C`, Track White `#F2F0E9`, Asphalt Black `#252A30`.
+- Orlando Comets : Cosmic Purple `#5C4B91`, Stardust Silver `#C5C8D2`, Nebula Blue `#344E78`, Space White `#F1F0F5`.
+- Washington Capitals : Capital Navy `#0B2D5B`, Capitol Red `#C43D45`, Federal White `#F4F3EF`, Monument Silver `#AEB7C2`.
+- Denver Summit : Summit Ice `#8EC5D4`, Alpine Granite `#59636F`, Peak Navy `#26384B`, Snow White `#F1F4F3`.
+- Minnesota Borealis : Borealis Teal `#2D8B83`, Aurora Mint `#A8D6C2`, Midnight Blue `#202C3A`, Arctic Ice `#E7F0ED`.
+- Oklahoma City Storm Riders : Storm Orange `#E36F32`, Storm Graphite `#30343B`, Thunder Blue `#42647C`, Cloud White `#F0F1ED`.
+
+Le risque de collision du nom Washington Capitals avec la franchise NHL demeure une réserve juridique distincte de la validation créative.

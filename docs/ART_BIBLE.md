@@ -27,7 +27,7 @@ Les logos doivent être des emblèmes de franchises sportives professionnelles :
 ## Palette et cohérence
 - Les codes HEX sont définis dans le registre canonique `data/franchises.json`.
 - Une couleur validée ne peut pas être modifiée sans arbitrage explicite.
-- Ne pas déduire ou inventer les codes exacts manquants depuis une image ou une ancienne proposition.
+- Les 30 palettes sont désormais transcrites et validées dans le registre canonique.
 - Les contrôles de contraste, de daltonisme, de lisibilité en niveaux de gris et de différenciation des maillots Icon doivent précéder la production finale.
 
 ## Boston Beacons
@@ -41,6 +41,24 @@ Les dossiers individuels sont désormais définitifs :
 - Sacramento : California Gold, logo The Golden Nugget (C), Heritage-modern, maillots Classic.
 - Milwaukee : Great Lakes Heritage, logo The Great Stag (A), Heritage-modern, maillots Heritage.
 - Utah : Red Rock Flight, logo The Raptor Flight (B), Modern, maillots Modern.
+
+## Palettes désormais gelées — neuf franchises
+
+Les neuf palettes suivantes ont été explicitement approuvées le 17 novembre 2026. L'ordre est : principale, secondaire, accent, sombre.
+
+| Franchise | Principale | Secondaire | Accent | Sombre |
+|---|---|---|---|---|
+| New York Skyliners | Skyline Blue `#2878A5` | Urban White `#F1F3F4` | Metro Silver `#AEB8C2` | Night Graphite `#252D35` |
+| Philadelphia Founders | Founders Parchment `#E7DDC8` | Liberty Brick `#A64B3C` | Colonial Navy `#293B50` | Ink Black `#252525` |
+| Detroit Cylinders | Industrial Charcoal `#343B43` | Foundry Steel `#A7B0B8` | Volt Yellow `#D6E342` | Machine White `#F0F1ED` |
+| Indianapolis Racers | Racing Blue `#2455A4` | Victory Gold `#D5A63C` | Track White `#F2F0E9` | Asphalt Black `#252A30` |
+| Orlando Comets | Cosmic Purple `#5C4B91` | Stardust Silver `#C5C8D2` | Nebula Blue `#344E78` | Space White `#F1F0F5` |
+| Washington Capitals | Capital Navy `#0B2D5B` | Capitol Red `#C43D45` | Federal White `#F4F3EF` | Monument Silver `#AEB7C2` |
+| Denver Summit | Summit Ice `#8EC5D4` | Alpine Granite `#59636F` | Peak Navy `#26384B` | Snow White `#F1F4F3` |
+| Minnesota Borealis | Borealis Teal `#2D8B83` | Aurora Mint `#A8D6C2` | Midnight Blue `#202C3A` | Arctic Ice `#E7F0ED` |
+| Oklahoma City Storm Riders | Storm Orange `#E36F32` | Storm Graphite `#30343B` | Thunder Blue `#42647C` | Cloud White `#F0F1ED` |
+
+Les 30 palettes sont désormais validées et leurs quatre codes HEX sont consignés dans `data/franchises.json`. Toute modification ultérieure nécessite un nouvel arbitrage explicite.
 
 ## Interface
 - Navigation latérale persistante sur desktop ; navigation adaptée au mobile.

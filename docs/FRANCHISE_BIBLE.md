@@ -1,6 +1,6 @@
 # Franchise Bible — registre des 30 organisations
 
-Les 30 noms de franchise ci-dessous sont les choix retenus pour Basket Legends. Les identités créatives ont été validées au cours des sessions de conception du 17 novembre 2026. Les palettes exactes transcrites sont marquées comme validées dans `data/franchises.json`; neuf palettes du groupe bleu doivent encore être retranscrites depuis leurs arbitrages détaillés avant de considérer les codes HEX du registre historique comme définitifs.
+Les 30 noms de franchise ci-dessous sont les choix retenus pour Basket Legends. Les identités créatives ont été validées au cours des sessions de conception du 17 novembre 2026. Les 30 palettes exactes, chacune composée de quatre couleurs HEX, sont validées et transcrites dans `data/franchises.json`.
 
 | Ville | Club de référence | Franchise Basket Legends | Territoire créatif |
 |---|---|---|---|
@@ -44,7 +44,7 @@ Les franchises sportives de référence servent de repères historiques et stati
 ## Statut des couleurs et des assets
 
 - Les valeurs HEX confirmées et leur statut sont dans `data/franchises.json`.
-- Les neuf entrées New York, Philadelphia, Detroit, Indianapolis, Orlando, Washington, Denver, Minnesota et Oklahoma City conservent les valeurs historiques du registre en attendant la retranscription des codes exacts approuvés.
+- Les neuf palettes New York, Philadelphia, Detroit, Indianapolis, Orlando, Washington, Denver, Minnesota et Oklahoma City ont été définitivement approuvées le 17 novembre 2026 ; leurs quatre couleurs et codes HEX figurent désormais dans le registre canonique.
 - La validation d'une direction artistique ne signifie pas que les fichiers graphiques finaux existent : les SVG, maquettes de maillots et terrains restent à produire ou à contrôler.
 
 ## Revue juridique

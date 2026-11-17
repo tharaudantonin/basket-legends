@@ -5,7 +5,7 @@
 - [x] Valider les 30 directions artistiques.
 - [x] Définir les règles transversales de logo et de maillots.
 - [x] Documenter les trois derniers dossiers.
-- [ ] Retranscrire les codes HEX exacts des neuf franchises signalées dans le registre.
+- [x] Valider et retranscrire les quatre couleurs HEX des neuf palettes restantes (30/30 palettes gelées).
 - [ ] Revue juridique des noms, en priorité Washington Capitals.
 - [ ] Confirmer le snapshot de référence (proposition : saison 2025-2026 au 30 juin 2026).
 

@@ -8,8 +8,8 @@ Vérifier que les 30 franchises sont cohérentes avec leur territoire et restent
 
 ## 2. Ce qui est acquis
 - Les 30 noms et directions créatives sont arbitrés.
-- Les palettes exactes sont transcrites pour 21 franchises.
-- Neuf palettes du groupe bleu ont une direction validée mais leurs quatre codes HEX exacts restent à retranscrire ; les anciennes valeurs du registre ne doivent pas être considérées comme définitives.
+- Les 30 palettes sont transcrites et validées, avec quatre codes HEX par franchise.
+- Les neuf palettes précédemment en attente ont été approuvées et transcrites le 17 novembre 2026.
 - Les trois derniers dossiers — Sacramento Diggers, Milwaukee Stags et Utah Desert Raptors — sont désormais détaillés et validés.
 - La validation créative ne remplace ni les tests visuels ni la revue juridique.
 
@@ -49,4 +49,4 @@ Vérifier que les 30 franchises sont cohérentes avec leur territoire et restent
 Le nom **Washington Capitals** entre en collision avec une franchise existante de NHL. Le nom doit faire l'objet d'une revue juridique avant toute diffusion publique ou commerciale. Aucun actif graphique de cette franchise ne doit être utilisé.
 
 ## 7. Conclusion
-La phase d'arbitrage créatif des 30 franchises est terminée. La phase suivante est la production des assets et leur contrôle comparatif. Les valeurs HEX non retranscrites doivent être récupérées dans les arbitrages originaux avant le gel des palettes.
+La phase d'arbitrage créatif des 30 franchises est terminée. La phase suivante est la production des assets et leur contrôle comparatif. Les 30 palettes sont gelées dans le registre canonique ; toute modification nécessite un nouvel arbitrage utilisateur.

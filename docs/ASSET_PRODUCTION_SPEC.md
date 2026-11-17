@@ -101,3 +101,11 @@ Les SVG sont les sources maîtresses pour les éléments vectoriels. Les exports
 - Palettes restant à retranscrire : 9/30.
 - Assets finaux : production à lancer.
 - Revue juridique : à effectuer.
+
+
+## Prérequis de lancement — statut au 17 novembre 2026
+
+- [x] Les 30 directions artistiques sont approuvées.
+- [x] Les 30 palettes sont validées et leurs 120 codes HEX sont inscrits dans le registre canonique.
+- [ ] Revue juridique du nom Washington Capitals avant diffusion publique ou commerciale.
+- [ ] Validation du pack pilote Sacramento Diggers avant production en série.

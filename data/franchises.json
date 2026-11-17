@@ -7,7 +7,7 @@
     "date": "2026-06-30",
     "status": "to-confirm"
   },
-  "note": "Les 30 directions artistiques ont été validées dans la conception. Les palettes sont transcrites et marquées validées pour les 21 franchises dont les codes exacts sont disponibles dans l'historique consolidé. Pour 9 franchises, les valeurs HEX du registre antérieur sont conservées comme données non encore retranscrites depuis les arbitrages ; elles ne doivent pas être traitées comme codes définitifs. Les assets graphiques finaux restent à produire. Washington Capitals : collision de nom avec la franchise NHL, revue juridique obligatoire avant diffusion publique ou commerciale. Aucune identité graphique de club réel ne doit être copiée.",
+  "note": "Les 30 directions artistiques et les 30 palettes (quatre couleurs et codes HEX) ont été validées dans les sessions de conception. Les palettes sont transcrites et marquées validées dans ce registre canonique. Les assets graphiques finaux restent à produire. Washington Capitals : collision de nom avec la franchise NHL, revue juridique obligatoire avant diffusion publique ou commerciale. Aucune identité graphique de club réel ne doit être copiée.",
   "franchises": [
     {
       "id": "boston",
@@ -97,10 +97,10 @@
       "fictionalName": "New York Skyliners",
       "creativeTerritory": "Skyline, verticalité et énergie métropolitaine",
       "paletteProposal": {
-        "primary": "#174A7E",
-        "secondary": "#F07B28",
-        "accent": "#F4F4F1",
-        "dark": "#172333"
+        "primary": "#2878A5",
+        "secondary": "#F1F3F4",
+        "accent": "#AEB8C2",
+        "dark": "#252D35"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -119,7 +119,13 @@
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
-      "paletteStatus": "validated-values-not-yet-transcribed"
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Skyline Blue",
+        "Urban White",
+        "Metro Silver",
+        "Night Graphite"
+      ]
     },
     {
       "id": "philadelphia",
@@ -128,10 +134,10 @@
       "fictionalName": "Philadelphia Founders",
       "creativeTerritory": "Histoire civique, indépendance et géométrie",
       "paletteProposal": {
-        "primary": "#163A69",
-        "secondary": "#B8323B",
-        "accent": "#F5F3ED",
-        "dark": "#9FA9B3"
+        "primary": "#E7DDC8",
+        "secondary": "#A64B3C",
+        "accent": "#293B50",
+        "dark": "#252525"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -150,7 +156,13 @@
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
-      "paletteStatus": "validated-values-not-yet-transcribed"
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Founders Parchment",
+        "Liberty Brick",
+        "Colonial Navy",
+        "Ink Black"
+      ]
     },
     {
       "id": "toronto",
@@ -270,10 +282,10 @@
       "fictionalName": "Detroit Cylinders",
       "creativeTerritory": "Mécanique automobile, cylindres et ingénierie",
       "paletteProposal": {
-        "primary": "#1F4D84",
-        "secondary": "#C9343E",
-        "accent": "#F4F3EF",
-        "dark": "#1A2027"
+        "primary": "#343B43",
+        "secondary": "#A7B0B8",
+        "accent": "#D6E342",
+        "dark": "#F0F1ED"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -292,7 +304,13 @@
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
-      "paletteStatus": "validated-values-not-yet-transcribed"
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Industrial Charcoal",
+        "Foundry Steel",
+        "Volt Yellow",
+        "Machine White"
+      ]
     },
     {
       "id": "indianapolis",
@@ -301,10 +319,10 @@
       "fictionalName": "Indianapolis Racers",
       "creativeTerritory": "Compétition automobile, ovales et vitesse",
       "paletteProposal": {
-        "primary": "#183B68",
-        "secondary": "#E0B43E",
-        "accent": "#F4F1E7",
-        "dark": "#222832"
+        "primary": "#2455A4",
+        "secondary": "#D5A63C",
+        "accent": "#F2F0E9",
+        "dark": "#252A30"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -323,7 +341,13 @@
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
-      "paletteStatus": "validated-values-not-yet-transcribed"
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Racing Blue",
+        "Victory Gold",
+        "Track White",
+        "Asphalt Black"
+      ]
     },
     {
       "id": "milwaukee",
@@ -494,10 +518,10 @@
       "fictionalName": "Orlando Comets",
       "creativeTerritory": "Comètes, orbites et mouvement spatial",
       "paletteProposal": {
-        "primary": "#1A4D85",
-        "secondary": "#9AA8B7",
-        "accent": "#171B26",
-        "dark": "#F3F4F1"
+        "primary": "#5C4B91",
+        "secondary": "#C5C8D2",
+        "accent": "#344E78",
+        "dark": "#F1F0F5"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -516,7 +540,13 @@
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
-      "paletteStatus": "validated-values-not-yet-transcribed"
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Cosmic Purple",
+        "Stardust Silver",
+        "Nebula Blue",
+        "Space White"
+      ]
     },
     {
       "id": "washington",
@@ -526,9 +556,9 @@
       "creativeTerritory": "Monument abstrait, étoile et géométrie civique américaine ; emblème de basketball original, sans référence graphique à la franchise NHL.",
       "paletteProposal": {
         "primary": "#0B2D5B",
-        "secondary": "#E31837",
-        "accent": "#FFFFFF",
-        "dark": "#172333"
+        "secondary": "#C43D45",
+        "accent": "#F4F3EF",
+        "dark": "#AEB7C2"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "existing-professional-team-name-conflict-review-required",
@@ -554,7 +584,13 @@
         "assets/franchises/washington-capitals/uniform-concepts.svg"
       ],
       "artDirectionStatus": "approved-in-conversation",
-      "paletteStatus": "validated-values-not-yet-transcribed"
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Capital Navy",
+        "Capitol Red",
+        "Federal White",
+        "Monument Silver"
+      ]
     },
     {
       "id": "denver",
@@ -563,10 +599,10 @@
       "fictionalName": "Denver Summit",
       "creativeTerritory": "Altitude, relief et sommets montagneux",
       "paletteProposal": {
-        "primary": "#153C69",
-        "secondary": "#D6A83E",
-        "accent": "#6B303A",
-        "dark": "#F4F0E5"
+        "primary": "#8EC5D4",
+        "secondary": "#59636F",
+        "accent": "#26384B",
+        "dark": "#F1F4F3"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -585,7 +621,13 @@
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
-      "paletteStatus": "validated-values-not-yet-transcribed"
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Summit Ice",
+        "Alpine Granite",
+        "Peak Navy",
+        "Snow White"
+      ]
     },
     {
       "id": "minnesota",
@@ -594,10 +636,10 @@
       "fictionalName": "Minnesota Borealis",
       "creativeTerritory": "Aurore boréale, froid et forêts stylisées",
       "paletteProposal": {
-        "primary": "#183E5D",
-        "secondary": "#76A7A2",
-        "accent": "#D9E1E0",
-        "dark": "#202A36"
+        "primary": "#2D8B83",
+        "secondary": "#A8D6C2",
+        "accent": "#202C3A",
+        "dark": "#E7F0ED"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -616,7 +658,13 @@
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
-      "paletteStatus": "validated-values-not-yet-transcribed"
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Borealis Teal",
+        "Aurora Mint",
+        "Midnight Blue",
+        "Arctic Ice"
+      ]
     },
     {
       "id": "oklahoma-city",
@@ -625,10 +673,10 @@
       "fictionalName": "Oklahoma City Storm Riders",
       "creativeTerritory": "Tempête, énergie et mouvement dynamique",
       "paletteProposal": {
-        "primary": "#1A4C86",
-        "secondary": "#E36F32",
-        "accent": "#E8B943",
-        "dark": "#F4F1E8"
+        "primary": "#E36F32",
+        "secondary": "#30343B",
+        "accent": "#42647C",
+        "dark": "#F0F1ED"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -647,7 +695,13 @@
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
-      "paletteStatus": "validated-values-not-yet-transcribed"
+      "paletteStatus": "validated",
+      "paletteNames": [
+        "Storm Orange",
+        "Storm Graphite",
+        "Thunder Blue",
+        "Cloud White"
+      ]
     },
     {
       "id": "portland",
