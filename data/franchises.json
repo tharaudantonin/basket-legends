@@ -7,7 +7,7 @@
     "date": "2026-06-30",
     "status": "to-confirm"
   },
-  "note": "Washington Capitals est le nom d'une franchise NHL existante et fait l'objet de marques revendiquées par Lincoln Hockey. Le nom est conservé comme choix de travail, mais l'identité graphique et l'exploitation publique sont bloquées dans l'attente d'une revue juridique ou d'un changement de nom. Boston Beacons dispose d'une première identité vectorielle conceptuelle V1 ; les autres identités restent à concevoir. Noms et palettes non vérifiés juridiquement.",
+  "note": "Washington Capitals est un nom déjà utilisé par une franchise NHL : le choix créatif de l'utilisateur est conservé, mais une revue juridique est obligatoire avant diffusion. Le concept graphique Basket Legends est original et ne doit reprendre aucun actif de la franchise NHL. Boston Beacons : palette validée, logo simplifié vintage demandé, maillots à réviser avec cols unis. Washington : maillot Icon navy avec étoiles blanches sur les deux côtés ; cols unis.",
   "franchises": [
     {
       "id": "boston",
@@ -427,16 +427,16 @@
       "city": "Washington",
       "referenceClub": "Washington Wizards",
       "fictionalName": "Washington Capitals",
-      "creativeTerritory": "Identité civique de Washington et architecture fédérale — création visuelle suspendue à la résolution du conflit de nom",
+      "creativeTerritory": "Monument abstrait, étoile et géométrie civique américaine ; emblème de basketball original, sans référence graphique à la franchise NHL.",
       "paletteProposal": {
         "primary": "#0B2D5B",
-        "secondary": "#FFFFFF",
-        "accent": "#E31837",
-        "dark": "#0B2D5B"
+        "secondary": "#E31837",
+        "accent": "#FFFFFF",
+        "dark": "#172333"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "existing-professional-team-name-conflict-review-required",
-      "visualStatus": "original-concept-v1-created-name-clearance-required",
+      "visualStatus": "concept-specified-assets-pending",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -450,7 +450,7 @@
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
       },
-      "brandRisk": "high-name-collision-with-existing-NHL-franchise",
+      "brandRisk": "high-name-collision-with-existing-NHL-franchise; legal clearance required before public or commercial release",
       "identityFiles": [
         "assets/franchises/washington-capitals/logo-primary.svg",
         "assets/franchises/washington-capitals/monogram.svg",
