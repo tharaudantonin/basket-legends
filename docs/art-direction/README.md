@@ -13,7 +13,7 @@ Ce répertoire centralise les décisions créatives validées et sert de référ
 ## Statuts
 - **Direction approuvée** : nom, concept et arbitrages créatifs validés en conversation.
 - **Palette canonique** : les quatre valeurs HEX validées sont celles de `data/franchises.json` ; `data/franchises.csv` est son miroir.
-- **Dossier à synchroniser** : certaines fiches Markdown conservent des valeurs historiques. En cas de divergence, le JSON canonique prévaut ; ne jamais réutiliser les anciens HEX.
+- **Dossier synchronisé** : les 30 fiches Markdown reprennent désormais les quatre couleurs et les noms du registre canonique.
 - **Assets à produire** : les décisions ne constituent pas des fichiers graphiques finis.
 
 ## Dossiers
@@ -60,8 +60,7 @@ Ce répertoire centralise les décisions créatives validées et sert de référ
 - Formats maîtres vectoriels et variantes couleur, monochrome et inversée.
 
 ## Points de contrôle avant gel des assets
-1. Synchroniser les palettes de 18 dossiers Markdown depuis le registre JSON canonique.
-2. Produire une planche comparative des 30 logos en silhouette monochrome.
-3. Comparer les 30 maillots Icon et Association côte à côte.
-4. Vérifier contrastes, daltonisme, tailles minimales et cols unis.
-5. Effectuer la revue juridique des noms, logos et droits d'image.
+1. Produire une planche comparative des 30 logos en silhouette monochrome.
+2. Comparer les 30 maillots Icon et Association côte à côte.
+3. Vérifier contrastes, daltonisme, tailles minimales et cols unis.
+4. Effectuer la revue juridique des noms, logos et droits d'image.
