@@ -19,16 +19,17 @@ Scorpion, désert et chaleur minérale
 Cette piste constitue un point de départ à discuter. Les symboles précis, le récit, le style graphique et les éléments à éviter restent à valider.
 
 ## 3. Palette chromatique
-**Statut : proposition du registre — à confirmer.**
 
-| Rôle | HEX |
-|---|---|
-| Principale | #D95C32 |
-| Secondaire | #4B3472 |
-| Accent | #1B1D24 |
-| Sombre / complémentaire | #F2E9D8 |
+**Palette définitive — validée par l'utilisateur le 17 novembre 2026.**
 
-Les proportions d'usage, contrastes et associations autorisées restent à définir. Aucune couleur n'est définitive avant validation explicite.
+| Rôle | Nom | HEX |
+|---|---|---|
+| Principale | Desert Ember | `#C65B3F` |
+| Secondaire | Scorpion Black | `#292B32` |
+| Accent | Sonoran Sand | `#D5B477` |
+| Neutre | Desert Bone | `#EDE5D5` |
+
+Les quatre couleurs et leurs valeurs HEX sont celles du registre canonique `data/franchises.json`. Toute ancienne proposition est obsolète ; aucune modification ne peut être faite sans nouvel arbitrage utilisateur.
 
 ## 4. Système de logos
 - Logo principal : concept, silhouette et composition à concevoir.
