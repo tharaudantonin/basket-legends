@@ -47,3 +47,21 @@ Sources :
 - https://www.nhl.com/capitals/
 - https://www.nhl.com/fr/capitals/roster
 - https://revenue.delaware.gov/trade-name-details/?tradename_id=8755
+
+
+## Boston Beacons — direction vintage V2
+**Palette validée :** Harbor Green `#0F4B3A`, Warm Ivory `#F2EFE5`, Antique Brass `#B69A62`, Ink Charcoal `#1D2523`.
+Logo principal : roundel vintage à double cercle, phare minimal, vagues et wordmark serif. Symbole secondaire : phare seul dans un cercle vert. Monogramme : B serif. Les maillots sont simplifiés, inspirés de la construction Washington, avec col uni d'une seule couleur.
+
+Fichiers : `assets/franchises/boston-beacons/logo-primary.svg`, `logo-secondary.svg`, `monogram.svg`, `wordmark.svg`, `uniform-concepts.svg`.
+
+## Washington Capitals — concept graphique V1
+Nom conservé comme nom de travail demandé. La marque visuelle est une création originale autour d'un monument stylisé et d'une étoile, sans reprendre le logo de l'équipe NHL. Palette conceptuelle : navy `#0B2D5B`, rouge `#E31837`, blanc `#FFFFFF`.
+- Association : blanc, accents navy et rouge.
+- Icon : navy avec **étoiles blanches sur les deux côtés**.
+- Statement : rouge avec accents navy.
+- Les trois cols sont chacun d'une seule couleur unie, sans mélange ni liseré bicolore.
+
+Fichiers : `assets/franchises/washington-capitals/logo-primary.svg`, `monogram.svg`, `wordmark.svg`, `uniform-concepts.svg`.
+
+**Vigilance de nom :** Washington Capitals est également le nom d'une franchise NHL. Ces créations sont originales et n'utilisent pas les éléments graphiques de cette franchise, mais la disponibilité juridique du nom pour le jeu reste à vérifier avant diffusion publique ou commerciale.
