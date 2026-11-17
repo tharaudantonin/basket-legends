@@ -24,18 +24,25 @@ Cette piste est un point de départ enregistré. Les symboles précis, le récit
 
 ## 3. Palette chromatique
 
-**Statut : Proposition issue du registre — à confirmer.**
+**Statut : Palette validée par l'utilisateur le 17 novembre 2026.**
 
-| Rôle | HEX |
-|---|---|
-| Principale | #C43C42 |
-| Secondaire | #171B20 |
-| Accent | #F2EFE5 |
-| Sombre / complémentaire | #7BC3C6 |
+| Rôle | Nom | HEX |
+|---|---|---|
+| Principale | Tropical Teal | `#159B9A` |
+| Secondaire | Coral | `#F07869` |
+| Accent | Sand | `#F5E9D5` |
+| Sombre | Midnight | `#17232B` |
 
-Ces valeurs sont des propositions de travail provenant du registre des franchises. Elles ne sont pas définitives et devront être discutées, corrigées puis validées.
+**Territoire chromatique :** Art déco, végétation tropicale, littoral et énergie solaire.
 
-Les proportions d'usage, contrastes, associations autorisées et variantes restent à spécifier.
+**Hiérarchie d'utilisation :** Tropical Teal et Midnight portent les tenues ; Coral est un accent expressif, Sand assure les contrastes.
+
+**Règles d'application :**
+- La couleur principale doit rester identifiable sur le maillot Icon et dans le logo principal.
+- Les couleurs d'accent ne doivent pas concurrencer la couleur dominante.
+- Les inscriptions et numéros doivent conserver un contraste élevé avec leur fond.
+- Les associations seront contrôlées sur fonds clairs et sombres, en monochrome et en simulation de déficiences de perception des couleurs.
+- Les couleurs exactes ci-dessus ne peuvent être modifiées sans nouvelle validation explicite.
 
 ## 4. Système de logos
 
@@ -132,4 +139,5 @@ Les quatre tenues restent à concevoir en détail :
 | Date | Décision | Statut |
 |---|---|---|
 | 2026-11-17 | Création du dossier initial à partir du registre des franchises | Ouvert |
+| 2026-11-17 | Palette chromatique arbitrée et validée par l'utilisateur | Validée |
 
