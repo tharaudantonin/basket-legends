@@ -1,5 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" role="img" aria-labelledby="title">
-<title id="title">Boston Beacons — wordmark V1</title><rect width="1000" height="300" fill="none"/>
-<text x="500" y="78" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="48" font-weight="700" letter-spacing="18" fill="#B69A62">BOSTON</text>
-<text x="500" y="205" text-anchor="middle" font-family="Arial Narrow,Arial,sans-serif" font-size="142" font-weight="900" letter-spacing="3" fill="#0F4B3A">BEACONS</text>
-<path d="M170 237h660" stroke="#B69A62" stroke-width="8"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 260" role="img" aria-labelledby="t">
+<title id="t">Boston Beacons — vintage wordmark V2</title>
+<text x="500" y="80" text-anchor="middle" font-family="Georgia,serif" font-size="48" font-weight="bold" letter-spacing="12" fill="#B69A62">BOSTON</text>
+<text x="500" y="190" text-anchor="middle" font-family="Georgia,serif" font-size="112" font-weight="bold" letter-spacing="2" fill="#0F4B3A">BEACONS</text>
+<path d="M190 218h620" stroke="#B69A62" stroke-width="7"/>
+</svg>
