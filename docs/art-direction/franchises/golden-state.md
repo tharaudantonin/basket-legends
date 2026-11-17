@@ -19,16 +19,17 @@ Otarie, baie, littoral et héritage maritime
 Cette piste est un point de départ, pas un concept final. Symboles précis, récit de marque, style graphique et éléments à éviter restent à valider.
 
 ## 3. Palette chromatique
-**Statut : proposition issue du registre — à confirmer.**
 
-| Rôle | HEX |
-|---|---|
-| Principale | #1A4F89 |
-| Secondaire | #D9AD43 |
-| Accent | #F3F1EA |
-| Sombre / complémentaire | #202833 |
+**Palette définitive — validée par l'utilisateur le 17 novembre 2026.**
 
-Les proportions, contrastes et associations autorisées restent à définir. Aucune de ces couleurs ne doit être considérée comme définitive avant validation explicite.
+| Rôle | Nom | HEX |
+|---|---|---|
+| Principale | Pacific Gold | `#D9AD43` |
+| Secondaire | Deep Sea | `#173D56` |
+| Accent | Salt White | `#F3F1EA` |
+| Neutre | Sea Mist | `#A9B9C4` |
+
+Les quatre couleurs et leurs valeurs HEX sont celles du registre canonique `data/franchises.json`. Toute ancienne proposition est obsolète ; aucune modification ne peut être faite sans nouvel arbitrage utilisateur.
 
 ## 4. Système de logos
 - Logo principal : concept et silhouette à concevoir.
