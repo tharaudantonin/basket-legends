@@ -119,6 +119,68 @@ Lettre **B** personnalisée, dessinée dans l'esprit de la typographie du wordma
 - Aucun effet 3D, ombre portée, dégradé ou texture dans les versions maîtresses.
 - Prévoir une zone de protection minimale égale à la largeur du fût du phare autour du logo.
 
+
+
+### 4.1.1. Géométrie détaillée — version de travail validée dans son principe
+
+**Direction du phare retenue : A — géométrique et minimaliste.** Le symbole doit être construit comme un pictogramme architectural symétrique, à arêtes nettes et masses pleines. Il ne doit pas ressembler à une gravure, à un dessin touristique ou à une illustration de paysage.
+
+#### Grille du roundel
+
+Utiliser une grille de construction normalisée de **100 × 100 unités**, centrée en (50, 50).
+
+- Cercle extérieur : diamètre 100 ; contour extérieur Harbor Green.
+- Marge de sécurité intérieure : 2 unités.
+- Disque central ivoire : diamètre 62 unités, centré sur le même axe.
+- Anneau typographique vert : espace compris entre le disque central et le cercle extérieur.
+- Filet de séparation entre l'anneau et le disque : 1 unité, en Warm Ivory ou en Harbor Green selon la version de production ; éviter le double filet décoratif.
+- Le roundel reste strictement circulaire : aucun écusson, ruban, bannière ou extension sous le cercle.
+
+Ces dimensions constituent une grille de départ pour le dessin vectoriel ; les courbes typographiques pourront être ajustées optiquement sans déformer la symétrie générale.
+
+#### Placement des inscriptions
+
+- « BOSTON » suit l'arc supérieur, centré sur l'axe vertical. Capitales espacées modérément, taille contenue.
+- « BEACONS » suit l'arc inférieur, centré, légèrement plus grand et plus lourd que « BOSTON ». Il constitue l'inscription dominante.
+- Les lettres sont orientées tangentiellement à l'arc, sans effet de perspective ni déformation excessive.
+- Deux séparateurs identiques — petits points ou losanges pleins — sont placés à 9 h et 3 h, au milieu de l'anneau. Ils ne doivent pas concurrencer les mots.
+- « EST. 1946 » est centré dans le disque ivoire, sous le phare. Utiliser une sans-serif compacte ou une petite capitale slab très lisible, avec espacement régulier.
+- Ne pas ajouter de seconde date, de slogan, de ville secondaire ou de texte circulaire supplémentaire.
+
+#### Construction du phare
+
+Le phare est dessiné sur l'axe x = 50 et occupe environ 35 à 38 unités de hauteur dans le disque intérieur.
+
+1. **Socle :** une base horizontale simple, sans rochers ni vague. Largeur indicative : 16 unités.
+2. **Fût :** trapèze vertical plein, légèrement évasé vers le bas ; largeur indicative de 9 unités au sommet à 13 unités à la base. Les côtés restent droits.
+3. **Plateforme :** un seul débord horizontal fin sous la lanterne, sans balustrade détaillée.
+4. **Lanterne :** petit volume rectangulaire centré, largeur indicative de 10 unités et hauteur de 6 à 7 unités.
+5. **Toit :** forme trapézoïdale ou triangulaire très basse, sans girouette ni ornement.
+6. **Faisceaux :** deux formes géométriques symétriques partant de la lanterne, dirigées vers le haut-gauche et le haut-droit. Ils restent courts et contenus dans le disque ivoire ; leur largeur diminue vers l'extérieur. Ils peuvent être dessinés en réserve ivoire ou en Harbor Green selon le contraste, mais ne doivent jamais traverser l'anneau typographique.
+
+Le corps principal du phare est Harbor Green. L'Antique Brass peut être réservé à une petite ouverture lumineuse ou à un détail unique de la lanterne. Le laiton ne doit pas servir à dessiner tous les contours.
+
+#### Hiérarchie, équilibre et lisibilité
+
+- Le phare est le point focal ; son axe doit coïncider avec celui du roundel.
+- « BEACONS » et le phare ont une importance visuelle comparable ; « BOSTON » est secondaire et « EST. 1946 » tertiaire.
+- Préserver une respiration nette entre la base du phare et la date.
+- Aucun élément du phare ne touche le filet du disque central.
+- Le logo doit rester équilibré en monochrome : la silhouette doit fonctionner sans l'accent laiton.
+- À petite taille, supprimer d'abord les faisceaux et le détail laiton ; conserver le fût, la lanterne et les inscriptions si la taille le permet. En dessous du seuil de lisibilité du texte, employer le phare seul.
+
+#### Contrôle de production
+
+Avant validation finale, produire une planche vectorielle présentant :
+- le roundel en couleur sur fond clair ;
+- le roundel inversé sur fond vert ;
+- une version monochrome ;
+- un aperçu à 100 %, 48 px et 24 px ;
+- le phare seul à côté du roundel ;
+- une vue de construction avec cercles, axe central, repères 9 h / 3 h et lignes de base typographiques.
+
+**Statut :** choix du style de phare validé par l'utilisateur ; géométrie et proportions ci-dessus proposées comme spécification de dessin, à confirmer sur la première exécution vectorielle.
+
 ## 5. Typographie et langage graphique
 
 ### 5.1. Typographie
