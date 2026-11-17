@@ -24,18 +24,16 @@ Cette piste est un point de départ enregistré. Les symboles précis, le récit
 
 ## 3. Palette chromatique
 
-**Statut : Proposition issue du registre — à confirmer.**
+**Palette définitive — validée par l'utilisateur le 17 novembre 2026.**
 
-| Rôle | HEX |
-|---|---|
-| Principale | #183B68 |
-| Secondaire | #E0B43E |
-| Accent | #F4F1E7 |
-| Sombre / complémentaire | #222832 |
+| Rôle | Nom | HEX |
+|---|---|---|
+| Principale | Racing Blue | `#2455A4` |
+| Secondaire | Victory Gold | `#D5A63C` |
+| Accent | Track White | `#F2F0E9` |
+| Neutre | Asphalt Black | `#252A30` |
 
-Ces valeurs sont des propositions de travail provenant du registre des franchises. Elles ne sont pas définitives et devront être discutées, corrigées puis validées.
-
-Les proportions d'usage, contrastes, associations autorisées et variantes restent à spécifier.
+Les quatre couleurs et leurs valeurs HEX sont celles du registre canonique `data/franchises.json`. Toute ancienne proposition est obsolète ; aucune modification ne peut être faite sans nouvel arbitrage utilisateur.
 
 ## 4. Système de logos
 
