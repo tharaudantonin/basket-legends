@@ -16,7 +16,7 @@ Basket Legends est un jeu web de management basketball au long cours. Le joueur 
 | Données joueurs | Âge au snapshot, taille, poids, poste, statistiques et attributs dérivés |
 | Rôle | General Manager |
 | Délégation | Responsabilités délégables au Head Coach et au staff |
-| Effectifs initiaux | Environ 840 joueurs (répartition indicative : 450 NBA, 180 développement, 210 libres/prospects) |
+| Effectifs initiaux | Environ 840 joueurs (cible indicative à confirmer par recensement : 450 NBA, 180 développement, 210 libres/prospects) |
 | Matchs | Rapide, commenté possession par possession, interactif |
 | Carrière | Longue, générative et sans limite prédéfinie |
 | Développement | V1 complète et jouable, enrichie ensuite |
