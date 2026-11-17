@@ -30,7 +30,7 @@ Un nombre de contres ne suffit pas à mesurer la qualité défensive ; un taux d
 La direction demandée est de conserver une forte cohérence visuelle avec le joueur de référence (morphologie et traits physiques documentés) tout en créant des illustrations ou modèles propres à Basket Legends. Aucun portrait photographique, scan facial, tatouage reproduit ou asset tiers ne doit être intégré sans provenance et autorisation appropriées. La revue des droits à l'image/personnalité et des droits applicables est requise avant diffusion publique ou commerciale si la ressemblance demeure identifiable.
 
 ## Snapshot proposé
-Fin de saison **2025-2026**, date de référence technique **30 juin 2026**, à confirmer avant l'import. L'âge est calculé à cette date. Les effectifs, statistiques, contrats et appartenances sont gelés dans une version de données identifiée. En carrière, les joueurs progressent, vieillissent, se blessent, changent d'équipe et prennent leur retraite.
+Fin de saison **2025-2026**, date de référence technique **30 juin 2026** (snapshot validé). La carrière débute à l'intersaison 2026 et progresse vers la saison **2026-2027**. L'âge initial est calculé au 30 juin 2026. Les effectifs, statistiques, contrats et appartenances sont gelés dans une version de données identifiée. L'âge est calculé à cette date. Les effectifs, statistiques, contrats et appartenances sont gelés dans une version de données identifiée. En carrière, les joueurs progressent, vieillissent, se blessent, changent d'équipe et prennent leur retraite.
 
 ## Schéma de données indicatif
 ```ts
