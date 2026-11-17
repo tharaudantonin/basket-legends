@@ -18,10 +18,12 @@
 - [ ] Intégrer les assets dans le kit UI desktop et mobile.
 
 ## Phase 2 — Référentiel sportif et données de départ
-- [ ] Définir le snapshot NBA de référence et les règles de collecte.
+- [x] Valider le snapshot NBA de référence : saison 2025-2026 au 30 juin 2026.
+- [x] Définir la hiérarchie des sources, la provenance et les règles de collecte.
 - [ ] Constituer les 30 historiques de franchise (titres, bilans, records, rivalités).
 - [ ] Constituer les effectifs initiaux et mappings individuels sourcés.
-- [ ] Documenter statistiques, mensurations, attributs estimés et niveau de confiance.
+- [x] Spécifier statistiques, mensurations, attributs estimés, contrôles qualité et niveaux de confiance.
+- [ ] Implémenter le modèle de données et produire les imports joueurs sourcés.
 - [ ] Préparer les joueurs de développement, libres et prospects générés.
 - [ ] Effectuer la revue des droits, de la provenance et de la confidentialité des données.
 
