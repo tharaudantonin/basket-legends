@@ -19,16 +19,26 @@ Exploration spatiale, commandement et conquête
 Cette piste constitue un point de départ à discuter. Les symboles précis, le récit, le style graphique et les éléments à éviter restent à valider.
 
 ## 3. Palette chromatique
-**Statut : proposition du registre — à confirmer.**
 
-| Rôle | HEX |
-|---|---|
-| Principale | #B6363E |
-| Secondaire | #AEB5BC |
-| Accent | #1B2028 |
-| Sombre / complémentaire | #F2F0EA |
+**Statut : Palette validée par l'utilisateur le 17 novembre 2026.**
 
-Les proportions d'usage, contrastes et associations autorisées restent à définir. Aucune couleur n'est définitive avant validation explicite.
+| Rôle | Nom | HEX |
+|---|---|---|
+| Principale | Mission Charcoal | `#292E35` |
+| Secondaire | Rocket Orange | `#E87532` |
+| Accent | Space Silver | `#B9C1C9` |
+| Clair | Mission White | `#F1EFE9` |
+
+**Territoire chromatique :** Conquête spatiale, exploration, commandement et technologie.
+
+**Hiérarchie d'utilisation :** Mission Charcoal domine ; Rocket Orange souligne les éléments dynamiques. Mission White sert aux numéros et inscriptions.
+
+**Règles d'application :**
+- La couleur principale doit rester identifiable sur le maillot Icon et dans le logo principal.
+- Les couleurs d'accent ne doivent pas concurrencer la couleur dominante.
+- Les inscriptions et numéros doivent conserver un contraste élevé avec leur fond.
+- Les associations seront contrôlées sur fonds clairs et sombres, en monochrome et en simulation de déficiences de perception des couleurs.
+- Les couleurs exactes ci-dessus ne peuvent être modifiées sans nouvelle validation explicite.
 
 ## 4. Système de logos
 - Logo principal : concept, silhouette et composition à concevoir.
