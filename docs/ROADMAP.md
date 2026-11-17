@@ -47,7 +47,8 @@
   - [x] Recevoir et enregistrer l'effectif San Antonio Knights (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Phoenix Scorpions (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Oklahoma City Storm Riders (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
-  - [ ] Recevoir et valider les 5 autres effectifs avant leur intégration.
+  - [x] Recevoir et enregistrer l'effectif Minnesota Borealis (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [ ] Recevoir et valider les 4 autres effectifs avant leur intégration.
 - [x] Spécifier statistiques, mensurations, attributs estimés, contrôles qualité et niveaux de confiance.
 - [ ] Implémenter le modèle de données et produire les imports joueurs sourcés.
 - [ ] Préparer les joueurs de développement, libres et prospects générés.
