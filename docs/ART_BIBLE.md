@@ -1,67 +1,72 @@
 # Art Bible — Basket Legends
 
 ## Positionnement
-Simulation sportive réaliste, premium et contemporaine. L'interface fonctionne comme un centre de commandement sportif : densité d'information maîtrisée, grands chiffres, contraste lisible et identité forte des franchises.
+Simulation sportive réaliste, premium et contemporaine. Interface desktop-first de management, dense mais lisible, avec une hiérarchie de données proche d'un centre de commandement sportif.
 
-## Logos : langage visuel
-Créer des **emblèmes sportifs modernes**, comparables par leur fonction et leur lisibilité aux logos d'équipes professionnelles : mascotte ou animal stylisé, monogramme, écusson, symbole géométrique ou signe territorial. Il ne s'agit pas de logos de marques commerciales. Les symboles doivent être lisibles en petit format et fonctionner en monochrome.
+## Système d'identité des franchises
+Chaque franchise reçoit :
+- logo principal, logo secondaire, monogramme et wordmark ;
+- palette officielle documentée en HEX ;
+- typographies et motifs secondaires ;
+- maillots Association, Icon, Statement et City Edition ;
+- terrain, arène et éléments d'habillage UI.
 
-Pour chaque franchise :
-1. Logo principal.
-2. Logo secondaire.
-3. Monogramme compact.
-4. Wordmark original.
-5. Palette documentée avec HEX.
-6. Maillots Association, Icon, Statement et City.
-7. Terrain et déclinaisons d'arène.
+Les logos doivent être des emblèmes de franchises sportives professionnelles : mascotte stylisée, symbole territorial, monogramme ou écusson. Ils ne doivent pas ressembler à des logos de marques commerciales. Ne jamais copier les logos, mascottes, wordmarks ou compositions des équipes réelles.
 
-## Règles d'originalité
-- Ne pas copier ou modifier à la marge les logos, mascottes, wordmarks ou compositions des clubs réels.
-- Ne pas employer les logos ou signes de la NBA.
-- Les couleurs historiques des clubs de référence servent de point de départ ; nuances, proportions, motifs et applications sont conçus pour Basket Legends.
-- Les tenues utilisent des compositions, typographies, panneaux, liserés et motifs propres au jeu.
-- Les noms et symboles doivent faire l'objet d'une vérification de disponibilité avant publication.
+## Maillots — règles non négociables
+- Chaque col est constitué d'une seule couleur unie.
+- Aucun col bicolore, dégradé, liseré contrastant ou mélange de couleurs.
+- Le col reste visuellement séparé des emmanchures et panneaux latéraux.
+- La coupe doit être cohérente entre les quatre tenues d'une franchise.
+- Les numéros et wordmarks doivent rester lisibles à distance.
+- Les motifs latéraux sont autorisés, à condition de ne pas altérer le col.
 
-## Maillots
-- Association : tenue claire, lisible, classique.
-- Icon : couleur principale forte et wordmark de franchise.
-- Statement : contraste fort et langage graphique audacieux.
-- City : référence à la géographie ou à la culture locale, sans surcharge touristique.
+## Boston Beacons — direction validée
+Référence sportive : Boston Celtics.
+Palette validée :
+- Harbor Green — `#0F4B3A`
+- Warm Ivory — `#F2EFE5`
+- Antique Brass — `#B69A62`
+- Ink Charcoal — `#1D2523`
+
+### Logo Boston — révision demandée
+Abandonner le phare complexe dans un écusson. Produire un emblème beaucoup plus simple, vintage et historique :
+- roundel classique ou insigne circulaire sobre ;
+- phare réduit à quelques formes géométriques ;
+- lettrage rétro inspiré des identités sportives américaines historiques ;
+- pas de petits détails décoratifs inutiles ;
+- logo lisible en monochrome et à petite taille.
+La palette ci-dessus est validée et ne doit pas être changée sans demande.
+
+### Maillots Boston
+S'inspirer de la construction des maillots Washington : silhouette sportive nette, panneaux latéraux simples, wordmark et numérotation lisibles. Adapter les détails à l'identité patrimoniale de Boston. Les quatre cols doivent être chacun d'une seule couleur unie.
+
+## Washington Capitals — direction créative demandée
+Référence sportive : Washington Wizards pour la ville et la place dans la ligue. Nom choisi par l'utilisateur : Washington Capitals.
+
+Palette de concept :
+- Navy — `#0B2D5B`
+- Red — `#E31837`
+- White — `#FFFFFF`
+- Dark Navy — `#172333`
+
+Territoire graphique : monument abstrait, étoile et géométrie civique américaine. Concevoir un logo de basketball original, moderne et professionnel, sans reprendre le logo, les couleurs en composition, le wordmark ou les maillots de la franchise Washington Capitals de NHL.
+
+### Maillots Washington
+- Association : base blanche, accents navy et rouge.
+- Icon : base navy, étoiles blanches répétées verticalement sur les deux panneaux latéraux, de l'aisselle jusqu'à l'ourlet. Les étoiles sont bien visibles et ne doivent pas être placées sur le col.
+- Statement : base rouge, accents navy et blancs.
+- City Edition : concept à définir, ancré dans l'architecture et la culture de Washington.
+- Tous les cols sont unis, d'une seule couleur, sans mélange ni liseré bicolore.
+
+## Statut juridique
+Le nom Washington Capitals est déjà utilisé par une franchise de hockey NHL. Le nom est conservé comme choix de travail, mais il faut une revue juridique avant publication ou commercialisation. Ne jamais reprendre les actifs de la franchise NHL. Tous les autres noms de franchises sont également à vérifier avant diffusion.
+
+## Joueurs et portraits
+Les personnages de départ sont des correspondances individuelles fictives de joueurs réels. Les caractéristiques physiques documentées peuvent guider les proportions générales, mais les portraits et modèles doivent être créés spécifiquement pour le jeu. Aucun scan facial, photo, tatouage ou asset tiers ne doit être utilisé sans droits et provenance appropriés. Revue des droits à l'image/personnalité requise avant toute diffusion publique/commerciale si les personnages demeurent identifiables.
 
 ## Interface
-- Desktop-first, navigation latérale persistante.
-- Bandeau supérieur : date, prochain match, notifications et état de la franchise.
-- Zone centrale : dashboards, tableaux analytiques, rapports et listes.
-- Graphite ou bleu nuit comme base, panneaux contrastés, chiffres tabulaires et graphiques lisibles.
-- Les couleurs de franchise restent des accents et ne sont jamais l'unique code d'information.
-
-## Franchise pilote : Boston Beacons — identité conceptuelle V1
-Référence sportive : Boston Celtics. Territoire : phare, port historique, faisceau lumineux et navigation.
-
-Palette de concept (à vérifier et ajuster) :
-- Harbor Green : `#0F4B3A`
-- Warm Ivory : `#F2EFE5`
-- Antique Brass : `#B69A62`
-- Ink Charcoal : `#1D2523`
-
-Logo V1 : phare géométrique dans un écusson sportif, faisceau angulaire et vagues stylisées. Le symbole secondaire reprend le phare dans un médaillon rond ; le monogramme utilise les lettres BB ; le wordmark sépare BOSTON et BEACONS. Les SVG sont fournis dans `assets/franchises/boston-beacons/`.
-
-Maillots V1 : Association ivoire/vert, Icon vert profond, Statement charbon/vert et City ivoire avec lignes de navigation. Cette V1 est une proposition à réviser, pas une charte prête à commercialiser. Les SVG utilisent des polices système et les palettes restent conceptuelles.
-
-## Statut particulier : Washington Capitals
-Le nom correspond déjà à une franchise NHL et à des marques revendiquées par Lincoln Hockey. La création d'une identité visuelle pour ce nom est bloquée en attendant une revue juridique ou un changement de nom. Ne pas reprendre les codes visuels de la franchise de hockey. Sources : https://www.nhl.com/capitals/ et https://www.nhl.com/fr/capitals/roster.
-
-
-## Règle de construction des maillots — validée
-- Le col doit être d'une seule couleur unie, sans liseré bicolore ni mélange de couleurs.
-- Les emmanchures peuvent reprendre les couleurs secondaires, mais restent nettes et séparées du col.
-- Les trois coupes Association / Icon / Statement doivent partager une silhouette cohérente.
-- Les logos et marques d'équipementiers tiers sont exclus des concepts.
-
-## Boston Beacons — direction vintage V2
-Palette validée et conservée : Harbor Green `#0F4B3A`, Warm Ivory `#F2EFE5`, Antique Brass `#B69A62`, Ink Charcoal `#1D2523`.
-Le logo devient un roundel simple inspiré des insignes sportifs historiques : phare minimal, deux vagues, lettrage serif. Le monogramme principal est un B isolé. Les maillots reprennent la coupe épurée et les panneaux latéraux de la gamme Washington, mais dans le langage patrimonial Boston. Pas de mélange de couleurs au col.
-
-## Washington Capitals — concept original V1
-Palette conceptuelle : Navy `#0B2D5B`, Red `#E31837`, White `#FFFFFF`.
-Territoire graphique : monument abstrait, étoile et géométrie civique américaine. Les éléments sont créés spécifiquement pour Basket Legends et ne reprennent pas le logo ou les maillots de la franchise NHL. Sur le maillot Icon, des étoiles blanches sont placées sur les deux panneaux latéraux. Le col du maillot Icon est navy uni, sans liseré contrastant.
+- Navigation latérale persistante.
+- Bandeau supérieur avec date, prochain match et notifications.
+- Tableaux analytiques denses, typographie lisible, chiffres tabulaires.
+- Base graphite ou bleu nuit ; couleurs de franchise utilisées comme accents.
