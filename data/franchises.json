@@ -1,0 +1,883 @@
+{
+  "schemaVersion": 1,
+  "status": "selected-name-register",
+  "updatedAt": "2026-11-17",
+  "snapshotProposal": {
+    "season": "2025-2026",
+    "date": "2026-06-30",
+    "status": "to-confirm"
+  },
+  "note": "Noms sélectionnés par l'utilisateur. Palettes indicatives, logos non conçus, noms non soumis à une clearance juridique. Cleveland Sentinels et Washington Sentinels partagent le surnom Sentinels : doublon à résoudre.",
+  "franchises": [
+    {
+      "id": "boston",
+      "city": "Boston",
+      "referenceClub": "Boston Celtics",
+      "fictionalName": "Boston Beacons",
+      "creativeTerritory": "Phare, port historique et faisceau lumineux",
+      "paletteProposal": {
+        "primary": "#0F4B3A",
+        "secondary": "#F2EFE5",
+        "accent": "#B69A62",
+        "dark": "#1D2523"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "brooklyn",
+      "city": "Brooklyn",
+      "referenceClub": "Brooklyn Nets",
+      "fictionalName": "Brooklyn Bridges",
+      "creativeTerritory": "Ponts, architecture et connexions urbaines",
+      "paletteProposal": {
+        "primary": "#17191C",
+        "secondary": "#F1F0EC",
+        "accent": "#87909A",
+        "dark": "#546170"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "new-york",
+      "city": "New York",
+      "referenceClub": "New York Knicks",
+      "fictionalName": "New York Skyliners",
+      "creativeTerritory": "Skyline, verticalité et énergie métropolitaine",
+      "paletteProposal": {
+        "primary": "#174A7E",
+        "secondary": "#F07B28",
+        "accent": "#F4F4F1",
+        "dark": "#172333"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "philadelphia",
+      "city": "Philadelphia",
+      "referenceClub": "Philadelphia 76ers",
+      "fictionalName": "Philadelphia Founders",
+      "creativeTerritory": "Histoire civique, indépendance et géométrie",
+      "paletteProposal": {
+        "primary": "#163A69",
+        "secondary": "#B8323B",
+        "accent": "#F5F3ED",
+        "dark": "#9FA9B3"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "toronto",
+      "city": "Toronto",
+      "referenceClub": "Toronto Raptors",
+      "fictionalName": "Toronto Bears",
+      "creativeTerritory": "Faune nordique, force et nature canadienne",
+      "paletteProposal": {
+        "primary": "#B32336",
+        "secondary": "#1A1D24",
+        "accent": "#E7E6E1",
+        "dark": "#6B4C83"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "chicago",
+      "city": "Chicago",
+      "referenceClub": "Chicago Bulls",
+      "fictionalName": "Chicago Horses",
+      "creativeTerritory": "Cheval stylisé, mouvement et patrimoine urbain",
+      "paletteProposal": {
+        "primary": "#C42B36",
+        "secondary": "#17191D",
+        "accent": "#F5F3EF",
+        "dark": "#777D83"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "cleveland",
+      "city": "Cleveland",
+      "referenceClub": "Cleveland Cavaliers",
+      "fictionalName": "Cleveland Sentinels",
+      "creativeTerritory": "Sentinelle, veille et protection des rives du lac Érié",
+      "paletteProposal": {
+        "primary": "#762C42",
+        "secondary": "#C6A45A",
+        "accent": "#142B46",
+        "dark": "#F2EEE5"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "detroit",
+      "city": "Detroit",
+      "referenceClub": "Detroit Pistons",
+      "fictionalName": "Detroit Cylinders",
+      "creativeTerritory": "Mécanique automobile, cylindres et ingénierie",
+      "paletteProposal": {
+        "primary": "#1F4D84",
+        "secondary": "#C9343E",
+        "accent": "#F4F3EF",
+        "dark": "#1A2027"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "indianapolis",
+      "city": "Indianapolis",
+      "referenceClub": "Indiana Pacers",
+      "fictionalName": "Indianapolis Racers",
+      "creativeTerritory": "Compétition automobile, ovales et vitesse",
+      "paletteProposal": {
+        "primary": "#183B68",
+        "secondary": "#E0B43E",
+        "accent": "#F4F1E7",
+        "dark": "#222832"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "milwaukee",
+      "city": "Milwaukee",
+      "referenceClub": "Milwaukee Bucks",
+      "fictionalName": "Milwaukee Stags",
+      "creativeTerritory": "Cerf, forêts et paysages du Wisconsin",
+      "paletteProposal": {
+        "primary": "#174B3C",
+        "secondary": "#E9E4D5",
+        "accent": "#315A80",
+        "dark": "#191F22"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "atlanta",
+      "city": "Atlanta",
+      "referenceClub": "Atlanta Hawks",
+      "fictionalName": "Atlanta Eagles",
+      "creativeTerritory": "Aigle, aviation, mouvement et puissance",
+      "paletteProposal": {
+        "primary": "#B7353E",
+        "secondary": "#D8AE42",
+        "accent": "#171B20",
+        "dark": "#F4F1E9"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "charlotte",
+      "city": "Charlotte",
+      "referenceClub": "Charlotte Hornets",
+      "fictionalName": "Charlotte Bees",
+      "creativeTerritory": "Abeille stylisée, motifs hexagonaux et énergie locale",
+      "paletteProposal": {
+        "primary": "#147B86",
+        "secondary": "#70508B",
+        "accent": "#F4F2EA",
+        "dark": "#20272D"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "miami",
+      "city": "Miami",
+      "referenceClub": "Miami Heat",
+      "fictionalName": "Miami Tropics",
+      "creativeTerritory": "Végétation tropicale, chaleur côtière et Art déco abstrait",
+      "paletteProposal": {
+        "primary": "#C43C42",
+        "secondary": "#171B20",
+        "accent": "#F2EFE5",
+        "dark": "#7BC3C6"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "orlando",
+      "city": "Orlando",
+      "referenceClub": "Orlando Magic",
+      "fictionalName": "Orlando Comets",
+      "creativeTerritory": "Comètes, orbites et mouvement spatial",
+      "paletteProposal": {
+        "primary": "#1A4D85",
+        "secondary": "#9AA8B7",
+        "accent": "#171B26",
+        "dark": "#F3F4F1"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "washington",
+      "city": "Washington",
+      "referenceClub": "Washington Wizards",
+      "fictionalName": "Washington Sentinels",
+      "creativeTerritory": "Architecture civique, vigilance et symboles monumentaux",
+      "paletteProposal": {
+        "primary": "#1D3E69",
+        "secondary": "#B8323F",
+        "accent": "#C6A65B",
+        "dark": "#F2F0E8"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "denver",
+      "city": "Denver",
+      "referenceClub": "Denver Nuggets",
+      "fictionalName": "Denver Summit",
+      "creativeTerritory": "Altitude, relief et sommets montagneux",
+      "paletteProposal": {
+        "primary": "#153C69",
+        "secondary": "#D6A83E",
+        "accent": "#6B303A",
+        "dark": "#F4F0E5"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "minnesota",
+      "city": "Minneapolis",
+      "referenceClub": "Minnesota Timberwolves",
+      "fictionalName": "Minnesota Borealis",
+      "creativeTerritory": "Aurore boréale, froid et forêts stylisées",
+      "paletteProposal": {
+        "primary": "#183E5D",
+        "secondary": "#76A7A2",
+        "accent": "#D9E1E0",
+        "dark": "#202A36"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "oklahoma-city",
+      "city": "Oklahoma City",
+      "referenceClub": "Oklahoma City Thunder",
+      "fictionalName": "Oklahoma City Storm Riders",
+      "creativeTerritory": "Tempête, énergie et mouvement dynamique",
+      "paletteProposal": {
+        "primary": "#1A4C86",
+        "secondary": "#E36F32",
+        "accent": "#E8B943",
+        "dark": "#F4F1E8"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "portland",
+      "city": "Portland",
+      "referenceClub": "Portland Trail Blazers",
+      "fictionalName": "Portland Timberbears",
+      "creativeTerritory": "Forêts du Nord-Ouest, ours et patrimoine naturel",
+      "paletteProposal": {
+        "primary": "#B63D42",
+        "secondary": "#17191C",
+        "accent": "#F2EEE5",
+        "dark": "#70767D"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "utah",
+      "city": "Salt Lake City",
+      "referenceClub": "Utah Jazz",
+      "fictionalName": "Utah Desert Raptors",
+      "creativeTerritory": "Rapace, relief désertique et paysages de l'Utah",
+      "paletteProposal": {
+        "primary": "#352B5F",
+        "secondary": "#C6A24E",
+        "accent": "#1D405C",
+        "dark": "#F0EDE5"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "golden-state",
+      "city": "San Francisco / Bay Area",
+      "referenceClub": "Golden State Warriors",
+      "fictionalName": "San Francisco Golden Seals",
+      "creativeTerritory": "Otarie, baie, littoral et héritage maritime",
+      "paletteProposal": {
+        "primary": "#1A4F89",
+        "secondary": "#D9AD43",
+        "accent": "#F3F1EA",
+        "dark": "#202833"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "clippers",
+      "city": "Los Angeles",
+      "referenceClub": "LA Clippers",
+      "fictionalName": "Los Angeles Beachers",
+      "creativeTerritory": "Plage, littoral et culture balnéaire californienne",
+      "paletteProposal": {
+        "primary": "#1C3F72",
+        "secondary": "#B73A42",
+        "accent": "#F4F3EF",
+        "dark": "#111A26"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "lakers",
+      "city": "Los Angeles",
+      "referenceClub": "Los Angeles Lakers",
+      "fictionalName": "Los Angeles Stars",
+      "creativeTerritory": "Étoiles, spectacle et ciel nocturne",
+      "paletteProposal": {
+        "primary": "#573B79",
+        "secondary": "#E4B84F",
+        "accent": "#F4F1E8",
+        "dark": "#1E1D2A"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "phoenix",
+      "city": "Phoenix",
+      "referenceClub": "Phoenix Suns",
+      "fictionalName": "Phoenix Scorpions",
+      "creativeTerritory": "Scorpion, désert et chaleur minérale",
+      "paletteProposal": {
+        "primary": "#D95C32",
+        "secondary": "#4B3472",
+        "accent": "#1B1D24",
+        "dark": "#F2E9D8"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "sacramento",
+      "city": "Sacramento",
+      "referenceClub": "Sacramento Kings",
+      "fictionalName": "Sacramento Capital",
+      "creativeTerritory": "Capitale, architecture et géométrie institutionnelle",
+      "paletteProposal": {
+        "primary": "#52366F",
+        "secondary": "#BBC0C6",
+        "accent": "#171A21",
+        "dark": "#F1EFE8"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "dallas",
+      "city": "Dallas",
+      "referenceClub": "Dallas Mavericks",
+      "fictionalName": "Dallas Outriders",
+      "creativeTerritory": "Grandes plaines, mouvement et étoile géométrique",
+      "paletteProposal": {
+        "primary": "#1C3C68",
+        "secondary": "#8EA2B6",
+        "accent": "#F2F2ED",
+        "dark": "#222A32"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "houston",
+      "city": "Houston",
+      "referenceClub": "Houston Rockets",
+      "fictionalName": "Houston Commanders",
+      "creativeTerritory": "Exploration spatiale, commandement et conquête",
+      "paletteProposal": {
+        "primary": "#B6363E",
+        "secondary": "#AEB5BC",
+        "accent": "#1B2028",
+        "dark": "#F2F0EA"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "memphis",
+      "city": "Memphis",
+      "referenceClub": "Memphis Grizzlies",
+      "fictionalName": "Memphis Rhythm",
+      "creativeTerritory": "Musique, scène et rythme du Mississippi",
+      "paletteProposal": {
+        "primary": "#356F9D",
+        "secondary": "#D8AD4B",
+        "accent": "#1B2737",
+        "dark": "#F1EFE6"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "new-orleans",
+      "city": "New Orleans",
+      "referenceClub": "New Orleans Pelicans",
+      "fictionalName": "New Orleans Royal",
+      "creativeTerritory": "Héritage cérémoniel, fleuve et patrimoine musical",
+      "paletteProposal": {
+        "primary": "#173958",
+        "secondary": "#B63B4A",
+        "accent": "#B89B5E",
+        "dark": "#F3EEE3"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    },
+    {
+      "id": "san-antonio",
+      "city": "San Antonio",
+      "referenceClub": "San Antonio Spurs",
+      "fictionalName": "San Antonio Knights",
+      "creativeTerritory": "Chevalerie, armure stylisée et héritage texan",
+      "paletteProposal": {
+        "primary": "#202329",
+        "secondary": "#B9BEC3",
+        "accent": "#F2F0E9",
+        "dark": "#8B6B4D"
+      },
+      "nameStatus": "selected-by-user",
+      "nameClearance": "not-checked",
+      "visualStatus": "not-designed",
+      "historyMirror": {
+        "status": "to-research",
+        "sourceCutoff": "2026-06-30"
+      },
+      "playStyleMirror": {
+        "referenceSeason": "2025-2026",
+        "status": "to-collect-and-calibrate"
+      },
+      "playerMirror": {
+        "status": "individual-mapping-required",
+        "referenceSeason": "2025-2026",
+        "rightsReview": "required-before-public-commercial-release"
+      }
+    }
+  ]
+}
