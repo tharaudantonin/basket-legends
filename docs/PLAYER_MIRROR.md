@@ -279,3 +279,8 @@ Une fiche n'est pas « complète » parce qu'elle possède un nombre dans chaque
 - le statut de revue des droits est renseigné.
 
 Les joueurs qui ne remplissent pas ces critères restent en file de validation et ne doivent pas être présentés comme des fiches vérifiées.
+
+
+## 12. Effectifs soumis et approuvés pour 2026-2027
+
+Les effectifs 2026-2027 fournis par l'utilisateur et approuvés franchise par franchise sont enregistrés dans `data/rosters/2026-27/`. Cette approbation valide la transcription dans Basket Legends, mais ne constitue pas une vérification officielle des affiliations NBA, contrats ou statuts. Les champs `ratings`, `attributes` et `notes` restent `null` jusqu'à leur production et validation dans une phase ultérieure. Les mensurations conservent leurs valeurs impériales sources et leurs conversions métriques ; l'interface peut afficher cm/kg ou pieds-pouces/livres sans modifier les données de référence.
