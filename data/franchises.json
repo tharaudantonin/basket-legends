@@ -23,7 +23,7 @@
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "concept-v1-created",
+      "visualStatus": "concept-v2-vintage-created",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -436,7 +436,7 @@
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "existing-professional-team-name-conflict-review-required",
-      "visualStatus": "blocked-pending-name-clearance",
+      "visualStatus": "original-concept-v1-created-name-clearance-required",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -450,7 +450,13 @@
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
       },
-      "brandRisk": "high-name-collision-with-existing-NHL-franchise"
+      "brandRisk": "high-name-collision-with-existing-NHL-franchise",
+      "identityFiles": [
+        "assets/franchises/washington-capitals/logo-primary.svg",
+        "assets/franchises/washington-capitals/monogram.svg",
+        "assets/franchises/washington-capitals/wordmark.svg",
+        "assets/franchises/washington-capitals/uniform-concepts.svg"
+      ]
     },
     {
       "id": "denver",
