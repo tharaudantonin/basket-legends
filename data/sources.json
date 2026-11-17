@@ -77,6 +77,24 @@
       "provider": "Basketball-Reference",
       "scope": "Secondary cross-check of transactions from 2025-07-01 to 2026-06-30",
       "priority": "secondary"
+    },
+    {
+      "id": "lequipe-guide-nba-2026-27",
+      "url": "https://www.lequipe.fr/collection/guide-nba-2026-2027/",
+      "provider": "L'Équipe",
+      "scope": "Editorial team-by-team season preview, roster context, arrivals/departures, player roles and expert analysis for 2026-27; landing page indexed in search, direct page access may be restricted",
+      "priority": "editorial-secondary",
+      "accessStatus": "search-indexed-direct-access-restricted",
+      "snapshotRelevance": "2026-27 cross-check only; not a source for the 2026-06-30 historical snapshot"
+    },
+    {
+      "id": "bebasket-nba-players-2026-27",
+      "url": "https://www.bebasket.fr/ligue/nba/joueurs",
+      "provider": "BeBasket",
+      "scope": "NBA 2026-27 player directory organized by franchise; page states it covers training-camp rosters and reports 660 distinct players across 30 teams",
+      "priority": "editorial-secondary",
+      "accessStatus": "page-readable",
+      "snapshotRelevance": "2026-27 roster discovery and cross-check only; training-camp roster population must not be treated as final active roster or as 2026-06-30 snapshot"
     }
   ],
   "policy": {
