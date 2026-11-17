@@ -19,16 +19,17 @@ La franchise réelle sert de référence sportive et historique, pas de modèle 
 Cette piste constitue un point de départ à discuter. Les symboles précis, le récit, le style graphique et les éléments à éviter restent à valider.
 
 ## 3. Palette chromatique
-**Statut : proposition du registre — à confirmer.**
 
-| Rôle | HEX |
-|---|---|
-| Principale | #573B79 |
-| Secondaire | #E4B84F |
-| Accent | #F4F1E8 |
-| Sombre / complémentaire | #1E1D2A |
+**Palette définitive — validée par l'utilisateur le 17 novembre 2026.**
 
-Les proportions d'usage, contrastes et associations autorisées restent à définir. Aucune couleur n'est définitive avant validation explicite.
+| Rôle | Nom | HEX |
+|---|---|---|
+| Principale | Hollywood Gold | `#D6AD55` |
+| Secondaire | Premiere Black | `#20232B` |
+| Accent | Velvet Red | `#8D263D` |
+| Neutre | Marquee Ivory | `#F2EBDD` |
+
+Les quatre couleurs et leurs valeurs HEX sont celles du registre canonique `data/franchises.json`. Toute ancienne proposition est obsolète ; aucune modification ne peut être faite sans nouvel arbitrage utilisateur.
 
 ## 4. Système de logos
 - Logo principal : concept, silhouette et composition à concevoir.
