@@ -1,0 +1,49 @@
+# Identity Concepts — Basket Legends
+
+## Méthode
+Chaque franchise reçoit un emblème principal, un emblème secondaire, un monogramme, un wordmark, une palette, quatre maillots, un terrain et une identité d'arène. Les créations sont des identités sportives originales et ne copient pas les actifs des clubs réels.
+
+## Boston Beacons — concept V1
+
+**Référence sportive :** Boston Celtics.  
+**Territoire :** phare, port, navigation et lumière.  
+**Personnalité :** historique, stable, exigeante, élégante.
+
+### Palette de concept
+- Harbor Green — `#0F4B3A`
+- Warm Ivory — `#F2EFE5`
+- Antique Brass — `#B69A62`
+- Ink Charcoal — `#1D2523`
+
+### Système de marque
+- Logo principal : phare géométrique dans un écusson vertical, faisceau angulaire et vagues en base.
+- Logo secondaire : phare minimal dans un médaillon rond.
+- Monogramme : BB compact, lisible en petit format.
+- Wordmark : BOSTON en ligne supérieure, BEACONS en ligne dominante, filet laiton.
+- Motif secondaire : lignes parallèles de navigation / faisceau lumineux.
+
+### Maillots
+- Association : base ivoire, bordures vert profond, wordmark et numéros verts.
+- Icon : base vert profond, détails ivoire et laiton.
+- Statement : charbon, panneau vert, touches laiton.
+- City : ivoire avec lignes de navigation et accents laiton.
+
+### Terrain
+Bois clair, logo-phare central vert, cercle extérieur laiton fin et signalétique sobre.
+
+### Fichiers vectoriels
+- `assets/franchises/boston-beacons/logo-primary.svg`
+- `assets/franchises/boston-beacons/logo-secondary.svg`
+- `assets/franchises/boston-beacons/monogram.svg`
+- `assets/franchises/boston-beacons/wordmark.svg`
+- `assets/franchises/boston-beacons/uniform-concepts.svg`
+
+**Statut :** concept V1 créé, en attente de validation créative. Non final et non juridiquement vérifié.
+
+## Washington Capitals — statut suspendu
+Le nom est déjà utilisé par une franchise NHL et fait l'objet de marques revendiquées par Lincoln Hockey. Aucune identité visuelle ne sera créée sous ce nom avant revue juridique ou changement de nom. Ne pas réutiliser les logos, emblèmes, wordmarks, maillots ou codes visuels du club de hockey.
+
+Sources :
+- https://www.nhl.com/capitals/
+- https://www.nhl.com/fr/capitals/roster
+- https://revenue.delaware.gov/trade-name-details/?tradename_id=8755
