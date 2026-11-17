@@ -19,16 +19,17 @@ Grandes plaines, mouvement et étoile géométrique
 Cette piste constitue un point de départ à discuter. Les symboles précis, le récit, le style graphique et les éléments à éviter restent à valider.
 
 ## 3. Palette chromatique
-**Statut : proposition du registre — à confirmer.**
 
-| Rôle | HEX |
-|---|---|
-| Principale | #1C3C68 |
-| Secondaire | #8EA2B6 |
-| Accent | #F2F2ED |
-| Sombre / complémentaire | #222A32 |
+**Palette définitive — validée par l'utilisateur le 17 novembre 2026.**
 
-Les proportions d'usage, contrastes et associations autorisées restent à définir. Aucune couleur n'est définitive avant validation explicite.
+| Rôle | Nom | HEX |
+|---|---|---|
+| Principale | Saddle Brown | `#8A5B3D` |
+| Secondaire | Prairie Tan | `#D2B17C` |
+| Accent | Rider Charcoal | `#252A2E` |
+| Neutre | Canvas Ivory | `#F1E8D8` |
+
+Les quatre couleurs et leurs valeurs HEX sont celles du registre canonique `data/franchises.json`. Toute ancienne proposition est obsolète ; aucune modification ne peut être faite sans nouvel arbitrage utilisateur.
 
 ## 4. Système de logos
 - Logo principal : concept, silhouette et composition à concevoir.
