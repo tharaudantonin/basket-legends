@@ -25,7 +25,8 @@
   - [x] Recevoir et enregistrer l'effectif Philadelphia Founders (17 joueurs, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Milwaukee Stags (18 joueurs, validation utilisateur ; pays de Kel'el Ware corrigé en USA ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Chicago Horses (18 joueurs, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
-  - [ ] Recevoir et valider les 27 autres effectifs avant leur intégration.
+  - [x] Recevoir et enregistrer l'effectif Cleveland Sentinels (17 joueurs, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [ ] Recevoir et valider les 26 autres effectifs avant leur intégration.
 - [x] Spécifier statistiques, mensurations, attributs estimés, contrôles qualité et niveaux de confiance.
 - [ ] Implémenter le modèle de données et produire les imports joueurs sourcés.
 - [ ] Préparer les joueurs de développement, libres et prospects générés.
