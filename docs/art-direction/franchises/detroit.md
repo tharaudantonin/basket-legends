@@ -24,18 +24,16 @@ Cette piste est un point de départ enregistré. Les symboles précis, le récit
 
 ## 3. Palette chromatique
 
-**Statut : Proposition issue du registre — à confirmer.**
+**Palette définitive — validée par l'utilisateur le 17 novembre 2026.**
 
-| Rôle | HEX |
-|---|---|
-| Principale | #1F4D84 |
-| Secondaire | #C9343E |
-| Accent | #F4F3EF |
-| Sombre / complémentaire | #1A2027 |
+| Rôle | Nom | HEX |
+|---|---|---|
+| Principale | Industrial Charcoal | `#343B43` |
+| Secondaire | Foundry Steel | `#A7B0B8` |
+| Accent | Volt Yellow | `#D6E342` |
+| Neutre | Machine White | `#F0F1ED` |
 
-Ces valeurs sont des propositions de travail provenant du registre des franchises. Elles ne sont pas définitives et devront être discutées, corrigées puis validées.
-
-Les proportions d'usage, contrastes, associations autorisées et variantes restent à spécifier.
+Les quatre couleurs et leurs valeurs HEX sont celles du registre canonique `data/franchises.json`. Toute ancienne proposition est obsolète ; aucune modification ne peut être faite sans nouvel arbitrage utilisateur.
 
 ## 4. Système de logos
 
