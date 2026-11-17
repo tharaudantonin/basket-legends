@@ -2,7 +2,7 @@
 
 > Jeu web de management basketball — simulation sportive et gestion de franchise à long terme.
 
-**Statut :** préproduction / blueprint. Le registre des 30 noms de franchise reflète les choix de l'utilisateur au 17 novembre 2026. Les logos, maillots et palettes finales restent à concevoir. La disponibilité juridique des noms n'a pas été vérifiée.
+**Statut :** préproduction / blueprint. Le registre des 30 noms de franchise reflète les choix de l'utilisateur au 17 novembre 2026. La première identité vectorielle conceptuelle de Boston Beacons est créée ; les autres identités restent à concevoir. La disponibilité juridique des noms n'a pas été vérifiée.
 
 ## Vision
 Basket Legends est une simulation de management basketball dans laquelle le joueur incarne un **General Manager**. Il construit son effectif, gère contrats et finances, supervise le recrutement, fixe les orientations sportives et délègue certaines responsabilités au coach.
@@ -25,16 +25,18 @@ Basket Legends est une simulation de management basketball dans laquelle le joue
 - `docs/TDD.md` — architecture technique.
 - `docs/ART_BIBLE.md` — direction artistique.
 - `docs/FRANCHISE_BIBLE.md` — registre des 30 franchises.
+- `docs/IDENTITY_CONCEPTS.md` — concepts de logos, palettes et maillots en cours.
 - `docs/DATA_PARITY.md` — héritage et correspondance statistique des franchises.
 - `docs/PLAYER_MIRROR.md` — correspondance individuelle des joueurs.
 - `docs/ROADMAP.md` — feuille de route.
 - `docs/SOURCES.md` — politique de provenance des données.
 - `data/franchises.json` et `data/franchises.csv` — registre exploitable.
+- `assets/franchises/boston-beacons/` — première identité vectorielle V1.
 
 ## Points ouverts
-1. Cleveland Sentinels et Washington Sentinels partagent le même surnom : doublon à résoudre.
+1. Washington Capitals est déjà utilisé par une franchise de la NHL et fait l'objet de marques revendiquées par Lincoln Hockey ; revue juridique ou changement de nom avant toute identité visuelle ou diffusion.
 2. Confirmer le snapshot des effectifs (proposition : saison 2025-2026, au 30 juin 2026).
-3. Effectuer une revue de disponibilité des noms et des droits avant diffusion publique/commerciale.
+3. Effectuer une revue de disponibilité de tous les noms et des droits avant diffusion publique/commerciale.
 4. Collecter puis vérifier les données historiques, les profils statistiques et les données individuelles.
 
 ## Stack cible
