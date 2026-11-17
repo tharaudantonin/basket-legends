@@ -24,18 +24,16 @@ Cette piste est un point de départ enregistré. Les symboles précis, le récit
 
 ## 3. Palette chromatique
 
-**Statut : Proposition issue du registre — à confirmer.**
+**Palette définitive — validée par l'utilisateur le 17 novembre 2026.**
 
-| Rôle | HEX |
-|---|---|
-| Principale | #17191C |
-| Secondaire | #F1F0EC |
-| Accent | #87909A |
-| Sombre / complémentaire | #546170 |
+| Rôle | Nom | HEX |
+|---|---|---|
+| Principale | Bridge Blue | `#31566D` |
+| Secondaire | Brick Copper | `#C47B50` |
+| Accent | Concrete Charcoal | `#252B30` |
+| Neutre | Bridge Ivory | `#EAE4D8` |
 
-Ces valeurs sont des propositions de travail provenant du registre des franchises. Elles ne sont pas définitives et devront être discutées, corrigées puis validées.
-
-Les proportions d'usage, contrastes, associations autorisées et variantes restent à spécifier.
+Les quatre couleurs et leurs valeurs HEX sont celles du registre canonique `data/franchises.json`. Toute ancienne proposition est obsolète ; aucune modification ne peut être faite sans nouvel arbitrage utilisateur.
 
 ## 4. Système de logos
 
