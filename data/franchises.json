@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "status": "selected-name-register",
   "updatedAt": "2026-11-17",
   "snapshotProposal": {
@@ -7,7 +7,7 @@
     "date": "2026-06-30",
     "status": "to-confirm"
   },
-  "note": "Noms sélectionnés par l'utilisateur. Palettes indicatives, logos non conçus, noms non soumis à une clearance juridique. Cleveland Sentinels et Washington Sentinels partagent le surnom Sentinels : doublon à résoudre.",
+  "note": "Washington Capitals est le nom d'une franchise NHL existante et fait l'objet de marques revendiquées par Lincoln Hockey. Le nom est conservé comme choix de travail, mais l'identité graphique et l'exploitation publique sont bloquées dans l'attente d'une revue juridique ou d'un changement de nom. Boston Beacons dispose d'une première identité vectorielle conceptuelle V1 ; les autres identités restent à concevoir. Noms et palettes non vérifiés juridiquement.",
   "franchises": [
     {
       "id": "boston",
@@ -23,7 +23,7 @@
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "visualStatus": "concept-v1-created",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -36,7 +36,14 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "identityFiles": [
+        "assets/franchises/boston-beacons/logo-primary.svg",
+        "assets/franchises/boston-beacons/logo-secondary.svg",
+        "assets/franchises/boston-beacons/monogram.svg",
+        "assets/franchises/boston-beacons/wordmark.svg",
+        "assets/franchises/boston-beacons/uniform-concepts.svg"
+      ]
     },
     {
       "id": "brooklyn",
@@ -419,8 +426,8 @@
       "id": "washington",
       "city": "Washington",
       "referenceClub": "Washington Wizards",
-      "fictionalName": "Washington Sentinels",
-      "creativeTerritory": "Architecture civique, vigilance et symboles monumentaux",
+      "fictionalName": "Washington Capitals",
+      "creativeTerritory": "Identité civique de Washington et architecture fédérale — création visuelle suspendue à la résolution du conflit de nom",
       "paletteProposal": {
         "primary": "#1D3E69",
         "secondary": "#B8323F",
@@ -428,8 +435,8 @@
         "dark": "#F2F0E8"
       },
       "nameStatus": "selected-by-user",
-      "nameClearance": "not-checked",
-      "visualStatus": "not-designed",
+      "nameClearance": "existing-professional-team-name-conflict-review-required",
+      "visualStatus": "blocked-pending-name-clearance",
       "historyMirror": {
         "status": "to-research",
         "sourceCutoff": "2026-06-30"
@@ -442,7 +449,8 @@
         "status": "individual-mapping-required",
         "referenceSeason": "2025-2026",
         "rightsReview": "required-before-public-commercial-release"
-      }
+      },
+      "brandRisk": "high-name-collision-with-existing-NHL-franchise"
     },
     {
       "id": "denver",
