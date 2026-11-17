@@ -1,7 +1,7 @@
 # Boston Beacons
 
 > Dossier de direction artistique — Boston  
-> Version : 1.1 — 17 novembre 2026  
+> Version : 1.2 — 17 novembre 2026  
 > Statut : direction artistique développée ; décisions de base validées, détails d'exécution à confirmer  
 > Franchise de référence sportive : Boston Celtics
 
@@ -84,9 +84,10 @@ Ces proportions sont des repères de composition, pas des quotas rigides. Le lai
 - champ intérieur Warm Ivory ;
 - phare central réduit à une silhouette géométrique immédiatement lisible ;
 - faisceau lumineux très discret, construit avec une ou deux formes simples ;
-- inscription « BOSTON » dans la partie supérieure de l'anneau ;
-- inscription « BEACONS » dans la partie inférieure ;
-- séparateurs latéraux simples, uniquement si nécessaires à l'équilibre ;
+- inscription « BOSTON » en capitales sur l'arc supérieur de l'anneau ;
+- inscription « BEACONS » en capitales sur l'arc inférieur, légèrement plus dominante ;
+- mention « EST. 1946 » intégrée dans le champ intérieur, sous le phare, sur une petite ligne horizontale dédiée ;
+- séparateurs latéraux sobres entre les deux arcs, de préférence deux petits losanges ou points géométriques, sans surcharge ;
 - Antique Brass réservé à un détail ponctuel ou à une ligne fine.
 
 **Phare :**
@@ -95,7 +96,7 @@ Ces proportions sont des repères de composition, pas des quotas rigides. Le lai
 - faisceau suggéré par deux triangles ou bandes très sobres ;
 - aucune fenêtre minuscule, brique, vague ou détail architectural réaliste.
 
-**Hiérarchie :** le mot BEACONS et la silhouette du phare doivent rester identifiables à petite taille. Le logo doit fonctionner sans ombre, dégradé, texture ou contour complexe.
+**Hiérarchie :** le nom BEACONS et la silhouette du phare sont les deux éléments dominants ; BOSTON identifie le marché et « EST. 1946 » ancre l'identité dans son année de fondation. La date doit rester secondaire mais lisible à taille normale. En très petit format, elle peut être omise dans la variante simplifiée. Le logo doit fonctionner sans ombre, dégradé, texture ou contour complexe.
 
 ### 4.2. Logo secondaire
 
@@ -274,7 +275,7 @@ Ces éléments sont des propositions narratives, pas des décisions définitives
 
 ## 12. Décisions à valider ultérieurement
 
-- [ ] Proportions et dessin final du roundel
+- [ ] Proportions et dessin final du roundel, avec inscriptions BOSTON / BEACONS et mention EST. 1946
 - [ ] Style exact de la typographie de marque
 - [ ] Logo secondaire, monogramme et wordmark définitifs
 - [ ] Détails finaux du maillot Association
@@ -292,11 +293,11 @@ Ces éléments sont des propositions narratives, pas des décisions définitives
 | Date | Décision | Statut |
 |---|---|---|
 | 2026-11-17 | Palette Harbor Green, Warm Ivory, Antique Brass et Ink Charcoal | Validée |
-| 2026-11-17 | Logo principal de type roundel | Validé |
+| 2026-11-17 | Logo principal de type roundel avec inscriptions BOSTON / BEACONS et date EST. 1946 | Validé dans son principe |
 | 2026-11-17 | Intensité vintage heritage-modern | Validée |
 | 2026-11-17 | Maillots à orientation classic | Validée |
 | 2026-11-17 | Développement de la direction détaillée de la franchise | Proposition à examiner |
 
 ## 14. Rappel des décisions validées
 
-Les seuls choix explicitement validés à ce stade sont la palette chromatique, la forme roundel du logo principal, l'intensité heritage-modern et l'orientation classic des maillots. Les propositions de construction, les couleurs détaillées des cols, le parquet, la salle, les rituels et les déclinaisons restent soumis à validation.
+Les choix explicitement validés à ce stade sont la palette chromatique, la forme roundel du logo principal avec les inscriptions « BOSTON » et « BEACONS » et la date « EST. 1946 », l'intensité heritage-modern et l'orientation classic des maillots. Les propositions de construction, les couleurs détaillées des cols, le parquet, la salle, les rituels et les déclinaisons restent soumis à validation.
