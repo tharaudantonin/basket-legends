@@ -27,7 +27,7 @@ Utiliser la dernière saison complète, complétée si utile par une moyenne plu
 Chaque joueur réel de l'effectif de référence doit avoir une contrepartie fictive, selon `docs/PLAYER_MIRROR.md`. Les données physiques et statistiques doivent être sourcées. Les attributs 1–100 résultent d'un modèle explicite.
 
 ## Snapshot
-Proposition de snapshot : saison **2025-2026**, date technique **2026-06-30**. À confirmer avant import. Toute mise à jour crée une nouvelle version des données.
+Snapshot de référence validé : saison **2025-2026**, date technique **2026-06-30**. La carrière commence à l'intersaison 2026 et conduit à la saison **2026-2027**. Toute mise à jour des données de référence crée une nouvelle version ; elle ne modifie pas rétroactivement une carrière existante. Toute mise à jour crée une nouvelle version des données.
 
 ## Contrôle qualité
 - Conserver la définition, l'unité, la saison et la source de chaque valeur.
