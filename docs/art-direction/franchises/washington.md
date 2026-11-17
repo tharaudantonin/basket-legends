@@ -22,7 +22,7 @@ L'identité doit évoquer Washington comme capitale politique et ville monumenta
 
 ### 2.1. Décisions explicitement validées
 
-- Palette : Navy `#0B2D5B`, Red `#E31837`, White `#FFFFFF`, Dark Navy `#172333`.
+- Palette : Navy `#0B2D5B`, Red `#C43D45`, White `#F4F3EF`, Dark Navy `#AEB7C2`.
 - Direction générale : identité moderne de basketball, construite autour d'un monument abstrait et d'une étoile.
 - Maillot Association : base blanche, accents navy et rouge.
 - Maillot Icon : base navy avec des étoiles blanches répétées verticalement sur les deux panneaux latéraux, de l'aisselle jusqu'à l'ourlet.
@@ -46,33 +46,16 @@ Washington doit avoir une identité plus contemporaine et plus graphique que Bos
 
 ## 3. Palette chromatique
 
-**Palette validée explicitement.**
+**Palette définitive — validée par l'utilisateur le 17 novembre 2026.**
 
-| Couleur | HEX | Fonction |
+| Rôle | Nom | HEX |
 |---|---|---|
-| Navy | `#0B2D5B` | Couleur principale, maillot Icon et identité |
-| Red | `#E31837` | Couleur secondaire, maillot Statement et accents |
-| White | `#FFFFFF` | Fond clair, contrastes et étoiles |
-| Dark Navy | `#172333` | Profondeur, texte sombre et supports secondaires |
+| Principale | Capital Navy | `#0B2D5B` |
+| Secondaire | Capitol Red | `#C43D45` |
+| Accent | Federal White | `#F4F3EF` |
+| Neutre | Monument Silver | `#AEB7C2` |
 
-### 3.1. Répartition indicative proposée
-
-- Navy : 50 %
-- White : 25 %
-- Red : 15 %
-- Dark Navy : 10 %
-
-Ces proportions sont des repères de composition et non des quotas. Le rouge doit être utilisé comme accent fort ou comme base d'une tenue dédiée, pas comme une couleur décorative partout.
-
-### 3.2. Associations recommandées
-
-- Navy sur White.
-- White sur Navy.
-- White sur Red.
-- Red sur White pour les accents de petite ou moyenne surface.
-- Dark Navy en complément du Navy, avec une différence de valeur suffisante pour ne pas créer un contraste trop faible.
-
-Ne pas utiliser le rouge pour les petits textes sur Navy. Vérifier le contraste des textes et chiffres sur chaque support.
+Les quatre couleurs et leurs valeurs HEX sont celles du registre canonique `data/franchises.json`. Toute ancienne proposition est obsolète ; aucune modification ne peut être faite sans nouvel arbitrage utilisateur.
 
 ## 4. Système de logos
 
@@ -155,7 +138,7 @@ Les motifs doivent renforcer la marque sans concurrencer le logo ni les numéros
 ### 6.1. Association — White
 
 **Direction validée dans son principe :**
-- Base : White `#FFFFFF`.
+- Base : White `#F4F3EF`.
 - Wordmark : Navy `#0B2D5B`.
 - Numéros : Navy.
 - Accents : Red en touches limitées, éventuellement sur un petit marquage du short ou un détail latéral.
@@ -184,7 +167,7 @@ Le nombre exact d'étoiles et leur espacement seront ajustés sur le gabarit tex
 ### 6.3. Statement — Red
 
 **Direction validée dans son principe :**
-- Base : Red `#E31837`.
+- Base : Red `#C43D45`.
 - Wordmark : White.
 - Numéros : White, avec éventuellement un filet Navy uniquement si le contraste et la lisibilité le justifient.
 - Col : Navy uni.
@@ -297,7 +280,7 @@ Les slogans et rituels sont des propositions, pas des éléments validés.
 | Date | Décision | Statut |
 |---|---|---|
 | 2026-11-17 | Création du dossier Washington Capitals | Dossier initial |
-| 2026-11-17 | Palette Navy `#0B2D5B`, Red `#E31837`, White `#FFFFFF`, Dark Navy `#172333` | Validée |
+| 2026-11-17 | Palette Navy `#0B2D5B`, Red `#C43D45`, White `#F4F3EF`, Dark Navy `#AEB7C2` | Validée |
 | 2026-11-17 | Territoire créatif : monument abstrait, étoile et géométrie civique | Direction retenue |
 | 2026-11-17 | Association blanche avec accents Navy et Red | Validée dans son principe |
 | 2026-11-17 | Icon Navy avec étoiles blanches sur les deux panneaux latéraux | Validée |
