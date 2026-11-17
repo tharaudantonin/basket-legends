@@ -7,7 +7,7 @@
 - [x] Documenter les trois derniers dossiers.
 - [x] Valider et retranscrire les quatre couleurs HEX des neuf palettes restantes (30/30 palettes gelées).
 - [ ] Revue juridique des noms, en priorité Washington Capitals.
-- [ ] Confirmer le snapshot de référence (proposition : saison 2025-2026 au 30 juin 2026).
+- [x] Valider le snapshot de référence : saison 2025-2026 au 30 juin 2026 ; carrière à partir de l'intersaison 2026.
 
 ## Phase 1 — Production du système visuel
 - [ ] Créer les 30 logos principaux en SVG.
