@@ -32,7 +32,8 @@
   - [x] Recevoir et enregistrer l'effectif Atlanta Eagles (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Miami Tropics (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Charlotte Bees (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
-  - [ ] Recevoir et valider les 20 autres effectifs avant leur intégration.
+  - [x] Recevoir et enregistrer l'effectif Utah Desert Raptors (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [ ] Recevoir et valider les 19 autres effectifs avant leur intégration.
 - [x] Spécifier statistiques, mensurations, attributs estimés, contrôles qualité et niveaux de confiance.
 - [ ] Implémenter le modèle de données et produire les imports joueurs sourcés.
 - [ ] Préparer les joueurs de développement, libres et prospects générés.
