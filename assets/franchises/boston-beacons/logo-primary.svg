@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 640" role="img" aria-labelledby="title desc">
-<title id="title">Boston Beacons — emblème principal concept V1</title><desc id="desc">Phare géométrique et faisceau lumineux dans un écusson vert, ivoire et laiton.</desc>
-<defs><clipPath id="shieldClip"><path d="M300 30 520 112v188c0 145-86 246-220 310C166 546 80 445 80 300V112Z"/></clipPath></defs>
-<path d="M300 30 520 112v188c0 145-86 246-220 310C166 546 80 445 80 300V112Z" fill="#0F4B3A" stroke="#B69A62" stroke-width="16" stroke-linejoin="round"/>
-<path d="M300 54 496 127v170c0 130-76 220-196 280-120-60-196-150-196-280V127Z" fill="none" stroke="#F2EFE5" stroke-width="5"/>
-<g clip-path="url(#shieldClip)">
-<path d="M264 180 90 92l173 122Z M336 180 510 92l-173 122Z" fill="#B69A62" opacity=".82"/>
-<path d="M224 378 245 186h110l21 192Z" fill="#F2EFE5"/>
-<path d="M210 386h180l18 24H192Z" fill="#B69A62"/>
-<path d="M246 186 265 157h70l19 29Z" fill="#B69A62" stroke="#F2EFE5" stroke-width="7"/>
-<rect x="255" y="124" width="90" height="34" rx="4" fill="#F2EFE5"/>
-<path d="M267 132h14v18h-14zm26 0h14v18h-14zm26 0h14v18h-14z" fill="#0F4B3A"/>
-<path d="M244 121 300 84l56 37Z" fill="#B69A62" stroke="#F2EFE5" stroke-width="6"/>
-<path d="M274 216h18v24h-18zm34 0h18v24h-18zm-34 42h18v24h-18zm34 0h18v24h-18z" fill="#0F4B3A"/>
-<path d="M286 334h28v52h-28Z" fill="#0F4B3A"/>
-<path d="M112 430q42-24 84 0t84 0 84 0 84 0 84 0" fill="none" stroke="#F2EFE5" stroke-width="8" stroke-linecap="round"/>
-<path d="M132 456q42-24 84 0t84 0 84 0 84 0 64 0" fill="none" stroke="#B69A62" stroke-width="7" stroke-linecap="round"/>
-</g><path d="M300 30 520 112v188c0 145-86 246-220 310C166 546 80 445 80 300V112Z" fill="none" stroke="#B69A62" stroke-width="4"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="t d">
+<title id="t">Boston Beacons — vintage roundel V2</title><desc id="d">Emblème circulaire vintage avec un phare minimal, deux vagues et le nom Boston Beacons.</desc>
+<circle cx="300" cy="300" r="278" fill="#F2EFE5" stroke="#0F4B3A" stroke-width="24"/>
+<circle cx="300" cy="300" r="247" fill="none" stroke="#B69A62" stroke-width="7"/>
+<path d="M102 193h396M102 407h396" stroke="#0F4B3A" stroke-width="7"/>
+<text x="300" y="145" text-anchor="middle" font-family="Georgia,serif" font-size="43" font-weight="bold" letter-spacing="8" fill="#0F4B3A">BOSTON</text>
+<text x="300" y="478" text-anchor="middle" font-family="Georgia,serif" font-size="51" font-weight="bold" letter-spacing="3" fill="#0F4B3A">BEACONS</text>
+<path d="M267 345 282 220h36l15 125Z" fill="#0F4B3A"/>
+<path d="M273 222 284 194h32l11 28Z" fill="#B69A62" stroke="#0F4B3A" stroke-width="5"/>
+<rect x="283" y="171" width="34" height="24" fill="#0F4B3A"/>
+<path d="M275 171 300 151l25 20Z" fill="#B69A62" stroke="#0F4B3A" stroke-width="4"/>
+<path d="M274 248h52M278 281h44" stroke="#F2EFE5" stroke-width="7"/>
+<path d="M290 304h20v41h-20Z" fill="#F2EFE5"/>
+<path d="M190 365q55-27 110 0t110 0" fill="none" stroke="#0F4B3A" stroke-width="9" stroke-linecap="round"/>
+<path d="M210 385q45-20 90 0t90 0" fill="none" stroke="#B69A62" stroke-width="7" stroke-linecap="round"/>
+<path d="M102 300h56m284 0h56" stroke="#B69A62" stroke-width="9"/>
+<circle cx="160" cy="300" r="7" fill="#0F4B3A"/><circle cx="440" cy="300" r="7" fill="#0F4B3A"/>
+</svg>
