@@ -1,26 +1,109 @@
 {
-  "version": 1,
-  "snapshotProposal": {
+  "version": 2,
+  "snapshot": {
     "season": "2025-2026",
     "date": "2026-06-30",
-    "status": "to-confirm"
+    "status": "approved",
+    "administrativeCutoffTimezone": "America/New_York",
+    "note": "End-of-day snapshot; exact timestamp and transaction cutoff must be fixed in the import manifest. Player statistics remain separated by competition type."
   },
   "references": [
     {
-      "id": "boston-celtics-wikipedia",
-      "url": "https://fr.wikipedia.org/wiki/Celtics_de_Boston",
-      "scope": "histoire et palmarès Boston, porte d'entrée documentaire"
+      "id": "nba-stats-players-traditional-2025-26",
+      "url": "https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season",
+      "provider": "NBA.com / NBA Stats",
+      "scope": "Official 2025-26 regular-season player traditional statistics",
+      "priority": "primary"
     },
     {
-      "id": "nba-rulebook",
-      "url": "https://official.nba.com/rulebook/",
-      "scope": "règlement"
+      "id": "nba-stats-glossary",
+      "url": "https://www.nba.com/stats/help/glossary",
+      "provider": "NBA.com / NBA Stats",
+      "scope": "Definitions and formulas for traditional and advanced metrics",
+      "priority": "primary"
     },
     {
-      "id": "tripdouble-rules",
-      "url": "https://tripdouble.com/category/nba/#regles-nba",
-      "scope": "ressource pédagogique"
+      "id": "nba-player-rosters",
+      "url": "https://www.nba.com/players",
+      "provider": "NBA.com",
+      "scope": "Player biographies, roster fields and historic roster filter; verify cutoff for each player",
+      "priority": "primary"
+    },
+    {
+      "id": "nba-transactions",
+      "url": "https://www.nba.com/players/transactions",
+      "provider": "NBA.com",
+      "scope": "Official player transactions and roster status history",
+      "priority": "primary"
+    },
+    {
+      "id": "nba-2026-offseason-tracker",
+      "url": "https://www.nba.com/news/2026-offseason-trade-tracker",
+      "provider": "NBA.com",
+      "scope": "Officially announced 2026 offseason trades and roster changes",
+      "priority": "primary"
+    },
+    {
+      "id": "nbpa-cba-2023",
+      "url": "https://www.nbpa.com/cba",
+      "provider": "NBPA / NBA",
+      "scope": "2023 NBA-NBPA Collective Bargaining Agreement, effective 2023-07-01; contracts and cap rules",
+      "priority": "primary"
+    },
+    {
+      "id": "basketball-reference-2026-per-game",
+      "url": "https://www.basketball-reference.com/leagues/NBA_2026_per_game.html",
+      "provider": "Basketball-Reference",
+      "scope": "Secondary cross-check for 2025-26 per-game player stats",
+      "priority": "secondary"
+    },
+    {
+      "id": "basketball-reference-2026-totals",
+      "url": "https://www.basketball-reference.com/leagues/NBA_2026_totals.html",
+      "provider": "Basketball-Reference",
+      "scope": "Secondary cross-check for 2025-26 player totals",
+      "priority": "secondary"
+    },
+    {
+      "id": "basketball-reference-2026-advanced",
+      "url": "https://www.basketball-reference.com/leagues/NBA_2026_advanced.html",
+      "provider": "Basketball-Reference",
+      "scope": "Secondary cross-check for 2025-26 advanced metrics",
+      "priority": "secondary"
+    },
+    {
+      "id": "basketball-reference-2026-transactions",
+      "url": "https://www.basketball-reference.com/leagues/NBA_2026_transactions.html",
+      "provider": "Basketball-Reference",
+      "scope": "Secondary cross-check of transactions from 2025-07-01 to 2026-06-30",
+      "priority": "secondary"
     }
   ],
-  "policy": "Chaque donnée importée doit conserver source, date de consultation, saison, définition, unité, méthode de transformation et niveau de confiance."
+  "policy": {
+    "provenanceRequired": [
+      "sourceId",
+      "provider",
+      "url",
+      "consultedAt",
+      "season",
+      "competitionType",
+      "scope",
+      "rawValue",
+      "unit",
+      "definition",
+      "transformation",
+      "status",
+      "confidence"
+    ],
+    "missingData": "null plus explicit missing/unverified status; never invent values",
+    "versioning": "Immutable reference-data snapshots; every correction or new import creates a new version",
+    "licensing": "Public accessibility does not imply permission to scrape, redistribute, or use commercially; review provider terms and applicable rights before bulk import or release",
+    "separation": [
+      "official source values",
+      "secondary cross-checks",
+      "derived metrics",
+      "scouting estimates",
+      "generated fictional players"
+    ]
+  }
 }
