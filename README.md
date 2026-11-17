@@ -35,10 +35,9 @@ Basket Legends est une simulation de management basketball dans laquelle le joue
 - `assets/franchises/washington-capitals/` — concept de maillots avec étoiles latérales sur l'Icon.
 
 ## Points ouverts
-1. Washington Capitals est déjà utilisé par une franchise NHL ; le concept est conservé à la demande de l'utilisateur, mais une revue juridique est obligatoire avant diffusion publique ou commerciale.
-2. Confirmer le snapshot des effectifs (proposition : saison 2025-2026, au 30 juin 2026).
-3. Effectuer une revue de disponibilité de tous les noms et des droits avant diffusion publique/commerciale.
-4. Collecter puis vérifier les données historiques, les profils statistiques et les données individuelles.
+1. Confirmer le snapshot des effectifs (proposition : saison 2025-2026, au 30 juin 2026).
+2. Effectuer une revue de disponibilité de tous les noms et des droits avant diffusion publique/commerciale.
+3. Collecter puis vérifier les données historiques, les profils statistiques et les données individuelles.
 
 ## Stack cible
 React + TypeScript, Tailwind CSS, Node.js + TypeScript, PostgreSQL, Prisma, Zod, Vitest et Playwright. Monolithe modulaire pour la V1.
