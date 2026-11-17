@@ -35,7 +35,7 @@ Snapshot de référence : saison 2025-2026, arrêté au 30 juin 2026. La carriè
 ## Direction artistique — contraintes
 - Logos de franchises sportives modernes, pas de logos commerciaux.
 - Boston Beacons : palette validée (#0F4B3A, #F2EFE5, #B69A62, #1D2523). Logo à simplifier en emblème vintage historique, phare minimal/roundel. Maillots inspirés de la coupe Washington.
-- Washington Capitals : concept original autour d'un monument abstrait et d'une étoile ; navy #0B2D5B, rouge #E31837, blanc #FFFFFF. Sur l'Icon navy, étoiles blanches sur les deux côtés.
+- Washington Capitals : concept original autour d'un monument abstrait et d'une étoile ; palette définitive : Capital Navy #0B2D5B, Capitol Red #C43D45, Federal White #F4F3EF, Monument Silver #AEB7C2. Sur l'Icon navy, étoiles blanches sur les deux côtés.
 - Règle universelle des maillots : chaque col doit être une seule couleur unie. Aucun col bicolore, mélange, dégradé ou liseré multicolore.
 - Ne pas copier les identités des équipes réelles. Washington Capitals est un nom utilisé par une franchise NHL : conserver le risque dans la documentation et ne pas publier/commercialiser sans revue juridique.
 
