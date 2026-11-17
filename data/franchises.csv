@@ -1,4 +1,4 @@
-"id","city","referenceClub","fictionalName","creativeTerritory","primary","secondary","accent","dark","nameStatus","nameClearance","visualStatus","brandRisk"
+"id","city","referenceClub","fictionalName","creativeTerritory","primary","secondary","accent","neutral","nameStatus","nameClearance","visualStatus","brandRisk"
 "boston","Boston","Boston Celtics","Boston Beacons","Phare, port historique et faisceau lumineux","#0F4B3A","#F2EFE5","#B69A62","#1D2523","selected-by-user","not-checked","direction-approved-assets-pending",""
 "brooklyn","Brooklyn","Brooklyn Nets","Brooklyn Bridges","Ponts, architecture et connexions urbaines","#31566D","#C47B50","#252B30","#EAE4D8","selected-by-user","not-checked","direction-approved-assets-pending",""
 "new-york","New York","New York Knicks","New York Skyliners","Skyline, verticalité et énergie métropolitaine","#2878A5","#F1F3F4","#AEB8C2","#252D35","selected-by-user","not-checked","direction-approved-assets-pending",""
