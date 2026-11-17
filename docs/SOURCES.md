@@ -58,3 +58,13 @@ Ne pas copier une base complète depuis un fournisseur tiers sans vérifier les 
 ## 6. CBA et données contractuelles
 
 Le CBA 2023 NBA-NBPA est la référence juridique/contractuelle de base pour la période du snapshot, sous réserve de vérifier les dispositions applicables à chaque saison et leurs mises à jour. Les montants de salary cap, tax, aprons, minimums et exceptions doivent être stockés dans une table de paramètres versionnée par saison. Les statistiques sportives et le CBA sont deux familles de sources distinctes.
+
+
+## 7. Sources éditoriales complémentaires — saison 2026-2027
+
+Ces références sont utiles pour la découverte des joueurs, la lecture des effectifs, le contexte des transferts, les rôles probables et le recoupement éditorial. Elles ne remplacent pas les sources officielles pour les statistiques, les transactions ou les statuts contractuels.
+
+- L'Équipe, Guide NBA 2026-2027 : https://www.lequipe.fr/collection/guide-nba-2026-2027/ — collection de présentations franchise par franchise, avec analyses d'effectifs, arrivées/départs et enjeux sportifs. La page de collection est indexée par le moteur de recherche, mais l'accès direct automatisé peut être refusé. Utiliser les articles de la collection lorsqu'ils sont accessibles.
+- BeBasket, Joueurs NBA 2026-2027 : https://www.bebasket.fr/ligue/nba/joueurs — répertoire de joueurs classés par équipe ; la page consultée annonce couvrir les effectifs de camp d'entraînement et recense 660 joueurs distincts sur les 30 équipes.
+
+**Limites d'usage :** ces deux sources décrivent la saison 2026-2027. Elles peuvent servir à vérifier les affiliations et à enrichir les notes de scouting éditoriales, mais elles ne doivent pas être utilisées pour reconstruire rétroactivement le snapshot arrêté au 30 juin 2026. Les effectifs de camp d'entraînement peuvent inclure des joueurs qui ne figurent pas dans l'effectif final de saison. Toute donnée de joueur intégrée au jeu doit être recoupée avec une source primaire et porter une provenance explicite. Les commentaires, pronostics et appréciations éditoriales ne sont pas des attributs objectifs : ils peuvent inspirer une note de scouting, mais ne doivent pas être convertis automatiquement en notes de jeu.
