@@ -2,7 +2,7 @@
 
 > Jeu web de management basketball — simulation sportive et gestion de franchise à long terme.
 
-**Statut :** préproduction / blueprint. Le registre des 30 noms de franchise reflète les choix de l'utilisateur au 17 novembre 2026. La première identité vectorielle conceptuelle de Boston Beacons est créée ; les autres identités restent à concevoir. La disponibilité juridique des noms n'a pas été vérifiée.
+**Statut :** préproduction / blueprint. Le registre des 30 noms de franchise reflète les choix de l'utilisateur au 17 novembre 2026. Boston Beacons et Washington Capitals disposent de concepts graphiques documentés ; les identités sont encore en cours de conception. La disponibilité juridique des noms n'a pas été vérifiée.
 
 ## Vision
 Basket Legends est une simulation de management basketball dans laquelle le joueur incarne un **General Manager**. Il construit son effectif, gère contrats et finances, supervise le recrutement, fixe les orientations sportives et délègue certaines responsabilités au coach.
@@ -31,10 +31,11 @@ Basket Legends est une simulation de management basketball dans laquelle le joue
 - `docs/ROADMAP.md` — feuille de route.
 - `docs/SOURCES.md` — politique de provenance des données.
 - `data/franchises.json` et `data/franchises.csv` — registre exploitable.
-- `assets/franchises/boston-beacons/` — première identité vectorielle V1.
+- `assets/franchises/boston-beacons/` — concept vectoriel vintage en révision.
+- `assets/franchises/washington-capitals/` — concept de maillots avec étoiles latérales sur l'Icon.
 
 ## Points ouverts
-1. Washington Capitals est déjà utilisé par une franchise de la NHL et fait l'objet de marques revendiquées par Lincoln Hockey ; revue juridique ou changement de nom avant toute identité visuelle ou diffusion.
+1. Washington Capitals est déjà utilisé par une franchise NHL ; le concept est conservé à la demande de l'utilisateur, mais une revue juridique est obligatoire avant diffusion publique ou commerciale.
 2. Confirmer le snapshot des effectifs (proposition : saison 2025-2026, au 30 juin 2026).
 3. Effectuer une revue de disponibilité de tous les noms et des droits avant diffusion publique/commerciale.
 4. Collecter puis vérifier les données historiques, les profils statistiques et les données individuelles.
