@@ -1,15 +1,13 @@
-# Boston Beacons — asset workspace
+# Boston Beacons — identité V1
 
-**Statut :** concept à développer, aucun logo ni maillot finalisé.
+- `logo-primary.svg` : écusson phare ;
+- `logo-secondary.svg` : médaillon phare ;
+- `monogram.svg` : monogramme BB ;
+- `wordmark.svg` : BOSTON / BEACONS ;
+- `uniform-concepts.svg` : quatre concepts de maillots.
 
-**Référence sportive :** Boston Celtics.
-**Territoire :** phare, port historique, faisceau lumineux et navigation.
+Palette : Harbor Green `#0F4B3A`, Warm Ivory `#F2EFE5`, Antique Brass `#B69A62`, Ink Charcoal `#1D2523`.
 
-Livrables à produire :
-- logo principal, secondaire et monogramme BB ;
-- wordmark BEACONS ;
-- palette finale ;
-- maillots Association, Icon, Statement et City ;
-- terrain et identité d'arène.
+Territoire : phare, port, faisceau lumineux et navigation.
 
-Éviter le trèfle, le lutin, le chapeau, la canne et toute composition directement associée aux Celtics. Les couleurs de départ doivent être documentées et ajustées, et non présentées comme les codes officiels sans vérification.
+**Statut : concept V1, non final et non juridiquement vérifié.** SVG éditables, typographies système et silhouettes de maillots conceptuelles uniquement.
