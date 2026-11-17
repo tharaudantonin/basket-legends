@@ -429,10 +429,10 @@
       "fictionalName": "Washington Capitals",
       "creativeTerritory": "Identité civique de Washington et architecture fédérale — création visuelle suspendue à la résolution du conflit de nom",
       "paletteProposal": {
-        "primary": "#1D3E69",
-        "secondary": "#B8323F",
-        "accent": "#C6A65B",
-        "dark": "#F2F0E8"
+        "primary": "#0B2D5B",
+        "secondary": "#FFFFFF",
+        "accent": "#E31837",
+        "dark": "#0B2D5B"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "existing-professional-team-name-conflict-review-required",
