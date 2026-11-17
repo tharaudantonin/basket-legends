@@ -24,7 +24,7 @@ Cette piste constitue un point de départ à discuter. Les symboles précis, le 
 
 | Rôle | Nom | HEX |
 |---|---|---|
-| Principale | Storm Orange | `#E36F32` |
+| Principale | Storm Orange | `#30343B` |
 | Secondaire | Storm Graphite | `#30343B` |
 | Accent | Thunder Blue | `#42647C` |
 | Neutre | Cloud White | `#F0F1ED` |
