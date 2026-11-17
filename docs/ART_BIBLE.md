@@ -35,7 +35,7 @@ Pour chaque franchise :
 - Graphite ou bleu nuit comme base, panneaux contrastés, chiffres tabulaires et graphiques lisibles.
 - Les couleurs de franchise restent des accents et ne sont jamais l'unique code d'information.
 
-## Franchise pilote : Boston Beacons
+## Franchise pilote : Boston Beacons — identité conceptuelle V1
 Référence sportive : Boston Celtics. Territoire : phare, port historique, faisceau lumineux et navigation.
 
 Palette de concept (à vérifier et ajuster) :
@@ -44,6 +44,9 @@ Palette de concept (à vérifier et ajuster) :
 - Antique Brass : `#B69A62`
 - Ink Charcoal : `#1D2523`
 
-Logo envisagé : phare géométrique ou faisceau abstrait faisant apparaître subtilement un B. Éviter trèfle, lutin, chapeau, canne ou composition rappelant directement le logo Celtics.
+Logo V1 : phare géométrique dans un écusson sportif, faisceau angulaire et vagues stylisées. Le symbole secondaire reprend le phare dans un médaillon rond ; le monogramme utilise les lettres BB ; le wordmark sépare BOSTON et BEACONS. Les SVG sont fournis dans `assets/franchises/boston-beacons/`.
 
-Maillots envisagés : Association ivoire/vert, Icon vert profond, Statement charbon/vert, City avec lignes de navigation ou trame portuaire. Il s'agit d'une piste conceptuelle, pas d'une maquette validée.
+Maillots V1 : Association ivoire/vert, Icon vert profond, Statement charbon/vert et City ivoire avec lignes de navigation. Cette V1 est une proposition à réviser, pas une charte prête à commercialiser. Les SVG utilisent des polices système et les palettes restent conceptuelles.
+
+## Statut particulier : Washington Capitals
+Le nom correspond déjà à une franchise NHL et à des marques revendiquées par Lincoln Hockey. La création d'une identité visuelle pour ce nom est bloquée en attendant une revue juridique ou un changement de nom. Ne pas reprendre les codes visuels de la franchise de hockey. Sources : https://www.nhl.com/capitals/ et https://www.nhl.com/fr/capitals/roster.
