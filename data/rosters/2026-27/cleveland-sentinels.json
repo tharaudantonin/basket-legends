@@ -1,0 +1,540 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "nba-2026-2027-snapshot-2026-11-17",
+  "snapshot": {
+    "season": "2026-2027",
+    "date": "2026-11-17",
+    "timezone": "America/New_York",
+    "status": "approved-user-submitted-roster"
+  },
+  "franchise": {
+    "id": "cleveland",
+    "fictionalName": "Cleveland Sentinels",
+    "referenceClub": "Cleveland Cavaliers",
+    "referenceAbbreviation": "CLE"
+  },
+  "roster": {
+    "status": "approved-by-user",
+    "approvedAt": "2026-11-17",
+    "playerCount": 17,
+    "scope": "Roster list supplied directly by the user and approved for Basket Legends on 2026-11-17. This approval validates the submitted list for project workflow; it does not independently certify NBA contract status or historical affiliation as of the snapshot."
+  },
+  "provenance": {
+    "sourceType": "user-provided-data",
+    "sourceDescription": "Structured roster extract supplied by the user in the conversation and approved on 2026-11-17.",
+    "officialSourceVerification": "pending",
+    "note": "Do not infer NBA person IDs, contract type, two-way status, contract terms, or 2026-27 statistics from this file. Verify separately against NBA official records before marking those fields verified."
+  },
+  "units": {
+    "canonical": "metric",
+    "displayPreference": "user-configurable",
+    "height": {
+      "canonical": "cm",
+      "sourceUnit": "ft-in",
+      "conversion": "1 inch = 2.54 cm",
+      "rounding": "nearest integer for display"
+    },
+    "weight": {
+      "canonical": "kg",
+      "sourceUnit": "lb",
+      "conversion": "1 lb = 0.45359237 kg",
+      "rounding": "nearest integer for display"
+    },
+    "note": "Preserve the original imperial source values; metric values are converted display/reference values rounded to the nearest whole unit."
+  },
+  "players": [
+    {
+      "id": "cle-jarrett-allen",
+      "sourceName": "Jarrett Allen",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "31",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 250,
+          "sourceUnit": "lb",
+          "weightKg": 113,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Texas",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    },
+    {
+      "id": "cle-thomas-bryant",
+      "sourceName": "Thomas Bryant",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "3",
+      "sourcePosition": "C-F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 260,
+          "sourceUnit": "lb",
+          "weightKg": 118,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Indiana",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    },
+    {
+      "id": "cle-khalifa-diop",
+      "sourceName": "Khalifa Diop",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "18",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-10",
+          "sourceUnit": "ft-in",
+          "heightCm": 208,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 231,
+          "sourceUnit": "lb",
+          "weightKg": 105,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "CB Gran Canaria",
+      "country": "Senegal",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    },
+    {
+      "id": "cle-james-harden",
+      "sourceName": "James Harden",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "1",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 220,
+          "sourceUnit": "lb",
+          "weightKg": 100,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Arizona State",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    },
+    {
+      "id": "cle-mario-hezonja",
+      "sourceName": "Mario Hezonja",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "33",
+      "sourcePosition": "F-G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-8",
+          "sourceUnit": "ft-in",
+          "heightCm": 203,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 255,
+          "sourceUnit": "lb",
+          "weightKg": 116,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "FC Barcelona",
+      "country": "Croatia",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    },
+    {
+      "id": "cle-sam-merrill",
+      "sourceName": "Sam Merrill",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "5",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 195,
+          "sourceUnit": "lb",
+          "weightKg": 88,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Utah State",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    },
+    {
+      "id": "cle-riley-minix",
+      "sourceName": "Riley Minix",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "12",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 230,
+          "sourceUnit": "lb",
+          "weightKg": 104,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Morehead State",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    },
+    {
+      "id": "cle-donovan-mitchell",
+      "sourceName": "Donovan Mitchell",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "45",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-2",
+          "sourceUnit": "ft-in",
+          "heightCm": 188,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 228,
+          "sourceUnit": "lb",
+          "weightKg": 103,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Louisville",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    },
+    {
+      "id": "cle-evan-mobley",
+      "sourceName": "Evan Mobley",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "4",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-11",
+          "sourceUnit": "ft-in",
+          "heightCm": 211,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 230,
+          "sourceUnit": "lb",
+          "weightKg": 104,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Southern California",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    },
+    {
+      "id": "cle-norchad-omier",
+      "sourceName": "Norchad Omier",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "77",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-5",
+          "sourceUnit": "ft-in",
+          "heightCm": 196,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 248,
+          "sourceUnit": "lb",
+          "weightKg": 112,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Miami",
+      "country": "Nicaragua",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    },
+    {
+      "id": "cle-craig-porter-jr",
+      "sourceName": "Craig Porter Jr.",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "9",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-1",
+          "sourceUnit": "ft-in",
+          "heightCm": 185,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 194,
+          "sourceUnit": "lb",
+          "weightKg": 88,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Wichita State",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    },
+    {
+      "id": "cle-tyrese-proctor",
+      "sourceName": "Tyrese Proctor",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "24",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 185,
+          "sourceUnit": "lb",
+          "weightKg": 84,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Duke",
+      "country": "Australia",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    },
+    {
+      "id": "cle-meleek-thomas",
+      "sourceName": "Meleek Thomas",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "15",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-3",
+          "sourceUnit": "ft-in",
+          "heightCm": 191,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 190,
+          "sourceUnit": "lb",
+          "weightKg": 86,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Arkansas",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    },
+    {
+      "id": "cle-naeqwan-tomlin",
+      "sourceName": "Nae'Qwan Tomlin",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "35",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-8",
+          "sourceUnit": "ft-in",
+          "heightCm": 203,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 210,
+          "sourceUnit": "lb",
+          "weightKg": 95,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Memphis",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    },
+    {
+      "id": "cle-jaylon-tyson",
+      "sourceName": "Jaylon Tyson",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "20",
+      "sourcePosition": "G-F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 224,
+          "sourceUnit": "lb",
+          "weightKg": 102,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "California",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    },
+    {
+      "id": "cle-ernest-udeh-jr",
+      "sourceName": "Ernest Udeh, Jr.",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "88",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 266,
+          "sourceUnit": "lb",
+          "weightKg": 121,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Miami",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    },
+    {
+      "id": "cle-peyton-watson",
+      "sourceName": "Peyton Watson",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "8",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 215,
+          "sourceUnit": "lb",
+          "weightKg": 98,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "UCLA",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": null,
+      "attributes": null,
+      "notes": null
+    }
+  ]
+}
