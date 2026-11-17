@@ -4,6 +4,10 @@
 
 Ce répertoire centralise les directions artistiques des 30 franchises. Il sert de référence à la conception, puis à l'implémentation. Il ne constitue pas une validation automatique des éléments encore proposés.
 
+## Contrôle de cohérence transversal
+
+- [Audit de cohérence des 30 franchises](./COHERENCE_AUDIT.md) — comparaison préliminaire des territoires créatifs, palettes chromatiques et risques de confusion. Les palettes non validées restent des propositions ; aucune n'est modifiée automatiquement.
+
 ## Règles de lecture
 - **Validé** : choix explicitement confirmé par l'utilisateur.
 - **Proposition existante** : valeur déjà présente dans le registre, à faire confirmer.
