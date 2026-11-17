@@ -2,7 +2,7 @@
 
 > Dossier de direction artistique — Washington  
 > Version : 1.0 — 17 novembre 2026  
-> Statut : direction artistique développée ; palette et principes des maillots partiellement validés, propositions complémentaires à confirmer  
+> Statut : direction artistique et palette chromatique définitives validées ; les assets graphiques restent à produire et les éléments non explicitement arbitrés demeurent des propositions.  
 > Franchise de référence sportive : Washington Wizards
 
 ## 1. Identité et positionnement
@@ -22,7 +22,7 @@ L'identité doit évoquer Washington comme capitale politique et ville monumenta
 
 ### 2.1. Décisions explicitement validées
 
-- Palette : Navy `#0B2D5B`, Red `#C43D45`, White `#F4F3EF`, Dark Navy `#AEB7C2`.
+- Palette définitive : Capital Navy `#0B2D5B`, Capitol Red `#C43D45`, Federal White `#F4F3EF`, Monument Silver `#AEB7C2`.
 - Direction générale : identité moderne de basketball, construite autour d'un monument abstrait et d'une étoile.
 - Maillot Association : base blanche, accents navy et rouge.
 - Maillot Icon : base navy avec des étoiles blanches répétées verticalement sur les deux panneaux latéraux, de l'aisselle jusqu'à l'ourlet.
@@ -280,7 +280,7 @@ Les slogans et rituels sont des propositions, pas des éléments validés.
 | Date | Décision | Statut |
 |---|---|---|
 | 2026-11-17 | Création du dossier Washington Capitals | Dossier initial |
-| 2026-11-17 | Palette Navy `#0B2D5B`, Red `#C43D45`, White `#F4F3EF`, Dark Navy `#AEB7C2` | Validée |
+| 2026-11-17 | Palette Capital Navy `#0B2D5B`, Capitol Red `#C43D45`, Federal White `#F4F3EF`, Monument Silver `#AEB7C2` | Validée |
 | 2026-11-17 | Territoire créatif : monument abstrait, étoile et géométrie civique | Direction retenue |
 | 2026-11-17 | Association blanche avec accents Navy et Red | Validée dans son principe |
 | 2026-11-17 | Icon Navy avec étoiles blanches sur les deux panneaux latéraux | Validée |
