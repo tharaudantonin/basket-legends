@@ -83,6 +83,21 @@ Les données doivent distinguer totaux, par match, par 36 minutes et par 100 pos
 
 Les statistiques de playoffs ne doivent jamais être additionnées aux statistiques de saison régulière dans le même enregistrement. Les statistiques par équipe et les agrégats de saison doivent conserver la distinction entre lignes d'équipe et total de saison.
 
+### Préférence d'unités d'affichage
+
+Le référentiel conserve les mensurations sources et leurs unités d'origine, ainsi que les valeurs métriques converties. L'interface doit proposer un réglage utilisateur global :
+- **Métrique** : taille en centimètres (cm), poids en kilogrammes (kg) ;
+- **Impérial** : taille en pieds/pouces (ft/in), poids en livres (lb).
+
+La préférence ne modifie jamais les données stockées : elle ne fait que choisir leur représentation. Les conversions doivent utiliser les facteurs exacts (1 in = 2,54 cm ; 1 lb = 0,45359237 kg) et l'arrondi n'intervient qu'à l'affichage. Les valeurs source restent accessibles pour audit et réversibilité.
+
+### Première franchise reçue et validée
+
+- Philadelphia Founders (référence : Philadelphia 76ers) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026.
+- Fichier de données : `data/rosters/2025-26/philadelphia-founders.json`.
+- Le statut « validé par l'utilisateur » ne vaut pas certification indépendante du statut contractuel ou de l'affiliation NBA au 30 juin 2026. Les identifiants NBA, contrats, statuts two-way et statistiques restent à vérifier séparément.
+- Les pseudonymes, notes, attributs et commentaires de scouting ne sont pas encore renseignés ; ils feront l'objet d'une étape dédiée après validation des effectifs.
+
 ## 6. Attributs de jeu (échelle 1–100)
 
 Les statistiques réelles ne sont pas des attributs de jeu. Un modèle versionné transforme les preuves disponibles en évaluations sportives, en séparant :
