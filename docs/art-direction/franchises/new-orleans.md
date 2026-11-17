@@ -19,16 +19,26 @@ Héritage cérémoniel, fleuve et patrimoine musical
 Cette piste constitue un point de départ à discuter. Les symboles précis, le récit, le style graphique et les éléments à éviter restent à valider.
 
 ## 3. Palette chromatique
-**Statut : proposition du registre — à confirmer.**
 
-| Rôle | HEX |
-|---|---|
-| Principale | #173958 |
-| Secondaire | #B63B4A |
-| Accent | #B89B5E |
-| Sombre / complémentaire | #F3EEE3 |
+**Statut : Palette validée par l'utilisateur le 17 novembre 2026.**
 
-Les proportions d'usage, contrastes et associations autorisées restent à définir. Aucune couleur n'est définitive avant validation explicite.
+| Rôle | Nom | HEX |
+|---|---|---|
+| Principale | River Blue-Teal | `#24566B` |
+| Secondaire | Antique Gold | `#B99A57` |
+| Accent | Ivory | `#F1EBDD` |
+| Sombre | Charcoal | `#25252B` |
+
+**Territoire chromatique :** Héritage historique, architecture, musique et patrimoine du Mississippi.
+
+**Hiérarchie d'utilisation :** River Blue-Teal est la dominante ; Ivory garantit la lisibilité et Antique Gold apporte une touche cérémonielle. Ne pas confondre avec le teal froid de Toronto.
+
+**Règles d'application :**
+- La couleur principale doit rester identifiable sur le maillot Icon et dans le logo principal.
+- Les couleurs d'accent ne doivent pas concurrencer la couleur dominante.
+- Les inscriptions et numéros doivent conserver un contraste élevé avec leur fond.
+- Les associations seront contrôlées sur fonds clairs et sombres, en monochrome et en simulation de déficiences de perception des couleurs.
+- Les couleurs exactes ci-dessus ne peuvent être modifiées sans nouvelle validation explicite.
 
 ## 4. Système de logos
 - Logo principal : concept, silhouette et composition à concevoir.
