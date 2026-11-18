@@ -1,0 +1,369 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-nba-positions-v1",
+  "status": "validated-design-specification",
+  "sport": "basketball",
+  "leagueReference": "NBA",
+  "description": "Référentiel de conception des cinq postes de Basket Legends. Les postes décrivent des rôles de jeu et ne constituent pas des conditions d'éligibilité.",
+  "system": {
+    "positionCount": 5,
+    "positions": [
+      "PG",
+      "SG",
+      "SF",
+      "PF",
+      "C"
+    ],
+    "primaryPositionRequired": true,
+    "secondaryPositionsAllowed": true,
+    "secondaryPositionsMax": 4,
+    "eligibilityRestrictions": false
+  },
+  "positionAptitude": {
+    "scale": {
+      "min": 0,
+      "max": 100
+    },
+    "oneScorePerPosition": true,
+    "calculation": {
+      "method": "weighted_position_attributes_with_individual_factors",
+      "components": {
+        "weightedAttributes": 0.75,
+        "positionExperience": 0.15,
+        "training": 0.05,
+        "development": 0.05
+      },
+      "attributeWeightsMustSumTo": 1,
+      "factorScale": [
+        0,
+        100
+      ],
+      "rounding": "nearest_integer",
+      "clampToScale": true,
+      "missingAttributePolicy": "renormalize_available_attribute_weights_and_reduce_confidence",
+      "experiencePolicy": "derive_from_documented_position_history_or_simulated_career_history",
+      "trainingPolicy": "use_player_specific_training_history",
+      "developmentPolicy": "use_individual_development_state_not_potential_as_a_substitute"
+    }
+  },
+  "archetypes": {
+    "independentFromPosition": true,
+    "definedSeparately": true,
+    "positionDeterminesArchetype": false,
+    "examples": [
+      "Sharpshooter",
+      "Rim Protector",
+      "3-and-D",
+      "Slasher",
+      "Playmaking Big",
+      "Stretch Big",
+      "Two-Way Wing",
+      "Post Scorer"
+    ]
+  },
+  "aging": {
+    "mode": "individual",
+    "positionCurvesAre": "statistical_reference_only",
+    "playerSpecificFactors": [
+      "age",
+      "minutes_and_career_workload",
+      "physical_profile",
+      "injury_history",
+      "training",
+      "recovery",
+      "individual_attributes"
+    ],
+    "retirementIsForcedByPositionAge": false,
+    "declineIsDeterministicByPosition": false
+  },
+  "physicalTemplates": {
+    "unitSystem": "metric",
+    "role": "descriptive_reference_not_eligibility_requirement",
+    "heightCm": "inclusive_range",
+    "weightKg": "inclusive_range"
+  },
+  "injuryModel": {
+    "method": "probabilistic",
+    "positionExposureIs": "risk_modifier_not_guarantee",
+    "injuryHistoryAndIndividualLoadMustBeConsidered": true
+  },
+  "sourcePositionMapping": {
+    "preserveOriginalSourcePosition": true,
+    "assignSecondaryPositionsAutomatically": false,
+    "mappingRequiresPlayerLevelEvidence": true,
+    "note": "Les anciennes valeurs source (G, F, C et combinaisons) sont conservées. Leur conversion en poste principal ou secondaire NBA doit être arbitrée joueur par joueur à partir des données disponibles."
+  },
+  "positions": [
+    {
+      "id": "PG",
+      "name": "Meneur",
+      "englishName": "Point Guard",
+      "keyAttributes": {
+        "vision_jeu": 0.22,
+        "passe": 0.2,
+        "dribble": 0.18,
+        "vitesse": 0.15,
+        "tir_trois_points": 0.1,
+        "decision": 0.08,
+        "sang_froid": 0.07
+      },
+      "physicalReference": {
+        "heightCm": [
+          180,
+          198
+        ],
+        "weightKg": [
+          75,
+          100
+        ]
+      },
+      "ageReference": {
+        "emergence": [
+          19,
+          23
+        ],
+        "peak": [
+          25,
+          30
+        ],
+        "declineReferenceAge": 32,
+        "typicalRetirement": [
+          34,
+          39
+        ]
+      },
+      "injuryExposure": [
+        "ankle",
+        "knee",
+        "hamstring",
+        "back"
+      ],
+      "compatiblePositions": [
+        "SG",
+        "SF"
+      ]
+    },
+    {
+      "id": "SG",
+      "name": "Arrière",
+      "englishName": "Shooting Guard",
+      "keyAttributes": {
+        "tir_trois_points": 0.22,
+        "tir_mi_distance": 0.17,
+        "dribble": 0.16,
+        "finition": 0.14,
+        "vitesse": 0.12,
+        "defense_perimetrique": 0.1,
+        "jeu_sans_ballon": 0.09
+      },
+      "physicalReference": {
+        "heightCm": [
+          188,
+          203
+        ],
+        "weightKg": [
+          82,
+          105
+        ]
+      },
+      "ageReference": {
+        "emergence": [
+          19,
+          23
+        ],
+        "peak": [
+          25,
+          30
+        ],
+        "declineReferenceAge": 32,
+        "typicalRetirement": [
+          34,
+          39
+        ]
+      },
+      "injuryExposure": [
+        "ankle",
+        "knee",
+        "hamstring",
+        "shoulder"
+      ],
+      "compatiblePositions": [
+        "PG",
+        "SF"
+      ]
+    },
+    {
+      "id": "SF",
+      "name": "Ailier",
+      "englishName": "Small Forward",
+      "keyAttributes": {
+        "tir_trois_points": 0.15,
+        "finition": 0.14,
+        "defense_perimetrique": 0.14,
+        "defense_interieure": 0.12,
+        "rebond_defensif": 0.12,
+        "vitesse": 0.11,
+        "jeu_sans_ballon": 0.1,
+        "decision": 0.07,
+        "agilite": 0.05
+      },
+      "physicalReference": {
+        "heightCm": [
+          195,
+          208
+        ],
+        "weightKg": [
+          88,
+          110
+        ]
+      },
+      "ageReference": {
+        "emergence": [
+          19,
+          23
+        ],
+        "peak": [
+          25,
+          30
+        ],
+        "declineReferenceAge": 32,
+        "typicalRetirement": [
+          34,
+          39
+        ]
+      },
+      "injuryExposure": [
+        "ankle",
+        "knee",
+        "hamstring",
+        "shoulder"
+      ],
+      "compatiblePositions": [
+        "SG",
+        "PF"
+      ]
+    },
+    {
+      "id": "PF",
+      "name": "Ailier fort",
+      "englishName": "Power Forward",
+      "keyAttributes": {
+        "rebond_defensif": 0.18,
+        "rebond_offensif": 0.15,
+        "defense_interieure": 0.14,
+        "finition": 0.13,
+        "puissance": 0.12,
+        "contre": 0.1,
+        "tir_trois_points": 0.08,
+        "ecran": 0.05,
+        "endurance": 0.05
+      },
+      "physicalReference": {
+        "heightCm": [
+          200,
+          213
+        ],
+        "weightKg": [
+          98,
+          120
+        ]
+      },
+      "ageReference": {
+        "emergence": [
+          20,
+          24
+        ],
+        "peak": [
+          26,
+          31
+        ],
+        "declineReferenceAge": 32,
+        "typicalRetirement": [
+          34,
+          39
+        ]
+      },
+      "injuryExposure": [
+        "knee",
+        "ankle",
+        "back",
+        "foot"
+      ],
+      "compatiblePositions": [
+        "SF",
+        "C"
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Pivot",
+      "englishName": "Center",
+      "keyAttributes": {
+        "rebond_defensif": 0.19,
+        "defense_interieure": 0.16,
+        "contre": 0.15,
+        "finition": 0.14,
+        "puissance": 0.12,
+        "ecran": 0.08,
+        "rebond_offensif": 0.06,
+        "endurance": 0.05,
+        "placement_defensif": 0.05
+      },
+      "physicalReference": {
+        "heightCm": [
+          205,
+          224
+        ],
+        "weightKg": [
+          105,
+          135
+        ]
+      },
+      "ageReference": {
+        "emergence": [
+          20,
+          25
+        ],
+        "peak": [
+          27,
+          32
+        ],
+        "declineReferenceAge": 33,
+        "typicalRetirement": [
+          35,
+          40
+        ]
+      },
+      "injuryExposure": [
+        "knee",
+        "foot",
+        "ankle",
+        "back",
+        "hip"
+      ],
+      "compatiblePositions": [
+        "PF"
+      ]
+    }
+  ],
+  "rules": [
+    "Chaque poste possède exactement une distribution de pondérations totalisant 1.0.",
+    "L'aptitude à un poste est une note distincte de 0 à 100 pour chacun des cinq postes.",
+    "Les archétypes sont indépendants des postes.",
+    "La taille et le poids sont des repères descriptifs et ne limitent jamais l'éligibilité.",
+    "Le potentiel n'est pas déterminé par le poste.",
+    "Un changement de poste ne réduit pas automatiquement les attributs d'un joueur.",
+    "Les blessures sont probabilistes et tiennent compte de la charge et de l'historique individuels.",
+    "Les âges de référence ne déclenchent ni déclin automatique ni retraite forcée.",
+    "Le développement et le vieillissement sont individualisés."
+  ],
+  "implementationNotes": {
+    "runtimeImplemented": false,
+    "nextDependencies": [
+      "Définir le dictionnaire canonique des attributs basketball détaillés et leurs identifiants.",
+      "Implémenter et tester le calcul d'aptitude à partir des attributs canoniques.",
+      "Ajouter les aptitudes par poste et les paramètres de vieillissement individuels au modèle joueur.",
+      "Convertir les sourcePosition existants joueur par joueur sans inférence arbitraire."
+    ]
+  }
+}
