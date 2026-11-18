@@ -68,9 +68,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 78,
+        "mental": 68,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 65,
+          "archetype": "Crafty Stretch Dimer"
+        }
+      }
     },
     {
       "id": "ind-johnny-furphy",
@@ -97,9 +117,29 @@
       "country": "Australia",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 72,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 80,
+        "mental": 64,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 72,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 60,
+          "archetype": "Glass-Cleaning Sniper"
+        }
+      }
     },
     {
       "id": "ind-tyrese-haliburton",
@@ -126,9 +166,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 90,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 98,
+        "physical": 78,
+        "mental": 94,
+        "tactical": 90,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 90,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 87,
+          "dunk": 65,
+          "archetype": "Crafty Offensive Engine"
+        }
+      }
     },
     {
       "id": "ind-jay-huff",
@@ -155,9 +215,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 82,
+        "mental": 70,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 77,
+          "dunk": 65,
+          "archetype": "Shot-Erasing Stretch"
+        }
+      }
     },
     {
       "id": "ind-quenton-jackson",
@@ -184,9 +264,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 84,
+        "mental": 68,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 76,
+          "dunk": 80,
+          "archetype": "2-Way Inside-Out Scorer"
+        }
+      }
     },
     {
       "id": "ind-tj-mcconnell",
@@ -213,9 +313,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 72,
+        "mental": 86,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 79,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 75,
+          "dunk": 25,
+          "archetype": "2-Way Mid-Paint Maestro"
+        }
+      }
     },
     {
       "id": "ind-larry-nance-jr",
@@ -242,9 +362,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 78,
+        "mental": 68,
+        "tactical": 66,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 71,
+          "dunk": 80,
+          "archetype": "Rim-Rocking Bandit"
+        }
+      }
     },
     {
       "id": "ind-andrew-nembhard",
@@ -271,9 +411,29 @@
       "country": "Canada",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 82,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 76,
+        "mental": 84,
+        "tactical": 82,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 82,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 85,
+          "dunk": 60,
+          "archetype": "3 & D Two Guard"
+        }
+      }
     },
     {
       "id": "ind-aaron-nesmith",
@@ -300,9 +460,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 84,
+        "mental": 76,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 79,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 55,
+          "archetype": "3 & D Wing"
+        }
+      }
     },
     {
       "id": "ind-kelly-oubre-jr",
@@ -329,9 +509,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 86,
+        "mental": 70,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 77,
+          "dunk": 84,
+          "archetype": "Mid-Paint Pro"
+        }
+      }
     },
     {
       "id": "ind-ben-sheppard",
@@ -358,9 +558,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 78,
+        "mental": 66,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 60,
+          "archetype": "2-Way Sharpshooter"
+        }
+      }
     },
     {
       "id": "ind-pascal-siakam",
@@ -387,9 +607,29 @@
       "country": "Cameroon",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 87,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 92,
+        "physical": 86,
+        "mental": 88,
+        "tactical": 82,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 87,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 80,
+          "archetype": "2-Way Post Creator"
+        }
+      }
     },
     {
       "id": "ind-jalen-slawson",
@@ -416,9 +656,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 78,
+        "mental": 64,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 76,
+          "dunk": 80,
+          "archetype": "Bouncy Chaos Creator"
+        }
+      }
     },
     {
       "id": "ind-braden-smith",
@@ -445,9 +705,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 72,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 68,
+        "mental": 76,
+        "tactical": 62,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 72,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 78,
+          "dunk": 40,
+          "archetype": "Diming Sharpshooter"
+        }
+      }
     },
     {
       "id": "ind-obi-toppin",
@@ -474,9 +754,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 90,
+        "mental": 72,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 79,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 90,
+          "archetype": "Inside-Out Glass Cleaner"
+        }
+      }
     },
     {
       "id": "ind-jarace-walker",
@@ -503,9 +803,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 84,
+        "mental": 70,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 76,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 85,
+          "archetype": "Poster Dunker"
+        }
+      }
     },
     {
       "id": "ind-ivica-zubac",
@@ -532,9 +852,29 @@
       "country": "Croatia",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 84,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 90,
+        "mental": 86,
+        "tactical": 82,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 84,
+          "status": "published-2kratings",
+          "source": "2KRatings Indiana Pacers NBA 2K27 team ratings page",
+          "threePoint": 26,
+          "dunk": 80,
+          "archetype": "2-Way Post Bully"
+        }
+      }
     }
   ]
 }
