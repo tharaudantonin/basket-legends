@@ -68,9 +68,29 @@
       "country": "Nigeria",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 78,
+        "mental": 70,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 62,
+          "dunk": 75,
+          "archetype": "Glass Guardian"
+        }
+      }
     },
     {
       "id": "gsw-jimmy-butler-iii",
@@ -97,9 +117,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 85,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 82,
+        "mental": 86,
+        "tactical": 84,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 85,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 76,
+          "dunk": 75,
+          "archetype": "2-Way Mid-Paint Playmaker"
+        }
+      }
     },
     {
       "id": "gsw-lj-cryer",
@@ -126,9 +166,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 66,
+        "mental": 68,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 30,
+          "archetype": "Perimeter Shot Hunter"
+        }
+      }
     },
     {
       "id": "gsw-stephen-curry",
@@ -155,9 +215,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 95,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 100,
+        "physical": 80,
+        "mental": 100,
+        "tactical": 100,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 95,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 99,
+          "dunk": 36,
+          "archetype": "Crafty Offensive Engine"
+        }
+      }
     },
     {
       "id": "gsw-draymond-green",
@@ -184,9 +264,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 82,
+        "mental": 88,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 79,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 75,
+          "dunk": 65,
+          "archetype": "Defensive Playmaker"
+        }
+      }
     },
     {
       "id": "gsw-al-horford",
@@ -213,9 +313,29 @@
       "country": "Dominican Republic",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 72,
+        "mental": 82,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 76,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 65,
+          "archetype": "Facilitating Popper"
+        }
+      }
     },
     {
       "id": "gsw-graham-ike",
@@ -242,9 +362,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 68,
+        "physical": 82,
+        "mental": 66,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 73,
+          "dunk": 70,
+          "archetype": "Ball-Snatching Bomber"
+        }
+      }
     },
     {
       "id": "gsw-yaxel-lendeborg",
@@ -271,9 +411,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 83,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 84,
+        "mental": 80,
+        "tactical": 82,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 83,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 83,
+          "dunk": 85,
+          "archetype": "Bucket Chaser"
+        }
+      }
     },
     {
       "id": "gsw-malevy-leons",
@@ -300,9 +460,29 @@
       "country": "Netherlands",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 69,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 66,
+        "physical": 78,
+        "mental": 64,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 69,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 74,
+          "dunk": 65,
+          "archetype": "Edge Enforcer"
+        }
+      }
     },
     {
       "id": "gsw-de-anthony-melton",
@@ -329,9 +509,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 78,
+        "mental": 78,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 70,
+          "archetype": "2-Way Iso Sniper"
+        }
+      }
     },
     {
       "id": "gsw-moses-moody",
@@ -358,9 +558,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 78,
+        "mental": 72,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 76,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 86,
+          "dunk": 70,
+          "archetype": "Crafty Iso Sniper"
+        }
+      }
     },
     {
       "id": "gsw-georges-niang",
@@ -387,9 +607,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 68,
+        "mental": 66,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 50,
+          "archetype": "Stretch Four"
+        }
+      }
     },
     {
       "id": "gsw-gary-payton-ii",
@@ -416,9 +656,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 70,
+        "physical": 82,
+        "mental": 78,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 72,
+          "dunk": 75,
+          "archetype": "2-Way Aerial Laymaker"
+        }
+      }
     },
     {
       "id": "gsw-brandin-podziemski",
@@ -445,9 +705,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 74,
+        "mental": 80,
+        "tactical": 82,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 80,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 83,
+          "dunk": 60,
+          "archetype": "Crafty Iso Sniper"
+        }
+      }
     },
     {
       "id": "gsw-kristaps-porzingis",
@@ -474,9 +754,29 @@
       "country": "Latvia",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 81,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 90,
+        "physical": 82,
+        "mental": 76,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 81,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 75,
+          "archetype": "Post-Scoring Stretch"
+        }
+      }
     },
     {
       "id": "gsw-will-richard",
@@ -503,9 +803,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 76,
+        "mental": 70,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 77,
+          "dunk": 75,
+          "archetype": "Middy-Scooping Bandit"
+        }
+      }
     },
     {
       "id": "gsw-gui-santos",
@@ -532,9 +852,29 @@
       "country": "Brazil",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 78,
+        "mental": 74,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 76,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 65,
+          "archetype": "Crafty Stretch"
+        }
+      }
     },
     {
       "id": "gsw-brandon-williams",
@@ -561,9 +901,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 76,
+        "mental": 72,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings Golden State Warriors NBA 2K27 team ratings page",
+          "threePoint": 76,
+          "dunk": 50,
+          "archetype": "Middy Layup Bully"
+        }
+      }
     }
   ]
 }
