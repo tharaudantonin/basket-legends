@@ -68,9 +68,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 70,
+        "physical": 78,
+        "mental": 72,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 70,
+          "dunk": 75,
+          "archetype": "Off-Ball Cutter"
+        }
+      }
     },
     {
       "id": "phi-adem-bona",
@@ -97,9 +117,29 @@
       "country": "Nigeria",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 64,
+        "physical": 88,
+        "mental": 72,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 54,
+          "dunk": 80,
+          "archetype": "Apex Eraser"
+        }
+      }
     },
     {
       "id": "phi-jaylen-brown",
@@ -126,9 +166,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 92,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 94,
+        "physical": 90,
+        "mental": 90,
+        "tactical": 94,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 92,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 84,
+          "dunk": 94,
+          "archetype": "2-Way Mid-Post Slasher"
+        }
+      }
     },
     {
       "id": "phi-kentavious-caldwell-pope",
@@ -155,9 +215,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 76,
+        "mental": 78,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 76,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 73,
+          "archetype": "2-Way Sharpshooter"
+        }
+      }
     },
     {
       "id": "phi-vj-edgecombe",
@@ -184,9 +264,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 82,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 88,
+        "mental": 78,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 82,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 89,
+          "archetype": "Versatile Slasher"
+        }
+      }
     },
     {
       "id": "phi-justin-edwards",
@@ -213,9 +313,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 74,
+        "mental": 70,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 80,
+          "archetype": "Iso-Sniping Ball Hawk"
+        }
+      }
     },
     {
       "id": "phi-joel-embiid",
@@ -242,9 +362,29 @@
       "country": "Cameroon",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 91,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 96,
+        "physical": 88,
+        "mental": 92,
+        "tactical": 88,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 91,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 75,
+          "dunk": 80,
+          "archetype": "2-Way Mid-Post Maestro"
+        }
+      }
     },
     {
       "id": "phi-tacko-fall",
@@ -271,9 +411,29 @@
       "country": "Senegal",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 52,
+        "physical": 94,
+        "mental": 66,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 30,
+          "dunk": 65,
+          "archetype": "Rim-Reaping Riser"
+        }
+      }
     },
     {
       "id": "phi-ariel-hukporti",
@@ -300,9 +460,29 @@
       "country": "Germany",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 72,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 58,
+        "physical": 82,
+        "mental": 68,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 72,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 47,
+          "dunk": 75,
+          "archetype": "Shot-Erasing Putback Pro"
+        }
+      }
     },
     {
       "id": "phi-lebron-james",
@@ -329,9 +509,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 91,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 96,
+        "physical": 82,
+        "mental": 100,
+        "tactical": 86,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 91,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 74,
+          "dunk": 85,
+          "archetype": "Mid-Paint Playmaker"
+        }
+      }
     },
     {
       "id": "phi-caleb-love",
@@ -358,9 +558,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 72,
+        "mental": 68,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 77,
+          "dunk": 65,
+          "archetype": "Perimeter Shot Hunter"
+        }
+      }
     },
     {
       "id": "phi-tyrese-maxey",
@@ -387,9 +607,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 93,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 96,
+        "physical": 88,
+        "mental": 90,
+        "tactical": 98,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 93,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 88,
+          "dunk": 70,
+          "archetype": "Athletic Iso Savant"
+        }
+      }
     },
     {
       "id": "phi-labaron-philon-jr",
@@ -416,9 +656,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 72,
+        "mental": 66,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 60,
+          "archetype": "Open-Lane Burner"
+        }
+      }
     },
     {
       "id": "phi-rayan-rupert",
@@ -445,9 +705,29 @@
       "country": "France",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 80,
+        "mental": 66,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 77,
+          "dunk": 70,
+          "archetype": "Crafty Iso Sniper"
+        }
+      }
     },
     {
       "id": "phi-anfernee-simons",
@@ -474,9 +754,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 76,
+        "mental": 74,
+        "tactical": 78,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 79,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 89,
+          "archetype": "Hash-Sinking Slasher"
+        }
+      }
     },
     {
       "id": "phi-dean-wade",
@@ -503,9 +803,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 78,
+        "mental": 78,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 75,
+          "archetype": "2-Way Masher"
+        }
+      }
     },
     {
       "id": "phi-jabari-walker",
@@ -532,9 +852,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 68,
+        "physical": 82,
+        "mental": 72,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings Philadelphia 76ers NBA 2K27 team ratings page",
+          "threePoint": 76,
+          "dunk": 75,
+          "archetype": "Faceup Board Crasher"
+        }
+      }
     }
   ]
 }
