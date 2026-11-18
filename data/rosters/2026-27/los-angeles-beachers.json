@@ -68,9 +68,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 75,
+        "mental": 78,
+        "tactical": 67,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 76,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 75,
+          "archetype": "Aerial Laymaker"
+        }
+      }
     },
     {
       "id": "lac-cam-christie",
@@ -97,9 +117,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 70,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 74,
+        "physical": 76,
+        "mental": 64,
+        "tactical": 66,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 70,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 70,
+          "dunk": 75,
+          "archetype": "Pull-Up Pro"
+        }
+      }
     },
     {
       "id": "lac-gradey-dick",
@@ -126,9 +166,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 70,
+        "mental": 68,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 72,
+          "dunk": 75,
+          "archetype": "Pull-Up Pro"
+        }
+      }
     },
     {
       "id": "lac-kris-dunn",
@@ -155,9 +215,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 70,
+        "physical": 82,
+        "mental": 82,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 55,
+          "archetype": "Tenacious 2-Way"
+        }
+      }
     },
     {
       "id": "lac-darius-garland",
@@ -184,9 +264,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 84,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 96,
+        "physical": 78,
+        "mental": 86,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 84,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 86,
+          "dunk": 40,
+          "archetype": "Athletic Shot Hunter"
+        }
+      }
     },
     {
       "id": "lac-rui-hachimura",
@@ -213,9 +313,29 @@
       "country": "Japan",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 78,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 84,
+        "mental": 74,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 78,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 80,
+          "archetype": "Stretch Riser"
+        }
+      }
     },
     {
       "id": "lac-brandon-ingram",
@@ -242,9 +362,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 84,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 94,
+        "physical": 78,
+        "mental": 84,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 84,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 80,
+          "archetype": "Iso-Scoring Post Pro"
+        }
+      }
     },
     {
       "id": "lac-isaiah-jackson",
@@ -271,9 +411,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 68,
+        "physical": 90,
+        "mental": 72,
+        "tactical": 78,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 66,
+          "dunk": 70,
+          "archetype": "Tip-In Shot Eraser"
+        }
+      }
     },
     {
       "id": "lac-derrick-jones-jr",
@@ -300,9 +460,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 74,
+        "physical": 94,
+        "mental": 78,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 79,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 92,
+          "archetype": "2-Way Poster Dunker"
+        }
+      }
     },
     {
       "id": "lac-brook-lopez",
@@ -329,9 +509,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 78,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 78,
+        "mental": 84,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 78,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 83,
+          "dunk": 65,
+          "archetype": "Shot-Erasing Post Bully"
+        }
+      }
     },
     {
       "id": "lac-nick-martinelli",
@@ -358,9 +558,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 68,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 70,
+        "mental": 62,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 68,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 60,
+          "archetype": "Stretch Four"
+        }
+      }
     },
     {
       "id": "lac-baba-miller",
@@ -387,9 +607,29 @@
       "country": "Spain",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 70,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 82,
+        "mental": 62,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 70,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 66,
+          "dunk": 75,
+          "archetype": "Glass-Cleaning Cutter"
+        }
+      }
     },
     {
       "id": "lac-jordan-miller",
@@ -416,9 +656,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 78,
+        "mental": 68,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 75,
+          "dunk": 80,
+          "archetype": "Mid-Paint Pro"
+        }
+      }
     },
     {
       "id": "lac-yanic-konan-niederhauser",
@@ -445,9 +705,29 @@
       "country": "Switzerland",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 66,
+        "physical": 86,
+        "mental": 66,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 40,
+          "dunk": 80,
+          "archetype": "Apex-Erasing Masher"
+        }
+      }
     },
     {
       "id": "lac-jalen-pickett",
@@ -474,9 +754,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 68,
+        "mental": 76,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 60,
+          "archetype": "Catch & Shoot Sniper"
+        }
+      }
     },
     {
       "id": "lac-kobe-sanders",
@@ -503,9 +803,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 80,
+        "mental": 70,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 85,
+          "archetype": "Faceup Rim Rocker"
+        }
+      }
     },
     {
       "id": "lac-max-strus",
@@ -532,9 +852,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 78,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 92,
+        "physical": 74,
+        "mental": 76,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 78,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 91,
+          "dunk": 65,
+          "archetype": "Gritty Sharpshooter"
+        }
+      }
     },
     {
       "id": "lac-keaton-wagler",
@@ -561,9 +901,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 78,
+        "mental": 68,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings LA Clippers NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 40,
+          "archetype": "Perimeter Shot Hunter"
+        }
+      }
     }
   ]
 }
