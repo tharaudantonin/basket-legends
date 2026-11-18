@@ -1,0 +1,929 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "nba-2026-2027-snapshot-2026-11-17",
+  "snapshot": {
+    "season": "2026-2027",
+    "date": "2026-11-17",
+    "timezone": "America/New_York",
+    "status": "approved-user-submitted-roster"
+  },
+  "franchise": {
+    "id": "milwaukee",
+    "fictionalName": "Milwaukee Stags",
+    "referenceClub": "Milwaukee Bucks",
+    "referenceAbbreviation": "MIL"
+  },
+  "roster": {
+    "status": "approved-by-user",
+    "approvedAt": "2026-11-17",
+    "playerCount": 18,
+    "scope": "Roster list supplied directly by the user and approved for Basket Legends; Kel'el Ware's country was corrected to USA by the user on 2026-11-17. This approval validates the submitted list for project workflow; it does not independently certify NBA contract status or historical affiliation as of the snapshot."
+  },
+  "provenance": {
+    "sourceType": "user-provided-data",
+    "sourceDescription": "Structured roster extract supplied by the user in the conversation, with subsequent user correction for Kel'el Ware's country.",
+    "officialSourceVerification": "pending",
+    "note": "Do not infer NBA person IDs, contract type, two-way status, contract terms, or 2026-27 statistics from this file. Verify separately against NBA official records before marking those fields verified."
+  },
+  "units": {
+    "canonical": "metric",
+    "displayPreference": "user-configurable",
+    "height": {
+      "canonical": "cm",
+      "sourceUnit": "ft-in",
+      "conversion": "1 inch = 2.54 cm",
+      "rounding": "nearest integer for display"
+    },
+    "weight": {
+      "canonical": "kg",
+      "sourceUnit": "lb",
+      "conversion": "1 lb = 0.45359237 kg",
+      "rounding": "nearest integer for display"
+    },
+    "note": "Preserve the original imperial source values; metric values are converted display/reference values rounded to the nearest whole unit."
+  },
+  "players": [
+    {
+      "id": "mil-nate-ament",
+      "sourceName": "Nate Ament",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "15",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-10",
+          "sourceUnit": "ft-in",
+          "heightCm": 208,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 207,
+          "sourceUnit": "lb",
+          "weightKg": 94,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Tennessee",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 76,
+        "mental": 66,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 70,
+          "archetype": "Skilled Stretch"
+        }
+      }
+    },
+    {
+      "id": "mil-brayden-burries",
+      "sourceName": "Brayden Burries",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "0",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 205,
+          "sourceUnit": "lb",
+          "weightKg": 93,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Arizona",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 78,
+        "mental": 68,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 70,
+          "archetype": "Crafty Sharpshooter"
+        }
+      }
+    },
+    {
+      "id": "mil-ousmane-dieng",
+      "sourceName": "Ousmane Dieng",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "21",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 185,
+          "sourceUnit": "lb",
+          "weightKg": 84,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "New Zealand Breakers",
+      "country": "France",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 76,
+        "mental": 66,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 75,
+          "dunk": 75,
+          "archetype": "Skilled Stretch"
+        }
+      }
+    },
+    {
+      "id": "mil-aj-green",
+      "sourceName": "AJ Green",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "20",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 190,
+          "sourceUnit": "lb",
+          "weightKg": 86,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Northern Iowa",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 90,
+        "physical": 68,
+        "mental": 72,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 89,
+          "dunk": 40,
+          "archetype": "Sharpshooter"
+        }
+      }
+    },
+    {
+      "id": "mil-tyler-herro",
+      "sourceName": "Tyler Herro",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "11",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-5",
+          "sourceUnit": "ft-in",
+          "heightCm": 196,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 195,
+          "sourceUnit": "lb",
+          "weightKg": 88,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Kentucky",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 85,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 96,
+        "physical": 74,
+        "mental": 88,
+        "tactical": 82,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 85,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 85,
+          "dunk": 60,
+          "archetype": "Crafty Offensive Engine"
+        }
+      }
+    },
+    {
+      "id": "mil-kasparas-jakucionis",
+      "sourceName": "Kasparas Jakučionis",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "25",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-5",
+          "sourceUnit": "ft-in",
+          "heightCm": 196,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 200,
+          "sourceUnit": "lb",
+          "weightKg": 91,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Illinois-Urbana-Champaign",
+      "country": "Lithuania",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 74,
+        "mental": 70,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 83,
+          "dunk": 70,
+          "archetype": "Shifty Sniper"
+        }
+      }
+    },
+    {
+      "id": "mil-jaime-jaquez-jr",
+      "sourceName": "Jaime Jaquez Jr.",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "24",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 225,
+          "sourceUnit": "lb",
+          "weightKg": 102,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "UCLA",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 82,
+        "mental": 80,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 80,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 78,
+          "dunk": 88,
+          "archetype": "Versatile Power Cutter"
+        }
+      }
+    },
+    {
+      "id": "mil-kam-jones",
+      "sourceName": "Kam Jones",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "19",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 200,
+          "sourceUnit": "lb",
+          "weightKg": 91,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Marquette",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 72,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 72,
+        "mental": 66,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 72,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 73,
+          "dunk": 60,
+          "archetype": "Combo Guard"
+        }
+      }
+    },
+    {
+      "id": "mil-kyle-kuzma",
+      "sourceName": "Kyle Kuzma",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "18",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-8",
+          "sourceUnit": "ft-in",
+          "heightCm": 203,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 221,
+          "sourceUnit": "lb",
+          "weightKg": 100,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Utah",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 82,
+        "mental": 74,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 78,
+          "dunk": 75,
+          "archetype": "2-Way Pull-Up Pro"
+        }
+      }
+    },
+    {
+      "id": "mil-caris-levert",
+      "sourceName": "Caris LeVert",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "12",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 205,
+          "sourceUnit": "lb",
+          "weightKg": 93,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Michigan",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 78,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 76,
+        "mental": 78,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 78,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 75,
+          "archetype": "Point-Fading Wizard"
+        }
+      }
+    },
+    {
+      "id": "mil-bogoljub-markovic",
+      "sourceName": "Bogoljub Marković",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "23",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-10",
+          "sourceUnit": "ft-in",
+          "heightCm": 208,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 210,
+          "sourceUnit": "lb",
+          "weightKg": 95,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Serbia",
+      "country": "Serbia",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 69,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 74,
+        "physical": 74,
+        "mental": 62,
+        "tactical": 66,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 69,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 78,
+          "dunk": 65,
+          "archetype": "Post-Scoring Stretch"
+        }
+      }
+    },
+    {
+      "id": "mil-pete-nance",
+      "sourceName": "Pete Nance",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "35",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 225,
+          "sourceUnit": "lb",
+          "weightKg": 102,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Northwestern",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 72,
+        "mental": 66,
+        "tactical": 66,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 83,
+          "dunk": 75,
+          "archetype": "Rim-Rocking Stretch"
+        }
+      }
+    },
+    {
+      "id": "mil-ryan-rollins",
+      "sourceName": "Ryan Rollins",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "13",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-3",
+          "sourceUnit": "ft-in",
+          "heightCm": 191,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 180,
+          "sourceUnit": "lb",
+          "weightKg": 82,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Toledo",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 80,
+        "mental": 76,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 79,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 78,
+          "dunk": 65,
+          "archetype": "Open-Lane Burner"
+        }
+      }
+    },
+    {
+      "id": "mil-cormac-ryan",
+      "sourceName": "Cormac Ryan",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "30",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-5",
+          "sourceUnit": "ft-in",
+          "heightCm": 196,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 205,
+          "sourceUnit": "lb",
+          "weightKg": 93,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "North Carolina",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 70,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 68,
+        "mental": 66,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 70,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 84,
+          "dunk": 60,
+          "archetype": "Diming Sharpshooter"
+        }
+      }
+    },
+    {
+      "id": "mil-jericho-sims",
+      "sourceName": "Jericho Sims",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "00",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-10",
+          "sourceUnit": "ft-in",
+          "heightCm": 208,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 250,
+          "sourceUnit": "lb",
+          "weightKg": 113,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Texas",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 72,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 90,
+        "mental": 68,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 72,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 26,
+          "dunk": 89,
+          "archetype": "Rim-Running Hammer"
+        }
+      }
+    },
+    {
+      "id": "mil-gary-trent-jr",
+      "sourceName": "Gary Trent Jr.",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "5",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 204,
+          "sourceUnit": "lb",
+          "weightKg": 93,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Duke",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 72,
+        "mental": 72,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 75,
+          "archetype": "Sharpshooter"
+        }
+      }
+    },
+    {
+      "id": "mil-myles-turner",
+      "sourceName": "Myles Turner",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "3",
+      "sourcePosition": "C-F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-11",
+          "sourceUnit": "ft-in",
+          "heightCm": 211,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 250,
+          "sourceUnit": "lb",
+          "weightKg": 113,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Texas",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 78,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 82,
+        "mental": 80,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 78,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 78,
+          "dunk": 65,
+          "archetype": "2-Way Stretch"
+        }
+      }
+    },
+    {
+      "id": "mil-kelel-ware",
+      "sourceName": "Kel'el Ware",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "9",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "7-0",
+          "sourceUnit": "ft-in",
+          "heightCm": 213,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 230,
+          "sourceUnit": "lb",
+          "weightKg": 104,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Indiana",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 94,
+        "mental": 76,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 79,
+          "status": "published-2kratings",
+          "source": "2KRatings Milwaukee Bucks NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 86,
+          "archetype": "Inside-Out Board Hunter"
+        }
+      }
+    }
+  ]
+}

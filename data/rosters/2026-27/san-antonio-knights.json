@@ -1,0 +1,880 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "nba-2026-2027-roster-submission-2026-11-17",
+  "snapshot": {
+    "season": "2026-2027",
+    "date": "2026-11-17",
+    "timezone": "America/New_York",
+    "status": "user-approved-roster-submission"
+  },
+  "franchise": {
+    "id": "san-antonio-knights",
+    "fictionalName": "San Antonio Knights",
+    "referenceClub": "San Antonio Spurs",
+    "referenceAbbreviation": "SAS"
+  },
+  "roster": {
+    "status": "approved-by-user",
+    "approvedAt": "2026-11-17",
+    "playerCount": 17,
+    "scope": "Roster list supplied directly by the user and approved for Basket Legends for the 2026-2027 season. User approval does not independently certify NBA roster membership, contract status, or official affiliation."
+  },
+  "provenance": {
+    "sourceType": "user-provided-data",
+    "sourceDescription": "Structured roster extract supplied by the user in the conversation.",
+    "officialSourceVerification": "pending",
+    "note": "Do not infer NBA person IDs, contract type, two-way status, contract terms, or statistics from this file. Verify separately against official NBA records before marking those fields verified."
+  },
+  "units": {
+    "canonical": "metric",
+    "displayPreference": "user-configurable",
+    "height": {
+      "canonical": "cm",
+      "sourceUnit": "ft-in",
+      "conversion": "1 inch = 2.54 cm",
+      "rounding": "nearest integer for display"
+    },
+    "weight": {
+      "canonical": "kg",
+      "sourceUnit": "lb",
+      "conversion": "1 lb = 0.45359237 kg",
+      "rounding": "nearest integer for display"
+    },
+    "note": "Original imperial source values are preserved. Metric values are converted and rounded to the nearest whole unit; display preference must not overwrite source data."
+  },
+  "players": [
+    {
+      "id": "sas-harrison-barnes",
+      "sourceName": "Harrison Barnes",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "40",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 225,
+          "sourceUnit": "lb",
+          "weightKg": 102,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "North Carolina",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 74,
+        "mental": 78,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 76,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 80,
+          "archetype": "Faceup Layup Pro"
+        }
+      }
+    },
+    {
+      "id": "sas-maliq-brown",
+      "sourceName": "Maliq Brown",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "15",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-8",
+          "sourceUnit": "ft-in",
+          "heightCm": 203,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 225,
+          "sourceUnit": "lb",
+          "weightKg": 102,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Duke",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 69,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 80,
+        "mental": 66,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 69,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 55,
+          "dunk": 75,
+          "archetype": "Athletic Ball Hawk"
+        }
+      }
+    },
+    {
+      "id": "sas-carter-bryant",
+      "sourceName": "Carter Bryant",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "11",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 220,
+          "sourceUnit": "lb",
+          "weightKg": 100,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Arizona",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 84,
+        "mental": 70,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 74,
+          "dunk": 88,
+          "archetype": "2-Way Wing Runner"
+        }
+      }
+    },
+    {
+      "id": "sas-stephon-castle",
+      "sourceName": "Stephon Castle",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "5",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 215,
+          "sourceUnit": "lb",
+          "weightKg": 98,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Connecticut",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 86,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 86,
+        "mental": 84,
+        "tactical": 86,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 86,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 88,
+          "archetype": "2-Way Diming Finisher"
+        }
+      }
+    },
+    {
+      "id": "sas-julian-champagnie",
+      "sourceName": "Julian Champagnie",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "30",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 217,
+          "sourceUnit": "lb",
+          "weightKg": 98,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "St. John's",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 76,
+        "mental": 78,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 80,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 87,
+          "dunk": 60,
+          "archetype": "2-Way Sharpshooter"
+        }
+      }
+    },
+    {
+      "id": "sas-de-aaron-fox",
+      "sourceName": "De'Aaron Fox",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "4",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-3",
+          "sourceUnit": "ft-in",
+          "heightCm": 191,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 185,
+          "sourceUnit": "lb",
+          "weightKg": 84,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Kentucky",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 84,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 94,
+        "physical": 90,
+        "mental": 78,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 84,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 78,
+          "dunk": 80,
+          "archetype": "2-Way Mid-Paint Creator"
+        }
+      }
+    },
+    {
+      "id": "sas-ja-kobi-gillespie",
+      "sourceName": "Ja'Kobi Gillespie",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "17",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-0",
+          "sourceUnit": "ft-in",
+          "heightCm": 183,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 186,
+          "sourceUnit": "lb",
+          "weightKg": 84,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Tennessee",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 69,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 68,
+        "mental": 64,
+        "tactical": 66,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 69,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 77,
+          "dunk": 30,
+          "archetype": "Iso-Sniping Ball Hawk"
+        }
+      }
+    },
+    {
+      "id": "sas-dylan-harper",
+      "sourceName": "Dylan Harper",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "2",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-5",
+          "sourceUnit": "ft-in",
+          "heightCm": 196,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 215,
+          "sourceUnit": "lb",
+          "weightKg": 98,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Rutgers",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 85,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 90,
+        "physical": 84,
+        "mental": 82,
+        "tactical": 84,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 85,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 86,
+          "archetype": "Versatile Slasher"
+        }
+      }
+    },
+    {
+      "id": "sas-tobias-harris",
+      "sourceName": "Tobias Harris",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "23",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-8",
+          "sourceUnit": "ft-in",
+          "heightCm": 203,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 226,
+          "sourceUnit": "lb",
+          "weightKg": 103,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Tennessee",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 81,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 76,
+        "mental": 82,
+        "tactical": 82,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 81,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 75,
+          "archetype": "Offensive Engine"
+        }
+      }
+    },
+    {
+      "id": "sas-keldon-johnson",
+      "sourceName": "Keldon Johnson",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "3",
+      "sourcePosition": "F-G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-5",
+          "sourceUnit": "ft-in",
+          "heightCm": 196,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 220,
+          "sourceUnit": "lb",
+          "weightKg": 100,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Kentucky",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 86,
+        "mental": 76,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 79,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 75,
+          "archetype": "Sniping Layup Bully"
+        }
+      }
+    },
+    {
+      "id": "sas-david-jones-garcia",
+      "sourceName": "David Jones Garcia",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "25",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 210,
+          "sourceUnit": "lb",
+          "weightKg": 95,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Memphis",
+      "country": "Dominican Republic",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 70,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 82,
+        "mental": 62,
+        "tactical": 60,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 70,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 76,
+          "dunk": 75,
+          "archetype": "Dunk & Dish Sniper"
+        }
+      }
+    },
+    {
+      "id": "sas-luke-kornet",
+      "sourceName": "Luke Kornet",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "7",
+      "sourcePosition": "C-F",
+      "measurements": {
+        "height": {
+          "sourceValue": "7-1",
+          "sourceUnit": "ft-in",
+          "heightCm": 216,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 250,
+          "sourceUnit": "lb",
+          "weightKg": 113,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Vanderbilt",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 70,
+        "physical": 82,
+        "mental": 78,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 76,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 70,
+          "dunk": 60,
+          "archetype": "Shot-Axing Post Crasher"
+        }
+      }
+    },
+    {
+      "id": "sas-jordan-mclaughlin",
+      "sourceName": "Jordan McLaughlin",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "0",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "5-11",
+          "sourceUnit": "ft-in",
+          "heightCm": 180,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 185,
+          "sourceUnit": "lb",
+          "weightKg": 84,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Southern California",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 66,
+        "mental": 70,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 65,
+          "archetype": "Iso-Sniping Ball Hawk"
+        }
+      }
+    },
+    {
+      "id": "sas-jayden-quaintance",
+      "sourceName": "Jayden Quaintance",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "22",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 255,
+          "sourceUnit": "lb",
+          "weightKg": 116,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Kentucky",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 70,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 58,
+        "physical": 88,
+        "mental": 66,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 70,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 38,
+          "dunk": 85,
+          "archetype": "Rim-Running Hammer"
+        }
+      }
+    },
+    {
+      "id": "sas-tarris-reed-jr",
+      "sourceName": "Tarris Reed Jr.",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "10",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-10",
+          "sourceUnit": "ft-in",
+          "heightCm": 208,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 265,
+          "sourceUnit": "lb",
+          "weightKg": 120,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Connecticut",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 86,
+        "mental": 68,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 30,
+          "dunk": 75,
+          "archetype": "Board-Hunting Rim Runner"
+        }
+      }
+    },
+    {
+      "id": "sas-devin-vassell",
+      "sourceName": "Devin Vassell",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "24",
+      "sourcePosition": "G-F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-5",
+          "sourceUnit": "ft-in",
+          "heightCm": 196,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 200,
+          "sourceUnit": "lb",
+          "weightKg": 91,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Florida State",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 81,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 76,
+        "mental": 82,
+        "tactical": 78,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 81,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 87,
+          "dunk": 60,
+          "archetype": "2-Way Playmaking Creator"
+        }
+      }
+    },
+    {
+      "id": "sas-victor-wembanyama",
+      "sourceName": "Victor Wembanyama",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "1",
+      "sourcePosition": "F-C",
+      "measurements": {
+        "height": {
+          "sourceValue": "7-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 224,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 235,
+          "sourceUnit": "lb",
+          "weightKg": 107,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Metropolitans 92",
+      "country": "France",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 97,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 100,
+        "physical": 96,
+        "mental": 96,
+        "tactical": 96,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 97,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 85,
+          "archetype": "Backline Post Pro"
+        }
+      }
+    }
+  ]
+}

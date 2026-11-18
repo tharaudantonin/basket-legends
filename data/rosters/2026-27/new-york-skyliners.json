@@ -1,0 +1,880 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "nba-2026-2027-roster-submission-2026-11-17",
+  "snapshot": {
+    "season": "2026-2027",
+    "date": "2026-11-17",
+    "timezone": "America/New_York",
+    "status": "user-approved-roster-submission"
+  },
+  "franchise": {
+    "id": "new-york-skyliners",
+    "fictionalName": "New York Skyliners",
+    "referenceClub": "New York Knicks",
+    "referenceAbbreviation": "NYK"
+  },
+  "roster": {
+    "status": "approved-by-user",
+    "approvedAt": "2026-11-17",
+    "playerCount": 17,
+    "scope": "Roster list supplied directly by the user and approved for Basket Legends for the 2026-2027 season. User approval does not independently certify NBA roster membership, contract status, or official affiliation."
+  },
+  "provenance": {
+    "sourceType": "user-provided-data",
+    "sourceDescription": "Structured roster extract supplied by the user in the conversation.",
+    "officialSourceVerification": "pending",
+    "note": "Do not infer NBA person IDs, contract type, two-way status, contract terms, or statistics from this file. Verify separately against official NBA records before marking those fields verified."
+  },
+  "units": {
+    "canonical": "metric",
+    "displayPreference": "user-configurable",
+    "height": {
+      "canonical": "cm",
+      "sourceUnit": "ft-in",
+      "conversion": "1 inch = 2.54 cm",
+      "rounding": "nearest integer for display"
+    },
+    "weight": {
+      "canonical": "kg",
+      "sourceUnit": "lb",
+      "conversion": "1 lb = 0.45359237 kg",
+      "rounding": "nearest integer for display"
+    },
+    "note": "Original imperial source values are preserved. Metric values are converted and rounded to the nearest whole unit; display preference must not overwrite source data."
+  },
+  "players": [
+    {
+      "id": "nyk-jaden-akins",
+      "sourceName": "Jaden Akins",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "14",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-2",
+          "sourceUnit": "ft-in",
+          "heightCm": 188,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 195,
+          "sourceUnit": "lb",
+          "weightKg": 88,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Michigan State",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 68,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 78,
+        "mental": 60,
+        "tactical": 58,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 68,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 74,
+          "dunk": 75,
+          "archetype": "Hash-Sinking Slasher"
+        }
+      }
+    },
+    {
+      "id": "nyk-jose-alvarado",
+      "sourceName": "Jose Alvarado",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "5",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-0",
+          "sourceUnit": "ft-in",
+          "heightCm": 183,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 179,
+          "sourceUnit": "lb",
+          "weightKg": 81,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Georgia Tech",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 74,
+        "physical": 82,
+        "mental": 82,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 30,
+          "archetype": "Pesky Perimeter Lock"
+        }
+      }
+    },
+    {
+      "id": "nyk-og-anunoby",
+      "sourceName": "OG Anunoby",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "8",
+      "sourcePosition": "F-G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 240,
+          "sourceUnit": "lb",
+          "weightKg": 109,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Indiana",
+      "country": "United Kingdom",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 88,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 90,
+        "mental": 92,
+        "tactical": 88,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 88,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 85,
+          "dunk": 85,
+          "archetype": "2-Way Posterizing Sniper"
+        }
+      }
+    },
+    {
+      "id": "nyk-mikal-bridges",
+      "sourceName": "Mikal Bridges",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "25",
+      "sourcePosition": "G-F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 209,
+          "sourceUnit": "lb",
+          "weightKg": 95,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Villanova",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 82,
+        "mental": 80,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 80,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 75,
+          "archetype": "Defensive Playmaker"
+        }
+      }
+    },
+    {
+      "id": "nyk-jalen-brunson",
+      "sourceName": "Jalen Brunson",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "11",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-2",
+          "sourceUnit": "ft-in",
+          "heightCm": 188,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 190,
+          "sourceUnit": "lb",
+          "weightKg": 86,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Villanova",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 95,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 100,
+        "physical": 80,
+        "mental": 100,
+        "tactical": 100,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 95,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 86,
+          "dunk": 35,
+          "archetype": "Crafty Offensive Engine"
+        }
+      }
+    },
+    {
+      "id": "nyk-jordan-clarkson",
+      "sourceName": "Jordan Clarkson",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "00",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-5",
+          "sourceUnit": "ft-in",
+          "heightCm": 196,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 194,
+          "sourceUnit": "lb",
+          "weightKg": 88,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Missouri",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 72,
+        "mental": 70,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 76,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 76,
+          "dunk": 70,
+          "archetype": "Dribble Technician"
+        }
+      }
+    },
+    {
+      "id": "nyk-pacome-dadiet",
+      "sourceName": "Pacôme Dadiet",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "4",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 210,
+          "sourceUnit": "lb",
+          "weightKg": 95,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Ratiopharm Ulm",
+      "country": "France",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 69,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 78,
+        "mental": 62,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 69,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 75,
+          "dunk": 75,
+          "archetype": "Perimeter Shot Hunter"
+        }
+      }
+    },
+    {
+      "id": "nyk-mohamed-diawara",
+      "sourceName": "Mohamed Diawara",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "51",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 225,
+          "sourceUnit": "lb",
+          "weightKg": 102,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Paris Basketball",
+      "country": "France",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 72,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 70,
+        "physical": 84,
+        "mental": 66,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 72,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 85,
+          "archetype": "Rim-Rocking Stretch"
+        }
+      }
+    },
+    {
+      "id": "nyk-andre-drummond",
+      "sourceName": "Andre Drummond",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "0",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-10",
+          "sourceUnit": "ft-in",
+          "heightCm": 208,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 279,
+          "sourceUnit": "lb",
+          "weightKg": 127,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Connecticut",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 92,
+        "mental": 82,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 80,
+          "archetype": "Board-Hunting Stretch Riser"
+        }
+      }
+    },
+    {
+      "id": "nyk-josh-hart",
+      "sourceName": "Josh Hart",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "3",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-5",
+          "sourceUnit": "ft-in",
+          "heightCm": 196,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 215,
+          "sourceUnit": "lb",
+          "weightKg": 98,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Villanova",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 81,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 86,
+        "mental": 88,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 81,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 70,
+          "archetype": "2-Way Laymaker"
+        }
+      }
+    },
+    {
+      "id": "nyk-dalton-knecht",
+      "sourceName": "Dalton Knecht",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "1",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-5",
+          "sourceUnit": "ft-in",
+          "heightCm": 196,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 215,
+          "sourceUnit": "lb",
+          "weightKg": 98,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Tennessee",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 74,
+        "mental": 68,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 65,
+          "archetype": "Mid-Paint Pro"
+        }
+      }
+    },
+    {
+      "id": "nyk-tyler-kolek",
+      "sourceName": "Tyler Kolek",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "13",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-2",
+          "sourceUnit": "ft-in",
+          "heightCm": 188,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 195,
+          "sourceUnit": "lb",
+          "weightKg": 88,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Marquette",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 68,
+        "mental": 72,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 45,
+          "archetype": "2-Way Crafty Sharpshooter"
+        }
+      }
+    },
+    {
+      "id": "nyk-miles-mcbride",
+      "sourceName": "Miles McBride",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "2",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-2",
+          "sourceUnit": "ft-in",
+          "heightCm": 188,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 195,
+          "sourceUnit": "lb",
+          "weightKg": 88,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "West Virginia",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 78,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 78,
+        "mental": 76,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 78,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 86,
+          "dunk": 65,
+          "archetype": "2-Way Shot Hunter"
+        }
+      }
+    },
+    {
+      "id": "nyk-tyler-nickel",
+      "sourceName": "Tyler Nickel",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "55",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 220,
+          "sourceUnit": "lb",
+          "weightKg": 100,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Vanderbilt",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 68,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 72,
+        "mental": 60,
+        "tactical": 60,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 68,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 55,
+          "archetype": "Diming Sharpshooter"
+        }
+      }
+    },
+    {
+      "id": "nyk-landry-shamet",
+      "sourceName": "Landry Shamet",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "44",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-5",
+          "sourceUnit": "ft-in",
+          "heightCm": 196,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 190,
+          "sourceUnit": "lb",
+          "weightKg": 86,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Wichita State",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 74,
+        "mental": 76,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 83,
+          "dunk": 70,
+          "archetype": "Athletic PlayShot"
+        }
+      }
+    },
+    {
+      "id": "nyk-karl-anthony-towns",
+      "sourceName": "Karl-Anthony Towns",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "32",
+      "sourcePosition": "C-F",
+      "measurements": {
+        "height": {
+          "sourceValue": "7-0",
+          "sourceUnit": "ft-in",
+          "heightCm": 213,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 248,
+          "sourceUnit": "lb",
+          "weightKg": 112,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Kentucky",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 93,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 98,
+        "physical": 86,
+        "mental": 94,
+        "tactical": 94,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 93,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 75,
+          "archetype": "Diming Post Popper"
+        }
+      }
+    },
+    {
+      "id": "nyk-james-wiseman",
+      "sourceName": "James Wiseman",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "35",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "7-0",
+          "sourceUnit": "ft-in",
+          "heightCm": 213,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 240,
+          "sourceUnit": "lb",
+          "weightKg": 109,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Memphis",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 68,
+        "physical": 88,
+        "mental": 64,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 57,
+          "dunk": 75,
+          "archetype": "Rim-Rocking Cleaner"
+        }
+      }
+    }
+  ]
+}

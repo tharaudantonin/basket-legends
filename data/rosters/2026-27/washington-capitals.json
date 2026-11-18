@@ -1,0 +1,767 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "nba-2026-2027-roster-submission-2026-11-17",
+  "snapshot": {
+    "season": "2026-2027",
+    "date": "2026-11-17",
+    "timezone": "America/New_York",
+    "status": "user-approved-roster-submission"
+  },
+  "franchise": {
+    "id": "washington-capitals",
+    "fictionalName": "Washington Capitals",
+    "referenceClub": "Washington Wizards",
+    "referenceAbbreviation": "WAS"
+  },
+  "roster": {
+    "status": "approved-by-user",
+    "approvedAt": "2026-11-17",
+    "playerCount": 18,
+    "scope": "Roster list supplied directly by the user and approved for Basket Legends for the 2026-2027 season. User approval does not independently certify NBA roster membership, contract status, or official affiliation."
+  },
+  "provenance": {
+    "sourceType": "user-provided-data",
+    "sourceDescription": "Structured roster extract supplied directly by the user in the conversation.",
+    "officialSourceVerification": "pending",
+    "note": "Do not infer NBA person IDs, contract type, two-way status, contract terms, or statistics from this file. Verify separately against official NBA records before marking those fields verified."
+  },
+  "units": {
+    "canonical": "metric",
+    "displayPreference": "user-configurable",
+    "height": {
+      "canonical": "cm",
+      "sourceUnit": "ft-in",
+      "conversion": "1 inch = 2.54 cm",
+      "rounding": "nearest integer for display"
+    },
+    "weight": {
+      "canonical": "kg",
+      "sourceUnit": "lb",
+      "conversion": "1 lb = 0.45359237 kg",
+      "rounding": "nearest integer for display"
+    },
+    "note": "Original imperial source values are preserved. Metric values are converted and rounded to the nearest whole unit; display preference must not overwrite source data."
+  },
+  "players": [
+    {
+      "id": "was-deandre-ayton",
+      "sourceName": "Deandre Ayton",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "8",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "7-0",
+          "sourceUnit": "ft-in",
+          "heightCm": 213,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 252,
+          "sourceUnit": "lb",
+          "weightKg": 114,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Arizona",
+      "country": "Bahamas",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 78,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 88,
+        "mental": 76,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-reece-beekman",
+      "sourceName": "Reece Beekman",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "26",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-1",
+          "sourceUnit": "ft-in",
+          "heightCm": 185,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 190,
+          "sourceUnit": "lb",
+          "weightKg": 86,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Virginia",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 69,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 74,
+        "physical": 70,
+        "mental": 66,
+        "tactical": 66,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-bub-carrington",
+      "sourceName": "Bub Carrington",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "7",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 190,
+          "sourceUnit": "lb",
+          "weightKg": 86,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Pittsburgh",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 78,
+        "mental": 70,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-justin-champagnie",
+      "sourceName": "Justin Champagnie",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "9",
+      "sourcePosition": "G-F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 206,
+          "sourceUnit": "lb",
+          "weightKg": 93,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Pittsburgh",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 74,
+        "physical": 82,
+        "mental": 74,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-bilal-coulibaly",
+      "sourceName": "Bilal Coulibaly",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "0",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 195,
+          "sourceUnit": "lb",
+          "weightKg": 88,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Metropolitans 92",
+      "country": "France",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 78,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 88,
+        "mental": 74,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-anthony-davis",
+      "sourceName": "Anthony Davis",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "23",
+      "sourcePosition": "F-C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-10",
+          "sourceUnit": "ft-in",
+          "heightCm": 208,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 253,
+          "sourceUnit": "lb",
+          "weightKg": 115,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Kentucky",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 91,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 96,
+        "physical": 84,
+        "mental": 94,
+        "tactical": 90,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-aj-dybantsa",
+      "sourceName": "AJ Dybantsa",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "4",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 210,
+          "sourceUnit": "lb",
+          "weightKg": 95,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Brigham Young",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 86,
+        "mental": 72,
+        "tactical": 78,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-kyshawn-george",
+      "sourceName": "Kyshawn George",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "18",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-8",
+          "sourceUnit": "ft-in",
+          "heightCm": 203,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 200,
+          "sourceUnit": "lb",
+          "weightKg": 91,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Miami",
+      "country": "Switzerland",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 78,
+        "mental": 76,
+        "tactical": 82,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-anthony-gill",
+      "sourceName": "Anthony Gill",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "16",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-8",
+          "sourceUnit": "ft-in",
+          "heightCm": 203,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 230,
+          "sourceUnit": "lb",
+          "weightKg": 104,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Virginia",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 72,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 74,
+        "mental": 72,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-tre-johnson",
+      "sourceName": "Tre Johnson",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "12",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-5",
+          "sourceUnit": "ft-in",
+          "heightCm": 196,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 190,
+          "sourceUnit": "lb",
+          "weightKg": 86,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Texas",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 78,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 76,
+        "mental": 72,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-tre-mann",
+      "sourceName": "Tre Mann",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "1",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 178,
+          "sourceUnit": "lb",
+          "weightKg": 81,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Florida",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 72,
+        "mental": 66,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-khris-middleton",
+      "sourceName": "Khris Middleton",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "22",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 222,
+          "sourceUnit": "lb",
+          "weightKg": 101,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Texas A&M",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 68,
+        "mental": 84,
+        "tactical": 60,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-felix-okpara",
+      "sourceName": "Felix Okpara",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "34",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-11",
+          "sourceUnit": "ft-in",
+          "heightCm": 211,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 235,
+          "sourceUnit": "lb",
+          "weightKg": 107,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Tennessee",
+      "country": "Nigeria",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 69,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 84,
+        "mental": 64,
+        "tactical": 66,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-will-riley",
+      "sourceName": "Will Riley",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "27",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 180,
+          "sourceUnit": "lb",
+          "weightKg": 82,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Illinois-Urbana-Champaign",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 82,
+        "mental": 68,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-alex-sarr",
+      "sourceName": "Alex Sarr",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "20",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "7-0",
+          "sourceUnit": "ft-in",
+          "heightCm": 213,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 205,
+          "sourceUnit": "lb",
+          "weightKg": 93,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Washington Wizards",
+      "country": "France",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 81,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 88,
+        "mental": 76,
+        "tactical": 82,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-tristan-vukcevic",
+      "sourceName": "Tristan Vukčević",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "00",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "7-0",
+          "sourceUnit": "ft-in",
+          "heightCm": 213,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 220,
+          "sourceUnit": "lb",
+          "weightKg": 100,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Real Madrid",
+      "country": "Italy",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 72,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 78,
+        "mental": 64,
+        "tactical": 66,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-jamir-watkins",
+      "sourceName": "Jamir Watkins",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "5",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-5",
+          "sourceUnit": "ft-in",
+          "heightCm": 196,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 210,
+          "sourceUnit": "lb",
+          "weightKg": 95,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Florida State",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 82,
+        "mental": 70,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "was-trae-young",
+      "sourceName": "Trae Young",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "3",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-1",
+          "sourceUnit": "ft-in",
+          "heightCm": 185,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 164,
+          "sourceUnit": "lb",
+          "weightKg": 74,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Oklahoma",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 88,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 98,
+        "physical": 70,
+        "mental": 88,
+        "tactical": 96,
+        "scale": 100
+      },
+      "notes": null
+    }
+  ]
+}

@@ -10,7 +10,7 @@ Transformer les 30 directions artistiques approuvées en assets originaux, cohé
 
 ## 2. Pré-requis avant gel graphique
 
-- Retranscrire les codes HEX exacts des neuf franchises suivantes depuis les arbitrages originaux : New York Skyliners, Philadelphia Founders, Detroit Cylinders, Indianapolis Racers, Orlando Comets, Washington Capitals, Denver Summit, Minnesota Borealis et Oklahoma City Storm Riders.
+- Les 30 palettes et leurs 120 codes HEX sont validés et inscrits dans `data/franchises.json` et `data/franchises.csv`.
 - Effectuer une revue juridique des 30 noms et des territoires de marque. Priorité élevée : Washington Capitals, en raison du conflit de dénomination avec la franchise NHL.
 - Vérifier les droits et la provenance de toute référence visuelle.
 - Maintenir les couleurs déjà validées sans les modifier sans nouvel arbitrage.
@@ -85,7 +85,7 @@ Les SVG sont les sources maîtresses pour les éléments vectoriels. Les exports
 
 ## 6. Ordre de production
 
-1. Finaliser les neuf palettes HEX en attente et effectuer la revue juridique prioritaire.
+1. Effectuer la revue juridique prioritaire des noms et des territoires de marque.
 2. Produire un pack pilote complet sur une franchise afin de valider le workflow et les standards.
 3. Corriger le pipeline à partir du retour utilisateur.
 4. Produire les 30 systèmes de logos.

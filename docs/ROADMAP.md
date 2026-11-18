@@ -7,7 +7,7 @@
 - [x] Documenter les trois derniers dossiers.
 - [x] Valider et retranscrire les quatre couleurs HEX des neuf palettes restantes (30/30 palettes gelées).
 - [ ] Revue juridique des noms, en priorité Washington Capitals.
-- [ ] Confirmer le snapshot de référence (proposition : saison 2025-2026 au 30 juin 2026).
+- [x] Valider le snapshot de référence : saison 2025-2026 au 30 juin 2026 ; carrière à partir de l'intersaison 2026.
 
 ## Phase 1 — Production du système visuel
 - [ ] Créer les 30 logos principaux en SVG.
@@ -18,10 +18,42 @@
 - [ ] Intégrer les assets dans le kit UI desktop et mobile.
 
 ## Phase 2 — Référentiel sportif et données de départ
-- [ ] Définir le snapshot NBA de référence et les règles de collecte.
+- [x] Valider le snapshot NBA de référence : saison 2025-2026 au 30 juin 2026.
+- [x] Définir la hiérarchie des sources, la provenance et les règles de collecte.
 - [ ] Constituer les 30 historiques de franchise (titres, bilans, records, rivalités).
 - [ ] Constituer les effectifs initiaux et mappings individuels sourcés.
-- [ ] Documenter statistiques, mensurations, attributs estimés et niveau de confiance.
+  - [x] Recevoir et enregistrer l'effectif Philadelphia Founders (17 joueurs, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Milwaukee Stags (18 joueurs, validation utilisateur ; pays de Kel'el Ware corrigé en USA ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Chicago Horses (18 joueurs, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Cleveland Sentinels (17 joueurs, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Boston Beacons (17 joueurs, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Los Angeles Beachers (18 joueurs, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Memphis Rhythm (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Atlanta Eagles (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Miami Tropics (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Charlotte Bees (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Utah Desert Raptors (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Sacramento Diggers (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif New York Skyliners (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Los Angeles Stars (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Orlando Comets (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Dallas Outriders (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Brooklyn Bridges (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Denver Summit (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Indianapolis Racers (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif New Orleans Royal (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Detroit Cylinders (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Houston Commanders (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif San Antonio Knights (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Phoenix Scorpions (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Oklahoma City Storm Riders (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Minnesota Borealis (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Portland Timberbears (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif San Francisco Golden Seals (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Washington Capitals (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Toronto Bears (17 joueurs, saison 2026-2027, validation utilisateur ; numéro 9 conservé provisoirement pour RJ Barrett et Kevin McCullar Jr. ; vérification NBA officielle détaillée encore à faire).
+- [x] Spécifier statistiques, mensurations, attributs estimés, contrôles qualité et niveaux de confiance.
+- [ ] Implémenter le modèle de données et produire les imports joueurs sourcés.
 - [ ] Préparer les joueurs de développement, libres et prospects générés.
 - [ ] Effectuer la revue des droits, de la provenance et de la confidentialité des données.
 

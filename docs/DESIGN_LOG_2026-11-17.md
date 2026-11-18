@@ -17,11 +17,11 @@
 - Les assets vectoriels finaux, les planches de maillots et les terrains restent à produire/contrôler.
 - Ne pas présenter les visuels de recherche ou les images d'inspiration comme des assets finaux.
 
-## Limites de consolidation
-Les codes HEX exacts des neuf franchises suivantes doivent être retranscrits depuis les arbitrages originaux avant d'être considérés comme définitifs : New York Skyliners, Philadelphia Founders, Detroit Cylinders, Indianapolis Racers, Orlando Comets, Washington Capitals, Denver Summit, Minnesota Borealis, Oklahoma City Storm Riders.
+## État de consolidation
+Les 30 palettes et leurs 120 codes HEX sont validés et retranscrits dans les registres JSON et CSV. Aucune retranscription de palette ne reste à effectuer.
 
 ## Prochaine phase
-Passer de la conception aux assets : planches de comparaison, logos vectoriels, maillots, terrains et kit d'interface. Après gel visuel, lancer la constitution du référentiel sportif et des effectifs de départ.
+Restaurer et fiabiliser le référentiel documentaire, puis passer à la production des assets et à la constitution du référentiel sportif et des effectifs de départ.
 
 ## Validation finale des palettes — neuf franchises
 

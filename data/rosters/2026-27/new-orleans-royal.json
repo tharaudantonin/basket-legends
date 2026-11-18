@@ -1,0 +1,929 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "nba-2026-2027-roster-submission-2026-11-17",
+  "snapshot": {
+    "season": "2026-2027",
+    "date": "2026-11-17",
+    "timezone": "America/New_York",
+    "status": "user-approved-roster-submission"
+  },
+  "franchise": {
+    "id": "new-orleans-royal",
+    "fictionalName": "New Orleans Royal",
+    "referenceClub": "New Orleans Pelicans",
+    "referenceAbbreviation": "NOP"
+  },
+  "roster": {
+    "status": "approved-by-user",
+    "approvedAt": "2026-11-17",
+    "playerCount": 18,
+    "scope": "Roster list supplied directly by the user and approved for Basket Legends for the 2026-2027 season. User approval does not independently certify NBA roster membership, contract status, or official affiliation."
+  },
+  "provenance": {
+    "sourceType": "user-provided-data",
+    "sourceDescription": "Structured roster extract supplied by the user in the conversation.",
+    "officialSourceVerification": "pending",
+    "note": "Do not infer NBA person IDs, contract type, two-way status, contract terms, or statistics from this file. Verify separately against official NBA records before marking those fields verified."
+  },
+  "units": {
+    "canonical": "metric",
+    "displayPreference": "user-configurable",
+    "height": {
+      "canonical": "cm",
+      "sourceUnit": "ft-in",
+      "conversion": "1 inch = 2.54 cm",
+      "rounding": "nearest integer for display"
+    },
+    "weight": {
+      "canonical": "kg",
+      "sourceUnit": "lb",
+      "conversion": "1 lb = 0.45359237 kg",
+      "rounding": "nearest integer for display"
+    },
+    "note": "Original imperial source values are preserved. Metric values are converted and rounded to the nearest whole unit; display preference must not overwrite source data."
+  },
+  "players": [
+    {
+      "id": "nor-saddiq-bey",
+      "sourceName": "Saddiq Bey",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "41",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-8",
+          "sourceUnit": "ft-in",
+          "heightCm": 203,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 240,
+          "sourceUnit": "lb",
+          "weightKg": 109,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Villanova",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 78,
+        "mental": 80,
+        "tactical": 78,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 80,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 75,
+          "archetype": "Post-Scoring Stretch"
+        }
+      }
+    },
+    {
+      "id": "nor-malik-dia",
+      "sourceName": "Malik Dia",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "8",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 256,
+          "sourceUnit": "lb",
+          "weightKg": 116,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Mississippi",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 68,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 68,
+        "physical": 78,
+        "mental": 62,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 68,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 69,
+          "dunk": 70,
+          "archetype": "Popper"
+        }
+      }
+    },
+    {
+      "id": "nor-jeremiah-fears",
+      "sourceName": "Jeremiah Fears",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "0",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-3",
+          "sourceUnit": "ft-in",
+          "heightCm": 191,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 188,
+          "sourceUnit": "lb",
+          "weightKg": 85,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Oklahoma",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 78,
+        "mental": 74,
+        "tactical": 78,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 79,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 70,
+          "archetype": "Open-Lane Burner"
+        }
+      }
+    },
+    {
+      "id": "nor-aj-johnson",
+      "sourceName": "AJ Johnson",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "14",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 175,
+          "sourceUnit": "lb",
+          "weightKg": 79,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Illawarra",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 70,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 76,
+        "mental": 62,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 70,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 68,
+          "dunk": 80,
+          "archetype": "Above-the-Rim Slasher"
+        }
+      }
+    },
+    {
+      "id": "nor-herbert-jones",
+      "sourceName": "Herbert Jones",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "2",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 210,
+          "sourceUnit": "lb",
+          "weightKg": 95,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Alabama",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 82,
+        "mental": 80,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 72,
+          "dunk": 75,
+          "archetype": "Wing Warden"
+        }
+      }
+    },
+    {
+      "id": "nor-deandre-jordan",
+      "sourceName": "DeAndre Jordan",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "6",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-11",
+          "sourceUnit": "ft-in",
+          "heightCm": 211,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 280,
+          "sourceUnit": "lb",
+          "weightKg": 127,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Texas A&M",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 88,
+        "mental": 78,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 25,
+          "dunk": 75,
+          "archetype": "Physical Glass Guardian"
+        }
+      }
+    },
+    {
+      "id": "nor-bennedict-mathurin",
+      "sourceName": "Bennedict Mathurin",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "24",
+      "sourcePosition": "G-F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-5",
+          "sourceUnit": "ft-in",
+          "heightCm": 196,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 222,
+          "sourceUnit": "lb",
+          "weightKg": 101,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Arizona",
+      "country": "Canada",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 82,
+        "mental": 72,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 75,
+          "dunk": 80,
+          "archetype": "Showmaker"
+        }
+      }
+    },
+    {
+      "id": "nor-karlo-matkovic",
+      "sourceName": "Karlo Matković",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "17",
+      "sourcePosition": "F-C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-11",
+          "sourceUnit": "ft-in",
+          "heightCm": 211,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 255,
+          "sourceUnit": "lb",
+          "weightKg": 116,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Mega Basket",
+      "country": "Bosnia and Herzegovina",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 84,
+        "mental": 72,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 75,
+          "archetype": "Shot-Acing Crafty Stretch"
+        }
+      }
+    },
+    {
+      "id": "nor-bryce-mcgowens",
+      "sourceName": "Bryce McGowens",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "11",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 202,
+          "sourceUnit": "lb",
+          "weightKg": 92,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Nebraska",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 76,
+        "mental": 66,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 80,
+          "archetype": "Bouncy Sharpshooter"
+        }
+      }
+    },
+    {
+      "id": "nor-yves-missi",
+      "sourceName": "Yves Missi",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "21",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-11",
+          "sourceUnit": "ft-in",
+          "heightCm": 211,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 236,
+          "sourceUnit": "lb",
+          "weightKg": 107,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Baylor",
+      "country": "Cameroon",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 88,
+        "mental": 74,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 30,
+          "dunk": 80,
+          "archetype": "Putback Apex Eraser"
+        }
+      }
+    },
+    {
+      "id": "nor-trey-murphy-iii",
+      "sourceName": "Trey Murphy III",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "25",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 220,
+          "sourceUnit": "lb",
+          "weightKg": 100,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Virginia",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 82,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 90,
+        "physical": 82,
+        "mental": 80,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 82,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 88,
+          "archetype": "Bulldozer"
+        }
+      }
+    },
+    {
+      "id": "nor-dejounte-murray",
+      "sourceName": "Dejounte Murray",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "5",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 188,
+          "sourceUnit": "lb",
+          "weightKg": 85,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Washington",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 83,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 82,
+        "mental": 86,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 83,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 74,
+          "dunk": 75,
+          "archetype": "Crafty Defensive Playmaker"
+        }
+      }
+    },
+    {
+      "id": "nor-jaron-pierre-jr",
+      "sourceName": "Jaron Pierre Jr.",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "10",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 206,
+          "sourceUnit": "lb",
+          "weightKg": 93,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Southern Methodist",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 68,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 76,
+        "mental": 60,
+        "tactical": 58,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 68,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 77,
+          "dunk": 70,
+          "archetype": "Bouncy Sharpshooter"
+        }
+      }
+    },
+    {
+      "id": "nor-jordan-poole",
+      "sourceName": "Jordan Poole",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "3",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 200,
+          "sourceUnit": "lb",
+          "weightKg": 91,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Michigan",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 70,
+        "mental": 68,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 75,
+          "dunk": 60,
+          "archetype": "Physical Playmaker"
+        }
+      }
+    },
+    {
+      "id": "nor-derik-queen",
+      "sourceName": "Derik Queen",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "22",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-11",
+          "sourceUnit": "ft-in",
+          "heightCm": 211,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 225,
+          "sourceUnit": "lb",
+          "weightKg": 102,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Maryland",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 84,
+        "mental": 76,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 79,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 66,
+          "dunk": 70,
+          "archetype": "Break-Starting Finisher"
+        }
+      }
+    },
+    {
+      "id": "nor-julian-reese",
+      "sourceName": "Julian Reese",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "13",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-11",
+          "sourceUnit": "ft-in",
+          "heightCm": 211,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 230,
+          "sourceUnit": "lb",
+          "weightKg": 104,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Maryland",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 65,
+        "physical": 86,
+        "mental": 68,
+        "tactical": 73,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 30,
+          "dunk": 70,
+          "archetype": "Board-Hunting Layup Pro"
+        }
+      }
+    },
+    {
+      "id": "nor-trendon-watford",
+      "sourceName": "Trendon Watford",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "9",
+      "sourcePosition": "G-F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 244,
+          "sourceUnit": "lb",
+          "weightKg": 111,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Louisiana State",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 76,
+        "mental": 70,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 68,
+          "dunk": 75,
+          "archetype": "Versatile Finisher"
+        }
+      }
+    },
+    {
+      "id": "nor-zion-williamson",
+      "sourceName": "Zion Williamson",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "1",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 277,
+          "sourceUnit": "lb",
+          "weightKg": 126,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Duke",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 86,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 90,
+        "physical": 98,
+        "mental": 84,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 86,
+          "status": "published-2kratings",
+          "source": "2KRatings New Orleans Pelicans NBA 2K27 team ratings page",
+          "threePoint": 76,
+          "dunk": 93,
+          "archetype": "Paint Bully"
+        }
+      }
+    }
+  ]
+}

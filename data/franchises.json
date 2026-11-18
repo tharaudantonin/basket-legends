@@ -5,7 +5,7 @@
   "snapshotProposal": {
     "season": "2025-2026",
     "date": "2026-06-30",
-    "status": "to-confirm"
+    "status": "approved"
   },
   "note": "Les 30 directions artistiques et les 30 palettes (quatre couleurs et codes HEX) ont été validées dans les sessions de conception. Les palettes sont transcrites et marquées validées dans ce registre canonique. Les assets graphiques finaux restent à produire. Washington Capitals : collision de nom avec la franchise NHL, revue juridique obligatoire avant diffusion publique ou commerciale. Aucune identité graphique de club réel ne doit être copiée.",
   "franchises": [
@@ -19,7 +19,7 @@
         "primary": "#0F4B3A",
         "secondary": "#F2EFE5",
         "accent": "#B69A62",
-        "dark": "#1D2523"
+        "neutral": "#1D2523"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -63,7 +63,7 @@
         "primary": "#31566D",
         "secondary": "#C47B50",
         "accent": "#252B30",
-        "dark": "#EAE4D8"
+        "neutral": "#EAE4D8"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -100,7 +100,7 @@
         "primary": "#2878A5",
         "secondary": "#F1F3F4",
         "accent": "#AEB8C2",
-        "dark": "#252D35"
+        "neutral": "#252D35"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -137,7 +137,7 @@
         "primary": "#E7DDC8",
         "secondary": "#A64B3C",
         "accent": "#293B50",
-        "dark": "#252525"
+        "neutral": "#252525"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -174,7 +174,7 @@
         "primary": "#173B3D",
         "secondary": "#A9C4C2",
         "accent": "#D9D9D2",
-        "dark": "#20262A"
+        "neutral": "#20262A"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -211,7 +211,7 @@
         "primary": "#C52233",
         "secondary": "#17191D",
         "accent": "#F3F0E9",
-        "dark": "#858B91"
+        "neutral": "#858B91"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -248,7 +248,7 @@
         "primary": "#263C50",
         "secondary": "#A64B3C",
         "accent": "#B6A27D",
-        "dark": "#EAE7DF"
+        "neutral": "#EAE7DF"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -285,7 +285,7 @@
         "primary": "#343B43",
         "secondary": "#A7B0B8",
         "accent": "#D6E342",
-        "dark": "#F0F1ED"
+        "neutral": "#F0F1ED"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -322,7 +322,7 @@
         "primary": "#2455A4",
         "secondary": "#D5A63C",
         "accent": "#F2F0E9",
-        "dark": "#252A30"
+        "neutral": "#252A30"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -359,7 +359,7 @@
         "primary": "#243B4A",
         "secondary": "#B7774D",
         "accent": "#526B56",
-        "dark": "#EEE6D6"
+        "neutral": "#EEE6D6"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -410,7 +410,7 @@
         "primary": "#D5A52E",
         "secondary": "#202329",
         "accent": "#F2EFE6",
-        "dark": "#777D85"
+        "neutral": "#777D85"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -447,7 +447,7 @@
         "primary": "#E0AC32",
         "secondary": "#252B30",
         "accent": "#A8B9B0",
-        "dark": "#F3EFE4"
+        "neutral": "#F3EFE4"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -484,7 +484,7 @@
         "primary": "#159B9A",
         "secondary": "#F07869",
         "accent": "#F5E9D5",
-        "dark": "#17232B"
+        "neutral": "#17232B"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -521,7 +521,7 @@
         "primary": "#5C4B91",
         "secondary": "#C5C8D2",
         "accent": "#344E78",
-        "dark": "#F1F0F5"
+        "neutral": "#F1F0F5"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -558,7 +558,7 @@
         "primary": "#0B2D5B",
         "secondary": "#C43D45",
         "accent": "#F4F3EF",
-        "dark": "#AEB7C2"
+        "neutral": "#AEB7C2"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "existing-professional-team-name-conflict-review-required",
@@ -602,7 +602,7 @@
         "primary": "#8EC5D4",
         "secondary": "#59636F",
         "accent": "#26384B",
-        "dark": "#F1F4F3"
+        "neutral": "#F1F4F3"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -639,7 +639,7 @@
         "primary": "#2D8B83",
         "secondary": "#A8D6C2",
         "accent": "#202C3A",
-        "dark": "#E7F0ED"
+        "neutral": "#E7F0ED"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -676,7 +676,7 @@
         "primary": "#E36F32",
         "secondary": "#30343B",
         "accent": "#42647C",
-        "dark": "#F0F1ED"
+        "neutral": "#F0F1ED"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -713,7 +713,7 @@
         "primary": "#A75A35",
         "secondary": "#D4B98D",
         "accent": "#333B35",
-        "dark": "#EEE9DC"
+        "neutral": "#EEE9DC"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -750,7 +750,7 @@
         "primary": "#B85D43",
         "secondary": "#D1A45C",
         "accent": "#303943",
-        "dark": "#EEE8DC"
+        "neutral": "#EEE8DC"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -801,7 +801,7 @@
         "primary": "#D9AD43",
         "secondary": "#173D56",
         "accent": "#F3F1EA",
-        "dark": "#A9B9C4"
+        "neutral": "#A9B9C4"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -838,7 +838,7 @@
         "primary": "#65A9C8",
         "secondary": "#E9D9BE",
         "accent": "#163C53",
-        "dark": "#F6F2E8"
+        "neutral": "#F6F2E8"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -875,7 +875,7 @@
         "primary": "#D6AD55",
         "secondary": "#20232B",
         "accent": "#8D263D",
-        "dark": "#F2EBDD"
+        "neutral": "#F2EBDD"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -912,7 +912,7 @@
         "primary": "#C65B3F",
         "secondary": "#292B32",
         "accent": "#D5B477",
-        "dark": "#EDE5D5"
+        "neutral": "#EDE5D5"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -949,7 +949,7 @@
         "primary": "#D5A43A",
         "secondary": "#79543A",
         "accent": "#394B56",
-        "dark": "#F0E7D5"
+        "neutral": "#F0E7D5"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -1000,7 +1000,7 @@
         "primary": "#8A5B3D",
         "secondary": "#D2B17C",
         "accent": "#252A2E",
-        "dark": "#F1E8D8"
+        "neutral": "#F1E8D8"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -1037,7 +1037,7 @@
         "primary": "#292E35",
         "secondary": "#E87532",
         "accent": "#B9C1C9",
-        "dark": "#F1EFE9"
+        "neutral": "#F1EFE9"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -1074,7 +1074,7 @@
         "primary": "#356F9D",
         "secondary": "#D8AD4B",
         "accent": "#1B2737",
-        "dark": "#F1EFE6"
+        "neutral": "#F1EFE6"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -1111,7 +1111,7 @@
         "primary": "#24566B",
         "secondary": "#B99A57",
         "accent": "#F1EBDD",
-        "dark": "#25252B"
+        "neutral": "#25252B"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",
@@ -1148,7 +1148,7 @@
         "primary": "#344C68",
         "secondary": "#B8BEC4",
         "accent": "#8B343A",
-        "dark": "#F0EDE5"
+        "neutral": "#F0EDE5"
       },
       "nameStatus": "selected-by-user",
       "nameClearance": "not-checked",

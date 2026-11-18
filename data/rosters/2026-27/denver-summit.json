@@ -1,0 +1,727 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "nba-2026-2027-roster-submission-2026-11-17",
+  "snapshot": {
+    "season": "2026-2027",
+    "date": "2026-11-17",
+    "timezone": "America/New_York",
+    "status": "user-approved-roster-submission"
+  },
+  "franchise": {
+    "id": "denver-summit",
+    "fictionalName": "Denver Summit",
+    "referenceClub": "Denver Nuggets",
+    "referenceAbbreviation": "DEN"
+  },
+  "roster": {
+    "status": "approved-by-user",
+    "approvedAt": "2026-11-17",
+    "playerCount": 17,
+    "scope": "Roster list supplied directly by the user and approved for Basket Legends for the 2026-2027 season. User approval does not independently certify NBA roster membership, contract status, or official affiliation."
+  },
+  "provenance": {
+    "sourceType": "user-provided-data",
+    "sourceDescription": "Structured roster extract supplied by the user in the conversation.",
+    "officialSourceVerification": "pending",
+    "note": "Do not infer NBA person IDs, contract type, two-way status, contract terms, or statistics from this file. Verify separately against official NBA records before marking those fields verified."
+  },
+  "units": {
+    "canonical": "metric",
+    "displayPreference": "user-configurable",
+    "height": {
+      "canonical": "cm",
+      "sourceUnit": "ft-in",
+      "conversion": "1 inch = 2.54 cm",
+      "rounding": "nearest integer for display"
+    },
+    "weight": {
+      "canonical": "kg",
+      "sourceUnit": "lb",
+      "conversion": "1 lb = 0.45359237 kg",
+      "rounding": "nearest integer for display"
+    },
+    "note": "Original imperial source values are preserved. Metric values are converted and rounded to the nearest whole unit; display preference must not overwrite source data."
+  },
+  "players": [
+    {
+      "id": "den-marvin-bagley-iii",
+      "sourceName": "Marvin Bagley III",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "3",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-10",
+          "sourceUnit": "ft-in",
+          "heightCm": 208,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 235,
+          "sourceUnit": "lb",
+          "weightKg": 107,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Duke",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 82,
+        "mental": 70,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "den-christian-braun",
+      "sourceName": "Christian Braun",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "0",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 220,
+          "sourceUnit": "lb",
+          "weightKg": 100,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Kansas",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 81,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 84,
+        "mental": 82,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "den-trevon-brazile",
+      "sourceName": "Trevon Brazile",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "7",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-10",
+          "sourceUnit": "ft-in",
+          "heightCm": 208,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 220,
+          "sourceUnit": "lb",
+          "weightKg": 100,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Arkansas",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 70,
+        "physical": 84,
+        "mental": 68,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "den-demar-derozan",
+      "sourceName": "DeMar DeRozan",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "10",
+      "sourcePosition": "G-F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 220,
+          "sourceUnit": "lb",
+          "weightKg": 100,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Southern California",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 86,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 92,
+        "physical": 78,
+        "mental": 88,
+        "tactical": 84,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "den-alpha-diallo",
+      "sourceName": "Alpha Diallo",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "11",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 210,
+          "sourceUnit": "lb",
+          "weightKg": 95,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Providence",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 78,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 82,
+        "mental": 78,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "den-aaron-gordon",
+      "sourceName": "Aaron Gordon",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "32",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-8",
+          "sourceUnit": "ft-in",
+          "heightCm": 203,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 235,
+          "sourceUnit": "lb",
+          "weightKg": 107,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Arizona",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 85,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 90,
+        "mental": 84,
+        "tactical": 84,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "den-daron-holmes-ii",
+      "sourceName": "DaRon Holmes II",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "14",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 225,
+          "sourceUnit": "lb",
+          "weightKg": 102,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Dayton",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 82,
+        "mental": 70,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "den-bryce-hopkins",
+      "sourceName": "Bryce Hopkins",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "13",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 225,
+          "sourceUnit": "lb",
+          "weightKg": 102,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "St. John's",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 74,
+        "physical": 80,
+        "mental": 68,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "den-cameron-johnson",
+      "sourceName": "Cameron Johnson",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "23",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-8",
+          "sourceUnit": "ft-in",
+          "heightCm": 203,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 210,
+          "sourceUnit": "lb",
+          "weightKg": 95,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "North Carolina",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 82,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 76,
+        "mental": 82,
+        "tactical": 82,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "den-nikola-jokic",
+      "sourceName": "Nikola Jokić",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "15",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-11",
+          "sourceUnit": "ft-in",
+          "heightCm": 211,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 284,
+          "sourceUnit": "lb",
+          "weightKg": 129,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Mega Basket",
+      "country": "Serbia",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 95,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 99,
+        "physical": 82,
+        "mental": 99,
+        "tactical": 99,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "den-spencer-jones",
+      "sourceName": "Spencer Jones",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "21",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 225,
+          "sourceUnit": "lb",
+          "weightKg": 102,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Stanford",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 74,
+        "physical": 80,
+        "mental": 74,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "den-tyus-jones",
+      "sourceName": "Tyus Jones",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "5",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-1",
+          "sourceUnit": "ft-in",
+          "heightCm": 185,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 196,
+          "sourceUnit": "lb",
+          "weightKg": 89,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Duke",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 82,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 68,
+        "mental": 86,
+        "tactical": 90,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "den-jamal-murray",
+      "sourceName": "Jamal Murray",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "27",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 215,
+          "sourceUnit": "lb",
+          "weightKg": 98,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Kentucky",
+      "country": "Canada",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 86,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 92,
+        "physical": 80,
+        "mental": 86,
+        "tactical": 86,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "den-ryan-nembhard",
+      "sourceName": "Ryan Nembhard",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "9",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "5-11",
+          "sourceUnit": "ft-in",
+          "heightCm": 180,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 180,
+          "sourceUnit": "lb",
+          "weightKg": 82,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Gonzaga",
+      "country": "Canada",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 70,
+        "mental": 72,
+        "tactical": 78,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "den-zeke-nnaji",
+      "sourceName": "Zeke Nnaji",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "22",
+      "sourcePosition": "F-C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-10",
+          "sourceUnit": "ft-in",
+          "heightCm": 208,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 240,
+          "sourceUnit": "lb",
+          "weightKg": 109,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Arizona",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 82,
+        "mental": 70,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "den-julian-strawther",
+      "sourceName": "Julian Strawther",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "1",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 205,
+          "sourceUnit": "lb",
+          "weightKg": 93,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Gonzaga",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 76,
+        "mental": 72,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "den-cam-whitmore",
+      "sourceName": "Cam Whitmore",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "00",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 230,
+          "sourceUnit": "lb",
+          "weightKg": 104,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Villanova",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 88,
+        "mental": 70,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": null
+    }
+  ]
+}

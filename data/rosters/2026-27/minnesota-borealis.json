@@ -1,0 +1,880 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "nba-2026-2027-roster-submission-2026-11-17",
+  "snapshot": {
+    "season": "2026-2027",
+    "date": "2026-11-17",
+    "timezone": "America/New_York",
+    "status": "user-approved-roster-submission"
+  },
+  "franchise": {
+    "id": "minnesota-borealis",
+    "fictionalName": "Minnesota Borealis",
+    "referenceClub": "Minnesota Timberwolves",
+    "referenceAbbreviation": "MIN"
+  },
+  "roster": {
+    "status": "approved-by-user",
+    "approvedAt": "2026-11-17",
+    "playerCount": 17,
+    "scope": "Roster list supplied directly by the user and approved for Basket Legends for the 2026-2027 season. User approval does not independently certify NBA roster membership, contract status, or official affiliation."
+  },
+  "provenance": {
+    "sourceType": "user-provided-data",
+    "sourceDescription": "Structured roster extract supplied by the user in the conversation; Rocco Zikarsky nationality supplied in a follow-up clarification.",
+    "officialSourceVerification": "pending",
+    "note": "Do not infer NBA person IDs, contract type, two-way status, contract terms, or statistics from this file. Verify separately against official NBA records before marking those fields verified."
+  },
+  "units": {
+    "canonical": "metric",
+    "displayPreference": "user-configurable",
+    "height": {
+      "canonical": "cm",
+      "sourceUnit": "ft-in",
+      "conversion": "1 inch = 2.54 cm",
+      "rounding": "nearest integer for display"
+    },
+    "weight": {
+      "canonical": "kg",
+      "sourceUnit": "lb",
+      "conversion": "1 lb = 0.45359237 kg",
+      "rounding": "nearest integer for display"
+    },
+    "note": "Original imperial source values are preserved. Metric values are converted and rounded to the nearest whole unit; display preference must not overwrite source data."
+  },
+  "players": [
+    {
+      "id": "min-lamelo-ball",
+      "sourceName": "LaMelo Ball",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "1",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 180,
+          "sourceUnit": "lb",
+          "weightKg": 82,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Illawarra",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 86,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 94,
+        "physical": 78,
+        "mental": 88,
+        "tactical": 84,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 86,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 87,
+          "dunk": 75,
+          "archetype": "PlayShot Point"
+        }
+      }
+    },
+    {
+      "id": "min-joan-beringer",
+      "sourceName": "Joan Beringer",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "19",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "7-0",
+          "sourceUnit": "ft-in",
+          "heightCm": 213,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 230,
+          "sourceUnit": "lb",
+          "weightKg": 104,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Cedevita Olimpija (Slovenia)",
+      "country": "France",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 90,
+        "mental": 68,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 26,
+          "dunk": 80,
+          "archetype": "Rim-Wrecking Crasher"
+        }
+      }
+    },
+    {
+      "id": "min-johni-broome",
+      "sourceName": "Johni Broome",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "22",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 244,
+          "sourceUnit": "lb",
+          "weightKg": 111,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Auburn",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 70,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 82,
+        "mental": 66,
+        "tactical": 60,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 70,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 69,
+          "dunk": 60,
+          "archetype": "Shot-Acing Middy Maestro"
+        }
+      }
+    },
+    {
+      "id": "min-jaylen-clark",
+      "sourceName": "Jaylen Clark",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "7",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-5",
+          "sourceUnit": "ft-in",
+          "heightCm": 196,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 205,
+          "sourceUnit": "lb",
+          "weightKg": 93,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "UCLA",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 70,
+        "physical": 82,
+        "mental": 72,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 73,
+          "dunk": 70,
+          "archetype": "Pressure Cooker"
+        }
+      }
+    },
+    {
+      "id": "min-donte-divincenzo",
+      "sourceName": "Donte DiVincenzo",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "0",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 203,
+          "sourceUnit": "lb",
+          "weightKg": 92,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Villanova",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 78,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 78,
+        "mental": 78,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 78,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 84,
+          "dunk": 75,
+          "archetype": "2-Way Off-Screen Shooter"
+        }
+      }
+    },
+    {
+      "id": "min-ayo-dosunmu",
+      "sourceName": "Ayo Dosunmu",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "13",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 201,
+          "sourceUnit": "lb",
+          "weightKg": 91,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Illinois",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 82,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 80,
+        "mental": 82,
+        "tactical": 82,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 82,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 88,
+          "dunk": 75,
+          "archetype": "Crafty Sharpshooter"
+        }
+      }
+    },
+    {
+      "id": "min-anthony-edwards",
+      "sourceName": "Anthony Edwards",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "5",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 225,
+          "sourceUnit": "lb",
+          "weightKg": 102,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Georgia",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 95,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 98,
+        "physical": 94,
+        "mental": 96,
+        "tactical": 92,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 95,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 92,
+          "dunk": 97,
+          "archetype": "2-Way Slashing Iso Sniper"
+        }
+      }
+    },
+    {
+      "id": "min-isaiah-evans",
+      "sourceName": "Isaiah Evans",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "33",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 175,
+          "sourceUnit": "lb",
+          "weightKg": 79,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Duke",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 70,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 72,
+        "mental": 64,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 70,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 70,
+          "archetype": "Perimeter Shot Hunter"
+        }
+      }
+    },
+    {
+      "id": "min-rudy-gobert",
+      "sourceName": "Rudy Gobert",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "27",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "7-1",
+          "sourceUnit": "ft-in",
+          "heightCm": 216,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 258,
+          "sourceUnit": "lb",
+          "weightKg": 117,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Cholet",
+      "country": "France",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 84,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 65,
+        "physical": 96,
+        "mental": 90,
+        "tactical": 85,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 84,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 29,
+          "dunk": 75,
+          "archetype": "Rising Board Enforcer"
+        }
+      }
+    },
+    {
+      "id": "min-bones-hyland",
+      "sourceName": "Bones Hyland",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "8",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-2",
+          "sourceUnit": "ft-in",
+          "heightCm": 188,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 169,
+          "sourceUnit": "lb",
+          "weightKg": 77,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Virginia Commonwealth",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 72,
+        "mental": 68,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 60,
+          "archetype": "Perimeter Shot Hunter"
+        }
+      }
+    },
+    {
+      "id": "min-jonathan-kuminga",
+      "sourceName": "Jonathan Kuminga",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "24",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 225,
+          "sourceUnit": "lb",
+          "weightKg": 102,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "NBA G League Ignite",
+      "country": "DRC",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 92,
+        "mental": 76,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 80,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 85,
+          "archetype": "Faceup Slasher"
+        }
+      }
+    },
+    {
+      "id": "min-trey-lyles",
+      "sourceName": "Trey Lyles",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "41",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 234,
+          "sourceUnit": "lb",
+          "weightKg": 106,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Kentucky",
+      "country": "Canada",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 72,
+        "mental": 72,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 77,
+          "dunk": 65,
+          "archetype": "Glass-Cleaning Stretch"
+        }
+      }
+    },
+    {
+      "id": "min-jaden-mcdaniels",
+      "sourceName": "Jaden McDaniels",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "3",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 185,
+          "sourceUnit": "lb",
+          "weightKg": 84,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Washington",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 85,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 88,
+        "mental": 86,
+        "tactical": 88,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 85,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 85,
+          "dunk": 75,
+          "archetype": "2-Way 3-Level Scorer"
+        }
+      }
+    },
+    {
+      "id": "min-zyon-pullin",
+      "sourceName": "Zyon Pullin",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "15",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 206,
+          "sourceUnit": "lb",
+          "weightKg": 93,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Florida",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 68,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 72,
+        "mental": 62,
+        "tactical": 60,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 68,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 75,
+          "dunk": 45,
+          "archetype": "Shifty Sniper"
+        }
+      }
+    },
+    {
+      "id": "min-terrence-shannon-jr",
+      "sourceName": "Terrence Shannon Jr",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "4",
+      "sourcePosition": "G-F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 215,
+          "sourceUnit": "lb",
+          "weightKg": 98,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Illinois",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 88,
+        "mental": 72,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 85,
+          "archetype": "Hash-Sinking Slasher"
+        }
+      }
+    },
+    {
+      "id": "min-cody-williams",
+      "sourceName": "Cody Williams",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "9",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 190,
+          "sourceUnit": "lb",
+          "weightKg": 86,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Colorado",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 74,
+        "physical": 78,
+        "mental": 68,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 70,
+          "dunk": 80,
+          "archetype": "Mid-Paint Creator"
+        }
+      }
+    },
+    {
+      "id": "min-rocco-zikarsky",
+      "sourceName": "Rocco Zikarsky",
+      "fictionalDisplayName": null,
+      "fictionalInitials": null,
+      "jerseyNumber": "44",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "7-3",
+          "sourceUnit": "ft-in",
+          "heightCm": 221,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 227,
+          "sourceUnit": "lb",
+          "weightKg": 103,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Brisbane Bullets (Australia)",
+      "country": "Australia",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 68,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 60,
+        "physical": 86,
+        "mental": 62,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 68,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 39,
+          "dunk": 65,
+          "archetype": "Shot-Erasing Putback Pro"
+        }
+      }
+    }
+  ]
+}
