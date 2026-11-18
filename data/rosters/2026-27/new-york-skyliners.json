@@ -68,9 +68,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 68,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 78,
+        "mental": 60,
+        "tactical": 58,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 68,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 74,
+          "dunk": 75,
+          "archetype": "Hash-Sinking Slasher"
+        }
+      }
     },
     {
       "id": "nyk-jose-alvarado",
@@ -97,9 +117,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 74,
+        "physical": 82,
+        "mental": 82,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 30,
+          "archetype": "Pesky Perimeter Lock"
+        }
+      }
     },
     {
       "id": "nyk-og-anunoby",
@@ -126,9 +166,29 @@
       "country": "United Kingdom",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 88,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 90,
+        "mental": 92,
+        "tactical": 88,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 88,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 85,
+          "dunk": 85,
+          "archetype": "2-Way Posterizing Sniper"
+        }
+      }
     },
     {
       "id": "nyk-mikal-bridges",
@@ -155,9 +215,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 82,
+        "mental": 80,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 80,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 75,
+          "archetype": "Defensive Playmaker"
+        }
+      }
     },
     {
       "id": "nyk-jalen-brunson",
@@ -184,9 +264,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 95,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 100,
+        "physical": 80,
+        "mental": 100,
+        "tactical": 100,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 95,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 86,
+          "dunk": 35,
+          "archetype": "Crafty Offensive Engine"
+        }
+      }
     },
     {
       "id": "nyk-jordan-clarkson",
@@ -213,9 +313,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 72,
+        "mental": 70,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 76,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 76,
+          "dunk": 70,
+          "archetype": "Dribble Technician"
+        }
+      }
     },
     {
       "id": "nyk-pacome-dadiet",
@@ -242,9 +362,29 @@
       "country": "France",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 69,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 78,
+        "mental": 62,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 69,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 75,
+          "dunk": 75,
+          "archetype": "Perimeter Shot Hunter"
+        }
+      }
     },
     {
       "id": "nyk-mohamed-diawara",
@@ -271,9 +411,29 @@
       "country": "France",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 72,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 70,
+        "physical": 84,
+        "mental": 66,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 72,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 85,
+          "archetype": "Rim-Rocking Stretch"
+        }
+      }
     },
     {
       "id": "nyk-andre-drummond",
@@ -300,9 +460,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 92,
+        "mental": 82,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 80,
+          "archetype": "Board-Hunting Stretch Riser"
+        }
+      }
     },
     {
       "id": "nyk-josh-hart",
@@ -329,9 +509,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 81,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 86,
+        "mental": 88,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 81,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 70,
+          "archetype": "2-Way Laymaker"
+        }
+      }
     },
     {
       "id": "nyk-dalton-knecht",
@@ -358,9 +558,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 74,
+        "mental": 68,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 65,
+          "archetype": "Mid-Paint Pro"
+        }
+      }
     },
     {
       "id": "nyk-tyler-kolek",
@@ -387,9 +607,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 68,
+        "mental": 72,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 45,
+          "archetype": "2-Way Crafty Sharpshooter"
+        }
+      }
     },
     {
       "id": "nyk-miles-mcbride",
@@ -416,9 +656,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 78,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 78,
+        "mental": 76,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 78,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 86,
+          "dunk": 65,
+          "archetype": "2-Way Shot Hunter"
+        }
+      }
     },
     {
       "id": "nyk-tyler-nickel",
@@ -445,9 +705,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 68,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 72,
+        "mental": 60,
+        "tactical": 60,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 68,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 55,
+          "archetype": "Diming Sharpshooter"
+        }
+      }
     },
     {
       "id": "nyk-landry-shamet",
@@ -474,9 +754,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 74,
+        "mental": 76,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 83,
+          "dunk": 70,
+          "archetype": "Athletic PlayShot"
+        }
+      }
     },
     {
       "id": "nyk-karl-anthony-towns",
@@ -503,9 +803,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 93,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 98,
+        "physical": 86,
+        "mental": 94,
+        "tactical": 94,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 93,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 75,
+          "archetype": "Diming Post Popper"
+        }
+      }
     },
     {
       "id": "nyk-james-wiseman",
@@ -532,9 +852,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 68,
+        "physical": 88,
+        "mental": 64,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings New York Knicks NBA 2K27 team ratings page",
+          "threePoint": 57,
+          "dunk": 75,
+          "archetype": "Rim-Rocking Cleaner"
+        }
+      }
     }
   ]
 }
