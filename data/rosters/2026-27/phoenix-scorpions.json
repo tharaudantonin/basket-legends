@@ -68,9 +68,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 91,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 96,
+        "physical": 82,
+        "mental": 94,
+        "tactical": 92,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 91,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 86,
+          "dunk": 75,
+          "archetype": "Crafty Offensive Engine"
+        }
+      }
     },
     {
       "id": "phx-jamaree-bouyea",
@@ -97,9 +117,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 74,
+        "physical": 76,
+        "mental": 66,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 72,
+          "dunk": 45,
+          "archetype": "Chaos-Creating Burner"
+        }
+      }
     },
     {
       "id": "phx-miles-bridges",
@@ -126,9 +166,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 88,
+        "mental": 76,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 80,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 88,
+          "archetype": "Paint-Scoring Popper"
+        }
+      }
     },
     {
       "id": "phx-dillon-brooks",
@@ -155,9 +215,29 @@
       "country": "Canada",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 82,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 84,
+        "mental": 82,
+        "tactical": 84,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 82,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 75,
+          "archetype": "2-Way Post Bully"
+        }
+      }
     },
     {
       "id": "phx-ryan-dunn",
@@ -184,9 +264,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 66,
+        "physical": 82,
+        "mental": 72,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 76,
+          "dunk": 80,
+          "archetype": "Perimeter Lock"
+        }
+      }
     },
     {
       "id": "phx-rasheer-fleming",
@@ -213,9 +313,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 68,
+        "physical": 82,
+        "mental": 68,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 78,
+          "dunk": 75,
+          "archetype": "Skilled Stretch"
+        }
+      }
     },
     {
       "id": "phx-collin-gillespie",
@@ -242,9 +362,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 70,
+        "mental": 80,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 79,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 86,
+          "dunk": 54,
+          "archetype": "Shifty Sniper"
+        }
+      }
     },
     {
       "id": "phx-jordan-goodwin",
@@ -271,9 +411,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 70,
+        "physical": 82,
+        "mental": 76,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 76,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 35,
+          "archetype": "3 & D Point"
+        }
+      }
     },
     {
       "id": "phx-jalen-green",
@@ -300,9 +460,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 86,
+        "mental": 70,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 79,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 91,
+          "archetype": "Middy Slasher"
+        }
+      }
     },
     {
       "id": "phx-oso-ighodaro",
@@ -329,9 +509,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 82,
+        "mental": 74,
+        "tactical": 82,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 35,
+          "dunk": 80,
+          "archetype": "Rim Runner"
+        }
+      }
     },
     {
       "id": "phx-luke-kennard",
@@ -358,9 +558,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 90,
+        "physical": 68,
+        "mental": 76,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 76,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 93,
+          "dunk": 60,
+          "archetype": "Sharpshooter"
+        }
+      }
     },
     {
       "id": "phx-khaman-maluach",
@@ -387,9 +607,29 @@
       "country": "South Sudan",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 58,
+        "physical": 90,
+        "mental": 72,
+        "tactical": 84,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 76,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 66,
+          "dunk": 80,
+          "archetype": "Rim-Reaping Riser"
+        }
+      }
     },
     {
       "id": "phx-koa-peat",
@@ -416,9 +656,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 68,
+        "physical": 84,
+        "mental": 64,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 60,
+          "dunk": 80,
+          "archetype": "Rim-Running Levitator"
+        }
+      }
     },
     {
       "id": "phx-duop-reath",
@@ -445,9 +705,29 @@
       "country": "South Sudan",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 78,
+        "mental": 64,
+        "tactical": 66,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 60,
+          "archetype": "Stretch Five"
+        }
+      }
     },
     {
       "id": "phx-pat-spencer",
@@ -474,9 +754,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 76,
+        "mental": 72,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 75,
+          "archetype": "High-Flying Sniper"
+        }
+      }
     },
     {
       "id": "phx-drew-timme",
@@ -503,9 +803,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 70,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 74,
+        "mental": 64,
+        "tactical": 66,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 70,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 75,
+          "dunk": 65,
+          "archetype": "Stretch Five"
+        }
+      }
     },
     {
       "id": "phx-mark-williams",
@@ -532,9 +852,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 78,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 68,
+        "physical": 88,
+        "mental": 78,
+        "tactical": 78,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 78,
+          "status": "published-2kratings",
+          "source": "2KRatings Phoenix Suns NBA 2K27 team ratings page",
+          "threePoint": 36,
+          "dunk": 75,
+          "archetype": "Putback Bullmasher"
+        }
+      }
     }
   ]
 }
