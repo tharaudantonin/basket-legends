@@ -68,9 +68,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 87,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 90,
+        "physical": 86,
+        "mental": 86,
+        "tactical": 86,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 87,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 78,
+          "dunk": 85,
+          "archetype": "Mid-Paint Glass Cleaner"
+        }
+      }
     },
     {
       "id": "orl-desmond-bane",
@@ -97,9 +117,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 82,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 82,
+        "mental": 78,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 82,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 84,
+          "dunk": 75,
+          "archetype": "2-Way Iso Sniper"
+        }
+      }
     },
     {
       "id": "orl-goga-bitadze",
@@ -126,9 +166,29 @@
       "country": "Georgia",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 66,
+        "physical": 82,
+        "mental": 76,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 69,
+          "dunk": 65,
+          "archetype": "Shot-Erasing Tip-In Bully"
+        }
+      }
     },
     {
       "id": "orl-anthony-black",
@@ -155,9 +215,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 82,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 84,
+        "mental": 80,
+        "tactical": 82,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 82,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 83,
+          "dunk": 75,
+          "archetype": "2-Way Playmaking Creator"
+        }
+      }
     },
     {
       "id": "orl-jamal-cain",
@@ -184,9 +264,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 72,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 78,
+        "mental": 68,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 72,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 75,
+          "archetype": "Crafty Sniper"
+        }
+      }
     },
     {
       "id": "orl-jevon-carter",
@@ -213,9 +313,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 66,
+        "mental": 76,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 35,
+          "archetype": "2-Way Sharpshooter"
+        }
+      }
     },
     {
       "id": "orl-wendell-carter-jr",
@@ -242,9 +362,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 81,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 86,
+        "mental": 82,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 81,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 76,
+          "dunk": 80,
+          "archetype": "Rim-Rocking Stretch"
+        }
+      }
     },
     {
       "id": "orl-colin-castleton",
@@ -271,9 +411,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 70,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 64,
+        "physical": 78,
+        "mental": 68,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 70,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 69,
+          "dunk": 65,
+          "archetype": "Board-Crashing Stretch"
+        }
+      }
     },
     {
       "id": "orl-tristan-da-silva",
@@ -300,9 +460,29 @@
       "country": "Germany",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 72,
+        "mental": 76,
+        "tactical": 78,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 85,
+          "dunk": 65,
+          "archetype": "Catch & Shoot Sniper"
+        }
+      }
     },
     {
       "id": "orl-jonathan-isaac",
@@ -329,9 +509,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 72,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 84,
+        "mental": 72,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 72,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 59,
+          "dunk": 70,
+          "archetype": "Defensive Demon"
+        }
+      }
     },
     {
       "id": "orl-alex-morales",
@@ -358,9 +558,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 68,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 74,
+        "physical": 70,
+        "mental": 64,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 68,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 75,
+          "dunk": 75,
+          "archetype": "2-Way Dribble Tech"
+        }
+      }
     },
     {
       "id": "orl-izaiyah-nelson",
@@ -387,9 +607,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 69,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 60,
+        "physical": 82,
+        "mental": 66,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 69,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 48,
+          "dunk": 85,
+          "archetype": "Rim-Running Hammer"
+        }
+      }
     },
     {
       "id": "orl-noah-penda",
@@ -416,9 +656,29 @@
       "country": "France",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 68,
+        "physical": 78,
+        "mental": 70,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 76,
+          "dunk": 75,
+          "archetype": "2-Way Stretch"
+        }
+      }
     },
     {
       "id": "orl-jase-richardson",
@@ -445,9 +705,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 70,
+        "mental": 72,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 87,
+          "archetype": "Mid-Paint Pro"
+        }
+      }
     },
     {
       "id": "orl-jalen-suggs",
@@ -474,9 +754,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 84,
+        "mental": 78,
+        "tactical": 78,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 80,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 80,
+          "archetype": "2-Way High-Flying Slasher"
+        }
+      }
     },
     {
       "id": "orl-nikola-vucevic",
@@ -503,9 +803,29 @@
       "country": "Montenegro",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 76,
+        "mental": 82,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 76,
+          "dunk": 65,
+          "archetype": "High-Post Facilitator"
+        }
+      }
     },
     {
       "id": "orl-franz-wagner",
@@ -532,9 +852,29 @@
       "country": "Germany",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 85,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 78,
+        "mental": 88,
+        "tactical": 86,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 85,
+          "status": "published-2kratings",
+          "source": "2KRatings Orlando Magic NBA 2K27 team ratings page",
+          "threePoint": 71,
+          "dunk": 80,
+          "archetype": "Mid-Paint Playmaker"
+        }
+      }
     }
   ]
 }
