@@ -68,9 +68,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 86,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 94,
+        "physical": 78,
+        "mental": 88,
+        "tactical": 84,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 86,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 87,
+          "dunk": 75,
+          "archetype": "PlayShot Point"
+        }
+      }
     },
     {
       "id": "min-joan-beringer",
@@ -97,9 +117,29 @@
       "country": "France",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 90,
+        "mental": 68,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 26,
+          "dunk": 80,
+          "archetype": "Rim-Wrecking Crasher"
+        }
+      }
     },
     {
       "id": "min-johni-broome",
@@ -126,9 +166,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 70,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 82,
+        "mental": 66,
+        "tactical": 60,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 70,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 69,
+          "dunk": 60,
+          "archetype": "Shot-Acing Middy Maestro"
+        }
+      }
     },
     {
       "id": "min-jaylen-clark",
@@ -155,9 +215,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 70,
+        "physical": 82,
+        "mental": 72,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 73,
+          "dunk": 70,
+          "archetype": "Pressure Cooker"
+        }
+      }
     },
     {
       "id": "min-donte-divincenzo",
@@ -184,9 +264,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 78,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 78,
+        "mental": 78,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 78,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 84,
+          "dunk": 75,
+          "archetype": "2-Way Off-Screen Shooter"
+        }
+      }
     },
     {
       "id": "min-ayo-dosunmu",
@@ -213,9 +313,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 82,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 80,
+        "mental": 82,
+        "tactical": 82,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 82,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 88,
+          "dunk": 75,
+          "archetype": "Crafty Sharpshooter"
+        }
+      }
     },
     {
       "id": "min-anthony-edwards",
@@ -242,9 +362,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 95,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 98,
+        "physical": 94,
+        "mental": 96,
+        "tactical": 92,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 95,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 92,
+          "dunk": 97,
+          "archetype": "2-Way Slashing Iso Sniper"
+        }
+      }
     },
     {
       "id": "min-isaiah-evans",
@@ -271,9 +411,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 70,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 72,
+        "mental": 64,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 70,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 81,
+          "dunk": 70,
+          "archetype": "Perimeter Shot Hunter"
+        }
+      }
     },
     {
       "id": "min-rudy-gobert",
@@ -300,9 +460,29 @@
       "country": "France",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 84,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 65,
+        "physical": 96,
+        "mental": 90,
+        "tactical": 85,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 84,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 29,
+          "dunk": 75,
+          "archetype": "Rising Board Enforcer"
+        }
+      }
     },
     {
       "id": "min-bones-hyland",
@@ -329,9 +509,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 72,
+        "mental": 68,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 60,
+          "archetype": "Perimeter Shot Hunter"
+        }
+      }
     },
     {
       "id": "min-jonathan-kuminga",
@@ -358,9 +558,29 @@
       "country": "DRC",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 92,
+        "mental": 76,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 80,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 85,
+          "archetype": "Faceup Slasher"
+        }
+      }
     },
     {
       "id": "min-trey-lyles",
@@ -387,9 +607,29 @@
       "country": "Canada",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 72,
+        "mental": 72,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 77,
+          "dunk": 65,
+          "archetype": "Glass-Cleaning Stretch"
+        }
+      }
     },
     {
       "id": "min-jaden-mcdaniels",
@@ -416,9 +656,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 85,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 88,
+        "mental": 86,
+        "tactical": 88,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 85,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 85,
+          "dunk": 75,
+          "archetype": "2-Way 3-Level Scorer"
+        }
+      }
     },
     {
       "id": "min-zyon-pullin",
@@ -445,9 +705,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 68,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 72,
+        "mental": 62,
+        "tactical": 60,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 68,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 75,
+          "dunk": 45,
+          "archetype": "Shifty Sniper"
+        }
+      }
     },
     {
       "id": "min-terrence-shannon-jr",
@@ -474,9 +754,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 88,
+        "mental": 72,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 85,
+          "archetype": "Hash-Sinking Slasher"
+        }
+      }
     },
     {
       "id": "min-cody-williams",
@@ -503,9 +803,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 74,
+        "physical": 78,
+        "mental": 68,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 70,
+          "dunk": 80,
+          "archetype": "Mid-Paint Creator"
+        }
+      }
     },
     {
       "id": "min-rocco-zikarsky",
@@ -532,9 +852,29 @@
       "country": "Australia",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 68,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 60,
+        "physical": 86,
+        "mental": 62,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 68,
+          "status": "published-2kratings",
+          "source": "2KRatings Minnesota Timberwolves NBA 2K27 team ratings page",
+          "threePoint": 39,
+          "dunk": 65,
+          "archetype": "Shot-Erasing Putback Pro"
+        }
+      }
     }
   ]
 }
