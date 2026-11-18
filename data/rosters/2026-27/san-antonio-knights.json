@@ -68,9 +68,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 74,
+        "mental": 78,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 76,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 80,
+          "archetype": "Faceup Layup Pro"
+        }
+      }
     },
     {
       "id": "sas-maliq-brown",
@@ -97,9 +117,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 69,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 80,
+        "mental": 66,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 69,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 55,
+          "dunk": 75,
+          "archetype": "Athletic Ball Hawk"
+        }
+      }
     },
     {
       "id": "sas-carter-bryant",
@@ -126,9 +166,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 84,
+        "mental": 70,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 74,
+          "dunk": 88,
+          "archetype": "2-Way Wing Runner"
+        }
+      }
     },
     {
       "id": "sas-stephon-castle",
@@ -155,9 +215,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 86,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 86,
+        "mental": 84,
+        "tactical": 86,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 86,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 88,
+          "archetype": "2-Way Diming Finisher"
+        }
+      }
     },
     {
       "id": "sas-julian-champagnie",
@@ -184,9 +264,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 76,
+        "mental": 78,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 80,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 87,
+          "dunk": 60,
+          "archetype": "2-Way Sharpshooter"
+        }
+      }
     },
     {
       "id": "sas-de-aaron-fox",
@@ -213,9 +313,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 84,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 94,
+        "physical": 90,
+        "mental": 78,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 84,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 78,
+          "dunk": 80,
+          "archetype": "2-Way Mid-Paint Creator"
+        }
+      }
     },
     {
       "id": "sas-ja-kobi-gillespie",
@@ -242,9 +362,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 69,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 68,
+        "mental": 64,
+        "tactical": 66,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 69,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 77,
+          "dunk": 30,
+          "archetype": "Iso-Sniping Ball Hawk"
+        }
+      }
     },
     {
       "id": "sas-dylan-harper",
@@ -271,9 +411,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 85,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 90,
+        "physical": 84,
+        "mental": 82,
+        "tactical": 84,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 85,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 86,
+          "archetype": "Versatile Slasher"
+        }
+      }
     },
     {
       "id": "sas-tobias-harris",
@@ -300,9 +460,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 81,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 76,
+        "mental": 82,
+        "tactical": 82,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 81,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 75,
+          "archetype": "Offensive Engine"
+        }
+      }
     },
     {
       "id": "sas-keldon-johnson",
@@ -329,9 +509,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 86,
+        "mental": 76,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 79,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 75,
+          "archetype": "Sniping Layup Bully"
+        }
+      }
     },
     {
       "id": "sas-david-jones-garcia",
@@ -358,9 +558,29 @@
       "country": "Dominican Republic",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 70,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 76,
+        "physical": 82,
+        "mental": 62,
+        "tactical": 60,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 70,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 76,
+          "dunk": 75,
+          "archetype": "Dunk & Dish Sniper"
+        }
+      }
     },
     {
       "id": "sas-luke-kornet",
@@ -387,9 +607,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 70,
+        "physical": 82,
+        "mental": 78,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 76,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 70,
+          "dunk": 60,
+          "archetype": "Shot-Axing Post Crasher"
+        }
+      }
     },
     {
       "id": "sas-jordan-mclaughlin",
@@ -416,9 +656,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 66,
+        "mental": 70,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 65,
+          "archetype": "Iso-Sniping Ball Hawk"
+        }
+      }
     },
     {
       "id": "sas-jayden-quaintance",
@@ -445,9 +705,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 70,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 58,
+        "physical": 88,
+        "mental": 66,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 70,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 38,
+          "dunk": 85,
+          "archetype": "Rim-Running Hammer"
+        }
+      }
     },
     {
       "id": "sas-tarris-reed-jr",
@@ -474,9 +754,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 71,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 86,
+        "mental": 68,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 71,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 30,
+          "dunk": 75,
+          "archetype": "Board-Hunting Rim Runner"
+        }
+      }
     },
     {
       "id": "sas-devin-vassell",
@@ -503,9 +803,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 81,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 76,
+        "mental": 82,
+        "tactical": 78,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 81,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 87,
+          "dunk": 60,
+          "archetype": "2-Way Playmaking Creator"
+        }
+      }
     },
     {
       "id": "sas-victor-wembanyama",
@@ -532,9 +852,29 @@
       "country": "France",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 97,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 100,
+        "physical": 96,
+        "mental": 96,
+        "tactical": 96,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 97,
+          "status": "published-2kratings",
+          "source": "2KRatings San Antonio Spurs NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 85,
+          "archetype": "Backline Post Pro"
+        }
+      }
     }
   ]
 }
