@@ -71,9 +71,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 83,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 78,
+        "mental": 84,
+        "tactical": 82,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 83,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 80,
+          "dunk": 70,
+          "archetype": "Glass-Cleaning Stretch"
+        }
+      }
     },
     {
       "id": "mem-cedric-coward",
@@ -100,9 +120,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 86,
+        "mental": 78,
+        "tactical": 78,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 80,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 78,
+          "dunk": 80,
+          "archetype": "Finesse Finisher"
+        }
+      }
     },
     {
       "id": "mem-zach-edey",
@@ -129,9 +169,29 @@
       "country": "Canada",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 65,
+        "physical": 92,
+        "mental": 82,
+        "tactical": 81,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 80,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 74,
+          "dunk": 70,
+          "archetype": "Glass Guardian"
+        }
+      }
     },
     {
       "id": "mem-jerami-grant",
@@ -158,9 +218,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 80,
+        "mental": 76,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 83,
+          "dunk": 80,
+          "archetype": "Faceup Rim Wrecker"
+        }
+      }
     },
     {
       "id": "mem-taylor-hendricks",
@@ -187,9 +267,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 74,
+        "physical": 84,
+        "mental": 66,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 76,
+          "dunk": 75,
+          "archetype": "Silky Stretch"
+        }
+      }
     },
     {
       "id": "mem-gg-jackson",
@@ -216,9 +316,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 86,
+        "mental": 70,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 76,
+          "dunk": 85,
+          "archetype": "Slashing Middy Ace"
+        }
+      }
     },
     {
       "id": "mem-ty-jerome",
@@ -245,9 +365,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 86,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 90,
+        "physical": 72,
+        "mental": 88,
+        "tactical": 94,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 86,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 84,
+          "dunk": 45,
+          "archetype": "Crafty Offensive Engine"
+        }
+      }
     },
     {
       "id": "mem-karim-lopez",
@@ -274,9 +414,29 @@
       "country": "Mexico",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 72,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 78,
+        "mental": 66,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 72,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 73,
+          "dunk": 75,
+          "archetype": "Middy Bully"
+        }
+      }
     },
     {
       "id": "mem-jahmai-mashack",
@@ -303,9 +463,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 72,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 68,
+        "physical": 82,
+        "mental": 70,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 72,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 67,
+          "dunk": 70,
+          "archetype": "Pressure Cooker"
+        }
+      }
     },
     {
       "id": "mem-kris-murray",
@@ -332,9 +512,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 70,
+        "physical": 80,
+        "mental": 68,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 73,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 66,
+          "dunk": 75,
+          "archetype": "Mid-Paint Pro"
+        }
+      }
     },
     {
       "id": "mem-scotty-pippen-jr",
@@ -361,9 +561,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 76,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 78,
+        "mental": 76,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 76,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 75,
+          "dunk": 65,
+          "archetype": "Ball-Hawking General"
+        }
+      }
     },
     {
       "id": "mem-quinten-post",
@@ -390,9 +610,29 @@
       "country": "Netherlands",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 82,
+        "physical": 74,
+        "mental": 72,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 65,
+          "archetype": "Stretch Five"
+        }
+      }
     },
     {
       "id": "mem-olivier-maxence-prosper",
@@ -419,9 +659,29 @@
       "country": "Canada",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 70,
+        "physical": 88,
+        "mental": 68,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 75,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 85,
+          "archetype": "Rim-Rocking Stretch"
+        }
+      }
     },
     {
       "id": "mem-richie-saunders",
@@ -448,9 +708,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 70,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 72,
+        "mental": 64,
+        "tactical": 66,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 70,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 55,
+          "archetype": "Diming Sharpshooter"
+        }
+      }
     },
     {
       "id": "mem-javon-small",
@@ -477,9 +757,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 78,
+        "mental": 68,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 74,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 82,
+          "dunk": 80,
+          "archetype": "Bouncy Iso Sniper"
+        }
+      }
     },
     {
       "id": "mem-cam-spencer",
@@ -506,9 +806,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 70,
+        "mental": 76,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 77,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 84,
+          "dunk": 55,
+          "archetype": "Sharpshooter"
+        }
+      }
     },
     {
       "id": "mem-isaiah-stewart",
@@ -535,9 +855,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 78,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 68,
+        "physical": 92,
+        "mental": 78,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 78,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 79,
+          "dunk": 70,
+          "archetype": "2-Way Popper"
+        }
+      }
     },
     {
       "id": "mem-jaylen-wells",
@@ -564,9 +904,29 @@
       "country": "USA",
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
-      "ratings": null,
-      "attributes": null,
-      "notes": null
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "Basket Legends evaluation",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical"
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 76,
+        "mental": 78,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": {
+        "nba2k27": {
+          "overall": 79,
+          "status": "published-2kratings",
+          "source": "2KRatings Memphis Grizzlies NBA 2K27 team ratings page",
+          "threePoint": 83,
+          "dunk": 70,
+          "archetype": "2-Way Sharpshooter"
+        }
+      }
     }
   ]
 }
