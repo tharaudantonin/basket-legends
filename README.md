@@ -2,7 +2,7 @@
 
 > Jeu web de management basketball — simulation sportive et gestion de franchise à long terme.
 
-**Statut :** préproduction / blueprint. Le registre des 30 noms de franchise reflète les choix de l'utilisateur au 17 novembre 2026. Boston Beacons et Washington Capitals disposent de concepts graphiques documentés ; les identités sont encore en cours de conception. La disponibilité juridique des noms n'a pas été vérifiée.
+**Statut :** préproduction / blueprint. Le registre des 30 noms de franchise reflète les choix de l'utilisateur, mis à jour le 24 novembre 2026 (Washington Monuments et Denver Peaks remplacent Washington Capitals et Denver Summit). Boston Beacons et Washington Monuments disposent de concepts graphiques documentés. La disponibilité juridique des noms n'a pas été vérifiée. État réel et feuille de route : `docs/AUDIT_2026-11.md` ; décisions récentes : `docs/DECISIONS_2026-11.md`.
 
 ## Vision
 Basket Legends est une simulation de management basketball dans laquelle le joueur incarne un **General Manager**. Il construit son effectif, gère contrats et finances, supervise le recrutement, fixe les orientations sportives et délègue certaines responsabilités au coach.
@@ -21,6 +21,8 @@ Basket Legends est une simulation de management basketball dans laquelle le joue
 - Carrière multi-saisons avec Draft, free agency, transferts, progression, retraites et génération continue.
 
 ## Documents
+- `docs/DECISIONS_2026-11.md` — décisions validées les 23 et 24 novembre 2026.
+- `docs/AUDIT_2026-11.md` — audit des dépôts, constats et feuille de route en tranches.
 - `docs/GDD.md` — Game Design Document.
 - `docs/TDD.md` — architecture technique.
 - `docs/ART_BIBLE.md` — direction artistique.
@@ -32,7 +34,7 @@ Basket Legends est une simulation de management basketball dans laquelle le joue
 - `docs/SOURCES.md` — politique de provenance des données.
 - `data/franchises.json` et `data/franchises.csv` — registre exploitable.
 - `assets/franchises/boston-beacons/` — concept vectoriel vintage en révision.
-- `assets/franchises/washington-capitals/` — concept de maillots avec étoiles latérales sur l'Icon.
+- `assets/franchises/washington-capitals/` — Washington Monuments : concept de maillots avec étoiles latérales sur l'Icon (dossier renommé à la tranche 0).
 
 ## Points ouverts
 1. Snapshot validé le 23 novembre 2026 : effectifs 2026-2027 arrêtés au 17 novembre 2026, statistiques 2025-2026 pour la calibration, carrière à partir de 2026-2027.

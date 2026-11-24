@@ -11,7 +11,7 @@ Transformer les 30 directions artistiques approuvées en assets originaux, cohé
 ## 2. Pré-requis avant gel graphique
 
 - Les 30 palettes et leurs 120 codes HEX sont validés et inscrits dans `data/franchises.json` et `data/franchises.csv`.
-- Effectuer une revue juridique des 30 noms et des territoires de marque. Priorité élevée : Washington Capitals, en raison du conflit de dénomination avec la franchise NHL.
+- Effectuer une revue juridique des 30 noms et des territoires de marque avant toute diffusion publique (porte de publication, `docs/AUDIT_2026-11.md` § 3.4). Washington Capitals et Denver Summit ont été renommés Washington Monuments et Denver Peaks le 24 novembre 2026.
 - Vérifier les droits et la provenance de toute référence visuelle.
 - Maintenir les couleurs déjà validées sans les modifier sans nouvel arbitrage.
 
@@ -107,5 +107,6 @@ Les SVG sont les sources maîtresses pour les éléments vectoriels. Les exports
 
 - [x] Les 30 directions artistiques sont approuvées.
 - [x] Les 30 palettes sont validées et leurs 120 codes HEX sont inscrits dans le registre canonique.
-- [ ] Revue juridique du nom Washington Capitals avant diffusion publique ou commerciale.
+- [x] Renommer Washington Capitals et Denver Summit (24 novembre 2026 : Washington Monuments et Denver Peaks).
+- [ ] Revue juridique des 30 noms avant diffusion publique ou commerciale.
 - [ ] Validation du pack pilote Sacramento Diggers avant production en série.

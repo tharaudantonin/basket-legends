@@ -34,8 +34,8 @@ Ce répertoire centralise les décisions créatives validées et sert de référ
 | Charlotte Bees | [charlotte.md](./franchises/charlotte.md) |
 | Miami Tropics | [miami.md](./franchises/miami.md) |
 | Orlando Comets | [orlando.md](./franchises/orlando.md) |
-| Washington Capitals | [washington.md](./franchises/washington.md) |
-| Denver Summit | [denver.md](./franchises/denver.md) |
+| Washington Monuments | [washington.md](./franchises/washington.md) |
+| Denver Peaks | [denver.md](./franchises/denver.md) |
 | Minnesota Borealis | [minnesota.md](./franchises/minnesota.md) |
 | Oklahoma City Storm Riders | [oklahoma-city.md](./franchises/oklahoma-city.md) |
 | Portland Timberbears | [portland.md](./franchises/portland.md) |

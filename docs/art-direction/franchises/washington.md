@@ -1,4 +1,4 @@
-# Washington Capitals
+# Washington Monuments
 
 > Dossier de direction artistique — Washington  
 > Version : 1.0 — 17 novembre 2026  
@@ -7,7 +7,7 @@
 
 ## 1. Identité et positionnement
 
-- **Nom de franchise :** Washington Capitals
+- **Nom de franchise :** Washington Monuments (anciennement Washington Capitals, renommé le 24 novembre 2026)
 - **Ville / marché :** Washington, District of Columbia
 - **Franchise de référence sportive :** Washington Wizards (référence sportive et historique uniquement)
 - **Territoire créatif :** monument abstrait, étoile et géométrie civique américaine.
@@ -229,7 +229,7 @@ Pistes narratives :
 - formule de ralliement : « Own the District » ;
 - entrée des joueurs accompagnée d'une animation verticale du Monument Star ;
 - étoiles blanches utilisées dans les tifos et les drapeaux, sans transformer toute l'identité en motif étoilé ;
-- chants courts et collectifs autour de « DC » ou « Capitals » ;
+- chants courts et collectifs autour de « DC » ou « Monuments » ;
 - rivalités sportives à développer selon le calendrier et les franchises de la ligue.
 
 Les slogans et rituels sont des propositions, pas des éléments validés.
@@ -254,7 +254,7 @@ Les slogans et rituels sont des propositions, pas des éléments validés.
 - Vérifier le logo à 100 %, 48 px et 24 px.
 - Vérifier les contrastes des numéros et wordmarks sur les quatre tenues.
 - Ne reprendre aucun actif, dessin, police propriétaire ou composition distinctive des Wizards ou de la franchise NHL Washington Capitals.
-- Le nom « Washington Capitals » étant déjà utilisé par une franchise professionnelle de hockey sur glace, une revue juridique approfondie est obligatoire avant toute diffusion publique ou commerciale. Le choix de travail est conservé dans le projet à ce stade ; cela ne constitue pas une validation de disponibilité juridique.
+- L'ancien nom « Washington Capitals », déjà utilisé par une franchise professionnelle de hockey sur glace, a été remplacé par « Washington Monuments » le 24 novembre 2026. Le nouveau nom reste soumis à la revue juridique de la porte de publication avant toute diffusion publique ou commerciale.
 
 ## 12. Validation
 
@@ -286,6 +286,7 @@ Les slogans et rituels sont des propositions, pas des éléments validés.
 | 2026-11-17 | Icon Navy avec étoiles blanches sur les deux panneaux latéraux | Validée |
 | 2026-11-17 | Statement rouge avec accents Navy et White | Validée dans son principe |
 | 2026-11-17 | Cols unis d'une seule couleur | Règle impérative |
+| 2026-11-24 | Nom de franchise : Washington Monuments (remplace Washington Capitals) ; identifiant et palette inchangés | Validé |
 
 ## 14. Synthèse des décisions et propositions
 

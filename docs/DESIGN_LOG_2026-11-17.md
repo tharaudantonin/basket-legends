@@ -38,3 +38,9 @@ L'utilisateur a validé définitivement les neuf palettes proposées pour New Yo
 - Oklahoma City Storm Riders : Storm Orange `#E36F32`, Storm Graphite `#30343B`, Thunder Blue `#42647C`, Cloud White `#F0F1ED`.
 
 Le risque de collision du nom Washington Capitals avec la franchise NHL demeure une réserve juridique distincte de la validation créative.
+
+## Mise à jour du 24 novembre 2026
+
+- Washington Capitals est renommé **Washington Monuments** et Denver Summit est renommé **Denver Peaks** (décision 9 du 23 novembre et réponse du 24 novembre, `docs/DECISIONS_2026-11.md`). Les identifiants `washington` et `denver` et les palettes ci-dessus sont inchangés.
+- Houston Commanders et Atlanta Eagles sont conservés par décision d'Antonin.
+

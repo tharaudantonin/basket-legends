@@ -18,8 +18,8 @@ Les 30 noms de franchise ci-dessous sont les choix retenus pour Basket Legends. 
 | Charlotte | Hornets | **Charlotte Bees** | Abeille stylisée et motifs hexagonaux |
 | Miami | Heat | **Miami Tropics** | Végétation tropicale, chaleur côtière et Art déco abstrait |
 | Orlando | Magic | **Orlando Comets** | Comètes, orbites et espace |
-| Washington | Wizards | **Washington Capitals** | Monument abstrait, étoile et géométrie civique — revue juridique du nom obligatoire |
-| Denver | Nuggets | **Denver Summit** | Altitude, relief et sommets |
+| Washington | Wizards | **Washington Monuments** | Monument abstrait, étoile et géométrie civique |
+| Denver | Nuggets | **Denver Peaks** | Altitude, relief et sommets |
 | Minneapolis | Timberwolves | **Minnesota Borealis** | Aurore boréale, froid et forêts |
 | Oklahoma City | Thunder | **Oklahoma City Storm Riders** | Tempête, énergie et mouvement |
 | Portland | Trail Blazers | **Portland Timberbears** | Forêts du Nord-Ouest, ours et nature |
@@ -49,4 +49,7 @@ Les franchises sportives de référence servent de repères historiques et stati
 
 ## Revue juridique
 
-Tous les noms et actifs doivent faire l'objet d'une recherche de disponibilité avant diffusion publique ou commerciale. **Washington Capitals** présente un conflit évident de dénomination avec une franchise NHL : revue juridique prioritaire et aucun emprunt d'actifs graphiques à cette franchise.
+Tous les noms et actifs doivent faire l'objet d'une recherche de disponibilité avant diffusion publique ou commerciale (porte de publication, `docs/AUDIT_2026-11.md` § 3.4).
+
+- **Renommages du 24 novembre 2026 :** Washington Capitals devient **Washington Monuments** (nom utilisé par une franchise NHL) et Denver Summit devient **Denver Peaks** (nom proche de Denver Summit FC, club NWSL). Identifiants `washington` et `denver` et palettes inchangés. Réserve : « Denver Peak » figurait parmi les noms envisagés puis écartés par Denver Summit FC.
+- **Homonymes de clubs disparus**, conservés pour le développement privé (décision du 24 novembre 2026) : Boston Beacons (NASL, 1968), New York Skyliners (United Soccer Association, 1967), Indianapolis Racers (WHA, 1974-1978), Los Angeles Stars (ABA, 1968-1970) et Miami Tropics (USBL, 1987-1995). Los Angeles Stars et Miami Tropics, anciennes équipes de basket, sont prioritaires pour la revue juridique.

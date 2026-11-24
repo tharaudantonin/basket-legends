@@ -6,7 +6,8 @@
 - [x] Définir les règles transversales de logo et de maillots.
 - [x] Documenter les trois derniers dossiers.
 - [x] Valider et retranscrire les quatre couleurs HEX des neuf palettes restantes (30/30 palettes gelées).
-- [ ] Revue juridique des noms, en priorité Washington Capitals.
+- [x] Remplacer Washington Capitals et Denver Summit (24/11/2026 : Washington Monuments et Denver Peaks ; identifiants et palettes inchangés).
+- [ ] Revue juridique des noms avant publication (porte de publication ; homonymes de clubs disparus : Boston Beacons, New York Skyliners, Indianapolis Racers, Los Angeles Stars, Miami Tropics ; réserve sur Denver Peaks).
 - [x] Valider le snapshot de référence (23/11/2026) : effectifs 2026-2027 au 17 novembre 2026, statistiques 2025-2026 pour la calibration, carrière à partir de 2026-2027.
 
 ## Phase 1 — Production du système visuel
@@ -39,7 +40,7 @@
   - [x] Recevoir et enregistrer l'effectif Orlando Comets (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Dallas Outriders (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Brooklyn Bridges (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
-  - [x] Recevoir et enregistrer l'effectif Denver Summit (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Denver Peaks, anciennement Denver Summit (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Indianapolis Racers (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif New Orleans Royal (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Detroit Cylinders (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
@@ -50,7 +51,7 @@
   - [x] Recevoir et enregistrer l'effectif Minnesota Borealis (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Portland Timberbears (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif San Francisco Golden Seals (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
-  - [x] Recevoir et enregistrer l'effectif Washington Capitals (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Washington Monuments, anciennement Washington Capitals (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Toronto Bears (17 joueurs, saison 2026-2027, validation utilisateur ; numéro 9 conservé provisoirement pour RJ Barrett et Kevin McCullar Jr. ; vérification NBA officielle détaillée encore à faire).
 - [x] Spécifier statistiques, mensurations, attributs estimés, contrôles qualité et niveaux de confiance.
 - [ ] Implémenter le modèle de données et produire les imports joueurs sourcés.

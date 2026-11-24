@@ -40,4 +40,4 @@ Chaque franchise possède :
 - Chaque col de maillot est uni et d'une seule couleur.
 - Les symboles doivent être différenciés par leur silhouette, pas seulement par leur couleur.
 - Les fichiers vectoriels doivent rester lisibles en monochrome et en petite taille.
-- Washington Capitals : nom à risque juridique ; aucune référence graphique à la franchise NHL.
+- Washington Monuments (anciennement Washington Capitals) : aucune référence graphique à la franchise NHL Washington Capitals ni aux Wizards.

@@ -33,8 +33,8 @@ Les logos doivent être des emblèmes de franchises sportives professionnelles :
 ## Boston Beacons
 Palette validée : Harbor Green `#0F4B3A`, Warm Ivory `#F2EFE5`, Antique Brass `#B69A62`, Ink Charcoal `#1D2523`. Le concept validé est un roundel historique sobre avec phare géométrique minimal et typographie rétro ; les détails inutiles sont exclus. Les cols des quatre tenues sont unis.
 
-## Washington Capitals
-Concept de basketball original : monument abstrait, étoile et géométrie civique. Le maillot Icon navy comporte des étoiles blanches répétées sur les deux panneaux latéraux. Ne reprendre aucun actif de la franchise NHL Washington Capitals. Le nom exige une revue juridique prioritaire avant publication commerciale.
+## Washington Monuments
+Anciennement Washington Capitals (renommé le 24 novembre 2026). Concept de basketball original : monument abstrait, étoile et géométrie civique. Le maillot Icon navy comporte des étoiles blanches répétées sur les deux panneaux latéraux. Ne reprendre aucun actif de la franchise NHL Washington Capitals ni des Wizards.
 
 ## Sacramento Diggers, Milwaukee Stags et Utah Desert Raptors
 Les dossiers individuels sont désormais définitifs :
@@ -53,8 +53,8 @@ Les neuf palettes suivantes ont été explicitement approuvées le 17 novembre 2
 | Detroit Cylinders | Industrial Charcoal `#343B43` | Foundry Steel `#A7B0B8` | Volt Yellow `#D6E342` | Machine White `#F0F1ED` |
 | Indianapolis Racers | Racing Blue `#2455A4` | Victory Gold `#D5A63C` | Track White `#F2F0E9` | Asphalt Black `#252A30` |
 | Orlando Comets | Cosmic Purple `#5C4B91` | Stardust Silver `#C5C8D2` | Nebula Blue `#344E78` | Space White `#F1F0F5` |
-| Washington Capitals | Capital Navy `#0B2D5B` | Capitol Red `#C43D45` | Federal White `#F4F3EF` | Monument Silver `#AEB7C2` |
-| Denver Summit | Summit Ice `#8EC5D4` | Alpine Granite `#59636F` | Peak Navy `#26384B` | Snow White `#F1F4F3` |
+| Washington Monuments | Capital Navy `#0B2D5B` | Capitol Red `#C43D45` | Federal White `#F4F3EF` | Monument Silver `#AEB7C2` |
+| Denver Peaks | Summit Ice `#8EC5D4` | Alpine Granite `#59636F` | Peak Navy `#26384B` | Snow White `#F1F4F3` |
 | Minnesota Borealis | Borealis Teal `#2D8B83` | Aurora Mint `#A8D6C2` | Midnight Blue `#202C3A` | Arctic Ice `#E7F0ED` |
 | Oklahoma City Storm Riders | Storm Orange `#E36F32` | Storm Graphite `#30343B` | Thunder Blue `#42647C` | Cloud White `#F0F1ED` |
 

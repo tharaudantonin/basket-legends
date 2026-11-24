@@ -54,7 +54,7 @@ Les 30 dossiers Markdown ont été synchronisés avec le registre canonique. Les
 - Revue juridique des noms, logos et droits d'image.
 
 ## 7. Risque juridique prioritaire
-Le nom **Washington Capitals** entre en collision avec une franchise existante de NHL. Le nom doit faire l'objet d'une revue juridique avant toute diffusion publique ou commerciale. Aucun actif graphique de cette franchise ne doit être utilisé.
+Washington Capitals (franchise NHL existante) et Denver Summit (Denver Summit FC, NWSL) ont été renommés **Washington Monuments** et **Denver Peaks** le 24 novembre 2026. Les 30 noms restent soumis à la revue juridique de la porte de publication (`docs/AUDIT_2026-11.md` § 3.4), en priorité les homonymes de clubs disparus Los Angeles Stars et Miami Tropics. Aucun actif graphique d'un club réel ne doit être utilisé.
 
 ## 8. Conclusion
 La phase d'arbitrage créatif des 30 franchises est terminée. La synchronisation des 30 dossiers Markdown est terminée. La phase suivante porte sur la production des assets et leur contrôle comparatif. Les 30 palettes sont gelées dans le registre canonique ; toute modification nécessite un nouvel arbitrage utilisateur.

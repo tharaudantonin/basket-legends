@@ -1,4 +1,4 @@
-# Denver Summit
+# Denver Peaks
 
 > Dossier de direction artistique — Denver  
 > Statut : Ouvert — à co-concevoir  
@@ -6,7 +6,7 @@
 
 ## 1. Identité et positionnement
 
-- **Nom de franchise :** Denver Summit
+- **Nom de franchise :** Denver Peaks (anciennement Denver Summit, renommé le 24 novembre 2026)
 - **Ville / marché :** Denver
 - **Franchise sportive de référence :** Denver Nuggets
 - **Territoire créatif inscrit au registre :** Altitude, relief et sommets montagneux
@@ -14,7 +14,7 @@
 - **Positionnement :** à définir ensemble.
 - **Culture supporters et récit de franchise :** à définir ensemble.
 
-Le club réel sert de référence sportive et historique, pas de modèle graphique à reproduire. L'identité de Denver Summit doit être originale.
+Le club réel sert de référence sportive et historique, pas de modèle graphique à reproduire. L'identité de Denver Peaks doit être originale.
 
 ## 2. Territoire créatif
 
@@ -130,4 +130,5 @@ Les quatre tenues restent à concevoir en détail :
 | Date | Décision | Statut |
 |---|---|---|
 | 2026-11-17 | Création du dossier initial à partir du registre des franchises | Ouvert |
+| 2026-11-24 | Nom de franchise : Denver Peaks (remplace Denver Summit) ; identifiant et palette inchangés. Réserve : « Denver Peak » figurait parmi les noms écartés par Denver Summit FC | Validé |
 

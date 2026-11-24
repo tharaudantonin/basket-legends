@@ -1,13 +1,15 @@
 {
   "schemaVersion": 2,
   "status": "art-direction-register",
-  "updatedAt": "2026-11-17",
+  "updatedAt": "2026-11-24",
   "snapshotProposal": {
-    "season": "2025-2026",
-    "date": "2026-06-30",
-    "status": "approved"
+    "season": "2026-2027",
+    "date": "2026-11-17",
+    "status": "approved",
+    "statisticsSeason": "2025-2026",
+    "approvedAt": "2026-11-23"
   },
-  "note": "Les 30 directions artistiques et les 30 palettes (quatre couleurs et codes HEX) ont été validées dans les sessions de conception. Les palettes sont transcrites et marquées validées dans ce registre canonique. Les assets graphiques finaux restent à produire. Washington Capitals : collision de nom avec la franchise NHL, revue juridique obligatoire avant diffusion publique ou commerciale. Aucune identité graphique de club réel ne doit être copiée.",
+  "note": "Les 30 directions artistiques et les 30 palettes (quatre couleurs et codes HEX) ont été validées dans les sessions de conception. Les palettes sont transcrites et marquées validées dans ce registre canonique. Les assets graphiques finaux restent à produire. Washington Capitals et Denver Summit, en collision avec des clubs existants (NHL et NWSL), ont été renommés Washington Monuments et Denver Peaks le 24 novembre 2026 ; les identifiants et les palettes sont inchangés. La disponibilité juridique des 30 noms reste à vérifier avant toute diffusion publique (porte de publication, docs/AUDIT_2026-11.md § 3.4). Aucune identité graphique de club réel ne doit être copiée.",
   "franchises": [
     {
       "id": "boston",
@@ -34,7 +36,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "identityFiles": [
@@ -78,7 +80,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -115,7 +117,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -152,7 +154,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -189,7 +191,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -226,7 +228,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -263,7 +265,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -300,7 +302,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -337,7 +339,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -374,7 +376,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -425,7 +427,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -462,7 +464,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -499,7 +501,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -536,7 +538,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -552,8 +554,8 @@
       "id": "washington",
       "city": "Washington",
       "referenceClub": "Washington Wizards",
-      "fictionalName": "Washington Capitals",
-      "creativeTerritory": "Monument abstrait, étoile et géométrie civique américaine ; emblème de basketball original, sans référence graphique à la franchise NHL.",
+      "fictionalName": "Washington Monuments",
+      "creativeTerritory": "Monument abstrait, étoile et géométrie civique américaine ; emblème de basketball original.",
       "paletteProposal": {
         "primary": "#0B2D5B",
         "secondary": "#C43D45",
@@ -561,7 +563,7 @@
         "neutral": "#AEB7C2"
       },
       "nameStatus": "selected-by-user",
-      "nameClearance": "existing-professional-team-name-conflict-review-required",
+      "nameClearance": "not-checked",
       "visualStatus": "direction-approved-assets-pending",
       "historyMirror": {
         "status": "to-research",
@@ -573,14 +575,12 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
-      "brandRisk": "high-name-collision-with-existing-NHL-franchise; legal clearance required before public or commercial release",
       "identityFiles": [
         "assets/franchises/washington-capitals/logo-primary.svg",
         "assets/franchises/washington-capitals/monogram.svg",
-        "assets/franchises/washington-capitals/wordmark.svg",
         "assets/franchises/washington-capitals/uniform-concepts.svg"
       ],
       "artDirectionStatus": "approved-in-conversation",
@@ -590,13 +590,20 @@
         "Capitol Red",
         "Federal White",
         "Monument Silver"
+      ],
+      "previousNames": [
+        {
+          "name": "Washington Capitals",
+          "replacedAt": "2026-11-24",
+          "reason": "Nom utilisé par une franchise NHL existante"
+        }
       ]
     },
     {
       "id": "denver",
       "city": "Denver",
       "referenceClub": "Denver Nuggets",
-      "fictionalName": "Denver Summit",
+      "fictionalName": "Denver Peaks",
       "creativeTerritory": "Altitude, relief et sommets montagneux",
       "paletteProposal": {
         "primary": "#8EC5D4",
@@ -617,7 +624,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -627,7 +634,15 @@
         "Alpine Granite",
         "Peak Navy",
         "Snow White"
-      ]
+      ],
+      "previousNames": [
+        {
+          "name": "Denver Summit",
+          "replacedAt": "2026-11-24",
+          "reason": "Nom proche de Denver Summit FC, club NWSL existant"
+        }
+      ],
+      "nameNote": "« Denver Peak » figurait parmi les noms envisagés puis écartés par Denver Summit FC : à examiner lors de la revue juridique."
     },
     {
       "id": "minnesota",
@@ -654,7 +669,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -691,7 +706,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -728,7 +743,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -765,7 +780,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -816,7 +831,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -853,7 +868,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -890,7 +905,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -927,7 +942,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -964,7 +979,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -1015,7 +1030,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -1052,7 +1067,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -1089,7 +1104,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -1126,7 +1141,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
@@ -1163,7 +1178,7 @@
       },
       "playerMirror": {
         "status": "individual-mapping-required",
-        "referenceSeason": "2025-2026",
+        "referenceSeason": "2026-2027",
         "rightsReview": "required-before-public-commercial-release"
       },
       "artDirectionStatus": "approved-in-conversation",
