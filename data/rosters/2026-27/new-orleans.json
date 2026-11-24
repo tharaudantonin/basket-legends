@@ -1,0 +1,859 @@
+{
+  "schemaVersion": 2,
+  "datasetId": "basket-legends-rosters-2026-27",
+  "snapshot": {
+    "season": "2026-2027",
+    "date": "2026-11-17",
+    "timezone": "America/New_York",
+    "status": "approved"
+  },
+  "franchise": {
+    "id": "new-orleans",
+    "fictionalName": "New Orleans Royal",
+    "referenceClub": "New Orleans Pelicans",
+    "referenceAbbreviation": "NOP"
+  },
+  "roster": {
+    "status": "approved-by-user",
+    "approvedAt": "2026-11-17",
+    "playerCount": 18,
+    "scope": "Roster list supplied directly by the user and approved for Basket Legends for the 2026-2027 season. User approval does not independently certify NBA roster membership, contract status, or official affiliation."
+  },
+  "provenance": {
+    "sourceType": "user-provided-data",
+    "sourceDescription": "Structured roster extract supplied by the user in the conversation.",
+    "officialSourceVerification": "pending",
+    "note": "Do not infer NBA person IDs, contract type, two-way status, contract terms, or statistics from this file. Verify separately against official NBA records before marking those fields verified.",
+    "names": "Noms fictifs aux mêmes initiales, proposés le 24/11/2026 et à relire (nameStatus). La table de correspondance avec les vrais noms est gardée hors du dépôt.",
+    "ratings": "Notes et attributs provisoires ; les notes NBA 2K ont été retirées du dépôt le 24/11/2026."
+  },
+  "units": {
+    "canonical": "metric",
+    "displayPreference": "user-configurable",
+    "height": {
+      "canonical": "cm",
+      "sourceUnit": "ft-in",
+      "conversion": "1 inch = 2.54 cm",
+      "rounding": "nearest integer for display"
+    },
+    "weight": {
+      "canonical": "kg",
+      "sourceUnit": "lb",
+      "conversion": "1 lb = 0.45359237 kg",
+      "rounding": "nearest integer for display"
+    },
+    "note": "Original imperial source values are preserved. Metric values are converted and rounded to the nearest whole unit; display preference must not overwrite source data."
+  },
+  "players": [
+    {
+      "id": "j0317",
+      "fictionalDisplayName": "Solomon Burgess",
+      "fictionalFirstName": "Solomon",
+      "fictionalLastName": "Burgess",
+      "fictionalSuffix": null,
+      "fictionalInitials": "SB",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "41",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-8",
+          "sourceUnit": "ft-in",
+          "heightCm": 203,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 240,
+          "sourceUnit": "lb",
+          "weightKg": 109,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Villanova",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 80,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 78,
+        "mental": 80,
+        "tactical": 78,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0318",
+      "fictionalDisplayName": "Montrell Dogo",
+      "fictionalFirstName": "Montrell",
+      "fictionalLastName": "Dogo",
+      "fictionalSuffix": null,
+      "fictionalInitials": "MD",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "8",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 256,
+          "sourceUnit": "lb",
+          "weightKg": 116,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Mississippi",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 68,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 68,
+        "physical": 78,
+        "mental": 62,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0319",
+      "fictionalDisplayName": "Jabril Foley",
+      "fictionalFirstName": "Jabril",
+      "fictionalLastName": "Foley",
+      "fictionalSuffix": null,
+      "fictionalInitials": "JF",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "0",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-3",
+          "sourceUnit": "ft-in",
+          "heightCm": 191,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 188,
+          "sourceUnit": "lb",
+          "weightKg": 85,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Oklahoma",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 86,
+        "physical": 78,
+        "mental": 74,
+        "tactical": 78,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0320",
+      "fictionalDisplayName": "AJ Jolley",
+      "fictionalFirstName": "AJ",
+      "fictionalLastName": "Jolley",
+      "fictionalSuffix": null,
+      "fictionalInitials": "AJJ",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "14",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 175,
+          "sourceUnit": "lb",
+          "weightKg": 79,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Illawarra",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 70,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 76,
+        "mental": 62,
+        "tactical": 64,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0321",
+      "fictionalDisplayName": "Hollis Jemison",
+      "fictionalFirstName": "Hollis",
+      "fictionalLastName": "Jemison",
+      "fictionalSuffix": null,
+      "fictionalInitials": "HJ",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "2",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-7",
+          "sourceUnit": "ft-in",
+          "heightCm": 201,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 210,
+          "sourceUnit": "lb",
+          "weightKg": 95,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Alabama",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 82,
+        "mental": 80,
+        "tactical": 74,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0322",
+      "fictionalDisplayName": "Dante Justice",
+      "fictionalFirstName": "Dante",
+      "fictionalLastName": "Justice",
+      "fictionalSuffix": null,
+      "fictionalInitials": "DJ",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "6",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-11",
+          "sourceUnit": "ft-in",
+          "heightCm": 211,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 280,
+          "sourceUnit": "lb",
+          "weightKg": 127,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Texas A&M",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 88,
+        "mental": 78,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0323",
+      "fictionalDisplayName": "Benoît Morin",
+      "fictionalFirstName": "Benoît",
+      "fictionalLastName": "Morin",
+      "fictionalSuffix": null,
+      "fictionalInitials": "BM",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "24",
+      "sourcePosition": "G-F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-5",
+          "sourceUnit": "ft-in",
+          "heightCm": 196,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 222,
+          "sourceUnit": "lb",
+          "weightKg": 101,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Arizona",
+      "country": "Canada",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 84,
+        "physical": 82,
+        "mental": 72,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0324",
+      "fictionalDisplayName": "Kemal Milić",
+      "fictionalFirstName": "Kemal",
+      "fictionalLastName": "Milić",
+      "fictionalSuffix": null,
+      "fictionalInitials": "KM",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "17",
+      "sourcePosition": "F-C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-11",
+          "sourceUnit": "ft-in",
+          "heightCm": 211,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 255,
+          "sourceUnit": "lb",
+          "weightKg": 116,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Mega Basket",
+      "country": "Bosnia and Herzegovina",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 77,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 72,
+        "physical": 84,
+        "mental": 72,
+        "tactical": 80,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0325",
+      "fictionalDisplayName": "Brady McLeod",
+      "fictionalFirstName": "Brady",
+      "fictionalLastName": "McLeod",
+      "fictionalSuffix": null,
+      "fictionalInitials": "BM",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "11",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 202,
+          "sourceUnit": "lb",
+          "weightKg": 92,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Nebraska",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 76,
+        "mental": 66,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0326",
+      "fictionalDisplayName": "Yanis Mbaye",
+      "fictionalFirstName": "Yanis",
+      "fictionalLastName": "Mbaye",
+      "fictionalSuffix": null,
+      "fictionalInitials": "YM",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "21",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-11",
+          "sourceUnit": "ft-in",
+          "heightCm": 211,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 236,
+          "sourceUnit": "lb",
+          "weightKg": 107,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Baylor",
+      "country": "Cameroon",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 75,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 62,
+        "physical": 88,
+        "mental": 74,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0327",
+      "fictionalDisplayName": "Theo Maddox III",
+      "fictionalFirstName": "Theo",
+      "fictionalLastName": "Maddox",
+      "fictionalSuffix": "III",
+      "fictionalInitials": "TM",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "25",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 220,
+          "sourceUnit": "lb",
+          "weightKg": 100,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Virginia",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 82,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 90,
+        "physical": 82,
+        "mental": 80,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0328",
+      "fictionalDisplayName": "Devin Moseley",
+      "fictionalFirstName": "Devin",
+      "fictionalLastName": "Moseley",
+      "fictionalSuffix": null,
+      "fictionalInitials": "DM",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "5",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 188,
+          "sourceUnit": "lb",
+          "weightKg": 85,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Washington",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 83,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 82,
+        "mental": 86,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0329",
+      "fictionalDisplayName": "Jalen Pittman Jr.",
+      "fictionalFirstName": "Jalen",
+      "fictionalLastName": "Pittman",
+      "fictionalSuffix": "Jr.",
+      "fictionalInitials": "JP",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "10",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 206,
+          "sourceUnit": "lb",
+          "weightKg": 93,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Southern Methodist",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 68,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 76,
+        "mental": 60,
+        "tactical": 58,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0330",
+      "fictionalDisplayName": "Jerome Prather",
+      "fictionalFirstName": "Jerome",
+      "fictionalLastName": "Prather",
+      "fictionalSuffix": null,
+      "fictionalInitials": "JP",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "3",
+      "sourcePosition": "G",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-4",
+          "sourceUnit": "ft-in",
+          "heightCm": 193,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 200,
+          "sourceUnit": "lb",
+          "weightKg": 91,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Michigan",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 74,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 88,
+        "physical": 70,
+        "mental": 68,
+        "tactical": 70,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0331",
+      "fictionalDisplayName": "Damon Quarles",
+      "fictionalFirstName": "Damon",
+      "fictionalLastName": "Quarles",
+      "fictionalSuffix": null,
+      "fictionalInitials": "DQ",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "22",
+      "sourcePosition": "C",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-11",
+          "sourceUnit": "ft-in",
+          "heightCm": 211,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 225,
+          "sourceUnit": "lb",
+          "weightKg": 102,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Maryland",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 79,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 80,
+        "physical": 84,
+        "mental": 76,
+        "tactical": 76,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0332",
+      "fictionalDisplayName": "Jamal Rayburn",
+      "fictionalFirstName": "Jamal",
+      "fictionalLastName": "Rayburn",
+      "fictionalSuffix": null,
+      "fictionalInitials": "JR",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "13",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-11",
+          "sourceUnit": "ft-in",
+          "heightCm": 211,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 230,
+          "sourceUnit": "lb",
+          "weightKg": 104,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Maryland",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 65,
+        "physical": 86,
+        "mental": 68,
+        "tactical": 73,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0333",
+      "fictionalDisplayName": "Troy Whitaker",
+      "fictionalFirstName": "Troy",
+      "fictionalLastName": "Whitaker",
+      "fictionalSuffix": null,
+      "fictionalInitials": "TW",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "9",
+      "sourcePosition": "G-F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-9",
+          "sourceUnit": "ft-in",
+          "heightCm": 206,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 244,
+          "sourceUnit": "lb",
+          "weightKg": 111,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Louisiana State",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 73,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 78,
+        "physical": 76,
+        "mental": 70,
+        "tactical": 68,
+        "scale": 100
+      },
+      "notes": null
+    },
+    {
+      "id": "j0334",
+      "fictionalDisplayName": "Zane Warner",
+      "fictionalFirstName": "Zane",
+      "fictionalLastName": "Warner",
+      "fictionalSuffix": null,
+      "fictionalInitials": "ZW",
+      "nameStatus": "proposed-pending-review",
+      "jerseyNumber": "1",
+      "sourcePosition": "F",
+      "measurements": {
+        "height": {
+          "sourceValue": "6-6",
+          "sourceUnit": "ft-in",
+          "heightCm": 198,
+          "conversionStatus": "derived-rounded"
+        },
+        "weight": {
+          "sourceValue": 277,
+          "sourceUnit": "lb",
+          "weightKg": 126,
+          "conversionStatus": "derived-rounded"
+        }
+      },
+      "lastAttended": "Duke",
+      "country": "USA",
+      "sourcePlayerId": null,
+      "rosterStatus": "submitted-user-approved-pending-official-verification",
+      "ratings": {
+        "overall": 86,
+        "scale": 100,
+        "source": "provisional",
+        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
+        "status": "provisional-pending-rating-model-v1",
+        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+      },
+      "attributes": {
+        "technique": 90,
+        "physical": 98,
+        "mental": 84,
+        "tactical": 72,
+        "scale": 100
+      },
+      "notes": null
+    }
+  ]
+}

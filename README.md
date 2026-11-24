@@ -33,8 +33,8 @@ Basket Legends est une simulation de management basketball dans laquelle le joue
 - `docs/ROADMAP.md` — feuille de route.
 - `docs/SOURCES.md` — politique de provenance des données.
 - `data/franchises.json` et `data/franchises.csv` — registre exploitable.
-- `assets/franchises/boston-beacons/` — concept vectoriel vintage en révision.
-- `assets/franchises/washington-capitals/` — Washington Monuments : concept de maillots avec étoiles latérales sur l'Icon (dossier renommé à la tranche 0).
+- `assets/franchises/boston/` — concept vectoriel vintage en révision.
+- `assets/franchises/washington/` — Washington Monuments : concept de maillots avec étoiles latérales sur l'Icon.
 
 ## Points ouverts
 1. Snapshot validé le 23 novembre 2026 : effectifs 2026-2027 arrêtés au 17 novembre 2026, statistiques 2025-2026 pour la calibration, carrière à partir de 2026-2027.

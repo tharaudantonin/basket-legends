@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "status": "art-direction-register",
   "updatedAt": "2026-11-24",
-  "snapshotProposal": {
+  "snapshot": {
     "season": "2026-2027",
     "date": "2026-11-17",
     "status": "approved",
@@ -17,7 +17,7 @@
       "referenceClub": "Boston Celtics",
       "fictionalName": "Boston Beacons",
       "creativeTerritory": "Phare, port historique et faisceau lumineux",
-      "paletteProposal": {
+      "palette": {
         "primary": "#0F4B3A",
         "secondary": "#F2EFE5",
         "accent": "#B69A62",
@@ -40,11 +40,11 @@
         "rightsReview": "required-before-public-commercial-release"
       },
       "identityFiles": [
-        "assets/franchises/boston-beacons/logo-primary.svg",
-        "assets/franchises/boston-beacons/logo-secondary.svg",
-        "assets/franchises/boston-beacons/monogram.svg",
-        "assets/franchises/boston-beacons/wordmark.svg",
-        "assets/franchises/boston-beacons/uniform-concepts.svg"
+        "assets/franchises/boston/logo-primary.svg",
+        "assets/franchises/boston/logo-secondary.svg",
+        "assets/franchises/boston/monogram.svg",
+        "assets/franchises/boston/wordmark.svg",
+        "assets/franchises/boston/uniform-concepts.svg"
       ],
       "artDirectionStatus": "approved-in-conversation",
       "paletteStatus": "validated",
@@ -61,7 +61,7 @@
       "referenceClub": "Brooklyn Nets",
       "fictionalName": "Brooklyn Bridges",
       "creativeTerritory": "Ponts, architecture et connexions urbaines",
-      "paletteProposal": {
+      "palette": {
         "primary": "#31566D",
         "secondary": "#C47B50",
         "accent": "#252B30",
@@ -98,7 +98,7 @@
       "referenceClub": "New York Knicks",
       "fictionalName": "New York Skyliners",
       "creativeTerritory": "Skyline, verticalité et énergie métropolitaine",
-      "paletteProposal": {
+      "palette": {
         "primary": "#2878A5",
         "secondary": "#F1F3F4",
         "accent": "#AEB8C2",
@@ -135,7 +135,7 @@
       "referenceClub": "Philadelphia 76ers",
       "fictionalName": "Philadelphia Founders",
       "creativeTerritory": "Histoire civique, indépendance et géométrie",
-      "paletteProposal": {
+      "palette": {
         "primary": "#E7DDC8",
         "secondary": "#A64B3C",
         "accent": "#293B50",
@@ -172,7 +172,7 @@
       "referenceClub": "Toronto Raptors",
       "fictionalName": "Toronto Bears",
       "creativeTerritory": "Faune nordique, force et nature canadienne",
-      "paletteProposal": {
+      "palette": {
         "primary": "#173B3D",
         "secondary": "#A9C4C2",
         "accent": "#D9D9D2",
@@ -209,7 +209,7 @@
       "referenceClub": "Chicago Bulls",
       "fictionalName": "Chicago Horses",
       "creativeTerritory": "Cheval stylisé, mouvement et patrimoine urbain",
-      "paletteProposal": {
+      "palette": {
         "primary": "#C52233",
         "secondary": "#17191D",
         "accent": "#F3F0E9",
@@ -246,7 +246,7 @@
       "referenceClub": "Cleveland Cavaliers",
       "fictionalName": "Cleveland Sentinels",
       "creativeTerritory": "Sentinelle, veille et protection des rives du lac Érié",
-      "paletteProposal": {
+      "palette": {
         "primary": "#263C50",
         "secondary": "#A64B3C",
         "accent": "#B6A27D",
@@ -283,7 +283,7 @@
       "referenceClub": "Detroit Pistons",
       "fictionalName": "Detroit Cylinders",
       "creativeTerritory": "Mécanique automobile, cylindres et ingénierie",
-      "paletteProposal": {
+      "palette": {
         "primary": "#343B43",
         "secondary": "#A7B0B8",
         "accent": "#D6E342",
@@ -320,7 +320,7 @@
       "referenceClub": "Indiana Pacers",
       "fictionalName": "Indianapolis Racers",
       "creativeTerritory": "Compétition automobile, ovales et vitesse",
-      "paletteProposal": {
+      "palette": {
         "primary": "#2455A4",
         "secondary": "#D5A63C",
         "accent": "#F2F0E9",
@@ -357,7 +357,7 @@
       "referenceClub": "Milwaukee Bucks",
       "fictionalName": "Milwaukee Stags",
       "creativeTerritory": "Cerf majestueux, forêts du Wisconsin, Grands Lacs et héritage industriel de Milwaukee",
-      "paletteProposal": {
+      "palette": {
         "primary": "#243B4A",
         "secondary": "#B7774D",
         "accent": "#526B56",
@@ -408,7 +408,7 @@
       "referenceClub": "Atlanta Hawks",
       "fictionalName": "Atlanta Eagles",
       "creativeTerritory": "Aigle, aviation, mouvement et puissance",
-      "paletteProposal": {
+      "palette": {
         "primary": "#D5A52E",
         "secondary": "#202329",
         "accent": "#F2EFE6",
@@ -445,7 +445,7 @@
       "referenceClub": "Charlotte Hornets",
       "fictionalName": "Charlotte Bees",
       "creativeTerritory": "Abeille stylisée, motifs hexagonaux et énergie locale",
-      "paletteProposal": {
+      "palette": {
         "primary": "#E0AC32",
         "secondary": "#252B30",
         "accent": "#A8B9B0",
@@ -482,7 +482,7 @@
       "referenceClub": "Miami Heat",
       "fictionalName": "Miami Tropics",
       "creativeTerritory": "Végétation tropicale, chaleur côtière et Art déco abstrait",
-      "paletteProposal": {
+      "palette": {
         "primary": "#159B9A",
         "secondary": "#F07869",
         "accent": "#F5E9D5",
@@ -519,7 +519,7 @@
       "referenceClub": "Orlando Magic",
       "fictionalName": "Orlando Comets",
       "creativeTerritory": "Comètes, orbites et mouvement spatial",
-      "paletteProposal": {
+      "palette": {
         "primary": "#5C4B91",
         "secondary": "#C5C8D2",
         "accent": "#344E78",
@@ -556,7 +556,7 @@
       "referenceClub": "Washington Wizards",
       "fictionalName": "Washington Monuments",
       "creativeTerritory": "Monument abstrait, étoile et géométrie civique américaine ; emblème de basketball original.",
-      "paletteProposal": {
+      "palette": {
         "primary": "#0B2D5B",
         "secondary": "#C43D45",
         "accent": "#F4F3EF",
@@ -579,9 +579,9 @@
         "rightsReview": "required-before-public-commercial-release"
       },
       "identityFiles": [
-        "assets/franchises/washington-capitals/logo-primary.svg",
-        "assets/franchises/washington-capitals/monogram.svg",
-        "assets/franchises/washington-capitals/uniform-concepts.svg"
+        "assets/franchises/washington/logo-primary.svg",
+        "assets/franchises/washington/monogram.svg",
+        "assets/franchises/washington/uniform-concepts.svg"
       ],
       "artDirectionStatus": "approved-in-conversation",
       "paletteStatus": "validated",
@@ -605,7 +605,7 @@
       "referenceClub": "Denver Nuggets",
       "fictionalName": "Denver Peaks",
       "creativeTerritory": "Altitude, relief et sommets montagneux",
-      "paletteProposal": {
+      "palette": {
         "primary": "#8EC5D4",
         "secondary": "#59636F",
         "accent": "#26384B",
@@ -650,7 +650,7 @@
       "referenceClub": "Minnesota Timberwolves",
       "fictionalName": "Minnesota Borealis",
       "creativeTerritory": "Aurore boréale, froid et forêts stylisées",
-      "paletteProposal": {
+      "palette": {
         "primary": "#2D8B83",
         "secondary": "#A8D6C2",
         "accent": "#202C3A",
@@ -687,7 +687,7 @@
       "referenceClub": "Oklahoma City Thunder",
       "fictionalName": "Oklahoma City Storm Riders",
       "creativeTerritory": "Tempête, énergie et mouvement dynamique",
-      "paletteProposal": {
+      "palette": {
         "primary": "#E36F32",
         "secondary": "#30343B",
         "accent": "#42647C",
@@ -724,7 +724,7 @@
       "referenceClub": "Portland Trail Blazers",
       "fictionalName": "Portland Timberbears",
       "creativeTerritory": "Forêts du Nord-Ouest, ours et patrimoine naturel",
-      "paletteProposal": {
+      "palette": {
         "primary": "#A75A35",
         "secondary": "#D4B98D",
         "accent": "#333B35",
@@ -761,7 +761,7 @@
       "referenceClub": "Utah Jazz",
       "fictionalName": "Utah Desert Raptors",
       "creativeTerritory": "Rapace en vol, canyons et formations de grès rouge de l’Utah",
-      "paletteProposal": {
+      "palette": {
         "primary": "#B85D43",
         "secondary": "#D1A45C",
         "accent": "#303943",
@@ -812,7 +812,7 @@
       "referenceClub": "Golden State Warriors",
       "fictionalName": "San Francisco Golden Seals",
       "creativeTerritory": "Otarie, baie, littoral et héritage maritime",
-      "paletteProposal": {
+      "palette": {
         "primary": "#D9AD43",
         "secondary": "#173D56",
         "accent": "#F3F1EA",
@@ -849,7 +849,7 @@
       "referenceClub": "LA Clippers",
       "fictionalName": "Los Angeles Beachers",
       "creativeTerritory": "Plage, littoral et culture balnéaire californienne",
-      "paletteProposal": {
+      "palette": {
         "primary": "#65A9C8",
         "secondary": "#E9D9BE",
         "accent": "#163C53",
@@ -886,7 +886,7 @@
       "referenceClub": "Los Angeles Lakers",
       "fictionalName": "Los Angeles Stars",
       "creativeTerritory": "Étoiles, spectacle et ciel nocturne",
-      "paletteProposal": {
+      "palette": {
         "primary": "#D6AD55",
         "secondary": "#20232B",
         "accent": "#8D263D",
@@ -923,7 +923,7 @@
       "referenceClub": "Phoenix Suns",
       "fictionalName": "Phoenix Scorpions",
       "creativeTerritory": "Scorpion, désert et chaleur minérale",
-      "paletteProposal": {
+      "palette": {
         "primary": "#C65B3F",
         "secondary": "#292B32",
         "accent": "#D5B477",
@@ -960,7 +960,7 @@
       "referenceClub": "Sacramento Kings",
       "fictionalName": "Sacramento Diggers",
       "creativeTerritory": "Ruée vers l’or californienne, pépites, filons aurifères et esprit pionnier",
-      "paletteProposal": {
+      "palette": {
         "primary": "#D5A43A",
         "secondary": "#79543A",
         "accent": "#394B56",
@@ -1011,7 +1011,7 @@
       "referenceClub": "Dallas Mavericks",
       "fictionalName": "Dallas Outriders",
       "creativeTerritory": "Grandes plaines, mouvement et étoile géométrique",
-      "paletteProposal": {
+      "palette": {
         "primary": "#8A5B3D",
         "secondary": "#D2B17C",
         "accent": "#252A2E",
@@ -1048,7 +1048,7 @@
       "referenceClub": "Houston Rockets",
       "fictionalName": "Houston Commanders",
       "creativeTerritory": "Exploration spatiale, commandement et conquête",
-      "paletteProposal": {
+      "palette": {
         "primary": "#292E35",
         "secondary": "#E87532",
         "accent": "#B9C1C9",
@@ -1085,7 +1085,7 @@
       "referenceClub": "Memphis Grizzlies",
       "fictionalName": "Memphis Rhythm",
       "creativeTerritory": "Musique, scène et rythme du Mississippi",
-      "paletteProposal": {
+      "palette": {
         "primary": "#356F9D",
         "secondary": "#D8AD4B",
         "accent": "#1B2737",
@@ -1122,7 +1122,7 @@
       "referenceClub": "New Orleans Pelicans",
       "fictionalName": "New Orleans Royal",
       "creativeTerritory": "Héritage cérémoniel, fleuve et patrimoine musical",
-      "paletteProposal": {
+      "palette": {
         "primary": "#24566B",
         "secondary": "#B99A57",
         "accent": "#F1EBDD",
@@ -1159,7 +1159,7 @@
       "referenceClub": "San Antonio Spurs",
       "fictionalName": "San Antonio Knights",
       "creativeTerritory": "Chevalerie, armure stylisée et héritage texan",
-      "paletteProposal": {
+      "palette": {
         "primary": "#344C68",
         "secondary": "#B8BEC4",
         "accent": "#8B343A",

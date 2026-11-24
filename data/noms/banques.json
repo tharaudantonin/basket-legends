@@ -1,0 +1,1793 @@
+{
+  "schemaVersion": 1,
+  "description": "Banques de prénoms et de noms fictifs de Basket Legends, par culture. Servent au renommage des joueurs du snapshot (mêmes initiales) et à la génération des joueurs futurs. Aucun nom de ces listes ne doit reprendre un joueur réel : le contrôle se fait par les empreintes de data/noms/empreintes.json.",
+  "culturesParPays": {
+    "USA": {
+      "prenoms": "anglo",
+      "noms": "anglo"
+    },
+    "Canada": {
+      "prenoms": "anglo",
+      "noms": "anglo"
+    },
+    "Australia": {
+      "prenoms": "anglo",
+      "noms": "anglo"
+    },
+    "United Kingdom": {
+      "prenoms": "anglo",
+      "noms": "anglo"
+    },
+    "Bahamas": {
+      "prenoms": "anglo",
+      "noms": "anglo"
+    },
+    "Jamaica": {
+      "prenoms": "anglo",
+      "noms": "anglo"
+    },
+    "New Zealand": {
+      "prenoms": "anglo",
+      "noms": "anglo"
+    },
+    "France": {
+      "prenoms": "francais",
+      "noms": "francais"
+    },
+    "Belgium": {
+      "prenoms": "francais",
+      "noms": "francais"
+    },
+    "Switzerland": {
+      "prenoms": "francais",
+      "noms": "francais"
+    },
+    "Cameroon": {
+      "prenoms": "francais",
+      "noms": "afrique-ouest-centre"
+    },
+    "DRC": {
+      "prenoms": "francais",
+      "noms": "afrique-ouest-centre"
+    },
+    "Senegal": {
+      "prenoms": "senegal-guinee",
+      "noms": "afrique-ouest-centre"
+    },
+    "Guinea": {
+      "prenoms": "senegal-guinee",
+      "noms": "afrique-ouest-centre"
+    },
+    "Nigeria": {
+      "prenoms": "nigeria",
+      "noms": "afrique-ouest-centre"
+    },
+    "South Sudan": {
+      "prenoms": "afrique-est",
+      "noms": "afrique-est"
+    },
+    "Uganda": {
+      "prenoms": "anglo",
+      "noms": "afrique-est"
+    },
+    "Spain": {
+      "prenoms": "hispanique",
+      "noms": "hispanique"
+    },
+    "Mexico": {
+      "prenoms": "hispanique",
+      "noms": "hispanique"
+    },
+    "Dominican Republic": {
+      "prenoms": "hispanique",
+      "noms": "hispanique"
+    },
+    "Nicaragua": {
+      "prenoms": "hispanique",
+      "noms": "hispanique"
+    },
+    "Portugal": {
+      "prenoms": "lusophone",
+      "noms": "lusophone"
+    },
+    "Brazil": {
+      "prenoms": "lusophone",
+      "noms": "lusophone"
+    },
+    "Germany": {
+      "prenoms": "germanique",
+      "noms": "germanique"
+    },
+    "Austria": {
+      "prenoms": "germanique",
+      "noms": "germanique"
+    },
+    "Netherlands": {
+      "prenoms": "germanique",
+      "noms": "germanique"
+    },
+    "Serbia": {
+      "prenoms": "balkans",
+      "noms": "balkans"
+    },
+    "Bosnia and Herzegovina": {
+      "prenoms": "balkans",
+      "noms": "balkans"
+    },
+    "Croatia": {
+      "prenoms": "balkans",
+      "noms": "balkans"
+    },
+    "Montenegro": {
+      "prenoms": "balkans",
+      "noms": "balkans"
+    },
+    "Slovenia": {
+      "prenoms": "balkans",
+      "noms": "balkans"
+    },
+    "Russia": {
+      "prenoms": "slave",
+      "noms": "slave"
+    },
+    "Ukraine": {
+      "prenoms": "slave",
+      "noms": "slave"
+    },
+    "Czech Republic": {
+      "prenoms": "slave",
+      "noms": "slave"
+    },
+    "Lithuania": {
+      "prenoms": "baltique",
+      "noms": "baltique"
+    },
+    "Latvia": {
+      "prenoms": "baltique",
+      "noms": "baltique"
+    },
+    "Estonia": {
+      "prenoms": "baltique",
+      "noms": "baltique"
+    },
+    "Sweden": {
+      "prenoms": "nordique",
+      "noms": "nordique"
+    },
+    "Finland": {
+      "prenoms": "nordique",
+      "noms": "nordique"
+    },
+    "Georgia": {
+      "prenoms": "georgien",
+      "noms": "georgien"
+    },
+    "Greece": {
+      "prenoms": "grec",
+      "noms": "afrique-ouest-centre"
+    },
+    "Turkey": {
+      "prenoms": "turc",
+      "noms": "turc"
+    },
+    "Israel": {
+      "prenoms": "israelien",
+      "noms": "israelien"
+    },
+    "Italy": {
+      "prenoms": "italien",
+      "noms": "italien"
+    },
+    "Japan": {
+      "prenoms": "japonais",
+      "noms": "japonais"
+    },
+    "China": {
+      "prenoms": "chinois",
+      "noms": "chinois"
+    }
+  },
+  "cultures": {
+    "anglo": {
+      "prenoms": {
+        "A": [
+          "Adrian",
+          "Alec",
+          "Andre",
+          "Austin",
+          "Avery",
+          "Asher",
+          "Alonzo",
+          "Ashton",
+          "Ari",
+          "Abram"
+        ],
+        "B": [
+          "Brandon",
+          "Blake",
+          "Brady",
+          "Bryce",
+          "Brent",
+          "Byron",
+          "Beau",
+          "Bennett",
+          "Brooks",
+          "Boyd"
+        ],
+        "C": [
+          "Cameron",
+          "Carson",
+          "Chase",
+          "Cole",
+          "Colin",
+          "Corey",
+          "Curtis",
+          "Calvin",
+          "Clayton",
+          "Caleb",
+          "Cedric",
+          "Conrad"
+        ],
+        "D": [
+          "Damon",
+          "Darius",
+          "Dante",
+          "Derek",
+          "Devin",
+          "Dominic",
+          "Dylan",
+          "Desmond",
+          "Dorian",
+          "Deshawn",
+          "Deon",
+          "Drew",
+          "Dashiell",
+          "Darnell"
+        ],
+        "E": [
+          "Elijah",
+          "Emmett",
+          "Eric",
+          "Evan",
+          "Ezra",
+          "Elliott",
+          "Ellis"
+        ],
+        "F": [
+          "Felix",
+          "Forrest",
+          "Franklin",
+          "Fletcher"
+        ],
+        "G": [
+          "Garrett",
+          "Gavin",
+          "Grady",
+          "Gideon",
+          "Graham"
+        ],
+        "H": [
+          "Harrison",
+          "Hayden",
+          "Holden",
+          "Hollis"
+        ],
+        "I": [
+          "Ian",
+          "Isaiah",
+          "Isaac",
+          "Ivan",
+          "Irving"
+        ],
+        "J": [
+          "Jace",
+          "Jalen",
+          "Jamal",
+          "Jared",
+          "Jason",
+          "Javon",
+          "Jeremiah",
+          "Jerome",
+          "Josiah",
+          "Julian",
+          "Justin",
+          "Jamir",
+          "Jaden",
+          "Jonah",
+          "Jarrett",
+          "Jaxon",
+          "Jovan",
+          "Joel",
+          "Jeremy",
+          "Jabril",
+          "Jermaine",
+          "Jody"
+        ],
+        "K": [
+          "Kai",
+          "Kaden",
+          "Kareem",
+          "Keith",
+          "Kendall",
+          "Kenyon",
+          "Khalil",
+          "Kyle",
+          "Keon",
+          "Kamari",
+          "Kelvin",
+          "Kenji"
+        ],
+        "L": [
+          "Landon",
+          "Lance",
+          "Logan",
+          "Lucas",
+          "Luther",
+          "Lamont",
+          "Leon",
+          "Lionel"
+        ],
+        "M": [
+          "Malcolm",
+          "Malik",
+          "Marcus",
+          "Mason",
+          "Maurice",
+          "Micah",
+          "Miles",
+          "Marquis",
+          "Montrell",
+          "Maxwell",
+          "Mekhi"
+        ],
+        "N": [
+          "Nathan",
+          "Nate",
+          "Nolan",
+          "Nasir",
+          "Nehemiah",
+          "Niles"
+        ],
+        "O": [
+          "Omar",
+          "Owen",
+          "Oliver",
+          "Otis"
+        ],
+        "P": [
+          "Parker",
+          "Patrick",
+          "Preston",
+          "Percy"
+        ],
+        "Q": [
+          "Quentin",
+          "Quincy",
+          "Quinn"
+        ],
+        "R": [
+          "Rashad",
+          "Raymond",
+          "Reggie",
+          "Remy",
+          "Rodney",
+          "Roman",
+          "Russell",
+          "Rowan"
+        ],
+        "S": [
+          "Samuel",
+          "Shane",
+          "Silas",
+          "Sterling",
+          "Simon",
+          "Stefan",
+          "Solomon"
+        ],
+        "T": [
+          "Tanner",
+          "Terrell",
+          "Theo",
+          "Travis",
+          "Trevor",
+          "Troy",
+          "Terrence",
+          "Tobias",
+          "Tavon"
+        ],
+        "U": [
+          "Ulysses"
+        ],
+        "V": [
+          "Vernon",
+          "Victor",
+          "Vaughn"
+        ],
+        "W": [
+          "Wesley",
+          "Wyatt",
+          "Warren",
+          "Wendell"
+        ],
+        "Y": [
+          "Yancy",
+          "Yusuf"
+        ],
+        "Z": [
+          "Zachary",
+          "Zane",
+          "Zeke"
+        ]
+      },
+      "noms": {
+        "A": [
+          "Abernathy",
+          "Acker",
+          "Addison",
+          "Akers",
+          "Alcott",
+          "Alford",
+          "Ambrose",
+          "Ames",
+          "Ansley",
+          "Archer",
+          "Arledge",
+          "Armistead",
+          "Ashby",
+          "Atwood",
+          "Austell",
+          "Avent",
+          "Aldrich",
+          "Ashworth"
+        ],
+        "B": [
+          "Babcock",
+          "Bancroft",
+          "Barclay",
+          "Barrow",
+          "Baxley",
+          "Beckett",
+          "Bellamy",
+          "Benford",
+          "Bingham",
+          "Blackwood",
+          "Bowden",
+          "Bramlett",
+          "Brannon",
+          "Brantley",
+          "Bratton",
+          "Brightwell",
+          "Brockman",
+          "Bromley",
+          "Buckner",
+          "Bullard",
+          "Burkhart",
+          "Burnside",
+          "Babbitt",
+          "Ballard",
+          "Barnett",
+          "Benning",
+          "Biggers",
+          "Bixby",
+          "Blanding",
+          "Blount",
+          "Bolden",
+          "Boyce",
+          "Brackett",
+          "Braxton",
+          "Briscoe",
+          "Burleson",
+          "Burrell",
+          "Bayless",
+          "Beaumont",
+          "Birchfield",
+          "Bostwick",
+          "Bowerman",
+          "Buckley",
+          "Burgess"
+        ],
+        "C": [
+          "Calloway",
+          "Campbell",
+          "Cantrell",
+          "Carmichael",
+          "Carver",
+          "Cashman",
+          "Chambers",
+          "Chapman",
+          "Cheatham",
+          "Clemons",
+          "Cobb",
+          "Colvin",
+          "Corbin",
+          "Cotton",
+          "Cowan",
+          "Crandall",
+          "Crenshaw",
+          "Crockett",
+          "Culver",
+          "Cabell",
+          "Camden",
+          "Carney",
+          "Carraway",
+          "Casey",
+          "Cates",
+          "Caulder",
+          "Chisholm",
+          "Claiborne",
+          "Compton",
+          "Conroy",
+          "Corley",
+          "Crane",
+          "Crutchfield",
+          "Cullen",
+          "Cumberland",
+          "Calder",
+          "Callahan",
+          "Chatfield",
+          "Coburn",
+          "Crowley",
+          "Cushing",
+          "Cleary"
+        ],
+        "D": [
+          "Dalton",
+          "Danforth",
+          "Darden",
+          "Davenport",
+          "Dawes",
+          "Deakins",
+          "Delaney",
+          "Denham",
+          "Denson",
+          "Dillard",
+          "Dobbs",
+          "Dorsey",
+          "Doss",
+          "Dowling",
+          "Drayton",
+          "Driscoll",
+          "Duffy",
+          "Dugan",
+          "Dunbar",
+          "Durham",
+          "Dwyer",
+          "Dyer",
+          "Dempsey"
+        ],
+        "E": [
+          "Easley",
+          "Eckford",
+          "Edmonds",
+          "Elkins",
+          "Ellery",
+          "Emerson",
+          "Emory",
+          "Enfield",
+          "Espy",
+          "Everett",
+          "Eldridge",
+          "Ewell"
+        ],
+        "F": [
+          "Fairbanks",
+          "Farrow",
+          "Faulkner",
+          "Fenwick",
+          "Ferrell",
+          "Finch",
+          "Fitzgerald",
+          "Forbes",
+          "Fortson",
+          "Foley",
+          "Fulton",
+          "Fairley"
+        ],
+        "G": [
+          "Gaines",
+          "Gamble",
+          "Garrison",
+          "Gaston",
+          "Gibbs",
+          "Gladden",
+          "Glover",
+          "Goff",
+          "Goodman",
+          "Gorman",
+          "Gosnell",
+          "Greer",
+          "Gresham",
+          "Griggs",
+          "Grissom",
+          "Guthrie",
+          "Galbraith",
+          "Gentle",
+          "Goodall",
+          "Graydon"
+        ],
+        "H": [
+          "Haddock",
+          "Hagan",
+          "Halsey",
+          "Hammond",
+          "Hampton",
+          "Hancock",
+          "Harmon",
+          "Hartley",
+          "Haskins",
+          "Hatcher",
+          "Hawley",
+          "Heflin",
+          "Hensley",
+          "Hightower",
+          "Hilliard",
+          "Hinton",
+          "Hobbs",
+          "Hogan",
+          "Holcomb",
+          "Holloway",
+          "Hooper",
+          "Horton",
+          "Houser",
+          "Hubbard",
+          "Huddleston",
+          "Hurley",
+          "Hutchins",
+          "Halloway",
+          "Hargrove",
+          "Hatfield",
+          "Haverty",
+          "Hollister"
+        ],
+        "I": [
+          "Inman",
+          "Irby",
+          "Ireland",
+          "Irwin",
+          "Isbell",
+          "Ives",
+          "Ingersoll"
+        ],
+        "J": [
+          "Jameson",
+          "Jarrell",
+          "Jarvis",
+          "Jemison",
+          "Jessup",
+          "Jett",
+          "Jolley",
+          "Joyner",
+          "Judkins",
+          "Justice",
+          "Jasper",
+          "Jaffe",
+          "Jenkinson",
+          "Jewell"
+        ],
+        "K": [
+          "Kearney",
+          "Keating",
+          "Keller",
+          "Kendrick",
+          "Kenney",
+          "Kilgore",
+          "Kimball",
+          "Kingsley",
+          "Kinsey",
+          "Kirkland",
+          "Knowles",
+          "Kraft",
+          "Kyle",
+          "Keane"
+        ],
+        "L": [
+          "Lacey",
+          "Laird",
+          "Lambert",
+          "Lancaster",
+          "Langford",
+          "Langley",
+          "Lathan",
+          "Lawler",
+          "Ledbetter",
+          "Leland",
+          "Lennox",
+          "Linden",
+          "Lockhart",
+          "Loftin",
+          "Lomax",
+          "Lowell",
+          "Lundy",
+          "Lyman",
+          "Lytle",
+          "Larkin"
+        ],
+        "M": [
+          "Mabry",
+          "Maddox",
+          "Mahoney",
+          "Malloy",
+          "Marlowe",
+          "Marsden",
+          "Maynard",
+          "Meadows",
+          "Mercer",
+          "Merritt",
+          "Middlebrook",
+          "Milburn",
+          "Montague",
+          "Morrow",
+          "Mosley",
+          "Mulvaney",
+          "Munson",
+          "Myers",
+          "Macklin",
+          "Mallory",
+          "Marbley",
+          "Markham",
+          "Medlock",
+          "Merriweather",
+          "Millard",
+          "Mims",
+          "Moffett",
+          "Montgomery",
+          "Moseley",
+          "Mabrey",
+          "Mayhew"
+        ],
+        "Mc": [
+          "McAllister",
+          "McBain",
+          "McCray",
+          "McKinnon",
+          "McLeod",
+          "McNair",
+          "McPhee",
+          "McArthur",
+          "McKay",
+          "McGrath",
+          "McKee",
+          "McElroy",
+          "McHugh",
+          "McCord",
+          "McFadden"
+        ],
+        "N": [
+          "Neal",
+          "Needham",
+          "Nesbitt",
+          "Newcombe",
+          "Newsome",
+          "Nichols",
+          "Noble",
+          "Norwood",
+          "Nugent",
+          "Nolen"
+        ],
+        "O": [
+          "Ogden",
+          "Oldham",
+          "Orr",
+          "Osgood",
+          "Overby",
+          "Overton",
+          "Owensby",
+          "Oakes"
+        ],
+        "O'": [
+          "O'Hara",
+          "O'Rourke",
+          "O'Dell"
+        ],
+        "P": [
+          "Padgett",
+          "Palmer",
+          "Pardue",
+          "Parkman",
+          "Parrish",
+          "Patton",
+          "Peck",
+          "Pembroke",
+          "Pendleton",
+          "Penn",
+          "Perdue",
+          "Petty",
+          "Pierson",
+          "Pittman",
+          "Platt",
+          "Pollard",
+          "Poston",
+          "Prather",
+          "Pruitt",
+          "Pugh",
+          "Purcell",
+          "Purvis",
+          "Pyle",
+          "Paxson",
+          "Pennington",
+          "Prescott"
+        ],
+        "Q": [
+          "Quarles",
+          "Quigley",
+          "Quillen",
+          "Quinlan",
+          "Quimby"
+        ],
+        "R": [
+          "Radford",
+          "Ragland",
+          "Ralston",
+          "Ramsey",
+          "Randall",
+          "Ransom",
+          "Rayburn",
+          "Redding",
+          "Redmond",
+          "Rhodes",
+          "Rigsby",
+          "Ritter",
+          "Rourke",
+          "Rowland",
+          "Rucker",
+          "Rutledge",
+          "Royster"
+        ],
+        "S": [
+          "Sadler",
+          "Salter",
+          "Sandford",
+          "Sargent",
+          "Satterfield",
+          "Saxton",
+          "Sealy",
+          "Seward",
+          "Shelby",
+          "Shepherd",
+          "Sherwood",
+          "Shields",
+          "Shipley",
+          "Sizemore",
+          "Slade",
+          "Slater",
+          "Snead",
+          "Southall",
+          "Sowell",
+          "Sparks",
+          "Spearman",
+          "Stallings",
+          "Stanfield",
+          "Starling",
+          "Steadman",
+          "Stokes",
+          "Stroud",
+          "Sumner",
+          "Sutton",
+          "Sweeney",
+          "Sykes",
+          "Selden",
+          "Sheldon"
+        ],
+        "T": [
+          "Talbot",
+          "Tanner",
+          "Tarver",
+          "Tatlock",
+          "Templeton",
+          "Terrell",
+          "Thackeray",
+          "Thorne",
+          "Thurman",
+          "Tidwell",
+          "Tillman",
+          "Toliver",
+          "Townsend",
+          "Trammell",
+          "Truitt",
+          "Tubbs",
+          "Tullis",
+          "Tuttle",
+          "Tolbert"
+        ],
+        "U": [
+          "Underhill",
+          "Upchurch",
+          "Upton"
+        ],
+        "V": [
+          "Vail",
+          "Vance",
+          "Varner",
+          "Vickers",
+          "Voss",
+          "Vinson"
+        ],
+        "W": [
+          "Waddell",
+          "Walden",
+          "Waller",
+          "Ward",
+          "Warfield",
+          "Warner",
+          "Waverly",
+          "Weaver",
+          "Webster",
+          "Weldon",
+          "Wheeler",
+          "Whitaker",
+          "Whitfield",
+          "Whitlock",
+          "Whitley",
+          "Wilcox",
+          "Wilder",
+          "Winfield",
+          "Woodard",
+          "Woodson",
+          "Worley",
+          "Wyatt",
+          "Wakefield",
+          "Whitmire"
+        ],
+        "Y": [
+          "Yancey",
+          "Yarbrough",
+          "Yates",
+          "Yeager",
+          "York"
+        ],
+        "Z": [
+          "Zachery",
+          "Zeigler",
+          "Zimmer"
+        ]
+      }
+    },
+    "francais": {
+      "prenoms": {
+        "A": [
+          "Antoine",
+          "Adrien",
+          "Alexis",
+          "Arthur"
+        ],
+        "B": [
+          "Bastien",
+          "Benoît",
+          "Brahim"
+        ],
+        "C": [
+          "Cédric",
+          "Clément",
+          "Corentin"
+        ],
+        "D": [
+          "Damien",
+          "Dorian"
+        ],
+        "E": [
+          "Étienne",
+          "Enzo"
+        ],
+        "F": [
+          "Florian",
+          "Fabien"
+        ],
+        "G": [
+          "Gaëtan",
+          "Gaspard"
+        ],
+        "H": [
+          "Hugo"
+        ],
+        "I": [
+          "Ilan"
+        ],
+        "J": [
+          "Jérémie",
+          "Julien",
+          "Jérôme"
+        ],
+        "K": [
+          "Killian",
+          "Karim"
+        ],
+        "L": [
+          "Loïc",
+          "Lucas"
+        ],
+        "M": [
+          "Mathis",
+          "Mamadou",
+          "Malick",
+          "Marius"
+        ],
+        "N": [
+          "Nathan",
+          "Noé",
+          "Nassim"
+        ],
+        "O": [
+          "Olivier",
+          "Octave"
+        ],
+        "P": [
+          "Patrice",
+          "Pierre",
+          "Paulin"
+        ],
+        "Q": [
+          "Quentin"
+        ],
+        "R": [
+          "Romain",
+          "Rémi",
+          "Rayane"
+        ],
+        "S": [
+          "Souleymane",
+          "Samuel",
+          "Sacha"
+        ],
+        "T": [
+          "Théo",
+          "Thibault",
+          "Tiémoko"
+        ],
+        "U": [
+          "Ulysse"
+        ],
+        "V": [
+          "Valentin",
+          "Vianney"
+        ],
+        "W": [
+          "Wilfried"
+        ],
+        "Y": [
+          "Yannick",
+          "Yanis"
+        ],
+        "Z": [
+          "Zacharie",
+          "Zinédine"
+        ]
+      },
+      "noms": {
+        "A": [
+          "Aubert",
+          "Arnaud"
+        ],
+        "B": [
+          "Barbier",
+          "Besson",
+          "Bonnet"
+        ],
+        "C": [
+          "Carpentier",
+          "Chauvin"
+        ],
+        "D": [
+          "Delmas",
+          "Duval",
+          "Dumont"
+        ],
+        "E": [
+          "Esnault"
+        ],
+        "F": [
+          "Faure",
+          "Fleury"
+        ],
+        "G": [
+          "Gauthier",
+          "Giraud"
+        ],
+        "H": [
+          "Hamon"
+        ],
+        "J": [
+          "Joly",
+          "Jacquet"
+        ],
+        "L": [
+          "Lacroix",
+          "Leroux"
+        ],
+        "M": [
+          "Marchand",
+          "Mercier",
+          "Morin"
+        ],
+        "N": [
+          "Noël"
+        ],
+        "O": [
+          "Ollivier"
+        ],
+        "P": [
+          "Perrin",
+          "Poulain"
+        ],
+        "R": [
+          "Renaudin",
+          "Roche",
+          "Rivière"
+        ],
+        "S": [
+          "Sabatier",
+          "Simonet"
+        ],
+        "T": [
+          "Tessier",
+          "Texier"
+        ],
+        "V": [
+          "Vasseur",
+          "Vidal"
+        ]
+      }
+    },
+    "senegal-guinee": {
+      "prenoms": {
+        "M": [
+          "Mamadou",
+          "Moustapha",
+          "Mamady"
+        ],
+        "K": [
+          "Khadim",
+          "Kader"
+        ],
+        "T": [
+          "Thierno",
+          "Tidiane"
+        ],
+        "A": [
+          "Aliou"
+        ],
+        "I": [
+          "Ibrahima"
+        ],
+        "O": [
+          "Oumar"
+        ],
+        "S": [
+          "Saliou"
+        ]
+      }
+    },
+    "nigeria": {
+      "prenoms": {
+        "E": [
+          "Emeka",
+          "Ekene"
+        ],
+        "U": [
+          "Uche",
+          "Ugochukwu"
+        ],
+        "A": [
+          "Adewale",
+          "Ade"
+        ],
+        "P": [
+          "Paschal"
+        ],
+        "C": [
+          "Chidi",
+          "Chinedu"
+        ],
+        "J": [
+          "Jide"
+        ],
+        "F": [
+          "Femi",
+          "Folarin"
+        ],
+        "O": [
+          "Obinna"
+        ],
+        "N": [
+          "Nnamdi"
+        ]
+      }
+    },
+    "afrique-ouest-centre": {
+      "noms": {
+        "A": [
+          "Adeyemi",
+          "Akande",
+          "Adebola",
+          "Akinwale",
+          "Ayodele",
+          "Amadi",
+          "Anyanwu"
+        ],
+        "B": [
+          "Bello",
+          "Balogun",
+          "Badji",
+          "Bangoura"
+        ],
+        "C": [
+          "Chukwuma",
+          "Conteh",
+          "Chidozie",
+          "Coker"
+        ],
+        "D": [
+          "Dabo",
+          "Diatta",
+          "Doumbia",
+          "Dramé",
+          "Diakité",
+          "Dioum",
+          "Danjuma",
+          "Dembo",
+          "Dogo"
+        ],
+        "E": [
+          "Eze",
+          "Ezeani",
+          "Ebere",
+          "Edozie",
+          "Eyenga",
+          "Eboa"
+        ],
+        "F": [
+          "Fofana",
+          "Fadiga",
+          "Faye"
+        ],
+        "G": [
+          "Gning",
+          "Guindo",
+          "Gbadamosi"
+        ],
+        "H": [
+          "Houessou",
+          "Houngbo"
+        ],
+        "I": [
+          "Ibekwe",
+          "Idowu",
+          "Ikenna"
+        ],
+        "K": [
+          "Kouassi",
+          "Kalu",
+          "Kalala",
+          "Kouyaté"
+        ],
+        "L": [
+          "Lawani",
+          "Ly"
+        ],
+        "M": [
+          "Mbaye",
+          "Mensah",
+          "Mvondo",
+          "Mbarga"
+        ],
+        "N": [
+          "Ndukwe",
+          "Njoku",
+          "Nwosu",
+          "Ndour"
+        ],
+        "O": [
+          "Obi",
+          "Odum",
+          "Oduya",
+          "Okeke",
+          "Olabode",
+          "Oyelaran",
+          "Onuoha",
+          "Oyebanjo",
+          "Obiora",
+          "Ogbu"
+        ],
+        "P": [
+          "Pouye",
+          "Pitroipa"
+        ],
+        "S": [
+          "Sow",
+          "Sylla",
+          "Sanogo",
+          "Sesay",
+          "Sangaré",
+          "Sanda"
+        ],
+        "T": [
+          "Tall",
+          "Tchamba",
+          "Tshimanga",
+          "Tshibanda"
+        ],
+        "U": [
+          "Ugwu",
+          "Uzoma",
+          "Umeh"
+        ],
+        "W": [
+          "Wague",
+          "Wamba"
+        ],
+        "Y": [
+          "Yeboah"
+        ],
+        "Z": [
+          "Zongo"
+        ]
+      }
+    },
+    "afrique-est": {
+      "prenoms": {
+        "K": [
+          "Kuol"
+        ],
+        "D": [
+          "Dut"
+        ],
+        "A": [
+          "Akol"
+        ]
+      },
+      "noms": {
+        "M": [
+          "Majok",
+          "Makuei"
+        ],
+        "R": [
+          "Ruot"
+        ],
+        "K": [
+          "Kasozi"
+        ]
+      }
+    },
+    "hispanique": {
+      "prenoms": {
+        "H": [
+          "Héctor"
+        ],
+        "S": [
+          "Samuel",
+          "Salvador"
+        ],
+        "B": [
+          "Borja"
+        ],
+        "A": [
+          "Álvaro",
+          "Adrián",
+          "Alejandro"
+        ],
+        "K": [
+          "Kristian"
+        ],
+        "D": [
+          "Darío",
+          "Diego"
+        ],
+        "N": [
+          "Néstor"
+        ],
+        "G": [
+          "Gonzalo"
+        ],
+        "J": [
+          "Joaquín"
+        ],
+        "M": [
+          "Marcos"
+        ]
+      },
+      "noms": {
+        "G": [
+          "Garrido",
+          "Gallardo",
+          "Guerrero",
+          "Galindo",
+          "Guzmán"
+        ],
+        "A": [
+          "Arroyo",
+          "Ayala"
+        ],
+        "L": [
+          "Lozano",
+          "Lara"
+        ],
+        "M": [
+          "Molina",
+          "Medina"
+        ],
+        "J": [
+          "Jiménez"
+        ],
+        "H": [
+          "Henríquez",
+          "Herrero"
+        ],
+        "O": [
+          "Orozco"
+        ],
+        "Q": [
+          "Quintana"
+        ]
+      }
+    },
+    "lusophone": {
+      "prenoms": {
+        "N": [
+          "Nuno"
+        ],
+        "G": [
+          "Gustavo"
+        ]
+      },
+      "noms": {
+        "Q": [
+          "Quintela"
+        ],
+        "S": [
+          "Salles",
+          "Saraiva",
+          "Seixas"
+        ],
+        "D": [
+          "Duarte"
+        ]
+      }
+    },
+    "germanique": {
+      "prenoms": {
+        "M": [
+          "Mats",
+          "Matthias"
+        ],
+        "D": [
+          "Dominik"
+        ],
+        "H": [
+          "Holger"
+        ],
+        "I": [
+          "Ingo"
+        ],
+        "T": [
+          "Tobias",
+          "Timo"
+        ],
+        "F": [
+          "Florian"
+        ],
+        "A": [
+          "Anton"
+        ],
+        "J": [
+          "Jonas",
+          "Julian"
+        ],
+        "Q": [
+          "Quirin"
+        ],
+        "K": [
+          "Kilian"
+        ],
+        "C": [
+          "Constantin"
+        ],
+        "Y": [
+          "Yannick"
+        ]
+      },
+      "noms": {
+        "W": [
+          "Weiss",
+          "Winkler"
+        ],
+        "S": [
+          "Seidel",
+          "Schuster"
+        ],
+        "H": [
+          "Hahn",
+          "Hausmann"
+        ],
+        "D": [
+          "Dreyer"
+        ],
+        "P": [
+          "Pohl",
+          "Prins"
+        ],
+        "L": [
+          "Lindner",
+          "Lubbers"
+        ],
+        "N": [
+          "Neumann"
+        ],
+        "K": [
+          "Kessling"
+        ]
+      }
+    },
+    "balkans": {
+      "prenoms": {
+        "N": [
+          "Nenad",
+          "Nemanja",
+          "Nebojša"
+        ],
+        "B": [
+          "Branko",
+          "Boris"
+        ],
+        "T": [
+          "Timur"
+        ],
+        "K": [
+          "Kemal"
+        ],
+        "J": [
+          "Jasmin"
+        ],
+        "M": [
+          "Marin"
+        ],
+        "I": [
+          "Ivan"
+        ],
+        "L": [
+          "Lan"
+        ]
+      },
+      "noms": {
+        "J": [
+          "Jakšić",
+          "Janjić"
+        ],
+        "B": [
+          "Babić",
+          "Bošković",
+          "Begić"
+        ],
+        "M": [
+          "Milić",
+          "Mehmedović"
+        ],
+        "T": [
+          "Todorović",
+          "Tomić"
+        ],
+        "N": [
+          "Nuhanović",
+          "Nedić"
+        ],
+        "H": [
+          "Horvat"
+        ],
+        "Z": [
+          "Zorić",
+          "Zečević"
+        ],
+        "V": [
+          "Vujović",
+          "Vuković"
+        ],
+        "D": [
+          "Dolenc"
+        ]
+      }
+    },
+    "slave": {
+      "prenoms": {
+        "E": [
+          "Evgeny"
+        ],
+        "V": [
+          "Vadim",
+          "Vojtěch"
+        ],
+        "S": [
+          "Serhiy"
+        ]
+      },
+      "noms": {
+        "D": [
+          "Danilov"
+        ],
+        "G": [
+          "Gromov"
+        ],
+        "M": [
+          "Melnyk"
+        ],
+        "K": [
+          "Kratochvíl",
+          "Kowal",
+          "Kozlowski",
+          "Kaminski"
+        ],
+        "B": [
+          "Borowski"
+        ],
+        "P": [
+          "Pawlak"
+        ],
+        "F": [
+          "Fijalkowski"
+        ],
+        "S": [
+          "Sokol"
+        ]
+      }
+    },
+    "baltique": {
+      "prenoms": {
+        "K": [
+          "Karolis",
+          "Kārlis"
+        ],
+        "D": [
+          "Dovydas"
+        ],
+        "H": [
+          "Hanno"
+        ]
+      },
+      "noms": {
+        "J": [
+          "Jankauskas"
+        ],
+        "S": [
+          "Sakalauskas"
+        ],
+        "P": [
+          "Priedītis"
+        ],
+        "V": [
+          "Vahtra"
+        ]
+      }
+    },
+    "nordique": {
+      "prenoms": {
+        "P": [
+          "Pontus"
+        ],
+        "L": [
+          "Lassi"
+        ]
+      },
+      "noms": {
+        "L": [
+          "Lindqvist"
+        ],
+        "M": [
+          "Mäkinen"
+        ]
+      }
+    },
+    "georgien": {
+      "prenoms": {
+        "S": [
+          "Saba"
+        ],
+        "G": [
+          "Giorgi"
+        ]
+      },
+      "noms": {
+        "M": [
+          "Maisuradze"
+        ],
+        "B": [
+          "Beridze"
+        ]
+      }
+    },
+    "grec": {
+      "prenoms": {
+        "G": [
+          "Grigoris"
+        ]
+      }
+    },
+    "turc": {
+      "prenoms": {
+        "A": [
+          "Arda"
+        ]
+      },
+      "noms": {
+        "S": [
+          "Saraç"
+        ]
+      }
+    },
+    "israelien": {
+      "prenoms": {
+        "B": [
+          "Boaz"
+        ],
+        "D": [
+          "Dor"
+        ],
+        "E": [
+          "Eitan"
+        ]
+      },
+      "noms": {
+        "S": [
+          "Segal",
+          "Shalev"
+        ],
+        "A": [
+          "Amsalem"
+        ]
+      }
+    },
+    "italien": {
+      "prenoms": {
+        "S": [
+          "Stefano"
+        ],
+        "T": [
+          "Tommaso"
+        ]
+      },
+      "noms": {
+        "F": [
+          "Ferrandi"
+        ],
+        "B": [
+          "Bellandi"
+        ],
+        "C": [
+          "Cantarelli"
+        ],
+        "D": [
+          "Donadoni"
+        ],
+        "P": [
+          "Pastorelli"
+        ],
+        "M": [
+          "Marchetti"
+        ],
+        "V": [
+          "Vuksanović"
+        ]
+      }
+    },
+    "japonais": {
+      "prenoms": {
+        "R": [
+          "Ren"
+        ]
+      },
+      "noms": {
+        "H": [
+          "Hayashi"
+        ]
+      }
+    },
+    "chinois": {
+      "prenoms": {
+        "Y": [
+          "Yuan"
+        ]
+      },
+      "noms": {
+        "H": [
+          "Hao"
+        ]
+      }
+    }
+  }
+}

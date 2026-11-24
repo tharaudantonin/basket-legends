@@ -24,7 +24,7 @@
 - [ ] Constituer les 30 historiques de franchise (titres, bilans, records, rivalités).
 - [ ] Constituer les effectifs initiaux et mappings individuels sourcés.
   - [x] Recevoir et enregistrer l'effectif Philadelphia Founders (17 joueurs, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
-  - [x] Recevoir et enregistrer l'effectif Milwaukee Stags (18 joueurs, validation utilisateur ; pays de Kel'el Ware corrigé en USA ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Milwaukee Stags (18 joueurs, validation utilisateur ; pays de Kamari Whitlock (j0299) corrigé en USA ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Chicago Horses (18 joueurs, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Cleveland Sentinels (17 joueurs, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Boston Beacons (17 joueurs, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
@@ -52,7 +52,7 @@
   - [x] Recevoir et enregistrer l'effectif Portland Timberbears (17 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif San Francisco Golden Seals (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
   - [x] Recevoir et enregistrer l'effectif Washington Monuments, anciennement Washington Capitals (18 joueurs, saison 2026-2027, validation utilisateur ; vérification NBA officielle détaillée encore à faire).
-  - [x] Recevoir et enregistrer l'effectif Toronto Bears (17 joueurs, saison 2026-2027, validation utilisateur ; numéro 9 conservé provisoirement pour RJ Barrett et Kevin McCullar Jr. ; vérification NBA officielle détaillée encore à faire).
+  - [x] Recevoir et enregistrer l'effectif Toronto Bears (17 joueurs, saison 2026-2027, validation utilisateur ; numéro 9 conservé provisoirement pour RJ Benning (j0474) et Kenyon McGrath Jr. (j0482) ; vérification NBA officielle détaillée encore à faire).
 - [x] Spécifier statistiques, mensurations, attributs estimés, contrôles qualité et niveaux de confiance.
 - [ ] Implémenter le modèle de données et produire les imports joueurs sourcés.
 - [ ] Préparer les joueurs de développement, libres et prospects générés.

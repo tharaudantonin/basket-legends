@@ -4,7 +4,7 @@
 
 Chaque joueur initial de Basket Legends est une contrepartie fictive d'un joueur réel précisément identifié dans le périmètre de référence. Le mapping est conservé dans les données internes pour la traçabilité ; l'interface affiche le nom fictif validé, jamais le nom source par défaut.
 
-Le nom fictif conserve les initiales du joueur de référence (exemple de convention : Jayson Tatum → Jason Tatam, JT). Cette règle ne justifie ni la copie d'une identité, ni la reproduction d'une apparence identifiable. Les doublons d'initiales sont autorisés, mais les noms fictifs complets et les identifiants internes doivent être uniques.
+Le nom fictif conserve les initiales du joueur de référence (exemple de convention : un joueur aux initiales J. T. reçoit un nom comme « Julian Thackeray », JT). Cette règle ne justifie ni la copie d'une identité, ni la reproduction d'une apparence identifiable. Les doublons d'initiales sont autorisés, mais les noms fictifs complets et les identifiants internes doivent être uniques.
 
 Règles non négociables :
 - aucun vrai nom de joueur dans le dépôt une fois la migration de la tranche 0 faite : la table de correspondance (vrai nom → nom fictif) est gardée dans `C:\Users\thara\Projets\basket-legends-prive\`, hors du dépôt, et seules les empreintes des vrais noms entrent dans le dépôt pour empêcher leur tirage (décision du 24 novembre 2026) ;
@@ -95,63 +95,63 @@ La préférence ne modifie jamais les données stockées : elle ne fait que choi
 ### Effectifs reçus et validés
 
 - Philadelphia Founders (référence : Philadelphia 76ers) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026.
-- Fichier de données : `data/rosters/2026-27/philadelphia-founders.json`.
-- Milwaukee Stags (référence : Milwaukee Bucks) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 ; pays de Kel'el Ware corrigé en `USA` à la demande de l'utilisateur le même jour.
-- Fichier de données : `data/rosters/2026-27/milwaukee-stags.json`.
+- Fichier de données : `data/rosters/2026-27/philadelphia.json`.
+- Milwaukee Stags (référence : Milwaukee Bucks) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 ; pays de Kamari Whitlock (j0299) corrigé en `USA` à la demande de l'utilisateur le même jour.
+- Fichier de données : `data/rosters/2026-27/milwaukee.json`.
 - Chicago Horses (référence : Chicago Bulls) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026.
-- Fichier de données : `data/rosters/2026-27/chicago-horses.json`.
+- Fichier de données : `data/rosters/2026-27/chicago.json`.
 - Cleveland Sentinels (référence : Cleveland Cavaliers) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026.
-- Fichier de données : `data/rosters/2026-27/cleveland-sentinels.json`.
+- Fichier de données : `data/rosters/2026-27/cleveland.json`.
 - Boston Beacons (référence : Boston Celtics) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026.
-- Fichier de données : `data/rosters/2026-27/boston-beacons.json`.
+- Fichier de données : `data/rosters/2026-27/boston.json`.
 - Los Angeles Beachers (référence : LA Clippers) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026.
-- Fichier de données : `data/rosters/2026-27/los-angeles-beachers.json`.
-- Memphis Rhythm (référence : Memphis Grizzlies) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027 ; poids de Jaylen Wells fourni en kg (93 kg).
-- Fichier de données : `data/rosters/2026-27/memphis-rhythm.json`.
+- Fichier de données : `data/rosters/2026-27/clippers.json`.
+- Memphis Rhythm (référence : Memphis Grizzlies) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027 ; poids de Jace Weldon (j0264) fourni en kg (93 kg).
+- Fichier de données : `data/rosters/2026-27/memphis.json`.
 - Atlanta Eagles (référence : Atlanta Hawks) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/atlanta-eagles.json`.
+- Fichier de données : `data/rosters/2026-27/atlanta.json`.
 - Miami Tropics (référence : Miami Heat) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/miami-tropics.json`.
+- Fichier de données : `data/rosters/2026-27/miami.json`.
 - Charlotte Bees (référence : Charlotte Hornets) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/charlotte-bees.json`.
+- Fichier de données : `data/rosters/2026-27/charlotte.json`.
 - Utah Desert Raptors (référence : Utah Jazz) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/utah-desert-raptors.json`.
+- Fichier de données : `data/rosters/2026-27/utah.json`.
 - Sacramento Diggers (référence : Sacramento Kings) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/sacramento-diggers.json`.
+- Fichier de données : `data/rosters/2026-27/sacramento.json`.
 - New York Skyliners (référence : New York Knicks) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/new-york-skyliners.json`.
+- Fichier de données : `data/rosters/2026-27/new-york.json`.
 - Los Angeles Stars (référence : Los Angeles Lakers) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/los-angeles-stars.json`.
+- Fichier de données : `data/rosters/2026-27/lakers.json`.
 - Orlando Comets (référence : Orlando Magic) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/orlando-comets.json`.
+- Fichier de données : `data/rosters/2026-27/orlando.json`.
 - Dallas Outriders (référence : Dallas Mavericks) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/dallas-outriders.json`.
+- Fichier de données : `data/rosters/2026-27/dallas.json`.
 - Brooklyn Bridges (référence : Brooklyn Nets) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/brooklyn-bridges.json`.
+- Fichier de données : `data/rosters/2026-27/brooklyn.json`.
 - Denver Peaks, anciennement Denver Summit (référence : Denver Nuggets) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/denver-summit.json`.
+- Fichier de données : `data/rosters/2026-27/denver.json`.
 - Houston Commanders (référence : Houston Rockets) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/houston-commanders.json`.
+- Fichier de données : `data/rosters/2026-27/houston.json`.
 - San Antonio Knights (référence : San Antonio Spurs) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/san-antonio-knights.json`.
+- Fichier de données : `data/rosters/2026-27/san-antonio.json`.
 - Phoenix Scorpions (référence : Phoenix Suns) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/phoenix-scorpions.json`.
+- Fichier de données : `data/rosters/2026-27/phoenix.json`.
 - Oklahoma City Storm Riders (référence : Oklahoma City Thunder) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/oklahoma-city-storm-riders.json`.
+- Fichier de données : `data/rosters/2026-27/oklahoma-city.json`.
 - Minnesota Borealis (référence : Minnesota Timberwolves) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/minnesota-borealis.json`.
+- Fichier de données : `data/rosters/2026-27/minnesota.json`.
 - Portland Timberbears (référence : Portland Trail Blazers) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/portland-timberbears.json`.
+- Fichier de données : `data/rosters/2026-27/portland.json`.
 - San Francisco Golden Seals (référence : Golden State Warriors) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/san-francisco-golden-seals.json`.
-- Toronto Bears (référence : Toronto Raptors) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027 ; le numéro 9 est volontairement partagé par RJ Barrett et Kevin McCullar Jr. à titre provisoire.
-- Fichier de données : `data/rosters/2026-27/toronto-bears.json`.
+- Fichier de données : `data/rosters/2026-27/golden-state.json`.
+- Toronto Bears (référence : Toronto Raptors) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027 ; le numéro 9 est volontairement partagé par RJ Benning (j0474) et Kenyon McGrath Jr. (j0482) à titre provisoire.
+- Fichier de données : `data/rosters/2026-27/toronto.json`.
 - Washington Monuments, anciennement Washington Capitals (référence : Washington Wizards) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
-- Fichier de données : `data/rosters/2026-27/washington-capitals.json`.
+- Fichier de données : `data/rosters/2026-27/washington.json`.
 - Le statut « validé par l'utilisateur » ne vaut pas certification indépendante du statut contractuel ou de l'affiliation NBA au snapshot. Les identifiants NBA, contrats, statuts two-way et statistiques restent à vérifier séparément.
-- Chicago Horses : le numéro 7 est partagé provisoirement par Buddy Hield et Orlando Robinson (décision du 24 novembre 2026), comme le numéro 9 de Toronto.
+- Chicago Horses : le numéro 7 est partagé provisoirement par Brandon Halsey (j0078) et Omar Ralston (j0083) (décision du 24 novembre 2026), comme le numéro 9 de Toronto.
 - Les noms fictifs et les commentaires de scouting ne sont pas encore renseignés. Des notes et attributs provisoires ont été ajoutés le 18 novembre 2026 ; ils seront remplacés par le modèle de notes v1 (décision du 24 novembre 2026, § 6).
-- Les fichiers `denver-summit.json` et `washington-capitals.json` gardent leur nom jusqu'à la migration des identifiants de la tranche 0 ; les franchises s'appellent désormais Denver Peaks et Washington Monuments.
+- Depuis la tranche 0 (24 novembre 2026), chaque effectif est rangé sous l'identifiant canonique de sa franchise (`data/rosters/2026-27/<id>.json`) et chaque joueur a un identifiant stable sans nom réel (`j0001` à `j0523`). Les vrais noms et les notes NBA 2K sont gardés hors du dépôt.
 
 ## 6. Attributs de jeu (échelle 1–100)
 
