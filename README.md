@@ -42,7 +42,7 @@ Basket Legends est une simulation de management basketball dans laquelle le joue
 3. Collecter puis vérifier les données historiques, les profils statistiques et les données individuelles.
 
 ## Stack cible
-Jeu qui tourne entièrement dans le navigateur, comme Rugby Legends (décision du 24 novembre 2026) : Vite + React + TypeScript, Zod, Vitest (Playwright pour les parcours), sauvegardes versionnées dans IndexedDB, moteur de simulation pur exécuté dans un Web Worker, monorepo léger en pnpm workspaces. Pas de serveur ni de base de données.
+Jeu qui tourne entièrement dans le navigateur, comme Rugby Legends (décision du 24 novembre 2026) : Vite + React + TypeScript, Zod, Vitest (Playwright pour les parcours), sauvegardes versionnées dans IndexedDB, moteur de simulation pur exécuté dans un Web Worker, monorepo léger en npm workspaces. Pas de serveur ni de base de données.
 
 ## Lancer le projet
 

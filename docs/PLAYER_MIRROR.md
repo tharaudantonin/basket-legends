@@ -288,7 +288,7 @@ interface PlayerRosterStatus {
 }
 ```
 
-Ce schéma est un contrat logique de départ, pas encore le schéma Prisma définitif. Les contrats financiers, options, garanties, exceptions et cap hits seront détaillés dans un modèle contractuel distinct, fondé sur le CBA et les règles de chaque saison.
+Ce schéma est un contrat logique de départ, pas encore le schéma Zod définitif (`packages/data/src/schemas.ts` ; architecture dans le navigateur, sans Prisma, décision du 24 novembre 2026). Les contrats financiers, options, garanties, exceptions et cap hits seront détaillés dans un modèle contractuel distinct, fondé sur le CBA et les règles de chaque saison.
 
 ## 11. Critères de validation d'une fiche
 
