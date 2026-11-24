@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-cba-nba-2026-27",
+  "saison": "2026-2027",
+  "note": "Paramètres de la convention collective (CBA 2023 NBA-NBPA) pour la saison 2026-27. Montants officiels de la NBA ; barèmes relevés chez Hoops Rumors et SalarySwish (sources secondaires à recouper avec le texte de la CBA avant publication). Les montants maximum valent exactement 25, 30 et 35 % du plafond, comme le prévoit la CBA.",
+  "parametres": {
+    "plafondSalarial": {
+      "valeur": 164961000,
+      "unite": "dollars",
+      "definition": "Salary Cap : au-dessus, une équipe ne peut plus signer avec son espace salarial.",
+      "source": {
+        "fournisseur": "NBA Communications",
+        "titre": "NBA sets Salary Cap for 2026-27 season at $164.961 million (30/06/2026)",
+        "url": "https://pr.nba.com/2026-27-salary-cap/",
+        "niveau": "primaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "seuilTaxe": {
+      "valeur": 200428000,
+      "unite": "dollars",
+      "definition": "Tax Level : au-dessus en fin de saison régulière, l’équipe paie la taxe de luxe.",
+      "source": {
+        "fournisseur": "NBA Communications",
+        "titre": "NBA sets Salary Cap for 2026-27 season at $164.961 million (30/06/2026)",
+        "url": "https://pr.nba.com/2026-27-salary-cap/",
+        "niveau": "primaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "premierApron": {
+      "valeur": 209015000,
+      "unite": "dollars",
+      "definition": "First Apron : au-dessus, l’équipe perd des outils (mid-level non contribuable, exception bi-annuelle…).",
+      "source": {
+        "fournisseur": "NBA Communications",
+        "titre": "NBA sets Salary Cap for 2026-27 season at $164.961 million (30/06/2026)",
+        "url": "https://pr.nba.com/2026-27-salary-cap/",
+        "niveau": "primaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "deuxiemeApron": {
+      "valeur": 221686000,
+      "unite": "dollars",
+      "definition": "Second Apron : au-dessus, l’équipe perd aussi la mid-level contribuable.",
+      "source": {
+        "fournisseur": "NBA Communications",
+        "titre": "NBA sets Salary Cap for 2026-27 season at $164.961 million (30/06/2026)",
+        "url": "https://pr.nba.com/2026-27-salary-cap/",
+        "niveau": "primaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "masseMinimale": {
+      "valeur": 148465000,
+      "unite": "dollars",
+      "definition": "Minimum Team Salary : une équipe en dessous en fin de saison verse la différence à ses joueurs.",
+      "source": {
+        "fournisseur": "NBA Communications",
+        "titre": "NBA sets Salary Cap for 2026-27 season at $164.961 million (30/06/2026)",
+        "url": "https://pr.nba.com/2026-27-salary-cap/",
+        "niveau": "primaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "midLevelNonContribuable": {
+      "valeur": 15044000,
+      "unite": "dollars par saison",
+      "definition": "Non-Taxpayer Mid-Level Exception (jusqu’à 4 ans) ; l’utiliser plafonne strictement la masse au premier apron.",
+      "source": {
+        "fournisseur": "NBA Communications",
+        "titre": "NBA sets Salary Cap for 2026-27 season at $164.961 million (30/06/2026)",
+        "url": "https://pr.nba.com/2026-27-salary-cap/",
+        "niveau": "primaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "midLevelContribuable": {
+      "valeur": 6064000,
+      "unite": "dollars par saison",
+      "definition": "Taxpayer Mid-Level Exception (jusqu’à 2 ans) ; l’utiliser plafonne strictement la masse au second apron.",
+      "source": {
+        "fournisseur": "NBA Communications",
+        "titre": "NBA sets Salary Cap for 2026-27 season at $164.961 million (30/06/2026)",
+        "url": "https://pr.nba.com/2026-27-salary-cap/",
+        "niveau": "primaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "midLevelEspace": {
+      "valeur": 9366000,
+      "unite": "dollars par saison",
+      "definition": "Room Mid-Level Exception (jusqu’à 3 ans), pour une équipe passée sous le plafond.",
+      "source": {
+        "fournisseur": "NBA Communications",
+        "titre": "NBA sets Salary Cap for 2026-27 season at $164.961 million (30/06/2026)",
+        "url": "https://pr.nba.com/2026-27-salary-cap/",
+        "niveau": "primaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "exceptionBiannuelle": {
+      "valeur": 5477000,
+      "unite": "dollars par saison",
+      "definition": "Bi-Annual Exception (jusqu’à 2 ans, une année sur deux) ; l’utiliser plafonne strictement la masse au premier apron.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Values Of 2026/27 Mid-Level, Bi-Annual Exceptions",
+        "url": "https://www.hoopsrumors.com/2026/07/values-of-2026-27-mid-level-bi-annual-exceptions.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "salaireMaximum": {
+      "valeur": [
+        {
+          "ancienneteMin": 0,
+          "ancienneteMax": 6,
+          "partDuPlafond": 0.25,
+          "montant": 41240250
+        },
+        {
+          "ancienneteMin": 7,
+          "ancienneteMax": 9,
+          "partDuPlafond": 0.3,
+          "montant": 49488300
+        },
+        {
+          "ancienneteMin": 10,
+          "ancienneteMax": null,
+          "partDuPlafond": 0.35,
+          "montant": 57736350
+        }
+      ],
+      "unite": "dollars pour la première saison",
+      "definition": "Salaire maximum selon les années d’expérience NBA.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "NBA Maximum Salaries For 2026/27",
+        "url": "https://www.hoopsrumors.com/2026/06/nba-maximum-salaries-for-2026-27.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "salaireMinimum": {
+      "valeur": [
+        1357763,
+        2185116,
+        2449421,
+        2537526,
+        2625627,
+        2845883,
+        3066143,
+        3286399,
+        3506659,
+        3524115,
+        3876529
+      ],
+      "unite": "dollars, par année d’expérience (0 à 10 et plus)",
+      "definition": "Salaire minimum d’un nouveau contrat signé en 2026-27 selon les années d’expérience NBA (rang 10 : 10 ans et plus).",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "NBA Minimum Salaries For 2026/27",
+        "url": "https://www.hoopsrumors.com/2026/07/nba-minimum-salaries-for-2026-27.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "minimumImputeVeteran": {
+      "valeur": 2449421,
+      "unite": "dollars",
+      "definition": "Un vétéran de 3 ans d’expérience ou plus signé au minimum pour un an ne compte que pour le minimum d’un joueur de 2 ans (la ligue rembourse la différence).",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "NBA Minimum Salaries For 2026/27",
+        "url": "https://www.hoopsrumors.com/2026/07/nba-minimum-salaries-for-2026-27.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "salaireTwoWay": {
+      "valeur": 678882,
+      "unite": "dollars",
+      "definition": "Salaire d’un contrat two-way (moitié du minimum d’un débutant) ; il ne compte pas dans la masse salariale.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "2026/27 NBA Two-Way Contract Tracker (mis à jour le 21/11/2026)",
+        "url": "https://www.hoopsrumors.com/2026/07/2026-27-nba-two-way-contract-tracker.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "matchsMaxTwoWay": {
+      "valeur": 50,
+      "unite": "matchs",
+      "definition": "Un joueur two-way peut figurer dans l’effectif actif de 50 matchs de saison régulière au plus.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "2026/27 NBA Two-Way Contract Tracker (mis à jour le 21/11/2026)",
+        "url": "https://www.hoopsrumors.com/2026/07/2026-27-nba-two-way-contract-tracker.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "twoWayEnPhaseFinale": {
+      "valeur": false,
+      "unite": "booléen",
+      "definition": "Les joueurs two-way ne peuvent pas jouer le Play-In ni les playoffs (sauf promotion avant la fin de la saison régulière).",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "2026/27 NBA Two-Way Contract Tracker (mis à jour le 21/11/2026)",
+        "url": "https://www.hoopsrumors.com/2026/07/2026-27-nba-two-way-contract-tracker.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "contratsStandardMax": {
+      "valeur": 15,
+      "unite": "joueurs",
+      "definition": "Contrats standard au plus en saison régulière.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "2026/27 NBA Two-Way Contract Tracker (15 contrats standard et 3 two-way)",
+        "url": "https://www.hoopsrumors.com/2026/07/2026-27-nba-two-way-contract-tracker.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "contratsTwoWayMax": {
+      "valeur": 3,
+      "unite": "joueurs",
+      "definition": "Contrats two-way au plus.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "2026/27 NBA Two-Way Contract Tracker (15 contrats standard et 3 two-way)",
+        "url": "https://www.hoopsrumors.com/2026/07/2026-27-nba-two-way-contract-tracker.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-24"
+      }
+    },
+    "taxe": {
+      "valeur": {
+        "largeurTranche": 6064000,
+        "taux": [
+          1,
+          1.25,
+          3.5,
+          4.75
+        ],
+        "tauxRecidiviste": [
+          3,
+          3.25,
+          5.5,
+          6.75
+        ],
+        "hausseParTrancheSuivante": 0.5
+      },
+      "unite": "dollars ; dollars de taxe par dollar au-dessus du seuil",
+      "definition": "Barème de la taxe de luxe depuis 2025-26 : tranches de 6,064 M$ (5 M$ indexés sur le plafond depuis 2024-25), taux croissants, + 0,50 par tranche au-delà de la quatrième. Taux « récidiviste » pour une équipe taxée 3 saisons sur les 4 dernières.",
+      "source": {
+        "fournisseur": "SalarySwish",
+        "titre": "2026-27 Luxury Tax Tracker (barème de la CBA 2023, Article VII)",
+        "url": "https://www.salaryswish.com/luxury-tax/2027",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-24"
+      }
+    }
+  },
+  "recoupements": [
+    {
+      "fournisseur": "SalarySwish",
+      "titre": "NBA Salary Cap History (recoupement des montants officiels)",
+      "url": "https://www.salaryswish.com/salary-cap/2027",
+      "niveau": "secondaire",
+      "consulteLe": "2026-11-24"
+    },
+    {
+      "fournisseur": "NBPA",
+      "titre": "Collective Bargaining Agreement 2023 (texte de référence, non relu pour cette tranche)",
+      "url": "https://www.nbpa.com/cba",
+      "niveau": "primaire",
+      "consulteLe": "2026-11-24"
+    }
+  ]
+}

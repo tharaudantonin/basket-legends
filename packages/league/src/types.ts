@@ -1,6 +1,7 @@
 // Tranche 4 : les contrats de la saison. L'état d'une saison est un objet JSON pur (pas de Map ni de classe) : il se
 // sauvegarde tel quel dans IndexedDB et passe sans perte entre le Web Worker et l'écran.
 import type { DecisionMatch, EquipeDuMatch, JoueurDuMatch, ReglagesMatch, ReglesMatch } from '@basket-legends/engine';
+import type { DonneesSalariales } from './cba';
 
 export type CritereDepartage =
   | 'confrontations'
@@ -52,6 +53,8 @@ export interface ContexteLigue {
   recrues: string[];
   /** Points par match de la saison précédente (statistiques sourcées), pour le joueur ayant le plus progressé. */
   pointsParMatchPrecedents: Record<string, number>;
+  /** Tranche 6 : paramètres de la CBA et contrats. */
+  salaires: DonneesSalariales;
 }
 
 export type Phase = 'reguliere' | 'play-in' | 'playoffs' | 'terminee';
@@ -195,7 +198,8 @@ export interface Actualite {
   importance: 1 | 2 | 3;
   /** Match à rejouer (mode commenté) depuis l'actualité. */
   match?: number;
-  genre: 'resultat' | 'moment' | 'blessure' | 'serie' | 'match-de-la-semaine' | 'all-star' | 'play-in' | 'playoffs' | 'palmares';
+  genre:
+    'resultat' | 'moment' | 'blessure' | 'serie' | 'match-de-la-semaine' | 'all-star' | 'play-in' | 'playoffs' | 'palmares' | 'finances';
 }
 
 export interface EtatSaison {

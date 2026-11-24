@@ -95,3 +95,21 @@ Règlement : `data/regles/nba-2026-27.json` vérifié le 24/11/2026 contre les p
 ## 10. Structure de la saison 2026-27 (24 novembre 2026)
 
 `data/ligue/saison-2026-27.json` : chaque bloc porte sa source, sa date de consultation et son niveau. Primaires (NBA.com) : alignement des divisions (https://www.nba.com/standings?Season=2025-26), dates et 82 matchs (https://www.nba.com/news/2026-27-nba-regular-season-schedule), formule du calendrier (https://www.nba.com/news/5-schedule-takeaways-2023-24-schedule), Play-In (https://www.nba.com/news/nba-play-in-tournament), départages (page des classements), vote du All-Star Game (https://pr.nba.com/2026-nba-all-star-game-starters-voting-results). Secondaires, à recouper avec une source officielle avant publication : format des playoffs (Sports Illustrated, Ticketmaster) et règle des 65 matchs (Yahoo Sports, Hoops Rumors). Détail : `docs/SAISON.md` § 2.
+
+## 11. CBA et contrats 2026-27 (24 novembre 2026)
+
+Relevés le 24/11/2026 dans le navigateur, page par page, pour un usage privé ; détail et règles de rattachement : `docs/CONTRATS.md`.
+
+| Données | Fournisseur | Page | Niveau |
+|---|---|---|---|
+| Plafond, taxe, aprons, masse minimale, mid-levels 2026-27 | NBA Communications | https://pr.nba.com/2026-27-salary-cap/ | primaire |
+| Salaires maximum 2026/27 | Hoops Rumors | https://www.hoopsrumors.com/2026/06/nba-maximum-salaries-for-2026-27.html | secondaire |
+| Salaires minimum 2026/27, minimum imputé des vétérans | Hoops Rumors | https://www.hoopsrumors.com/2026/07/nba-minimum-salaries-for-2026-27.html | secondaire |
+| Exception bi-annuelle | Hoops Rumors | https://www.hoopsrumors.com/2026/07/values-of-2026-27-mid-level-bi-annual-exceptions.html | secondaire |
+| Contrats two-way (liste au 21/11/2026, règles) | Hoops Rumors | https://www.hoopsrumors.com/2026/07/2026-27-nba-two-way-contract-tracker.html | secondaire |
+| Barème de la taxe de luxe, récidivistes, taxe par équipe | SalarySwish | https://www.salaryswish.com/luxury-tax/2027 | secondaire |
+| Masse et plafond strict de chaque équipe ; historique des plafonds | SalarySwish | https://www.salaryswish.com/ et https://www.salaryswish.com/salary-cap/2027 | secondaire |
+| Contrats des joueurs (salaires, options, garanti) | Basketball-Reference | https://www.basketball-reference.com/contracts/players.html | secondaire |
+| Première saison NBA et draft des joueurs | NBA.com | https://www.nba.com/players | primaire |
+
+Le texte de la CBA 2023 (https://www.nbpa.com/cba) n'a pas été relu pour cette tranche : les barèmes secondaires sont à recouper avec lui avant publication, comme les conditions de réutilisation de chaque fournisseur (porte de publication).

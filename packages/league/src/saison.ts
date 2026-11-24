@@ -15,6 +15,7 @@ import {
 import { ajouterJours, genererCalendrier } from './calendrier';
 import { appartenances, calculerBilans, classer, pctBilan } from './classement';
 import { decernerRecompenses, selectionnerAllStars } from './recompenses';
+import { situationEquipe } from './cba';
 import { cumuler } from './statistiques';
 import type { Actualite, Bilan, ContexteLigue, EtatPlayIn, EtatSaison, NatureMatch, ResumeMatch, Serie } from './types';
 
@@ -122,7 +123,14 @@ function jouerMatch(
   neutre = false,
 ): ResumeMatch {
   const effectifs = [domicile, exterieur].flatMap((e) => ctx.equipes[e]?.joueurs.map((j) => j.id) ?? []);
-  const absents = effectifs.filter((j) => (etat.blessures[j] ?? 0) > 0).sort();
+  // Tranche 6 : les joueurs two-way ne jouent ni le Play-In ni les playoffs, ni plus de 50 matchs de saison régulière
+  // (CBA) ; comme les blessés, ils sont notés absents du match, ce qui suffit à le rejouer.
+  const { cba, contrats } = ctx.salaires;
+  const phaseFinale = nature === 'play-in' || nature === 'playoffs';
+  const nonQualifie = (j: string) =>
+    contrats[j]?.type === 'two-way' &&
+    (phaseFinale ? !cba.twoWayEnPhaseFinale : nature === 'reguliere' && (etat.statistiques[j]?.matchs ?? 0) >= cba.matchsMaxTwoWay);
+  const absents = effectifs.filter((j) => (etat.blessures[j] ?? 0) > 0 || nonQualifie(j)).sort();
   const graine = graineDuMatch(etat.graine, id);
   const resume: ResumeMatch = {
     id,
@@ -156,7 +164,7 @@ function jouerMatch(
 
   if (nature === 'all-star') return resume;
   // Blessures : les absents ont manqué un match de plus ; les nouveaux blessés sont indisponibles.
-  for (const j of absents) {
+  for (const j of absents.filter((x) => etat.blessures[x])) {
     const reste = (etat.blessures[j] ?? 0) - 1;
     if (reste > 0) etat.blessures[j] = reste;
     else delete etat.blessures[j];
@@ -467,6 +475,28 @@ function terminer(ctx: ContexteLigue, etat: EtatSaison, finale: Serie): void {
   const bilans = calculerBilans(ctx.structure, etat.matchs);
   etat.palmares = decernerRecompenses(ctx, etat, bilans, champion, finaliste);
   etat.phase = 'terminee';
+  // Tranche 6 : la taxe de luxe, calculée sur la masse de fin de saison régulière (aucune transaction en cours de saison).
+  const taxes = Object.keys(ctx.equipes)
+    .map((id) =>
+      situationEquipe(
+        ctx.salaires,
+        id,
+        ctx.equipes[id]!.joueurs.map((j) => j.id),
+      ),
+    )
+    .filter((s) => s.taxe > 0)
+    .sort((a, b) => b.taxe - a.taxe);
+  const m = (x: number) => `${(x / 1e6).toLocaleString('fr-FR', { maximumFractionDigits: 1 })} M$`;
+  publier(etat, {
+    date: etat.date,
+    genre: 'finances',
+    importance: 2,
+    equipes: taxes.map((s) => s.equipe),
+    titre: `Taxe de luxe ${etat.saison} : ${taxes.length} équipe${taxes.length > 1 ? 's' : ''} paie${taxes.length > 1 ? 'nt' : ''} ${m(taxes.reduce((t, s) => t + s.taxe, 0))}`,
+    texte: taxes.length
+      ? `${taxes.map((s) => `${nomDe(ctx, s.equipe)} ${m(s.taxe)}${s.recidiviste ? ' (récidiviste)' : ''}`).join(' ; ')}.`
+      : 'Aucune équipe ne dépasse le seuil de taxe.',
+  });
   const P = etat.palmares;
   const n = (id?: string) => (id ? nomJoueur(ctx, id) : '—');
   publier(etat, {

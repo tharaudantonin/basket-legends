@@ -1,7 +1,10 @@
 // Tranche 1 : les données de référence lues par le jeu, validées par les schémas Zod au chargement.
 import {
+  donneesSalariales,
   equipeDuMatch,
   reglagesDuMoteur,
+  schemaCba,
+  schemaContrats,
   schemaEffectif,
   schemaReglagesMatch,
   schemaRegistre,
@@ -16,6 +19,8 @@ import registreBrut from '../../../data/franchises.json';
 import reglesBrutes from '../../../data/regles/nba-2026-27.json';
 import reglagesBruts from '../../../data/moteur/match-v4.json';
 import ligueBrute from '../../../data/ligue/saison-2026-27.json';
+import cbaBrute from '../../../data/cba/nba-2026-27.json';
+import contratsBruts from '../../../data/contrats/2026-27.json';
 import { structureDeLaLigue } from '@basket-legends/data';
 
 const effectifsBruts = import.meta.glob<unknown>('../../../data/rosters/2026-27/*.json', { eager: true, import: 'default' });
@@ -29,6 +34,9 @@ export const reglages: ReglagesMatch = reglagesDuMoteur(fichierReglages);
 export const fichierLigue = schemaSaisonLigue.parse(ligueBrute);
 /** Tranche 4 : la structure de la saison (conférences, calendrier, Play-In, playoffs…). */
 export const structure = structureDeLaLigue(fichierLigue);
+/** Tranche 6 : paramètres de la CBA 2026-27 (avec leurs sources) et contrats des joueurs. */
+export const fichierCba = schemaCba.parse(cbaBrute);
+export const salaires = donneesSalariales(fichierCba, schemaContrats.parse(contratsBruts));
 
 export const effectifs = new Map<string, Effectif>(
   Object.values(effectifsBruts).map((brut) => {

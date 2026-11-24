@@ -120,6 +120,26 @@ describe('une saison complète', () => {
     expect(duree).toBeLessThan(10_000);
   });
 
+  it('tranche 6 : les joueurs two-way ne jouent ni le Play-In ni les playoffs, ni plus de 50 matchs', () => {
+    const twoWay = new Set(
+      Object.entries(ctx.salaires.contrats)
+        .filter(([, c]) => c.type === 'two-way')
+        .map(([id]) => id),
+    );
+    for (const m of fin.matchs.filter((x) => x.nature === 'play-in' || x.nature === 'playoffs')) {
+      const effectifs = [m.domicile, m.exterieur].flatMap((e) => ctx.equipes[e]!.joueurs.map((j) => j.id));
+      for (const j of effectifs.filter((x) => twoWay.has(x))) expect(m.absents).toContain(j);
+    }
+    for (const j of Object.keys(fin.statistiquesPlayoffs)) expect(twoWay.has(j)).toBe(false);
+    for (const j of twoWay) expect(fin.statistiques[j]?.matchs ?? 0).toBeLessThanOrEqual(ctx.salaires.cba.matchsMaxTwoWay);
+  });
+
+  it('tranche 6 : annonce la taxe de luxe en fin de saison', () => {
+    const a = fin.actualites.find((x) => x.genre === 'finances')!;
+    expect(a.titre).toMatch(/^Taxe de luxe 2026-2027 : \d+ équipes paient/);
+    expect(a.texte).toMatch(/récidiviste/);
+  });
+
   it('joue les 82 matchs de chaque équipe et des statistiques cohérentes avec les scores', () => {
     expect(reguliere).toHaveLength(1230);
     const bilans = calculerBilans(S, fin.matchs);

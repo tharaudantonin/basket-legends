@@ -7,6 +7,7 @@ import { adresseParTranche, coordonnees, tirsDuJoueur, type ResultatMatch, type 
 import type { EtatSaison, LigneSaison } from '@basket-legends/league';
 import { effectifDe, franchiseDe, franchiseDuJoueur, regles } from '../donnees';
 import { encreSur, pourcentage, taille } from '../format';
+import { ContratDuJoueur } from './ContratDuJoueur';
 
 interface Props {
   joueur: string;
@@ -141,6 +142,8 @@ export function EcranFicheJoueur({ joueur, resultat, saison, onRetour }: Props) 
         </p>
         {r.calculation && <p className="aide">{r.calculation}</p>}
       </section>
+
+      <ContratDuJoueur joueur={joueur} />
 
       {resultat && aJoueCeMatch && (
         <section className="carte" aria-labelledby="titre-adresse">

@@ -15,8 +15,9 @@ import {
 } from '@basket-legends/league';
 import { effectifs, franchiseDe, paletteDe, structure } from '../donnees';
 import { encreSur } from '../format';
+import { MasseSalariale } from './MasseSalariale';
 
-type Onglet = 'calendrier' | 'classements' | 'actualites' | 'leaders' | 'all-star' | 'playoffs' | 'palmares';
+type Onglet = 'calendrier' | 'classements' | 'actualites' | 'leaders' | 'all-star' | 'playoffs' | 'palmares' | 'salaires';
 
 interface Props {
   etat: EtatSaison;
@@ -82,6 +83,7 @@ export function EcranSaison({ etat, enCours, onAvancer, onRevivre, onInteractif,
     ['all-star', 'All-Star'],
     ['playoffs', 'Play-In et playoffs'],
     ['palmares', 'Palmarès'],
+    ['salaires', 'Masse salariale'],
   ];
 
   return (
@@ -322,6 +324,7 @@ export function EcranSaison({ etat, enCours, onAvancer, onRevivre, onInteractif,
       )}
 
       {onglet === 'leaders' && <Leaders etat={etat} onFiche={onFiche} />}
+      {onglet === 'salaires' && <MasseSalariale franchise={etat.franchise} onFiche={onFiche} />}
 
       {onglet === 'all-star' && (
         <section className="carte" aria-label="All-Star Game">

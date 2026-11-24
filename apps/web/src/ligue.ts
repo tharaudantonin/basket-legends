@@ -3,11 +3,18 @@
 import { contexteDeLaLigue, schemaStatistiquesJoueurs } from '@basket-legends/data';
 import type { ContexteLigue } from '@basket-legends/league';
 import statsBrutes from '../../../data/statistiques/2025-26/joueurs.json';
-import { effectifs, fichierLigue, reglages, regles } from './donnees';
+import { effectifs, fichierLigue, reglages, regles, salaires } from './donnees';
 
 let contexte: ContexteLigue | undefined;
 
 export function contexteLigue(): ContexteLigue {
-  contexte ??= contexteDeLaLigue(fichierLigue, [...effectifs.values()], regles, reglages, schemaStatistiquesJoueurs.parse(statsBrutes));
+  contexte ??= contexteDeLaLigue(
+    fichierLigue,
+    [...effectifs.values()],
+    regles,
+    reglages,
+    schemaStatistiquesJoueurs.parse(statsBrutes),
+    salaires,
+  );
   return contexte;
 }

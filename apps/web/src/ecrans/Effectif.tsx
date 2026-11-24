@@ -2,8 +2,9 @@
 // d'un match, rapide, commenté ou interactif. Un clic sur un joueur ouvre sa fiche.
 import { useMemo, useState } from 'react';
 import { nouvelleGraine } from '@basket-legends/engine';
-import { effectifDe, equipeDe, franchiseDe, franchises } from '../donnees';
-import { encreSur, taille } from '../format';
+import { salaireDeLaSaison } from '@basket-legends/league';
+import { effectifDe, equipeDe, franchiseDe, franchises, salaires } from '../donnees';
+import { dollars, encreSur, taille } from '../format';
 
 export interface DemandeMatch {
   adversaire: string;
@@ -165,6 +166,7 @@ export function EcranEffectif({ franchise, derniere, enCours, onRetour, onJouer,
                 <th scope="col" title="Tactique">
                   TAC
                 </th>
+                <th scope="col">Salaire 2026-27</th>
               </tr>
             </thead>
             <tbody>
@@ -191,6 +193,15 @@ export function EcranEffectif({ franchise, derniere, enCours, onRetour, onJouer,
                     <td>{j.attributes.physical}</td>
                     <td>{j.attributes.mental}</td>
                     <td>{j.attributes.tactical}</td>
+                    <td>
+                      {salaires.contrats[j.id]?.type === 'two-way' ? (
+                        <span className="etiquette">two-way</span>
+                      ) : salaires.contrats[j.id]?.type === 'standard' ? (
+                        dollars(salaireDeLaSaison(salaires.contrats[j.id], '2026-27'))
+                      ) : (
+                        '–'
+                      )}
+                    </td>
                   </tr>
                 );
               })}

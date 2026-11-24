@@ -30,3 +30,10 @@ export function encreSur(fond: string): string {
 export function taille(cm: number): string {
   return `${(cm / 100).toLocaleString('fr-FR', { minimumFractionDigits: 2 })} m`;
 }
+
+/** Tranche 6 : un montant en dollars, en millions (« 41,240 M$ ») ; avec `signe`, « + » ou « − » devant. */
+export function dollars(montant: number, avecSigne = false): string {
+  const m = (Math.abs(montant) / 1e6).toLocaleString('fr-FR', { minimumFractionDigits: 3, maximumFractionDigits: 3 });
+  const s = montant < 0 ? '−' : avecSigne && montant > 0 ? '+' : '';
+  return `${s}${m} M$`;
+}

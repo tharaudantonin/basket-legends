@@ -452,3 +452,106 @@ export const schemaSaisonLigue = z.strictObject({
   }),
 });
 export type SaisonLigue = z.infer<typeof schemaSaisonLigue>;
+
+// --- Tranche 6 : convention collective (CBA) et contrats. ---
+
+const sourceContrat = z.strictObject({
+  fournisseur: z.string().min(1),
+  titre: z.string().min(1),
+  url: z.url(),
+  niveau: z.enum(['primaire', 'secondaire']),
+  consulteLe: date,
+});
+const parametreCba = <T extends z.ZodType>(valeur: T) =>
+  z.strictObject({ valeur, unite: z.string().min(1), definition: z.string().min(1), source: sourceContrat });
+const dollars = z.number().int().min(0);
+
+/** data/cba/nba-AAAA-AA.json : les paramètres de la CBA d'une saison, chacun sourcé. */
+export const schemaCba = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.string().regex(/^basket-legends-cba-nba-\d{4}-\d{2}$/),
+  saison,
+  note: z.string(),
+  parametres: z.strictObject({
+    plafondSalarial: parametreCba(dollars),
+    seuilTaxe: parametreCba(dollars),
+    premierApron: parametreCba(dollars),
+    deuxiemeApron: parametreCba(dollars),
+    masseMinimale: parametreCba(dollars),
+    midLevelNonContribuable: parametreCba(dollars),
+    midLevelContribuable: parametreCba(dollars),
+    midLevelEspace: parametreCba(dollars),
+    exceptionBiannuelle: parametreCba(dollars),
+    salaireMaximum: parametreCba(
+      z
+        .array(
+          z.strictObject({
+            ancienneteMin: z.number().int().min(0),
+            ancienneteMax: z.number().int().min(0).nullable(),
+            partDuPlafond: proba,
+            montant: dollars,
+          }),
+        )
+        .min(1),
+    ),
+    salaireMinimum: parametreCba(z.array(dollars).min(1)),
+    minimumImputeVeteran: parametreCba(dollars),
+    salaireTwoWay: parametreCba(dollars),
+    matchsMaxTwoWay: parametreCba(z.number().int().min(0)),
+    twoWayEnPhaseFinale: parametreCba(z.boolean()),
+    contratsStandardMax: parametreCba(z.number().int().min(1)),
+    contratsTwoWayMax: parametreCba(z.number().int().min(0)),
+    taxe: parametreCba(
+      z.strictObject({
+        largeurTranche: dollars,
+        taux: z.array(z.number().positive()).min(1),
+        tauxRecidiviste: z.array(z.number().positive()).min(1),
+        hausseParTrancheSuivante: z.number().min(0),
+      }),
+    ),
+  }),
+  recoupements: z.array(sourceContrat),
+});
+
+const saisonContrat = z.string().regex(/^\d{4}-\d{2}$/, 'saison « 2026-27 » attendue');
+export const schemaContrat = z.strictObject({
+  type: z.enum(['standard', 'two-way', 'non-releve']),
+  salaires: z.array(z.strictObject({ saison: saisonContrat, montant: dollars, option: z.enum(['joueur', 'equipe']).optional() })),
+  garanti: dollars.nullable(),
+  anciennete: z.number().int().min(0).max(30).nullable(),
+  draft: z.strictObject({ annee: z.number().int(), tour: z.number().int().min(1).max(2), rang: z.number().int().min(1).max(60) }).nullable(),
+  sources: z.array(z.string().min(1)),
+  note: z.string().optional(),
+});
+
+/** data/contrats/AAAA-AA.json : le contrat de chaque joueur et la situation salariale publiée de chaque équipe. */
+export const schemaContrats = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.string().regex(/^basket-legends-contrats-\d{4}-\d{2}$/),
+  saison,
+  consulteLe: date,
+  note: z.string(),
+  sources: z.record(z.string(), z.union([sourceContrat, z.string()])),
+  champs: z.record(z.string(), z.strictObject({ unite: z.string().min(1), definition: z.string().min(1) })),
+  bilan: z.strictObject({
+    standard: z.number().int().min(0),
+    twoWay: z.number().int().min(0),
+    nonReleve: z.number().int().min(0),
+    lignesSansJoueurDuJeu: z.number().int().min(0),
+    conflits: z.array(z.string()),
+  }),
+  joueurs: z.record(idJoueur, schemaContrat),
+  equipes: z.record(
+    z.string(),
+    z.strictObject({
+      massePubliee: dollars,
+      taxePubliee: dollars,
+      recidiviste: z.boolean(),
+      plafondStrict: z.enum(['premier', 'deuxieme']).nullable(),
+      autresCharges: z.number().int(),
+    }),
+  ),
+});
+
+export type CbaFichier = z.infer<typeof schemaCba>;
+export type ContratsFichier = z.infer<typeof schemaContrats>;

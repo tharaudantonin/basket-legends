@@ -4,6 +4,8 @@ import { createHash } from 'node:crypto';
 import { initialesDe, normaliserNom, partiesDuNom } from './noms';
 import {
   schemaBanques,
+  schemaCba,
+  schemaContrats,
   schemaEffectif,
   schemaEmpreintes,
   schemaParametresNotes,
@@ -39,6 +41,9 @@ export interface SourcesDonnees {
   modelesNotes: Record<string, unknown>;
   /** Tranche 4 : contenu de data/ligue/, par nom de fichier. */
   ligue: Record<string, unknown>;
+  /** Tranche 6 : contenu de data/cba/ et de data/contrats/, par nom de fichier. */
+  cba: Record<string, unknown>;
+  contrats: Record<string, unknown>;
 }
 
 export interface Rapport {
@@ -288,6 +293,56 @@ export function verifierDonnees(sources: SourcesDonnees): Rapport {
     if (new Set(listees).size !== listees.length) erreurs.push(`${chemin} : une franchise figure dans deux divisions`);
     for (const id of idsFranchises) if (!listees.includes(id)) erreurs.push(`${chemin} : la franchise « ${id} » n'est dans aucune division`);
     for (const id of listees) if (!idsFranchises.has(id)) erreurs.push(`${chemin} : franchise « ${id} » inconnue du registre`);
+  }
+
+  // 9. Tranche 6 : paramètres de la CBA et contrats.
+  if (!Object.keys(sources.cba).length) erreurs.push('data/cba : aucun fichier de paramètres de la CBA');
+  for (const [fichier, contenu] of Object.entries(sources.cba)) {
+    const chemin = `data/cba/${fichier}`;
+    const lu = schemaCba.safeParse(contenu);
+    if (!lu.success) {
+      erreurs.push(...messagesZod(chemin, lu));
+      continue;
+    }
+    const P = lu.data.parametres;
+    if (!(P.masseMinimale.valeur < P.plafondSalarial.valeur && P.plafondSalarial.valeur < P.seuilTaxe.valeur && P.seuilTaxe.valeur < P.premierApron.valeur && P.premierApron.valeur < P.deuxiemeApron.valeur))
+      erreurs.push(`${chemin} : il faut masse minimale < plafond < seuil de taxe < premier apron < second apron`);
+    for (const m of P.salaireMaximum.valeur)
+      if (Math.abs(m.montant - m.partDuPlafond * P.plafondSalarial.valeur) > 1)
+        erreurs.push(`${chemin} : le maximum de ${m.ancienneteMin} ans (${m.montant}) ne vaut pas ${m.partDuPlafond * 100} % du plafond`);
+    const mins = P.salaireMinimum.valeur;
+    if (mins.some((x, i) => i > 0 && x < mins[i - 1]!)) erreurs.push(`${chemin} : le salaire minimum doit croître avec l'ancienneté`);
+    if (P.taxe.valeur.taux.length !== P.taxe.valeur.tauxRecidiviste.length) erreurs.push(`${chemin} : autant de taux récidivistes que de taux`);
+  }
+  const franchiseDuJoueur = new Map<string, string>();
+  for (const e of Object.values(sources.effectifs) as { franchise?: { id?: string }; players?: { id?: string }[] }[])
+    for (const j of e.players ?? []) if (j.id) franchiseDuJoueur.set(j.id, e.franchise?.id ?? '');
+  if (!Object.keys(sources.contrats).length) erreurs.push('data/contrats : aucun fichier de contrats');
+  for (const [fichier, contenu] of Object.entries(sources.contrats)) {
+    const chemin = `data/contrats/${fichier}`;
+    const lu = schemaContrats.safeParse(contenu);
+    if (!lu.success) {
+      erreurs.push(...messagesZod(chemin, lu));
+      continue;
+    }
+    const c = lu.data;
+    for (const id of franchiseDuJoueur.keys()) if (!c.joueurs[id]) erreurs.push(`${chemin} : aucun contrat pour le joueur ${id}`);
+    for (const id of Object.keys(c.joueurs)) if (!franchiseDuJoueur.has(id)) erreurs.push(`${chemin} : joueur ${id} absent des effectifs`);
+    for (const id of idsFranchises) if (!c.equipes[id]) erreurs.push(`${chemin} : situation salariale absente pour « ${id} »`);
+    for (const [id, x] of Object.entries(c.joueurs)) {
+      if (x.type === 'standard' && !x.salaires.length) erreurs.push(`${chemin} : contrat standard sans salaire pour ${id}`);
+      if (x.type !== 'standard' && x.salaires.length) erreurs.push(`${chemin} : ${id} n'a pas de contrat standard mais a des salaires`);
+      if (x.type === 'non-releve') avertissements.push(`${chemin} : contrat de ${id} non relevé`);
+    }
+    const effectifs = new Map<string, { standard: number; twoWay: number }>();
+    for (const [id, x] of Object.entries(c.joueurs)) {
+      const e = effectifs.get(franchiseDuJoueur.get(id) ?? '') ?? { standard: 0, twoWay: 0 };
+      if (x.type === 'standard') e.standard++;
+      if (x.type === 'two-way') e.twoWay++;
+      effectifs.set(franchiseDuJoueur.get(id) ?? '', e);
+    }
+    for (const [equipe, e] of effectifs)
+      if (e.standard > 15 || e.twoWay > 3) erreurs.push(`${chemin} : ${equipe} a ${e.standard} contrats standard et ${e.twoWay} two-way`);
   }
 
   return { erreurs, avertissements, joueurs };

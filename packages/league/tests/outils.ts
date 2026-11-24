@@ -3,6 +3,9 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   contexteDeLaLigue,
+  donneesSalariales,
+  schemaCba,
+  schemaContrats,
   reglagesDuMoteur,
   schemaEffectif,
   schemaReglagesMatch,
@@ -27,5 +30,6 @@ export function chargerContexte(): ContexteLigue {
     valeursDesRegles(schemaRegles.parse(json('data/regles/nba-2026-27.json'))),
     reglagesDuMoteur(schemaReglagesMatch.parse(json('data/moteur/match-v4.json'))),
     schemaStatistiquesJoueurs.parse(json('data/statistiques/2025-26/joueurs.json')),
+    donneesSalariales(schemaCba.parse(json('data/cba/nba-2026-27.json')), schemaContrats.parse(json('data/contrats/2026-27.json'))),
   );
 }

@@ -24,6 +24,8 @@ export function lireSources(racine: string): SourcesDonnees {
     statistiques: lireDossier('data/statistiques/2025-26'),
     modelesNotes: lireDossier('data/modeles'),
     ligue: lireDossier('data/ligue'),
+    cba: lireDossier('data/cba'),
+    contrats: lireDossier('data/contrats'),
   };
 }
 
