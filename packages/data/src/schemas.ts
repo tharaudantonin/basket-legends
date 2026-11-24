@@ -105,3 +105,85 @@ export type Joueur = z.infer<typeof schemaJoueur>;
 export type Effectif = z.infer<typeof schemaEffectif>;
 export type Banques = z.infer<typeof schemaBanques>;
 export type Empreintes = z.infer<typeof schemaEmpreintes>;
+
+// --- Tranche 1 : paramètres du match. ---
+
+/** Les statuts de validation d'une règle (docs/03-basketball-rules/GAME_RULES.md § 8). */
+export const statutRegle = z.enum(['not_started', 'researching', 'drafted', 'review_required', 'validated', 'implemented', 'tested']);
+
+const regle = z.strictObject({ valeur: z.number(), unite: z.string().min(1), definition: z.string().min(1), reference: z.string().min(1) });
+const entier = (min: number) => regle.extend({ valeur: z.number().int().min(min) });
+
+/** data/regles/nba-<saison>.json : les règles NBA lues par le moteur, chacune avec sa référence au règlement. */
+export const schemaRegles = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.string().regex(/^basket-legends-regles-nba-\d{4}-\d{2}$/),
+  season: saison,
+  league: z.literal('NBA'),
+  status: statutRegle,
+  source: z.looseObject({ title: z.string(), url: z.url(), edition: z.string(), verifiedAt: date.nullable() }),
+  parametres: z.strictObject({
+    joueursSurLeTerrain: entier(1),
+    periodesReglementaires: entier(1),
+    dureePeriodeSecondes: entier(60),
+    dureeProlongationSecondes: entier(60),
+    horlogeDePossessionSecondes: entier(5),
+    horlogeApresRebondOffensifSecondes: entier(5),
+    valeurPanierInterieur: entier(1),
+    valeurPanierATroisPoints: entier(1),
+    valeurLancerFranc: entier(1),
+    lancersFrancsFauteSurTirInterieur: entier(1),
+    lancersFrancsFauteSurTirATroisPoints: entier(1),
+    lancersFrancsPanierAvecFaute: entier(1),
+    lancersFrancsPenalite: entier(1),
+    fautesPersonnellesExclusion: entier(1),
+    rangFauteEquipePenalite: entier(1),
+    rangFauteEquipePenaliteProlongation: entier(1),
+    finDePeriodeSecondes: entier(0),
+    rangFauteEquipeFinDePeriode: entier(1),
+  }),
+  possessionDebutDePeriode: z.strictObject({
+    valeur: z.array(z.enum(['entre-deux', 'gagnant', 'perdant'])).min(1),
+    definition: z.string().min(1),
+    reference: z.string().min(1),
+  }),
+});
+
+const proba = z.number().min(0).max(1);
+const parTir = <T extends z.ZodType>(t: T) => z.strictObject({ cercle: t, miDistance: t, troisPoints: t });
+const parGroupe = <T extends z.ZodType>(t: T) => z.strictObject({ meneur: t, ailier: t, interieur: t });
+const positif = z.number().positive();
+
+/** data/moteur/match-v<n>.json : les réglages du modèle de match (non sourcés, à calibrer). */
+export const schemaReglagesMatch = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.string().regex(/^basket-legends-moteur-match-v\d+$/),
+  status: z.enum(['provisoire-non-calibre', 'calibre']),
+  note: z.string(),
+  possession: z.strictObject({ dureeMoyenneSecondes: positif, dureeEcartSecondes: positif, dureeMinimaleSecondes: positif, tempsRestantMinimalPourTirer: z.number().min(0) }),
+  tirs: z.strictObject({
+    repartition: parTir(proba),
+    profilParGroupe: parGroupe(parTir(z.number().min(0))),
+    reussiteDeBase: parTir(proba),
+    sensibiliteParPoint: z.number().min(0),
+    avantageDomicile: z.number(),
+    usageEchelle: positif,
+  }),
+  lancersFrancs: z.strictObject({ reussiteDeBase: proba, sensibiliteParPoint: z.number().min(0), reussiteMin: proba, reussiteMax: proba }),
+  pertesDeBalle: z.strictObject({ probabiliteDeBase: proba, sensibiliteParPoint: z.number().min(0), partInterceptions: proba }),
+  fautes: z.strictObject({ surTirParType: parTir(proba), partPanierAvecFaute: proba, horsTirParPossession: proba }),
+  rebonds: z.strictObject({ offensifDeBase: proba, sensibiliteParPoint: z.number().min(0), poidsParGroupe: parGroupe(positif) }),
+  passes: z.strictObject({ probabiliteSurPanier: proba, poidsParGroupe: parGroupe(positif) }),
+  contres: z.strictObject({ probabiliteSurEchecParType: parTir(proba), poidsParGroupe: parGroupe(positif) }),
+  fatigue: z.strictObject({
+    perteParMinute: z.number().min(0),
+    recuperationParMinute: z.number().min(0),
+    seuilRemplacement: z.number().min(0).max(100),
+    seuilRetour: z.number().min(0).max(100),
+    malusParPointPerdu: z.number().min(0),
+  }),
+  rotation: z.strictObject({ profondeur: z.number().int().min(5), relaisMinimalSecondes: z.number().min(0) }),
+});
+
+export type Regles = z.infer<typeof schemaRegles>;
+export type ReglagesMatchFichier = z.infer<typeof schemaReglagesMatch>;

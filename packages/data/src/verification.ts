@@ -2,7 +2,7 @@
 // Chaque problème est décrit en français, avec le fichier et l'élément concernés.
 import { createHash } from 'node:crypto';
 import { initialesDe, normaliserNom, partiesDuNom } from './noms';
-import { schemaBanques, schemaEffectif, schemaEmpreintes, schemaRegistre, type Effectif, type Registre } from './schemas';
+import { schemaBanques, schemaEffectif, schemaEmpreintes, schemaReglagesMatch, schemaRegistre, schemaRegles, type Effectif, type Registre } from './schemas';
 
 /** Les numéros partagés volontairement, à titre provisoire (docs/DECISIONS_2026-11.md, réponse 10 ; docs/PLAYER_MIRROR.md § 5). */
 export const NUMEROS_PARTAGES_ADMIS: Record<string, string[]> = { chicago: ['7'], toronto: ['9'] };
@@ -16,6 +16,10 @@ export interface SourcesDonnees {
   effectifs: Record<string, unknown>;
   banques: unknown;
   empreintes: unknown;
+  /** Tranche 1 : contenu de chaque fichier de data/regles/, par nom de fichier. */
+  regles: Record<string, unknown>;
+  /** Tranche 1 : contenu de chaque fichier de data/moteur/, par nom de fichier. */
+  reglagesMatch: Record<string, unknown>;
 }
 
 export interface Rapport {
@@ -184,6 +188,37 @@ export function verifierDonnees(sources: SourcesDonnees): Rapport {
       if (admis) avertissements.push(`${message} (provisoire, admis)`);
       else erreurs.push(message);
     }
+  }
+
+  // 6. Tranche 1 : règles du match (une par saison) et réglages du moteur.
+  if (!Object.keys(sources.regles).length) erreurs.push('data/regles : aucun fichier de règles');
+  for (const [fichier, contenu] of Object.entries(sources.regles)) {
+    const chemin = `data/regles/${fichier}`;
+    const lu = schemaRegles.safeParse(contenu);
+    if (!lu.success) {
+      erreurs.push(...messagesZod(chemin, lu));
+      continue;
+    }
+    const r = lu.data;
+    if (`nba-${r.season.slice(0, 4)}-${r.season.slice(7)}.json` !== fichier) erreurs.push(`${chemin} : le fichier devrait s'appeler nba-${r.season.slice(0, 4)}-${r.season.slice(7)}.json`);
+    if (r.status !== 'validated' && r.status !== 'tested' && r.status !== 'implemented')
+      avertissements.push(`${chemin} : règles au statut « ${r.status} », pas encore vérifiées contre le règlement officiel`);
+    if (r.possessionDebutDePeriode.valeur.length !== r.parametres.periodesReglementaires.valeur)
+      erreurs.push(`${chemin} : possessionDebutDePeriode doit donner une valeur par période réglementaire`);
+  }
+  if (!Object.keys(sources.reglagesMatch).length) erreurs.push('data/moteur : aucun fichier de réglages du match');
+  for (const [fichier, contenu] of Object.entries(sources.reglagesMatch)) {
+    const chemin = `data/moteur/${fichier}`;
+    const lu = schemaReglagesMatch.safeParse(contenu);
+    if (!lu.success) {
+      erreurs.push(...messagesZod(chemin, lu));
+      continue;
+    }
+    const g = lu.data;
+    const somme = g.tirs.repartition.cercle + g.tirs.repartition.miDistance + g.tirs.repartition.troisPoints;
+    if (Math.abs(somme - 1) > 1e-9) erreurs.push(`${chemin} : la répartition des tirs doit faire 1 (elle fait ${somme})`);
+    if (g.fatigue.seuilRetour < g.fatigue.seuilRemplacement) erreurs.push(`${chemin} : le seuil de retour doit être au moins le seuil de remplacement`);
+    if (g.status === 'provisoire-non-calibre') avertissements.push(`${chemin} : réglages provisoires, non calibrés (tranche 2)`);
   }
 
   return { erreurs, avertissements, joueurs };

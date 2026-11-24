@@ -1,0 +1,205 @@
+// Tranche 1 : les contrats du moteur de match (entrée, journal d'événements, box score).
+// Le moteur ne lit ni fichier ni schéma : l'interface lui passe des objets déjà validés (packages/data).
+
+/** Le rôle de jeu d'un joueur, tiré de son poste source (G, F, C, G-F…), pour la composition et le profil de tir. */
+export type Groupe = 'meneur' | 'ailier' | 'interieur';
+
+/** Les trois zones de tir du modèle de la tranche 1. */
+export type TypeTir = 'cercle' | 'miDistance' | 'troisPoints';
+export const TYPES_TIR: readonly TypeTir[] = ['cercle', 'miDistance', 'troisPoints'];
+
+/** 0 : l'équipe qui reçoit ; 1 : celle qui se déplace. */
+export type Camp = 0 | 1;
+
+/** Ce que le moteur lit d'un joueur. Les notes sont sur 100 (provisoires jusqu'au modèle de notes v1, tranche 2). */
+export interface JoueurDuMatch {
+  id: string;
+  nom: string;
+  numero: string;
+  poste: string;
+  groupe: Groupe;
+  note: number;
+  technique: number;
+  physique: number;
+  mental: number;
+  tactique: number;
+  tailleCm: number;
+}
+
+/** Une équipe prête à jouer : les 5 premiers joueurs sont les titulaires, les suivants le banc, dans l'ordre de rotation. */
+export interface EquipeDuMatch {
+  id: string;
+  nom: string;
+  joueurs: JoueurDuMatch[];
+}
+
+/** Qui a le ballon au début d'une période : entre-deux, ou l'équipe qui a gagné / perdu l'entre-deux initial. */
+export type PossessionDebutDePeriode = 'entre-deux' | 'gagnant' | 'perdant';
+
+/** Les règles NBA dont le moteur a besoin (data/regles/, une valeur par paramètre, chacune sourcée dans le fichier). */
+export interface ReglesMatch {
+  joueursSurLeTerrain: number;
+  periodesReglementaires: number;
+  dureePeriodeSecondes: number;
+  dureeProlongationSecondes: number;
+  horlogeDePossessionSecondes: number;
+  horlogeApresRebondOffensifSecondes: number;
+  valeurPanierInterieur: number;
+  valeurPanierATroisPoints: number;
+  valeurLancerFranc: number;
+  lancersFrancsFauteSurTirInterieur: number;
+  lancersFrancsFauteSurTirATroisPoints: number;
+  lancersFrancsPanierAvecFaute: number;
+  lancersFrancsPenalite: number;
+  fautesPersonnellesExclusion: number;
+  rangFauteEquipePenalite: number;
+  rangFauteEquipePenaliteProlongation: number;
+  finDePeriodeSecondes: number;
+  rangFauteEquipeFinDePeriode: number;
+  possessionDebutDePeriode: PossessionDebutDePeriode[];
+}
+
+type ParTir = Record<TypeTir, number>;
+type ParGroupe = Record<Groupe, number>;
+
+/** Les réglages du modèle (data/moteur/match-v0.json) : valeurs de départ, non calibrées avant la tranche 2. */
+export interface ReglagesMatch {
+  possession: {
+    dureeMoyenneSecondes: number;
+    dureeEcartSecondes: number;
+    dureeMinimaleSecondes: number;
+    tempsRestantMinimalPourTirer: number;
+  };
+  tirs: {
+    repartition: ParTir;
+    profilParGroupe: Record<Groupe, ParTir>;
+    reussiteDeBase: ParTir;
+    sensibiliteParPoint: number;
+    avantageDomicile: number;
+    usageEchelle: number;
+  };
+  lancersFrancs: { reussiteDeBase: number; sensibiliteParPoint: number; reussiteMin: number; reussiteMax: number };
+  pertesDeBalle: { probabiliteDeBase: number; sensibiliteParPoint: number; partInterceptions: number };
+  fautes: { surTirParType: ParTir; partPanierAvecFaute: number; horsTirParPossession: number };
+  rebonds: { offensifDeBase: number; sensibiliteParPoint: number; poidsParGroupe: ParGroupe };
+  passes: { probabiliteSurPanier: number; poidsParGroupe: ParGroupe };
+  contres: { probabiliteSurEchecParType: ParTir; poidsParGroupe: ParGroupe };
+  fatigue: {
+    perteParMinute: number;
+    recuperationParMinute: number;
+    seuilRemplacement: number;
+    seuilRetour: number;
+    malusParPointPerdu: number;
+  };
+  rotation: { profondeur: number; relaisMinimalSecondes: number };
+}
+
+export interface EntreeMatch {
+  graine: number;
+  domicile: EquipeDuMatch;
+  exterieur: EquipeDuMatch;
+  regles: ReglesMatch;
+  reglages: ReglagesMatch;
+}
+
+/** Repère commun à tous les événements : la période (1 à 4, puis 5, 6… en prolongation) et le temps restant, en dixièmes de seconde. */
+interface Repere {
+  periode: number;
+  restant: number;
+}
+
+export type Evenement =
+  | (Repere & { type: 'debut_periode'; cinq: [string[], string[]] })
+  | (Repere & { type: 'entre_deux'; equipe: Camp; joueurs: [string, string] })
+  | (Repere & {
+      type: 'tir';
+      equipe: Camp;
+      joueur: string;
+      tir: TypeTir;
+      reussi: boolean;
+      /** Points marqués par ce tir (0 si manqué). */
+      points: number;
+      passe?: string;
+      contre?: string;
+      score: [number, number];
+    })
+  | (Repere & {
+      type: 'lancer_franc';
+      equipe: Camp;
+      joueur: string;
+      reussi: boolean;
+      numero: number;
+      sur: number;
+      points: number;
+      score: [number, number];
+    })
+  | (Repere & { type: 'rebond'; equipe: Camp; joueur: string; offensif: boolean })
+  | (Repere & { type: 'perte_de_balle'; equipe: Camp; joueur: string; interception?: string })
+  | (Repere & {
+      type: 'faute';
+      /** L'équipe fautive. */
+      equipe: Camp;
+      joueur: string;
+      victime: string;
+      nature: 'tir' | 'hors_tir';
+      fautesJoueur: number;
+      fautesEquipe: number;
+      penalite: boolean;
+    })
+  | (Repere & { type: 'exclusion'; equipe: Camp; joueur: string })
+  | (Repere & { type: 'remplacement'; equipe: Camp; entrant: string; sortant: string })
+  | (Repere & { type: 'fin_periode'; score: [number, number] });
+
+export interface LigneStatistique {
+  /** Temps de jeu, en dixièmes de seconde. */
+  dixiemes: number;
+  points: number;
+  tirsReussis: number;
+  tirsTentes: number;
+  troisReussis: number;
+  troisTentes: number;
+  lancersReussis: number;
+  lancersTentes: number;
+  rebondsOffensifs: number;
+  rebondsDefensifs: number;
+  rebonds: number;
+  passes: number;
+  interceptions: number;
+  contres: number;
+  pertes: number;
+  fautes: number;
+  plusMoins: number;
+}
+
+export interface LigneJoueur extends LigneStatistique {
+  id: string;
+  nom: string;
+  numero: string;
+  poste: string;
+  titulaire: boolean;
+  exclu: boolean;
+}
+
+export interface BoxEquipe {
+  id: string;
+  nom: string;
+  points: number;
+  /** Points par période (prolongations comprises). */
+  parPeriode: number[];
+  joueurs: LigneJoueur[];
+  totaux: LigneStatistique;
+}
+
+export interface BoxScore {
+  equipes: [BoxEquipe, BoxEquipe];
+  periodes: number;
+  prolongations: number;
+}
+
+export interface ResultatMatch {
+  graine: number;
+  evenements: Evenement[];
+  boxScore: BoxScore;
+  /** Empreinte du box score : deux matchs identiques ont la même. */
+  empreinte: string;
+}

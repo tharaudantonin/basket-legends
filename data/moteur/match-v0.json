@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-moteur-match-v0",
+  "status": "provisoire-non-calibre",
+  "note": "Valeurs de départ du modèle de match rapide (tranche 1), choisies pour produire des matchs plausibles. Aucune n’est une statistique sourcée. La tranche 2 les recale sur les statistiques 2025-2026 relevées (saison régulière, Play-In et playoffs séparés).",
+  "possession": {
+    "dureeMoyenneSecondes": 14.5,
+    "dureeEcartSecondes": 4.5,
+    "dureeMinimaleSecondes": 4,
+    "tempsRestantMinimalPourTirer": 2
+  },
+  "tirs": {
+    "repartition": {
+      "cercle": 0.34,
+      "miDistance": 0.24,
+      "troisPoints": 0.42
+    },
+    "profilParGroupe": {
+      "meneur": {
+        "cercle": 0.8,
+        "miDistance": 1,
+        "troisPoints": 1.25
+      },
+      "ailier": {
+        "cercle": 1,
+        "miDistance": 1,
+        "troisPoints": 1
+      },
+      "interieur": {
+        "cercle": 1.7,
+        "miDistance": 0.9,
+        "troisPoints": 0.35
+      }
+    },
+    "reussiteDeBase": {
+      "cercle": 0.62,
+      "miDistance": 0.41,
+      "troisPoints": 0.345
+    },
+    "sensibiliteParPoint": 0.006,
+    "avantageDomicile": 0.012,
+    "usageEchelle": 14
+  },
+  "lancersFrancs": {
+    "reussiteDeBase": 0.74,
+    "sensibiliteParPoint": 0.006,
+    "reussiteMin": 0.4,
+    "reussiteMax": 0.95
+  },
+  "pertesDeBalle": {
+    "probabiliteDeBase": 0.13,
+    "sensibiliteParPoint": 0.003,
+    "partInterceptions": 0.55
+  },
+  "fautes": {
+    "surTirParType": {
+      "cercle": 0.2,
+      "miDistance": 0.07,
+      "troisPoints": 0.025
+    },
+    "partPanierAvecFaute": 0.22,
+    "horsTirParPossession": 0.1
+  },
+  "rebonds": {
+    "offensifDeBase": 0.25,
+    "sensibiliteParPoint": 0.004,
+    "poidsParGroupe": {
+      "meneur": 0.6,
+      "ailier": 1.1,
+      "interieur": 2
+    }
+  },
+  "passes": {
+    "probabiliteSurPanier": 0.6,
+    "poidsParGroupe": {
+      "meneur": 2.2,
+      "ailier": 1,
+      "interieur": 0.6
+    }
+  },
+  "contres": {
+    "probabiliteSurEchecParType": {
+      "cercle": 0.3,
+      "miDistance": 0.1,
+      "troisPoints": 0.03
+    },
+    "poidsParGroupe": {
+      "meneur": 0.4,
+      "ailier": 1,
+      "interieur": 2.4
+    }
+  },
+  "fatigue": {
+    "perteParMinute": 3.2,
+    "recuperationParMinute": 5,
+    "seuilRemplacement": 72,
+    "seuilRetour": 90,
+    "malusParPointPerdu": 0.12
+  },
+  "rotation": {
+    "profondeur": 10,
+    "relaisMinimalSecondes": 240
+  }
+}

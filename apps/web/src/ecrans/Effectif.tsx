@@ -1,0 +1,170 @@
+// Tranche 1 : l'effectif de la franchise (dans l'ordre du staff : cinq de départ, puis rotation) et le lancement d'un match rapide.
+import { useMemo, useState } from 'react';
+import { nouvelleGraine } from '@basket-legends/engine';
+import { effectifDe, equipeDe, franchiseDe, franchises } from '../donnees';
+import { encreSur, taille } from '../format';
+
+export interface DemandeMatch {
+  adversaire: string;
+  aDomicile: boolean;
+  graine: number;
+}
+
+const POSTES: Record<string, string> = {
+  G: 'Arrière',
+  F: 'Ailier',
+  C: 'Pivot',
+  'G-F': 'Arrière-ailier',
+  'F-G': 'Ailier-arrière',
+  'F-C': 'Ailier-pivot',
+  'C-F': 'Pivot-ailier',
+};
+
+interface Props {
+  franchise: string;
+  derniere?: DemandeMatch;
+  enCours: boolean;
+  onRetour: () => void;
+  onJouer: (d: DemandeMatch) => void;
+}
+
+export function EcranEffectif({ franchise, derniere, enCours, onRetour, onJouer }: Props) {
+  const f = franchiseDe(franchise);
+  const effectif = effectifDe(franchise);
+  const equipe = useMemo(() => equipeDe(franchise), [franchise]);
+  const parId = new Map(effectif.players.map((j) => [j.id, j]));
+  const adversaires = franchises.filter((x) => x.id !== franchise).sort((a, b) => a.fictionalName.localeCompare(b.fictionalName, 'fr'));
+
+  const [adversaire, setAdversaire] = useState(derniere?.adversaire ?? adversaires[0]?.id ?? '');
+  const [aDomicile, setADomicile] = useState(derniere?.aDomicile ?? true);
+  const [graine, setGraine] = useState(() => derniere?.graine ?? nouvelleGraine(Date.now()));
+
+  return (
+    <>
+      <header
+        className="bandeau"
+        style={{ background: f.palette.primary, color: encreSur(f.palette.primary), borderBottomColor: f.palette.accent }}
+      >
+        <button type="button" className="retour" onClick={onRetour}>
+          ← Changer de franchise
+        </button>
+        <h1>{f.fictionalName}</h1>
+        <p>
+          Effectif {effectif.snapshot.season} · {effectif.players.length} joueurs
+        </p>
+      </header>
+
+      <section className="carte" aria-labelledby="titre-match">
+        <h2 id="titre-match">Match rapide</h2>
+        <form
+          className="formulaire-match"
+          onSubmit={(e) => {
+            e.preventDefault();
+            onJouer({ adversaire, aDomicile, graine });
+          }}
+        >
+          <label>
+            Adversaire
+            <select value={adversaire} onChange={(e) => setAdversaire(e.target.value)}>
+              {adversaires.map((x) => (
+                <option key={x.id} value={x.id}>
+                  {x.fictionalName}
+                </option>
+              ))}
+            </select>
+          </label>
+          <fieldset>
+            <legend>Lieu</legend>
+            <label>
+              <input type="radio" name="lieu" checked={aDomicile} onChange={() => setADomicile(true)} /> À domicile
+            </label>
+            <label>
+              <input type="radio" name="lieu" checked={!aDomicile} onChange={() => setADomicile(false)} /> À l'extérieur
+            </label>
+          </fieldset>
+          <label>
+            Graine
+            <span className="graine">
+              <input
+                type="number"
+                min={0}
+                max={4294967295}
+                value={graine}
+                onChange={(e) => setGraine(Math.max(0, Math.min(4294967295, Math.floor(Number(e.target.value) || 0))))}
+              />
+              <button type="button" onClick={() => setGraine(nouvelleGraine(Date.now()))}>
+                Nouvelle
+              </button>
+            </span>
+          </label>
+          <button type="submit" className="principal" disabled={enCours}>
+            {enCours ? 'Simulation…' : 'Jouer le match'}
+          </button>
+        </form>
+        <p className="aide">Même graine, mêmes équipes, même lieu : même match, au point près.</p>
+      </section>
+
+      <section className="carte" aria-labelledby="titre-effectif">
+        <h2 id="titre-effectif">Effectif</h2>
+        <p className="avertissement">
+          Notes provisoires, en attendant le modèle de notes v1 (tranche 2). Noms fictifs proposés, à relire. Cinq de départ et rotation
+          choisis par le staff.
+        </p>
+        <div className="defilement">
+          <table className="tableau">
+            <thead>
+              <tr>
+                <th scope="col">Rôle</th>
+                <th scope="col">N°</th>
+                <th scope="col" className="gauche">
+                  Joueur
+                </th>
+                <th scope="col" className="gauche">
+                  Poste
+                </th>
+                <th scope="col">Taille</th>
+                <th scope="col">Poids</th>
+                <th scope="col">Note</th>
+                <th scope="col" title="Technique">
+                  TEC
+                </th>
+                <th scope="col" title="Physique">
+                  PHY
+                </th>
+                <th scope="col" title="Mental">
+                  MEN
+                </th>
+                <th scope="col" title="Tactique">
+                  TAC
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {equipe.joueurs.map((jm, i) => {
+                const j = parId.get(jm.id);
+                if (!j) return null;
+                return (
+                  <tr key={j.id} className={i === 4 ? 'fin-cinq' : undefined}>
+                    <td>{i < 5 ? 'Titulaire' : i < 10 ? 'Rotation' : 'Banc'}</td>
+                    <td>{j.jerseyNumber}</td>
+                    <th scope="row" className="gauche">
+                      {j.fictionalDisplayName}
+                    </th>
+                    <td className="gauche">{POSTES[j.sourcePosition] ?? j.sourcePosition}</td>
+                    <td>{taille(j.measurements.height.heightCm)}</td>
+                    <td>{j.measurements.weight.weightKg} kg</td>
+                    <td className="note">{j.ratings.overall}</td>
+                    <td>{j.attributes.technique}</td>
+                    <td>{j.attributes.physical}</td>
+                    <td>{j.attributes.mental}</td>
+                    <td>{j.attributes.tactical}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </>
+  );
+}

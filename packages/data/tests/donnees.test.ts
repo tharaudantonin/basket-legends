@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { join } from 'node:path';
 import { lireSources } from '../../../tools/verifier-donnees';
 import { empreinte, lireCsv, verifierDonnees } from '../src/verification';
-import { initialesDe, normaliserNom, schemaJoueur } from '../src';
+import { initialesDe, normaliserNom, schemaJoueur, schemaRegles, valeursDesRegles } from '../src';
 
 const racine = join(import.meta.dirname, '../../..');
 
@@ -73,5 +73,29 @@ describe('noms', () => {
 
   it('lisent un CSV entre guillemets', () => {
     expect(lireCsv('"a","b"\n"1","x, ""y"""\n')).toEqual([{ a: '1', b: 'x, "y"' }]);
+  });
+});
+
+describe('paramètres du match (tranche 1)', () => {
+  const sources = lireSources(racine);
+  const copie = <T>(x: T): T => structuredClone(x);
+
+  it('lisent les règles 2026-27 en valeurs pour le moteur', () => {
+    const r = valeursDesRegles(schemaRegles.parse(sources.regles['nba-2026-27.json']));
+    expect(r.joueursSurLeTerrain).toBe(5);
+    expect(r.possessionDebutDePeriode).toHaveLength(r.periodesReglementaires);
+  });
+
+  it('refusent une règle sans référence au règlement', () => {
+    const s = copie(sources);
+    const r = s.regles['nba-2026-27.json'] as { parametres: { dureePeriodeSecondes: { reference?: string } } };
+    delete r.parametres.dureePeriodeSecondes.reference;
+    expect(verifierDonnees(s).erreurs.some((e) => e.includes('data/regles/nba-2026-27.json'))).toBe(true);
+  });
+
+  it('refusent une répartition des tirs qui ne fait pas 1', () => {
+    const s = copie(sources);
+    (s.reglagesMatch['match-v0.json'] as { tirs: { repartition: { cercle: number } } }).tirs.repartition.cercle += 0.1;
+    expect(verifierDonnees(s).erreurs.some((e) => e.includes('répartition des tirs'))).toBe(true);
   });
 });

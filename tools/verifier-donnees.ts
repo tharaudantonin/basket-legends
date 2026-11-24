@@ -6,14 +6,21 @@ import { verifierDonnees, type SourcesDonnees } from '@basket-legends/data/verif
 export function lireSources(racine: string): SourcesDonnees {
   const json = (chemin: string): unknown => JSON.parse(readFileSync(join(racine, chemin), 'utf8'));
   const dossier = 'data/rosters/2026-27';
-  const effectifs: Record<string, unknown> = {};
-  for (const f of readdirSync(join(racine, dossier)).filter((x) => x.endsWith('.json'))) effectifs[f] = json(`${dossier}/${f}`);
+  const lireDossier = (d: string): Record<string, unknown> =>
+    Object.fromEntries(
+      readdirSync(join(racine, d))
+        .filter((x) => x.endsWith('.json'))
+        .map((f) => [f, json(`${d}/${f}`)]),
+    );
+  const effectifs = lireDossier(dossier);
   return {
     registre: json('data/franchises.json'),
     csv: readFileSync(join(racine, 'data/franchises.csv'), 'utf8'),
     effectifs,
     banques: json('data/noms/banques.json'),
     empreintes: json('data/noms/empreintes.json'),
+    regles: lireDossier('data/regles'),
+    reglagesMatch: lireDossier('data/moteur'),
   };
 }
 

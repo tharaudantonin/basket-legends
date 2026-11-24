@@ -10,6 +10,7 @@
     "./verification": "./src/verification.ts"
   },
   "dependencies": {
-    "zod": "4.6.7"
+    "zod": "4.6.7",
+    "@basket-legends/engine": "0.1.0"
   }
 }
