@@ -1,0 +1,8 @@
+# Les données sont écrites par scripts et les documents à la main : Prettier ne les reformate pas.
+data/
+docs/
+assets/
+*.md
+tools/migrations/
+package-lock.json
+dist/

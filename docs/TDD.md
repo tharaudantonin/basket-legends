@@ -10,7 +10,8 @@ Jeu web qui tourne entièrement dans le navigateur, sur le modèle de Rugby Lege
 - Validation des données : Zod.
 - Tests : Vitest ; Playwright pour les parcours de bout en bout.
 - Persistance : IndexedDB, sauvegardes versionnées avec copies de secours (méthode de Rugby Legends, `src/sauvegarde/stockage.ts` et `src/manager/sauvegarde/`).
-- Monorepo : pnpm workspaces.
+- Monorepo : npm workspaces (comme Rugby Legends ; pnpm n'apporterait qu'un outil de plus).
+- TypeScript 6.0 : le plugin ESLint pour TypeScript n'accepte pas encore la version 7.
 - Qualité : ESLint et Prettier, intégration continue GitHub Actions (typecheck, tests, vérification des données).
 
 Toute nouvelle dépendance est proposée avec sa raison avant d'être ajoutée.
@@ -19,7 +20,7 @@ Toute nouvelle dépendance est proposée avec sa raison avant d'être ajoutée.
 ```text
 apps/web/            écrans, thèmes, sauvegardes IndexedDB
 packages/engine/     moteur pur : possessions, règles versionnées par saison, hasard déterministe
-packages/league/     saison, calendrier, CBA, Draft, IA de GM, progression, carrière
+packages/league/     saison, calendrier, CBA, Draft, IA de GM, progression, carrière (à créer)
 packages/data/       schémas Zod, chargement, vérificateur des données
 data/                données de référence immuables et versionnées
 tools/               calibration, migrations, imports privés

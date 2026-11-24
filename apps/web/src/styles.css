@@ -1,0 +1,77 @@
+:root {
+  --fond: #f4f5f7;
+  --carte: #ffffff;
+  --encre: #15202b;
+  --encre-douce: #4a5563;
+  --bord: #d8dde3;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+  color: var(--encre);
+  background: var(--fond);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: #0f1720;
+    --carte: #17212c;
+    --encre: #eef2f6;
+    --encre-douce: #a9b4c0;
+    --bord: #2a3643;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--fond);
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.franchises {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 8px;
+}
+
+.franchise {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 12px;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--carte);
+  border: 1px solid var(--bord);
+  border-radius: 8px;
+}
+
+.pastilles {
+  grid-row: span 2;
+  display: grid;
+  grid-template-columns: repeat(2, 12px);
+  gap: 2px;
+}
+
+.pastille {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  border: 1px solid var(--bord);
+}
+
+.nom {
+  font-weight: 600;
+}
+
+.ville {
+  color: var(--encre-douce);
+  font-size: 0.875rem;
+}

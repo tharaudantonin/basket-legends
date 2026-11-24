@@ -41,8 +41,8 @@ En cas de contradiction, les décisions les plus récentes et explicitement vali
 - **NBA 2K :** les notes de NBA 2K ne servent que de banc d'essai privé, hors du dépôt. Aucune note 2K ne doit entrer dans le jeu ni dans le dépôt. Les valeurs actuelles (`ratings`, `attributes`, `notes.nba2k27` des effectifs) sont provisoires et seront remplacées par le modèle v1.
 
 ## Noms réels des joueurs (décision du 24/11/2026)
-- Aucun vrai nom de joueur dans le dépôt une fois la migration de la tranche 0 faite. La table de correspondance (vrai nom → nom fictif) et les données de référence privées vont dans `C:\Users\thara\Projets\basket-legends-prive\`, hors du dépôt.
-- Jusqu'à cette migration, le champ `sourceName` des effectifs reste en place ; ne pas en ajouter de nouveaux.
+- Aucun vrai nom de joueur dans le dépôt (migration faite à la tranche 0, le 24/11/2026). La table de correspondance (vrai nom → nom fictif), les notes NBA 2K et la sauvegarde des effectifs d'origine sont dans `C:\Users\thara\Projets\basket-legends-prive\`, hors du dépôt. L'historique Git d'avant le 24/11/2026 contient encore les vrais noms (dépôt privé).
+- Chaque joueur a un identifiant stable sans nom réel (`j0001` à `j0523`) et un nom fictif aux mêmes initiales, proposé et à relire (`nameStatus`). Banques de noms : `data/noms/banques.json`.
 - Les empreintes des vrais noms servent à empêcher le jeu de tirer un nom réel (méthode de Rugby Legends).
 
 ## Franchise mirror
@@ -59,7 +59,14 @@ Chaque franchise fictive hérite de son club analogue : palmarès, records, bila
 - Ne pas copier les identités des équipes réelles.
 
 ## Architecture cible (décision du 24/11/2026)
-Jeu web qui tourne entièrement dans le navigateur, comme Rugby Legends : Vite + React + TypeScript ; Zod ; Vitest (Playwright pour les parcours) ; sauvegardes versionnées dans IndexedDB ; moteur de simulation pur, indépendant de l'interface, exécuté dans un Web Worker ; monorepo léger en pnpm workspaces (`apps/web`, `packages/engine`, `packages/league`, `packages/data`). Pas de serveur, ni de PostgreSQL, ni de Prisma, sauf nouvel arbitrage.
+Jeu web qui tourne entièrement dans le navigateur, comme Rugby Legends : Vite + React + TypeScript ; Zod ; Vitest (Playwright pour les parcours) ; sauvegardes versionnées dans IndexedDB ; moteur de simulation pur, indépendant de l'interface, exécuté dans un Web Worker ; monorepo léger en npm workspaces, comme Rugby Legends (`apps/web`, `packages/engine`, `packages/data` ; `packages/league` à créer quand la saison arrive). TypeScript 6.0 (le plugin ESLint pour TypeScript n'accepte pas encore la version 7). Pas de serveur, ni de PostgreSQL, ni de Prisma, sauf nouvel arbitrage.
+
+## Commandes
+- `npm install` : installe les paquets (aucune nouvelle dépendance sans la proposer, avec sa raison).
+- `npm run dev` : lance le jeu sur http://localhost:5180.
+- `npm test` : tests (Vitest).
+- `npm run verifier` : contrôle des données de `data/` (schémas Zod, noms fictifs, empreintes des vrais noms, miroir CSV, mensurations, numéros).
+- `npm run ci` : tout ce que vérifie l'intégration continue (types, lint, format, tests, données, construction).
 
 ## Conventions de code (décision du 24/11/2026)
 - Identifiants, commentaires et messages en français, comme Rugby Legends.
@@ -93,4 +100,4 @@ Le développement est privé et local. Tout ce qui bloquerait une publication pu
 9. Ne jamais déclarer une fonctionnalité terminée sans test ou vérification pertinente.
 
 ## Prochaine tâche
-Tranche 0 de `docs/AUDIT_2026-11.md` § 7 : socle du monorepo et CI, migration des identifiants de franchise vers ceux de `data/franchises.json`, noms fictifs et sortie des vrais noms vers le dossier privé, schémas Zod. Puis tranche 1 : choisir une franchise, voir l'effectif, simuler un match rapide déterministe, afficher le box score.
+Tranche 0 faite le 24/11/2026 (socle, CI, migration des données, schémas Zod ; détail : `docs/DECISIONS_2026-11.md`). Prochaine : tranche 1 de `docs/AUDIT_2026-11.md` § 7 : choisir une franchise, voir l'effectif, simuler un match rapide déterministe, afficher le box score.

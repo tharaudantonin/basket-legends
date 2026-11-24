@@ -33,5 +33,5 @@ Ce document consigne les décisions d'Antonin prises à l'occasion de l'audit de
 
 ## Suites
 
-- Tranche 0 : socle du monorepo et CI, migration des identifiants de franchise vers ceux de `data/franchises.json` (y compris `washington-capitals` et `denver-summit` dans les effectifs et les assets), noms fictifs, sortie des vrais noms et des notes 2K vers le dossier privé, schémas Zod.
+- Tranche 0, faite le 24/11/2026 : socle npm workspaces (`apps/web`, `packages/data`, `packages/engine`), CI GitHub Actions, ESLint, Prettier, Vitest ; effectifs et assets rangés sous les identifiants de `data/franchises.json` ; joueurs renommés `j0001` à `j0523` avec un nom fictif aux mêmes initiales (proposé, à relire) ; vrais noms, notes 2K et effectifs d'origine sortis vers `basket-legends-prive` ; empreintes des vrais noms dans `data/noms/empreintes.json` ; schémas Zod et `npm run verifier`.
 - Tranche 1 : choisir une franchise, voir l'effectif, simuler un match rapide déterministe, afficher le box score.
