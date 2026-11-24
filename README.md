@@ -35,11 +35,11 @@ Basket Legends est une simulation de management basketball dans laquelle le joue
 - `assets/franchises/washington-capitals/` — concept de maillots avec étoiles latérales sur l'Icon.
 
 ## Points ouverts
-1. Confirmer le snapshot des effectifs (proposition : saison 2025-2026, au 30 juin 2026).
+1. Snapshot validé le 23 novembre 2026 : effectifs 2026-2027 arrêtés au 17 novembre 2026, statistiques 2025-2026 pour la calibration, carrière à partir de 2026-2027.
 2. Effectuer une revue de disponibilité de tous les noms et des droits avant diffusion publique/commerciale.
 3. Collecter puis vérifier les données historiques, les profils statistiques et les données individuelles.
 
 ## Stack cible
-React + TypeScript, Tailwind CSS, Node.js + TypeScript, PostgreSQL, Prisma, Zod, Vitest et Playwright. Monolithe modulaire pour la V1.
+Jeu qui tourne entièrement dans le navigateur, comme Rugby Legends (décision du 24 novembre 2026) : Vite + React + TypeScript, Zod, Vitest (Playwright pour les parcours), sauvegardes versionnées dans IndexedDB, moteur de simulation pur exécuté dans un Web Worker, monorepo léger en pnpm workspaces. Pas de serveur ni de base de données.
 
 **Le dépôt est documentaire à ce stade : le jeu n'est pas encore implémenté.**

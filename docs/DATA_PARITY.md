@@ -7,7 +7,7 @@ Chaque franchise fictive doit conserver l'héritage historique, le palmarès, le
 Collecter par club : fondation, déménagements, saisons, titres, finales, titres de conférence/division, bilans saison par saison, records, numéros retirés et rivalités. Chaque valeur doit conserver sa source, la date de consultation, le périmètre et un statut de vérification.
 
 ## Couleurs
-Les couleurs historiques sont des références de départ. Chaque palette finale doit être confirmée par des sources officielles et traduite en valeurs HEX/RGB. Les couleurs provisoires dans `data/franchises.json` ne sont pas des codes officiels certifiés.
+Les couleurs historiques des clubs de référence ont servi de point de départ. Les 30 palettes de `data/franchises.json` sont des créations originales validées ; ce ne sont pas des codes officiels des clubs de référence.
 
 ## Profil collectif
 Pour chaque saison de référence, recueillir :
@@ -27,7 +27,7 @@ Utiliser la dernière saison complète, complétée si utile par une moyenne plu
 Chaque joueur réel de l'effectif de référence doit avoir une contrepartie fictive, selon `docs/PLAYER_MIRROR.md`. Les données physiques et statistiques doivent être sourcées. Les attributs 1–100 résultent d'un modèle explicite.
 
 ## Snapshot
-Snapshot de référence validé : saison **2025-2026**, date technique **2026-06-30**. La carrière commence à l'intersaison 2026 et conduit à la saison **2026-2027**. Toute mise à jour des données de référence crée une nouvelle version ; elle ne modifie pas rétroactivement une carrière existante. Toute mise à jour crée une nouvelle version des données.
+Snapshot validé le 23 novembre 2026 : effectifs **2026-2027** arrêtés au **17 novembre 2026** ; profils statistiques et héritage calibrés sur la saison terminée **2025-2026** ; la carrière démarre en **2026-2027**. Toute mise à jour des données de référence crée une nouvelle version ; elle ne modifie pas rétroactivement une carrière existante.
 
 ## Contrôle qualité
 - Conserver la définition, l'unité, la saison et la source de chaque valeur.

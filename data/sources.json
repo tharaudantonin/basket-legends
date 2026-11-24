@@ -1,11 +1,14 @@
 {
-  "version": 2,
+  "version": 3,
   "snapshot": {
-    "season": "2025-2026",
-    "date": "2026-06-30",
+    "rosterSeason": "2026-2027",
+    "rosterDate": "2026-11-17",
+    "statisticsSeason": "2025-2026",
+    "careerStartSeason": "2026-2027",
     "status": "approved",
+    "approvedAt": "2026-11-23",
     "administrativeCutoffTimezone": "America/New_York",
-    "note": "End-of-day snapshot; exact timestamp and transaction cutoff must be fixed in the import manifest. Player statistics remain separated by competition type."
+    "note": "Rosters as supplied in data/rosters/2026-27/ (cutoff 2026-11-17). Completed 2025-26 statistics, with regular season, play-in and playoffs kept separate, calibrate the ratings. The career starts in 2026-27."
   },
   "references": [
     {
@@ -85,7 +88,7 @@
       "scope": "Editorial team-by-team season preview, roster context, arrivals/departures, player roles and expert analysis for 2026-27; landing page indexed in search, direct page access may be restricted",
       "priority": "editorial-secondary",
       "accessStatus": "search-indexed-direct-access-restricted",
-      "snapshotRelevance": "2026-27 cross-check only; not a source for the 2026-06-30 historical snapshot"
+      "snapshotRelevance": "2026-27 cross-check only for the 2026-11-17 roster snapshot; no transaction after the cutoff"
     },
     {
       "id": "bebasket-nba-players-2026-27",
@@ -94,7 +97,7 @@
       "scope": "NBA 2026-27 player directory organized by franchise; page states it covers training-camp rosters and reports 660 distinct players across 30 teams",
       "priority": "editorial-secondary",
       "accessStatus": "page-readable",
-      "snapshotRelevance": "2026-27 roster discovery and cross-check only; training-camp roster population must not be treated as final active roster or as 2026-06-30 snapshot"
+      "snapshotRelevance": "2026-27 roster discovery and cross-check for the 2026-11-17 snapshot; training-camp roster population must not be treated as final active roster"
     }
   ],
   "policy": {
@@ -122,6 +125,7 @@
       "derived metrics",
       "scouting estimates",
       "generated fictional players"
-    ]
+    ],
+    "thirdPartyRatings": "Video-game ratings (for example NBA 2K) are a private benchmark only: kept outside the repository, never shipped in the game, never used as rating values"
   }
 }

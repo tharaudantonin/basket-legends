@@ -7,7 +7,7 @@
 - [x] Documenter les trois derniers dossiers.
 - [x] Valider et retranscrire les quatre couleurs HEX des neuf palettes restantes (30/30 palettes gelées).
 - [ ] Revue juridique des noms, en priorité Washington Capitals.
-- [x] Valider le snapshot de référence : saison 2025-2026 au 30 juin 2026 ; carrière à partir de l'intersaison 2026.
+- [x] Valider le snapshot de référence (23/11/2026) : effectifs 2026-2027 au 17 novembre 2026, statistiques 2025-2026 pour la calibration, carrière à partir de 2026-2027.
 
 ## Phase 1 — Production du système visuel
 - [ ] Créer les 30 logos principaux en SVG.
@@ -18,7 +18,7 @@
 - [ ] Intégrer les assets dans le kit UI desktop et mobile.
 
 ## Phase 2 — Référentiel sportif et données de départ
-- [x] Valider le snapshot NBA de référence : saison 2025-2026 au 30 juin 2026.
+- [x] Valider le snapshot NBA de référence (23/11/2026) : effectifs 2026-2027 au 17 novembre 2026, statistiques 2025-2026.
 - [x] Définir la hiérarchie des sources, la provenance et les règles de collecte.
 - [ ] Constituer les 30 historiques de franchise (titres, bilans, records, rivalités).
 - [ ] Constituer les effectifs initiaux et mappings individuels sourcés.
@@ -59,13 +59,13 @@
 
 ## Phase 3 — Gel du GDD/TDD et architecture exécutable
 - [ ] Convertir les décisions de gameplay en critères d'acceptation testables.
-- [ ] Finaliser schéma Prisma, contrats API et frontières des modules.
+- [ ] Finaliser les schémas Zod, le format des sauvegardes IndexedDB et les frontières des modules (architecture dans le navigateur, décision du 24/11/2026).
 - [ ] Définir stratégie de simulation déterministe et tests de calibration.
 - [ ] Définir sauvegardes, snapshots, migrations et observabilité.
 - [ ] Préparer les issues techniques et la séquence de développement Claude Code.
 
 ## Phase 4 — Implémentation V1
-- [ ] Monorepo, CI, lint, tests et base de données.
+- [ ] Monorepo, CI, lint et tests (tranche 0 de `docs/AUDIT_2026-11.md` § 7).
 - [ ] Shell UI et création de carrière.
 - [ ] Référentiel des franchises, joueurs et saisons.
 - [ ] Moteur de match et trois modes de présentation.

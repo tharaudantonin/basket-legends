@@ -7,6 +7,7 @@ Chaque joueur initial de Basket Legends est une contrepartie fictive d'un joueur
 Le nom fictif conserve les initiales du joueur de référence (exemple de convention : Jayson Tatum → Jason Tatam, JT). Cette règle ne justifie ni la copie d'une identité, ni la reproduction d'une apparence identifiable. Les doublons d'initiales sont autorisés, mais les noms fictifs complets et les identifiants internes doivent être uniques.
 
 Règles non négociables :
+- aucun vrai nom de joueur dans le dépôt une fois la migration de la tranche 0 faite : la table de correspondance (vrai nom → nom fictif) est gardée dans `C:\Users\thara\Projets\basket-legends-prive\`, hors du dépôt, et seules les empreintes des vrais noms entrent dans le dépôt pour empêcher leur tirage (décision du 24 novembre 2026) ;
 - aucune statistique, mensuration, date ou affiliation ne doit être inventée ;
 - une donnée inconnue reste `null` avec un statut explicite ;
 - une donnée mesurée, une donnée calculée et une estimation de scouting sont trois catégories distinctes ;
@@ -16,17 +17,17 @@ Règles non négociables :
 
 ## 2. Snapshot de départ
 
-**Snapshot validé : 30 juin 2026, fin de saison 2025-2026.** Il sert d'état initial de la carrière, qui commence à l'intersaison 2026 et se poursuit vers la saison 2026-2027.
+**Snapshot validé le 23 novembre 2026 :** effectifs de la saison 2026-2027 tels que fournis dans `data/rosters/2026-27/`, arrêtés au 17 novembre 2026. La carrière démarre en 2026-2027.
 
-Pour éviter les ambiguïtés, le snapshot doit être défini comme un instantané de fin de journée au fuseau de référence NBA (Eastern Time), avec horodatage technique explicite dans chaque export. Les transactions, droits, contrats, options, waivers et statuts de free agency sont arrêtés à cette date/heure. Une transaction annoncée après le cutoff ne doit pas être intégrée rétroactivement.
+Le snapshot administratif (franchise, statut, droits, contrats) est un instantané de fin de journée au 17 novembre 2026, au fuseau de référence NBA (Eastern Time). Une transaction annoncée après cette date ne doit pas être intégrée rétroactivement.
 
-Les statistiques sont attachées à la saison 2025-2026 et séparées par type de compétition :
+Les statistiques servant à calibrer les notes sont celles de la saison 2025-2026 terminée, séparées par type de compétition :
 - saison régulière ;
 - Play-In, si applicable ;
 - playoffs ;
 - Summer League et compétitions annexes, uniquement si elles sont utiles et explicitement identifiées.
 
-Les statistiques saisonnières ne sont pas des statistiques « au 30 juin » : elles couvrent la compétition concernée. Le snapshot du 30 juin fixe l'état administratif du joueur (franchise, statut, contrat et droits), tandis que les statistiques décrivent sa saison 2025-2026 achevée.
+Les statistiques saisonnières couvrent la compétition concernée. Le snapshot du 17 novembre 2026 fixe l'état administratif du joueur (franchise, statut, contrat et droits), tandis que les statistiques décrivent sa saison 2025-2026 achevée. Une recrue sans saison 2025-2026 en NBA n'a pas de statistiques NBA de calibration : sa note est marquée « estimé ».
 
 Toute mise à jour ultérieure crée une nouvelle version de données. Elle ne modifie jamais les données de départ d'une carrière déjà créée.
 
@@ -94,17 +95,17 @@ La préférence ne modifie jamais les données stockées : elle ne fait que choi
 ### Effectifs reçus et validés
 
 - Philadelphia Founders (référence : Philadelphia 76ers) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026.
-- Fichier de données : `data/rosters/2025-26/philadelphia-founders.json`.
+- Fichier de données : `data/rosters/2026-27/philadelphia-founders.json`.
 - Milwaukee Stags (référence : Milwaukee Bucks) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 ; pays de Kel'el Ware corrigé en `USA` à la demande de l'utilisateur le même jour.
-- Fichier de données : `data/rosters/2025-26/milwaukee-stags.json`.
+- Fichier de données : `data/rosters/2026-27/milwaukee-stags.json`.
 - Chicago Horses (référence : Chicago Bulls) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026.
-- Fichier de données : `data/rosters/2025-26/chicago-horses.json`.
+- Fichier de données : `data/rosters/2026-27/chicago-horses.json`.
 - Cleveland Sentinels (référence : Cleveland Cavaliers) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026.
-- Fichier de données : `data/rosters/2025-26/cleveland-sentinels.json`.
+- Fichier de données : `data/rosters/2026-27/cleveland-sentinels.json`.
 - Boston Beacons (référence : Boston Celtics) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026.
-- Fichier de données : `data/rosters/2025-26/boston-beacons.json`.
+- Fichier de données : `data/rosters/2026-27/boston-beacons.json`.
 - Los Angeles Beachers (référence : LA Clippers) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026.
-- Fichier de données : `data/rosters/2025-26/los-angeles-beachers.json`.
+- Fichier de données : `data/rosters/2026-27/los-angeles-beachers.json`.
 - Memphis Rhythm (référence : Memphis Grizzlies) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027 ; poids de Jaylen Wells fourni en kg (93 kg).
 - Fichier de données : `data/rosters/2026-27/memphis-rhythm.json`.
 - Atlanta Eagles (référence : Atlanta Hawks) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
@@ -127,7 +128,7 @@ La préférence ne modifie jamais les données stockées : elle ne fait que choi
 - Fichier de données : `data/rosters/2026-27/dallas-outriders.json`.
 - Brooklyn Bridges (référence : Brooklyn Nets) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
 - Fichier de données : `data/rosters/2026-27/brooklyn-bridges.json`.
-- Denver Summit (référence : Denver Nuggets) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
+- Denver Peaks, anciennement Denver Summit (référence : Denver Nuggets) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
 - Fichier de données : `data/rosters/2026-27/denver-summit.json`.
 - Houston Commanders (référence : Houston Rockets) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
 - Fichier de données : `data/rosters/2026-27/houston-commanders.json`.
@@ -145,10 +146,12 @@ La préférence ne modifie jamais les données stockées : elle ne fait que choi
 - Fichier de données : `data/rosters/2026-27/san-francisco-golden-seals.json`.
 - Toronto Bears (référence : Toronto Raptors) : 17 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027 ; le numéro 9 est volontairement partagé par RJ Barrett et Kevin McCullar Jr. à titre provisoire.
 - Fichier de données : `data/rosters/2026-27/toronto-bears.json`.
-- Washington Capitals (référence : Washington Wizards) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
+- Washington Monuments, anciennement Washington Capitals (référence : Washington Wizards) : 18 joueurs fournis par l'utilisateur et validés le 17 novembre 2026 pour la saison 2026-2027.
 - Fichier de données : `data/rosters/2026-27/washington-capitals.json`.
-- Le statut « validé par l'utilisateur » ne vaut pas certification indépendante du statut contractuel ou de l'affiliation NBA au 30 juin 2026. Les identifiants NBA, contrats, statuts two-way et statistiques restent à vérifier séparément.
-- Les pseudonymes, notes, attributs et commentaires de scouting ne sont pas encore renseignés ; ils feront l'objet d'une étape dédiée après validation des effectifs.
+- Le statut « validé par l'utilisateur » ne vaut pas certification indépendante du statut contractuel ou de l'affiliation NBA au snapshot. Les identifiants NBA, contrats, statuts two-way et statistiques restent à vérifier séparément.
+- Chicago Horses : le numéro 7 est partagé provisoirement par Buddy Hield et Orlando Robinson (décision du 24 novembre 2026), comme le numéro 9 de Toronto.
+- Les noms fictifs et les commentaires de scouting ne sont pas encore renseignés. Des notes et attributs provisoires ont été ajoutés le 18 novembre 2026 ; ils seront remplacés par le modèle de notes v1 (décision du 24 novembre 2026, § 6).
+- Les fichiers `denver-summit.json` et `washington-capitals.json` gardent leur nom jusqu'à la migration des identifiants de la tranche 0 ; les franchises s'appellent désormais Denver Peaks et Washington Monuments.
 
 ## 6. Attributs de jeu (échelle 1–100)
 
@@ -170,7 +173,9 @@ Familles d'attributs proposées :
 
 Le modèle doit documenter pour chaque attribut : définition opérationnelle, indicateurs d'entrée, pondérations, normalisation par rôle/poste, traitement des petits échantillons, version de formule, date de calibration et intervalle/niveau de confiance. Les valeurs ne doivent pas être déduites d'une simple moyenne de points ou d'un classement médiatique.
 
-Échelle indicative à calibrer sur la distribution de la ligue : 50 = niveau NBA moyen de référence ; 60 = solide titulaire/rotation supérieure selon l'attribut ; 70 = très bon ; 80 = élite ; 90+ = exceptionnel. Cette échelle est une convention de jeu à valider par simulation, pas une conversion universelle des statistiques.
+**Échelle « NBA » (décisions des 23 et 24 novembre 2026) :** un joueur NBA de rotation se situe autour de 70-75 ; les superstars au-delà de 90 ; les joueurs hors NBA (G League, prospects, joueurs libres générés) entre 40 et 67. Cette échelle est une convention de jeu, calibrée par simulation, et non une conversion universelle des statistiques.
+
+**Méthode retenue (décision du 24 novembre 2026) :** une formule maison, écrite et refaisable, à partir des statistiques 2025-2026 sourcées, puis un recalage par quantiles sur l'échelle ci-dessus, puis d'éventuelles corrections manuelles marquées « corrigé par Antonin ». Les notes de NBA 2K ne servent que de banc d'essai privé, hors du dépôt : elles ne sont jamais stockées dans le dépôt ni livrées dans le jeu. Critère d'acceptation du modèle v1 : corrélation de Spearman d'au moins 0,85 avec la référence privée, aucune valeur recopiée telle quelle hors correction manuelle sourcée, moins de 10 % de corrections.
 
 Les évaluations défensives, de vision, de placement, de discipline, de qualité d'écran et de lecture nécessitent des données de tracking/vidéo ou une estimation de scouting explicitement étiquetée. Si la preuve manque, utiliser une valeur provisoire avec faible confiance ou laisser le champ non renseigné jusqu'à validation.
 
@@ -192,7 +197,7 @@ Une source officielle est prioritaire pour les statistiques et transactions, mai
 
 - unicité de l'identifiant interne et du mapping source ;
 - absence de doublon joueur entre NBA, G League, free agents et prospects ;
-- cohérence de l'affiliation au 30 juin 2026 avec le journal des transactions ;
+- cohérence de l'affiliation au snapshot du 17 novembre 2026 avec le journal des transactions ;
 - âge calculé à partir de la date de naissance et du snapshot, jamais saisi manuellement ;
 - conversions d'unités reproductibles ;
 - `FGM <= FGA`, `3PM <= 3PA`, `3PM <= FGM`, `3PA <= FGA`, `FTM <= FTA` ;
@@ -301,5 +306,5 @@ Les joueurs qui ne remplissent pas ces critères restent en file de validation e
 
 ## 12. Effectifs soumis et approuvés pour 2026-2027
 
-Les effectifs 2026-2027 fournis par l'utilisateur et approuvés franchise par franchise sont enregistrés dans `data/rosters/2026-27/`. Cette approbation valide la transcription dans Basket Legends, mais ne constitue pas une vérification officielle des affiliations NBA, contrats ou statuts. Les champs `ratings`, `attributes` et `notes` restent `null` jusqu'à leur production et validation dans une phase ultérieure. Les mensurations conservent leurs valeurs impériales sources et leurs conversions métriques ; l'interface peut afficher cm/kg ou pieds-pouces/livres sans modifier les données de référence.
+Les effectifs 2026-2027 fournis par l'utilisateur et approuvés franchise par franchise sont enregistrés dans `data/rosters/2026-27/` : 523 joueurs, 17 ou 18 par franchise. Cette approbation valide la transcription dans Basket Legends, mais ne constitue pas une vérification officielle des affiliations NBA, contrats ou statuts. Les champs `ratings`, `attributes` et `notes` sont remplis depuis le 18 novembre 2026 avec des valeurs provisoires, alignées pour la plupart sur NBA 2K27 ; ils seront remplacés par le modèle v1 et les notes 2K seront sorties du dépôt (tranche 0). Les mensurations conservent leurs valeurs impériales sources et leurs conversions métriques ; l'interface peut afficher cm/kg ou pieds-pouces/livres sans modifier les données de référence.
 

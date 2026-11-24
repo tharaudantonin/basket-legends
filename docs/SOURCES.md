@@ -2,9 +2,9 @@
 
 ## 1. Snapshot de référence
 
-Snapshot de départ validé : **saison 2025-2026, arrêté au 30 juin 2026**. La carrière commence à l'intersaison 2026 et se poursuit vers 2026-2027.
+Snapshot validé le 23 novembre 2026 : **effectifs 2026-2027 arrêtés au 17 novembre 2026** (`data/rosters/2026-27/`) ; **statistiques de la saison 2025-2026 terminée** pour calibrer les notes ; la carrière démarre en 2026-2027.
 
-Le snapshot administratif (franchise, statut, droits, contrats et transactions) doit être arrêté à un horodatage explicite en Eastern Time. Les statistiques sont collectées séparément pour la saison régulière, le Play-In et les playoffs. Une statistique de saison complète ne doit pas être confondue avec l'état administratif du joueur au 30 juin.
+Le snapshot administratif (franchise, statut, droits, contrats et transactions) est arrêté au 17 novembre 2026 en Eastern Time. Les statistiques sont collectées séparément pour la saison régulière, le Play-In et les playoffs. Une statistique de saison complète ne doit pas être confondue avec l'état administratif du joueur au snapshot.
 
 ## 2. Hiérarchie des sources
 
@@ -67,4 +67,10 @@ Ces références sont utiles pour la découverte des joueurs, la lecture des eff
 - L'Équipe, Guide NBA 2026-2027 : https://www.lequipe.fr/collection/guide-nba-2026-2027/ — collection de présentations franchise par franchise, avec analyses d'effectifs, arrivées/départs et enjeux sportifs. La page de collection est indexée par le moteur de recherche, mais l'accès direct automatisé peut être refusé. Utiliser les articles de la collection lorsqu'ils sont accessibles.
 - BeBasket, Joueurs NBA 2026-2027 : https://www.bebasket.fr/ligue/nba/joueurs — répertoire de joueurs classés par équipe ; la page consultée annonce couvrir les effectifs de camp d'entraînement et recense 660 joueurs distincts sur les 30 équipes.
 
-**Limites d'usage :** ces deux sources décrivent la saison 2026-2027. Elles peuvent servir à vérifier les affiliations et à enrichir les notes de scouting éditoriales, mais elles ne doivent pas être utilisées pour reconstruire rétroactivement le snapshot arrêté au 30 juin 2026. Les effectifs de camp d'entraînement peuvent inclure des joueurs qui ne figurent pas dans l'effectif final de saison. Toute donnée de joueur intégrée au jeu doit être recoupée avec une source primaire et porter une provenance explicite. Les commentaires, pronostics et appréciations éditoriales ne sont pas des attributs objectifs : ils peuvent inspirer une note de scouting, mais ne doivent pas être convertis automatiquement en notes de jeu.
+**Limites d'usage :** ces deux sources décrivent la saison 2026-2027. Elles peuvent servir à vérifier les affiliations au snapshot du 17 novembre 2026 et à enrichir les notes de scouting éditoriales, mais pas à intégrer une transaction postérieure au snapshot. Les effectifs de camp d'entraînement peuvent inclure des joueurs qui ne figurent pas dans l'effectif final de saison. Toute donnée de joueur intégrée au jeu doit être recoupée avec une source primaire et porter une provenance explicite. Les commentaires, pronostics et appréciations éditoriales ne sont pas des attributs objectifs : ils peuvent inspirer une note de scouting, mais ne doivent pas être convertis automatiquement en notes de jeu.
+
+## 8. Notes de jeux vidéo et bases tierces (décision du 24 novembre 2026)
+
+Les notes de NBA 2K (relevées par exemple sur 2KRatings) ne sont pas une source de données du jeu. Elles servent uniquement de banc d'essai privé pour mesurer l'écart du modèle de notes de Basket Legends : elles sont conservées hors du dépôt, dans `C:\Users\thara\Projets\basket-legends-prive\`, et ne sont jamais livrées dans le jeu. Les valeurs `notes.nba2k27` encore présentes dans les effectifs seront retirées du dépôt à la tranche 0.
+
+Les statistiques 2025-2026 de calibration sont relevées sur NBA.com ou Basketball-Reference, dans le respect de leurs conditions d'utilisation, avec la provenance exigée au § 4.
