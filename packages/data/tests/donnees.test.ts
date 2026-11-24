@@ -10,6 +10,15 @@ describe('données de référence du dépôt', () => {
   const sources = lireSources(racine);
   const rapport = verifierDonnees(sources);
 
+  it('tranche 7 : donnent un âge de saison plausible à chacun des 523 joueurs', () => {
+    for (const effectif of Object.values(sources.effectifs) as { players: { id: string; seasonAge: number | null }[] }[])
+      for (const j of effectif.players) {
+        expect(j.seasonAge, j.id).not.toBeNull();
+        expect(j.seasonAge!, j.id).toBeGreaterThanOrEqual(18);
+        expect(j.seasonAge!, j.id).toBeLessThanOrEqual(43);
+      }
+  });
+
   it('passent la vérification sans erreur', () => {
     expect(rapport.erreurs).toEqual([]);
     expect(rapport.joueurs).toBe(523);

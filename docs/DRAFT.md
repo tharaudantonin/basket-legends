@@ -9,7 +9,7 @@
 - Soirée de Draft : les staffs des 29 autres équipes choisissent selon leurs propres rapports ; le GM choisit à chacun de ses rangs, ou délègue à son staff.
 - À la fin de la Draft : chaque recrue du 1er tour reçoit le contrat de l'échelle des rookies (montants provisoires, voir § 8), et une actualité annonce les premiers choix.
 - Le vivier de 320 joueurs originaux hors NBA (échelle 40-67) complète la ligue vers les 840 joueurs du GDD (§ 9).
-- Chaque joueur du snapshot a désormais un âge de saison, déduit sans estimation des statistiques sourcées (§ 11).
+- Chaque joueur du snapshot a désormais un âge de saison, sans estimation : statistiques sourcées ou date de naissance relevée (§ 11).
 
 Le modèle de notes v2 (16 attributs détaillés) et le moteur v5 de la même tranche sont décrits dans `docs/NOTES_JOUEURS.md` § 8 et `docs/SIMULATION_MATCH.md` § 9.
 
@@ -88,7 +88,9 @@ Les banques de la tranche 0 servaient au renommage du snapshot ; certaines cultu
 
 ## 11. Âge de saison des joueurs du snapshot
 
-`seasonAge` : âge au 1er février 2027, convention de Basketball-Reference pour la saison 2026-27. Il se déduit exactement de l'âge 2025-26 relevé (au 1er février 2026) + 1, ou de l'âge 2024-25 + 2 pour les 8 joueurs absents en 2025-26. 449 joueurs ont un âge ; 74 (53 recrues de la Draft 2026, 21 joueurs sans match NBA) gardent `null` : aucune date de naissance n'est relevée et l'âge n'est jamais estimé. `docs/PLAYER_MIRROR.md` demande une date de naissance : elle reste à relever (tranche 8, vieillissement).
+`seasonAge` : âge au 1er février 2027, convention de Basketball-Reference pour la saison 2026-27. Il se déduit exactement de l'âge 2025-26 relevé (au 1er février 2026) + 1, ou de l'âge 2024-25 + 2 pour les 8 joueurs absents en 2025-26 (449 joueurs). Pour les 74 autres (53 recrues de la Draft 2026, 21 joueurs sans match NBA), il est calculé depuis la date de naissance relevée le 24/11/2026 sur les 30 pages d'effectif 2026-27 de Basketball-Reference (`https://www.basketball-reference.com/teams/<ÉQUIPE>/2027.html`). Les 523 joueurs ont donc un âge.
+
+Le relevé brut contient les vrais noms : il reste dans le dossier privé (`basket-legends-prive/naissances-2026-27/`), où il est rattaché aux identifiants du jeu par le vrai nom normalisé (un alias pour un prénom écrit autrement). Le dépôt ne garde que l'âge, pas la date. **Contrôle :** pour 447 joueurs, l'âge des statistiques et l'âge déduit de la date coïncident sans exception ; la migration s'arrête au premier écart. Deux joueurs du snapshot ne figurent plus sur les pages d'effectif du 24/11/2026 ; leur âge vient des statistiques. Âges des 74 : de 19 à 26 ans pour 71 d'entre eux, 29 et 31 ans pour les 3 autres (joueurs sans match NBA).
 
 ## 12. Interface
 
@@ -106,4 +108,4 @@ Onglet **Draft** de l'écran de saison : classe triée par consensus ou par rapp
 2. `choix-2027.json` : recouper les règles et les six écarts avec une source primaire ou une seconde source.
 3. `modele-draft.json` et le vivier : moyennes, écarts, âges, origines, poids du choix du staff.
 4. Incohérence à arbitrer : un prospect est noté entre 40 et 67 (décision du 24/11/2026), alors que le modèle de notes donne 73 au 1er choix 2026 (note a priori par rang de draft, `docs/NOTES_JOUEURS.md` § 3). Un n° 1 généré entrera donc dans la ligue nettement sous le n° 1 réel de 2026.
-5. Plafond 2027-28 (contrats des rookies provisoires) et dates de naissance (74 âges inconnus).
+5. Plafond 2027-28 (contrats des rookies provisoires).

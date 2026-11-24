@@ -125,6 +125,7 @@ Relevés pour la tranche 7 ; détail, statuts et écarts : `docs/DRAFT.md` § 2.
 | Résultat de la loterie 2025 | NBA.com | https://www.nba.com/news/2025-nba-draft-lottery-result | primaire |
 | Propriété des choix 2027 | RealGM | https://basketball.realgm.com/nba/draft/future_drafts/summary/2027 et https://basketball.realgm.com/nba/draft/future_drafts/detailed | secondaire |
 | Échelle des rookies 2026 (120 %) | Hoops Rumors | https://www.hoopsrumors.com/2026/07/rookie-scale-salaries-for-2026-nba-first-round-picks.html | secondaire |
+| Dates de naissance des 74 joueurs sans statistiques (effectifs 2026-27) | Basketball-Reference | https://www.basketball-reference.com/teams/<ÉQUIPE>/2027.html (30 pages, relevé brut hors du dépôt) | secondaire |
 | Échelle des rookies 2025 (recoupement de la croissance) | Hoops Rumors | https://www.hoopsrumors.com/2025/07/rookie-scale-salaries-for-2025-nba-first-round-picks.html | secondaire |
 
-Non relevé : la table officielle des probabilités de la loterie 3-2-1 (PDF de la NBA, lecture automatique refusée) ; Antonin la fournit (réponse 13). Les âges de saison (`seasonAge`) viennent du relevé du § 9 (convention de Basketball-Reference, âge au 1er février). Le modèle des prospects, le scouting et le vivier ne reposent sur aucune source : ce sont des choix du modèle.
+Non relevé : la table officielle des probabilités de la loterie 3-2-1 (PDF de la NBA, lecture automatique refusée) ; Antonin la fournit (réponse 13). Les âges de saison (`seasonAge`) viennent du relevé du § 9 (convention de Basketball-Reference, âge au 1er février) ou des dates de naissance ci-dessus. Le modèle des prospects, le scouting et le vivier ne reposent sur aucune source : ce sont des choix du modèle.
