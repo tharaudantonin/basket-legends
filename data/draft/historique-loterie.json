@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-historique-loterie",
+  "note": "Rang du choix propre de chaque équipe aux loteries 2025 et 2026, pour les limites de la 3-2-1 (pas deux n° 1 de suite, pas trois top 5 de suite). Un choix listé sans mention « via » est présumé propre ; les choix d’une équipe listée deux fois sans précision (San Antonio en 2025, Miami en 2026) sont laissés de côté.",
+  "drafts": {
+    "2025": {
+      "dallas": 1,
+      "philadelphia": 3,
+      "charlotte": 4,
+      "utah": 5,
+      "washington": 6,
+      "new-orleans": 7,
+      "brooklyn": 8,
+      "toronto": 9,
+      "houston": 10,
+      "portland": 11,
+      "chicago": 12,
+      "atlanta": 13
+    },
+    "2026": {
+      "washington": 1,
+      "utah": 2,
+      "memphis": 3,
+      "chicago": 4,
+      "indianapolis": 5,
+      "brooklyn": 6,
+      "sacramento": 7,
+      "new-orleans": 8,
+      "dallas": 9,
+      "milwaukee": 10,
+      "clippers": 12,
+      "charlotte": 14
+    }
+  },
+  "sources": [
+    {
+      "fournisseur": "NBA.com",
+      "titre": "2025 NBA Draft Lottery result",
+      "url": "https://www.nba.com/news/2025-nba-draft-lottery-result",
+      "niveau": "primaire",
+      "publieLe": "2025-05-12",
+      "consulteLe": "2026-11-24"
+    },
+    {
+      "fournisseur": "NBA.com",
+      "titre": "2027 NBA Draft Lottery: Odds, history and how it works (résultats 2026 : choix d’Indiana détenu par les Clippers au 5e rang, de New Orleans détenu par Atlanta au 8e, des Clippers détenu par Oklahoma City au 12e)",
+      "url": "https://www.nba.com/news/nba-draft-lottery-explainer",
+      "niveau": "primaire",
+      "publieLe": "2026-11-03",
+      "consulteLe": "2026-11-24"
+    }
+  ]
+}

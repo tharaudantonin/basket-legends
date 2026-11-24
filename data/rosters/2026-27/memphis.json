@@ -25,7 +25,8 @@
     "officialSourceVerification": "pending",
     "note": "Do not infer NBA person IDs, contract type, two-way status, contract terms, or statistics from this file. Verify separately against official NBA records before marking those fields verified.",
     "names": "Noms fictifs aux mêmes initiales, proposés le 24/11/2026 et à relire (nameStatus). La table de correspondance avec les vrais noms est gardée hors du dépôt.",
-    "ratings": "Notes et attributs du modèle notes-v1 (data/modeles/notes-v1.json, docs/NOTES_JOUEURS.md), calculés par npm run notes."
+    "ratings": "Notes et attributs du modèle notes-v2 (data/modeles/notes-v2.json, docs/NOTES_JOUEURS.md), calculés par npm run notes.",
+    "age": "seasonAge : âge au 1er février 2027 (convention de Basketball-Reference pour la saison 2026-27), déduit de l’âge 2025-26 (+ 1) ou 2024-25 (+ 2) de data/statistiques/2025-26/joueurs.json, sinon de la date de naissance relevée le 24/11/2026 sur la page d’effectif 2026-27 de Basketball-Reference (relevé hors du dépôt) ; null si inconnu."
   },
   "units": {
     "canonical": "metric",
@@ -74,16 +75,17 @@
       },
       "lastAttended": "Duke",
       "country": "USA",
+      "seasonAge": 19,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 72,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "a-priori",
         "base": "rang-de-draft",
         "saisonDeReference": null,
-        "calculation": "Modèle notes-v1 : aucune statistique NBA ; note a priori selon le rang de draft 2026."
+        "calculation": "Modèle notes-v2 : aucune statistique NBA ; note a priori selon le rang de draft 2026."
       },
       "attributes": {
         "technique": 72,
@@ -91,6 +93,24 @@
         "mental": 72,
         "tactical": 72,
         "endurance": 72,
+        "details": {
+          "tirCercle": 72,
+          "tirMiDistance": 72,
+          "tirATroisPoints": 72,
+          "lancersFrancs": 72,
+          "passe": 72,
+          "maniement": 72,
+          "defenseExterieure": 72,
+          "defenseInterieure": 72,
+          "interception": 72,
+          "contre": 72,
+          "rebondOffensif": 72,
+          "rebondDefensif": 72,
+          "vitesse": 72,
+          "force": 72,
+          "qiOffensif": 72,
+          "qiDefensif": 72
+        },
         "scale": 100
       },
       "notes": null
@@ -121,16 +141,17 @@
       },
       "lastAttended": "Washington State",
       "country": "USA",
+      "seasonAge": 23,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 75,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1598 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1598 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 73,
@@ -138,6 +159,24 @@
         "mental": 75,
         "tactical": 65,
         "endurance": 74,
+        "details": {
+          "tirCercle": 73,
+          "tirMiDistance": 82,
+          "tirATroisPoints": 67,
+          "lancersFrancs": 80,
+          "passe": 71,
+          "maniement": 73,
+          "defenseExterieure": 68,
+          "defenseInterieure": 73,
+          "interception": 62,
+          "contre": 70,
+          "rebondOffensif": 74,
+          "rebondDefensif": 79,
+          "vitesse": 70,
+          "force": 68,
+          "qiOffensif": 68,
+          "qiDefensif": 71
+        },
         "scale": 100
       },
       "notes": null
@@ -168,16 +207,17 @@
       },
       "lastAttended": "Purdue",
       "country": "Canada",
+      "seasonAge": 24,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 77,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (284 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (284 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 76,
@@ -185,6 +225,24 @@
         "mental": 70,
         "tactical": 67,
         "endurance": 74,
+        "details": {
+          "tirCercle": 86,
+          "tirMiDistance": 78,
+          "tirATroisPoints": 66,
+          "lancersFrancs": 70,
+          "passe": 60,
+          "maniement": 64,
+          "defenseExterieure": 60,
+          "defenseInterieure": 89,
+          "interception": 66,
+          "contre": 86,
+          "rebondOffensif": 83,
+          "rebondDefensif": 84,
+          "vitesse": 50,
+          "force": 95,
+          "qiOffensif": 67,
+          "qiDefensif": 75
+        },
         "scale": 100
       },
       "notes": null
@@ -215,16 +273,17 @@
       },
       "lastAttended": "Syracuse",
       "country": "USA",
+      "seasonAge": 32,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 77,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1695 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1695 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 82,
@@ -232,6 +291,24 @@
         "mental": 76,
         "tactical": 52,
         "endurance": 76,
+        "details": {
+          "tirCercle": 70,
+          "tirMiDistance": 70,
+          "tirATroisPoints": 80,
+          "lancersFrancs": 75,
+          "passe": 58,
+          "maniement": 75,
+          "defenseExterieure": 68,
+          "defenseInterieure": 69,
+          "interception": 61,
+          "contre": 73,
+          "rebondOffensif": 66,
+          "rebondDefensif": 58,
+          "vitesse": 73,
+          "force": 72,
+          "qiOffensif": 64,
+          "qiDefensif": 61
+        },
         "scale": 100
       },
       "notes": null
@@ -262,16 +339,17 @@
       },
       "lastAttended": "Central Florida",
       "country": "USA",
+      "seasonAge": 23,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 69,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1118 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1118 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 64,
@@ -279,6 +357,24 @@
         "mental": 60,
         "tactical": 73,
         "endurance": 67,
+        "details": {
+          "tirCercle": 75,
+          "tirMiDistance": 64,
+          "tirATroisPoints": 68,
+          "lancersFrancs": 60,
+          "passe": 55,
+          "maniement": 57,
+          "defenseExterieure": 73,
+          "defenseInterieure": 75,
+          "interception": 79,
+          "contre": 76,
+          "rebondOffensif": 75,
+          "rebondDefensif": 73,
+          "vitesse": 69,
+          "force": 70,
+          "qiOffensif": 59,
+          "qiDefensif": 75
+        },
         "scale": 100
       },
       "notes": null
@@ -309,16 +405,17 @@
       },
       "lastAttended": "South Carolina",
       "country": "USA",
+      "seasonAge": 22,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 74,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1178 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1178 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 72,
@@ -326,6 +423,24 @@
         "mental": 69,
         "tactical": 66,
         "endurance": 70,
+        "details": {
+          "tirCercle": 77,
+          "tirMiDistance": 71,
+          "tirATroisPoints": 67,
+          "lancersFrancs": 64,
+          "passe": 58,
+          "maniement": 70,
+          "defenseExterieure": 66,
+          "defenseInterieure": 80,
+          "interception": 63,
+          "contre": 81,
+          "rebondOffensif": 70,
+          "rebondDefensif": 75,
+          "vitesse": 67,
+          "force": 69,
+          "qiOffensif": 61,
+          "qiDefensif": 82
+        },
         "scale": 100
       },
       "notes": null
@@ -356,16 +471,17 @@
       },
       "lastAttended": "Virginia",
       "country": "USA",
+      "seasonAge": 29,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 80,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (339 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (339 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 86,
@@ -373,6 +489,24 @@
         "mental": 82,
         "tactical": 81,
         "endurance": 72,
+        "details": {
+          "tirCercle": 68,
+          "tirMiDistance": 77,
+          "tirATroisPoints": 85,
+          "lancersFrancs": 80,
+          "passe": 84,
+          "maniement": 87,
+          "defenseExterieure": 76,
+          "defenseInterieure": 66,
+          "interception": 77,
+          "contre": 68,
+          "rebondOffensif": 69,
+          "rebondDefensif": 66,
+          "vitesse": 80,
+          "force": 65,
+          "qiOffensif": 87,
+          "qiDefensif": 68
+        },
         "scale": 100
       },
       "notes": null
@@ -403,16 +537,17 @@
       },
       "lastAttended": null,
       "country": "Mexico",
+      "seasonAge": 19,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 66,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "a-priori",
         "base": "rang-de-draft",
         "saisonDeReference": null,
-        "calculation": "Modèle notes-v1 : aucune statistique NBA ; note a priori selon le rang de draft 2026."
+        "calculation": "Modèle notes-v2 : aucune statistique NBA ; note a priori selon le rang de draft 2026."
       },
       "attributes": {
         "technique": 66,
@@ -420,6 +555,24 @@
         "mental": 66,
         "tactical": 66,
         "endurance": 66,
+        "details": {
+          "tirCercle": 66,
+          "tirMiDistance": 66,
+          "tirATroisPoints": 66,
+          "lancersFrancs": 66,
+          "passe": 66,
+          "maniement": 66,
+          "defenseExterieure": 66,
+          "defenseInterieure": 66,
+          "interception": 66,
+          "contre": 66,
+          "rebondOffensif": 66,
+          "rebondDefensif": 66,
+          "vitesse": 66,
+          "force": 66,
+          "qiOffensif": 66,
+          "qiDefensif": 66
+        },
         "scale": 100
       },
       "notes": null
@@ -450,16 +603,17 @@
       },
       "lastAttended": "Tennessee",
       "country": "USA",
+      "seasonAge": 24,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 67,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (673 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (673 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 50,
@@ -467,6 +621,24 @@
         "mental": 64,
         "tactical": 75,
         "endurance": 69,
+        "details": {
+          "tirCercle": 61,
+          "tirMiDistance": 52,
+          "tirATroisPoints": 55,
+          "lancersFrancs": 55,
+          "passe": 69,
+          "maniement": 62,
+          "defenseExterieure": 80,
+          "defenseInterieure": 65,
+          "interception": 84,
+          "contre": 71,
+          "rebondOffensif": 68,
+          "rebondDefensif": 62,
+          "vitesse": 80,
+          "force": 64,
+          "qiOffensif": 52,
+          "qiDefensif": 69
+        },
         "scale": 100
       },
       "notes": null
@@ -497,16 +669,17 @@
       },
       "lastAttended": "Iowa",
       "country": "USA",
+      "seasonAge": 26,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 68,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1333 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1333 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 54,
@@ -514,6 +687,24 @@
         "mental": 61,
         "tactical": 68,
         "endurance": 70,
+        "details": {
+          "tirCercle": 76,
+          "tirMiDistance": 67,
+          "tirATroisPoints": 54,
+          "lancersFrancs": 61,
+          "passe": 63,
+          "maniement": 52,
+          "defenseExterieure": 74,
+          "defenseInterieure": 70,
+          "interception": 74,
+          "contre": 71,
+          "rebondOffensif": 77,
+          "rebondDefensif": 60,
+          "vitesse": 67,
+          "force": 71,
+          "qiOffensif": 62,
+          "qiDefensif": 72
+        },
         "scale": 100
       },
       "notes": null
@@ -544,16 +735,17 @@
       },
       "lastAttended": "Vanderbilt",
       "country": "USA",
+      "seasonAge": 26,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 73,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (212 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (212 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 68,
@@ -561,6 +753,24 @@
         "mental": 74,
         "tactical": 81,
         "endurance": 70,
+        "details": {
+          "tirCercle": 63,
+          "tirMiDistance": 69,
+          "tirATroisPoints": 68,
+          "lancersFrancs": 70,
+          "passe": 79,
+          "maniement": 76,
+          "defenseExterieure": 86,
+          "defenseInterieure": 57,
+          "interception": 88,
+          "contre": 68,
+          "rebondOffensif": 71,
+          "rebondDefensif": 65,
+          "vitesse": 94,
+          "force": 52,
+          "qiOffensif": 69,
+          "qiDefensif": 68
+        },
         "scale": 100
       },
       "notes": null
@@ -591,16 +801,17 @@
       },
       "lastAttended": "Boston College",
       "country": "Netherlands",
+      "seasonAge": 26,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 70,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1159 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1159 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 68,
@@ -608,6 +819,24 @@
         "mental": 67,
         "tactical": 61,
         "endurance": 66,
+        "details": {
+          "tirCercle": 79,
+          "tirMiDistance": 78,
+          "tirATroisPoints": 71,
+          "lancersFrancs": 71,
+          "passe": 67,
+          "maniement": 66,
+          "defenseExterieure": 54,
+          "defenseInterieure": 79,
+          "interception": 59,
+          "contre": 79,
+          "rebondOffensif": 75,
+          "rebondDefensif": 78,
+          "vitesse": 52,
+          "force": 75,
+          "qiOffensif": 64,
+          "qiDefensif": 63
+        },
         "scale": 100
       },
       "notes": null
@@ -638,16 +867,17 @@
       },
       "lastAttended": "Marquette",
       "country": "Canada",
+      "seasonAge": 24,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 73,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (984 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (984 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 82,
@@ -655,6 +885,24 @@
         "mental": 65,
         "tactical": 67,
         "endurance": 67,
+        "details": {
+          "tirCercle": 80,
+          "tirMiDistance": 78,
+          "tirATroisPoints": 78,
+          "lancersFrancs": 66,
+          "passe": 57,
+          "maniement": 65,
+          "defenseExterieure": 72,
+          "defenseInterieure": 69,
+          "interception": 76,
+          "contre": 69,
+          "rebondOffensif": 75,
+          "rebondDefensif": 70,
+          "vitesse": 72,
+          "force": 75,
+          "qiOffensif": 73,
+          "qiDefensif": 70
+        },
         "scale": 100
       },
       "notes": null
@@ -685,16 +933,17 @@
       },
       "lastAttended": "Brigham Young",
       "country": "USA",
+      "seasonAge": 25,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 64,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "a-priori",
         "base": "rang-de-draft",
         "saisonDeReference": null,
-        "calculation": "Modèle notes-v1 : aucune statistique NBA ; note a priori selon le rang de draft 2026."
+        "calculation": "Modèle notes-v2 : aucune statistique NBA ; note a priori selon le rang de draft 2026."
       },
       "attributes": {
         "technique": 64,
@@ -702,6 +951,24 @@
         "mental": 64,
         "tactical": 64,
         "endurance": 64,
+        "details": {
+          "tirCercle": 64,
+          "tirMiDistance": 64,
+          "tirATroisPoints": 64,
+          "lancersFrancs": 64,
+          "passe": 64,
+          "maniement": 64,
+          "defenseExterieure": 64,
+          "defenseInterieure": 64,
+          "interception": 64,
+          "contre": 64,
+          "rebondOffensif": 64,
+          "rebondDefensif": 64,
+          "vitesse": 64,
+          "force": 64,
+          "qiOffensif": 64,
+          "qiDefensif": 64
+        },
         "scale": 100
       },
       "notes": null
@@ -732,16 +999,17 @@
       },
       "lastAttended": "West Virginia",
       "country": "USA",
+      "seasonAge": 24,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 73,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (830 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (830 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 79,
@@ -749,6 +1017,24 @@
         "mental": 75,
         "tactical": 79,
         "endurance": 68,
+        "details": {
+          "tirCercle": 61,
+          "tirMiDistance": 72,
+          "tirATroisPoints": 82,
+          "lancersFrancs": 76,
+          "passe": 81,
+          "maniement": 79,
+          "defenseExterieure": 78,
+          "defenseInterieure": 58,
+          "interception": 76,
+          "contre": 60,
+          "rebondOffensif": 71,
+          "rebondDefensif": 67,
+          "vitesse": 86,
+          "force": 61,
+          "qiOffensif": 85,
+          "qiDefensif": 70
+        },
         "scale": 100
       },
       "notes": null
@@ -779,16 +1065,17 @@
       },
       "lastAttended": "Connecticut",
       "country": "USA",
+      "seasonAge": 26,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 75,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1714 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1714 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 88,
@@ -796,6 +1083,24 @@
         "mental": 85,
         "tactical": 81,
         "endurance": 71,
+        "details": {
+          "tirCercle": 59,
+          "tirMiDistance": 87,
+          "tirATroisPoints": 92,
+          "lancersFrancs": 94,
+          "passe": 91,
+          "maniement": 85,
+          "defenseExterieure": 74,
+          "defenseInterieure": 58,
+          "interception": 66,
+          "contre": 54,
+          "rebondOffensif": 61,
+          "rebondDefensif": 57,
+          "vitesse": 75,
+          "force": 63,
+          "qiOffensif": 94,
+          "qiDefensif": 68
+        },
         "scale": 100
       },
       "notes": null
@@ -826,16 +1131,17 @@
       },
       "lastAttended": "Washington",
       "country": "USA",
+      "seasonAge": 25,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 72,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1317 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1317 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 73,
@@ -843,6 +1149,24 @@
         "mental": 65,
         "tactical": 52,
         "endurance": 70,
+        "details": {
+          "tirCercle": 81,
+          "tirMiDistance": 78,
+          "tirATroisPoints": 64,
+          "lancersFrancs": 66,
+          "passe": 53,
+          "maniement": 58,
+          "defenseExterieure": 51,
+          "defenseInterieure": 84,
+          "interception": 50,
+          "contre": 90,
+          "rebondOffensif": 78,
+          "rebondDefensif": 74,
+          "vitesse": 56,
+          "force": 80,
+          "qiOffensif": 66,
+          "qiDefensif": 61
+        },
         "scale": 100
       },
       "notes": null
@@ -873,16 +1197,17 @@
       },
       "lastAttended": "Washington State",
       "country": "USA",
+      "seasonAge": 23,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
         "overall": 74,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1821 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1821 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 68,
@@ -890,6 +1215,24 @@
         "mental": 72,
         "tactical": 59,
         "endurance": 75,
+        "details": {
+          "tirCercle": 66,
+          "tirMiDistance": 66,
+          "tirATroisPoints": 73,
+          "lancersFrancs": 70,
+          "passe": 59,
+          "maniement": 67,
+          "defenseExterieure": 73,
+          "defenseInterieure": 62,
+          "interception": 70,
+          "contre": 59,
+          "rebondOffensif": 67,
+          "rebondDefensif": 59,
+          "vitesse": 71,
+          "force": 66,
+          "qiOffensif": 60,
+          "qiDefensif": 60
+        },
         "scale": 100
       },
       "notes": null

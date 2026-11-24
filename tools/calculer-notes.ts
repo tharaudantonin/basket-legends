@@ -1,4 +1,4 @@
-// `npm run notes` : applique le modèle de notes (data/modeles/notes-v1.json) aux effectifs de data/rosters/2026-27/.
+// `npm run notes` : applique le modèle de notes (data/modeles/notes-v2.json) aux effectifs de data/rosters/2026-27/.
 // Les effectifs se modifient par script : cet outil réécrit `ratings` et `attributes` de chaque joueur, et rien d'autre.
 // Refaisable : mêmes statistiques et mêmes paramètres → mêmes notes (vérifié par les tests de packages/data).
 // Une note corrigée à la main garde sa valeur si `ratings.correction` vaut « corrigé par Antonin ».
@@ -6,7 +6,7 @@ import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { calculerNotes, schemaEffectif, schemaParametresNotes, schemaStatistiquesJoueurs, type NotesJoueur } from '@basket-legends/data';
 
-export const FICHIER_MODELE = 'data/modeles/notes-v1.json';
+export const FICHIER_MODELE = 'data/modeles/notes-v2.json';
 
 /** Les notes du modèle pour tous les joueurs des effectifs, lues depuis le dépôt. */
 export function notesDuDepot(racine: string): Map<string, NotesJoueur> {
@@ -16,8 +16,15 @@ export function notesDuDepot(racine: string): Map<string, NotesJoueur> {
   const dossier = 'data/rosters/2026-27';
   const joueurs = readdirSync(join(racine, dossier))
     .filter((f) => f.endsWith('.json'))
-    .flatMap((f) => (json(`${dossier}/${f}`) as { players: { id: string; measurements: { height: { heightCm: number } } }[] }).players)
-    .map((j) => ({ id: j.id, tailleCm: j.measurements.height.heightCm }));
+    .flatMap(
+      (f) =>
+        (
+          json(`${dossier}/${f}`) as {
+            players: { id: string; measurements: { height: { heightCm: number }; weight: { weightKg: number } } }[];
+          }
+        ).players,
+    )
+    .map((j) => ({ id: j.id, tailleCm: j.measurements.height.heightCm, poidsKg: j.measurements.weight.weightKg }));
   return new Map(calculerNotes(joueurs, stats, P).map((n) => [n.id, n]));
 }
 
@@ -44,6 +51,7 @@ export function noteDuJoueur(n: NotesJoueur, version: string) {
       mental: n.mental,
       tactical: n.tactique,
       endurance: n.endurance,
+      details: n.details,
       scale: 100,
     },
   };
@@ -69,7 +77,7 @@ if (appelDirect) {
       }
       Object.assign(j, noteDuJoueur(notes.get(j.id as string)!, version));
     }
-    brut.provenance.ratings = `Notes et attributs du modèle ${version} (data/modeles/notes-v1.json, docs/NOTES_JOUEURS.md), calculés par npm run notes.`;
+    brut.provenance.ratings = `Notes et attributs du modèle ${version} (data/modeles/notes-v2.json, docs/NOTES_JOUEURS.md), calculés par npm run notes.`;
     schemaEffectif.parse(brut);
     writeFileSync(join(dossier, f), JSON.stringify(brut, null, 2) + '\n', 'utf8');
   }

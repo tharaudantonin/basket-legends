@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "datasetId": "basket-legends-moteur-match-v4",
+  "datasetId": "basket-legends-moteur-match-v5",
   "status": "calibre",
-  "note": "Réglages du modèle de match (tranche 5) : ceux de la v3, plus les effets des plans de jeu et du défenseur direct. Calibrés sur 1 000 matchs (npm run sonde) contre les moyennes de la saison régulière 2025-2026 avec le plan par défaut ; les effets des plans et du défenseur direct sont des choix du modèle, sans cible sourcée.",
+  "note": "Réglages du modèle de match (tranche 7) : ceux de la v4, lus sur les attributs détaillés du modèle de notes v2, plus la préférence de zone du tireur ; réussites de base recalées. Calibrés sur 1 000 matchs (npm run sonde) contre les moyennes de la saison régulière 2025-2026 avec le plan par défaut ; les effets des plans (validés le 24/11/2026) et du défenseur direct sont des choix du modèle.",
   "possession": {
     "dureeMoyenneSecondes": 13.95,
     "dureeEcartSecondes": 4.5,
@@ -11,9 +11,9 @@
   },
   "tirs": {
     "repartition": {
-      "cercle": 0.249,
+      "cercle": 0.235,
       "miDistance": 0.356,
-      "troisPoints": 0.395
+      "troisPoints": 0.409
     },
     "profilParGroupe": {
       "meneur": {
@@ -33,22 +33,23 @@
       }
     },
     "reussiteDeBase": {
-      "cercle": 0.661,
-      "miDistance": 0.417,
-      "troisPoints": 0.324
+      "cercle": 0.653,
+      "miDistance": 0.427,
+      "troisPoints": 0.346
     },
     "sensibiliteParPoint": 0.006,
     "avantageDomicile": 0.02,
-    "usageEchelle": 35
+    "usageEchelle": 35,
+    "preferenceZoneEchelle": 20
   },
   "lancersFrancs": {
-    "reussiteDeBase": 0.763,
+    "reussiteDeBase": 0.788,
     "sensibiliteParPoint": 0.006,
     "reussiteMin": 0.4,
     "reussiteMax": 0.95
   },
   "pertesDeBalle": {
-    "probabiliteDeBase": 0.125,
+    "probabiliteDeBase": 0.121,
     "sensibiliteParPoint": 0.003,
     "partInterceptions": 0.571
   },
@@ -62,7 +63,7 @@
     "horsTirParPossession": 0.1
   },
   "rebonds": {
-    "offensifDeBase": 0.256,
+    "offensifDeBase": 0.266,
     "sensibiliteParPoint": 0.004,
     "poidsParGroupe": {
       "meneur": 0.6,
@@ -81,9 +82,9 @@
   },
   "contres": {
     "probabiliteSurEchecParType": {
-      "cercle": 0.325,
-      "miDistance": 0.108,
-      "troisPoints": 0.033
+      "cercle": 0.34,
+      "miDistance": 0.113,
+      "troisPoints": 0.034
     },
     "poidsParGroupe": {
       "meneur": 0.4,

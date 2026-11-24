@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-modele-notes-v2",
+  "version": "notes-v2",
+  "status": "proposition",
+  "note": "Modèle de notes v2 (tranche 7, 24/11/2026, réponse 14). Reprend sans changement les paramètres validés du v1 (note globale, quatre familles, endurance, ancrages, notes a priori) et ajoute 16 attributs détaillés, chacun recalé sur les ancrages des attributs. Les poids détaillés sont des choix du modèle, à valider par Antonin. Les statistiques ne séparent pas les tirs près du cercle et à mi-distance : ces deux attributs sont estimés (adresse à deux points, lancers, taille).",
+  "statistiques": "data/statistiques/2025-26/joueurs.json",
+  "retrecissement": {
+    "minutesDePrior": 400,
+    "tentativesDePriorTirs": 150,
+    "tentativesDePriorTrois": 100,
+    "tentativesDePriorLancers": 50,
+    "minutesPourLaReference": 500
+  },
+  "poids": {
+    "globale": {
+      "gameScore": 1,
+      "minutesParMatch": 0.8,
+      "partTitulaire": 0.3
+    },
+    "technique": {
+      "ts": 1,
+      "points": 0.6,
+      "trois": 0.4,
+      "lancers": 0.4,
+      "troisTentes": 0.3
+    },
+    "physique": {
+      "rebondsOffensifs": 0.6,
+      "rebondsDefensifs": 0.6,
+      "contres": 0.5,
+      "lancersTentes": 0.3,
+      "taille": 0.4
+    },
+    "mental": {
+      "usage": 0.6,
+      "passesSurPertes": 0.5,
+      "lancers": 0.3,
+      "minutesParMatch": 0.5
+    },
+    "tactique": {
+      "passes": 0.7,
+      "interceptions": 0.7,
+      "contres": 0.3,
+      "rebondsDefensifs": 0.3,
+      "fautes": -0.3,
+      "pertes": -0.3
+    },
+    "endurance": {
+      "minutesParMatch": 1,
+      "partTitulaire": 0.3
+    }
+  },
+  "ancrages": {
+    "globale": [
+      [
+        0,
+        58
+      ],
+      [
+        0.1,
+        63
+      ],
+      [
+        0.25,
+        67
+      ],
+      [
+        0.5,
+        72
+      ],
+      [
+        0.75,
+        76
+      ],
+      [
+        0.9,
+        81
+      ],
+      [
+        0.97,
+        87
+      ],
+      [
+        0.99,
+        91
+      ],
+      [
+        1,
+        96
+      ]
+    ],
+    "attributs": [
+      [
+        0,
+        50
+      ],
+      [
+        0.1,
+        58
+      ],
+      [
+        0.25,
+        64
+      ],
+      [
+        0.5,
+        70
+      ],
+      [
+        0.75,
+        76
+      ],
+      [
+        0.9,
+        82
+      ],
+      [
+        0.97,
+        88
+      ],
+      [
+        1,
+        95
+      ]
+    ]
+  },
+  "sansStatistique": {
+    "parRangDeDraft": [
+      [
+        1,
+        73
+      ],
+      [
+        5,
+        70
+      ],
+      [
+        14,
+        67
+      ],
+      [
+        30,
+        64
+      ],
+      [
+        60,
+        60
+      ]
+    ],
+    "nonDrafte": 58
+  },
+  "bornes": {
+    "min": 40,
+    "max": 99
+  },
+  "poidsDetailles": {
+    "tirCercle": {
+      "deux": 0.6,
+      "rebondsOffensifs": 0.3,
+      "taille": 0.3,
+      "lancersTentes": 0.2
+    },
+    "tirMiDistance": {
+      "lancers": 0.6,
+      "deux": 0.4
+    },
+    "tirATroisPoints": {
+      "trois": 1,
+      "troisTentes": 0.5
+    },
+    "lancersFrancs": {
+      "lancers": 1
+    },
+    "passe": {
+      "passes": 1,
+      "passesSurPertes": 0.4
+    },
+    "maniement": {
+      "usage": 0.5,
+      "passesSurPertes": 0.5,
+      "lancersTentes": 0.2
+    },
+    "defenseExterieure": {
+      "interceptions": 0.6,
+      "minutesParMatch": 0.3,
+      "taille": -0.2,
+      "fautes": -0.2
+    },
+    "defenseInterieure": {
+      "contres": 0.7,
+      "rebondsDefensifs": 0.4,
+      "taille": 0.4,
+      "fautes": -0.2
+    },
+    "interception": {
+      "interceptions": 1
+    },
+    "contre": {
+      "contres": 1,
+      "taille": 0.2
+    },
+    "rebondOffensif": {
+      "rebondsOffensifs": 1
+    },
+    "rebondDefensif": {
+      "rebondsDefensifs": 1
+    },
+    "vitesse": {
+      "interceptions": 0.4,
+      "lancersTentes": 0.3,
+      "taille": -0.5,
+      "poids": -0.3
+    },
+    "force": {
+      "poids": 0.6,
+      "rebondsOffensifs": 0.3,
+      "lancersTentes": 0.2
+    },
+    "qiOffensif": {
+      "passesSurPertes": 0.6,
+      "ts": 0.6,
+      "passes": 0.2
+    },
+    "qiDefensif": {
+      "interceptions": 0.3,
+      "contres": 0.3,
+      "rebondsDefensifs": 0.3,
+      "fautes": -0.5
+    }
+  },
+  "confianceDetails": {
+    "tirCercle": "estime",
+    "tirMiDistance": "estime",
+    "tirATroisPoints": "mesure",
+    "lancersFrancs": "mesure",
+    "passe": "derive",
+    "maniement": "estime",
+    "defenseExterieure": "estime",
+    "defenseInterieure": "estime",
+    "interception": "derive",
+    "contre": "derive",
+    "rebondOffensif": "derive",
+    "rebondDefensif": "derive",
+    "vitesse": "estime",
+    "force": "estime",
+    "qiOffensif": "estime",
+    "qiDefensif": "estime"
+  }
+}

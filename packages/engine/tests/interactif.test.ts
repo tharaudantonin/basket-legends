@@ -229,7 +229,18 @@ describe('plans de jeu et défenseur direct', () => {
         const e = entree(8000 + g, 'boston', 'new-york');
         const exterieur = {
           ...e.exterieur,
-          joueurs: e.exterieur.joueurs.map((j) => ({ ...j, tactique: Math.min(100, Math.max(1, j.tactique + bonus)) })),
+          joueurs: e.exterieur.joueurs.map((j) => {
+            const borne = (x: number) => Math.min(100, Math.max(1, x + bonus));
+            // Tranche 7 : la défense se lit sur les attributs détaillés.
+            return {
+              ...j,
+              detail: {
+                ...j.detail,
+                defenseExterieure: borne(j.detail.defenseExterieure),
+                defenseInterieure: borne(j.detail.defenseInterieure),
+              },
+            };
+          }),
         };
         const r = simulerMatch({
           ...e,

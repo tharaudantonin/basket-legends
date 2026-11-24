@@ -94,6 +94,31 @@ export interface OptionsSimulation {
   arrets?: boolean;
 }
 
+/**
+ * Tranche 7 : les attributs détaillés du modèle de notes v2 (docs/NOTES_JOUEURS.md § 8), sur 100. Le moteur les lit
+ * à la place des quatre familles pour chaque action (tir par zone, lancers, passe, perte, défense, rebond, contre).
+ */
+export const ATTRIBUTS_DETAILLES = [
+  'tirCercle',
+  'tirMiDistance',
+  'tirATroisPoints',
+  'lancersFrancs',
+  'passe',
+  'maniement',
+  'defenseExterieure',
+  'defenseInterieure',
+  'interception',
+  'contre',
+  'rebondOffensif',
+  'rebondDefensif',
+  'vitesse',
+  'force',
+  'qiOffensif',
+  'qiDefensif',
+] as const;
+export type AttributDetaille = (typeof ATTRIBUTS_DETAILLES)[number];
+export type AttributsDetailles = Record<AttributDetaille, number>;
+
 /** Ce que le moteur lit d'un joueur. Les notes sont sur 100 (provisoires jusqu'au modèle de notes v1, tranche 2). */
 export interface JoueurDuMatch {
   id: string;
@@ -109,6 +134,8 @@ export interface JoueurDuMatch {
   /** Tranche 4 : endurance (1-100) ; 70 = fatigue moyenne du modèle. */
   endurance: number;
   tailleCm: number;
+  /** Tranche 7 : attributs détaillés (modèle de notes v2). */
+  detail: AttributsDetailles;
 }
 
 /** Une équipe prête à jouer : les 5 premiers joueurs sont les titulaires, les suivants le banc, dans l'ordre de rotation. */
@@ -163,7 +190,7 @@ export interface ReglesMatch {
 type ParTir = Record<TypeTir, number>;
 type ParGroupe = Record<Groupe, number>;
 
-/** Les réglages du modèle (data/moteur/match-v4.json), calibrés en tranche 2 et complétés à chaque tranche. */
+/** Les réglages du modèle (data/moteur/match-v5.json), calibrés en tranche 2 et complétés à chaque tranche. */
 export interface ReglagesMatch {
   possession: {
     dureeMoyenneSecondes: number;
@@ -178,6 +205,8 @@ export interface ReglagesMatch {
     sensibiliteParPoint: number;
     avantageDomicile: number;
     usageEchelle: number;
+    /** Tranche 7 : préférence de zone selon l'adresse du tireur (absente : aucune préférence, comme avant la v5). */
+    preferenceZoneEchelle?: number;
   };
   lancersFrancs: { reussiteDeBase: number; sensibiliteParPoint: number; reussiteMin: number; reussiteMax: number };
   pertesDeBalle: { probabiliteDeBase: number; sensibiliteParPoint: number; partInterceptions: number };

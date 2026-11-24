@@ -1,6 +1,7 @@
 // Schémas Zod des données de référence (tranche 0). Ils décrivent les fichiers tels qu'ils sont dans `data/` :
 // les noms de champs déjà établis sont conservés (CLAUDE.md, « Conventions de code »).
 import { z } from 'zod';
+import { ATTRIBUTS_DETAILLES, type AttributDetaille } from '@basket-legends/engine';
 
 const hex = z.string().regex(/^#[0-9A-F]{6}$/, 'couleur HEX en majuscules attendue (#RRGGBB)');
 const date = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'date AAAA-MM-JJ attendue');
@@ -66,10 +67,21 @@ export const schemaJoueur = z.strictObject({
   measurements: z.strictObject({ height: taille, weight: poids }),
   lastAttended: z.string().nullable(),
   country: z.string().min(2),
+  /** Tranche 7 : âge au 1er février 2027 (convention Basketball-Reference), déduit des statistiques ; null si inconnu. */
+  seasonAge: z.number().int().min(17).max(45).nullable(),
   sourcePlayerId: z.string().nullable(),
   rosterStatus: z.string(),
   ratings: z.looseObject({ overall: note, scale: z.literal(100), source: z.string(), status: z.string() }),
-  attributes: z.strictObject({ technique: note, physical: note, mental: note, tactical: note, endurance: note, scale: z.literal(100) }),
+  attributes: z.strictObject({
+    technique: note,
+    physical: note,
+    mental: note,
+    tactical: note,
+    endurance: note,
+    /** Tranche 7 : attributs détaillés du modèle de notes v2. */
+    details: z.strictObject(Object.fromEntries(ATTRIBUTS_DETAILLES.map((a) => [a, note])) as Record<AttributDetaille, typeof note>),
+    scale: z.literal(100),
+  }),
   notes: z.strictObject({ archetype: z.string().optional() }).nullable(),
 });
 
@@ -88,6 +100,8 @@ const listeParInitiale = z.record(z.string(), z.array(z.string().min(1)));
 export const schemaBanques = z.looseObject({
   schemaVersion: z.literal(1),
   culturesParPays: z.record(z.string(), z.strictObject({ prenoms: z.string(), noms: z.string() })),
+  /** Tranche 7 : culture d'un pays pour la génération des joueurs futurs, quand elle diffère de celle du snapshot. */
+  culturesParPaysGeneration: z.record(z.string(), z.strictObject({ prenoms: z.string(), noms: z.string() })).optional(),
   cultures: z.record(z.string(), z.strictObject({ prenoms: listeParInitiale.optional(), noms: listeParInitiale.optional() })),
 });
 
@@ -183,6 +197,8 @@ export const schemaReglagesMatch = z.strictObject({
     sensibiliteParPoint: z.number().min(0),
     avantageDomicile: z.number(),
     usageEchelle: positif,
+    /** Tranche 7 : un joueur tire plus souvent dans la zone où il est adroit (échelle de l'exponentielle, en points). */
+    preferenceZoneEchelle: positif.optional(),
   }),
   lancersFrancs: z.strictObject({ reussiteDeBase: proba, sensibiliteParPoint: z.number().min(0), reussiteMin: proba, reussiteMax: proba }),
   pertesDeBalle: z.strictObject({ probabiliteDeBase: proba, sensibiliteParPoint: z.number().min(0), partInterceptions: proba }),
@@ -363,6 +379,10 @@ export const schemaParametresNotes = z.strictObject({
   ancrages: z.strictObject({ globale: ancrages, attributs: ancrages }),
   sansStatistique: z.strictObject({ parRangDeDraft: ancrages, nonDrafte: z.number().int().min(40).max(67) }),
   bornes: z.strictObject({ min: z.number().int().min(1), max: z.number().int().max(100) }),
+  /** Tranche 7 (modèle v2) : un indice par attribut détaillé, recalé sur les ancrages des attributs. */
+  poidsDetailles: z.record(z.enum(ATTRIBUTS_DETAILLES), poidsIndice).optional(),
+  /** Tranche 7 : niveau de confiance de chaque attribut détaillé (mesuré, dérivé d'une statistique, ou estimé). */
+  confianceDetails: z.record(z.enum(ATTRIBUTS_DETAILLES), z.enum(['mesure', 'derive', 'estime'])).optional(),
 });
 
 export type TotauxSaison = z.infer<typeof schemaTotauxSaison>;
@@ -555,3 +575,149 @@ export const schemaContrats = z.strictObject({
 
 export type CbaFichier = z.infer<typeof schemaCba>;
 export type ContratsFichier = z.infer<typeof schemaContrats>;
+
+// --- Tranche 7 : Draft (loterie, historique, propriété des choix, modèle, échelle des rookies). ---
+
+const sourceDraft = z.strictObject({
+  fournisseur: z.string().min(1),
+  titre: z.string().min(1),
+  url: z.url(),
+  niveau: z.enum(['primaire', 'secondaire']),
+  publieLe: date.optional(),
+  consulteLe: date,
+});
+const plage = z.tuple([z.number().int().min(1).max(60), z.number().int().min(1).max(60)]);
+
+export const schemaLoterie = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.string().regex(/^basket-legends-loterie-\d{4}-\d{4}$/),
+  id: z.string(),
+  drafts: z.array(z.number().int()).min(1),
+  statut: z.enum(['a-recouper', 'valide']),
+  note: z.string(),
+  choixTires: z.number().int().min(1).max(30),
+  categories: z.array(
+    z.strictObject({
+      id: z.enum(['releguees', 'non-qualifiees', 'play-in-9-10', 'perdants-7-8']),
+      boules: z.number().int().min(1),
+      equipes: z.number().int().min(1),
+      plancher: z.number().int().min(1),
+      definition: z.string(),
+    }),
+  ),
+  premierChoixInterditApresUnPremier: z.boolean(),
+  limiteTop: z.strictObject({ top: z.number().int().min(1), draftsConsecutives: z.number().int().min(2) }),
+  apresLaLoterie: z.string(),
+  apartirDe2030: z.string(),
+  sources: z.array(sourceDraft).min(1),
+});
+
+export const schemaHistoriqueLoterie = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.literal('basket-legends-historique-loterie'),
+  note: z.string(),
+  drafts: z.record(z.string().regex(/^\d{4}$/), z.record(idFranchise, z.number().int().min(1).max(30))),
+  sources: z.array(sourceDraft).min(1),
+});
+
+const attributionChoix = z.strictObject({ beneficiaire: z.string(), rangs: plage.optional(), sinon: z.string().optional() });
+const regleChoix = z.strictObject({
+  membres: z.array(z.union([z.strictObject({ original: idFranchise, rangs: plage.optional() }), z.strictObject({ detenteur: z.string().regex(/^@/) })])).min(1),
+  attributions: z.record(z.string().regex(/^\d+$/), z.array(attributionChoix)),
+  condition: z.strictObject({ original: idFranchise, rangs: plage }).optional(),
+  attributionsSinon: z.record(z.string().regex(/^\d+$/), z.array(attributionChoix)).optional(),
+  description: z.string().min(1),
+});
+export const schemaChoixDraft = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.string().regex(/^basket-legends-choix-\d{4}$/),
+  annee: z.number().int(),
+  statut: z.enum(['a-recouper', 'valide']),
+  note: z.string(),
+  tours: z.strictObject({ '1': z.array(regleChoix), '2': z.array(regleChoix) }),
+  ecarts: z.array(z.string()),
+  sources: z.array(sourceDraft).min(1),
+});
+
+const parAttributDetaille = z.partialRecord(z.enum(ATTRIBUTS_DETAILLES), z.number());
+export const schemaModeleDraft = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.literal('basket-legends-modele-draft'),
+  statut: z.enum(['proposition', 'valide']),
+  note: z.string(),
+  classe: z.strictObject({
+    taille: z.number().int().min(60),
+    ages: z.record(z.string().regex(/^\d+$/), z.number().min(0)),
+    origines: z.strictObject({ universite: z.number().min(0), international: z.number().min(0), 'g-league': z.number().min(0) }),
+    postes: z.partialRecord(z.enum(['G', 'F', 'C', 'G-F', 'F-G', 'F-C', 'C-F']), z.number().min(0)),
+    tailleParPoste: z.record(z.string(), z.tuple([z.number(), z.number().min(0)])),
+    imcMoyen: z.number().min(15).max(35),
+    paysParOrigine: z.strictObject({
+      universite: z.record(z.string(), z.number().min(0)),
+      international: z.record(z.string(), z.number().min(0)),
+      'g-league': z.record(z.string(), z.number().min(0)),
+    }),
+    note: z.strictObject({ moyenne: z.number(), ecartTalent: z.number(), parAnnee: z.number(), bruit: z.number(), min: z.number(), max: z.number() }),
+    potentiel: z.strictObject({ marge: z.number(), ecartTalent: z.number(), ecartPropre: z.number(), parAnneeDAge: z.number(), max: z.number() }),
+    details: z.strictObject({ ecart: z.number(), min: z.number(), max: z.number(), profilParGroupe: z.record(z.enum(['meneur', 'ailier', 'interieur']), parAttributDetaille) }),
+  }),
+  scouting: z.strictObject({
+    ecartInitial: z.strictObject({ note: z.number().min(0), potentiel: z.number().min(0), details: z.number().min(0) }),
+    observationsParDefaut: z.number().int().min(0),
+    budgetObservations: z.number().int().min(0),
+    observationsMax: z.number().int().min(1),
+    observationsDuConsensus: z.number().int().min(0),
+  }),
+  choixIa: z.strictObject({ poidsNote: z.number(), poidsPotentiel: z.number(), malusParAnnee: z.number(), besoinDePoste: z.number() }),
+});
+
+export const schemaEchelleRookies = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.literal('basket-legends-echelle-rookies'),
+  note: z.string(),
+  draftDeReference: z.number().int(),
+  plafondDeReference: z.number().int().positive(),
+  bornes: z.strictObject({ minimum: z.number(), maximum: z.number(), definition: z.string() }),
+  saisonsGaranties: z.number().int(),
+  optionsEquipe: z.array(z.number().int()),
+  evolution: z.strictObject({ regle: z.literal('proportionnelle-au-plafond'), statut: z.enum(['derive', 'valide']), definition: z.string() }),
+  rangs: z.array(z.strictObject({ rang: z.number().int().min(1).max(30), montants: z.array(z.number().int().positive()).length(4) })).length(30),
+  sources: z.array(sourceDraft).min(1),
+});
+
+export type LoterieFichier = z.infer<typeof schemaLoterie>;
+export type HistoriqueLoterieFichier = z.infer<typeof schemaHistoriqueLoterie>;
+export type ChoixDraftFichier = z.infer<typeof schemaChoixDraft>;
+export type ModeleDraftFichier = z.infer<typeof schemaModeleDraft>;
+export type EchelleRookiesFichier = z.infer<typeof schemaEchelleRookies>;
+
+// --- Tranche 7 : vivier de joueurs originaux hors NBA (data/vivier/). ---
+const noteGeneree = z.number().int().min(0).max(100);
+export const schemaJoueurGenere = z.strictObject({
+  id: z.string().regex(/^g\d{4}$/),
+  statut: z.enum(['developpement', 'libre']),
+  origine: z.enum(['universite', 'international', 'g-league']),
+  prenom: z.string().min(1),
+  nom: z.string().min(1),
+  age: z.number().int().min(17).max(45),
+  poste: z.enum(['G', 'F', 'C', 'G-F', 'F-G', 'F-C', 'C-F']),
+  tailleCm: z.number().int().min(160).max(240),
+  poidsKg: z.number().int().min(60).max(170),
+  pays: z.string().min(2),
+  /** Échelle hors NBA (décision du 24/11/2026). */
+  note: z.number().int().min(40).max(67),
+  potentiel: z.number().int().min(40).max(99),
+  familles: z.strictObject({ technique: noteGeneree, physique: noteGeneree, mental: noteGeneree, tactique: noteGeneree, endurance: noteGeneree }),
+  details: z.strictObject(Object.fromEntries(ATTRIBUTS_DETAILLES.map((a) => [a, noteGeneree])) as Record<AttributDetaille, typeof noteGeneree>),
+});
+export const schemaVivier = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.string().regex(/^basket-legends-vivier-\d{4}-\d{2}$/),
+  statut: z.enum(['proposition', 'valide']),
+  note: z.string(),
+  graine: z.number().int(),
+  modele: z.record(z.string(), z.unknown()),
+  joueurs: z.array(schemaJoueurGenere).min(1),
+});
+export type JoueurGenereFichier = z.infer<typeof schemaJoueurGenere>;
+export type VivierFichier = z.infer<typeof schemaVivier>;

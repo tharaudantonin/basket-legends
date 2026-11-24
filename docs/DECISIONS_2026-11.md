@@ -53,13 +53,13 @@ Toutes les améliorations proposées après la tranche 1 sont validées, ainsi q
 | Moteur | Courbe de fatigue propre à chaque joueur, blessures en match | T4 |
 | GM | Plafond salarial réel (CBA, paramètres sourcés) | T6 |
 | GM | Scouting avec notes incertaines (la vraie note d'un prospect n'est jamais affichée) | T7 |
-| GM | Délégations au coach et au staff | T8 |
+| GM | Délégations au coach et au staff | T9 (T8 avant le 24/11/2026, réponse 15) |
 | GM | Confiance du propriétaire, chimie du vestiaire | T10 |
 | Présentation | Actualités générées depuis le journal d'événements | T4 |
 | Présentation | Fiche joueur avec graphique d'adresse, match de la semaine commenté | T3 (données) et chantier visuel |
 | Qualité | Parcours testés avec Playwright (dès la tranche 2), sauvegardes IndexedDB (T4), revue d'accessibilité (T11) | T2, T4, T11 |
 | A — Boutique de points | Points gagnés en jouant, sans argent réel (réponse 5). Cosmétiques : parquets vintage, paniers, ballons vintage, maillots rétro pour chaque franchise, affichages des scores | T11 (logique) et chantier visuel (assets) |
-| A — Changement de franchise | Déménagement, nouveau nom, nouveaux maillots. Très rare : en moyenne un changement toutes les 8 saisons dans toute la ligue, vers une liste fermée de villes (réponses 6 à 8) | T9 |
+| A — Changement de franchise | Déménagement, nouveau nom, nouveaux maillots. Très rare : en moyenne un changement toutes les 8 saisons dans toute la ligue, vers une liste fermée de villes (réponses 6 à 8) | T8 (T9 avant le 24/11/2026, réponse 15) |
 | A — Animations spéciales | Matchs marquants et performances individuelles | T3 (détection depuis le journal) et chantier visuel |
 | A — All-Star Game | Jouable, Est contre Ouest, vote simulé (réponse 9) | T4 |
 | A — Cérémonie de fin de saison | Récompenses individuelles et d'équipe, animées | T4 (palmarès) et chantier visuel |
@@ -86,6 +86,23 @@ Précisions du 24/11/2026 :
 |---|---|---|---|
 | 11 | Indice d'endurance ajouté au modèle de notes | Validé tel quel | `data/modeles/notes-v1.json` : endurance = minutes par match (1) et part de titularisations (0,3), recalée sur les ancrages des attributs (`docs/NOTES_JOUEURS.md` § 7). |
 
+## Réponses du 24 novembre 2026 avant la tranche 7
+
+Questions posées dans la revue « Basket Legends — Revue critique et plan T7 à T11 » (24/11/2026). Réponses d'Antonin : 1a, 2a, 3a, 4a, 5a, 6a, 7a, 8a, 9b, 10a.
+
+| N° | Question | Réponse | Conséquence |
+|---|---|---|---|
+| 12 | Loterie de la Draft | (a) Loterie « 3-2-1 » de la NBA pour les Drafts 2027 à 2029 | 16 équipes, 3, 2 ou 1 boule, plancher au 12e choix pour les trois pires bilans, limites de choix consécutifs (communiqué NBA du 28/05/2026). À partir de 2030, la règle reste paramétrable (3-2-1 par défaut). |
+| 13 | Table des probabilités 3-2-1 | (a) Antonin fournit la table (PDF de la NBA) | En attendant, le tirage suit le mécanisme des règles publiées, au statut « à recouper ». |
+| 14 | Attributs | (a) Modèle d'attributs v2 (environ 16 attributs) en début de tranche 7 | Les 4 familles restent (technique, physique, mental, tactique) ; le moteur et sa calibration passent sur les attributs détaillés. |
+| 15 | Ordre des tranches | (a) Progression avant les échanges | T8 devient « progression, vieillissement, carrière multi-saisons » ; T9 devient « échanges, free agency, IA de GM, staff ». |
+| 16 | Vivier | (a) Environ 320 joueurs générés (40-67) en tranche 7 | Cible du GDD d'environ 840 joueurs au départ. |
+| 17 | Choix futurs | (a) Choix échangés réels relevés et sourcés en tranche 7 | Propriété des choix 2027 et suivants au snapshot, avec protections et échanges de rang. |
+| 18 | Staff | (a) Ajouté avec les délégations dans la tranche des échanges | Tranche 9 (nouvel ordre). |
+| 19 | Rythme | (a) Une PR par tranche, poussée et relue avant la suivante | |
+| 20 | Jetons de thème et carte des écrans dès T7 | (b) Non | Tout reste dans le chantier visuel. |
+| 21 | Effets des plans de jeu (T5) | (a) Validés tels quels | `data/moteur/` : bloc `plans` validé. |
+
 ## Suites
 
 - Tranche 0, faite le 24/11/2026 : socle npm workspaces (`apps/web`, `packages/data`, `packages/engine`), CI GitHub Actions, ESLint, Prettier, Vitest ; effectifs et assets rangés sous les identifiants de `data/franchises.json` ; joueurs renommés `j0001` à `j0523` avec un nom fictif aux mêmes initiales (proposé, à relire) ; vrais noms, notes 2K et effectifs d'origine sortis vers `basket-legends-prive` ; empreintes des vrais noms dans `data/noms/empreintes.json` ; schémas Zod et `npm run verifier`.
@@ -93,5 +110,6 @@ Précisions du 24/11/2026 :
 - Tranche 2, faite le 24/11/2026, en un seul chantier : règles 2026-27 vérifiées contre le Rulebook (statut `validated`, sections précises, règle d'horloge après faute défensive ajoutée) ; statistiques 2025-2026 relevées sur Basketball-Reference et NBA.com, saison régulière, Play-In et playoffs séparés (`data/statistiques/2025-26/`, `docs/SOURCES.md` § 9) ; modèle de notes v1 appliqué aux 523 joueurs (`docs/NOTES_JOUEURS.md`, paramètres validés, réponse 10) ; moteur calibré sur 1 000 matchs, 19 mesures sourcées dans leurs fourchettes (`docs/SIMULATION_MATCH.md` § 3) ; trois parcours Playwright dans la CI. Point restant à arbitrer : traitement des saisons écourtées par blessure (`docs/NOTES_JOUEURS.md` § 6).
 - Tranche 3, faite le 24/11/2026, en un seul chantier : mode commenté possession par possession (même journal, même box score, même empreinte qu'en mode rapide) ; temps-morts réglementaires et obligatoires, fins de période et fins de match tactiques (fautes volontaires, gestion du chronomètre, dernier tir, tir au buzzer) ; position de chaque tir et fiche joueur avec graphique d'adresse et statistiques sourcées ; détection des moments marquants et intérêt d'un match. Moteur recalibré (`data/moteur/match-v2.json`), 19 mesures dans leurs fourchettes ; cinq parcours Playwright. Détail : `docs/SIMULATION_MATCH.md` §§ 3 et 6. Aucune nouvelle décision.
 - Tranche 4, faite le 24/11/2026, en un seul chantier : saison de 82 matchs (calendrier NBA, classements et départages NBA, Play-In, playoffs), saison complète en 3 à 4 secondes ; paquet `packages/league` ; All-Star Game Est-Ouest au vote simulé ; palmarès de fin de saison ; actualités générées et match de la semaine ; endurance propre à chaque joueur et blessures en match ; sauvegardes versionnées dans IndexedDB ; usage des tirs recalé sur la distribution des marqueurs 2025-26. Détail : `docs/SAISON.md`. L'indice d'endurance ajouté au modèle de notes est validé (réponse 11). Sources secondaires à recouper avant publication : format des playoffs, règle des 65 matchs.
-- Tranche 5, faite le 24/11/2026, en un seul chantier : mode interactif V1 sur le même moteur — décisions du coach aux arrêts de jeu (plan de jeu, temps-morts, changements, délégation au staff), reprise déterministe testée (même graine et mêmes décisions, même match ; le match avant une décision ne change pas), matchs interactifs en saison, repris après rechargement ; plans de jeu (rythme, défense de zone ou individuelle, part du tir à trois points) et qualité de tir selon le défenseur direct. Réglages `data/moteur/match-v4.json`, 19 mesures dans leurs fourchettes. Détail : `docs/SIMULATION_MATCH.md` § 8. À valider : les effets des plans de jeu (choix du modèle, non sourcés).
+- Tranche 5, faite le 24/11/2026, en un seul chantier : mode interactif V1 sur le même moteur — décisions du coach aux arrêts de jeu (plan de jeu, temps-morts, changements, délégation au staff), reprise déterministe testée (même graine et mêmes décisions, même match ; le match avant une décision ne change pas), matchs interactifs en saison, repris après rechargement ; plans de jeu (rythme, défense de zone ou individuelle, part du tir à trois points) et qualité de tir selon le défenseur direct. Réglages `data/moteur/match-v4.json`, 19 mesures dans leurs fourchettes. Détail : `docs/SIMULATION_MATCH.md` § 8. Effets des plans de jeu validés le 24/11/2026 (réponse 21).
 - Tranche 6, faite le 24/11/2026, en un seul chantier : paramètres de la CBA 2026-27 sourcés (`data/cba/nba-2026-27.json`) ; contrats des 523 joueurs relevés et rattachés hors du dépôt (`data/contrats/2026-27.json`) ; masse salariale, niveau, taxe de luxe (les 30 taxes publiées retrouvées au dollar près), exceptions, contrôle des signatures et des effectifs ; joueurs two-way exclus de la phase finale ; onglet « Masse salariale ». Détail : `docs/CONTRATS.md`. À recouper avant publication : barèmes secondaires avec le texte de la CBA.
+- Tranche 7, faite le 24/11/2026, en un seul chantier (PR à relire, réponse 19) : modèle de notes v2 à 16 attributs détaillés (familles du v1 inchangées) et moteur v5 qui les lit, recalibré (19 mesures dans leurs fourchettes, empreinte de référence `0a6f4ed165d89e1e`) ; loterie 3-2-1 sourcée (mécanisme à recouper avec la table officielle, réponse 13) ; propriété des choix 2027 relevée (à recouper) ; classe de 100 prospects originaux et scouting à notes incertaines ; soirée de Draft (choix du GM ou délégation) ; échelle des rookies 2026 et contrats provisoires ; vivier de 320 joueurs générés (40-67) ; âge de saison des 523 joueurs (statistiques, ou date de naissance relevée pour 74 d'entre eux, à la demande d'Antonin) ; banques de noms complétées. Détail : `docs/DRAFT.md`. Propositions à valider : poids du v2, modèle des prospects, vivier, choix du staff. Choix 2028-2033 reportés en tranche 9.

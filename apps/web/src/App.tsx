@@ -3,7 +3,7 @@
 // matchs de sa franchise peuvent s'y jouer en interactif, repris au même point après un rechargement.
 import { useEffect, useState } from 'react';
 import { nouvelleGraine, type Camp, type DecisionMatch, type EntreeMatch, type ResultatMatch } from '@basket-legends/engine';
-import type { Cible, EtatSaison, ResumeMatch, Sauvegarde } from '@basket-legends/league';
+import { observationsRestantes, type Cible, type EtatSaison, type ResumeMatch, type Sauvegarde } from '@basket-legends/league';
 import { ChoixFranchise } from './ecrans/ChoixFranchise';
 import { EcranEffectif, type DemandeMatch } from './ecrans/Effectif';
 import { EcranBoxScore } from './ecrans/BoxScore';
@@ -11,9 +11,10 @@ import { EcranCommente } from './ecrans/Commente';
 import { EcranFicheJoueur } from './ecrans/FicheJoueur';
 import { EcranSaison } from './ecrans/Saison';
 import { EcranInteractif } from './ecrans/Interactif';
-import { equipeDe, regles, reglages } from './donnees';
+import { equipeDe, modeleDraft, regles, reglages } from './donnees';
 import {
   avancerDansLeMoteur,
+  avancerDraftDansLeMoteur,
   nouvelleSaisonDansLeMoteur,
   prochainMatchDansLeMoteur,
   rejouerDansLeMoteur,
@@ -133,6 +134,33 @@ export function App() {
       setEcran({ nom: 'match', franchise: etat.franchise, resultat, retour: { nom: 'saison' } });
     });
 
+  /** Tranche 7 : observations du GM sur un prospect (dans la limite de son budget et du plafond par prospect). */
+  const observer = (prospect: string, delta: number) =>
+    tache(async () => {
+      const draft = sauvegarde?.etat.draft;
+      if (!sauvegarde || !draft || draft.terminee) return;
+      const M = modeleDraft.scouting;
+      const actuel = draft.observations[prospect] ?? 0;
+      const voulu = Math.max(0, Math.min(actuel + delta, M.observationsMax - M.observationsParDefaut));
+      if (voulu - actuel > observationsRestantes(M, draft.observations)) return;
+      const observations = { ...draft.observations, [prospect]: voulu };
+      if (!voulu) delete observations[prospect];
+      await garder({ ...sauvegarde.etat, draft: { ...draft, observations } });
+    });
+
+  const deleguer = (delegue: boolean) =>
+    tache(async () => {
+      const draft = sauvegarde?.etat.draft;
+      if (!sauvegarde || !draft) return;
+      await garder({ ...sauvegarde.etat, draft: { ...draft, delegue } });
+    });
+
+  const avancerDraft = (prospect?: string) =>
+    tache(async () => {
+      if (!sauvegarde) return;
+      await garder(await avancerDraftDansLeMoteur(sauvegarde.etat, prospect));
+    });
+
   const revivre = (m: ResumeMatch, mode: 'rapide' | 'commente') =>
     tache(async () => {
       if (!sauvegarde) return;
@@ -179,6 +207,9 @@ export function App() {
           onInteractif={() => void jouerInteractif()}
           onFiche={(joueur) => setEcran({ nom: 'fiche', joueur, retour: ecran })}
           onQuitter={() => setEcran({ nom: 'choix' })}
+          onObserver={(p, d) => void observer(p, d)}
+          onDeleguer={(d) => void deleguer(d)}
+          onAvancerDraft={(p) => void avancerDraft(p)}
         />
       )}
       {ecran.nom === 'interactif' && (

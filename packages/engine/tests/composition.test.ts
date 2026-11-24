@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { composerEquipe, groupeDuPoste, type JoueurDuMatch } from '../src';
+import { ATTRIBUTS_DETAILLES, composerEquipe, groupeDuPoste, type AttributsDetailles, type JoueurDuMatch } from '../src';
 import { equipes } from './outils';
 
 const joueur = (id: string, poste: string, note: number): JoueurDuMatch => ({
@@ -15,6 +15,7 @@ const joueur = (id: string, poste: string, note: number): JoueurDuMatch => ({
   tactique: note,
   endurance: 70,
   tailleCm: 200,
+  detail: Object.fromEntries(ATTRIBUTS_DETAILLES.map((a) => [a, note])) as AttributsDetailles,
 });
 
 describe('composition par le staff', () => {

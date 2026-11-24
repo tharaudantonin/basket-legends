@@ -237,7 +237,7 @@ describe('une saison complète', () => {
   }, 30_000);
 
   it('se sauvegarde et se relit sans perte (format versionné)', () => {
-    const s = creerSauvegarde(fin, { regles: 'nba-2026-27', moteur: 'match-v4', notes: 'notes-v1' }, '2026-11-24T12:00:00Z');
+    const s = creerSauvegarde(fin, { regles: 'nba-2026-27', moteur: 'match-v5', notes: 'notes-v2' }, '2026-11-24T12:00:00Z');
     const relue = lireSauvegarde(JSON.parse(JSON.stringify(s)));
     expect(relue.etat).toEqual(fin);
     expect(() => lireSauvegarde({ ...s, schemaVersion: 99 })).toThrow(/Sauvegarde illisible/);

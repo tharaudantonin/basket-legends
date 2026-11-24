@@ -53,3 +53,6 @@ export const prochainMatchDansLeMoteur = async (e: EtatSaison): Promise<ResumeMa
   if (!('prochain' in r)) throw new Error('Réponse inattendue du moteur.');
   return r.prochain ?? undefined;
 };
+/** Tranche 7 : fait les choix de la Draft jusqu'au prochain choix du GM (ou jusqu'à la fin s'il délègue). */
+export const avancerDraftDansLeMoteur = async (e: EtatSaison, choixDuGm?: string): Promise<EtatSaison> =>
+  etat(await demander({ type: 'draft-avancer', etat: e, ...(choixDuGm ? { choixDuGm } : {}) }));

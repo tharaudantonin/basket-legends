@@ -11,6 +11,7 @@
 //    interpolation linéaire entre les points d'ancrage de l'échelle « NBA » (rotation 70-75, superstars au-delà de 90).
 // Les joueurs sans aucune statistique NBA reçoivent une note a priori explicite : selon leur rang de draft 2026, ou la
 // note des joueurs sans statistique. Ces notes sont marquées comme telles, jamais présentées comme mesurées.
+import { ATTRIBUTS_DETAILLES, type AttributsDetailles } from '@basket-legends/engine';
 import type { ParametresNotes, StatistiquesJoueurs, TotauxSaison } from './schemas';
 
 export type Attribut = 'technique' | 'physique' | 'mental' | 'tactique';
@@ -20,6 +21,8 @@ export const ATTRIBUTS: readonly Attribut[] = ['technique', 'physique', 'mental'
 export interface EntreeNotes {
   id: string;
   tailleCm: number;
+  /** Tranche 7 (modèle v2) : poids, pour la force et la vitesse estimées. */
+  poidsKg?: number;
 }
 
 export type BaseDeLaNote = 'statistiques' | 'rang-de-draft' | 'sans-statistique';
@@ -38,6 +41,8 @@ export interface NotesJoueur {
   saisonDeReference: '2025-2026' | '2024-2025' | null;
   /** Minutes de saison régulière derrière la note (0 sans statistique). */
   minutes: number;
+  /** Tranche 7 (modèle v2) : attributs détaillés ; absents si le modèle n'a pas de `poidsDetailles` (v1). */
+  details?: AttributsDetailles;
 }
 
 /** Les mesures brutes d'un joueur, avant centrage. */
@@ -94,6 +99,7 @@ export function calculerNotes(joueurs: readonly EntreeNotes[], stats: Statistiqu
     ts: somme(T.map((t) => t.points)) / (2 * somme(T.map(tentativesTs))),
     trois: somme(T.map((t) => t.troisReussis)) / somme(T.map((t) => t.troisTentes)),
     lancers: somme(T.map((t) => t.lancersReussis)) / somme(T.map((t) => t.lancersTentes)),
+    deux: somme(T.map((t) => t.tirsReussis - t.troisReussis)) / somme(T.map((t) => t.tirsTentes - t.troisTentes)),
   };
   const R = P.retrecissement;
 
@@ -102,6 +108,10 @@ export function calculerNotes(joueurs: readonly EntreeNotes[], stats: Statistiqu
     const m = t.minutes;
     const taux = (cle: keyof TotauxSaison) => ((Number(t[cle]) + parMinute(cle) * R.minutesDePrior) / (m + R.minutesDePrior)) * 36;
     const ts = (t.points + ligue.ts * 2 * R.tentativesDePriorTirs) / (2 * (tentativesTs(t) + R.tentativesDePriorTirs));
+    // Tranche 7 : adresse à deux points, rétrécie comme le TS%.
+    const deuxTentes = t.tirsTentes - t.troisTentes;
+    const deux =
+      (t.tirsReussis - t.troisReussis + ligue.deux * R.tentativesDePriorTirs) / (Math.max(0, deuxTentes) + R.tentativesDePriorTirs);
     const trois = (t.troisReussis + ligue.trois * R.tentativesDePriorTrois) / (t.troisTentes + R.tentativesDePriorTrois);
     const lancers = (t.lancersReussis + ligue.lancers * R.tentativesDePriorLancers) / (t.lancersTentes + R.tentativesDePriorLancers);
     const passes = taux('passes');
@@ -121,6 +131,7 @@ export function calculerNotes(joueurs: readonly EntreeNotes[], stats: Statistiqu
       pertes;
     return {
       ts,
+      deux,
       trois,
       lancers,
       points: taux('points'),
@@ -139,6 +150,7 @@ export function calculerNotes(joueurs: readonly EntreeNotes[], stats: Statistiqu
       minutesParMatch: t.matchs ? m / t.matchs : 0,
       partTitulaire: t.matchs ? (t.titularisations ?? 0) / t.matchs : 0,
       taille: j.tailleCm,
+      poids: j.poidsKg ?? 0,
     };
   });
 
@@ -166,6 +178,11 @@ export function calculerNotes(joueurs: readonly EntreeNotes[], stats: Statistiqu
     tactique: mesures.map((x) => indice(x, P.poids.tactique)),
     endurance: mesures.map((x) => indice(x, P.poids.endurance)),
   };
+  // Tranche 7 (modèle v2) : un indice par attribut détaillé.
+  const PD = P.poidsDetailles;
+  const qsDetails = PD
+    ? Object.fromEntries(ATTRIBUTS_DETAILLES.map((a) => [a, quantiles(mesures.map((x) => indice(x, PD[a] ?? {})))]))
+    : undefined;
 
   // 3. Recalage par quantiles.
   const arrondi = (x: number) => Math.round(Math.min(P.bornes.max, Math.max(P.bornes.min, x)));
@@ -183,6 +200,13 @@ export function calculerNotes(joueurs: readonly EntreeNotes[], stats: Statistiqu
       base: 'statistiques',
       saisonDeReference: base.saison,
       minutes: base.t.minutes,
+      ...(qsDetails
+        ? {
+            details: Object.fromEntries(
+              ATTRIBUTS_DETAILLES.map((a) => [a, arrondi(noteDuQuantile(qsDetails[a]![i]!, P.ancrages.attributs))]),
+            ) as AttributsDetailles,
+          }
+        : {}),
     });
   });
 
@@ -202,6 +226,7 @@ export function calculerNotes(joueurs: readonly EntreeNotes[], stats: Statistiqu
       base: choix !== undefined ? 'rang-de-draft' : 'sans-statistique',
       saisonDeReference: null,
       minutes: 0,
+      ...(PD ? { details: Object.fromEntries(ATTRIBUTS_DETAILLES.map((a) => [a, note])) as AttributsDetailles } : {}),
     });
   }
   return joueurs.map((j) => resultat.get(j.id)!);

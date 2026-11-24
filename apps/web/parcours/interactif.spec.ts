@@ -4,7 +4,7 @@
 import { expect, test, type Page } from '@playwright/test';
 
 /** Empreinte du match de référence (packages/engine/tests/match.test.ts, docs/SIMULATION_MATCH.md § 5). */
-const EMPREINTE_REFERENCE = '9834f1859a6a8fe8';
+const EMPREINTE_REFERENCE = '0a6f4ed165d89e1e';
 
 const choix = (page: Page, libelle: string) => page.locator('.plan-de-jeu label', { hasText: libelle }).locator('select');
 

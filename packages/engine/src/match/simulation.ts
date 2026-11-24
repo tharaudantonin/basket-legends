@@ -454,7 +454,11 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
   /** Tire les lancers ; rend vrai si le dernier est réussi. */
   const tirerLancers = (c: Camp, tireur: EtatJoueur, nombre: number): boolean => {
     const L = G.lancersFrancs;
-    const p = borner(L.reussiteDeBase + L.sensibiliteParPoint * (tireur.j.technique - 70 - malus(tireur)), L.reussiteMin, L.reussiteMax);
+    const p = borner(
+      L.reussiteDeBase + L.sensibiliteParPoint * (tireur.j.detail.lancersFrancs - 70 - malus(tireur)),
+      L.reussiteMin,
+      L.reussiteMax,
+    );
     let dernier = false;
     for (let n = 1; n <= nombre; n++) {
       dernier = h.chance(p);
@@ -475,11 +479,13 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
   };
 
   // --- Rebond : rend le camp qui récupère le ballon. ---
-  const forceRebond = (e: EtatJoueur): number =>
-    G.rebonds.poidsParGroupe[e.j.groupe] * (e.j.physique - malus(e) + (e.j.tailleCm - 200) * 0.5);
+  // Tranche 7 : rebond offensif pour l'attaque, défensif pour la défense (attributs détaillés).
+  const forceRebond = (e: EtatJoueur, offensif: boolean): number =>
+    G.rebonds.poidsParGroupe[e.j.groupe] *
+    ((offensif ? e.j.detail.rebondOffensif : e.j.detail.rebondDefensif) - malus(e) + (e.j.tailleCm - 200) * 0.5);
   const rebond = (attaque: Camp): Camp => {
     const def = autre(attaque);
-    const ecart = moyenne(presents(attaque).map(forceRebond)) - moyenne(presents(def).map(forceRebond));
+    const ecart = moyenne(presents(attaque).map((e) => forceRebond(e, true))) - moyenne(presents(def).map((e) => forceRebond(e, false)));
     // Tranche 5 : la zone protège moins le rebond défensif (pas de vis-à-vis à écarter).
     const zone = plans[def].defense === 'zone' ? G.plans.zone.rebondOffensif : 0;
     const offensif = h.chance(borner(G.rebonds.offensifDeBase + G.rebonds.sensibiliteParPoint * ecart + zone, 0.08, 0.5));
@@ -488,7 +494,7 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
       ecrire({ type: 'rebond_equipe', ...repere(), equipe: camp, offensif });
       return camp;
     }
-    const preneur = choisirParmi(presents(camp), (e) => Math.max(1, forceRebond(e)) ** 2);
+    const preneur = choisirParmi(presents(camp), (e) => Math.max(1, forceRebond(e, offensif)) ** 2);
     ecrire({ type: 'rebond', ...repere(), equipe: camp, joueur: preneur.j.id, offensif });
     return camp;
   };
@@ -496,12 +502,18 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
   // --- Une possession complète. Rend le camp qui aura le ballon ensuite et si le ballon est mort (remplacements permis). ---
   const adresse = (e: EtatJoueur, tir: TypeTir): number => {
     const j = e.j;
-    const brut =
-      tir === 'cercle' ? (j.technique + j.physique) / 2 : tir === 'miDistance' ? j.technique : 0.7 * j.technique + 0.3 * j.mental;
+    // Tranche 7 : l'adresse de la zone de tir (attributs détaillés du modèle v2).
+    const brut = tir === 'cercle' ? j.detail.tirCercle : tir === 'miDistance' ? j.detail.tirMiDistance : j.detail.tirATroisPoints;
     return brut - malus(e);
   };
-  const valeurDefensive = (e: EtatJoueur): number => 0.6 * e.j.tactique + 0.4 * e.j.physique - malus(e);
-  const defense = (c: Camp): number => moyenne(presents(c).map(valeurDefensive));
+  /** Tranche 7 : défense intérieure près du cercle, extérieure ailleurs ; sans zone de tir, la moyenne des deux. */
+  const valeurDefensive = (e: EtatJoueur, tir?: TypeTir): number =>
+    (tir === 'cercle'
+      ? e.j.detail.defenseInterieure
+      : tir
+        ? e.j.detail.defenseExterieure
+        : (e.j.detail.defenseInterieure + e.j.detail.defenseExterieure) / 2) - malus(e);
+  const defense = (c: Camp, tir?: TypeTir): number => moyenne(presents(c).map((e) => valeurDefensive(e, tir)));
   /**
    * Tranche 5 : les vis-à-vis en défense individuelle. Les attaquants, du plus dangereux au moins dangereux, reçoivent
    * le meilleur défenseur libre de leur groupe (arrière, ailier, intérieur), à défaut le meilleur défenseur libre.
@@ -518,6 +530,13 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
       paires.set(a.j.id, d);
     }
     return paires;
+  };
+  /** Tranche 7 : un joueur cherche les tirs de la zone où il est adroit. */
+  const preference = (e: EtatJoueur, tir: TypeTir): number => {
+    const E = G.tirs.preferenceZoneEchelle;
+    if (!E) return 1;
+    const a = tir === 'cercle' ? e.j.detail.tirCercle : tir === 'miDistance' ? e.j.detail.tirMiDistance : e.j.detail.tirATroisPoints;
+    return Math.exp((a - 70) / E);
   };
   const usage = (e: EtatJoueur) => Math.exp((effectif(e) - 70) / G.tirs.usageEchelle);
   const minimalPourTirer = Math.round(R.tempsMinimalPourTirerSecondes * 10);
@@ -555,9 +574,9 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
           Math.round(borner(gaussien(h, F.dureeFauteVolontaireSecondes, 1), 1, 2 * F.dureeFauteVolontaireSecondes) * 10),
         );
         ecouler(ecoule);
-        const fautif = choisirParmi(defenseurs, (e) => Math.max(1, 110 - e.j.tactique));
+        const fautif = choisirParmi(defenseurs, (e) => Math.max(1, 110 - e.j.detail.qiDefensif));
         // L'attaque donne le ballon à son meilleur tireur de lancers.
-        const victime = attaquants.reduce((m, e) => (e.j.technique > m.j.technique ? e : m));
+        const victime = attaquants.reduce((m, e) => (e.j.detail.lancersFrancs > m.j.detail.lancersFrancs ? e : m));
         if (commettreFaute(def, fautif, victime, 'hors_tir', true)) {
           if (tirerLancers(attaque, victime, R.lancersFrancsPenalite)) return { suivant: def, ballonMort: true };
           if (rebond(attaque) === def) return { suivant: def, ballonMort: false };
@@ -594,12 +613,12 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
 
       // Perte de balle.
       const T = G.pertesDeBalle;
-      const maitrise = moyenne(attaquants.map((e) => (e.j.mental + e.j.tactique) / 2 - malus(e)));
+      const maitrise = moyenne(attaquants.map((e) => (e.j.detail.maniement + e.j.detail.qiOffensif) / 2 - malus(e)));
       const pPerte = T.probabiliteDeBase - T.sensibiliteParPoint * (maitrise - defense(def)) + rythme.pertes + (zone?.pertes ?? 0);
       if (h.chance(borner(pPerte, 0.04, 0.3))) {
         ecouler(Math.round(duree * (0.3 + 0.6 * h.reel())));
         const fautif = choisirParmi(attaquants, usage);
-        const vol = h.chance(T.partInterceptions) ? choisirParmi(defenseurs, (e) => Math.max(1, e.j.tactique - 40)) : undefined;
+        const vol = h.chance(T.partInterceptions) ? choisirParmi(defenseurs, (e) => Math.max(1, e.j.detail.interception - 40)) : undefined;
         ecrire({ type: 'perte_de_balle', ...repere(), equipe: attaque, joueur: fautif.j.id, ...(vol ? { interception: vol.j.id } : {}) });
         return { suivant: def, ballonMort: !vol };
       }
@@ -608,7 +627,7 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
       if (h.chance(G.fautes.horsTirParPossession)) {
         const ecoule = Math.round(duree * (0.3 + 0.6 * h.reel()));
         ecouler(ecoule);
-        const fautif = choisirParmi(defenseurs, (e) => Math.max(1, 110 - e.j.tactique));
+        const fautif = choisirParmi(defenseurs, (e) => Math.max(1, 110 - e.j.detail.qiDefensif));
         const victime = choisirParmi(attaquants, usage);
         if (commettreFaute(def, fautif, victime, 'hors_tir')) {
           if (tirerLancers(attaque, victime, R.lancersFrancsPenalite)) return { suivant: def, ballonMort: true };
@@ -632,7 +651,12 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
         ? 'troisPoints'
         : h.pondere(
             TYPES_TIR,
-            (t) => G.tirs.repartition[t] * profil[t] * (t === 'troisPoints' ? volumeTrois : 1) * (zone ? zone.repartition[t] : 1),
+            (t) =>
+              G.tirs.repartition[t] *
+              profil[t] *
+              (t === 'troisPoints' ? volumeTrois : 1) *
+              (zone ? zone.repartition[t] : 1) *
+              preference(tireur, t),
           );
       const valeur = tir === 'troisPoints' ? R.valeurPanierATroisPoints : R.valeurPanierInterieur;
       const preparee = actionPreparee === attaque;
@@ -642,9 +666,9 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
       const D = G.defenseurDirect;
       const direct = zone ? undefined : visAVis(attaque).get(tireur.j.id);
       const opposition = direct
-        ? (1 - D.poids) * defense(def) +
-          D.poids * (valeurDefensive(direct) + (tir === 'cercle' ? D.tailleCercleParCm * (direct.j.tailleCm - tireur.j.tailleCm) : 0))
-        : defense(def);
+        ? (1 - D.poids) * defense(def, tir) +
+          D.poids * (valeurDefensive(direct, tir) + (tir === 'cercle' ? D.tailleCercleParCm * (direct.j.tailleCm - tireur.j.tailleCm) : 0))
+        : defense(def, tir);
       const pReussite = borner(
         G.tirs.reussiteDeBase[tir] +
           (zone ? zone.reussite[tir] : 0) +
@@ -661,12 +685,12 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
         reussi && attaquants.length > 1 && h.chance(G.passes.probabiliteSurPanier)
           ? choisirParmi(
               attaquants.filter((e) => e !== tireur),
-              (e) => G.passes.poidsParGroupe[e.j.groupe] * Math.max(1, e.j.tactique - 40),
+              (e) => G.passes.poidsParGroupe[e.j.groupe] * Math.max(1, e.j.detail.passe - 40),
             )
           : undefined;
       const contreur =
         !reussi && !faute && h.chance(G.contres.probabiliteSurEchecParType[tir])
-          ? choisirParmi(defenseurs, (e) => G.contres.poidsParGroupe[e.j.groupe] * Math.max(1, e.j.physique - 40))
+          ? choisirParmi(defenseurs, (e) => G.contres.poidsParGroupe[e.j.groupe] * Math.max(1, e.j.detail.contre - 40))
           : undefined;
 
       // Un tir manqué sur faute n'est pas une tentative : seul le tir réussi (panier avec faute) est écrit.
@@ -691,7 +715,7 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
         });
       }
       if (faute) {
-        const fautif = choisirParmi(defenseurs, (e) => G.contres.poidsParGroupe[e.j.groupe] * Math.max(1, 110 - e.j.tactique));
+        const fautif = choisirParmi(defenseurs, (e) => G.contres.poidsParGroupe[e.j.groupe] * Math.max(1, 110 - e.j.detail.qiDefensif));
         commettreFaute(def, fautif, tireur, 'tir');
         const nombre = reussi
           ? R.lancersFrancsPanierAvecFaute

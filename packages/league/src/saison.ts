@@ -18,6 +18,7 @@ import { decernerRecompenses, selectionnerAllStars } from './recompenses';
 import { situationEquipe } from './cba';
 import { cumuler } from './statistiques';
 import type { Actualite, Bilan, ContexteLigue, EtatPlayIn, EtatSaison, NatureMatch, ResumeMatch, Serie } from './types';
+import { nouvelleDraft, preparerDraft } from './draft/draft';
 
 export type Cible = 'jour' | 'semaine' | 'all-star' | 'fin-reguliere' | 'fin';
 
@@ -51,6 +52,7 @@ export function nouvelleSaison(ctx: ContexteLigue, graine: number, franchise: st
     statistiquesFinale: {},
     actualites: [],
     derniereSemaine: 0,
+    ...(ctx.draft ? { draft: nouvelleDraft(ctx, graine, ctx.structure.saison) } : {}),
   };
 }
 
@@ -497,6 +499,22 @@ function terminer(ctx: ContexteLigue, etat: EtatSaison, finale: Serie): void {
       ? `${taxes.map((s) => `${nomDe(ctx, s.equipe)} ${m(s.taxe)}${s.recidiviste ? ' (récidiviste)' : ''}`).join(' ; ')}.`
       : 'Aucune équipe ne dépasse le seuil de taxe.',
   });
+  // Tranche 7 : la loterie se tire à la fin de la saison ; les 60 choix sont fixés.
+  if (ctx.draft && etat.draft) {
+    etat.draft = preparerDraft(ctx, etat);
+    const o = etat.draft.loterie!.ordre;
+    publier(etat, {
+      date: etat.date,
+      genre: 'draft',
+      importance: 3,
+      equipes: o.slice(0, 4),
+      titre: `Loterie de la Draft ${etat.draft.annee} : ${nomDe(ctx, o[0]!)} obtient le premier choix`,
+      texte: `Ordre des quatre premiers choix (choix propres, avant les échanges) : ${o
+        .slice(0, 4)
+        .map((e, i) => `${i + 1}. ${nomDe(ctx, e)}`)
+        .join(', ')}.`,
+    });
+  }
   const P = etat.palmares;
   const n = (id?: string) => (id ? nomJoueur(ctx, id) : '—');
   publier(etat, {

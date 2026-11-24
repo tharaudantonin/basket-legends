@@ -630,3 +630,10 @@ tr.mon-equipe {
   font-weight: 600;
   padding-bottom: 0.25rem;
 }
+
+/* Tranche 7 : la ligne de sa franchise (Draft, loterie). */
+.tableau tr.moi td,
+.tableau tr.moi th {
+  font-weight: 600;
+  background: color-mix(in srgb, currentColor 8%, transparent);
+}

@@ -55,6 +55,15 @@ const etat = z.looseObject({
   statistiquesFinale: z.record(z.string(), z.looseObject({ equipe: z.string() })),
   actualites: z.array(z.looseObject({ id: z.number().int(), date: z.string(), titre: z.string(), texte: z.string() })),
   derniereSemaine: z.number().int(),
+  // Tranche 7 : la Draft de la saison (facultative : les sauvegardes des tranches 4 à 6 restent lisibles telles quelles).
+  draft: z
+    .looseObject({
+      annee: z.number().int(),
+      classe: z.array(z.looseObject({ id: z.string(), note: z.number(), potentiel: z.number() })),
+      observations: z.record(z.string(), z.number().int().min(0)),
+      selections: z.record(z.string(), z.string()),
+    })
+    .optional(),
 });
 
 export const schemaSauvegarde = z.strictObject({
