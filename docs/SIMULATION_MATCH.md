@@ -128,7 +128,7 @@ Boston Beacons (domicile) – New York Skyliners, graine 2026 : empreinte `9834f
 | Plus de 3 pts | 89,7 | 42,9 | 14,5 | 36,7 | 36,0 | 23,8 | 11,8 | 115,4 – 115,9 | 49,5 % |
 | Défense de zone | 88,5 | 36,8 | 14,3 | 40,5 | 37,1 | 19,9 | 13,3 | 114,8 – 116,6 | 45,2 % |
 
-En moyenne sur toute la ligue, aucun plan ne fait gagner plus que le plan par défaut : c'est voulu, un plan se choisit contre un adversaire (zone contre une équipe forte près du cercle et faible de loin, rythme lent pour une équipe moins profonde…). Ces effets restent à valider par Antonin.
+En moyenne sur toute la ligue, aucun plan ne fait gagner plus que le plan par défaut : c'est voulu, un plan se choisit contre un adversaire (zone contre une équipe forte près du cercle et faible de loin, rythme lent pour une équipe moins profonde…). Ces effets sont validés par Antonin (24/11/2026, réponse 21 de `docs/DECISIONS_2026-11.md`).
 
 **Tests :** `packages/engine/tests/interactif.test.ts` (arrêts sans effet sur le match ; même graine et mêmes décisions, même match ; journal et générateur inchangés avant l'arrêt d'une décision ; décision après décision = tout rejouer ; temps-morts, changements, décisions impossibles, délégation ; effets des plans ; défenseur direct ; lecture) et `packages/league/tests/interactif.test.ts` (le match interactif est celui que la saison enregistre ; reprise après sauvegarde ; sauvegardes de la tranche 4 lisibles) ; parcours Playwright `apps/web/parcours/interactif.spec.ts`.
 
