@@ -126,19 +126,34 @@ export function construireBoxScore(
         precedent = [ev.score[0], ev.score[1]];
         break;
       case 'entre_deux':
+      case 'temps_mort':
       case 'rebond_equipe':
         // Rebond d'équipe : comme dans les statistiques officielles, il n'est crédité à aucun joueur.
         break;
     }
   }
 
-  const boxEquipe = (c: Camp): BoxEquipe => {
-    const joueurs = [...lignes[c].values()];
+  // Totaux des joueurs ; les points d'équipe en découlent, ce qui permet aussi un box score « en direct » sur un début
+  // de journal (mode commenté) : la période en cours compte alors dans les points par période.
+  const sommes = ([0, 1] as const).map((c) => {
     const totaux = ligneVide();
-    for (const j of joueurs) for (const k of CLES) totaux[k] += j[k];
-    // Le +/- d'équipe est l'écart final.
-    totaux.plusMoins = precedent[c] - precedent[c === 0 ? 1 : 0];
-    return { id: equipes[c].id, nom: equipes[c].nom, points: precedent[c], parPeriode: parPeriode[c], joueurs, totaux };
+    for (const j of lignes[c].values()) for (const k of CLES) totaux[k] += j[k];
+    return totaux;
+  }) as [LigneStatistique, LigneStatistique];
+  const boxEquipe = (c: Camp): BoxEquipe => {
+    const totaux = sommes[c];
+    // Le +/- d'équipe est l'écart.
+    totaux.plusMoins = sommes[c].points - sommes[c === 0 ? 1 : 0].points;
+    const enCours = totaux.points - parPeriode[c].reduce((s, x) => s + x, 0);
+    const periodes = parPeriode[c].length < periode ? [...parPeriode[c], enCours] : parPeriode[c];
+    return {
+      id: equipes[c].id,
+      nom: equipes[c].nom,
+      points: totaux.points,
+      parPeriode: periodes,
+      joueurs: [...lignes[c].values()],
+      totaux,
+    };
   };
   return {
     equipes: [boxEquipe(0), boxEquipe(1)],

@@ -13,7 +13,7 @@ import {
 import type { EquipeDuMatch, ReglagesMatch, ReglesMatch } from '@basket-legends/engine';
 import registreBrut from '../../../data/franchises.json';
 import reglesBrutes from '../../../data/regles/nba-2026-27.json';
-import reglagesBruts from '../../../data/moteur/match-v1.json';
+import reglagesBruts from '../../../data/moteur/match-v2.json';
 
 const effectifsBruts = import.meta.glob<unknown>('../../../data/rosters/2026-27/*.json', { eager: true, import: 'default' });
 
@@ -35,6 +35,12 @@ export function effectifDe(id: string): Effectif {
   const e = effectifs.get(id);
   if (!e) throw new Error(`Aucun effectif pour la franchise « ${id} ».`);
   return e;
+}
+
+/** La franchise d'un joueur du snapshot. */
+export function franchiseDuJoueur(joueur: string): string {
+  for (const [id, e] of effectifs) if (e.players.some((j) => j.id === joueur)) return id;
+  throw new Error(`Joueur inconnu : ${joueur}`);
 }
 
 export function franchiseDe(id: string): Franchise {

@@ -1,5 +1,7 @@
-// Tranche 1 : le box score d'un match rapide.
-import type { BoxEquipe, LigneStatistique, ResultatMatch } from '@basket-legends/engine';
+// Tranches 1 et 3 : le box score d'un match (rapide ou commenté : c'est le même), ses moments marquants, et l'accès à la
+// fiche de chaque joueur avec son graphique d'adresse.
+import { useMemo } from 'react';
+import { detecterMoments, type BoxEquipe, type LigneStatistique, type ResultatMatch } from '@basket-legends/engine';
 import { franchiseDe, regles } from '../donnees';
 import { encreSur, minutes, pourcentage, signe } from '../format';
 
@@ -9,6 +11,7 @@ interface Props {
   enCours: boolean;
   onRejouer: () => void;
   onRetour: () => void;
+  onFiche: (joueur: string) => void;
 }
 
 const nomPeriode = (i: number): string => {
@@ -43,7 +46,7 @@ function Cellules({ l }: { l: LigneStatistique }) {
   );
 }
 
-function TableEquipe({ e }: { e: BoxEquipe }) {
+function TableEquipe({ e, onFiche }: { e: BoxEquipe; onFiche: (joueur: string) => void }) {
   const f = franchiseDe(e.id);
   const joueurs = [...e.joueurs].sort((a, b) => Number(b.titulaire) - Number(a.titulaire) || b.dixiemes - a.dixiemes);
   const t = e.totaux;
@@ -108,7 +111,9 @@ function TableEquipe({ e }: { e: BoxEquipe }) {
             {joueurs.map((j, i) => (
               <tr key={j.id} className={i === 4 ? 'fin-cinq' : undefined}>
                 <th scope="row" className="gauche">
-                  {j.nom}
+                  <button type="button" className="lien" onClick={() => onFiche(j.id)}>
+                    {j.nom}
+                  </button>
                   {j.titulaire && <span className="etiquette">5</span>}
                   {j.exclu && <span className="etiquette alerte">6 F</span>}
                 </th>
@@ -147,8 +152,9 @@ function TableEquipe({ e }: { e: BoxEquipe }) {
   );
 }
 
-export function EcranBoxScore({ franchise, resultat, enCours, onRejouer, onRetour }: Props) {
+export function EcranBoxScore({ franchise, resultat, enCours, onRejouer, onRetour, onFiche }: Props) {
   const { boxScore: b } = resultat;
+  const moments = useMemo(() => detecterMoments(resultat), [resultat]);
   const [dom, ext] = b.equipes;
   const fDom = franchiseDe(dom.id);
   const fExt = franchiseDe(ext.id);
@@ -211,8 +217,21 @@ export function EcranBoxScore({ franchise, resultat, enCours, onRejouer, onRetou
         </div>
       </section>
 
-      <TableEquipe e={dom} />
-      <TableEquipe e={ext} />
+      {moments.length > 0 && (
+        <section className="carte" aria-labelledby="titre-moments">
+          <h2 id="titre-moments">Moments du match</h2>
+          <ul className="moments">
+            {moments.map((m, i) => (
+              <li key={i} className={`importance-${m.importance}`}>
+                {m.texte}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <TableEquipe e={dom} onFiche={onFiche} />
+      <TableEquipe e={ext} onFiche={onFiche} />
 
       <section className="carte actions">
         <p className="aide">

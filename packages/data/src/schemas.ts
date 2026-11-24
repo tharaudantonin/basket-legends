@@ -142,6 +142,19 @@ export const schemaRegles = z.strictObject({
     finDePeriodeSecondes: entier(0),
     rangFauteEquipeFinDePeriode: entier(1),
     horlogeMinimaleApresFauteDefensiveSecondes: entier(1),
+    tempsMortsParMatch: entier(0),
+    tempsMortsMaxQuatriemePeriode: entier(0),
+    tempsMortsMaxFinDeMatch: entier(0),
+    debutFinDeMatchTempsMortsSecondes: entier(0),
+    tempsMortsParProlongation: entier(0),
+    repereTempsMortObligatoire1Secondes: entier(0),
+    repereTempsMortObligatoire2Secondes: entier(0),
+    dureeTempsMortObligatoireSecondes: entier(0),
+    dureeTempsMortSecondes: entier(0),
+    horlogeEteinteSousSecondes: entier(0),
+    tempsMinimalPourTirerSecondes: regle.extend({ valeur: z.number().min(0) }),
+    ligneATroisPointsPieds: regle.extend({ valeur: z.number().positive() }),
+    zoneRestreintePieds: regle.extend({ valeur: z.number().positive() }),
   }),
   possessionDebutDePeriode: z.strictObject({
     valeur: z.array(z.enum(['entre-deux', 'gagnant', 'perdant'])).min(1),
@@ -184,6 +197,24 @@ export const schemaReglagesMatch = z.strictObject({
     malusParPointPerdu: z.number().min(0),
   }),
   rotation: z.strictObject({ profondeur: z.number().int().min(5), relaisMinimalSecondes: z.number().min(0) }),
+  tempsMorts: z.strictObject({ serieAdverseDeclencheur: z.number().int().min(1), bonusActionPreparee: z.number().min(0), recuperationParMinute: z.number().min(0) }),
+  finDeMatch: z.strictObject({
+    fauteVolontaireEcartMax: z.number().int().min(0),
+    fauteVolontaireSecondesParPoint: z.number().min(0),
+    fauteVolontaireSecondesMax: z.number().min(0),
+    dureeFauteVolontaireSecondes: positif,
+    gestionAvanceFraction: proba,
+    presseEcartMin: z.number().int().min(1),
+    presseDureeSecondes: positif,
+    malusTirPresse: proba,
+    partTroisEnRetardDeTrois: proba,
+    margeDernierTirSecondes: positif,
+  }),
+  positions: z.strictObject({
+    partTroisDansLesCoins: proba,
+    distanceTroisDansLesCoinsPieds: positif,
+    miDistanceParTranche: z.strictObject({ troisDix: proba, dixSeize: proba, seizeLigne: proba }),
+  }),
 });
 
 export type Regles = z.infer<typeof schemaRegles>;
@@ -287,6 +318,8 @@ export const schemaStatistiquesLigue = z.strictObject({
     dix_seize_pieds: z.strictObject({ part: proba, reussite: proba }),
     seize_pieds_ligne: z.strictObject({ part: proba, reussite: proba }),
     trois_points: z.strictObject({ part: proba, reussite: proba }),
+    partTroisDansLesCoins: proba.optional(),
+    reussiteTroisDansLesCoins: proba.optional(),
   }),
   domicile: z.strictObject({ victoires: entierPositif, defaites: entierPositif, definition: z.string() }),
 });

@@ -4,6 +4,14 @@
 /** Le rôle de jeu d'un joueur, tiré de son poste source (G, F, C, G-F…), pour la composition et le profil de tir. */
 export type Groupe = 'meneur' | 'ailier' | 'interieur';
 
+/** La position d'un tir sur le terrain (tranche 3). */
+export interface PositionTir {
+  /** Distance au centre du panier, en pieds (une décimale). */
+  distance: number;
+  /** Angle en degrés : 0 face au panier, -90 et 90 le long de la ligne de fond. */
+  angle: number;
+}
+
 /** Les trois zones de tir du modèle de la tranche 1. */
 export type TypeTir = 'cercle' | 'miDistance' | 'troisPoints';
 export const TYPES_TIR: readonly TypeTir[] = ['cercle', 'miDistance', 'troisPoints'];
@@ -58,13 +66,27 @@ export interface ReglesMatch {
   rangFauteEquipeFinDePeriode: number;
   /** Après une faute défensive hors tir sans lancers : horloge gardée, ou remontée à cette valeur si elle était plus basse. */
   horlogeMinimaleApresFauteDefensiveSecondes: number;
+  // Tranche 3 : temps-morts (Rule No. 5, Section VI), fin de période et terrain.
+  tempsMortsParMatch: number;
+  tempsMortsMaxQuatriemePeriode: number;
+  tempsMortsMaxFinDeMatch: number;
+  debutFinDeMatchTempsMortsSecondes: number;
+  tempsMortsParProlongation: number;
+  repereTempsMortObligatoire1Secondes: number;
+  repereTempsMortObligatoire2Secondes: number;
+  dureeTempsMortObligatoireSecondes: number;
+  dureeTempsMortSecondes: number;
+  horlogeEteinteSousSecondes: number;
+  tempsMinimalPourTirerSecondes: number;
+  ligneATroisPointsPieds: number;
+  zoneRestreintePieds: number;
   possessionDebutDePeriode: PossessionDebutDePeriode[];
 }
 
 type ParTir = Record<TypeTir, number>;
 type ParGroupe = Record<Groupe, number>;
 
-/** Les réglages du modèle (data/moteur/match-v1.json), calibrés en tranche 2. */
+/** Les réglages du modèle (data/moteur/match-v2.json), calibrés en tranche 2. */
 export interface ReglagesMatch {
   possession: {
     dureeMoyenneSecondes: number;
@@ -94,6 +116,33 @@ export interface ReglagesMatch {
     malusParPointPerdu: number;
   };
   rotation: { profondeur: number; relaisMinimalSecondes: number };
+  tempsMorts: {
+    /** Série de points adverses sans réponse qui pousse le coach à demander un temps-mort. */
+    serieAdverseDeclencheur: number;
+    /** Bonus de réussite du tir préparé pendant un temps-mort de fin de match. */
+    bonusActionPreparee: number;
+    /** Fraîcheur regagnée par minute de temps-mort (tous les joueurs). */
+    recuperationParMinute: number;
+  };
+  finDeMatch: {
+    fauteVolontaireEcartMax: number;
+    fauteVolontaireSecondesParPoint: number;
+    fauteVolontaireSecondesMax: number;
+    dureeFauteVolontaireSecondes: number;
+    /** Part de l'horloge des tirs consommée par l'équipe qui mène. */
+    gestionAvanceFraction: number;
+    presseEcartMin: number;
+    presseDureeSecondes: number;
+    malusTirPresse: number;
+    partTroisEnRetardDeTrois: number;
+    /** Temps laissé au plus sur le chronomètre quand une équipe garde le ballon pour le dernier tir. */
+    margeDernierTirSecondes: number;
+  };
+  positions: {
+    partTroisDansLesCoins: number;
+    distanceTroisDansLesCoinsPieds: number;
+    miDistanceParTranche: { troisDix: number; dixSeize: number; seizeLigne: number };
+  };
 }
 
 export interface EntreeMatch {
@@ -124,6 +173,14 @@ export type Evenement =
       passe?: string;
       contre?: string;
       score: [number, number];
+      /** Tranche 3 : où le tir a été pris (pieds depuis le centre du panier ; angle en degrés, 0 = face au panier, négatif à gauche de l'attaque). */
+      position: PositionTir;
+      /** Tir pressé par le chronomètre (moins de temps que le minimum du modèle). */
+      presse?: true;
+      /** Tir lâché dans la dernière seconde de la période. */
+      auBuzzer?: true;
+      /** Action préparée pendant un temps-mort de fin de match. */
+      preparee?: true;
     })
   | (Repere & {
       type: 'lancer_franc';
@@ -149,6 +206,18 @@ export type Evenement =
       fautesJoueur: number;
       fautesEquipe: number;
       penalite: boolean;
+      /** Faute volontaire de fin de match, pour arrêter le chronomètre. */
+      volontaire?: true;
+    })
+  | (Repere & {
+      type: 'temps_mort';
+      /** L'équipe chargée du temps-mort (null : temps-mort obligatoire qu'aucune équipe ne pouvait plus prendre). */
+      equipe: Camp | null;
+      nature: 'obligatoire' | 'equipe';
+      /** Pourquoi le coach l'a demandé. */
+      motif: 'obligatoire' | 'serie' | 'fin_de_match';
+      /** Temps-morts qui restent à l'équipe pour la période en cours de décompte (match ou prolongation). */
+      restants: number;
     })
   | (Repere & { type: 'exclusion'; equipe: Camp; joueur: string })
   | (Repere & { type: 'remplacement'; equipe: Camp; entrant: string; sortant: string })

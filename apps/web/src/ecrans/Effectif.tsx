@@ -1,4 +1,5 @@
-// Tranche 1 : l'effectif de la franchise (dans l'ordre du staff : cinq de départ, puis rotation) et le lancement d'un match rapide.
+// Tranches 1 et 3 : l'effectif de la franchise (dans l'ordre du staff : cinq de départ, puis rotation) et le lancement
+// d'un match, rapide ou commenté. Un clic sur un joueur ouvre sa fiche.
 import { useMemo, useState } from 'react';
 import { nouvelleGraine } from '@basket-legends/engine';
 import { effectifDe, equipeDe, franchiseDe, franchises } from '../donnees';
@@ -8,6 +9,8 @@ export interface DemandeMatch {
   adversaire: string;
   aDomicile: boolean;
   graine: number;
+  /** Présentation : le même match, montré d'un coup ou raconté possession par possession. */
+  mode: 'rapide' | 'commente';
 }
 
 const POSTES: Record<string, string> = {
@@ -26,9 +29,10 @@ interface Props {
   enCours: boolean;
   onRetour: () => void;
   onJouer: (d: DemandeMatch) => void;
+  onFiche: (joueur: string) => void;
 }
 
-export function EcranEffectif({ franchise, derniere, enCours, onRetour, onJouer }: Props) {
+export function EcranEffectif({ franchise, derniere, enCours, onRetour, onJouer, onFiche }: Props) {
   const f = franchiseDe(franchise);
   const effectif = effectifDe(franchise);
   const equipe = useMemo(() => equipeDe(franchise), [franchise]);
@@ -55,12 +59,13 @@ export function EcranEffectif({ franchise, derniere, enCours, onRetour, onJouer 
       </header>
 
       <section className="carte" aria-labelledby="titre-match">
-        <h2 id="titre-match">Match rapide</h2>
+        <h2 id="titre-match">Match</h2>
         <form
           className="formulaire-match"
           onSubmit={(e) => {
             e.preventDefault();
-            onJouer({ adversaire, aDomicile, graine });
+            const bouton = (e.nativeEvent as SubmitEvent).submitter as HTMLButtonElement | null;
+            onJouer({ adversaire, aDomicile, graine, mode: bouton?.value === 'commente' ? 'commente' : 'rapide' });
           }}
         >
           <label>
@@ -97,11 +102,16 @@ export function EcranEffectif({ franchise, derniere, enCours, onRetour, onJouer 
               </button>
             </span>
           </label>
-          <button type="submit" className="principal" disabled={enCours}>
-            {enCours ? 'Simulation…' : 'Jouer le match'}
-          </button>
+          <span className="boutons">
+            <button type="submit" name="mode" value="rapide" className="principal" disabled={enCours}>
+              {enCours ? 'Simulation…' : 'Jouer le match'}
+            </button>
+            <button type="submit" name="mode" value="commente" disabled={enCours}>
+              Match commenté
+            </button>
+          </span>
         </form>
-        <p className="aide">Même graine, mêmes équipes, même lieu : même match, au point près.</p>
+        <p className="aide">Même graine, mêmes équipes, même lieu : même match, au point près — en rapide comme en commenté.</p>
       </section>
 
       <section className="carte" aria-labelledby="titre-effectif">
@@ -148,7 +158,9 @@ export function EcranEffectif({ franchise, derniere, enCours, onRetour, onJouer 
                     <td>{i < 5 ? 'Titulaire' : i < 10 ? 'Rotation' : 'Banc'}</td>
                     <td>{j.jerseyNumber}</td>
                     <th scope="row" className="gauche">
-                      {j.fictionalDisplayName}
+                      <button type="button" className="lien" onClick={() => onFiche(j.id)}>
+                        {j.fictionalDisplayName}
+                      </button>
                     </th>
                     <td className="gauche">{POSTES[j.sourcePosition] ?? j.sourcePosition}</td>
                     <td>{taille(j.measurements.height.heightCm)}</td>

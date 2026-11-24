@@ -9,7 +9,7 @@
     "url": "https://official.nba.com/rulebook/",
     "edition": "2026-27 NBA Rulebook (pages HTML des règles sur official.nba.com, qui renvoient au PDF de l’édition 2026-27)",
     "verifiedAt": "2026-11-24",
-    "note": "Vérifié le 24/11/2026 contre les pages des règles 3, 5, 6, 7, 9 et 12 et la page « 2026-27 Points of Emphasis » (29/09/2026), qui n’annonce aucun changement sur ces valeurs. Le PDF lui-même n’a pas pu être lu (délai dépassé) : à relire si une différence est signalée."
+    "note": "Vérifié le 24/11/2026 contre les pages des règles 3, 5, 6, 7, 9 et 12 et la page « 2026-27 Points of Emphasis » (29/09/2026), qui n’annonce aucun changement sur ces valeurs. Le PDF lui-même n’a pas pu être lu (délai dépassé) : à relire si une différence est signalée. Tranche 3 : règles 1, 4, 5 (temps-morts) et Comments on the Rules (0,3 s) vérifiées le 24/11/2026 sur les mêmes pages."
   },
   "parametres": {
     "joueursSurLeTerrain": {
@@ -125,6 +125,84 @@
       "unite": "secondes",
       "definition": "Après une faute défensive hors tir (remise en jeu en zone avant), l’horloge garde sa valeur ou remonte à 14 s, la plus grande des deux.",
       "reference": "Rule No. 7, Section IV, 5.1"
+    },
+    "tempsMortsParMatch": {
+      "valeur": 7,
+      "unite": "temps-morts",
+      "definition": "Temps-morts accordés à chaque équipe pour le temps réglementaire.",
+      "reference": "Rule No. 5, Section VI, 1"
+    },
+    "tempsMortsMaxQuatriemePeriode": {
+      "valeur": 4,
+      "unite": "temps-morts",
+      "definition": "Nombre maximal de temps-morts d’une équipe dans le quatrième quart-temps.",
+      "reference": "Rule No. 5, Section VI, 1"
+    },
+    "tempsMortsMaxFinDeMatch": {
+      "valeur": 2,
+      "unite": "temps-morts",
+      "definition": "Nombre maximal de temps-morts d’une équipe après les trois dernières minutes du quatrième quart-temps.",
+      "reference": "Rule No. 5, Section VI, 1"
+    },
+    "debutFinDeMatchTempsMortsSecondes": {
+      "valeur": 180,
+      "unite": "secondes",
+      "definition": "Repère des trois dernières minutes du quatrième quart-temps pour la limite précédente.",
+      "reference": "Rule No. 5, Section VI, 1"
+    },
+    "tempsMortsParProlongation": {
+      "valeur": 2,
+      "unite": "temps-morts",
+      "definition": "Temps-morts accordés à chaque équipe pour chaque prolongation.",
+      "reference": "Rule No. 5, Section VI, 2"
+    },
+    "repereTempsMortObligatoire1Secondes": {
+      "valeur": 419,
+      "unite": "secondes",
+      "definition": "Si aucun temps-mort n’a été pris avant 6:59, le marqueur en accorde un à l’équipe qui reçoit au premier ballon mort.",
+      "reference": "Rule No. 5, Section VI, 3"
+    },
+    "repereTempsMortObligatoire2Secondes": {
+      "valeur": 179,
+      "unite": "secondes",
+      "definition": "Si aucun autre temps-mort n’a été pris avant 2:59, le marqueur en accorde un à l’équipe qui n’en a pas encore été chargée.",
+      "reference": "Rule No. 5, Section VI, 3"
+    },
+    "dureeTempsMortObligatoireSecondes": {
+      "valeur": 165,
+      "unite": "secondes",
+      "definition": "Durée d’un temps-mort obligatoire (2:45, match local).",
+      "reference": "Rule No. 5, Section VI, 3.c"
+    },
+    "dureeTempsMortSecondes": {
+      "valeur": 75,
+      "unite": "secondes",
+      "definition": "Durée d’un temps-mort supplémentaire (1:15).",
+      "reference": "Rule No. 5, Section VI, 3.c"
+    },
+    "horlogeEteinteSousSecondes": {
+      "valeur": 24,
+      "unite": "secondes",
+      "definition": "S’il reste 24 s ou moins dans la période, l’horloge des tirs ne fonctionne plus après un changement de possession.",
+      "reference": "Rule No. 7, Section II, 9"
+    },
+    "tempsMinimalPourTirerSecondes": {
+      "valeur": 0.3,
+      "unite": "secondes",
+      "definition": "Temps minimal au chronomètre pour recevoir le ballon et tirer (en dessous, seule une claquette peut compter).",
+      "reference": "Comments on the Rules, L (Expiration of Time)"
+    },
+    "ligneATroisPointsPieds": {
+      "valeur": 23.75,
+      "unite": "pieds",
+      "definition": "Distance de la ligne à trois points au centre du panier, en haut de l’arc (23’9”).",
+      "reference": "Rule No. 1, Section I, 4"
+    },
+    "zoneRestreintePieds": {
+      "valeur": 4,
+      "unite": "pieds",
+      "definition": "Rayon du demi-cercle de la zone restreinte autour du centre du panier.",
+      "reference": "Rule No. 1, Section I, 9"
     }
   },
   "possessionDebutDePeriode": {

@@ -1,19 +1,37 @@
-// Tranche 1 : le match rapide, simulé possession par possession.
+// Tranches 1 à 3 : le match, simulé possession par possession.
 //
 // Le moteur est une fonction pure : même entrée (graine, équipes, règles, réglages) → même journal d'événements, donc
 // même box score. Il ne calcule aucune statistique lui-même : il écrit le journal (types.ts, `Evenement`) et le box score
-// en est déduit (boxscore.ts). Les modes commenté (tranche 3) et interactif (tranche 5) liront le même journal.
+// en est déduit (boxscore.ts). Les présentations rapide et commentée (tranche 3) et interactive (tranche 5) lisent ce
+// même journal.
 //
 // Une possession : durée tirée (bornée par l'horloge des 24 s et le temps restant), puis perte de balle, faute hors tir
 // ou tir. Le tir est pris par un joueur choisi selon son usage, dans une zone selon son profil ; la réussite dépend de
 // son adresse face à la défense présente, de sa fraîcheur et du terrain. Faute sur tir → lancers ; échec → contre
-// éventuel puis rebond, offensif (horloge à 14 s) ou défensif. Fautes d'équipe et pénalité par période (règles de la
-// saison). Fatigue : chaque joueur perd de la fraîcheur sur le terrain et en regagne sur le banc ; le staff remplace
-// à ballon mort. Simplifications notées dans docs/SIMULATION_MATCH.md : pas de temps-mort, pas de faute offensive.
+// éventuel puis rebond, offensif (horloge à 14 s) ou défensif, ou rebond d'équipe. Fautes d'équipe et pénalité par
+// période (règles de la saison). Fatigue : chaque joueur perd de la fraîcheur sur le terrain et en regagne sur le banc
+// et pendant les temps-morts ; le staff remplace à ballon mort.
+//
+// Tranche 3 : temps-morts (obligatoires, après une série adverse, avant la dernière action), fins de période (horloge
+// des tirs éteinte, dernier tir gardé, tir pressé au buzzer) et fins de match tactiques (fautes volontaires, gestion du
+// chronomètre par l'équipe qui mène, jeu rapide de celle qui est menée). La position de chaque tir est tirée d'un
+// générateur à part : elle décrit le tir sans changer le cours du match.
+// Simplifications notées dans docs/SIMULATION_MATCH.md : pas de faute offensive, de violation ni de faute technique.
 import { creerHasard, type Hasard } from '../hasard';
 import { construireBoxScore } from './boxscore';
 import { empreinteBoxScore } from './empreinte';
-import type { Camp, EntreeMatch, EquipeDuMatch, Evenement, JoueurDuMatch, ResultatMatch, TypeTir } from './types';
+import type {
+  Camp,
+  EntreeMatch,
+  EquipeDuMatch,
+  Evenement,
+  JoueurDuMatch,
+  PositionTir,
+  ReglagesMatch,
+  ReglesMatch,
+  ResultatMatch,
+  TypeTir,
+} from './types';
 import { TYPES_TIR } from './types';
 
 interface EtatJoueur {
@@ -33,6 +51,11 @@ interface EtatEquipe {
   rotation: string[];
   fautesPeriode: number;
   fautesFinDePeriode: number;
+  // Temps-morts (Rule No. 5, Section VI).
+  tempsMortsMatch: number;
+  tempsMortsQuatrieme: number;
+  tempsMortsFinDeMatch: number;
+  tempsMortsProlongation: number;
 }
 
 const borner = (x: number, min: number, max: number): number => Math.min(max, Math.max(min, x));
@@ -46,14 +69,50 @@ function gaussien(h: Hasard, moyenneV: number, ecart: number): number {
   return moyenneV + ecart * Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
 }
 
+/** La position d'un tir, selon sa zone (générateur à part : la position ne change pas le cours du match). */
+export function tirerPosition(h: Hasard, tir: TypeTir, presse: boolean, R: ReglesMatch, G: ReglagesMatch): PositionTir {
+  const arrondi = (distance: number, angle: number): PositionTir => ({
+    distance: Math.round(distance * 10) / 10,
+    angle: Math.round(angle),
+  });
+  const cote = h.chance(0.5) ? -1 : 1;
+  if (tir === 'cercle') return arrondi(3 * Math.sqrt(h.reel()), (h.reel() * 2 - 1) * 90);
+  if (tir === 'miDistance') {
+    const T = G.positions.miDistanceParTranche;
+    const tranche = h.pondere(
+      [
+        [3, 10, T.troisDix],
+        [10, 16, T.dixSeize],
+        [16, R.ligneATroisPointsPieds - 0.5, T.seizeLigne],
+      ] as const,
+      (x) => x[2],
+    );
+    return arrondi(tranche[0] + h.reel() * (tranche[1] - tranche[0]), (h.reel() * 2 - 1) * 85);
+  }
+  if (presse) return arrondi(R.ligneATroisPointsPieds + 1 + h.reel() * 20, (h.reel() * 2 - 1) * 45);
+  if (h.chance(G.positions.partTroisDansLesCoins))
+    return arrondi(G.positions.distanceTroisDansLesCoinsPieds + h.reel(), cote * (80 + h.reel() * 10));
+  return arrondi(R.ligneATroisPointsPieds + Math.min(6, Math.abs(gaussien(h, 0, 1.2))), (h.reel() * 2 - 1) * 70);
+}
+
 export function simulerMatch(entree: EntreeMatch): ResultatMatch {
   const { regles: R, reglages: G } = entree;
   const h = creerHasard(entree.graine, `match:${entree.domicile.id}:${entree.exterieur.id}`);
+  const hPositions = creerHasard(entree.graine, `positions:${entree.domicile.id}:${entree.exterieur.id}`);
   const journal: Evenement[] = [];
   const score: [number, number] = [0, 0];
   let tempsDeJeu = 0; // dixièmes écoulés depuis le début du match
   let periode = 0;
   let restant = 0;
+  // Série en cours : le dernier camp qui a marqué et ses points sans réponse.
+  let serie: { camp: Camp; points: number } = { camp: 0, points: 0 };
+  // Temps-morts de la période (pour les temps-morts obligatoires).
+  let tempsMortsPeriode = 0;
+  let premierCharge: Camp | null = null;
+  let obligatoire1 = false;
+  let obligatoire2 = false;
+  // Action préparée pendant un temps-mort de fin de match : vaut pour le prochain tir de ce camp.
+  let actionPreparee: Camp | null = null;
 
   const preparer = (equipe: EquipeDuMatch): EtatEquipe => {
     if (equipe.joueurs.length < R.joueursSurLeTerrain) throw new Error(`${equipe.nom} n'a pas assez de joueurs pour jouer.`);
@@ -65,6 +124,10 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
       rotation: equipe.joueurs.map((j) => j.id),
       fautesPeriode: 0,
       fautesFinDePeriode: 0,
+      tempsMortsMatch: 0,
+      tempsMortsQuatrieme: 0,
+      tempsMortsFinDeMatch: 0,
+      tempsMortsProlongation: 0,
     };
   };
   const equipes: [EtatEquipe, EtatEquipe] = [preparer(entree.domicile), preparer(entree.exterieur)];
@@ -78,18 +141,31 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
     journal.push(ev);
   };
   const repere = () => ({ periode, restant });
+  const prolongation = (): boolean => periode > R.periodesReglementaires;
+  /** Quatrième quart-temps ou prolongation. */
+  const finale = (): boolean => periode >= R.periodesReglementaires;
+  /** Les deux dernières minutes d'une fin de match. */
+  const deuxDernieresMinutes = (): boolean => finale() && restant <= R.finDePeriodeSecondes * 10;
+  const marquer = (c: Camp, points: number): void => {
+    score[c] += points;
+    if (serie.camp === c) serie.points += points;
+    else serie = { camp: c, points };
+  };
 
   // Le temps passe : fraîcheur et chronomètre.
+  const recuperer = (c: Camp, minutes: number, parMinute: number, aussiSurLeTerrain: boolean): void => {
+    for (const e of equipes[c].joueurs.values()) {
+      if (aussiSurLeTerrain || !equipes[c].surTerrain.includes(e.j.id)) e.energie = Math.min(100, e.energie + parMinute * minutes);
+    }
+  };
   const ecouler = (dixiemes: number): void => {
     const d = Math.min(dixiemes, restant);
     restant -= d;
     tempsDeJeu += d;
     const minutes = d / 600;
-    for (const eq of equipes) {
-      for (const e of eq.joueurs.values()) {
-        if (eq.surTerrain.includes(e.j.id)) e.energie = Math.max(0, e.energie - G.fatigue.perteParMinute * minutes);
-        else e.energie = Math.min(100, e.energie + G.fatigue.recuperationParMinute * minutes);
-      }
+    for (const c of [0, 1] as const) {
+      for (const e of presents(c)) e.energie = Math.max(0, e.energie - G.fatigue.perteParMinute * minutes);
+      recuperer(c, minutes, G.fatigue.recuperationParMinute, false);
     }
   };
 
@@ -137,15 +213,96 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
     }
   };
 
+  // --- Temps-morts (Rule No. 5, Section VI). ---
+  const peutPrendreTempsMort = (c: Camp): boolean => {
+    const eq = equipes[c];
+    if (prolongation()) return eq.tempsMortsProlongation < R.tempsMortsParProlongation;
+    if (eq.tempsMortsMatch >= R.tempsMortsParMatch) return false;
+    if (periode === R.periodesReglementaires) {
+      if (eq.tempsMortsQuatrieme >= R.tempsMortsMaxQuatriemePeriode) return false;
+      if (restant <= R.debutFinDeMatchTempsMortsSecondes * 10 && eq.tempsMortsFinDeMatch >= R.tempsMortsMaxFinDeMatch) return false;
+    }
+    return true;
+  };
+  const restantsDe = (c: Camp): number =>
+    prolongation() ? R.tempsMortsParProlongation - equipes[c].tempsMortsProlongation : R.tempsMortsParMatch - equipes[c].tempsMortsMatch;
+  const prendreTempsMort = (c: Camp | null, motif: 'obligatoire' | 'serie' | 'fin_de_match'): void => {
+    if (c !== null) {
+      const eq = equipes[c];
+      if (prolongation()) eq.tempsMortsProlongation++;
+      else eq.tempsMortsMatch++;
+      if (periode === R.periodesReglementaires) {
+        eq.tempsMortsQuatrieme++;
+        if (restant <= R.debutFinDeMatchTempsMortsSecondes * 10) eq.tempsMortsFinDeMatch++;
+      }
+      if (premierCharge === null) premierCharge = c;
+    }
+    tempsMortsPeriode++;
+    const obligatoire = motif === 'obligatoire';
+    ecrire({
+      type: 'temps_mort',
+      ...repere(),
+      equipe: c,
+      nature: obligatoire ? 'obligatoire' : 'equipe',
+      motif,
+      restants: c === null ? 0 : restantsDe(c),
+    });
+    // Tout le monde souffle pendant le temps-mort ; le staff peut changer qui il veut.
+    const minutes = (obligatoire ? R.dureeTempsMortObligatoireSecondes : R.dureeTempsMortSecondes) / 60;
+    recuperer(0, minutes, G.tempsMorts.recuperationParMinute, true);
+    recuperer(1, minutes, G.tempsMorts.recuperationParMinute, true);
+    if (motif === 'serie' && c !== null) serie = { camp: autre(c), points: 0 };
+  };
+  /** À ballon mort, avant la possession de `attaque` : temps-morts obligatoires, puis ceux que les coachs demandent. */
+  const tempsMortsABallonMort = (attaque: Camp): void => {
+    if (!prolongation()) {
+      if (!obligatoire1 && restant <= R.repereTempsMortObligatoire1Secondes * 10) {
+        obligatoire1 = true;
+        if (tempsMortsPeriode === 0) prendreTempsMort(peutPrendreTempsMort(0) ? 0 : null, 'obligatoire');
+      }
+      if (!obligatoire2 && restant <= R.repereTempsMortObligatoire2Secondes * 10) {
+        obligatoire2 = true;
+        if (tempsMortsPeriode <= 1) {
+          const c = autre(premierCharge ?? 0);
+          prendreTempsMort(peutPrendreTempsMort(c) ? c : null, 'obligatoire');
+        }
+      }
+    }
+    // Série adverse : le coach de l'équipe qui subit arrête le jeu (pas dans les deux dernières minutes, où il les garde).
+    const subit = autre(serie.camp);
+    if (serie.points >= G.tempsMorts.serieAdverseDeclencheur && !deuxDernieresMinutes() && peutPrendreTempsMort(subit))
+      prendreTempsMort(subit, 'serie');
+    // Dernière action : l'équipe à égalité ou menée de trois points au plus prépare son tir.
+    const ecart = score[attaque] - score[autre(attaque)];
+    if (
+      finale() &&
+      restant <= R.horlogeEteinteSousSecondes * 10 &&
+      ecart <= 0 &&
+      ecart >= -3 &&
+      actionPreparee !== attaque &&
+      peutPrendreTempsMort(attaque)
+    ) {
+      prendreTempsMort(attaque, 'fin_de_match');
+      actionPreparee = attaque;
+    }
+    faireTourner(0);
+    faireTourner(1);
+  };
+
   // --- Fautes et lancers francs. ---
   const enPenalite = (fautive: Camp): boolean => {
     const eq = equipes[fautive];
-    const prolongation = periode > R.periodesReglementaires;
-    const rang = prolongation ? R.rangFauteEquipePenaliteProlongation : R.rangFauteEquipePenalite;
+    const rang = prolongation() ? R.rangFauteEquipePenaliteProlongation : R.rangFauteEquipePenalite;
     if (eq.fautesPeriode >= rang) return true;
     return restant <= R.finDePeriodeSecondes * 10 && eq.fautesFinDePeriode >= R.rangFauteEquipeFinDePeriode;
   };
-  const commettreFaute = (fautive: Camp, joueur: EtatJoueur, victime: EtatJoueur, nature: 'tir' | 'hors_tir'): boolean => {
+  const commettreFaute = (
+    fautive: Camp,
+    joueur: EtatJoueur,
+    victime: EtatJoueur,
+    nature: 'tir' | 'hors_tir',
+    volontaire = false,
+  ): boolean => {
     const eq = equipes[fautive];
     joueur.fautes += 1;
     eq.fautesPeriode += 1;
@@ -161,6 +318,7 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
       fautesJoueur: joueur.fautes,
       fautesEquipe: eq.fautesPeriode,
       penalite,
+      ...(volontaire ? { volontaire: true as const } : {}),
     });
     if (joueur.fautes >= R.fautesPersonnellesExclusion && !joueur.exclu) {
       joueur.exclu = true;
@@ -177,7 +335,7 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
     let dernier = false;
     for (let n = 1; n <= nombre; n++) {
       dernier = h.chance(p);
-      if (dernier) score[c] += R.valeurLancerFranc;
+      if (dernier) marquer(c, R.valeurLancerFranc);
       ecrire({
         type: 'lancer_franc',
         ...repere(),
@@ -218,32 +376,81 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
     return brut - malus(e);
   };
   const defense = (c: Camp): number => moyenne(presents(c).map((e) => 0.6 * e.j.tactique + 0.4 * e.j.physique - malus(e)));
+  const usage = (e: EtatJoueur) => Math.exp((effectif(e) - 70) / G.tirs.usageEchelle);
+  const minimalPourTirer = Math.round(R.tempsMinimalPourTirerSecondes * 10);
 
   const jouerPossession = (attaque: Camp): { suivant: Camp; ballonMort: boolean } => {
     const def = autre(attaque);
-    let horloge = R.horlogeDePossessionSecondes;
-    for (;;) {
-      if (restant < G.possession.tempsRestantMinimalPourTirer * 10) {
+    const F = G.finDeMatch;
+    // Rule No. 7, Section II, 9 : à 24 s ou moins de la fin, l'horloge des tirs s'éteint après un changement de possession.
+    let horloge = restant <= R.horlogeEteinteSousSecondes * 10 ? restant / 10 : R.horlogeDePossessionSecondes;
+    for (let tentative = 0; ; tentative++) {
+      // Trop peu de temps pour tirer : moins que le minimum réglementaire, ou, après un rebond offensif ou une faute,
+      // moins que le minimum du modèle (le ballon n'est pas relancé). Une nouvelle possession tente sa chance dès 1 s.
+      const seuil = tentative === 0 ? Math.max(minimalPourTirer, 10) : G.possession.tempsRestantMinimalPourTirer * 10;
+      if (restant < seuil) {
         ecouler(restant);
         return { suivant: def, ballonMort: true };
       }
-      const P = G.possession;
-      const duree = Math.round(
-        borner(
-          gaussien(h, P.dureeMoyenneSecondes * (horloge / R.horlogeDePossessionSecondes), P.dureeEcartSecondes),
-          P.dureeMinimaleSecondes,
-          horloge,
-        ) * 10,
-      );
+      const ecart = score[attaque] - score[def];
       const attaquants = presents(attaque);
       const defenseurs = presents(def);
+
+      // Fin de match : la défense menée fait faute tout de suite pour arrêter le chronomètre.
+      if (
+        deuxDernieresMinutes() &&
+        ecart >= 1 &&
+        ecart <= F.fauteVolontaireEcartMax &&
+        restant <= Math.min(F.fauteVolontaireSecondesMax, ecart * F.fauteVolontaireSecondesParPoint) * 10
+      ) {
+        const ecoule = Math.min(
+          restant - 1,
+          Math.round(borner(gaussien(h, F.dureeFauteVolontaireSecondes, 1), 1, 2 * F.dureeFauteVolontaireSecondes) * 10),
+        );
+        ecouler(ecoule);
+        const fautif = choisirParmi(defenseurs, (e) => Math.max(1, 110 - e.j.tactique));
+        // L'attaque donne le ballon à son meilleur tireur de lancers.
+        const victime = attaquants.reduce((m, e) => (e.j.technique > m.j.technique ? e : m));
+        if (commettreFaute(def, fautif, victime, 'hors_tir', true)) {
+          if (tirerLancers(attaque, victime, R.lancersFrancsPenalite)) return { suivant: def, ballonMort: true };
+          if (rebond(attaque) === def) return { suivant: def, ballonMort: false };
+          horloge = Math.min(R.horlogeApresRebondOffensifSecondes, restant / 10);
+          continue;
+        }
+        faireTourner(0);
+        faireTourner(1);
+        horloge = Math.min(Math.max(horloge - ecoule / 10, R.horlogeMinimaleApresFauteDefensiveSecondes), restant / 10);
+        continue;
+      }
+
+      // Durée de l'action. L'attaque peut garder le ballon jusqu'au bout quand le temps restant tient dans l'horloge.
+      const P = G.possession;
+      const jusquAuBout = restant / 10 <= horloge;
+      if (jusquAuBout && finale() && ecart > 0) {
+        // L'équipe qui mène laisse filer le temps.
+        ecouler(restant);
+        return { suivant: def, ballonMort: true };
+      }
+      let duree: number;
+      if (jusquAuBout) duree = restant - Math.max(minimalPourTirer, Math.round(h.reel() * F.margeDernierTirSecondes * 10));
+      else {
+        const moyenneDuree =
+          deuxDernieresMinutes() && ecart > 0
+            ? horloge * F.gestionAvanceFraction
+            : deuxDernieresMinutes() && -ecart >= F.presseEcartMin
+              ? F.presseDureeSecondes
+              : P.dureeMoyenneSecondes * (horloge / R.horlogeDePossessionSecondes);
+        duree = Math.round(borner(gaussien(h, moyenneDuree, P.dureeEcartSecondes), P.dureeMinimaleSecondes, horloge) * 10);
+      }
+      duree = borner(duree, 1, restant - 1);
+      const presse = restant < P.tempsRestantMinimalPourTirer * 10;
 
       // Perte de balle.
       const T = G.pertesDeBalle;
       const maitrise = moyenne(attaquants.map((e) => (e.j.mental + e.j.tactique) / 2 - malus(e)));
       if (h.chance(borner(T.probabiliteDeBase - T.sensibiliteParPoint * (maitrise - defense(def)), 0.04, 0.3))) {
         ecouler(Math.round(duree * (0.3 + 0.6 * h.reel())));
-        const fautif = choisirParmi(attaquants, (e) => Math.exp((effectif(e) - 70) / G.tirs.usageEchelle));
+        const fautif = choisirParmi(attaquants, usage);
         const vol = h.chance(T.partInterceptions) ? choisirParmi(defenseurs, (e) => Math.max(1, e.j.tactique - 40)) : undefined;
         ecrire({ type: 'perte_de_balle', ...repere(), equipe: attaque, joueur: fautif.j.id, ...(vol ? { interception: vol.j.id } : {}) });
         return { suivant: def, ballonMort: !vol };
@@ -254,34 +461,39 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
         const ecoule = Math.round(duree * (0.3 + 0.6 * h.reel()));
         ecouler(ecoule);
         const fautif = choisirParmi(defenseurs, (e) => Math.max(1, 110 - e.j.tactique));
-        const victime = choisirParmi(attaquants, (e) => Math.exp((effectif(e) - 70) / G.tirs.usageEchelle));
+        const victime = choisirParmi(attaquants, usage);
         if (commettreFaute(def, fautif, victime, 'hors_tir')) {
           if (tirerLancers(attaque, victime, R.lancersFrancsPenalite)) return { suivant: def, ballonMort: true };
           if (rebond(attaque) === def) return { suivant: def, ballonMort: false };
-          horloge = R.horlogeApresRebondOffensifSecondes;
+          horloge = Math.min(R.horlogeApresRebondOffensifSecondes, restant / 10);
           continue;
         }
         faireTourner(0);
         faireTourner(1);
         // Rule No. 7, Section IV, 5.1 : l'horloge garde sa valeur, ou remonte au minimum si elle était plus basse.
-        horloge = Math.max(horloge - ecoule / 10, R.horlogeMinimaleApresFauteDefensiveSecondes);
+        horloge = Math.min(Math.max(horloge - ecoule / 10, R.horlogeMinimaleApresFauteDefensiveSecondes), restant / 10);
         continue;
       }
 
       // Tir.
       ecouler(duree);
-      const tireur = choisirParmi(attaquants, (e) => Math.exp((effectif(e) - 70) / G.tirs.usageEchelle));
+      const tireur = choisirParmi(attaquants, usage);
       const profil = G.tirs.profilParGroupe[tireur.j.groupe];
-      const tir = h.pondere(TYPES_TIR, (t) => G.tirs.repartition[t] * profil[t]);
+      const pourEgaliser = finale() && ecart === -3 && restant <= R.horlogeEteinteSousSecondes * 10 && h.chance(F.partTroisEnRetardDeTrois);
+      const tir = pourEgaliser ? 'troisPoints' : h.pondere(TYPES_TIR, (t) => G.tirs.repartition[t] * profil[t]);
       const valeur = tir === 'troisPoints' ? R.valeurPanierATroisPoints : R.valeurPanierInterieur;
+      const preparee = actionPreparee === attaque;
+      if (preparee) actionPreparee = null;
       const pReussite = borner(
         G.tirs.reussiteDeBase[tir] +
           G.tirs.sensibiliteParPoint * (adresse(tireur, tir) - defense(def)) +
-          (attaque === 0 ? G.tirs.avantageDomicile : 0),
-        0.05,
+          (attaque === 0 ? G.tirs.avantageDomicile : 0) -
+          (presse ? F.malusTirPresse : 0) +
+          (preparee ? G.tempsMorts.bonusActionPreparee : 0),
+        0.02,
         0.9,
       );
-      const faute = h.chance(G.fautes.surTirParType[tir]);
+      const faute = !presse && h.chance(G.fautes.surTirParType[tir]);
       const reussi = faute ? h.chance(G.fautes.partPanierAvecFaute) : h.chance(pReussite);
       const passeur =
         reussi && attaquants.length > 1 && h.chance(G.passes.probabiliteSurPanier)
@@ -297,7 +509,7 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
 
       // Un tir manqué sur faute n'est pas une tentative : seul le tir réussi (panier avec faute) est écrit.
       if (!faute || reussi) {
-        if (reussi) score[attaque] += valeur;
+        if (reussi) marquer(attaque, valeur);
         ecrire({
           type: 'tir',
           ...repere(),
@@ -309,6 +521,10 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
           ...(passeur ? { passe: passeur.j.id } : {}),
           ...(contreur ? { contre: contreur.j.id } : {}),
           score: [score[0], score[1]],
+          position: tirerPosition(hPositions, tir, presse, R, G),
+          ...(presse ? { presse: true as const } : {}),
+          ...(restant <= 10 ? { auBuzzer: true as const } : {}),
+          ...(preparee ? { preparee: true as const } : {}),
         });
       }
       if (faute) {
@@ -322,8 +538,12 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
         if (tirerLancers(attaque, tireur, nombre)) return { suivant: def, ballonMort: true };
       } else if (reussi) return { suivant: def, ballonMort: true };
 
+      if (restant < minimalPourTirer) {
+        ecouler(restant);
+        return { suivant: def, ballonMort: true };
+      }
       if (rebond(attaque) === def) return { suivant: def, ballonMort: false };
-      horloge = R.horlogeApresRebondOffensifSecondes;
+      horloge = Math.min(R.horlogeApresRebondOffensifSecondes, restant / 10);
     }
   };
 
@@ -341,12 +561,17 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
 
   const jouerPeriode = (): void => {
     periode += 1;
-    const prolongation = periode > R.periodesReglementaires;
-    restant = (prolongation ? R.dureeProlongationSecondes : R.dureePeriodeSecondes) * 10;
+    restant = (prolongation() ? R.dureeProlongationSecondes : R.dureePeriodeSecondes) * 10;
     for (const eq of equipes) {
       eq.fautesPeriode = 0;
       eq.fautesFinDePeriode = 0;
+      eq.tempsMortsProlongation = 0;
     }
+    tempsMortsPeriode = 0;
+    premierCharge = null;
+    obligatoire1 = false;
+    obligatoire2 = false;
+    actionPreparee = null;
     // Au début de chaque période après la première, le staff remet les titulaires reposés.
     if (periode > 1) {
       for (const c of [0, 1] as const) {
@@ -366,7 +591,7 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
       }
     }
     ecrire({ type: 'debut_periode', periode, restant, cinq: [equipes[0].surTerrain.slice(), equipes[1].surTerrain.slice()] });
-    const regle = prolongation ? 'entre-deux' : (R.possessionDebutDePeriode[periode - 1] ?? 'entre-deux');
+    const regle = prolongation() ? 'entre-deux' : (R.possessionDebutDePeriode[periode - 1] ?? 'entre-deux');
     let attaque: Camp;
     if (regle === 'entre-deux') {
       attaque = entreDeux();
@@ -375,10 +600,7 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
 
     while (restant > 0) {
       const { suivant, ballonMort } = jouerPossession(attaque);
-      if (ballonMort && restant > 0) {
-        faireTourner(0);
-        faireTourner(1);
-      }
+      if (ballonMort && restant > 0) tempsMortsABallonMort(suivant);
       attaque = suivant;
     }
     ecrire({ type: 'fin_periode', periode, restant: 0, score: [score[0], score[1]] });

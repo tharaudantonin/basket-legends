@@ -83,7 +83,9 @@
       "reussite": 0.36
     },
     "partPassesSurPaniersA2": 0.537,
-    "partPassesSurPaniersA3": 0.854
+    "partPassesSurPaniersA3": 0.854,
+    "partTroisDansLesCoins": 0.246,
+    "reussiteTroisDansLesCoins": 0.387
   },
   "domicile": {
     "victoires": 679,

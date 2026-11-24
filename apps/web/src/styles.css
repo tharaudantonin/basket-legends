@@ -406,3 +406,128 @@ input[type='number'] {
     grid-template-columns: 1fr;
   }
 }
+
+/* Tranche 3 : mode commenté, moments, fiche joueur (sobre, en attendant le chantier visuel). */
+button.lien {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.boutons {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.tableau-score.direct {
+  position: relative;
+}
+.chrono {
+  grid-column: 1 / -1;
+  margin: 0.25rem 0 0;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.commandes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.commandes .case {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+button[aria-pressed='true'] {
+  outline: 2px solid currentColor;
+}
+.commente {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+@media (max-width: 800px) {
+  .commente {
+    grid-template-columns: 1fr;
+  }
+}
+.fil {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.fil li {
+  display: grid;
+  grid-template-columns: 6.5rem 4.5rem 1fr;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgb(0 0 0 / 8%);
+}
+.fil li.important {
+  font-weight: 600;
+}
+.fil-temps,
+.fil-score {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
+}
+.moments {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.moments .importance-3 {
+  font-weight: 700;
+}
+.moments .importance-1 {
+  opacity: 0.8;
+}
+.notes-joueur {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.note-globale {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.adresse {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 1rem;
+  align-items: start;
+}
+@media (max-width: 800px) {
+  .adresse {
+    grid-template-columns: 1fr;
+  }
+}
+.adresse svg {
+  width: 100%;
+  height: auto;
+}
+.adresse .parquet {
+  fill: #efe6d6;
+}
+.adresse .ligne {
+  fill: none;
+  stroke: #6b5b45;
+  stroke-width: 0.2;
+}
+.adresse .tir-reussi {
+  fill: #1f7a4d;
+}
+.adresse .tir-manque {
+  stroke: #b3362f;
+  stroke-width: 0.25;
+}

@@ -92,3 +92,19 @@ describe('modèle de notes v1', () => {
     for (const [id] of absents) expect(parId.get(id)?.saisonDeReference).toBe('2024-2025');
   });
 });
+
+describe('fiche joueur : statistiques sourcées', () => {
+  it('recalcule les moyennes à partir des totaux, compétitions séparées', async () => {
+    const { moyennesDuJoueur } = await import('../src');
+    const [id, s] = Object.entries(stats.joueurs).find(([, x]) => x.saisonReguliere && x.playoffs && x.playIn)!;
+    const m = moyennesDuJoueur(stats, id);
+    expect(m.map((x) => x.competition)).toEqual(['saisonReguliere', 'playIn', 'playoffs']);
+    const r = s.saisonReguliere!;
+    expect(m[0]!.points).toBeCloseTo(r.points / r.matchs, 10);
+    expect(m[0]!.source.url).toBe(stats.sources.saisonReguliere.url);
+    expect(m[1]!.titularisations).toBeNull();
+    // Recrue sans statistique NBA : aucune ligne, rien d'inventé.
+    const recrue = Object.entries(stats.joueurs).find(([, x]) => x.draft2026 && !x.saisonReguliere)![0];
+    expect(moyennesDuJoueur(stats, recrue)).toEqual([]);
+  });
+});
