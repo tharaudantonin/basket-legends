@@ -9,6 +9,7 @@ export {
   donneesDeDraft,
   lireDonneesDeDraft,
   nomsPrisDesEffectifs,
+  nomsDuVivier,
   generateurDeNoms,
   empreinteNom,
   reglesDeLaLoterie,

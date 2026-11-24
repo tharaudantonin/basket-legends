@@ -25,7 +25,8 @@
     "officialSourceVerification": "pending",
     "note": "Do not infer NBA person IDs, contract type, two-way status, contract terms, or statistics from this file. Verify separately against official NBA records before marking those fields verified.",
     "names": "Noms fictifs aux mêmes initiales, proposés le 24/11/2026 et à relire (nameStatus). La table de correspondance avec les vrais noms est gardée hors du dépôt.",
-    "ratings": "Notes et attributs du modèle notes-v2 (data/modeles/notes-v2.json, docs/NOTES_JOUEURS.md), calculés par npm run notes."
+    "ratings": "Notes et attributs du modèle notes-v2 (data/modeles/notes-v2.json, docs/NOTES_JOUEURS.md), calculés par npm run notes.",
+    "age": "seasonAge : âge au 1er février 2027 (convention de Basketball-Reference pour la saison 2026-27), déduit de l’âge 2025-26 (+ 1) ou 2024-25 (+ 2) de data/statistiques/2025-26/joueurs.json ; null si inconnu (aucune date de naissance relevée)."
   },
   "units": {
     "canonical": "metric",
@@ -71,6 +72,7 @@
       },
       "lastAttended": "Loyola-Maryland",
       "country": "Spain",
+      "seasonAge": 26,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -136,6 +138,7 @@
       },
       "lastAttended": null,
       "country": "Bosnia and Herzegovina",
+      "seasonAge": null,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -201,6 +204,7 @@
       },
       "lastAttended": "Michigan State",
       "country": "USA",
+      "seasonAge": 23,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -266,6 +270,7 @@
       },
       "lastAttended": "Memphis",
       "country": "Guinea",
+      "seasonAge": 24,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -331,6 +336,7 @@
       },
       "lastAttended": "Florida",
       "country": "USA",
+      "seasonAge": 23,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -396,6 +402,7 @@
       },
       "lastAttended": "Valencia, Spain",
       "country": "Spain",
+      "seasonAge": null,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -461,6 +468,7 @@
       },
       "lastAttended": "Duke",
       "country": "USA",
+      "seasonAge": 20,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -526,6 +534,7 @@
       },
       "lastAttended": "Arkansas",
       "country": "USA",
+      "seasonAge": 28,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -591,6 +600,7 @@
       },
       "lastAttended": "Michigan",
       "country": "USA",
+      "seasonAge": 23,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -656,6 +666,7 @@
       },
       "lastAttended": "Duke",
       "country": "Australia",
+      "seasonAge": 34,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -721,6 +732,7 @@
       },
       "lastAttended": "Michigan",
       "country": "USA",
+      "seasonAge": null,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -786,6 +798,7 @@
       },
       "lastAttended": "Virginia Tech",
       "country": "United Kingdom",
+      "seasonAge": null,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -851,6 +864,7 @@
       },
       "lastAttended": "Duke",
       "country": "USA",
+      "seasonAge": 22,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -916,6 +930,7 @@
       },
       "lastAttended": "Xavier",
       "country": "USA",
+      "seasonAge": 29,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -981,6 +996,7 @@
       },
       "lastAttended": "Nevada",
       "country": "USA",
+      "seasonAge": 31,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -1046,6 +1062,7 @@
       },
       "lastAttended": "JL Bourg-en-Bresse",
       "country": "France",
+      "seasonAge": 21,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -1111,6 +1128,7 @@
       },
       "lastAttended": "Houston",
       "country": "USA",
+      "seasonAge": 26,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -1176,6 +1194,7 @@
       },
       "lastAttended": "Kentucky",
       "country": "USA",
+      "seasonAge": 28,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {

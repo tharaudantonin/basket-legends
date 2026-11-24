@@ -93,6 +93,9 @@ export function donneesDeDraft(f: {
 export const nomsPrisDesEffectifs = (effectifs: readonly Effectif[]): string[] =>
   effectifs.flatMap((e) => e.players.map((j) => `${j.fictionalFirstName} ${j.fictionalLastName}`));
 
+/** Les noms complets des joueurs du vivier (data/vivier/) : jamais redonnés à un prospect. */
+export const nomsDuVivier = (vivier: { joueurs: { prenom: string; nom: string }[] }): string[] => vivier.joueurs.map((j) => `${j.prenom} ${j.nom}`);
+
 /** Les données de la Draft à partir du contenu brut des fichiers (validé ici par Zod). */
 export function lireDonneesDeDraft(
   bruts: { loterie: unknown; historique: unknown; choix: unknown[]; modele: unknown; echelle: unknown; banques: unknown; empreintes: unknown },

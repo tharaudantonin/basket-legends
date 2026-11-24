@@ -20,6 +20,7 @@ import {
   schemaSaisonLigue,
   schemaStatistiquesJoueurs,
   schemaStatistiquesLigue,
+  schemaVivier,
   type Effectif,
   type Registre,
 } from './schemas';
@@ -51,6 +52,8 @@ export interface SourcesDonnees {
   contrats: Record<string, unknown>;
   /** Tranche 7 : contenu de data/draft/, par nom de fichier. */
   draft: Record<string, unknown>;
+  /** Tranche 7 : contenu de data/vivier/, par nom de fichier. */
+  vivier: Record<string, unknown>;
 }
 
 export interface Rapport {
@@ -414,6 +417,37 @@ export function verifierDonnees(sources: SourcesDonnees): Rapport {
         if (i > 0 && r.montants[0]! > lu.data.rangs[i - 1]!.montants[0]!) erreurs.push(`${chemin} : le rang ${r.rang} gagne plus que le rang ${r.rang - 1}`);
       });
     } else erreurs.push(`${chemin} : fichier inattendu`);
+  }
+
+  // 11. Tranche 7 : vivier de joueurs générés (noms originaux, identifiants uniques, échelle 40-67).
+  if (!Object.keys(sources.vivier).length) erreurs.push('data/vivier : aucun fichier de vivier');
+  const empreintesLues = schemaEmpreintes.safeParse(sources.empreintes);
+  const complets = new Set(empreintesLues.success ? empreintesLues.data.nomsComplets : []);
+  const famillesInterdites = new Set(empreintesLues.success ? empreintesLues.data.nomsDeFamille : []);
+  const nomsDuSnapshot = new Set<string>();
+  for (const e of Object.values(sources.effectifs) as { players?: { fictionalFirstName?: string; fictionalLastName?: string }[] }[])
+    for (const j of e.players ?? []) nomsDuSnapshot.add(normaliserNom(`${j.fictionalFirstName} ${j.fictionalLastName}`));
+  for (const [fichier, contenu] of Object.entries(sources.vivier)) {
+    const chemin = `data/vivier/${fichier}`;
+    const lu = schemaVivier.safeParse(contenu);
+    if (!lu.success) {
+      erreurs.push(...messagesZod(chemin, lu));
+      continue;
+    }
+    const ids = new Set<string>();
+    const noms = new Set<string>();
+    for (const j of lu.data.joueurs) {
+      const complet = `${j.prenom} ${j.nom}`;
+      if (ids.has(j.id)) erreurs.push(`${chemin} : identifiant en double ${j.id}`);
+      ids.add(j.id);
+      if (noms.has(normaliserNom(complet))) erreurs.push(`${chemin} : nom en double « ${complet} »`);
+      noms.add(normaliserNom(complet));
+      if (nomsDuSnapshot.has(normaliserNom(complet))) erreurs.push(`${chemin} : ${j.id} porte le nom d'un joueur du snapshot`);
+      if (complets.has(empreinte(complet)) || partiesDuNom(j.nom).some((p) => famillesInterdites.has(empreinte(p))))
+        erreurs.push(`${chemin} : ${j.id} porte un nom réel interdit`);
+      if (j.potentiel < j.note) erreurs.push(`${chemin} : ${j.id} a un potentiel inférieur à sa note`);
+    }
+    if (lu.data.statut !== 'valide') avertissements.push(`${chemin} : vivier au statut « proposition », à valider par Antonin`);
   }
 
   return { erreurs, avertissements, joueurs };

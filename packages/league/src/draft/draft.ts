@@ -18,6 +18,7 @@ import type {
   ParticipantLoterie,
   ProprieteChoix,
   Prospect,
+  Recrue,
   ReglesLoterie,
 } from './types';
 
@@ -157,8 +158,58 @@ export function avancerDraft(ctx: ContexteLigue, etatInitial: EtatSaison, choixD
     }
     draft.selections[String(c.rang)] = choixDuStaff(ctx, etat, c.detenteur).id;
   }
-  if (!prochainChoix(draft)) draft.terminee = true;
+  if (!prochainChoix(draft) && !draft.terminee) {
+    draft.terminee = true;
+    draft.recrues = recruesDeLaDraft(ctx, draft);
+    publierLaDraft(ctx, etat);
+  }
   return etat;
+}
+
+/**
+ * Les joueurs draftés et leur contrat. L'échelle de la Draft N s'applique à la saison N-(N+1) ; le dépôt n'a que la CBA
+ * de la saison en cours : son plafond sert tant que le suivant n'est pas relevé (montants provisoires).
+ */
+export function recruesDeLaDraft(ctx: ContexteLigue, draft: EtatDraft): Recrue[] {
+  const D = ctx.draft!;
+  const saisonDuContrat = `${draft.annee}-${draft.annee + 1}`;
+  const plafond = {
+    saison: ctx.salaires.saison,
+    montant: ctx.salaires.cba.plafondSalarial,
+    provisoire: ctx.salaires.saison !== saisonDuContrat,
+  };
+  return (draft.choix ?? []).map((c) => {
+    const salaires = c.tour === 1 ? contratDeRookie(D, c.rang, plafond.montant) : undefined;
+    return { prospect: draft.selections[String(c.rang)]!, equipe: c.detenteur, rang: c.rang, ...(salaires ? { salaires } : {}), plafond };
+  });
+}
+
+function publierLaDraft(ctx: ContexteLigue, etat: EtatSaison): void {
+  const draft = etat.draft!;
+  const nom = (id: string) => {
+    const p = draft.classe.find((x) => x.id === id);
+    return p ? `${p.prenom} ${p.nom}` : id;
+  };
+  const equipe = (id: string) => ctx.equipes[id]?.nom ?? id;
+  const r = draft.recrues ?? [];
+  const premier = r[0];
+  const siens = r.filter((x) => x.equipe === etat.franchise);
+  etat.actualites.push({
+    id: etat.actualites.length + 1,
+    date: etat.date,
+    genre: 'draft',
+    importance: 3,
+    equipes: r.slice(0, 3).map((x) => x.equipe),
+    titre: premier
+      ? `Draft ${draft.annee} : ${equipe(premier.equipe)} choisit ${nom(premier.prospect)} en n° 1`
+      : `Draft ${draft.annee} terminée`,
+    texte: `${r
+      .slice(0, 5)
+      .map((x) => `${x.rang}. ${nom(x.prospect)} (${equipe(x.equipe)})`)
+      .join(
+        ', ',
+      )}.${siens.length ? ` Vos choix : ${siens.map((x) => `n° ${x.rang} ${nom(x.prospect)}`).join(', ')}.` : ' Vous n’aviez aucun choix.'}`,
+  });
 }
 
 /** Salaires d'un choix de premier tour (120 % de l'échelle, en proportion du plafond de la saison de la Draft). */

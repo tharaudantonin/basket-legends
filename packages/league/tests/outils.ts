@@ -5,6 +5,8 @@ import {
   contexteDeLaLigue,
   donneesSalariales,
   lireDonneesDeDraft,
+  nomsDuVivier,
+  schemaVivier,
   schemaCba,
   schemaContrats,
   reglagesDuMoteur,
@@ -50,5 +52,6 @@ export function chargerDonneesDeDraft(effectifs: Parameters<typeof lireDonneesDe
       empreintes: json('data/noms/empreintes.json'),
     },
     effectifs,
+    nomsDuVivier(schemaVivier.parse(json('data/vivier/2026-27.json'))),
   );
 }

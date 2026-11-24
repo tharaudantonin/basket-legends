@@ -243,6 +243,13 @@ describe('soirée de Draft après une saison complète', () => {
     expect(a.draft!.terminee).toBe(true);
     expect(Object.keys(a.draft!.selections)).toHaveLength(60);
     expect(avancerDraft(ctx, delegue).draft!.selections).toEqual(a.draft!.selections);
+    // Recrues : 60 joueurs, contrats de l'échelle au 1er tour (provisoires : plafond 2027-28 pas encore relevé).
+    const r = a.draft!.recrues!;
+    expect(r).toHaveLength(60);
+    expect(r.filter((x) => x.salaires?.length === 4)).toHaveLength(30);
+    expect(r[0]!.salaires).toEqual(contratDeRookie(D, 1, ctx.salaires.cba.plafondSalarial));
+    expect(r[0]!.plafond.provisoire).toBe(true);
+    expect(a.actualites.filter((x) => x.genre === 'draft')).toHaveLength(2);
     // Les prospects pris tôt sont en moyenne meilleurs que ceux pris tard (le staff se trompe, mais pas au hasard).
     const vrai = new Map(a.draft!.classe.map((p) => [p.id, p.potentiel]));
     const moy = (r: number[]) => r.reduce((s, k) => s + vrai.get(a.draft!.selections[String(k)]!)!, 0) / r.length;

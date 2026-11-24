@@ -1,6 +1,6 @@
 // Tranche 4 : le contexte de la ligue, construit dans le Web Worker seulement (il charge les statistiques 2025-26,
 // trop lourdes pour l'écran principal). Tranche 7 : avec les données de la Draft.
-import { contexteDeLaLigue, lireDonneesDeDraft, schemaStatistiquesJoueurs } from '@basket-legends/data';
+import { contexteDeLaLigue, lireDonneesDeDraft, nomsDuVivier, schemaStatistiquesJoueurs } from '@basket-legends/data';
 import type { ContexteLigue } from '@basket-legends/league';
 import statsBrutes from '../../../data/statistiques/2025-26/joueurs.json';
 import loterieBrute from '../../../data/draft/loterie-2027-2029.json';
@@ -9,7 +9,7 @@ import modeleDraftBrut from '../../../data/draft/modele-draft.json';
 import echelleBrute from '../../../data/draft/echelle-rookies.json';
 import banquesBrutes from '../../../data/noms/banques.json';
 import empreintesBrutes from '../../../data/noms/empreintes.json';
-import { effectifs, fichierLigue, reglages, regles, salaires } from './donnees';
+import { effectifs, fichierLigue, reglages, regles, salaires, vivier } from './donnees';
 
 // Tranche 7 : propriété des choix de chaque Draft relevée (data/draft/choix-<année>.json).
 const choixBruts = import.meta.glob<unknown>('../../../data/draft/choix-*.json', { eager: true, import: 'default' });
@@ -35,6 +35,7 @@ export function contexteLigue(): ContexteLigue {
         empreintes: empreintesBrutes,
       },
       [...effectifs.values()],
+      nomsDuVivier(vivier),
     ),
   );
   return contexte;

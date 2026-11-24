@@ -163,6 +163,21 @@ export interface EtatDraft {
   /** Le GM laisse son staff choisir pour lui. */
   delegue?: boolean;
   terminee?: boolean;
+  /** Les joueurs draftés, à la fin de la Draft : équipe, rang et salaires de l'échelle des rookies (1er tour). */
+  recrues?: Recrue[];
+}
+
+export interface Recrue {
+  prospect: string;
+  equipe: string;
+  rang: number;
+  /** Quatre saisons (deux garanties, deux options de l'équipe) au 1er tour ; aucun salaire fixé au 2e tour. */
+  salaires?: number[];
+  /**
+   * Plafond utilisé pour l'échelle : celui de la saison en cours tant que le plafond de la saison suivante n'est pas
+   * dans data/cba/ (montant provisoire).
+   */
+  plafond: { saison: string; montant: number; provisoire: boolean };
 }
 
 /** Banques de noms pour les joueurs générés, par pays, et filtre des vrais noms interdits. */

@@ -25,7 +25,8 @@
     "officialSourceVerification": "pending",
     "note": "Do not infer NBA person IDs, contract type, two-way status, contract terms, or statistics from this file. Verify separately against official NBA records before marking those fields verified.",
     "names": "Noms fictifs aux mêmes initiales, proposés le 24/11/2026 et à relire (nameStatus). La table de correspondance avec les vrais noms est gardée hors du dépôt.",
-    "ratings": "Notes et attributs du modèle notes-v2 (data/modeles/notes-v2.json, docs/NOTES_JOUEURS.md), calculés par npm run notes."
+    "ratings": "Notes et attributs du modèle notes-v2 (data/modeles/notes-v2.json, docs/NOTES_JOUEURS.md), calculés par npm run notes.",
+    "age": "seasonAge : âge au 1er février 2027 (convention de Basketball-Reference pour la saison 2026-27), déduit de l’âge 2025-26 (+ 1) ou 2024-25 (+ 2) de data/statistiques/2025-26/joueurs.json ; null si inconnu (aucune date de naissance relevée)."
   },
   "units": {
     "canonical": "metric",
@@ -74,6 +75,7 @@
       },
       "lastAttended": "Duke",
       "country": "USA",
+      "seasonAge": null,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -139,6 +141,7 @@
       },
       "lastAttended": "Washington State",
       "country": "USA",
+      "seasonAge": 23,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -204,6 +207,7 @@
       },
       "lastAttended": "Purdue",
       "country": "Canada",
+      "seasonAge": 24,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -269,6 +273,7 @@
       },
       "lastAttended": "Syracuse",
       "country": "USA",
+      "seasonAge": 32,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -334,6 +339,7 @@
       },
       "lastAttended": "Central Florida",
       "country": "USA",
+      "seasonAge": 23,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -399,6 +405,7 @@
       },
       "lastAttended": "South Carolina",
       "country": "USA",
+      "seasonAge": 22,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -464,6 +471,7 @@
       },
       "lastAttended": "Virginia",
       "country": "USA",
+      "seasonAge": 29,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -529,6 +537,7 @@
       },
       "lastAttended": null,
       "country": "Mexico",
+      "seasonAge": null,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -594,6 +603,7 @@
       },
       "lastAttended": "Tennessee",
       "country": "USA",
+      "seasonAge": 24,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -659,6 +669,7 @@
       },
       "lastAttended": "Iowa",
       "country": "USA",
+      "seasonAge": 26,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -724,6 +735,7 @@
       },
       "lastAttended": "Vanderbilt",
       "country": "USA",
+      "seasonAge": 26,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -789,6 +801,7 @@
       },
       "lastAttended": "Boston College",
       "country": "Netherlands",
+      "seasonAge": 26,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -854,6 +867,7 @@
       },
       "lastAttended": "Marquette",
       "country": "Canada",
+      "seasonAge": 24,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -919,6 +933,7 @@
       },
       "lastAttended": "Brigham Young",
       "country": "USA",
+      "seasonAge": null,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -984,6 +999,7 @@
       },
       "lastAttended": "West Virginia",
       "country": "USA",
+      "seasonAge": 24,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -1049,6 +1065,7 @@
       },
       "lastAttended": "Connecticut",
       "country": "USA",
+      "seasonAge": 26,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -1114,6 +1131,7 @@
       },
       "lastAttended": "Washington",
       "country": "USA",
+      "seasonAge": 25,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
@@ -1179,6 +1197,7 @@
       },
       "lastAttended": "Washington State",
       "country": "USA",
+      "seasonAge": 23,
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {

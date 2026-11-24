@@ -13,6 +13,7 @@ export {
   participantsDeLaLoterie,
   rangsAuBilan,
   contratDeRookie,
+  recruesDeLaDraft,
   anneeDeDraft,
   type DonneesDraft,
 } from './draft';

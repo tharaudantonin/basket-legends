@@ -67,6 +67,8 @@ export const schemaJoueur = z.strictObject({
   measurements: z.strictObject({ height: taille, weight: poids }),
   lastAttended: z.string().nullable(),
   country: z.string().min(2),
+  /** Tranche 7 : âge au 1er février 2027 (convention Basketball-Reference), déduit des statistiques ; null si inconnu. */
+  seasonAge: z.number().int().min(17).max(45).nullable(),
   sourcePlayerId: z.string().nullable(),
   rosterStatus: z.string(),
   ratings: z.looseObject({ overall: note, scale: z.literal(100), source: z.string(), status: z.string() }),
@@ -688,3 +690,34 @@ export type HistoriqueLoterieFichier = z.infer<typeof schemaHistoriqueLoterie>;
 export type ChoixDraftFichier = z.infer<typeof schemaChoixDraft>;
 export type ModeleDraftFichier = z.infer<typeof schemaModeleDraft>;
 export type EchelleRookiesFichier = z.infer<typeof schemaEchelleRookies>;
+
+// --- Tranche 7 : vivier de joueurs originaux hors NBA (data/vivier/). ---
+const noteGeneree = z.number().int().min(0).max(100);
+export const schemaJoueurGenere = z.strictObject({
+  id: z.string().regex(/^g\d{4}$/),
+  statut: z.enum(['developpement', 'libre']),
+  origine: z.enum(['universite', 'international', 'g-league']),
+  prenom: z.string().min(1),
+  nom: z.string().min(1),
+  age: z.number().int().min(17).max(45),
+  poste: z.enum(['G', 'F', 'C', 'G-F', 'F-G', 'F-C', 'C-F']),
+  tailleCm: z.number().int().min(160).max(240),
+  poidsKg: z.number().int().min(60).max(170),
+  pays: z.string().min(2),
+  /** Échelle hors NBA (décision du 24/11/2026). */
+  note: z.number().int().min(40).max(67),
+  potentiel: z.number().int().min(40).max(99),
+  familles: z.strictObject({ technique: noteGeneree, physique: noteGeneree, mental: noteGeneree, tactique: noteGeneree, endurance: noteGeneree }),
+  details: z.strictObject(Object.fromEntries(ATTRIBUTS_DETAILLES.map((a) => [a, noteGeneree])) as Record<AttributDetaille, typeof noteGeneree>),
+});
+export const schemaVivier = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.string().regex(/^basket-legends-vivier-\d{4}-\d{2}$/),
+  statut: z.enum(['proposition', 'valide']),
+  note: z.string(),
+  graine: z.number().int(),
+  modele: z.record(z.string(), z.unknown()),
+  joueurs: z.array(schemaJoueurGenere).min(1),
+});
+export type JoueurGenereFichier = z.infer<typeof schemaJoueurGenere>;
+export type VivierFichier = z.infer<typeof schemaVivier>;
