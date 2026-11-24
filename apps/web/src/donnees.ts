@@ -11,6 +11,10 @@ import {
   schemaRegles,
   schemaSaisonLigue,
   schemaVivier,
+  schemaModeleDraft,
+  schemaLoterie,
+  modeleDeDraft,
+  reglesDeLaLoterie,
   valeursDesRegles,
   type Effectif,
   type Franchise,
@@ -23,6 +27,8 @@ import ligueBrute from '../../../data/ligue/saison-2026-27.json';
 import cbaBrute from '../../../data/cba/nba-2026-27.json';
 import contratsBruts from '../../../data/contrats/2026-27.json';
 import vivierBrut from '../../../data/vivier/2026-27.json';
+import modeleDraftBrut from '../../../data/draft/modele-draft.json';
+import loterieBrute from '../../../data/draft/loterie-2027-2029.json';
 import { structureDeLaLigue } from '@basket-legends/data';
 
 const effectifsBruts = import.meta.glob<unknown>('../../../data/rosters/2026-27/*.json', { eager: true, import: 'default' });
@@ -41,6 +47,10 @@ export const fichierCba = schemaCba.parse(cbaBrute);
 export const salaires = donneesSalariales(fichierCba, schemaContrats.parse(contratsBruts));
 /** Tranche 7 : joueurs originaux générés hors NBA (développement et libres), sans franchise avant la tranche 9. */
 export const vivier = schemaVivier.parse(vivierBrut);
+/** Tranche 7 : modèle de scouting (fourchettes affichées) et règles de la loterie, pour l'écran de la Draft. */
+export const modeleDraft = modeleDeDraft(schemaModeleDraft.parse(modeleDraftBrut));
+export const fichierLoterie = schemaLoterie.parse(loterieBrute);
+export const reglesLoterie = reglesDeLaLoterie(fichierLoterie);
 
 export const effectifs = new Map<string, Effectif>(
   Object.values(effectifsBruts).map((brut) => {

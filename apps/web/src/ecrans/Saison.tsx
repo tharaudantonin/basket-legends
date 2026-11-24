@@ -16,8 +16,11 @@ import {
 import { effectifs, franchiseDe, paletteDe, structure } from '../donnees';
 import { encreSur } from '../format';
 import { MasseSalariale } from './MasseSalariale';
+import { EcranDraft } from './Draft';
+import { Vivier } from './Vivier';
 
-type Onglet = 'calendrier' | 'classements' | 'actualites' | 'leaders' | 'all-star' | 'playoffs' | 'palmares' | 'salaires';
+type Onglet =
+  'calendrier' | 'classements' | 'actualites' | 'leaders' | 'all-star' | 'playoffs' | 'palmares' | 'salaires' | 'draft' | 'vivier';
 
 interface Props {
   etat: EtatSaison;
@@ -28,6 +31,10 @@ interface Props {
   onInteractif: () => void;
   onFiche: (joueur: string) => void;
   onQuitter: () => void;
+  /** Tranche 7 : la Draft (observations, délégation, choix). */
+  onObserver: (prospect: string, delta: number) => void;
+  onDeleguer: (delegue: boolean) => void;
+  onAvancerDraft: (prospect?: string) => void;
 }
 
 const nomEquipe = (id: string): string =>
@@ -64,7 +71,18 @@ function Joueur({ id, onFiche }: { id: string; onFiche: (j: string) => void }) {
   );
 }
 
-export function EcranSaison({ etat, enCours, onAvancer, onRevivre, onInteractif, onFiche, onQuitter }: Props) {
+export function EcranSaison({
+  etat,
+  enCours,
+  onAvancer,
+  onRevivre,
+  onInteractif,
+  onFiche,
+  onQuitter,
+  onObserver,
+  onDeleguer,
+  onAvancerDraft,
+}: Props) {
   const [onglet, setOnglet] = useState<Onglet>('calendrier');
   const [seulementMonEquipe, setSeulementMonEquipe] = useState(false);
   const f = franchiseDe(etat.franchise);
@@ -84,6 +102,8 @@ export function EcranSaison({ etat, enCours, onAvancer, onRevivre, onInteractif,
     ['playoffs', 'Play-In et playoffs'],
     ['palmares', 'Palmarès'],
     ['salaires', 'Masse salariale'],
+    ['draft', 'Draft'],
+    ['vivier', 'Hors NBA'],
   ];
 
   return (
@@ -325,6 +345,10 @@ export function EcranSaison({ etat, enCours, onAvancer, onRevivre, onInteractif,
 
       {onglet === 'leaders' && <Leaders etat={etat} onFiche={onFiche} />}
       {onglet === 'salaires' && <MasseSalariale franchise={etat.franchise} onFiche={onFiche} />}
+      {onglet === 'draft' && (
+        <EcranDraft etat={etat} enCours={enCours} onObserver={onObserver} onDeleguer={onDeleguer} onAvancerDraft={onAvancerDraft} />
+      )}
+      {onglet === 'vivier' && <Vivier />}
 
       {onglet === 'all-star' && (
         <section className="carte" aria-label="All-Star Game">
