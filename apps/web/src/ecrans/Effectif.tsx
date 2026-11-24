@@ -107,9 +107,8 @@ export function EcranEffectif({ franchise, derniere, enCours, onRetour, onJouer 
       <section className="carte" aria-labelledby="titre-effectif">
         <h2 id="titre-effectif">Effectif</h2>
         <p className="avertissement">
-          Notes du modèle v1, calculées sur les statistiques 2025-26 (proposition à valider). Une note suivie d'un astérisque est estimée
-          sans statistique NBA (recrue ou joueur sans match). Noms fictifs proposés, à relire. Cinq de départ et rotation choisis par le
-          staff.
+          Notes du modèle v1, calculées sur les statistiques 2025-26. Une note suivie d'un astérisque est estimée sans statistique NBA
+          (recrue ou joueur sans match). Noms fictifs proposés, à relire. Cinq de départ et rotation choisis par le staff.
         </p>
         <div className="defilement">
           <table className="tableau">

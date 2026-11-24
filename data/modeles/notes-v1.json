@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "datasetId": "basket-legends-modele-notes-v1",
   "version": "notes-v1",
-  "status": "proposition",
-  "note": "Modèle de notes v1 (tranche 2, 24/11/2026). Formule maison à partir des statistiques 2025-2026 sourcées, recalée par quantiles sur l’échelle « NBA » (décision du 23/11/2026). Les poids et ancrages sont des choix de conception, à valider par Antonin ; les corrections manuelles seront marquées « corrigé par Antonin ».",
+  "status": "valide",
+  "note": "Modèle de notes v1 (tranche 2, 24/11/2026). Formule maison à partir des statistiques 2025-2026 sourcées, recalée par quantiles sur l’échelle « NBA » (décision du 23/11/2026). Poids et ancrages validés par Antonin le 24/11/2026 ; les corrections manuelles seront marquées « corrigé par Antonin ».",
   "statistiques": "data/statistiques/2025-26/joueurs.json",
   "retrecissement": {
     "minutesDePrior": 400,

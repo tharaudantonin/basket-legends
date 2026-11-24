@@ -74,8 +74,14 @@ Précisions du 24/11/2026 :
 | 8 | Franchise de l'utilisateur | (a) Seulement s'il le demande | Elle ne déménage jamais sans son accord ; le propriétaire peut le proposer. |
 | 9 | All-Star Game | (a) Est contre Ouest, vote simulé | Sélection par vote simulé, puis match joué avec le même moteur. |
 
+## Réponse du 24 novembre 2026 après la tranche 2
+
+| N° | Question | Réponse | Conséquence |
+|---|---|---|---|
+| 10 | Paramètres du modèle de notes v1 | Validés tels quels | `data/modeles/notes-v1.json` passe au statut `valide` (poids, ancrages, notes a priori : `docs/NOTES_JOUEURS.md` § 3). Les saisons écourtées par blessure restent une limite connue, corrigeable à la main (« corrigé par Antonin ») ou en v2. |
+
 ## Suites
 
 - Tranche 0, faite le 24/11/2026 : socle npm workspaces (`apps/web`, `packages/data`, `packages/engine`), CI GitHub Actions, ESLint, Prettier, Vitest ; effectifs et assets rangés sous les identifiants de `data/franchises.json` ; joueurs renommés `j0001` à `j0523` avec un nom fictif aux mêmes initiales (proposé, à relire) ; vrais noms, notes 2K et effectifs d'origine sortis vers `basket-legends-prive` ; empreintes des vrais noms dans `data/noms/empreintes.json` ; schémas Zod et `npm run verifier`.
 - Tranche 1, faite le 24/11/2026 : choisir une franchise, voir l'effectif, simuler un match rapide déterministe, afficher le box score (`docs/SIMULATION_MATCH.md`). Aucune nouvelle décision : les règles NBA sont au statut `review_required` et les réglages du moteur `provisoire-non-calibre`.
-- Tranche 2, faite le 24/11/2026, en un seul chantier : règles 2026-27 vérifiées contre le Rulebook (statut `validated`, sections précises, règle d'horloge après faute défensive ajoutée) ; statistiques 2025-2026 relevées sur Basketball-Reference et NBA.com, saison régulière, Play-In et playoffs séparés (`data/statistiques/2025-26/`, `docs/SOURCES.md` § 9) ; modèle de notes v1 appliqué aux 523 joueurs (`docs/NOTES_JOUEURS.md`, paramètres au statut « proposition ») ; moteur calibré sur 1 000 matchs, 19 mesures sourcées dans leurs fourchettes (`docs/SIMULATION_MATCH.md` § 3) ; trois parcours Playwright dans la CI. Aucune nouvelle décision ; points à arbitrer : validation des paramètres du modèle de notes, traitement des saisons écourtées par blessure (`docs/NOTES_JOUEURS.md` § 6).
+- Tranche 2, faite le 24/11/2026, en un seul chantier : règles 2026-27 vérifiées contre le Rulebook (statut `validated`, sections précises, règle d'horloge après faute défensive ajoutée) ; statistiques 2025-2026 relevées sur Basketball-Reference et NBA.com, saison régulière, Play-In et playoffs séparés (`data/statistiques/2025-26/`, `docs/SOURCES.md` § 9) ; modèle de notes v1 appliqué aux 523 joueurs (`docs/NOTES_JOUEURS.md`, paramètres validés, réponse 10) ; moteur calibré sur 1 000 matchs, 19 mesures sourcées dans leurs fourchettes (`docs/SIMULATION_MATCH.md` § 3) ; trois parcours Playwright dans la CI. Point restant à arbitrer : traitement des saisons écourtées par blessure (`docs/NOTES_JOUEURS.md` § 6).

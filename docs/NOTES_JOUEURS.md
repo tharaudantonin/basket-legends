@@ -1,6 +1,6 @@
 # Notes des joueurs — modèle v1 (tranche 2, 24 novembre 2026)
 
-> Statut : **implémenté et testé**. Paramètres au statut **proposition**, à valider par Antonin (`data/modeles/notes-v1.json`).
+> Statut : **implémenté et testé**. Paramètres **validés par Antonin le 24/11/2026** (`data/modeles/notes-v1.json`, statut `valide`).
 
 ## 1. Ce que demandent les décisions
 
