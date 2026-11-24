@@ -126,7 +126,7 @@ ecrire('data/ligue/saison-2026-27.json', saison);
 const chemin = 'data/modeles/notes-v1.json';
 const notes = JSON.parse(readFileSync(join(depot, chemin), 'utf8'));
 notes.poids.endurance = { minutesParMatch: 1, partTitulaire: 0.3 };
-notes.note = String(notes.note).replace(/ Tranche 4 :.*$/, '') + ' Tranche 4 : indice d’endurance ajouté (minutes par match, titularisations), recalé sur les ancrages des attributs ; à valider.';
+notes.note = String(notes.note).replace(/ Tranche 4 :.*$/, '') + ' Tranche 4 : indice d’endurance ajouté (minutes par match, titularisations), recalé sur les ancrages des attributs ; validé par Antonin le 24/11/2026.';
 ecrire(chemin, notes);
 
 // 3. Réglages du moteur, version 3 : endurance et blessures en match (paramètres du modèle, non sourcés).

@@ -55,6 +55,6 @@ Le relevé (24/11/2026) est décrit dans `docs/SOURCES.md` § 9. Les relevés br
 - **Défense :** la box score mesure mal la défense ; l'attribut tactique la reflète seulement par les interceptions, les contres et les rebonds.
 - **Play-In et playoffs :** relevés et séparés, mais non utilisés par la v1.
 
-## 7. Endurance (tranche 4, à valider)
+## 7. Endurance (tranche 4, validée par Antonin le 24/11/2026)
 
 Ajout du 24/11/2026 pour la courbe de fatigue propre à chaque joueur (amélioration validée, rangée en tranche 4) : indice `endurance` = minutes par match (poids 1) et part de titularisations (0,3), recalé sur les ancrages des attributs ; les joueurs sans statistique reçoivent leur note a priori. Stocké dans `attributes.endurance` des effectifs. Les autres paramètres, validés, n'ont pas changé : les notes et les quatre autres attributs sont identiques.
