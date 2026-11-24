@@ -5,6 +5,11 @@ import { initialesDe, normaliserNom, partiesDuNom } from './noms';
 import {
   schemaBanques,
   schemaCba,
+  schemaChoixDraft,
+  schemaEchelleRookies,
+  schemaHistoriqueLoterie,
+  schemaLoterie,
+  schemaModeleDraft,
   schemaContrats,
   schemaEffectif,
   schemaEmpreintes,
@@ -44,6 +49,8 @@ export interface SourcesDonnees {
   /** Tranche 6 : contenu de data/cba/ et de data/contrats/, par nom de fichier. */
   cba: Record<string, unknown>;
   contrats: Record<string, unknown>;
+  /** Tranche 7 : contenu de data/draft/, par nom de fichier. */
+  draft: Record<string, unknown>;
 }
 
 export interface Rapport {
@@ -343,6 +350,70 @@ export function verifierDonnees(sources: SourcesDonnees): Rapport {
     }
     for (const [equipe, e] of effectifs)
       if (e.standard > 15 || e.twoWay > 3) erreurs.push(`${chemin} : ${equipe} a ${e.standard} contrats standard et ${e.twoWay} two-way`);
+  }
+
+  // 10. Tranche 7 : Draft (loterie, historique, propriété des choix, modèle des prospects, échelle des rookies).
+  const attendus = ['loterie-2027-2029.json', 'historique-loterie.json', 'modele-draft.json', 'echelle-rookies.json'];
+  for (const f of attendus) if (!(f in sources.draft)) erreurs.push(`data/draft : fichier ${f} absent`);
+  const equipeConnue = (chemin: string, id: string) => {
+    if (!idsFranchises.has(id)) erreurs.push(`${chemin} : franchise « ${id} » inconnue du registre`);
+  };
+  for (const [fichier, contenu] of Object.entries(sources.draft)) {
+    const chemin = `data/draft/${fichier}`;
+    if (fichier.startsWith('loterie-')) {
+      const lu = schemaLoterie.safeParse(contenu);
+      if (!lu.success) {
+        erreurs.push(...messagesZod(chemin, lu));
+        continue;
+      }
+      const total = lu.data.categories.reduce((s, c) => s + c.equipes, 0);
+      if (total !== lu.data.choixTires) erreurs.push(`${chemin} : ${total} équipes dans les catégories pour ${lu.data.choixTires} choix tirés`);
+      for (const c of lu.data.categories)
+        if (c.plancher < 1 || c.plancher > lu.data.choixTires) erreurs.push(`${chemin} : plancher ${c.plancher} hors des choix tirés (${c.id})`);
+      if (lu.data.statut !== 'valide') avertissements.push(`${chemin} : règles de la loterie à recouper (table officielle des probabilités)`);
+    } else if (fichier === 'historique-loterie.json') {
+      const lu = schemaHistoriqueLoterie.safeParse(contenu);
+      if (!lu.success) erreurs.push(...messagesZod(chemin, lu));
+      else for (const annee of Object.values(lu.data.drafts)) for (const id of Object.keys(annee)) equipeConnue(chemin, id);
+    } else if (fichier.startsWith('choix-')) {
+      const lu = schemaChoixDraft.safeParse(contenu);
+      if (!lu.success) {
+        erreurs.push(...messagesZod(chemin, lu));
+        continue;
+      }
+      for (const tour of Object.values(lu.data.tours))
+        for (const r of tour) {
+          for (const m of r.membres) if ('original' in m) equipeConnue(chemin, m.original);
+          if (r.condition) equipeConnue(chemin, r.condition.original);
+          for (const liste of [...Object.values(r.attributions), ...Object.values(r.attributionsSinon ?? {})])
+            for (const a of liste)
+              for (const b of [a.beneficiaire, a.sinon]) if (b !== undefined && !b.startsWith('@')) equipeConnue(chemin, b);
+          for (const [n, liste] of Object.entries(r.attributions))
+            if (liste.length !== Number(n)) erreurs.push(`${chemin} : « ${r.description} » prévoit ${liste.length} attribution(s) pour ${n} choix`);
+        }
+      if (lu.data.statut !== 'valide') avertissements.push(`${chemin} : propriété des choix à recouper (${lu.data.ecarts.length} écart(s) noté(s))`);
+    } else if (fichier === 'modele-draft.json') {
+      const lu = schemaModeleDraft.safeParse(contenu);
+      if (!lu.success) {
+        erreurs.push(...messagesZod(chemin, lu));
+        continue;
+      }
+      const n = lu.data.classe.note;
+      if (n.min < 40 || n.max > 67) erreurs.push(`${chemin} : les notes des prospects doivent rester entre 40 et 67 (décision du 24/11/2026)`);
+      if (lu.data.scouting.observationsDuConsensus > lu.data.scouting.observationsMax)
+        erreurs.push(`${chemin} : le consensus dépasse le plafond d'observations`);
+    } else if (fichier === 'echelle-rookies.json') {
+      const lu = schemaEchelleRookies.safeParse(contenu);
+      if (!lu.success) {
+        erreurs.push(...messagesZod(chemin, lu));
+        continue;
+      }
+      lu.data.rangs.forEach((r, i) => {
+        if (r.rang !== i + 1) erreurs.push(`${chemin} : rang ${r.rang} à la position ${i + 1}`);
+        if (r.montants.some((m, k) => k > 0 && m < r.montants[k - 1]!)) erreurs.push(`${chemin} : salaires décroissants au rang ${r.rang}`);
+        if (i > 0 && r.montants[0]! > lu.data.rangs[i - 1]!.montants[0]!) erreurs.push(`${chemin} : le rang ${r.rang} gagne plus que le rang ${r.rang - 1}`);
+      });
+    } else erreurs.push(`${chemin} : fichier inattendu`);
   }
 
   return { erreurs, avertissements, joueurs };

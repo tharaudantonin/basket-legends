@@ -26,6 +26,7 @@ export function lireSources(racine: string): SourcesDonnees {
     ligue: lireDossier('data/ligue'),
     cba: lireDossier('data/cba'),
     contrats: lireDossier('data/contrats'),
+    draft: lireDossier('data/draft'),
   };
 }
 

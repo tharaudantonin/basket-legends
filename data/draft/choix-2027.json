@@ -1,0 +1,637 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-choix-2027",
+  "annee": 2027,
+  "statut": "a-recouper",
+  "note": "Propriété des choix de la Draft 2027 au 24/11/2026 (échanges, protections, droits d’échange de rang). Les choix non cités restent à leur équipe. Relevé par lecture automatique de la page RealGM et reformulé : à recouper ligne à ligne avant validation (porte de publication : source secondaire).",
+  "tours": {
+    "1": [
+      {
+        "membres": [
+          {
+            "original": "atlanta"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "san-antonio"
+            }
+          ]
+        },
+        "description": "ATL → SAS"
+      },
+      {
+        "membres": [
+          {
+            "original": "new-orleans"
+          },
+          {
+            "original": "milwaukee"
+          }
+        ],
+        "attributions": {
+          "2": [
+            {
+              "beneficiaire": "new-orleans"
+            },
+            {
+              "beneficiaire": "atlanta",
+              "rangs": [
+                5,
+                30
+              ],
+              "sinon": "new-orleans"
+            }
+          ]
+        },
+        "description": "NOP prend le plus favorable de NOP et MIL ; ATL le moins favorable s’il est entre 5 et 30, sinon NOP garde les deux"
+      },
+      {
+        "membres": [
+          {
+            "original": "houston"
+          },
+          {
+            "original": "brooklyn"
+          }
+        ],
+        "attributions": {
+          "2": [
+            {
+              "beneficiaire": "houston"
+            },
+            {
+              "beneficiaire": "brooklyn"
+            }
+          ]
+        },
+        "description": "HOU peut échanger son choix contre celui de BKN"
+      },
+      {
+        "membres": [
+          {
+            "original": "new-york"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "brooklyn"
+            }
+          ]
+        },
+        "description": "NYK → BKN"
+      },
+      {
+        "membres": [
+          {
+            "original": "phoenix"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "houston"
+            }
+          ]
+        },
+        "description": "PHX → HOU"
+      },
+      {
+        "membres": [
+          {
+            "original": "dallas"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "charlotte",
+              "rangs": [
+                3,
+                30
+              ]
+            }
+          ]
+        },
+        "description": "DAL protégé 1-2, sinon à CHA"
+      },
+      {
+        "membres": [
+          {
+            "original": "miami"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "charlotte",
+              "rangs": [
+                15,
+                30
+              ]
+            }
+          ]
+        },
+        "description": "MIA protégé 1-14, sinon à CHA"
+      },
+      {
+        "membres": [
+          {
+            "original": "lakers"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "memphis",
+              "rangs": [
+                5,
+                30
+              ]
+            }
+          ]
+        },
+        "description": "LAL protégé 1-4, sinon à MEM (via UTA)"
+      },
+      {
+        "membres": [
+          {
+            "original": "cleveland"
+          },
+          {
+            "original": "minnesota"
+          },
+          {
+            "original": "utah"
+          }
+        ],
+        "attributions": {
+          "3": [
+            {
+              "beneficiaire": "memphis"
+            },
+            {
+              "beneficiaire": "utah"
+            },
+            {
+              "beneficiaire": "phoenix"
+            }
+          ]
+        },
+        "description": "Le plus favorable de CLE, MIN et UTA à MEM, le deuxième à UTA, le moins favorable à PHX"
+      },
+      {
+        "membres": [
+          {
+            "original": "denver",
+            "rangs": [
+              6,
+              30
+            ]
+          },
+          {
+            "original": "oklahoma-city"
+          },
+          {
+            "original": "clippers"
+          }
+        ],
+        "attributions": {
+          "2": [
+            {
+              "beneficiaire": "oklahoma-city"
+            },
+            {
+              "beneficiaire": "clippers"
+            }
+          ],
+          "3": [
+            {
+              "beneficiaire": "oklahoma-city"
+            },
+            {
+              "beneficiaire": "oklahoma-city"
+            },
+            {
+              "beneficiaire": "clippers"
+            }
+          ]
+        },
+        "description": "DEN protégé 1-5 ; OKC prend les deux plus favorables de OKC, DEN (6-30) et LAC, LAC le dernier"
+      },
+      {
+        "membres": [
+          {
+            "original": "san-antonio"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "sacramento",
+              "rangs": [
+                1,
+                16
+              ],
+              "sinon": "oklahoma-city"
+            }
+          ]
+        },
+        "description": "SAS : 1-16 à SAC, 17-30 à OKC (via SAC)"
+      }
+    ],
+    "2": [
+      {
+        "membres": [
+          {
+            "original": "boston"
+          },
+          {
+            "original": "orlando"
+          }
+        ],
+        "attributions": {
+          "2": [
+            {
+              "beneficiaire": "utah"
+            },
+            {
+              "beneficiaire": "charlotte"
+            }
+          ]
+        },
+        "description": "Le plus favorable de BOS et ORL à UTA, l’autre à CHA"
+      },
+      {
+        "membres": [
+          {
+            "original": "brooklyn"
+          },
+          {
+            "original": "dallas"
+          }
+        ],
+        "attributions": {
+          "2": [
+            {
+              "beneficiaire": "washington"
+            },
+            {
+              "beneficiaire": "detroit"
+            }
+          ]
+        },
+        "description": "Le plus favorable de BKN et DAL à WAS, l’autre à DET"
+      },
+      {
+        "membres": [
+          {
+            "original": "charlotte"
+          }
+        ],
+        "condition": {
+          "original": "san-antonio",
+          "rangs": [
+            1,
+            16
+          ]
+        },
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "oklahoma-city"
+            }
+          ]
+        },
+        "attributionsSinon": {
+          "1": [
+            {
+              "beneficiaire": "sacramento"
+            }
+          ]
+        },
+        "description": "CHA à OKC si le 1er tour de SAS est entre 1 et 16, sinon à SAC"
+      },
+      {
+        "membres": [
+          {
+            "original": "sacramento"
+          }
+        ],
+        "condition": {
+          "original": "san-antonio",
+          "rangs": [
+            1,
+            16
+          ]
+        },
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "oklahoma-city"
+            }
+          ]
+        },
+        "attributionsSinon": {
+          "1": [
+            {
+              "beneficiaire": "sacramento"
+            }
+          ]
+        },
+        "description": "SAC à OKC si le 1er tour de SAS est entre 1 et 16, sinon SAC le garde"
+      },
+      {
+        "membres": [
+          {
+            "original": "chicago"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "dallas"
+            }
+          ]
+        },
+        "description": "CHI → DAL"
+      },
+      {
+        "membres": [
+          {
+            "original": "cleveland"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "chicago"
+            }
+          ]
+        },
+        "description": "CLE → CHI"
+      },
+      {
+        "membres": [
+          {
+            "original": "denver"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "utah"
+            }
+          ]
+        },
+        "description": "DEN → UTA"
+      },
+      {
+        "membres": [
+          {
+            "original": "golden-state"
+          },
+          {
+            "original": "phoenix"
+          }
+        ],
+        "attributions": {
+          "2": [
+            {
+              "beneficiaire": "philadelphia"
+            },
+            {
+              "beneficiaire": "washington"
+            }
+          ]
+        },
+        "description": "Le plus favorable de GSW et PHX à PHI, l’autre à WAS"
+      },
+      {
+        "membres": [
+          {
+            "original": "oklahoma-city"
+          },
+          {
+            "original": "houston"
+          },
+          {
+            "original": "indianapolis"
+          },
+          {
+            "original": "miami"
+          }
+        ],
+        "attributions": {
+          "4": [
+            {
+              "beneficiaire": "philadelphia"
+            },
+            {
+              "beneficiaire": "new-orleans"
+            },
+            {
+              "beneficiaire": "new-york"
+            },
+            {
+              "beneficiaire": "@groupe-sas"
+            }
+          ]
+        },
+        "description": "Groupe OKC, HOU, IND, MIA : le plus favorable à PHI, le deuxième à NOP, le troisième à NYK, le dernier passe au groupe SAS"
+      },
+      {
+        "membres": [
+          {
+            "detenteur": "@groupe-sas"
+          },
+          {
+            "original": "san-antonio"
+          }
+        ],
+        "attributions": {
+          "2": [
+            {
+              "beneficiaire": "san-antonio"
+            },
+            {
+              "beneficiaire": "miami"
+            }
+          ]
+        },
+        "description": "SAS prend le plus favorable de son choix et du dernier du groupe, MIA l’autre"
+      },
+      {
+        "membres": [
+          {
+            "original": "lakers"
+          }
+        ],
+        "condition": {
+          "original": "lakers",
+          "rangs": [
+            5,
+            30
+          ]
+        },
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "brooklyn"
+            }
+          ]
+        },
+        "attributionsSinon": {
+          "1": [
+            {
+              "beneficiaire": "memphis"
+            }
+          ]
+        },
+        "description": "LAL à BKN si LAL cède son 1er tour à MEM, sinon à MEM (via UTA)"
+      },
+      {
+        "membres": [
+          {
+            "original": "clippers"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "utah"
+            }
+          ]
+        },
+        "description": "LAC → UTA"
+      },
+      {
+        "membres": [
+          {
+            "original": "memphis"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "houston"
+            }
+          ]
+        },
+        "description": "MEM → HOU"
+      },
+      {
+        "membres": [
+          {
+            "original": "milwaukee"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "detroit"
+            }
+          ]
+        },
+        "description": "MIL → DET"
+      },
+      {
+        "membres": [
+          {
+            "original": "minnesota"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "portland"
+            }
+          ]
+        },
+        "description": "MIN → POR"
+      },
+      {
+        "membres": [
+          {
+            "original": "new-orleans"
+          },
+          {
+            "original": "portland"
+          }
+        ],
+        "attributions": {
+          "2": [
+            {
+              "beneficiaire": "charlotte"
+            },
+            {
+              "beneficiaire": "houston",
+              "rangs": [
+                56,
+                60
+              ],
+              "sinon": "portland"
+            }
+          ]
+        },
+        "description": "Le plus favorable de NOP et POR à CHA ; l’autre à HOU s’il est entre 56 et 60, sinon à POR"
+      },
+      {
+        "membres": [
+          {
+            "original": "utah"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "indianapolis"
+            }
+          ]
+        },
+        "description": "UTA → IND"
+      },
+      {
+        "membres": [
+          {
+            "original": "washington"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "new-york"
+            }
+          ]
+        },
+        "description": "WAS → NYK"
+      }
+    ]
+  },
+  "ecarts": [
+    "SAS 1er tour : la page de synthèse donne 1-16 à SAC et 17-30 à OKC ; la lecture de la page détaillée donnait l’inverse. Le fichier suit la synthèse.",
+    "BOS/ORL 2e tour : la synthèse donne le moins favorable à CHA ; la page détaillée le donnait à PHX (échange en attente).",
+    "MEM 2e tour : la synthèse donne HOU (via LAC) ; la section de Charlotte de la page détaillée le donnait à CHA.",
+    "ATL 2e tour : la synthèse indique « Own (via BOS to MEM to POR) », formulation ambiguë ; le fichier laisse ce choix à ATL.",
+    "LAC 1er tour : la page détaillée mentionnait un droit d’échange de TOR (en attente) absent de la synthèse ; non repris.",
+    "Choix 2028 à 2033 : page détaillée tronquée au relevé (sections PHX à WAS absentes) ; à relever avant les échanges (tranche 9)."
+  ],
+  "sources": [
+    {
+      "fournisseur": "RealGM",
+      "titre": "2027 NBA Draft Picks",
+      "url": "https://basketball.realgm.com/nba/draft/future_drafts/summary/2027",
+      "niveau": "secondaire",
+      "consulteLe": "2026-11-24"
+    },
+    {
+      "fournisseur": "RealGM",
+      "titre": "NBA Future Draft Pick Details",
+      "url": "https://basketball.realgm.com/nba/draft/future_drafts/detailed",
+      "niveau": "secondaire",
+      "consulteLe": "2026-11-24"
+    }
+  ]
+}

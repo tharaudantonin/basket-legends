@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "description": "Banques de prénoms et de noms fictifs de Basket Legends, par culture. Servent au renommage des joueurs du snapshot (mêmes initiales) et à la génération des joueurs futurs. Aucun nom de ces listes ne doit reprendre un joueur réel : le contrôle se fait par les empreintes de data/noms/empreintes.json.",
+  "description": "Banques de prénoms et de noms fictifs de Basket Legends, par culture. Servent au renommage des joueurs du snapshot (mêmes initiales) et à la génération des joueurs futurs (complétées à la tranche 7 ; `culturesParPaysGeneration` remplace la culture d’un pays pour la génération). Aucun nom de ces listes ne doit reprendre un joueur réel : le contrôle se fait par les empreintes de data/noms/empreintes.json.",
   "culturesParPays": {
     "USA": {
       "prenoms": "anglo",
@@ -1060,27 +1060,46 @@
         "B": [
           "Barbier",
           "Besson",
-          "Bonnet"
+          "Bonnet",
+          "Bernard",
+          "Bertrand",
+          "Blanc",
+          "Boyer",
+          "Brun",
+          "Blanchard",
+          "Brunet"
         ],
         "C": [
           "Carpentier",
-          "Chauvin"
+          "Chauvin",
+          "Chevalier",
+          "Clément"
         ],
         "D": [
           "Delmas",
           "Duval",
-          "Dumont"
+          "Dumont",
+          "Dubois",
+          "Durand",
+          "Dupont",
+          "Dufour"
         ],
         "E": [
           "Esnault"
         ],
         "F": [
           "Faure",
-          "Fleury"
+          "Fleury",
+          "Fournier",
+          "Fontaine"
         ],
         "G": [
           "Gauthier",
-          "Giraud"
+          "Giraud",
+          "Girard",
+          "Guérin",
+          "Garnier",
+          "Gaillard"
         ],
         "H": [
           "Hamon"
@@ -1091,12 +1110,24 @@
         ],
         "L": [
           "Lacroix",
-          "Leroux"
+          "Leroux",
+          "Lefebvre",
+          "Laurent",
+          "Leroy",
+          "Lambert",
+          "Legrand",
+          "Lemaire"
         ],
         "M": [
           "Marchand",
           "Mercier",
-          "Morin"
+          "Morin",
+          "Moreau",
+          "Michel",
+          "Morel",
+          "Mathieu",
+          "Masson",
+          "Meunier"
         ],
         "N": [
           "Noël"
@@ -1106,16 +1137,24 @@
         ],
         "P": [
           "Perrin",
-          "Poulain"
+          "Poulain",
+          "Picard"
         ],
         "R": [
           "Renaudin",
           "Roche",
-          "Rivière"
+          "Rivière",
+          "Roux",
+          "Rousseau",
+          "Robin",
+          "Roussel",
+          "Renaud",
+          "Royer"
         ],
         "S": [
           "Sabatier",
-          "Simonet"
+          "Simonet",
+          "Simon"
         ],
         "T": [
           "Tessier",
@@ -1123,7 +1162,8 @@
         ],
         "V": [
           "Vasseur",
-          "Vidal"
+          "Vidal",
+          "Vincent"
         ]
       }
     },
@@ -1132,7 +1172,12 @@
         "M": [
           "Mamadou",
           "Moustapha",
-          "Mamady"
+          "Mamady",
+          "Moussa",
+          "Modou",
+          "Mouhamed",
+          "Malick",
+          "Mbaye"
         ],
         "K": [
           "Khadim",
@@ -1143,16 +1188,49 @@
           "Tidiane"
         ],
         "A": [
-          "Aliou"
+          "Aliou",
+          "Abdoulaye",
+          "Alioune",
+          "Assane",
+          "Amadou"
         ],
         "I": [
-          "Ibrahima"
+          "Ibrahima",
+          "Ismaïla"
         ],
         "O": [
-          "Oumar"
+          "Oumar",
+          "Ousmane",
+          "Omar"
         ],
         "S": [
-          "Saliou"
+          "Saliou",
+          "Souleymane",
+          "Seydou",
+          "Serigne"
+        ],
+        "C": [
+          "Cheikh"
+        ],
+        "B": [
+          "Babacar",
+          "Boubacar"
+        ],
+        "P": [
+          "Pape"
+        ],
+        "L": [
+          "Lamine"
+        ],
+        "D": [
+          "Djibril",
+          "Demba"
+        ],
+        "F": [
+          "Fallou"
+        ],
+        "Y": [
+          "Youssou"
         ]
       }
     },
@@ -1160,22 +1238,28 @@
       "prenoms": {
         "E": [
           "Emeka",
-          "Ekene"
+          "Ekene",
+          "Ebuka"
         ],
         "U": [
           "Uche",
-          "Ugochukwu"
+          "Ugochukwu",
+          "Uchenna",
+          "Ugo"
         ],
         "A": [
           "Adewale",
-          "Ade"
+          "Ade",
+          "Ayodele"
         ],
         "P": [
           "Paschal"
         ],
         "C": [
           "Chidi",
-          "Chinedu"
+          "Chinedu",
+          "Chukwuemeka",
+          "Chibuzor"
         ],
         "J": [
           "Jide"
@@ -1185,10 +1269,89 @@
           "Folarin"
         ],
         "O": [
-          "Obinna"
+          "Obinna",
+          "Olumide",
+          "Oluwaseun"
         ],
         "N": [
-          "Nnamdi"
+          "Nnamdi",
+          "Nonso"
+        ],
+        "T": [
+          "Tunde",
+          "Tobenna",
+          "Tochukwu"
+        ],
+        "S": [
+          "Segun",
+          "Somto"
+        ],
+        "I": [
+          "Ifeanyi",
+          "Ikenna"
+        ],
+        "K": [
+          "Kelechi",
+          "Kayode",
+          "Kunle"
+        ],
+        "B": [
+          "Babatunde"
+        ],
+        "D": [
+          "Dapo",
+          "Damilare"
+        ],
+        "G": [
+          "Gbenga"
+        ]
+      },
+      "noms": {
+        "O": [
+          "Okonkwo",
+          "Okeke",
+          "Ogunleye",
+          "Olawale",
+          "Obi",
+          "Onyeka",
+          "Ojo",
+          "Ogbonna",
+          "Oyelaran"
+        ],
+        "E": [
+          "Eze",
+          "Ekong",
+          "Emenike"
+        ],
+        "N": [
+          "Nwosu",
+          "Nwachukwu",
+          "Nnadi"
+        ],
+        "A": [
+          "Adeyemi",
+          "Akinola",
+          "Abubakar",
+          "Akpan",
+          "Amadi"
+        ],
+        "B": [
+          "Balogun",
+          "Bello"
+        ],
+        "U": [
+          "Uche",
+          "Udoh"
+        ],
+        "I": [
+          "Ibe",
+          "Iwu"
+        ],
+        "D": [
+          "Danjuma"
+        ],
+        "C": [
+          "Chukwu"
         ]
       }
     },
@@ -1207,7 +1370,10 @@
           "Bello",
           "Balogun",
           "Badji",
-          "Bangoura"
+          "Bangoura",
+          "Barry",
+          "Bah",
+          "Baldé"
         ],
         "C": [
           "Chukwuma",
@@ -1224,7 +1390,9 @@
           "Dioum",
           "Danjuma",
           "Dembo",
-          "Dogo"
+          "Dogo",
+          "Diouf",
+          "Diagne"
         ],
         "E": [
           "Eze",
@@ -1242,7 +1410,8 @@
         "G": [
           "Gning",
           "Guindo",
-          "Gbadamosi"
+          "Gbadamosi",
+          "Goudiaby"
         ],
         "H": [
           "Houessou",
@@ -1257,7 +1426,10 @@
           "Kouassi",
           "Kalu",
           "Kalala",
-          "Kouyaté"
+          "Kouyaté",
+          "Kane",
+          "Konaté",
+          "Keïta"
         ],
         "L": [
           "Lawani",
@@ -1267,13 +1439,17 @@
           "Mbaye",
           "Mensah",
           "Mvondo",
-          "Mbarga"
+          "Mbarga",
+          "Mbodj",
+          "Mendy"
         ],
         "N": [
           "Ndukwe",
           "Njoku",
           "Nwosu",
-          "Ndour"
+          "Ndour",
+          "Ndiaye",
+          "Ndao"
         ],
         "O": [
           "Obi",
@@ -1297,13 +1473,20 @@
           "Sanogo",
           "Sesay",
           "Sangaré",
-          "Sanda"
+          "Sanda",
+          "Sy",
+          "Seck",
+          "Sène",
+          "Sall",
+          "Sagna"
         ],
         "T": [
           "Tall",
           "Tchamba",
           "Tshimanga",
-          "Tshibanda"
+          "Tshibanda",
+          "Touré",
+          "Thiam"
         ],
         "U": [
           "Ugwu",
@@ -1350,11 +1533,14 @@
     "hispanique": {
       "prenoms": {
         "H": [
-          "Héctor"
+          "Héctor",
+          "Hugo"
         ],
         "S": [
           "Samuel",
-          "Salvador"
+          "Salvador",
+          "Sergio",
+          "Santiago"
         ],
         "B": [
           "Borja"
@@ -1362,26 +1548,64 @@
         "A": [
           "Álvaro",
           "Adrián",
-          "Alejandro"
+          "Alejandro",
+          "Alberto",
+          "Andrés"
         ],
         "K": [
           "Kristian"
         ],
         "D": [
           "Darío",
-          "Diego"
+          "Diego",
+          "Daniel"
         ],
         "N": [
-          "Néstor"
+          "Néstor",
+          "Nicolás"
         ],
         "G": [
           "Gonzalo"
         ],
         "J": [
-          "Joaquín"
+          "Joaquín",
+          "Javier",
+          "Jorge"
         ],
         "M": [
-          "Marcos"
+          "Marcos",
+          "Mario",
+          "Mateo",
+          "Miguel"
+        ],
+        "P": [
+          "Pablo"
+        ],
+        "C": [
+          "Carlos"
+        ],
+        "I": [
+          "Iván",
+          "Ignacio"
+        ],
+        "R": [
+          "Rubén",
+          "Raúl"
+        ],
+        "V": [
+          "Víctor"
+        ],
+        "F": [
+          "Fernando"
+        ],
+        "T": [
+          "Tomás"
+        ],
+        "Ó": [
+          "Óscar"
+        ],
+        "Í": [
+          "Íñigo"
         ]
       },
       "noms": {
@@ -1390,11 +1614,16 @@
           "Gallardo",
           "Guerrero",
           "Galindo",
-          "Guzmán"
+          "Guzmán",
+          "Gómez",
+          "Gutiérrez",
+          "Gil",
+          "Gallego"
         ],
         "A": [
           "Arroyo",
-          "Ayala"
+          "Ayala",
+          "Alonso"
         ],
         "L": [
           "Lozano",
@@ -1402,20 +1631,78 @@
         ],
         "M": [
           "Molina",
-          "Medina"
+          "Medina",
+          "Martínez",
+          "Moreno",
+          "Marín",
+          "Méndez"
         ],
         "J": [
           "Jiménez"
         ],
         "H": [
           "Henríquez",
-          "Herrero"
+          "Herrero",
+          "Hernández"
         ],
         "O": [
-          "Orozco"
+          "Orozco",
+          "Ortega",
+          "Ortiz"
         ],
         "Q": [
           "Quintana"
+        ],
+        "F": [
+          "Fernández"
+        ],
+        "S": [
+          "Sánchez",
+          "Serrano",
+          "Suárez",
+          "Sanz"
+        ],
+        "P": [
+          "Pérez",
+          "Prieto"
+        ],
+        "R": [
+          "Ruiz",
+          "Romero",
+          "Ramos",
+          "Ramírez",
+          "Rubio"
+        ],
+        "D": [
+          "Díaz",
+          "Domínguez",
+          "Delgado"
+        ],
+        "Á": [
+          "Álvarez"
+        ],
+        "N": [
+          "Navarro"
+        ],
+        "T": [
+          "Torres"
+        ],
+        "V": [
+          "Vázquez"
+        ],
+        "B": [
+          "Blanco"
+        ],
+        "C": [
+          "Castro",
+          "Cortés",
+          "Castillo",
+          "Cano",
+          "Cruz",
+          "Calvo"
+        ],
+        "I": [
+          "Iglesias"
         ]
       }
     },
@@ -1425,7 +1712,59 @@
           "Nuno"
         ],
         "G": [
-          "Gustavo"
+          "Gustavo",
+          "Gabriel",
+          "Guilherme"
+        ],
+        "J": [
+          "João"
+        ],
+        "P": [
+          "Pedro",
+          "Paulo"
+        ],
+        "L": [
+          "Lucas",
+          "Leonardo",
+          "Leandro"
+        ],
+        "R": [
+          "Rafael",
+          "Rodrigo",
+          "Ricardo",
+          "Renato"
+        ],
+        "M": [
+          "Matheus",
+          "Marcelo"
+        ],
+        "F": [
+          "Felipe",
+          "Fábio"
+        ],
+        "B": [
+          "Bruno"
+        ],
+        "T": [
+          "Thiago"
+        ],
+        "V": [
+          "Vinícius"
+        ],
+        "C": [
+          "Caio"
+        ],
+        "E": [
+          "Eduardo"
+        ],
+        "A": [
+          "André"
+        ],
+        "H": [
+          "Henrique"
+        ],
+        "D": [
+          "Davi"
         ]
       },
       "noms": {
@@ -1435,10 +1774,74 @@
         "S": [
           "Salles",
           "Saraiva",
-          "Seixas"
+          "Seixas",
+          "Souza",
+          "Soares"
         ],
         "D": [
-          "Duarte"
+          "Duarte",
+          "Dias"
+        ],
+        "O": [
+          "Oliveira"
+        ],
+        "R": [
+          "Rodrigues",
+          "Ribeiro",
+          "Rocha"
+        ],
+        "F": [
+          "Ferreira",
+          "Fernandes",
+          "Freitas"
+        ],
+        "A": [
+          "Alves",
+          "Almeida",
+          "Andrade",
+          "Araújo"
+        ],
+        "P": [
+          "Pereira",
+          "Pinto"
+        ],
+        "L": [
+          "Lima",
+          "Lopes"
+        ],
+        "G": [
+          "Gomes"
+        ],
+        "C": [
+          "Costa",
+          "Carvalho",
+          "Cardoso",
+          "Correia",
+          "Cavalcanti",
+          "Campos"
+        ],
+        "M": [
+          "Martins",
+          "Moreira",
+          "Marques",
+          "Machado",
+          "Mendes",
+          "Monteiro",
+          "Moura"
+        ],
+        "V": [
+          "Vieira"
+        ],
+        "B": [
+          "Barbosa",
+          "Batista"
+        ],
+        "N": [
+          "Nascimento",
+          "Nunes"
+        ],
+        "T": [
+          "Teixeira"
         ]
       }
     },
@@ -1446,30 +1849,43 @@
       "prenoms": {
         "M": [
           "Mats",
-          "Matthias"
+          "Matthias",
+          "Maximilian",
+          "Moritz",
+          "Marcel",
+          "Malte"
         ],
         "D": [
           "Dominik"
         ],
         "H": [
-          "Holger"
+          "Holger",
+          "Henrik"
         ],
         "I": [
           "Ingo"
         ],
         "T": [
           "Tobias",
-          "Timo"
+          "Timo",
+          "Tim",
+          "Till"
         ],
         "F": [
-          "Florian"
+          "Florian",
+          "Finn",
+          "Felix",
+          "Fabian"
         ],
         "A": [
           "Anton"
         ],
         "J": [
           "Jonas",
-          "Julian"
+          "Julian",
+          "Jan",
+          "Johannes",
+          "Jannik"
         ],
         "Q": [
           "Quirin"
@@ -1482,37 +1898,102 @@
         ],
         "Y": [
           "Yannick"
+        ],
+        "L": [
+          "Lukas",
+          "Leon",
+          "Lennart",
+          "Lars"
+        ],
+        "P": [
+          "Paul",
+          "Philipp"
+        ],
+        "N": [
+          "Niklas",
+          "Nils"
+        ],
+        "S": [
+          "Sebastian",
+          "Simon"
+        ],
+        "B": [
+          "Benedikt"
         ]
       },
       "noms": {
         "W": [
           "Weiss",
-          "Winkler"
+          "Winkler",
+          "Weber",
+          "Werner"
         ],
         "S": [
           "Seidel",
-          "Schuster"
+          "Schuster",
+          "Schmidt",
+          "Schneider",
+          "Schulz",
+          "Schwarz",
+          "Schmitt",
+          "Scholz"
         ],
         "H": [
           "Hahn",
-          "Hausmann"
+          "Hausmann",
+          "Hoffmann",
+          "Hofmann",
+          "Hartmann",
+          "Herrmann",
+          "Huber"
         ],
         "D": [
           "Dreyer"
         ],
         "P": [
           "Pohl",
-          "Prins"
+          "Prins",
+          "Peters"
         ],
         "L": [
           "Lindner",
-          "Lubbers"
+          "Lubbers",
+          "Lange",
+          "Lehmann",
+          "Lang"
         ],
         "N": [
           "Neumann"
         ],
         "K": [
-          "Kessling"
+          "Kessling",
+          "Koch",
+          "Klein",
+          "Krüger",
+          "Krause",
+          "Köhler",
+          "König",
+          "Kaiser"
+        ],
+        "M": [
+          "Müller",
+          "Meyer",
+          "Meier",
+          "Maier",
+          "Mayer"
+        ],
+        "F": [
+          "Fischer",
+          "Fuchs"
+        ],
+        "B": [
+          "Becker"
+        ],
+        "R": [
+          "Richter"
+        ],
+        "Z": [
+          "Zimmermann"
         ]
       }
     },
@@ -1521,44 +2002,98 @@
         "N": [
           "Nenad",
           "Nemanja",
-          "Nebojša"
+          "Nebojša",
+          "Nikola"
         ],
         "B": [
           "Branko",
-          "Boris"
+          "Boris",
+          "Bogdan",
+          "Borna"
         ],
         "T": [
-          "Timur"
+          "Timur",
+          "Tomislav"
         ],
         "K": [
-          "Kemal"
+          "Kemal",
+          "Karlo"
         ],
         "J": [
-          "Jasmin"
+          "Jasmin",
+          "Josip"
         ],
         "M": [
-          "Marin"
+          "Marin",
+          "Marko",
+          "Miloš",
+          "Mihajlo",
+          "Mario",
+          "Mateo",
+          "Matej"
         ],
         "I": [
           "Ivan"
         ],
         "L": [
-          "Lan"
+          "Lan",
+          "Luka",
+          "Lazar",
+          "Lovro"
+        ],
+        "S": [
+          "Stefan"
+        ],
+        "F": [
+          "Filip"
+        ],
+        "A": [
+          "Aleksandar",
+          "Ante"
+        ],
+        "D": [
+          "Dušan",
+          "Dragan",
+          "Dario",
+          "Domagoj"
+        ],
+        "V": [
+          "Vuk"
+        ],
+        "U": [
+          "Uroš"
+        ],
+        "O": [
+          "Ognjen"
+        ],
+        "P": [
+          "Petar"
+        ],
+        "Z": [
+          "Zoran"
         ]
       },
       "noms": {
         "J": [
           "Jakšić",
-          "Janjić"
+          "Janjić",
+          "Jovanović",
+          "Janković",
+          "Jurić"
         ],
         "B": [
           "Babić",
           "Bošković",
-          "Begić"
+          "Begić",
+          "Blažević",
+          "Božić"
         ],
         "M": [
           "Milić",
-          "Mehmedović"
+          "Mehmedović",
+          "Mitrović",
+          "Marić",
+          "Matić"
         ],
         "T": [
           "Todorović",
@@ -1566,7 +2101,9 @@
         ],
         "N": [
           "Nuhanović",
-          "Nedić"
+          "Nedić",
+          "Nikolić",
+          "Novak"
         ],
         "H": [
           "Horvat"
@@ -1577,10 +2114,53 @@
         ],
         "V": [
           "Vujović",
-          "Vuković"
+          "Vuković",
+          "Vidović"
         ],
         "D": [
           "Dolenc"
+        ],
+        "Đ": [
+          "Đorđević"
+        ],
+        "S": [
+          "Stojanović",
+          "Stanković",
+          "Simić"
+        ],
+        "I": [
+          "Ilić"
+        ],
+        "P": [
+          "Pavlović",
+          "Popović",
+          "Pavić",
+          "Perić"
+        ],
+        "K": [
+          "Kovačević",
+          "Kovač",
+          "Kovačić",
+          "Knežević"
+        ],
+        "R": [
+          "Ristić",
+          "Radovanović",
+          "Radić",
+          "Rajić"
+        ],
+        "L": [
+          "Lazić",
+          "Lovrić"
+        ],
+        "Ž": [
+          "Živković"
+        ],
+        "G": [
+          "Grgić"
+        ],
+        "Š": [
+          "Šarić"
         ]
       }
     },
@@ -1631,27 +2211,126 @@
       "prenoms": {
         "K": [
           "Karolis",
-          "Kārlis"
+          "Kārlis",
+          "Kristaps",
+          "Kaspars"
         ],
         "D": [
-          "Dovydas"
+          "Dovydas",
+          "Deividas",
+          "Dāvis"
         ],
         "H": [
           "Hanno"
+        ],
+        "M": [
+          "Mantas",
+          "Mindaugas",
+          "Marius",
+          "Martynas",
+          "Matas",
+          "Mārtiņš"
+        ],
+        "T": [
+          "Tomas",
+          "Toms"
+        ],
+        "R": [
+          "Rokas",
+          "Rihards",
+          "Roberts",
+          "Rolands"
+        ],
+        "A": [
+          "Arnas",
+          "Artūrs",
+          "Andris"
+        ],
+        "P": [
+          "Paulius"
+        ],
+        "I": [
+          "Ignas"
+        ],
+        "G": [
+          "Gytis"
+        ],
+        "J": [
+          "Justas",
+          "Jānis"
+        ],
+        "E": [
+          "Edgaras",
+          "Edgars"
         ]
       },
       "noms": {
         "J": [
-          "Jankauskas"
+          "Jankauskas",
+          "Jurgaitis",
+          "Jansons"
         ],
         "S": [
-          "Sakalauskas"
+          "Sakalauskas",
+          "Stankevičius",
+          "Savickas"
         ],
         "P": [
-          "Priedītis"
+          "Priedītis",
+          "Petrauskas",
+          "Paulauskas"
         ],
         "V": [
-          "Vahtra"
+          "Vahtra",
+          "Vasiliauskas",
+          "Vītols"
+        ],
+        "K": [
+          "Kazlauskas",
+          "Kavaliauskas",
+          "Kairys",
+          "Kalniņš",
+          "Krūmiņš",
+          "Kļaviņš"
+        ],
+        "Ž": [
+          "Žukauskas"
+        ],
+        "B": [
+          "Butkus",
+          "Bernotas",
+          "Balčiūnas",
+          "Bērziņš"
+        ],
+        "U": [
+          "Urbonas"
+        ],
+        "N": [
+          "Navickas"
+        ],
+        "R": [
+          "Ramanauskas",
+          "Rimkus",
+          "Rozenbergs"
+        ],
+        "M": [
+          "Mockus"
+        ],
+        "O": [
+          "Ozoliņš"
+        ],
+        "L": [
+          "Liepiņš",
+          "Lapsa"
+        ],
+        "Z": [
+          "Zariņš"
+        ],
+        "C": [
+          "Celms"
+        ],
+        "Ā": [
+          "Ābols"
         ]
       }
     },
@@ -1694,19 +2373,244 @@
     "grec": {
       "prenoms": {
         "G": [
-          "Grigoris"
+          "Grigoris",
+          "Georgios"
+        ],
+        "D": [
+          "Dimitrios"
+        ],
+        "K": [
+          "Konstantinos",
+          "Kyriakos"
+        ],
+        "N": [
+          "Nikolaos"
+        ],
+        "P": [
+          "Panagiotis",
+          "Petros"
+        ],
+        "V": [
+          "Vasileios"
+        ],
+        "C": [
+          "Christos",
+          "Charalampos"
+        ],
+        "A": [
+          "Athanasios",
+          "Antonios",
+          "Alexandros",
+          "Angelos",
+          "Apostolos"
+        ],
+        "M": [
+          "Michail"
+        ],
+        "E": [
+          "Evangelos",
+          "Emmanouil"
+        ],
+        "S": [
+          "Spyridon",
+          "Stavros",
+          "Stefanos",
+          "Sotirios"
+        ],
+        "T": [
+          "Theodoros"
+        ],
+        "I": [
+          "Ilias"
+        ],
+        "L": [
+          "Lefteris"
+        ]
+      },
+      "noms": {
+        "P": [
+          "Papadopoulos",
+          "Papadakis",
+          "Panagiotopoulos"
+        ],
+        "G": [
+          "Georgiou",
+          "Galanis"
+        ],
+        "N": [
+          "Nikolaidis"
+        ],
+        "K": [
+          "Konstantinidis",
+          "Karagiannis",
+          "Kyriakidis",
+          "Kostopoulos"
+        ],
+        "D": [
+          "Dimitriou",
+          "Drakopoulos"
+        ],
+        "I": [
+          "Ioannidis"
+        ],
+        "V": [
+          "Vlachos",
+          "Vasileiou"
+        ],
+        "A": [
+          "Antoniou",
+          "Alexiou",
+          "Athanasiou",
+          "Anagnostou"
+        ],
+        "M": [
+          "Makris",
+          "Michailidis",
+          "Mavridis"
+        ],
+        "O": [
+          "Oikonomou"
+        ],
+        "C": [
+          "Christodoulou"
+        ],
+        "L": [
+          "Lambrou"
+        ],
+        "S": [
+          "Stavrou"
+        ],
+        "T": [
+          "Theodorou",
+          "Tsakalidis"
+        ],
+        "R": [
+          "Raptis"
+        ],
+        "Z": [
+          "Zervas"
         ]
       }
     },
     "turc": {
       "prenoms": {
         "A": [
-          "Arda"
+          "Arda",
+          "Ahmet",
+          "Alper"
+        ],
+        "M": [
+          "Mehmet",
+          "Mustafa",
+          "Mert"
+        ],
+        "E": [
+          "Emre",
+          "Efe",
+          "Emir",
+          "Eren"
+        ],
+        "B": [
+          "Burak",
+          "Barış",
+          "Berk"
+        ],
+        "C": [
+          "Can",
+          "Cem",
+          "Caner"
+        ],
+        "D": [
+          "Deniz",
+          "Doruk"
+        ],
+        "F": [
+          "Furkan"
+        ],
+        "K": [
+          "Kerem",
+          "Kaan"
+        ],
+        "O": [
+          "Onur",
+          "Ozan",
+          "Oğuz"
+        ],
+        "S": [
+          "Serkan",
+          "Sarp"
+        ],
+        "T": [
+          "Tolga",
+          "Tuna"
+        ],
+        "U": [
+          "Uğur"
+        ],
+        "Y": [
+          "Yusuf"
+        ],
+        "V": [
+          "Volkan"
         ]
       },
       "noms": {
         "S": [
           "Saraç"
+        ],
+        "Y": [
+          "Yılmaz",
+          "Yıldız",
+          "Yıldırım"
+        ],
+        "K": [
+          "Kaya",
+          "Kılıç",
+          "Kara",
+          "Koç",
+          "Kurt",
+          "Korkmaz",
+          "Karaca"
+        ],
+        "D": [
+          "Demir",
+          "Doğan"
+        ],
+        "Ş": [
+          "Şahin",
+          "Şimşek"
+        ],
+        "Ç": [
+          "Çelik",
+          "Çetin"
+        ],
+        "Ö": [
+          "Öztürk",
+          "Özdemir",
+          "Özkan"
+        ],
+        "A": [
+          "Aydın",
+          "Arslan",
+          "Aslan",
+          "Aksoy",
+          "Acar"
+        ],
+        "P": [
+          "Polat"
+        ],
+        "E": [
+          "Erdem"
+        ],
+        "T": [
+          "Tekin",
+          "Taş"
+        ],
+        "G": [
+          "Güneş"
+        ],
+        "B": [
+          "Bozkurt"
         ]
       }
     },
@@ -1735,59 +2639,414 @@
     "italien": {
       "prenoms": {
         "S": [
-          "Stefano"
+          "Stefano",
+          "Simone"
         ],
         "T": [
           "Tommaso"
+        ],
+        "A": [
+          "Alessandro",
+          "Andrea"
+        ],
+        "L": [
+          "Lorenzo",
+          "Leonardo",
+          "Luca"
+        ],
+        "M": [
+          "Matteo",
+          "Marco",
+          "Michele"
+        ],
+        "F": [
+          "Francesco",
+          "Federico",
+          "Filippo"
+        ],
+        "R": [
+          "Riccardo"
+        ],
+        "D": [
+          "Davide",
+          "Daniele"
+        ],
+        "G": [
+          "Gabriele",
+          "Giacomo",
+          "Giovanni"
+        ],
+        "N": [
+          "Niccolò"
+        ],
+        "E": [
+          "Edoardo",
+          "Emanuele"
+        ],
+        "P": [
+          "Pietro",
+          "Paolo"
         ]
       },
       "noms": {
         "F": [
-          "Ferrandi"
+          "Ferrandi",
+          "Ferrari",
+          "Fontana",
+          "Ferrara"
         ],
         "B": [
-          "Bellandi"
+          "Bellandi",
+          "Bianchi",
+          "Bruno",
+          "Barbieri"
         ],
         "C": [
-          "Cantarelli"
+          "Cantarelli",
+          "Colombo",
+          "Conti",
+          "Coppola"
         ],
         "D": [
-          "Donadoni"
+          "Donadoni",
+          "De Luca",
+          "De Santis"
         ],
         "P": [
           "Pastorelli"
         ],
         "M": [
-          "Marchetti"
+          "Marchetti",
+          "Marino",
+          "Mancini",
+          "Moretti",
+          "Mariani",
+          "Martini"
         ],
         "V": [
-          "Vuksanović"
+          "Vuksanović",
+          "Vitale"
+        ],
+        "R": [
+          "Rossi",
+          "Russo",
+          "Romano",
+          "Ricci",
+          "Rizzo",
+          "Rinaldi"
+        ],
+        "E": [
+          "Esposito"
+        ],
+        "G": [
+          "Greco",
+          "Gallo",
+          "Giordano",
+          "Galli",
+          "Gentile"
+        ],
+        "L": [
+          "Lombardi",
+          "Leone",
+          "Longo",
+          "Lombardo"
+        ],
+        "S": [
+          "Santoro",
+          "Serra"
         ]
       }
     },
     "japonais": {
       "prenoms": {
         "R": [
-          "Ren"
+          "Ren",
+          "Riku",
+          "Ryo",
+          "Ryota"
+        ],
+        "H": [
+          "Haruto",
+          "Hayato",
+          "Hiroki"
+        ],
+        "Y": [
+          "Yuto",
+          "Yuki",
+          "Yusuke"
+        ],
+        "S": [
+          "Sota",
+          "Shota",
+          "Sho",
+          "Shun"
+        ],
+        "K": [
+          "Kaito",
+          "Kenta",
+          "Kazuki",
+          "Koki",
+          "Kenji"
+        ],
+        "T": [
+          "Takumi",
+          "Takeshi",
+          "Tatsuya"
+        ],
+        "D": [
+          "Daiki"
+        ],
+        "N": [
+          "Naoki"
+        ],
+        "M": [
+          "Makoto"
         ]
       },
       "noms": {
         "H": [
-          "Hayashi"
+          "Hayashi",
+          "Hashimoto",
+          "Hasegawa"
+        ],
+        "S": [
+          "Sato",
+          "Suzuki",
+          "Sasaki",
+          "Shimizu"
+        ],
+        "T": [
+          "Takahashi",
+          "Tanaka"
+        ],
+        "W": [
+          "Watanabe"
+        ],
+        "I": [
+          "Ito",
+          "Inoue",
+          "Ikeda",
+          "Ishikawa"
+        ],
+        "Y": [
+          "Yamamoto",
+          "Yoshida",
+          "Yamada",
+          "Yamaguchi",
+          "Yamazaki"
+        ],
+        "N": [
+          "Nakamura"
+        ],
+        "K": [
+          "Kobayashi",
+          "Kato",
+          "Kimura"
+        ],
+        "M": [
+          "Matsumoto",
+          "Mori"
+        ],
+        "A": [
+          "Abe"
+        ],
+        "O": [
+          "Ogawa",
+          "Okada"
+        ],
+        "G": [
+          "Goto"
+        ],
+        "F": [
+          "Fujita"
         ]
       }
     },
     "chinois": {
       "prenoms": {
         "Y": [
-          "Yuan"
+          "Yuan",
+          "Yuxuan",
+          "Yichen",
+          "Yifan"
+        ],
+        "Z": [
+          "Zihao",
+          "Zhiwei",
+          "Zhenyu",
+          "Zeyu"
+        ],
+        "H": [
+          "Haoran",
+          "Hongyu",
+          "Hao"
+        ],
+        "J": [
+          "Junjie",
+          "Jiahao",
+          "Jianguo",
+          "Jun"
+        ],
+        "T": [
+          "Tianyu",
+          "Tao"
+        ],
+        "M": [
+          "Mingze"
+        ],
+        "W": [
+          "Wenbo"
+        ],
+        "X": [
+          "Xiaolong"
+        ],
+        "S": [
+          "Shuo"
+        ],
+        "K": [
+          "Kaiwen"
+        ],
+        "B": [
+          "Boyang"
+        ],
+        "R": [
+          "Ruiqi"
+        ],
+        "L": [
+          "Lei"
+        ],
+        "P": [
+          "Peng"
         ]
       },
       "noms": {
         "H": [
-          "Hao"
+          "Hao",
+          "Huang",
+          "Hu",
+          "He",
+          "Han"
+        ],
+        "W": [
+          "Wang",
+          "Wu"
+        ],
+        "L": [
+          "Li",
+          "Liu",
+          "Lin",
+          "Luo",
+          "Liang"
+        ],
+        "Z": [
+          "Zhang",
+          "Zhao",
+          "Zhou",
+          "Zhu",
+          "Zheng"
+        ],
+        "C": [
+          "Chen",
+          "Cao"
+        ],
+        "Y": [
+          "Yang"
+        ],
+        "X": [
+          "Xu",
+          "Xie"
+        ],
+        "S": [
+          "Sun",
+          "Song"
+        ],
+        "M": [
+          "Ma"
+        ],
+        "G": [
+          "Guo",
+          "Gao"
+        ],
+        "T": [
+          "Tang"
+        ],
+        "F": [
+          "Feng"
+        ],
+        "P": [
+          "Peng"
         ]
       }
+    },
+    "cameroun": {
+      "noms": {
+        "M": [
+          "Mbarga",
+          "Manga",
+          "Mballa",
+          "Mvondo"
+        ],
+        "A": [
+          "Atangana",
+          "Ateba",
+          "Abessolo"
+        ],
+        "E": [
+          "Essomba",
+          "Edzoa",
+          "Eyenga",
+          "Ella"
+        ],
+        "F": [
+          "Fouda",
+          "Fotso"
+        ],
+        "O": [
+          "Owona",
+          "Ondoa",
+          "Oyono"
+        ],
+        "N": [
+          "Ndongo",
+          "Ngono",
+          "Nkodo",
+          "Nanga",
+          "Ngah",
+          "Nana"
+        ],
+        "B": [
+          "Bella",
+          "Biya"
+        ],
+        "T": [
+          "Tsala",
+          "Tchoupo"
+        ],
+        "Z": [
+          "Zambo"
+        ],
+        "K": [
+          "Kouam",
+          "Kamga"
+        ],
+        "W": [
+          "Wandji"
+        ]
+      }
+    }
+  },
+  "culturesParPaysGeneration": {
+    "Greece": {
+      "prenoms": "grec",
+      "noms": "grec"
+    },
+    "Nigeria": {
+      "prenoms": "nigeria",
+      "noms": "nigeria"
+    },
+    "Cameroon": {
+      "prenoms": "francais",
+      "noms": "cameroun"
     }
   }
 }

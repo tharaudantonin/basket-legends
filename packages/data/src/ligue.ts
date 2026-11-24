@@ -1,6 +1,6 @@
 // Tranche 4 : passage des données de référence au contexte de la ligue (packages/league).
 import type { ReglagesMatch, ReglesMatch } from '@basket-legends/engine';
-import type { ContexteLigue, DonneesSalariales, ParametresCba, StructureLigue } from '@basket-legends/league';
+import type { ContexteLigue, DonneesDraft, DonneesSalariales, ParametresCba, StructureLigue } from '@basket-legends/league';
 import { equipeDuMatch } from './match';
 import type { CbaFichier, ContratsFichier, Effectif, SaisonLigue, StatistiquesJoueurs } from './schemas';
 
@@ -39,6 +39,7 @@ export function contexteDeLaLigue(
   reglages: ReglagesMatch,
   stats: StatistiquesJoueurs,
   salaires: DonneesSalariales,
+  draft?: DonneesDraft,
 ): ContexteLigue {
   const equipes = Object.fromEntries(effectifs.map((e) => [e.franchise.id, equipeDuMatch(e)]));
   const recrues = Object.entries(stats.joueurs)
@@ -49,5 +50,5 @@ export function contexteDeLaLigue(
       .filter(([, s]) => s.saisonReguliere?.matchs)
       .map(([id, s]) => [id, s.saisonReguliere!.points / s.saisonReguliere!.matchs]),
   );
-  return { structure: structureDeLaLigue(saison), equipes, regles, reglages, recrues, pointsParMatchPrecedents, salaires };
+  return { structure: structureDeLaLigue(saison), equipes, regles, reglages, recrues, pointsParMatchPrecedents, salaires, ...(draft ? { draft } : {}) };
 }

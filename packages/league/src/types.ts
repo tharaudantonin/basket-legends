@@ -2,6 +2,8 @@
 // sauvegarde tel quel dans IndexedDB et passe sans perte entre le Web Worker et l'écran.
 import type { DecisionMatch, EquipeDuMatch, JoueurDuMatch, ReglagesMatch, ReglesMatch } from '@basket-legends/engine';
 import type { DonneesSalariales } from './cba';
+import type { DonneesDraft } from './draft/draft';
+import type { EtatDraft } from './draft/types';
 
 export type CritereDepartage =
   | 'confrontations'
@@ -55,6 +57,8 @@ export interface ContexteLigue {
   pointsParMatchPrecedents: Record<string, number>;
   /** Tranche 6 : paramètres de la CBA et contrats. */
   salaires: DonneesSalariales;
+  /** Tranche 7 : loterie, propriété des choix, génération des prospects et scouting (absent : pas de Draft). */
+  draft?: DonneesDraft;
 }
 
 export type Phase = 'reguliere' | 'play-in' | 'playoffs' | 'terminee';
@@ -199,7 +203,17 @@ export interface Actualite {
   /** Match à rejouer (mode commenté) depuis l'actualité. */
   match?: number;
   genre:
-    'resultat' | 'moment' | 'blessure' | 'serie' | 'match-de-la-semaine' | 'all-star' | 'play-in' | 'playoffs' | 'palmares' | 'finances';
+    | 'resultat'
+    | 'moment'
+    | 'blessure'
+    | 'serie'
+    | 'match-de-la-semaine'
+    | 'all-star'
+    | 'play-in'
+    | 'playoffs'
+    | 'palmares'
+    | 'finances'
+    | 'draft';
 }
 
 export interface EtatSaison {
@@ -231,6 +245,8 @@ export interface EtatSaison {
   actualites: Actualite[];
   /** Le dernier « match de la semaine » choisi (date de fin de semaine). */
   derniereSemaine: number;
+  /** Tranche 7 : la Draft qui suit la saison (classe, scouting du GM, loterie, choix). Absente des sauvegardes plus anciennes. */
+  draft?: EtatDraft;
 }
 
 export type { EquipeDuMatch, JoueurDuMatch };

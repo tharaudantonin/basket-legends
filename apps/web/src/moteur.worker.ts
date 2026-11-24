@@ -1,8 +1,10 @@
 // Tranches 1, 4 et 5 : le moteur tourne dans un Web Worker pour ne jamais bloquer l'écran (docs/TDD.md) — matchs isolés
-// (rapides, commentés, interactifs) et toute la saison (calendrier, matchs, Play-In, playoffs, récompenses).
+// (rapides, commentés, interactifs) et toute la saison (calendrier, matchs, Play-In, playoffs, récompenses). Tranche 7 :
+// la soirée de Draft (choix du staff des 29 autres équipes).
 import { simulerMatch, type EntreeMatch, type OptionsSimulation, type ResultatMatch } from '@basket-legends/engine';
 import {
   avancer,
+  avancerDraft,
   matchDuProchainPas,
   nouvelleSaison,
   rejouerMatch,
@@ -17,7 +19,8 @@ export type MessageVersMoteur =
   | { id: number; type: 'saison-nouvelle'; graine: number; franchise: string }
   | { id: number; type: 'saison-avancer'; etat: EtatSaison; cible: Cible }
   | { id: number; type: 'saison-rejouer'; allStar: EtatSaison['allStar']; match: ResumeMatch; options?: OptionsSimulation }
-  | { id: number; type: 'saison-prochain-match'; etat: EtatSaison };
+  | { id: number; type: 'saison-prochain-match'; etat: EtatSaison }
+  | { id: number; type: 'draft-avancer'; etat: EtatSaison; choixDuGm?: string };
 
 export type ReponseDuMoteur =
   | { id: number; resultat: ResultatMatch }
@@ -32,6 +35,7 @@ self.onmessage = (e: MessageEvent<MessageVersMoteur>) => {
     if (m.type === 'match') reponse = { id: m.id, resultat: simulerMatch(m.entree, m.options) };
     else if (m.type === 'saison-nouvelle') reponse = { id: m.id, etat: nouvelleSaison(contexteLigue(), m.graine, m.franchise) };
     else if (m.type === 'saison-avancer') reponse = { id: m.id, etat: avancer(contexteLigue(), m.etat, m.cible) };
+    else if (m.type === 'draft-avancer') reponse = { id: m.id, etat: avancerDraft(contexteLigue(), m.etat, m.choixDuGm) };
     else if (m.type === 'saison-prochain-match') reponse = { id: m.id, prochain: matchDuProchainPas(contexteLigue(), m.etat) ?? null };
     else reponse = { id: m.id, resultat: rejouerMatch(contexteLigue(), { allStar: m.allStar }, m.match, m.options) };
     self.postMessage(reponse);

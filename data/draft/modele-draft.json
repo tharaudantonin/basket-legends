@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-modele-draft",
+  "statut": "proposition",
+  "note": "Choix du modèle (aucune cible sourcée) pour générer les classes de Draft et le vivier de joueurs originaux, et pour le scouting à notes incertaines. Échelle hors NBA 40-67 (décision du 24/11/2026). À valider par Antonin.",
+  "classe": {
+    "taille": 100,
+    "ages": {
+      "19": 0.4,
+      "20": 0.25,
+      "21": 0.2,
+      "22": 0.15
+    },
+    "origines": {
+      "universite": 0.65,
+      "international": 0.25,
+      "g-league": 0.1
+    },
+    "postes": {
+      "G": 0.34,
+      "G-F": 0.08,
+      "F": 0.26,
+      "F-G": 0.06,
+      "F-C": 0.1,
+      "C": 0.16
+    },
+    "tailleParPoste": {
+      "G": [
+        191,
+        5
+      ],
+      "G-F": [
+        198,
+        4
+      ],
+      "F": [
+        203,
+        4
+      ],
+      "F-G": [
+        200,
+        4
+      ],
+      "F-C": [
+        208,
+        4
+      ],
+      "C": [
+        212,
+        5
+      ]
+    },
+    "imcMoyen": 24.2,
+    "paysParOrigine": {
+      "universite": {
+        "USA": 0.85,
+        "Canada": 0.06,
+        "Australia": 0.03,
+        "Nigeria": 0.02,
+        "France": 0.02,
+        "Senegal": 0.02
+      },
+      "international": {
+        "France": 0.2,
+        "Spain": 0.1,
+        "Serbia": 0.1,
+        "Germany": 0.08,
+        "Lithuania": 0.07,
+        "Australia": 0.08,
+        "Turkey": 0.05,
+        "Brazil": 0.05,
+        "Greece": 0.04,
+        "Italy": 0.05,
+        "Japan": 0.03,
+        "China": 0.03,
+        "Croatia": 0.04,
+        "Senegal": 0.04,
+        "Cameroon": 0.04
+      },
+      "g-league": {
+        "USA": 0.9,
+        "Canada": 0.05,
+        "Bahamas": 0.05
+      }
+    },
+    "note": {
+      "moyenne": 50,
+      "ecartTalent": 5,
+      "parAnnee": 1.5,
+      "bruit": 2,
+      "min": 40,
+      "max": 67
+    },
+    "potentiel": {
+      "marge": 14,
+      "ecartTalent": 7,
+      "ecartPropre": 4,
+      "parAnneeDAge": 3,
+      "max": 97
+    },
+    "details": {
+      "ecart": 6,
+      "min": 25,
+      "max": 85,
+      "profilParGroupe": {
+        "meneur": {
+          "tirCercle": -2,
+          "tirATroisPoints": 3,
+          "passe": 6,
+          "maniement": 7,
+          "defenseExterieure": 3,
+          "defenseInterieure": -7,
+          "contre": -8,
+          "rebondOffensif": -8,
+          "rebondDefensif": -6,
+          "vitesse": 6,
+          "force": -6,
+          "interception": 3
+        },
+        "ailier": {
+          "tirATroisPoints": 1,
+          "defenseExterieure": 2,
+          "rebondDefensif": 1
+        },
+        "interieur": {
+          "tirCercle": 6,
+          "tirATroisPoints": -8,
+          "passe": -4,
+          "maniement": -7,
+          "defenseExterieure": -5,
+          "defenseInterieure": 7,
+          "contre": 8,
+          "rebondOffensif": 8,
+          "rebondDefensif": 7,
+          "vitesse": -6,
+          "force": 7,
+          "interception": -3
+        }
+      }
+    }
+  },
+  "scouting": {
+    "ecartInitial": {
+      "note": 6,
+      "potentiel": 9,
+      "details": 8
+    },
+    "observationsParDefaut": 1,
+    "budgetObservations": 60,
+    "observationsMax": 12,
+    "observationsDuConsensus": 3
+  },
+  "choixIa": {
+    "poidsNote": 0.45,
+    "poidsPotentiel": 0.55,
+    "malusParAnnee": 0.8,
+    "besoinDePoste": 1.5
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-loterie-2027-2029",
+  "id": "3-2-1",
+  "drafts": [
+    2027,
+    2028,
+    2029
+  ],
+  "statut": "a-recouper",
+  "note": "Loterie « 3-2-1 » adoptée le 28/05/2026 pour les Drafts 2027 à 2029. Sourcé : 16 équipes, boules par catégorie, 16 choix tirés, plancher au 12e choix pour les trois pires bilans, limites de choix consécutifs, choix 17 à 30 au bilan inverse des 14 autres équipes, 2e tour au bilan inverse des 30. À recouper avec la table officielle des probabilités (PDF de la NBA non lu) : le mécanisme exact du tirage, l’application du plancher et des limites, le départage des bilans égaux (tirage au sort déterministe dans le jeu).",
+  "choixTires": 16,
+  "categories": [
+    {
+      "id": "releguees",
+      "boules": 2,
+      "equipes": 3,
+      "plancher": 12,
+      "definition": "Les trois pires bilans de la ligue (« draft-relegated »)."
+    },
+    {
+      "id": "non-qualifiees",
+      "boules": 3,
+      "equipes": 7,
+      "plancher": 16,
+      "definition": "Les autres équipes ni en playoffs ni au Play-In."
+    },
+    {
+      "id": "play-in-9-10",
+      "boules": 2,
+      "equipes": 4,
+      "plancher": 16,
+      "definition": "Les 9e et 10e de chaque conférence (Play-In)."
+    },
+    {
+      "id": "perdants-7-8",
+      "boules": 1,
+      "equipes": 2,
+      "plancher": 16,
+      "definition": "Les perdants des matchs 7e contre 8e du Play-In."
+    }
+  ],
+  "premierChoixInterditApresUnPremier": true,
+  "limiteTop": {
+    "top": 5,
+    "draftsConsecutives": 3
+  },
+  "apresLaLoterie": "Choix 17 à 30 : les 14 autres équipes au bilan inverse. 2e tour (31 à 60) : les 30 équipes au bilan inverse.",
+  "apartirDe2030": "Règle à voter par le Board of Governors ; le jeu garde la 3-2-1 par défaut (réponse 12).",
+  "sources": [
+    {
+      "fournisseur": "NBA Communications",
+      "titre": "NBA Board of Governors approves new Draft Lottery system to address tanking",
+      "url": "https://pr.nba.com/nba-board-of-governors-approves-new-draft-lottery-system-to-address-tanking/",
+      "niveau": "primaire",
+      "publieLe": "2026-05-28",
+      "consulteLe": "2026-11-24"
+    },
+    {
+      "fournisseur": "NBA.com",
+      "titre": "2027 NBA Draft Lottery: Odds, history and how it works",
+      "url": "https://www.nba.com/news/nba-draft-lottery-explainer",
+      "niveau": "primaire",
+      "publieLe": "2026-11-03",
+      "consulteLe": "2026-11-24"
+    }
+  ]
+}
