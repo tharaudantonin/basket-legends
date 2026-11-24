@@ -4,7 +4,15 @@ export { composerEquipe, groupeDuPoste } from './match/composition';
 export { simulerMatch } from './match/simulation';
 export { construireBoxScore } from './match/boxscore';
 export { empreinteBoxScore } from './match/empreinte';
-export { commenterMatch, nomDePeriode, chrono, scoreFinal, type LigneCommentaire, type GenreCommentaire } from './match/commentaire';
+export {
+  commenterMatch,
+  nomDePeriode,
+  chrono,
+  scoreFinal,
+  LIBELLES_PLAN,
+  type LigneCommentaire,
+  type GenreCommentaire,
+} from './match/commentaire';
 export { detecterMoments, interetDuMatch, SEUILS_MOMENTS, type Moment, type GenreMoment } from './match/moments';
 export {
   tirsDuJoueur,
@@ -19,3 +27,4 @@ export {
   type AdresseParTranche,
   type TrancheTir,
 } from './match/fiche';
+export { pasSuivant, evenementsAvantLArret, ajouterDecision, annulerDecisions, type Lecture, type PasDeLecture } from './match/interactif';

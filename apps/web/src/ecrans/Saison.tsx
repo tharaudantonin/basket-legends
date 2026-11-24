@@ -23,6 +23,8 @@ interface Props {
   enCours: boolean;
   onAvancer: (cible: Cible) => void;
   onRevivre: (m: ResumeMatch, mode: 'rapide' | 'commente') => void;
+  /** Tranche 5 : jouer (ou reprendre) le prochain match de la franchise en interactif. */
+  onInteractif: () => void;
   onFiche: (joueur: string) => void;
   onQuitter: () => void;
 }
@@ -61,7 +63,7 @@ function Joueur({ id, onFiche }: { id: string; onFiche: (j: string) => void }) {
   );
 }
 
-export function EcranSaison({ etat, enCours, onAvancer, onRevivre, onFiche, onQuitter }: Props) {
+export function EcranSaison({ etat, enCours, onAvancer, onRevivre, onInteractif, onFiche, onQuitter }: Props) {
   const [onglet, setOnglet] = useState<Onglet>('calendrier');
   const [seulementMonEquipe, setSeulementMonEquipe] = useState(false);
   const f = franchiseDe(etat.franchise);
@@ -126,6 +128,11 @@ export function EcranSaison({ etat, enCours, onAvancer, onRevivre, onFiche, onQu
             {libelle}
           </button>
         ))}
+        {!fini && (
+          <button type="button" disabled={enCours} onClick={onInteractif}>
+            {etat.matchInteractif ? 'Reprendre le match interactif' : 'Prochain match en interactif'}
+          </button>
+        )}
         {enCours && <span className="aide">Simulation…</span>}
       </section>
 

@@ -9,6 +9,7 @@ import {
   interetDuMatch,
   simulerMatch,
   type EquipeDuMatch,
+  type OptionsSimulation,
   type ResultatMatch,
 } from '@basket-legends/engine';
 import { ajouterJours, genererCalendrier } from './calendrier';
@@ -94,11 +95,19 @@ export function equipesDuMatch(
   return [equipe(m.domicile), equipe(m.exterieur)];
 }
 
-/** Rejoue un match de la saison à l'identique (mode commenté, box score). */
-export function rejouerMatch(ctx: ContexteLigue, etat: Pick<EtatSaison, 'allStar'>, m: ResumeMatch): ResultatMatch {
+/** Rejoue un match de la saison à l'identique (mode commenté, box score), avec les décisions du coach s'il y en a. */
+export function rejouerMatch(
+  ctx: ContexteLigue,
+  etat: Pick<EtatSaison, 'allStar'>,
+  m: ResumeMatch,
+  options: OptionsSimulation = {},
+): ResultatMatch {
   const [domicile, exterieur] = equipesDuMatch(ctx, etat, m);
   const reglages = m.neutre ? { ...ctx.reglages, tirs: { ...ctx.reglages.tirs, avantageDomicile: 0 } } : ctx.reglages;
-  return simulerMatch({ graine: m.graine, domicile, exterieur, regles: ctx.regles, reglages });
+  return simulerMatch(
+    { graine: m.graine, domicile, exterieur, regles: ctx.regles, reglages, ...(m.decisions?.length ? { decisions: m.decisions } : {}) },
+    options,
+  );
 }
 
 /** Joue un match, met à jour blessures, statistiques et actualités ; rend son résumé. */
@@ -130,6 +139,11 @@ function jouerMatch(
     moments: [],
     ...(neutre ? { neutre } : {}),
   };
+  // Tranche 5 : le match interactif de la franchise du joueur se joue avec les décisions du coach.
+  if (etat.matchInteractif?.id === id) {
+    if (etat.matchInteractif.decisions.length) resume.decisions = etat.matchInteractif.decisions;
+    delete etat.matchInteractif;
+  }
   const r = rejouerMatch(ctx, etat, resume);
   const moments = detecterMoments(r);
   resume.score = [r.boxScore.equipes[0].points, r.boxScore.equipes[1].points];
@@ -487,6 +501,22 @@ export function avancer(ctx: ContexteLigue, etatInitial: EtatSaison, cible: Cibl
   else if (cible === 'fin-reguliere') while (etat.phase === 'reguliere') pas(ctx, etat);
   else while (!fini()) pas(ctx, etat);
   return etat;
+}
+
+/**
+ * Tranche 5 : le match que la franchise du joueur jouera au prochain pas de saison (« jour »), s'il y en a un, tel que la
+ * saison le jouera (identifiant, graine, absents). On le trouve en jouant ce pas sur une copie de l'état : c'est le seul
+ * moyen sûr de connaître l'identifiant d'un match de Play-In ou de playoffs, attribué au fil de la saison.
+ */
+export function matchDuProchainPas(ctx: ContexteLigue, etat: EtatSaison): ResumeMatch | undefined {
+  if (etat.phase === 'terminee') return undefined;
+  const essai = structuredClone(etat);
+  delete essai.matchInteractif;
+  const avant = essai.matchs.length;
+  pas(ctx, essai);
+  const m = essai.matchs.slice(avant).find((x) => x.domicile === etat.franchise || x.exterieur === etat.franchise);
+  if (!m) return undefined;
+  return { ...m, score: [0, 0], prolongations: 0, empreinte: '', interet: 0, moments: [] };
 }
 
 /** Le prochain match de la franchise du joueur (saison régulière), s'il y en a un. */

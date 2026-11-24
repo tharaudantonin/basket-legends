@@ -1,6 +1,6 @@
 // Tranche 4 : les contrats de la saison. L'état d'une saison est un objet JSON pur (pas de Map ni de classe) : il se
 // sauvegarde tel quel dans IndexedDB et passe sans perte entre le Web Worker et l'écran.
-import type { EquipeDuMatch, JoueurDuMatch, ReglagesMatch, ReglesMatch } from '@basket-legends/engine';
+import type { DecisionMatch, EquipeDuMatch, JoueurDuMatch, ReglagesMatch, ReglesMatch } from '@basket-legends/engine';
 
 export type CritereDepartage =
   | 'confrontations'
@@ -87,6 +87,17 @@ export interface ResumeMatch {
   moments: string[];
   /** Terrain neutre (All-Star Game). */
   neutre?: boolean;
+  /** Tranche 5 : décisions du coach (match joué en mode interactif) ; avec la graine et les absents, elles suffisent à le rejouer. */
+  decisions?: DecisionMatch[];
+}
+
+/** Tranche 5 : le match interactif en cours de la franchise du joueur (enregistré à chaque décision). */
+export interface MatchInteractif {
+  /** Identifiant du match dans la saison. */
+  id: number;
+  decisions: DecisionMatch[];
+  /** Dernier arrêt de jeu atteint, pour reprendre l'affichage au même point. */
+  arret: number;
 }
 
 /** Totaux d'un joueur sur une phase. Minutes en dixièmes de seconde, comme le box score. */
@@ -200,6 +211,8 @@ export interface EtatSaison {
   /** Dernière date jouée (toutes phases). */
   date: string;
   matchs: ResumeMatch[];
+  /** Tranche 5 : match interactif en cours ; ses décisions s'appliquent quand la saison joue ce match. */
+  matchInteractif?: MatchInteractif;
   /** Joueur → matchs encore à manquer. */
   blessures: Record<string, number>;
   statistiques: Record<string, LigneSaison>;

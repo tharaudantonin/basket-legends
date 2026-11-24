@@ -3,5 +3,15 @@ export { genererCalendrier, genererAppariements, ajouterJours, joursEntre } from
 export { calculerBilans, classer, appartenances, pctBilan, pourcentage, retard, type Classements } from './classement';
 export { cumuler, gameScoreParMatch, parMatch, ligneSaisonVide } from './statistiques';
 export { selectionnerAllStars, decernerRecompenses } from './recompenses';
-export { nouvelleSaison, avancer, rejouerMatch, equipesDuMatch, prochainMatch, graineDuMatch, ID_ALL_STAR, type Cible } from './saison';
+export {
+  nouvelleSaison,
+  avancer,
+  rejouerMatch,
+  equipesDuMatch,
+  prochainMatch,
+  matchDuProchainPas,
+  graineDuMatch,
+  ID_ALL_STAR,
+  type Cible,
+} from './saison';
 export { schemaSauvegarde, VERSION_SAUVEGARDE, creerSauvegarde, lireSauvegarde, type Sauvegarde } from './sauvegarde';

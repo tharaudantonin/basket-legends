@@ -1,5 +1,5 @@
-// Tranches 1 et 3 : l'effectif de la franchise (dans l'ordre du staff : cinq de départ, puis rotation) et le lancement
-// d'un match, rapide ou commenté. Un clic sur un joueur ouvre sa fiche.
+// Tranches 1, 3 et 5 : l'effectif de la franchise (dans l'ordre du staff : cinq de départ, puis rotation) et le lancement
+// d'un match, rapide, commenté ou interactif. Un clic sur un joueur ouvre sa fiche.
 import { useMemo, useState } from 'react';
 import { nouvelleGraine } from '@basket-legends/engine';
 import { effectifDe, equipeDe, franchiseDe, franchises } from '../donnees';
@@ -9,8 +9,8 @@ export interface DemandeMatch {
   adversaire: string;
   aDomicile: boolean;
   graine: number;
-  /** Présentation : le même match, montré d'un coup ou raconté possession par possession. */
-  mode: 'rapide' | 'commente';
+  /** Présentation : le même match, montré d'un coup, raconté possession par possession, ou dirigé par le coach. */
+  mode: 'rapide' | 'commente' | 'interactif';
 }
 
 const POSTES: Record<string, string> = {
@@ -76,7 +76,8 @@ export function EcranEffectif({ franchise, derniere, enCours, onRetour, onJouer,
           onSubmit={(e) => {
             e.preventDefault();
             const bouton = (e.nativeEvent as SubmitEvent).submitter as HTMLButtonElement | null;
-            onJouer({ adversaire, aDomicile, graine, mode: bouton?.value === 'commente' ? 'commente' : 'rapide' });
+            const mode = bouton?.value === 'commente' ? 'commente' : bouton?.value === 'interactif' ? 'interactif' : 'rapide';
+            onJouer({ adversaire, aDomicile, graine, mode });
           }}
         >
           <label>
@@ -120,9 +121,15 @@ export function EcranEffectif({ franchise, derniere, enCours, onRetour, onJouer,
             <button type="submit" name="mode" value="commente" disabled={enCours}>
               Match commenté
             </button>
+            <button type="submit" name="mode" value="interactif" disabled={enCours}>
+              Match interactif
+            </button>
           </span>
         </form>
-        <p className="aide">Même graine, mêmes équipes, même lieu : même match, au point près — en rapide comme en commenté.</p>
+        <p className="aide">
+          Même graine, mêmes équipes, même lieu : même match, au point près — en rapide comme en commenté. En interactif, le match change
+          selon vos décisions ; sans décision, c’est le même match.
+        </p>
       </section>
 
       <section className="carte" aria-labelledby="titre-effectif">

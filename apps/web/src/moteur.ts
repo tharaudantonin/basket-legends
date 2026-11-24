@@ -1,5 +1,5 @@
-// Tranches 1 et 4 : l'appel au moteur, côté interface (un seul Web Worker, réponses rangées par numéro de demande).
-import type { EntreeMatch, ResultatMatch } from '@basket-legends/engine';
+// Tranches 1, 4 et 5 : l'appel au moteur, côté interface (un seul Web Worker, réponses rangées par numéro de demande).
+import type { EntreeMatch, OptionsSimulation, ResultatMatch } from '@basket-legends/engine';
 import type { Cible, EtatSaison, ResumeMatch } from '@basket-legends/league';
 import type { MessageVersMoteur, ReponseDuMoteur } from './moteur.worker';
 
@@ -39,11 +39,17 @@ const etat = (r: ReponseDuMoteur): EtatSaison => {
   return r.etat;
 };
 
-export const simulerDansLeMoteur = async (entree: EntreeMatch): Promise<ResultatMatch> =>
-  resultat(await demander({ type: 'match', entree }));
+export const simulerDansLeMoteur = async (entree: EntreeMatch, options?: OptionsSimulation): Promise<ResultatMatch> =>
+  resultat(await demander({ type: 'match', entree, ...(options ? { options } : {}) }));
 export const nouvelleSaisonDansLeMoteur = async (graine: number, franchise: string): Promise<EtatSaison> =>
   etat(await demander({ type: 'saison-nouvelle', graine, franchise }));
 export const avancerDansLeMoteur = async (e: EtatSaison, cible: Cible): Promise<EtatSaison> =>
   etat(await demander({ type: 'saison-avancer', etat: e, cible }));
-export const rejouerDansLeMoteur = async (e: EtatSaison, match: ResumeMatch): Promise<ResultatMatch> =>
-  resultat(await demander({ type: 'saison-rejouer', allStar: e.allStar, match }));
+export const rejouerDansLeMoteur = async (e: EtatSaison, match: ResumeMatch, options?: OptionsSimulation): Promise<ResultatMatch> =>
+  resultat(await demander({ type: 'saison-rejouer', allStar: e.allStar, match, ...(options ? { options } : {}) }));
+/** Tranche 5 : le match de la franchise du joueur au prochain jour de saison, s'il y en a un. */
+export const prochainMatchDansLeMoteur = async (e: EtatSaison): Promise<ResumeMatch | undefined> => {
+  const r = await demander({ type: 'saison-prochain-match', etat: e });
+  if (!('prochain' in r)) throw new Error('Réponse inattendue du moteur.');
+  return r.prochain ?? undefined;
+};

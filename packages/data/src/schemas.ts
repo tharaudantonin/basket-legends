@@ -167,6 +167,7 @@ const proba = z.number().min(0).max(1);
 const parTir = <T extends z.ZodType>(t: T) => z.strictObject({ cercle: t, miDistance: t, troisPoints: t });
 const parGroupe = <T extends z.ZodType>(t: T) => z.strictObject({ meneur: t, ailier: t, interieur: t });
 const positif = z.number().positive();
+const effetRythme = z.strictObject({ facteurDuree: positif, pertes: z.number().min(-0.1).max(0.1), fatigue: positif });
 
 /** data/moteur/match-v<n>.json : les réglages du modèle de match (non sourcés, à calibrer). */
 export const schemaReglagesMatch = z.strictObject({
@@ -215,6 +216,18 @@ export const schemaReglagesMatch = z.strictObject({
     probabiliteParMinute: proba,
     gravites: z.array(z.strictObject({ part: proba, matchsMin: z.number().int().min(1), matchsMax: z.number().int().min(1) })).min(1),
   }),
+  // Tranche 5 : effets des plans de jeu et du défenseur direct (choix du modèle).
+  plans: z.strictObject({
+    rythme: z.strictObject({ lent: effetRythme, normal: effetRythme, rapide: effetRythme }),
+    troisPoints: z.strictObject({ moins: positif, normal: positif, plus: positif }),
+    zone: z.strictObject({
+      repartition: parTir(positif),
+      reussite: parTir(z.number().min(-0.2).max(0.2)),
+      rebondOffensif: z.number().min(-0.2).max(0.2),
+      pertes: z.number().min(-0.1).max(0.1),
+    }),
+  }),
+  defenseurDirect: z.strictObject({ poids: proba, tailleCercleParCm: z.number().min(0) }),
   positions: z.strictObject({
     partTroisDansLesCoins: proba,
     distanceTroisDansLesCoinsPieds: positif,

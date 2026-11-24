@@ -3,7 +3,21 @@
 // Le commentaire est déduit du seul journal d'événements d'un match déjà simulé : il ne tire aucun hasard et ne peut
 // donc pas changer le résultat. Le mode commenté et le mode rapide montrent le même match (même journal, même box
 // score, même empreinte). Les tournures varient selon la position de l'événement dans le journal, pas au hasard.
-import type { BoxScore, Camp, Evenement, ResultatMatch, TypeTir } from './types';
+import type { BoxScore, Camp, Evenement, PlanDeJeu, ResultatMatch, TypeTir } from './types';
+import { PLAN_PAR_DEFAUT } from './types';
+
+/** Tranche 5 : les libellés des choix d'un plan de jeu (commentaire et écran interactif). */
+export const LIBELLES_PLAN: { [K in keyof PlanDeJeu]: Record<PlanDeJeu[K], string> } = {
+  rythme: { lent: 'rythme lent', normal: 'rythme normal', rapide: 'rythme rapide' },
+  defense: { individuelle: 'défense individuelle', zone: 'défense de zone' },
+  troisPoints: {
+    moins: 'moins de tirs à trois points',
+    normal: 'tirs à trois points comme d’habitude',
+    plus: 'plus de tirs à trois points',
+  },
+  remplacements: { staff: 'changements confiés au staff', coach: 'changements gérés par le coach' },
+  tempsMorts: { staff: 'temps-morts confiés au staff', coach: 'temps-morts gérés par le coach' },
+};
 
 export type GenreCommentaire =
   | 'periode'
@@ -17,7 +31,8 @@ export type GenreCommentaire =
   | 'blessure'
   | 'temps_mort'
   | 'changement'
-  | 'rebond';
+  | 'rebond'
+  | 'plan';
 
 export interface LigneCommentaire {
   /** Index, dans le journal, du dernier événement couvert par la ligne (pour rejouer le match jusqu'à ce point). */
@@ -72,6 +87,7 @@ export function commenterMatch(resultat: ResultatMatch, periodesReglementaires: 
   const pousser = (indice: number, ev: Evenement, l: Omit<LigneCommentaire, 'indice' | 'periode' | 'restant' | 'score'>) =>
     lignes.push({ indice, periode: ev.periode, restant: ev.restant, score: [score[0], score[1]], ...l });
   const derniere = (periode: number) => periode >= periodesReglementaires;
+  const plansCourants: [PlanDeJeu, PlanDeJeu] = [{ ...PLAN_PAR_DEFAUT }, { ...PLAN_PAR_DEFAUT }];
 
   for (let i = 0; i < E.length; i++) {
     const ev = E[i]!;
@@ -220,7 +236,9 @@ export function commenterMatch(resultat: ResultatMatch, periodesReglementaires: 
             ? `Temps-mort obligatoire${ev.equipe === null ? '' : ` (chargé à ${qui})`}.`
             : ev.motif === 'serie'
               ? `Temps-mort ${qui} pour couper la série adverse (${ev.restants} restant${ev.restants > 1 ? 's' : ''}).`
-              : `Temps-mort ${qui} pour préparer la dernière action (${ev.restants} restant${ev.restants > 1 ? 's' : ''}).`;
+              : ev.motif === 'demande'
+                ? `Le coach de ${qui} demande un temps-mort (${ev.restants} restant${ev.restants > 1 ? 's' : ''}).`
+                : `Temps-mort ${qui} pour préparer la dernière action (${ev.restants} restant${ev.restants > 1 ? 's' : ''}).`;
         pousser(i, ev, { equipe: ev.equipe, genre: 'temps_mort', texte, important: ev.motif === 'fin_de_match' });
         break;
       }
@@ -242,6 +260,22 @@ export function commenterMatch(resultat: ResultatMatch, periodesReglementaires: 
           important: false,
         });
         i = fin;
+        break;
+      }
+      case 'plan': {
+        // Tranche 5 : le plan de jeu choisi par le coach (seulement ce qui change par rapport au plan précédent).
+        const avant = plansCourants[ev.equipe];
+        const changements = (Object.keys(ev.plan) as (keyof PlanDeJeu)[])
+          .filter((k) => ev.plan[k] !== avant[k])
+          .map((k) => LIBELLES_PLAN[k][ev.plan[k] as never] as string);
+        plansCourants[ev.equipe] = ev.plan;
+        if (changements.length)
+          pousser(i, ev, {
+            equipe: ev.equipe,
+            genre: 'plan',
+            texte: `${equipe(ev.equipe)} : ${changements.join(', ')}.`,
+            important: false,
+          });
         break;
       }
       case 'fin_periode': {

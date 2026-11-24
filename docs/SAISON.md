@@ -50,3 +50,9 @@ Contrôlé par `npm run verifier` (schéma Zod, chaque franchise dans une seule 
 - Pas de jours de repos autour du All-Star Game, pas de dates réelles par équipe (le calendrier officiel par équipe n'est pas relevé).
 - Pas de fatigue d'un match à l'autre (back-to-back), pas de gestion des minutes par le coach.
 - Exceptions de la règle des 65 matchs (matchs de 15 à 20 minutes, blessure de fin de saison) non simulées.
+
+## 6. Matchs interactifs (tranche 5)
+
+- **Jouer son match en interactif :** depuis l'écran de saison, « Prochain match en interactif » ouvre le match que sa franchise jouera au prochain jour (`matchDuProchainPas` : le pas de saison est joué sur une copie de l'état, seul moyen sûr de connaître l'identifiant d'un match de Play-In ou de playoffs). Mode interactif : `docs/SIMULATION_MATCH.md` § 8.
+- **Sauvegarde :** l'état de la saison porte le match interactif en cours (`matchInteractif` : identifiant du match, décisions, dernier arrêt atteint), enregistré à chaque décision. Après rechargement, « Reprendre le match interactif » rejoue le match avec les mêmes décisions et reprend au même arrêt. Le champ est facultatif : les sauvegardes de la tranche 4 restent lisibles sans migration (format en version 1).
+- **Fin du match :** la saison joue le jour ; le match de sa franchise se joue avec les décisions du coach (même empreinte que dans l'écran interactif, vérifiée à l'écran) ; le résumé du match garde les décisions (`ResumeMatch.decisions`) pour le revivre en mode commenté. Si le joueur avance la saison sans finir son match interactif, les décisions déjà prises s'appliquent et le staff fait le reste.

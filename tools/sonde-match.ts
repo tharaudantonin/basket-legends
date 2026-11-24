@@ -16,7 +16,7 @@ import {
   valeursDesRegles,
   type StatistiquesLigue,
 } from '@basket-legends/data';
-import { simulerMatch, type ReglagesMatch } from '@basket-legends/engine';
+import { simulerMatch, type EquipeDuMatch, type PlanDeJeu, type ReglagesMatch, type ReglesMatch } from '@basket-legends/engine';
 
 export interface Mesure {
   cle: string;
@@ -37,15 +37,31 @@ export function chargerLigue(racine: string): StatistiquesLigue {
   return schemaStatistiquesLigue.parse(JSON.parse(readFileSync(join(racine, 'data/statistiques/2025-26/ligue.json'), 'utf8')));
 }
 
+function chargerMoteur(racine: string): { regles: ReglesMatch; reglages: ReglagesMatch; equipes: EquipeDuMatch[] } {
+  const json = (chemin: string): unknown => JSON.parse(readFileSync(join(racine, chemin), 'utf8'));
+  return {
+    regles: valeursDesRegles(schemaRegles.parse(json('data/regles/nba-2026-27.json'))),
+    reglages: reglagesDuMoteur(schemaReglagesMatch.parse(json('data/moteur/match-v4.json'))),
+    equipes: readdirSync(join(racine, 'data/rosters/2026-27'))
+      .filter((f) => f.endsWith('.json'))
+      .sort()
+      .map((f) => equipeDuMatch(schemaEffectif.parse(json(`data/rosters/2026-27/${f}`)))),
+  };
+}
+
+/** Les deux équipes du match n° g du lot de mesure (calendrier fixe). */
+function affiche(equipes: EquipeDuMatch[], g: number): [EquipeDuMatch, EquipeDuMatch] {
+  const a = equipes[g % 30]!;
+  let b = equipes[(g * 7 + 3 + Math.floor(g / 30)) % 30]!;
+  if (a.id === b.id) b = equipes[(g + 1) % 30]!;
+  return [a, b];
+}
+
 /** Joue `nombre` matchs (calendrier fixe, graines 0…n-1) et compare aux cibles de la ligue. */
 export function sonder(racine: string, nombre: number, reglagesForces?: ReglagesMatch): Rapport {
-  const json = (chemin: string): unknown => JSON.parse(readFileSync(join(racine, chemin), 'utf8'));
-  const regles = valeursDesRegles(schemaRegles.parse(json('data/regles/nba-2026-27.json')));
-  const reglages = reglagesForces ?? reglagesDuMoteur(schemaReglagesMatch.parse(json('data/moteur/match-v3.json')));
-  const equipes = readdirSync(join(racine, 'data/rosters/2026-27'))
-    .filter((f) => f.endsWith('.json'))
-    .sort()
-    .map((f) => equipeDuMatch(schemaEffectif.parse(json(`data/rosters/2026-27/${f}`))));
+  const charge = chargerMoteur(racine);
+  const { regles, equipes } = charge;
+  const reglages = reglagesForces ?? charge.reglages;
   const L = chargerLigue(racine);
 
   const sommes = new Map<string, number>();
@@ -54,9 +70,7 @@ export function sonder(racine: string, nombre: number, reglagesForces?: Reglages
   let victoiresDomicile = 0;
   const debut = performance.now();
   for (let g = 0; g < nombre; g++) {
-    const a = equipes[g % 30]!;
-    let b = equipes[(g * 7 + 3 + Math.floor(g / 30)) % 30]!;
-    if (a.id === b.id) b = equipes[(g + 1) % 30]!;
+    const [a, b] = affiche(equipes, g);
     const r = simulerMatch({ graine: g, domicile: a, exterieur: b, regles, reglages });
     if (r.boxScore.prolongations) prolongations++;
     if (r.boxScore.equipes[0].points > r.boxScore.equipes[1].points) victoiresDomicile++;
@@ -146,9 +160,75 @@ export function sonder(racine: string, nombre: number, reglagesForces?: Reglages
   return { mesures, horsFourchette, msParMatch };
 }
 
+/** Tranche 5 : l'effet d'un plan de jeu, mesuré pour l'équipe qui l'applique (A) et son adversaire (B). */
+export interface EffetPlan {
+  libelle: string;
+  plan: Partial<PlanDeJeu>;
+  /** Moyennes par match. */
+  mesures: Record<string, number>;
+}
+
+export const VARIANTES_PLANS: { libelle: string; plan: Partial<PlanDeJeu> }[] = [
+  { libelle: 'plan par défaut', plan: {} },
+  { libelle: 'rythme lent', plan: { rythme: 'lent' } },
+  { libelle: 'rythme rapide', plan: { rythme: 'rapide' } },
+  { libelle: 'moins de 3 pts', plan: { troisPoints: 'moins' } },
+  { libelle: 'plus de 3 pts', plan: { troisPoints: 'plus' } },
+  { libelle: 'défense de zone', plan: { defense: 'zone' } },
+];
+
+/** Joue `nombre` matchs par variante : chaque équipe applique le plan une fois sur deux (à domicile, puis à l'extérieur). */
+export function sonderPlans(racine: string, nombre: number): EffetPlan[] {
+  const { regles, reglages, equipes } = chargerMoteur(racine);
+  return VARIANTES_PLANS.map(({ libelle, plan }) => {
+    const s: Record<string, number> = {};
+    const plus = (k: string, v: number) => (s[k] = (s[k] ?? 0) + v);
+    for (let g = 0; g < nombre; g++) {
+      const [x, y] = affiche(equipes, g);
+      const camp = (g % 2) as 0 | 1;
+      const decisions = Object.keys(plan).length ? [{ arret: 0, equipe: camp, genre: 'plan' as const, plan }] : [];
+      const r = simulerMatch({ graine: g, domicile: x, exterieur: y, regles, reglages, decisions });
+      const A = r.boxScore.equipes[camp];
+      const B = r.boxScore.equipes[camp === 0 ? 1 : 0];
+      plus('tirs A', A.totaux.tirsTentes);
+      plus('3 pts A', A.totaux.troisTentes);
+      plus('pertes A', A.totaux.pertes);
+      plus('points A', A.points);
+      plus('3 pts B', B.totaux.troisTentes);
+      plus('3 pts réussis B', B.totaux.troisReussis);
+      plus('rebonds off. B', B.totaux.rebondsOffensifs);
+      plus('points B', B.points);
+      plus('victoires A', A.points > B.points ? 1 : 0);
+      for (const ev of r.evenements)
+        if (ev.type === 'tir' && ev.equipe !== camp) {
+          plus('tirs B', 1);
+          if (ev.tir === 'cercle') plus('cercle B', 1);
+        }
+    }
+    const m = (k: string) => (s[k] ?? 0) / nombre;
+    return {
+      libelle,
+      plan,
+      mesures: {
+        'tirs A': m('tirs A'),
+        '3 pts A': m('3 pts A'),
+        'pertes A': m('pertes A'),
+        '3 pts B': m('3 pts B'),
+        '% 3 pts B': (100 * (s['3 pts réussis B'] ?? 0)) / Math.max(1, s['3 pts B'] ?? 0),
+        '% cercle B': (100 * (s['cercle B'] ?? 0)) / Math.max(1, s['tirs B'] ?? 0),
+        'rebonds off. B': m('rebonds off. B'),
+        'points A': m('points A'),
+        'points B': m('points B'),
+        '% victoires A': 100 * m('victoires A'),
+      },
+    };
+  });
+}
+
 const appelDirect = process.argv[1]?.replace(/\\/g, '/').endsWith('tools/sonde-match.ts');
 if (appelDirect) {
-  const nombre = Number(process.argv[2] ?? 1000);
+  const arguments_ = process.argv.slice(2);
+  const nombre = Number(arguments_.find((a) => /^\d+$/.test(a)) ?? 1000);
   const r = sonder(process.cwd(), nombre);
   for (const m of r.mesures) {
     const cible = m.cible === undefined ? '' : `   cible ${m.cible.toFixed(1).padStart(6)} ± ${(m.tolerance ?? 0).toFixed(1)}`;
@@ -156,5 +236,14 @@ if (appelDirect) {
     console.log(`${m.libelle.padEnd(36)} ${m.valeur.toFixed(1).padStart(6)}${cible}${etat}`);
   }
   console.log(`${nombre} matchs · ${r.msParMatch.toFixed(2)} ms par match · ${r.horsFourchette.length} mesure(s) hors fourchette`);
+  if (arguments_.includes('--plans')) {
+    // Tranche 5 : effets des plans de jeu (A applique le plan, B garde le plan par défaut).
+    const effets = sonderPlans(process.cwd(), nombre);
+    const cles = Object.keys(effets[0]!.mesures);
+    console.log(`
+Plans de jeu (${nombre} matchs par variante ; A applique le plan, B garde le plan par défaut)`);
+    console.log(''.padEnd(18) + cles.map((k) => k.padStart(15)).join(''));
+    for (const e of effets) console.log(e.libelle.padEnd(18) + cles.map((k) => e.mesures[k]!.toFixed(1).padStart(15)).join(''));
+  }
   process.exitCode = r.horsFourchette.length ? 1 : 0;
 }

@@ -131,6 +131,7 @@ export function construireBoxScore(
         break;
       case 'entre_deux':
       case 'temps_mort':
+      case 'plan':
       case 'rebond_equipe':
         // Rebond d'équipe : comme dans les statistiques officielles, il n'est crédité à aucun joueur.
         break;

@@ -35,6 +35,20 @@ const etat = z.looseObject({
   jour: z.number().int().min(0),
   date: z.string(),
   matchs: z.array(resume),
+  // Tranche 5 : match interactif en cours (facultatif : les sauvegardes de la tranche 4 restent lisibles telles quelles).
+  matchInteractif: z
+    .strictObject({
+      id: z.number().int(),
+      decisions: z.array(
+        z.looseObject({
+          arret: z.number().int().min(0),
+          equipe: z.union([z.literal(0), z.literal(1)]),
+          genre: z.enum(['plan', 'temps_mort', 'remplacement']),
+        }),
+      ),
+      arret: z.number().int().min(0),
+    })
+    .optional(),
   blessures: z.record(z.string(), z.number().int()),
   statistiques: z.record(z.string(), z.looseObject({ equipe: z.string(), matchs: z.number().int() })),
   statistiquesPlayoffs: z.record(z.string(), z.looseObject({ equipe: z.string() })),

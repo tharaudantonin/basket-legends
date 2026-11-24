@@ -19,6 +19,81 @@ export const TYPES_TIR: readonly TypeTir[] = ['cercle', 'miDistance', 'troisPoin
 /** 0 : l'équipe qui reçoit ; 1 : celle qui se déplace. */
 export type Camp = 0 | 1;
 
+// --- Tranche 5 : plans de jeu et décisions du mode interactif. ---
+
+export type Rythme = 'lent' | 'normal' | 'rapide';
+export type DefenseDeJeu = 'individuelle' | 'zone';
+export type VolumeTrois = 'moins' | 'normal' | 'plus';
+/** Qui décide des changements ou des temps-morts : le staff (automatique) ou le coach (l'utilisateur). */
+export type Gestion = 'staff' | 'coach';
+
+/** Le plan de jeu d'une équipe : rythme, défense, part du tir à trois points, et ce que le coach délègue au staff. */
+export interface PlanDeJeu {
+  rythme: Rythme;
+  defense: DefenseDeJeu;
+  troisPoints: VolumeTrois;
+  remplacements: Gestion;
+  tempsMorts: Gestion;
+}
+
+export const PLAN_PAR_DEFAUT: Readonly<PlanDeJeu> = {
+  rythme: 'normal',
+  defense: 'individuelle',
+  troisPoints: 'normal',
+  remplacements: 'staff',
+  tempsMorts: 'staff',
+};
+export const RYTHMES: readonly Rythme[] = ['lent', 'normal', 'rapide'];
+export const DEFENSES: readonly DefenseDeJeu[] = ['individuelle', 'zone'];
+export const VOLUMES_TROIS: readonly VolumeTrois[] = ['moins', 'normal', 'plus'];
+export const GESTIONS: readonly Gestion[] = ['staff', 'coach'];
+
+/**
+ * Une décision du coach, prise à un arrêt de jeu numéroté (0 = avant le coup d'envoi, puis chaque début de période et
+ * chaque ballon mort avant une possession). Les décisions sont la seule entrée du mode interactif : le moteur rejoue le
+ * match depuis le coup d'envoi avec la même graine et les mêmes décisions, et obtient le même match.
+ */
+export type DecisionMatch =
+  | { arret: number; equipe: Camp; genre: 'plan'; plan: Partial<PlanDeJeu> }
+  | { arret: number; equipe: Camp; genre: 'temps_mort' }
+  | { arret: number; equipe: Camp; genre: 'remplacement'; entrant: string; sortant: string };
+
+/** L'état d'un joueur à un arrêt de jeu (mode interactif). */
+export interface JoueurALArret {
+  id: string;
+  /** Fraîcheur, de 0 à 100 (arrondie). */
+  fraicheur: number;
+  fautes: number;
+  exclu: boolean;
+  blesse: boolean;
+}
+
+/** Un arrêt de jeu, où le coach peut décider : l'état du match après les décisions prises à cet arrêt. */
+export interface ArretDeJeu {
+  numero: number;
+  /** Nombre d'événements écrits avant l'arrêt : le journal jusque-là ne dépend pas des décisions prises à cet arrêt. */
+  indice: number;
+  periode: number;
+  restant: number;
+  score: [number, number];
+  /** Début de période (dont l'avant-match) : ni temps-mort ; au coup d'envoi, le cinq de départ reste celui du staff. */
+  debutDePeriode: boolean;
+  /** L'équipe qui aura le ballon (null en début de période). */
+  possession: Camp | null;
+  plans: [PlanDeJeu, PlanDeJeu];
+  surTerrain: [string[], string[]];
+  joueurs: [JoueurALArret[], JoueurALArret[]];
+  tempsMortsRestants: [number, number];
+  peutTempsMort: [boolean, boolean];
+  /** État du générateur à l'arrêt (sérialisable) : identique à chaque reprise avec les mêmes décisions. */
+  hasard: number;
+}
+
+export interface OptionsSimulation {
+  /** Rend l'état du match à chaque arrêt de jeu (mode interactif). */
+  arrets?: boolean;
+}
+
 /** Ce que le moteur lit d'un joueur. Les notes sont sur 100 (provisoires jusqu'au modèle de notes v1, tranche 2). */
 export interface JoueurDuMatch {
   id: string;
@@ -88,7 +163,7 @@ export interface ReglesMatch {
 type ParTir = Record<TypeTir, number>;
 type ParGroupe = Record<Groupe, number>;
 
-/** Les réglages du modèle (data/moteur/match-v3.json), calibrés en tranche 2. */
+/** Les réglages du modèle (data/moteur/match-v4.json), calibrés en tranche 2 et complétés à chaque tranche. */
 export interface ReglagesMatch {
   possession: {
     dureeMoyenneSecondes: number;
@@ -148,6 +223,19 @@ export interface ReglagesMatch {
     /** Durées d'indisponibilité, en matchs, et leur part. */
     gravites: { part: number; matchsMin: number; matchsMax: number }[];
   };
+  /** Tranche 5 : effets des plans de jeu (choix du modèle, non sourcés). */
+  plans: {
+    rythme: Record<Rythme, { facteurDuree: number; pertes: number; fatigue: number }>;
+    troisPoints: Record<VolumeTrois, number>;
+    zone: { repartition: ParTir; reussite: ParTir; rebondOffensif: number; pertes: number };
+  };
+  /** Tranche 5 : qualité du tir selon le défenseur direct (défense individuelle). */
+  defenseurDirect: {
+    /** Part du défenseur direct dans l'opposition au tir (le reste : la moyenne des cinq défenseurs). */
+    poids: number;
+    /** Points de défense par centimètre d'écart de taille, pour les tirs près du cercle. */
+    tailleCercleParCm: number;
+  };
   positions: {
     partTroisDansLesCoins: number;
     distanceTroisDansLesCoinsPieds: number;
@@ -161,6 +249,8 @@ export interface EntreeMatch {
   exterieur: EquipeDuMatch;
   regles: ReglesMatch;
   reglages: ReglagesMatch;
+  /** Tranche 5 : décisions du coach (mode interactif), dans l'ordre où elles ont été prises. */
+  decisions?: DecisionMatch[];
 }
 
 /** Repère commun à tous les événements : la période (1 à 4, puis 5, 6… en prolongation) et le temps restant, en dixièmes de seconde. */
@@ -191,6 +281,8 @@ export type Evenement =
       auBuzzer?: true;
       /** Action préparée pendant un temps-mort de fin de match. */
       preparee?: true;
+      /** Tranche 5 : le défenseur direct (défense individuelle seulement). */
+      defenseur?: string;
     })
   | (Repere & {
       type: 'lancer_franc';
@@ -224,8 +316,8 @@ export type Evenement =
       /** L'équipe chargée du temps-mort (null : temps-mort obligatoire qu'aucune équipe ne pouvait plus prendre). */
       equipe: Camp | null;
       nature: 'obligatoire' | 'equipe';
-      /** Pourquoi le coach l'a demandé. */
-      motif: 'obligatoire' | 'serie' | 'fin_de_match';
+      /** Pourquoi le coach l'a demandé (« demande » : décision de l'utilisateur, mode interactif). */
+      motif: 'obligatoire' | 'serie' | 'fin_de_match' | 'demande';
       /** Temps-morts qui restent à l'équipe pour la période en cours de décompte (match ou prolongation). */
       restants: number;
     })
@@ -233,7 +325,9 @@ export type Evenement =
   /** Tranche 4 : blessure en match ; le joueur sort au prochain arrêt de jeu et manque les matchs indiqués. */
   | (Repere & { type: 'blessure'; equipe: Camp; joueur: string; matchsAbsent: number })
   | (Repere & { type: 'remplacement'; equipe: Camp; entrant: string; sortant: string })
-  | (Repere & { type: 'fin_periode'; score: [number, number] });
+  | (Repere & { type: 'fin_periode'; score: [number, number] })
+  /** Tranche 5 : nouveau plan de jeu d'une équipe (décision du coach). */
+  | (Repere & { type: 'plan'; equipe: Camp; plan: PlanDeJeu });
 
 export interface LigneStatistique {
   /** Temps de jeu, en dixièmes de seconde. */
@@ -288,4 +382,8 @@ export interface ResultatMatch {
   boxScore: BoxScore;
   /** Empreinte du box score : deux matchs identiques ont la même. */
   empreinte: string;
+  /** Tranche 5 : l'état du match à chaque arrêt de jeu (seulement si demandé). */
+  arrets?: ArretDeJeu[];
+  /** Tranche 5 : rang, dans `decisions`, des décisions impossibles (ignorées). */
+  decisionsRejetees?: number[];
 }

@@ -1,7 +1,8 @@
-// Tranches 1 à 4 : choisir une franchise → voir l'effectif → jouer un match isolé (rapide ou commenté) ou lancer la
-// saison 2026-27 (calendrier, classements, Play-In, playoffs, palmarès), sauvegardée dans le navigateur.
+// Tranches 1 à 5 : choisir une franchise → voir l'effectif → jouer un match isolé (rapide, commenté ou interactif) ou
+// lancer la saison 2026-27 (calendrier, classements, Play-In, playoffs, palmarès), sauvegardée dans le navigateur ; les
+// matchs de sa franchise peuvent s'y jouer en interactif, repris au même point après un rechargement.
 import { useEffect, useState } from 'react';
-import { nouvelleGraine, type ResultatMatch } from '@basket-legends/engine';
+import { nouvelleGraine, type Camp, type DecisionMatch, type EntreeMatch, type ResultatMatch } from '@basket-legends/engine';
 import type { Cible, EtatSaison, ResumeMatch, Sauvegarde } from '@basket-legends/league';
 import { ChoixFranchise } from './ecrans/ChoixFranchise';
 import { EcranEffectif, type DemandeMatch } from './ecrans/Effectif';
@@ -9,8 +10,15 @@ import { EcranBoxScore } from './ecrans/BoxScore';
 import { EcranCommente } from './ecrans/Commente';
 import { EcranFicheJoueur } from './ecrans/FicheJoueur';
 import { EcranSaison } from './ecrans/Saison';
+import { EcranInteractif } from './ecrans/Interactif';
 import { equipeDe, regles, reglages } from './donnees';
-import { avancerDansLeMoteur, nouvelleSaisonDansLeMoteur, rejouerDansLeMoteur, simulerDansLeMoteur } from './moteur';
+import {
+  avancerDansLeMoteur,
+  nouvelleSaisonDansLeMoteur,
+  prochainMatchDansLeMoteur,
+  rejouerDansLeMoteur,
+  simulerDansLeMoteur,
+} from './moteur';
 import { charger, enregistrer } from './sauvegarde';
 
 type Ecran =
@@ -19,7 +27,19 @@ type Ecran =
   | { nom: 'match'; franchise: string; demande?: DemandeMatch; resultat: ResultatMatch; retour: Ecran }
   | { nom: 'commente'; franchise: string; demande?: DemandeMatch; resultat: ResultatMatch; retour: Ecran }
   | { nom: 'fiche'; joueur: string; resultat?: ResultatMatch; retour: Ecran }
-  | { nom: 'saison' };
+  | { nom: 'saison' }
+  /** Tranche 5 : match interactif, isolé (entrée) ou de la saison (résumé du match à jouer). */
+  | {
+      nom: 'interactif';
+      franchise: string;
+      camp: Camp;
+      demande?: DemandeMatch;
+      entree?: EntreeMatch;
+      match?: ResumeMatch;
+      decisions: DecisionMatch[];
+      arret: number;
+      retour: Ecran;
+    };
 
 export function App() {
   const [ecran, setEcran] = useState<Ecran>({ nom: 'choix' });
@@ -48,14 +68,19 @@ export function App() {
   const jouer = (franchise: string, demande: DemandeMatch) =>
     tache(async () => {
       const [domicile, exterieur] = demande.aDomicile ? [franchise, demande.adversaire] : [demande.adversaire, franchise];
-      const resultat = await simulerDansLeMoteur({
+      const entree: EntreeMatch = {
         graine: demande.graine,
         domicile: equipeDe(domicile),
         exterieur: equipeDe(exterieur),
         regles,
         reglages,
-      });
+      };
       const retour: Ecran = { nom: 'effectif', franchise, derniere: demande };
+      if (demande.mode === 'interactif') {
+        setEcran({ nom: 'interactif', franchise, camp: demande.aDomicile ? 0 : 1, demande, entree, decisions: [], arret: 0, retour });
+        return;
+      }
+      const resultat = await simulerDansLeMoteur(entree);
       setEcran({ nom: demande.mode === 'commente' ? 'commente' : 'match', franchise, demande, resultat, retour });
     });
 
@@ -73,6 +98,39 @@ export function App() {
     tache(async () => {
       if (!sauvegarde) return;
       await garder(await avancerDansLeMoteur(sauvegarde.etat, cible));
+    });
+
+  /** Tranche 5 : le prochain match de la franchise, en interactif (ou la reprise du match interactif enregistré). */
+  const jouerInteractif = () =>
+    tache(async () => {
+      if (!sauvegarde) return;
+      const etat = sauvegarde.etat;
+      const match = await prochainMatchDansLeMoteur(etat);
+      if (!match) throw new Error('Votre franchise ne joue pas au prochain jour de la saison.');
+      const repris = etat.matchInteractif?.id === match.id ? etat.matchInteractif : undefined;
+      const decisions = repris?.decisions ?? [];
+      const arret = repris?.arret ?? 0;
+      if (!repris) await garder({ ...etat, matchInteractif: { id: match.id, decisions, arret } });
+      setEcran({
+        nom: 'interactif',
+        franchise: etat.franchise,
+        camp: match.domicile === etat.franchise ? 0 : 1,
+        match,
+        decisions,
+        arret,
+        retour: { nom: 'saison' },
+      });
+    });
+
+  /** Fin d'un match interactif de la saison : la saison joue ce jour, avec les décisions du coach (même match). */
+  const terminerInteractif = (match: ResumeMatch, decisions: DecisionMatch[], resultat: ResultatMatch) =>
+    tache(async () => {
+      if (!sauvegarde) return;
+      const etat = await avancerDansLeMoteur({ ...sauvegarde.etat, matchInteractif: { id: match.id, decisions, arret: 0 } }, 'jour');
+      await garder(etat);
+      const joue = etat.matchs.find((m) => m.id === match.id);
+      if (joue && joue.empreinte !== resultat.empreinte) throw new Error('Le match enregistré diffère du match joué : signalez ce défaut.');
+      setEcran({ nom: 'match', franchise: etat.franchise, resultat, retour: { nom: 'saison' } });
     });
 
   const revivre = (m: ResumeMatch, mode: 'rapide' | 'commente') =>
@@ -118,8 +176,35 @@ export function App() {
           enCours={enCours}
           onAvancer={(cible) => void avancer(cible)}
           onRevivre={(m, mode) => void revivre(m, mode)}
+          onInteractif={() => void jouerInteractif()}
           onFiche={(joueur) => setEcran({ nom: 'fiche', joueur, retour: ecran })}
           onQuitter={() => setEcran({ nom: 'choix' })}
+        />
+      )}
+      {ecran.nom === 'interactif' && (
+        <EcranInteractif
+          key={String(ecran.entree?.graine ?? ecran.match?.id)}
+          camp={ecran.camp}
+          decisionsInitiales={ecran.decisions}
+          arretInitial={ecran.arret}
+          libelleRetour={ecran.match ? 'Retour à la saison' : 'Retour à l’effectif'}
+          simuler={(decisions) =>
+            ecran.match
+              ? rejouerDansLeMoteur(sauvegarde!.etat, { ...ecran.match, decisions }, { arrets: true })
+              : simulerDansLeMoteur({ ...ecran.entree!, decisions }, { arrets: true })
+          }
+          onProgression={
+            ecran.match
+              ? (decisions, arret) => {
+                  if (sauvegarde) void garder({ ...sauvegarde.etat, matchInteractif: { id: ecran.match!.id, decisions, arret } });
+                }
+              : undefined
+          }
+          onTerminer={(resultat, decisions) => {
+            if (ecran.match) void terminerInteractif(ecran.match, decisions, resultat);
+            else setEcran({ nom: 'match', franchise: ecran.franchise, demande: ecran.demande, resultat, retour: ecran.retour });
+          }}
+          onRetour={() => setEcran(ecran.retour)}
         />
       )}
       {ecran.nom === 'commente' && (

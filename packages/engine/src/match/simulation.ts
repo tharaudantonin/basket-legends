@@ -16,23 +16,33 @@
 // des tirs éteinte, dernier tir gardé, tir pressé au buzzer) et fins de match tactiques (fautes volontaires, gestion du
 // chronomètre par l'équipe qui mène, jeu rapide de celle qui est menée). La position de chaque tir est tirée d'un
 // générateur à part : elle décrit le tir sans changer le cours du match.
+//
+// Tranche 5 : plans de jeu (rythme, défense individuelle ou de zone, part du tir à trois points, délégation des
+// changements et des temps-morts au staff), qualité du tir selon le défenseur direct, et mode interactif. Le coach
+// décide aux arrêts de jeu (avant le match, en début de période, à chaque ballon mort avant une possession) ; ses
+// décisions sont une entrée du moteur (`EntreeMatch.decisions`) : rejouer la même graine avec les mêmes décisions
+// redonne le même match, et le journal avant un arrêt ne dépend pas des décisions prises à cet arrêt ou après.
 // Simplifications notées dans docs/SIMULATION_MATCH.md : pas de faute offensive, de violation ni de faute technique.
 import { creerHasard, type Hasard } from '../hasard';
 import { construireBoxScore } from './boxscore';
 import { empreinteBoxScore } from './empreinte';
 import type {
+  ArretDeJeu,
   Camp,
+  DecisionMatch,
   EntreeMatch,
   EquipeDuMatch,
   Evenement,
   JoueurDuMatch,
+  OptionsSimulation,
+  PlanDeJeu,
   PositionTir,
   ReglagesMatch,
   ReglesMatch,
   ResultatMatch,
   TypeTir,
 } from './types';
-import { TYPES_TIR } from './types';
+import { DEFENSES, GESTIONS, PLAN_PAR_DEFAUT, RYTHMES, TYPES_TIR, VOLUMES_TROIS } from './types';
 
 interface EtatJoueur {
   j: JoueurDuMatch;
@@ -96,7 +106,19 @@ export function tirerPosition(h: Hasard, tir: TypeTir, presse: boolean, R: Regle
   return arrondi(R.ligneATroisPointsPieds + Math.min(6, Math.abs(gaussien(h, 0, 1.2))), (h.reel() * 2 - 1) * 70);
 }
 
-export function simulerMatch(entree: EntreeMatch): ResultatMatch {
+/** Une valeur de plan admise (les décisions viennent de l'interface ou d'une sauvegarde : elles sont vérifiées). */
+function planValide(p: Partial<PlanDeJeu>): boolean {
+  const admis: Record<keyof PlanDeJeu, readonly string[]> = {
+    rythme: RYTHMES,
+    defense: DEFENSES,
+    troisPoints: VOLUMES_TROIS,
+    remplacements: GESTIONS,
+    tempsMorts: GESTIONS,
+  };
+  return Object.entries(p).every(([cle, v]) => cle in admis && admis[cle as keyof PlanDeJeu].includes(v as string));
+}
+
+export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {}): ResultatMatch {
   const { regles: R, reglages: G } = entree;
   const h = creerHasard(entree.graine, `match:${entree.domicile.id}:${entree.exterieur.id}`);
   const hPositions = creerHasard(entree.graine, `positions:${entree.domicile.id}:${entree.exterieur.id}`);
@@ -114,6 +136,15 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
   let obligatoire2 = false;
   // Action préparée pendant un temps-mort de fin de match : vaut pour le prochain tir de ce camp.
   let actionPreparee: Camp | null = null;
+  // Tranche 5 : plans de jeu, arrêts de jeu et décisions du coach.
+  const plans: [PlanDeJeu, PlanDeJeu] = [{ ...PLAN_PAR_DEFAUT }, { ...PLAN_PAR_DEFAUT }];
+  const decisionsParArret = new Map<number, { d: DecisionMatch; rang: number }[]>();
+  (entree.decisions ?? []).forEach((d, rang) => {
+    decisionsParArret.set(d.arret, [...(decisionsParArret.get(d.arret) ?? []), { d, rang }]);
+  });
+  const rejetees: number[] = [];
+  const arrets: ArretDeJeu[] = [];
+  let numeroArret = -1;
 
   const preparer = (equipe: EquipeDuMatch): EtatEquipe => {
     if (equipe.joueurs.length < R.joueursSurLeTerrain) throw new Error(`${equipe.nom} n'a pas assez de joueurs pour jouer.`);
@@ -167,7 +198,7 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
     for (const c of [0, 1] as const) {
       for (const e of presents(c)) {
         // Tranche 4 : chaque joueur se fatigue selon son endurance.
-        const facteur = 1 - G.fatigue.effetEndurance * ((e.j.endurance - 70) / 30);
+        const facteur = (1 - G.fatigue.effetEndurance * ((e.j.endurance - 70) / 30)) * G.plans.rythme[plans[c].rythme].fatigue;
         e.energie = Math.max(0, e.energie - G.fatigue.perteParMinute * Math.max(0.2, facteur) * minutes);
         // Blessure en match : il finit l'action, le staff le sort au prochain arrêt de jeu.
         if (!e.blesse && h.chance(G.blessures.probabiliteParMinute * minutes)) {
@@ -207,6 +238,8 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
       const r = meilleurRemplacant(c, e, 0, true);
       if (r) remplacer(c, e.j.id, r.j.id);
     }
+    // Tranche 5 : quand le coach gère lui-même les changements, le staff ne fait plus que les changements forcés.
+    if (plans[c].remplacements === 'coach') return;
     // 2. Joueurs fatigués, les plus fatigués d'abord.
     for (const e of presents(c).sort((a, b) => a.energie - b.energie)) {
       if (e.energie >= G.fatigue.seuilRemplacement) continue;
@@ -238,7 +271,7 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
   };
   const restantsDe = (c: Camp): number =>
     prolongation() ? R.tempsMortsParProlongation - equipes[c].tempsMortsProlongation : R.tempsMortsParMatch - equipes[c].tempsMortsMatch;
-  const prendreTempsMort = (c: Camp | null, motif: 'obligatoire' | 'serie' | 'fin_de_match'): void => {
+  const prendreTempsMort = (c: Camp | null, motif: 'obligatoire' | 'serie' | 'fin_de_match' | 'demande'): void => {
     if (c !== null) {
       const eq = equipes[c];
       if (prolongation()) eq.tempsMortsProlongation++;
@@ -282,7 +315,12 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
     }
     // Série adverse : le coach de l'équipe qui subit arrête le jeu (pas dans les deux dernières minutes, où il les garde).
     const subit = autre(serie.camp);
-    if (serie.points >= G.tempsMorts.serieAdverseDeclencheur && !deuxDernieresMinutes() && peutPrendreTempsMort(subit))
+    if (
+      serie.points >= G.tempsMorts.serieAdverseDeclencheur &&
+      !deuxDernieresMinutes() &&
+      plans[subit].tempsMorts === 'staff' &&
+      peutPrendreTempsMort(subit)
+    )
       prendreTempsMort(subit, 'serie');
     // Dernière action : l'équipe à égalité ou menée de trois points au plus prépare son tir.
     const ecart = score[attaque] - score[autre(attaque)];
@@ -292,6 +330,7 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
       ecart <= 0 &&
       ecart >= -3 &&
       actionPreparee !== attaque &&
+      plans[attaque].tempsMorts === 'staff' &&
       peutPrendreTempsMort(attaque)
     ) {
       prendreTempsMort(attaque, 'fin_de_match');
@@ -299,7 +338,79 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
     }
     faireTourner(0);
     faireTourner(1);
+    arreter(false, attaque);
   };
+
+  // --- Tranche 5 : arrêts de jeu et décisions du coach. ---
+  const tempsMortDemande: [boolean, boolean] = [false, false];
+  /** Applique une décision ; rend faux si elle est impossible à cet arrêt (elle est alors ignorée). */
+  const appliquer = (d: DecisionMatch, debutDePeriode: boolean, possession: Camp | null): boolean => {
+    if (d.equipe !== 0 && d.equipe !== 1) return false;
+    const c = d.equipe;
+    if (d.genre === 'plan') {
+      if (!planValide(d.plan)) return false;
+      plans[c] = { ...plans[c], ...d.plan };
+      ecrire({ type: 'plan', ...repere(), equipe: c, plan: { ...plans[c] } });
+      return true;
+    }
+    if (d.genre === 'temps_mort') {
+      if (debutDePeriode || tempsMortDemande[c] || !peutPrendreTempsMort(c)) return false;
+      tempsMortDemande[c] = true;
+      prendreTempsMort(c, 'demande');
+      // Comme le staff : en fin de match, l'équipe qui va attaquer prépare son action.
+      if (possession === c && finale() && restant <= R.horlogeEteinteSousSecondes * 10) actionPreparee = c;
+      return true;
+    }
+    if (d.genre === 'remplacement') {
+      const eq = equipes[c];
+      const entrant = eq.joueurs.get(d.entrant);
+      // Le cinq de départ reste celui du staff (décision du 24/11/2026, jusqu'au module de management).
+      if (numeroArret === 0 || !entrant || !eq.surTerrain.includes(d.sortant) || eq.surTerrain.includes(d.entrant)) return false;
+      if (entrant.exclu || entrant.blesse) return false;
+      if (debutDePeriode) {
+        // Entre deux périodes, le cinq est simplement annoncé au début de la période (comme pour le staff).
+        eq.surTerrain = eq.surTerrain.map((id) => (id === d.sortant ? d.entrant : id));
+        entrant.entree = tempsDeJeu;
+      } else remplacer(c, d.sortant, d.entrant);
+      return true;
+    }
+    return false;
+  };
+  const instantane = (indice: number, debutDePeriode: boolean, possession: Camp | null): ArretDeJeu => {
+    const peut = (c: Camp) => !debutDePeriode && !tempsMortDemande[c] && peutPrendreTempsMort(c);
+    const joueursDe = (c: Camp) =>
+      [...equipes[c].joueurs.values()].map((e) => ({
+        id: e.j.id,
+        fraicheur: Math.round(e.energie),
+        fautes: e.fautes,
+        exclu: e.exclu,
+        blesse: e.blesse,
+      }));
+    return {
+      numero: numeroArret,
+      indice,
+      periode,
+      restant,
+      score: [score[0], score[1]],
+      debutDePeriode,
+      possession,
+      plans: [{ ...plans[0] }, { ...plans[1] }],
+      surTerrain: [equipes[0].surTerrain.slice(), equipes[1].surTerrain.slice()],
+      joueurs: [joueursDe(0), joueursDe(1)],
+      tempsMortsRestants: [restantsDe(0), restantsDe(1)],
+      peutTempsMort: [peut(0), peut(1)],
+      hasard: h.etat(),
+    };
+  };
+  /** Un arrêt de jeu : les décisions du coach prises à cet arrêt s'appliquent, puis l'état est rendu si demandé. */
+  function arreter(debutDePeriode: boolean, possession: Camp | null): void {
+    numeroArret++;
+    tempsMortDemande[0] = false;
+    tempsMortDemande[1] = false;
+    const indice = journal.length;
+    for (const { d, rang } of decisionsParArret.get(numeroArret) ?? []) if (!appliquer(d, debutDePeriode, possession)) rejetees.push(rang);
+    if (options.arrets) arrets.push(instantane(indice, debutDePeriode, possession));
+  }
 
   // --- Fautes et lancers francs. ---
   const enPenalite = (fautive: Camp): boolean => {
@@ -369,7 +480,9 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
   const rebond = (attaque: Camp): Camp => {
     const def = autre(attaque);
     const ecart = moyenne(presents(attaque).map(forceRebond)) - moyenne(presents(def).map(forceRebond));
-    const offensif = h.chance(borner(G.rebonds.offensifDeBase + G.rebonds.sensibiliteParPoint * ecart, 0.08, 0.5));
+    // Tranche 5 : la zone protège moins le rebond défensif (pas de vis-à-vis à écarter).
+    const zone = plans[def].defense === 'zone' ? G.plans.zone.rebondOffensif : 0;
+    const offensif = h.chance(borner(G.rebonds.offensifDeBase + G.rebonds.sensibiliteParPoint * ecart + zone, 0.08, 0.5));
     const camp = offensif ? attaque : def;
     if (h.chance(G.rebonds.partRebondsDEquipe)) {
       ecrire({ type: 'rebond_equipe', ...repere(), equipe: camp, offensif });
@@ -387,13 +500,35 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
       tir === 'cercle' ? (j.technique + j.physique) / 2 : tir === 'miDistance' ? j.technique : 0.7 * j.technique + 0.3 * j.mental;
     return brut - malus(e);
   };
-  const defense = (c: Camp): number => moyenne(presents(c).map((e) => 0.6 * e.j.tactique + 0.4 * e.j.physique - malus(e)));
+  const valeurDefensive = (e: EtatJoueur): number => 0.6 * e.j.tactique + 0.4 * e.j.physique - malus(e);
+  const defense = (c: Camp): number => moyenne(presents(c).map(valeurDefensive));
+  /**
+   * Tranche 5 : les vis-à-vis en défense individuelle. Les attaquants, du plus dangereux au moins dangereux, reçoivent
+   * le meilleur défenseur libre de leur groupe (arrière, ailier, intérieur), à défaut le meilleur défenseur libre.
+   */
+  const visAVis = (attaque: Camp): Map<string, EtatJoueur> => {
+    const libres = presents(autre(attaque));
+    const paires = new Map<string, EtatJoueur>();
+    for (const a of presents(attaque).sort((x, y) => effectif(y) - effectif(x))) {
+      const memes = libres.filter((d) => d.j.groupe === a.j.groupe);
+      const vivier = memes.length ? memes : libres;
+      if (!vivier.length) break;
+      const d = vivier.reduce((m, x) => (valeurDefensive(x) > valeurDefensive(m) ? x : m));
+      libres.splice(libres.indexOf(d), 1);
+      paires.set(a.j.id, d);
+    }
+    return paires;
+  };
   const usage = (e: EtatJoueur) => Math.exp((effectif(e) - 70) / G.tirs.usageEchelle);
   const minimalPourTirer = Math.round(R.tempsMinimalPourTirerSecondes * 10);
 
   const jouerPossession = (attaque: Camp): { suivant: Camp; ballonMort: boolean } => {
     const def = autre(attaque);
     const F = G.finDeMatch;
+    // Tranche 5 : plans de jeu de l'attaque et de la défense.
+    const rythme = G.plans.rythme[plans[attaque].rythme];
+    const zone = plans[def].defense === 'zone' ? G.plans.zone : undefined;
+    const volumeTrois = G.plans.troisPoints[plans[attaque].troisPoints];
     // Rule No. 7, Section II, 9 : à 24 s ou moins de la fin, l'horloge des tirs s'éteint après un changement de possession.
     let horloge = restant <= R.horlogeEteinteSousSecondes * 10 ? restant / 10 : R.horlogeDePossessionSecondes;
     for (let tentative = 0; ; tentative++) {
@@ -451,7 +586,7 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
             ? horloge * F.gestionAvanceFraction
             : deuxDernieresMinutes() && -ecart >= F.presseEcartMin
               ? F.presseDureeSecondes
-              : P.dureeMoyenneSecondes * (horloge / R.horlogeDePossessionSecondes);
+              : P.dureeMoyenneSecondes * (horloge / R.horlogeDePossessionSecondes) * rythme.facteurDuree;
         duree = Math.round(borner(gaussien(h, moyenneDuree, P.dureeEcartSecondes), P.dureeMinimaleSecondes, horloge) * 10);
       }
       duree = borner(duree, 1, restant - 1);
@@ -460,7 +595,8 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
       // Perte de balle.
       const T = G.pertesDeBalle;
       const maitrise = moyenne(attaquants.map((e) => (e.j.mental + e.j.tactique) / 2 - malus(e)));
-      if (h.chance(borner(T.probabiliteDeBase - T.sensibiliteParPoint * (maitrise - defense(def)), 0.04, 0.3))) {
+      const pPerte = T.probabiliteDeBase - T.sensibiliteParPoint * (maitrise - defense(def)) + rythme.pertes + (zone?.pertes ?? 0);
+      if (h.chance(borner(pPerte, 0.04, 0.3))) {
         ecouler(Math.round(duree * (0.3 + 0.6 * h.reel())));
         const fautif = choisirParmi(attaquants, usage);
         const vol = h.chance(T.partInterceptions) ? choisirParmi(defenseurs, (e) => Math.max(1, e.j.tactique - 40)) : undefined;
@@ -492,13 +628,27 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
       const tireur = choisirParmi(attaquants, usage);
       const profil = G.tirs.profilParGroupe[tireur.j.groupe];
       const pourEgaliser = finale() && ecart === -3 && restant <= R.horlogeEteinteSousSecondes * 10 && h.chance(F.partTroisEnRetardDeTrois);
-      const tir = pourEgaliser ? 'troisPoints' : h.pondere(TYPES_TIR, (t) => G.tirs.repartition[t] * profil[t]);
+      const tir = pourEgaliser
+        ? 'troisPoints'
+        : h.pondere(
+            TYPES_TIR,
+            (t) => G.tirs.repartition[t] * profil[t] * (t === 'troisPoints' ? volumeTrois : 1) * (zone ? zone.repartition[t] : 1),
+          );
       const valeur = tir === 'troisPoints' ? R.valeurPanierATroisPoints : R.valeurPanierInterieur;
       const preparee = actionPreparee === attaque;
       if (preparee) actionPreparee = null;
+      // Tranche 5 : en défense individuelle, le défenseur direct pèse sur la qualité du tir (et sa taille près du cercle) ;
+      // en zone, l'opposition est collective.
+      const D = G.defenseurDirect;
+      const direct = zone ? undefined : visAVis(attaque).get(tireur.j.id);
+      const opposition = direct
+        ? (1 - D.poids) * defense(def) +
+          D.poids * (valeurDefensive(direct) + (tir === 'cercle' ? D.tailleCercleParCm * (direct.j.tailleCm - tireur.j.tailleCm) : 0))
+        : defense(def);
       const pReussite = borner(
         G.tirs.reussiteDeBase[tir] +
-          G.tirs.sensibiliteParPoint * (adresse(tireur, tir) - defense(def)) +
+          (zone ? zone.reussite[tir] : 0) +
+          G.tirs.sensibiliteParPoint * (adresse(tireur, tir) - opposition) +
           (attaque === 0 ? G.tirs.avantageDomicile : 0) -
           (presse ? F.malusTirPresse : 0) +
           (preparee ? G.tempsMorts.bonusActionPreparee : 0),
@@ -537,6 +687,7 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
           ...(presse ? { presse: true as const } : {}),
           ...(restant <= 10 ? { auBuzzer: true as const } : {}),
           ...(preparee ? { preparee: true as const } : {}),
+          ...(direct ? { defenseur: direct.j.id } : {}),
         });
       }
       if (faute) {
@@ -584,11 +735,11 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
     obligatoire1 = false;
     obligatoire2 = false;
     actionPreparee = null;
-    // Au début de chaque période après la première, le staff remet les titulaires reposés.
+    // Au début de chaque période après la première, le staff remet les titulaires reposés (sauf si le coach gère).
     if (periode > 1) {
       for (const c of [0, 1] as const) {
         const eq = equipes[c];
-        for (const id of titulaires[c]) {
+        for (const id of plans[c].remplacements === 'staff' ? titulaires[c] : []) {
           const e = etat(c, id);
           if (eq.surTerrain.includes(id) || e.exclu || e.blesse || e.energie < G.fatigue.seuilRemplacement) continue;
           const cible = presents(c)
@@ -602,6 +753,8 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
         faireTourner(c);
       }
     }
+    // Arrêt de jeu du début de période (avant le coup d'envoi pour la première) : le coach peut décider.
+    arreter(true, null);
     ecrire({ type: 'debut_periode', periode, restant, cinq: [equipes[0].surTerrain.slice(), equipes[1].surTerrain.slice()] });
     const regle = prolongation() ? 'entre-deux' : (R.possessionDebutDePeriode[periode - 1] ?? 'entre-deux');
     let attaque: Camp;
@@ -622,5 +775,12 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
   while (score[0] === score[1]) jouerPeriode();
 
   const boxScore = construireBoxScore(journal, [entree.domicile, entree.exterieur], titulaires, R.periodesReglementaires);
-  return { graine: entree.graine, evenements: journal, boxScore, empreinte: empreinteBoxScore(boxScore) };
+  return {
+    graine: entree.graine,
+    evenements: journal,
+    boxScore,
+    empreinte: empreinteBoxScore(boxScore),
+    ...(options.arrets ? { arrets } : {}),
+    ...(entree.decisions?.length ? { decisionsRejetees: rejetees } : {}),
+  };
 }

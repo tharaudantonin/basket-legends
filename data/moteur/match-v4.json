@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "datasetId": "basket-legends-moteur-match-v3",
+  "datasetId": "basket-legends-moteur-match-v4",
   "status": "calibre",
-  "note": "Réglages du modèle de match (tranche 4) : ceux de la v2, plus l’endurance propre à chaque joueur et les blessures en match. Calibrés sur 1 000 matchs (npm run sonde) contre les moyennes de la saison régulière 2025-2026 ; les fréquences et durées de blessure sont des choix du modèle, sans cible sourcée.",
+  "note": "Réglages du modèle de match (tranche 5) : ceux de la v3, plus les effets des plans de jeu et du défenseur direct. Calibrés sur 1 000 matchs (npm run sonde) contre les moyennes de la saison régulière 2025-2026 avec le plan par défaut ; les effets des plans et du défenseur direct sont des choix du modèle, sans cible sourcée.",
   "possession": {
     "dureeMoyenneSecondes": 13.95,
     "dureeEcartSecondes": 4.5,
@@ -34,8 +34,8 @@
     },
     "reussiteDeBase": {
       "cercle": 0.661,
-      "miDistance": 0.411,
-      "troisPoints": 0.32
+      "miDistance": 0.417,
+      "troisPoints": 0.324
     },
     "sensibiliteParPoint": 0.006,
     "avantageDomicile": 0.02,
@@ -120,15 +120,6 @@
     "partTroisEnRetardDeTrois": 0.85,
     "margeDernierTirSecondes": 2.5
   },
-  "positions": {
-    "partTroisDansLesCoins": 0.246,
-    "distanceTroisDansLesCoinsPieds": 22,
-    "miDistanceParTranche": {
-      "troisDix": 0.209,
-      "dixSeize": 0.095,
-      "seizeLigne": 0.049
-    }
-  },
   "blessures": {
     "probabiliteParMinute": 0.0007,
     "gravites": [
@@ -148,5 +139,56 @@
         "matchsMax": 50
       }
     ]
+  },
+  "plans": {
+    "rythme": {
+      "lent": {
+        "facteurDuree": 1.15,
+        "pertes": -0.004,
+        "fatigue": 0.95
+      },
+      "normal": {
+        "facteurDuree": 1,
+        "pertes": 0,
+        "fatigue": 1
+      },
+      "rapide": {
+        "facteurDuree": 0.85,
+        "pertes": 0.008,
+        "fatigue": 1.08
+      }
+    },
+    "troisPoints": {
+      "moins": 0.75,
+      "normal": 1,
+      "plus": 1.3
+    },
+    "zone": {
+      "repartition": {
+        "cercle": 0.85,
+        "miDistance": 1.05,
+        "troisPoints": 1.12
+      },
+      "reussite": {
+        "cercle": -0.025,
+        "miDistance": 0,
+        "troisPoints": 0.012
+      },
+      "rebondOffensif": 0.025,
+      "pertes": -0.004
+    }
+  },
+  "defenseurDirect": {
+    "poids": 0.5,
+    "tailleCercleParCm": 0.15
+  },
+  "positions": {
+    "partTroisDansLesCoins": 0.246,
+    "distanceTroisDansLesCoinsPieds": 22,
+    "miDistanceParTranche": {
+      "troisDix": 0.209,
+      "dixSeize": 0.095,
+      "seizeLigne": 0.049
+    }
   }
 }

@@ -52,7 +52,7 @@ Ces entités sont des types TypeScript et des schémas Zod, pas des tables. Chaq
 ## Simulation et sauvegardes
 Chaque partie conserve une graine et l'état du générateur. Le moteur reçoit l'état du match, les effectifs actifs, la fatigue et les blessures, les tactiques et le règlement de la saison ; il renvoie les événements, le box score et l'état final. Les trois présentations (rapide, commentée, interactive) consomment le même flux d'événements.
 
-Mode interactif : l'état du match et l'état du générateur sont sérialisables à chaque possession. Une décision du joueur (temps mort, remplacement, schéma, rythme) est une entrée journalisée ; une reprise rejoue la même graine avec les mêmes décisions et donne le même résultat.
+Mode interactif : l'état du match et l'état du générateur sont sérialisables à chaque possession. Une décision du joueur (temps mort, remplacement, schéma, rythme) est une entrée journalisée ; une reprise rejoue la même graine avec les mêmes décisions et donne le même résultat. Implémenté en tranche 5 (`docs/SIMULATION_MATCH.md` § 8) : les décisions sont datées par arrêt de jeu, chaque décision fait rejouer le match depuis le coup d'envoi (quelques millisecondes), et l'état à chaque arrêt (générateur compris) est rendu par le moteur.
 
 Sauvegardes : emplacements dans IndexedDB, enveloppe versionnée (numéro de format, date, contenu), migrations numérotées d'un format au suivant, copie de secours avant toute donnée illisible ou venue d'une version plus récente, export et import d'un fichier.
 

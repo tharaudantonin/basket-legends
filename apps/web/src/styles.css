@@ -593,3 +593,40 @@ tr.mon-equipe {
   margin: 0;
   font-weight: 600;
 }
+
+/* Tranche 5 : le banc de touche du mode interactif (mise en forme sobre ; le rendu définitif viendra avec le chantier visuel). */
+.banc-de-touche {
+  display: grid;
+  gap: 0.75rem;
+}
+.plan-de-jeu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  border: 1px solid rgb(0 0 0 / 15%);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem 0.75rem;
+}
+.plan-de-jeu label,
+.changement label {
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+}
+.actions-coach {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: end;
+}
+.changement {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: end;
+}
+.banc-de-touche caption {
+  text-align: left;
+  font-weight: 600;
+  padding-bottom: 0.25rem;
+}
