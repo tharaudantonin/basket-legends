@@ -1,6 +1,6 @@
-# Notes des joueurs — modèle v1 (tranche 2, 24 novembre 2026)
+# Notes des joueurs — modèles v1 (tranche 2) et v2 (tranche 7), 24 novembre 2026
 
-> Statut : **implémenté et testé**. Paramètres **validés par Antonin le 24/11/2026** (`data/modeles/notes-v1.json`, statut `valide`).
+> Statut : **implémenté et testé**. Paramètres du v1 **validés par Antonin le 24/11/2026** (`data/modeles/notes-v1.json`, statut `valide`). Depuis la tranche 7, les effectifs sont notés par le v2 (`data/modeles/notes-v2.json`, statut `proposition`), qui reprend le v1 sans changement et ajoute 16 attributs détaillés (§ 8).
 
 ## 1. Ce que demandent les décisions
 
@@ -58,3 +58,35 @@ Le relevé (24/11/2026) est décrit dans `docs/SOURCES.md` § 9. Les relevés br
 ## 7. Endurance (tranche 4, validée par Antonin le 24/11/2026)
 
 Ajout du 24/11/2026 pour la courbe de fatigue propre à chaque joueur (amélioration validée, rangée en tranche 4) : indice `endurance` = minutes par match (poids 1) et part de titularisations (0,3), recalé sur les ancrages des attributs ; les joueurs sans statistique reçoivent leur note a priori. Stocké dans `attributes.endurance` des effectifs. Les autres paramètres, validés, n'ont pas changé : les notes et les quatre autres attributs sont identiques.
+
+## 8. Modèle v2 : 16 attributs détaillés (tranche 7, proposition)
+
+Décision du 24/11/2026 (réponse 14) : environ 16 attributs en début de tranche 7, les quatre familles restent. `data/modeles/notes-v2.json` (écrit par `tools/migrations/2026-11-24-tranche7-notes-v2.ts`) reprend **sans changement** les paramètres validés du v1 : note globale, familles, endurance, ancrages, notes a priori. Les notes et les quatre familles des 523 joueurs sont identiques à celles du v1 (testé). `npm run notes` écrit en plus `attributes.details`.
+
+Chaque attribut détaillé est un indice (somme pondérée de scores centrés-réduits, comme au § 3), recalé sur les ancrages des attributs. Deux mesures s'ajoutent : `deux` (adresse à deux points, rétrécie comme le TS% avec 150 tirs) et `poids` (kg, des mensurations). Les poids sont des choix du modèle, à valider. Le niveau de confiance de chaque attribut est consigné dans `confianceDetails` :
+
+| Attribut | Composantes (poids) | Confiance |
+|---|---|---|
+| Tir près du cercle | adresse à 2 pts (0,6), rebonds offensifs (0,3), taille (0,3), lancers tentés (0,2) | estimé |
+| Tir à mi-distance | % aux lancers (0,6), adresse à 2 pts (0,4) | estimé |
+| Tir à 3 pts | % à 3 pts (1), tirs à 3 pts tentés (0,5) | mesuré |
+| Lancers francs | % aux lancers (1) | mesuré |
+| Passe | passes (1), passes par perte (0,4) | dérivé |
+| Maniement | usage (0,5), passes par perte (0,5), lancers tentés (0,2) | estimé |
+| Défense extérieure | interceptions (0,6), minutes par match (0,3), taille (−0,2), fautes (−0,2) | estimé |
+| Défense intérieure | contres (0,7), rebonds défensifs (0,4), taille (0,4), fautes (−0,2) | estimé |
+| Interception | interceptions (1) | dérivé |
+| Contre | contres (1), taille (0,2) | dérivé |
+| Rebond offensif / défensif | rebonds offensifs (1) / défensifs (1) | dérivé |
+| Vitesse | interceptions (0,4), lancers tentés (0,3), taille (−0,5), poids (−0,3) | estimé |
+| Force | poids (0,6), rebonds offensifs (0,3), lancers tentés (0,2) | estimé |
+| QI offensif | passes par perte (0,6), TS% (0,6), passes (0,2) | estimé |
+| QI défensif | interceptions (0,3), contres (0,3), rebonds défensifs (0,3), fautes (−0,5) | estimé |
+
+« Mesuré » : la statistique mesure directement l'attribut ; « dérivé » : un taux de la box score qui en dépend surtout ; « estimé » : approché par des statistiques indirectes. Les statistiques relevées ne séparent pas les tirs près du cercle et à mi-distance : ces deux attributs sont les plus fragiles. Les joueurs sans statistique reçoivent leur note a priori sur les 16 attributs.
+
+**Moteur :** chaque action du match lit désormais les attributs détaillés (moteur v5, `docs/SIMULATION_MATCH.md` § 9).
+
+**Tests** (`packages/data/tests/notes.test.ts`, bloc « attributs détaillés ») : familles identiques au v1, 16 attributs présents et sur l'échelle, classement des lancers conforme au % aux lancers, niveau de confiance déclaré pour chaque attribut.
+
+**Limites :** poids non validés ; la défense reste mal mesurée par la box score ; les prospects et le vivier (`docs/DRAFT.md`) ont des attributs générés, pas calculés.

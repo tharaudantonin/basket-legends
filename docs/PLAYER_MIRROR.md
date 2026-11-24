@@ -198,7 +198,7 @@ Une source officielle est prioritaire pour les statistiques et transactions, mai
 - unicité de l'identifiant interne et du mapping source ;
 - absence de doublon joueur entre NBA, G League, free agents et prospects ;
 - cohérence de l'affiliation au snapshot du 17 novembre 2026 avec le journal des transactions ;
-- âge calculé à partir de la date de naissance et du snapshot, jamais saisi manuellement ;
+- âge calculé à partir de la date de naissance et du snapshot, jamais saisi manuellement ; en attendant les dates de naissance, `seasonAge` (tranche 7) est déduit de l'âge relevé par Basketball-Reference (au 1er février de la saison), `null` si inconnu (`docs/DRAFT.md` § 11) ;
 - conversions d'unités reproductibles ;
 - `FGM <= FGA`, `3PM <= 3PA`, `3PM <= FGM`, `3PA <= FGA`, `FTM <= FTA` ;
 - minutes, matchs et titularisations cohérents ; `GS <= G` ;

@@ -1,4 +1,4 @@
-# Simulation de match — tranches 1 à 5 (24 novembre 2026)
+# Simulation de match — tranches 1 à 5 et 7 (24 novembre 2026)
 
 > Statut : **implémenté et testé** pour les trois présentations : rapide, commentée et interactive (tranche 5, § 8). Modèle **calibré** (tranche 2, recalibré en tranches 3 et 5) sur les moyennes de la saison régulière 2025-2026, avec les notes du modèle v1 (`docs/NOTES_JOUEURS.md`). Les effets des plans de jeu et du défenseur direct sont des choix du modèle, mesurés mais sans cible sourcée.
 
@@ -15,7 +15,7 @@ Critères de sortie (`docs/AUDIT_2026-11.md` § 7) :
 | Élément | Fichier | Rôle |
 |---|---|---|
 | Règles NBA de la saison | `data/regles/nba-2026-27.json` | Chaque valeur avec unité, définition et section du NBA Official Rulebook 2026-27. Statut `validated` (24/11/2026). |
-| Réglages du modèle | `data/moteur/match-v4.json` | Probabilités de base, sensibilités, fatigue, rotation, plans de jeu, défenseur direct. Statut `calibre` (plan par défaut). |
+| Réglages du modèle | `data/moteur/match-v5.json` | Probabilités de base, sensibilités, fatigue, rotation, plans de jeu, défenseur direct, préférence de zone (tranche 7). Statut `calibre` (plan par défaut). |
 | Cibles de calibration | `data/statistiques/2025-26/ligue.json` | Moyennes de la ligue 2025-26 par équipe et par match (Basketball-Reference). |
 | Schémas | `packages/data/src/schemas.ts` | `schemaRegles`, `schemaReglagesMatch` ; contrôlés par `npm run verifier`. |
 | Passage données → moteur | `packages/data/src/match.ts` | `valeursDesRegles`, `reglagesDuMoteur`, `equipeDuMatch`. |
@@ -83,7 +83,7 @@ Les 19 mesures sont dans leurs fourchettes ; environ 4 ms par match. `packages/e
 
 ## 5. Match de référence
 
-Boston Beacons (domicile) – New York Skyliners, graine 2026 : empreinte `9834f1859a6a8fe8` depuis la tranche 5 (défenseur direct, réussite de base recalée ; `ad47660b78b2fb88` en tranche 4 avec l'endurance, les blessures et l'usage recalé ; `f69b9934b578d77d` en tranche 3 avec les temps-morts et fins de match ; `a87497bc0d7ba6d3` en tranche 2, `1edb4029b0bb24a2` en tranche 1). Le mode commenté, le mode rapide et le mode interactif sans décision donnent la même empreinte : testé dans Node (`packages/engine/tests/presentation.test.ts`) et dans le navigateur (`apps/web/parcours/`). Toute modification du moteur, des règles, des réglages ou des effectifs qui change cette empreinte doit être voulue et notée ici.
+Boston Beacons (domicile) – New York Skyliners, graine 2026 : empreinte `0a6f4ed165d89e1e` depuis la tranche 7 (attributs détaillés, moteur v5 ; `9834f1859a6a8fe8` en tranche 5 avec le défenseur direct et la réussite de base recalée ; `ad47660b78b2fb88` en tranche 4 avec l'endurance, les blessures et l'usage recalé ; `f69b9934b578d77d` en tranche 3 avec les temps-morts et fins de match ; `a87497bc0d7ba6d3` en tranche 2, `1edb4029b0bb24a2` en tranche 1). Le mode commenté, le mode rapide et le mode interactif sans décision donnent la même empreinte : testé dans Node (`packages/engine/tests/presentation.test.ts`) et dans le navigateur (`apps/web/parcours/`). Toute modification du moteur, des règles, des réglages ou des effectifs qui change cette empreinte doit être voulue et notée ici.
 
 ## 6. Mode commenté, moments marquants, fiche joueur (tranche 3)
 
@@ -108,7 +108,7 @@ Boston Beacons (domicile) – New York Skyliners, graine 2026 : empreinte `9834f
 - **Lecture** (`packages/engine/src/match/interactif.ts`) : le match se déroule ligne à ligne comme en mode commenté ; la lecture s'arrête à l'arrêt de jeu suivant si le coach l'a demandé, entre les périodes, après un temps-mort (options), ou quand un de ses joueurs sort sur blessure ou exclusion. « Aller à la fin du match » finit le match avec les décisions déjà prises.
 - **En saison** (`docs/SAISON.md` § 6) : le match du jour de sa franchise se joue en interactif ; le match en cours (décisions et arrêt atteint) est enregistré à chaque décision et se reprend au même point après rechargement ; à la fin, la saison joue ce jour avec les décisions, et le résumé du match les garde pour le revivre.
 
-**Plans de jeu** (`data/moteur/match-v4.json`, bloc `plans` ; choix du modèle, non sourcés) :
+**Plans de jeu** (`data/moteur/match-v4.json`, repris tels quels dans `match-v5.json`, bloc `plans` ; choix du modèle, non sourcés) :
 - rythme lent / normal / rapide : durée moyenne des possessions × 1,15 / 1 / 0,85 ; pertes de balle − 0,4 / 0 / + 0,8 point ; fatigue × 0,95 / 1 / 1,08 ;
 - tirs à trois points moins / comme d'habitude / plus : poids des tirs à trois points × 0,75 / 1 / 1,3 ;
 - défense de zone : l'adversaire tire moins près du cercle (× 0,85), un peu plus à mi-distance (× 1,05) et à trois points (× 1,12) ; réussite adverse − 2,5 points près du cercle, + 1,2 point à trois points ; rebond offensif adverse + 2,5 points ; pertes adverses − 0,4 point ; pas de défenseur direct.
@@ -133,3 +133,26 @@ En moyenne sur toute la ligue, aucun plan ne fait gagner plus que le plan par d�
 **Tests :** `packages/engine/tests/interactif.test.ts` (arrêts sans effet sur le match ; même graine et mêmes décisions, même match ; journal et générateur inchangés avant l'arrêt d'une décision ; décision après décision = tout rejouer ; temps-morts, changements, décisions impossibles, délégation ; effets des plans ; défenseur direct ; lecture) et `packages/league/tests/interactif.test.ts` (le match interactif est celui que la saison enregistre ; reprise après sauvegarde ; sauvegardes de la tranche 4 lisibles) ; parcours Playwright `apps/web/parcours/interactif.spec.ts`.
 
 **Simplifications :** l'équipe dirigée par le staff garde le plan par défaut et ne s'adapte pas ; pas de décision pendant le jeu (le coach n'agit qu'aux arrêts, comme pour les changements réels) ; pas de schémas offensifs nommés ni de prise à deux ; un seul plan de zone ; le cinq de départ reste celui du staff ; le match interactif hors saison n'est pas sauvegardé.
+
+## 9. Attributs détaillés et moteur v5 (tranche 7)
+
+Le moteur lit les 16 attributs détaillés du modèle de notes v2 (`docs/NOTES_JOUEURS.md` § 8) au lieu des quatre familles :
+
+| Action | Attribut lu |
+|---|---|
+| Choix de la zone de tir | préférence = exp((attribut de la zone − 70) / 20) multiplie le poids de chaque zone (`tirs.preferenceZoneEchelle`) |
+| Réussite du tir | tir près du cercle, à mi-distance ou à 3 pts |
+| Opposition au tir | défense intérieure (près du cercle) ou extérieure (mi-distance, 3 pts) des cinq et du défenseur direct |
+| Lancers francs | lancers francs ; en fin de match, la faute volontaire vise le meilleur tireur de lancers |
+| Rebond | rebond offensif ou défensif |
+| Perte de balle | (maniement + QI offensif) / 2 |
+| Interception | interception |
+| Passe décisive | passe |
+| Contre | contre |
+| Faute | 110 − QI défensif |
+
+`data/moteur/match-v5.json` (écrit par `tools/migrations/2026-11-24-tranche7-moteur.ts`) remplace `match-v4.json` (gardé dans l'historique Git) : échelle de préférence 20 ; réussite de base près du cercle 0,653, à mi-distance 0,427, à 3 pts 0,346 ; répartition de base 0,235 / 0,356 / 0,409 ; rebond offensif de base 0,266 ; pertes de base 0,121 ; contres × 1,045 ; lancers de base 0,788. Les plans de jeu validés (réponse 21) sont repris sans changement.
+
+**Calibration (24/11/2026, `npm run sonde 1000`) :** les 19 mesures sont dans leurs fourchettes, 0 hors fourchette : 116,7 points (cible 115,6), 89,3 tirs à 47,4 % (89,1 / 47,1 %), 36,9 tirs à 3 pts à 36,2 % (37,0 / 36,0 %), 23,7 lancers à 78,7 % (23,5 / 78,3 %), rebonds 11,3 / 32,7 (11,4 / 32,4), 26,9 passes (26,7), 8,2 interceptions et 4,9 contres (8,4 / 4,8), 14,4 pertes et 20,1 fautes (14,5 / 19,9), près du cercle 23,6 % des tirs à 70,5 % (23,1 / 70,3 %), mi-distance 35,0 % à 45,0 % (35,3 / 45,0 %), 57,2 % de victoires à domicile (55,4 %). 2,97 ms par match ; non sourcés : prolongations 1,8 %, joueur le plus utilisé 37,1 minutes, 8e joueur 15,2.
+
+Empreinte du match de référence : `0a6f4ed165d89e1e` (§ 5), mise à jour dans les tests et les parcours.

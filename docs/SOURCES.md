@@ -113,3 +113,18 @@ Relevés le 24/11/2026 dans le navigateur, page par page, pour un usage privé ;
 | Première saison NBA et draft des joueurs | NBA.com | https://www.nba.com/players | primaire |
 
 Le texte de la CBA 2023 (https://www.nbpa.com/cba) n'a pas été relu pour cette tranche : les barèmes secondaires sont à recouper avec lui avant publication, comme les conditions de réutilisation de chaque fournisseur (porte de publication).
+
+## 12. Draft (24 novembre 2026)
+
+Relevés pour la tranche 7 ; détail, statuts et écarts : `docs/DRAFT.md` § 2.
+
+| Données | Fournisseur | Page | Niveau |
+|---|---|---|---|
+| Loterie 3-2-1 (Drafts 2027-2029) | NBA Communications | https://pr.nba.com/nba-board-of-governors-approves-new-draft-lottery-system-to-address-tanking/ (28/05/2026) | primaire |
+| Fonctionnement de la loterie 2027, résultats 2026 | NBA.com | https://www.nba.com/news/nba-draft-lottery-explainer (03/11/2026) | primaire |
+| Résultat de la loterie 2025 | NBA.com | https://www.nba.com/news/2025-nba-draft-lottery-result | primaire |
+| Propriété des choix 2027 | RealGM | https://basketball.realgm.com/nba/draft/future_drafts/summary/2027 et https://basketball.realgm.com/nba/draft/future_drafts/detailed | secondaire |
+| Échelle des rookies 2026 (120 %) | Hoops Rumors | https://www.hoopsrumors.com/2026/07/rookie-scale-salaries-for-2026-nba-first-round-picks.html | secondaire |
+| Échelle des rookies 2025 (recoupement de la croissance) | Hoops Rumors | https://www.hoopsrumors.com/2025/07/rookie-scale-salaries-for-2025-nba-first-round-picks.html | secondaire |
+
+Non relevé : la table officielle des probabilités de la loterie 3-2-1 (PDF de la NBA, lecture automatique refusée) ; Antonin la fournit (réponse 13). Les âges de saison (`seasonAge`) viennent du relevé du § 9 (convention de Basketball-Reference, âge au 1er février). Le modèle des prospects, le scouting et le vivier ne reposent sur aucune source : ce sont des choix du modèle.
