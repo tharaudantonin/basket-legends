@@ -31,7 +31,51 @@ Ce document consigne les décisions d'Antonin prises à l'occasion de l'audit de
 | 9 | Homonymes de clubs disparus | (a) Gardés, signalés dans la porte de publication | Boston Beacons, New York Skyliners, Indianapolis Racers, Los Angeles Stars et Miami Tropics restent ; revue juridique avant publication, Los Angeles Stars et Miami Tropics en priorité. |
 | 10 | Doublon du n° 7 à Chicago | (a) Gardé provisoirement | Comme le n° 9 de Toronto, à corriger quand le bon numéro sera connu. |
 
+## Réponses du 24 novembre 2026 après la tranche 1
+
+| N° | Question | Réponse | Conséquence |
+|---|---|---|---|
+| 1 | Prochaine tranche | (a) Tranche 2 comme prévu | Relevé sourcé des statistiques 2025-2026, modèle de notes v1, calibration du moteur (`npm run sonde`). |
+| 2 | Vérification des règles NBA | (a) Au début de la tranche 2 | `data/regles/nba-2026-27.json` vérifié ligne à ligne contre l'édition 2026-27 du Rulebook, puis statut `validated`. |
+| 3 | Visuels | (b) Pas de kit UI provisoire : **tous les visuels d'un coup** | Un seul chantier visuel (Phase 1 du ROADMAP), qui comprend aussi les visuels des améliorations ci-dessous (boutique, rétro, animations, cérémonies). L'interface reste fonctionnelle et sobre d'ici là. |
+| 4 | Cinq de départ | (b) Automatique jusqu'au module de management | Le staff compose l'équipe (`composition.ts`) jusqu'à ce module. |
+
+**Principe de travail (24/11/2026) :** ne pas se disperser. Peu de chantiers, chacun regroupant un maximum de travail, pour limiter le coût (en tokens) de chaque relance. Les améliorations sont rangées dans les tranches existantes, pas dans des chantiers à part.
+
+## Améliorations validées le 24 novembre 2026
+
+Toutes les améliorations proposées après la tranche 1 sont validées, ainsi que les propositions d'Antonin (marquées « A »). Chacune est rangée dans une tranche de `docs/AUDIT_2026-11.md` § 7.
+
+| Domaine | Amélioration | Tranche |
+|---|---|---|
+| Moteur | Fins de match tactiques (fautes volontaires, gestion du chronomètre, tir au buzzer), temps-morts | T3 |
+| Moteur | Plans de jeu (rythme, défense de zone ou individuelle, part du tir à trois points), qualité de tir selon le défenseur direct | T5 |
+| Moteur | Courbe de fatigue propre à chaque joueur, blessures en match | T4 |
+| GM | Plafond salarial réel (CBA, paramètres sourcés) | T6 |
+| GM | Scouting avec notes incertaines (la vraie note d'un prospect n'est jamais affichée) | T7 |
+| GM | Délégations au coach et au staff | T8 |
+| GM | Confiance du propriétaire, chimie du vestiaire | T10 |
+| Présentation | Actualités générées depuis le journal d'événements | T4 |
+| Présentation | Fiche joueur avec graphique d'adresse, match de la semaine commenté | T3 (données) et chantier visuel |
+| Qualité | Parcours testés avec Playwright (dès la tranche 2), sauvegardes IndexedDB (T4), revue d'accessibilité (T11) | T2, T4, T11 |
+| A — Boutique de points | Points gagnés en jouant, sans argent réel (réponse 5). Cosmétiques : parquets vintage, paniers, ballons vintage, maillots rétro pour chaque franchise, affichages des scores | T11 (logique) et chantier visuel (assets) |
+| A — Changement de franchise | Déménagement, nouveau nom, nouveaux maillots. Très rare : en moyenne un changement toutes les 8 saisons dans toute la ligue, vers une liste fermée de villes (réponses 6 à 8) | T9 |
+| A — Animations spéciales | Matchs marquants et performances individuelles | T3 (détection depuis le journal) et chantier visuel |
+| A — All-Star Game | Jouable, Est contre Ouest, vote simulé (réponse 9) | T4 |
+| A — Cérémonie de fin de saison | Récompenses individuelles et d'équipe, animées | T4 (palmarès) et chantier visuel |
+
+Précisions du 24/11/2026 :
+
+| N° | Question | Réponse | Conséquence |
+|---|---|---|---|
+| 5 | Points de la boutique | (a) Gagnés uniquement en jouant | Victoires, trophées, défis ; aucun achat en argent réel. |
+| 6 | Fréquence des changements de franchise | (a) Pour toute la ligue | En moyenne un changement toutes les 8 saisons dans la ligue ; l'IA choisit la franchise concernée. Tirage déterministe (graine de la carrière). |
+| 7 | Villes d'accueil | (a) Liste fermée de villes sans équipe NBA | Liste à constituer et sourcer (ex. Seattle, Las Vegas, Kansas City) ; chaque ville reçoit une identité originale dans le chantier visuel. La franchise garde son histoire (palmarès, records). |
+| 8 | Franchise de l'utilisateur | (a) Seulement s'il le demande | Elle ne déménage jamais sans son accord ; le propriétaire peut le proposer. |
+| 9 | All-Star Game | (a) Est contre Ouest, vote simulé | Sélection par vote simulé, puis match joué avec le même moteur. |
+
 ## Suites
 
 - Tranche 0, faite le 24/11/2026 : socle npm workspaces (`apps/web`, `packages/data`, `packages/engine`), CI GitHub Actions, ESLint, Prettier, Vitest ; effectifs et assets rangés sous les identifiants de `data/franchises.json` ; joueurs renommés `j0001` à `j0523` avec un nom fictif aux mêmes initiales (proposé, à relire) ; vrais noms, notes 2K et effectifs d'origine sortis vers `basket-legends-prive` ; empreintes des vrais noms dans `data/noms/empreintes.json` ; schémas Zod et `npm run verifier`.
-- Tranche 1 : choisir une franchise, voir l'effectif, simuler un match rapide déterministe, afficher le box score.
+- Tranche 1, faite le 24/11/2026 : choisir une franchise, voir l'effectif, simuler un match rapide déterministe, afficher le box score (`docs/SIMULATION_MATCH.md`). Aucune nouvelle décision : les règles NBA sont au statut `review_required` et les réglages du moteur `provisoire-non-calibre`.
+- Tranche 2 : statistiques 2025-2026 sourcées, modèle de notes v1, calibration.

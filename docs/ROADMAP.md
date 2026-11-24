@@ -11,6 +11,9 @@
 - [x] Valider le snapshot de référence (23/11/2026) : effectifs 2026-2027 au 17 novembre 2026, statistiques 2025-2026 pour la calibration, carrière à partir de 2026-2027.
 
 ## Phase 1 — Production du système visuel
+
+Décision du 24/11/2026 : **tous les visuels d'un coup**, en un seul chantier, sans kit UI provisoire. Le chantier comprend aussi les visuels des améliorations validées le 24/11/2026 : cosmétiques de la boutique (parquets et ballons vintage, paniers, maillots rétro de chaque franchise, affichages des scores), identités des franchises qui changent de ville ou de nom, animations spéciales et cérémonie de fin de saison (`docs/DECISIONS_2026-11.md`).
+
 - [ ] Créer les 30 logos principaux en SVG.
 - [ ] Créer logos secondaires, monogrammes et wordmarks.
 - [ ] Produire les 120 maillots (Association, Icon, Statement, City Edition).
@@ -71,6 +74,7 @@ Découpage en tranches verticales, chacune avec un livrable jouable ou testable 
 
 - [x] Tranche 0 (24/11/2026) : migration des identifiants de franchise (`franchises.json` fait foi), noms fictifs, sortie des vrais noms et des notes NBA 2K vers le dossier privé, schémas Zod, `datasetId` et `snapshot.status` normalisés, `paletteProposal` renommé en `palette`.
 - [x] Monorepo, CI, lint et tests (tranche 0, 24/11/2026).
+- [x] Tranche 1 (24/11/2026) : choix de franchise, effectif, match rapide déterministe (Web Worker), box score ; règles 2026-27 versionnées (`data/regles/`, à vérifier contre le Rulebook) ; détail : `docs/SIMULATION_MATCH.md`.
 - [ ] Shell UI et création de carrière.
 - [ ] Référentiel des franchises, joueurs et saisons.
 - [ ] Moteur de match et trois modes de présentation.
