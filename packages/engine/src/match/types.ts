@@ -56,13 +56,15 @@ export interface ReglesMatch {
   rangFauteEquipePenaliteProlongation: number;
   finDePeriodeSecondes: number;
   rangFauteEquipeFinDePeriode: number;
+  /** Après une faute défensive hors tir sans lancers : horloge gardée, ou remontée à cette valeur si elle était plus basse. */
+  horlogeMinimaleApresFauteDefensiveSecondes: number;
   possessionDebutDePeriode: PossessionDebutDePeriode[];
 }
 
 type ParTir = Record<TypeTir, number>;
 type ParGroupe = Record<Groupe, number>;
 
-/** Les réglages du modèle (data/moteur/match-v0.json) : valeurs de départ, non calibrées avant la tranche 2. */
+/** Les réglages du modèle (data/moteur/match-v1.json), calibrés en tranche 2. */
 export interface ReglagesMatch {
   possession: {
     dureeMoyenneSecondes: number;
@@ -81,7 +83,7 @@ export interface ReglagesMatch {
   lancersFrancs: { reussiteDeBase: number; sensibiliteParPoint: number; reussiteMin: number; reussiteMax: number };
   pertesDeBalle: { probabiliteDeBase: number; sensibiliteParPoint: number; partInterceptions: number };
   fautes: { surTirParType: ParTir; partPanierAvecFaute: number; horsTirParPossession: number };
-  rebonds: { offensifDeBase: number; sensibiliteParPoint: number; poidsParGroupe: ParGroupe };
+  rebonds: { offensifDeBase: number; sensibiliteParPoint: number; poidsParGroupe: ParGroupe; partRebondsDEquipe: number };
   passes: { probabiliteSurPanier: number; poidsParGroupe: ParGroupe };
   contres: { probabiliteSurEchecParType: ParTir; poidsParGroupe: ParGroupe };
   fatigue: {
@@ -134,6 +136,8 @@ export type Evenement =
       score: [number, number];
     })
   | (Repere & { type: 'rebond'; equipe: Camp; joueur: string; offensif: boolean })
+  /** Rebond d'équipe (ballon sorti, tir contré hors du terrain…) : la possession change ou non, aucun joueur n'est crédité. */
+  | (Repere & { type: 'rebond_equipe'; equipe: Camp; offensif: boolean })
   | (Repere & { type: 'perte_de_balle'; equipe: Camp; joueur: string; interception?: string })
   | (Repere & {
       type: 'faute';

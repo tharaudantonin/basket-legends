@@ -107,8 +107,9 @@ export function EcranEffectif({ franchise, derniere, enCours, onRetour, onJouer 
       <section className="carte" aria-labelledby="titre-effectif">
         <h2 id="titre-effectif">Effectif</h2>
         <p className="avertissement">
-          Notes provisoires, en attendant le modèle de notes v1 (tranche 2). Noms fictifs proposés, à relire. Cinq de départ et rotation
-          choisis par le staff.
+          Notes du modèle v1, calculées sur les statistiques 2025-26 (proposition à valider). Une note suivie d'un astérisque est estimée
+          sans statistique NBA (recrue ou joueur sans match). Noms fictifs proposés, à relire. Cinq de départ et rotation choisis par le
+          staff.
         </p>
         <div className="defilement">
           <table className="tableau">
@@ -153,7 +154,10 @@ export function EcranEffectif({ franchise, derniere, enCours, onRetour, onJouer 
                     <td className="gauche">{POSTES[j.sourcePosition] ?? j.sourcePosition}</td>
                     <td>{taille(j.measurements.height.heightCm)}</td>
                     <td>{j.measurements.weight.weightKg} kg</td>
-                    <td className="note">{j.ratings.overall}</td>
+                    <td className="note" title={String(j.ratings.calculation ?? '')}>
+                      {j.ratings.overall}
+                      {j.ratings.status === 'a-priori' && <span aria-label=" (estimée sans statistique)">*</span>}
+                    </td>
                     <td>{j.attributes.technique}</td>
                     <td>{j.attributes.physical}</td>
                     <td>{j.attributes.mental}</td>

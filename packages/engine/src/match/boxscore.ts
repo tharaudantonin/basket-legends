@@ -126,6 +126,8 @@ export function construireBoxScore(
         precedent = [ev.score[0], ev.score[1]];
         break;
       case 'entre_deux':
+      case 'rebond_equipe':
+        // Rebond d'équipe : comme dans les statistiques officielles, il n'est crédité à aucun joueur.
         break;
     }
   }

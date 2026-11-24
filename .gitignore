@@ -5,3 +5,5 @@ coverage/
 *.tsbuildinfo
 .DS_Store
 .claude/
+test-results/
+playwright-report/

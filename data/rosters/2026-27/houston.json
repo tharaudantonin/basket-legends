@@ -25,7 +25,7 @@
     "officialSourceVerification": "pending",
     "note": "Do not infer NBA person IDs, contract type, two-way status, contract terms, or statistics from this file. Verify separately against official NBA records before marking those fields verified.",
     "names": "Noms fictifs aux mêmes initiales, proposés le 24/11/2026 et à relire (nameStatus). La table de correspondance avec les vrais noms est gardée hors du dépôt.",
-    "ratings": "Notes et attributs provisoires ; les notes NBA 2K ont été retirées du dépôt le 24/11/2026."
+    "ratings": "Notes et attributs du modèle notes-v1 (data/modeles/notes-v1.json, docs/NOTES_JOUEURS.md), calculés par npm run notes."
   },
   "units": {
     "canonical": "metric",
@@ -74,18 +74,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 74,
+        "overall": 72,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "calcule",
+        "base": "statistiques",
+        "saisonDeReference": "2025-2026",
+        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (730 minutes), recalées par quantiles."
       },
       "attributes": {
-        "technique": 62,
-        "physical": 82,
-        "mental": 78,
-        "tactical": 74,
+        "technique": 55,
+        "physical": 86,
+        "mental": 59,
+        "tactical": 69,
         "scale": 100
       },
       "notes": null
@@ -119,18 +120,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 73,
+        "overall": 67,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "calcule",
+        "base": "statistiques",
+        "saisonDeReference": "2025-2026",
+        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (452 minutes), recalées par quantiles."
       },
       "attributes": {
-        "technique": 82,
-        "physical": 68,
-        "mental": 72,
-        "tactical": 70,
+        "technique": 65,
+        "physical": 65,
+        "mental": 70,
+        "tactical": 61,
         "scale": 100
       },
       "notes": null
@@ -164,18 +166,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 74,
+        "overall": 67,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "calcule",
+        "base": "statistiques",
+        "saisonDeReference": "2025-2026",
+        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (926 minutes), recalées par quantiles."
       },
       "attributes": {
-        "technique": 62,
-        "physical": 86,
-        "mental": 72,
-        "tactical": 76,
+        "technique": 55,
+        "physical": 90,
+        "mental": 51,
+        "tactical": 80,
         "scale": 100
       },
       "notes": null
@@ -209,18 +212,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 68,
+        "overall": 58,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "a-priori",
+        "base": "sans-statistique",
+        "saisonDeReference": null,
+        "calculation": "Modèle notes-v1 : aucune statistique NBA ni rang de draft ; note a priori des joueurs sans statistique."
       },
       "attributes": {
-        "technique": 70,
-        "physical": 72,
-        "mental": 64,
-        "tactical": 66,
+        "technique": 58,
+        "physical": 58,
+        "mental": 58,
+        "tactical": 58,
         "scale": 100
       },
       "notes": null
@@ -254,18 +258,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 68,
+        "overall": 62,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "calcule",
+        "base": "statistiques",
+        "saisonDeReference": "2025-2026",
+        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (92 minutes), recalées par quantiles."
       },
       "attributes": {
-        "technique": 72,
-        "physical": 70,
-        "mental": 64,
-        "tactical": 66,
+        "technique": 68,
+        "physical": 71,
+        "mental": 61,
+        "tactical": 70,
         "scale": 100
       },
       "notes": null
@@ -299,18 +304,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 93,
+        "overall": 87,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "calcule",
+        "base": "statistiques",
+        "saisonDeReference": "2025-2026",
+        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (2840 minutes), recalées par quantiles."
       },
       "attributes": {
-        "technique": 99,
-        "physical": 82,
-        "mental": 96,
-        "tactical": 95,
+        "technique": 92,
+        "physical": 74,
+        "mental": 85,
+        "tactical": 66,
         "scale": 100
       },
       "notes": null
@@ -344,18 +350,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 79,
+        "overall": 73,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "calcule",
+        "base": "statistiques",
+        "saisonDeReference": "2025-2026",
+        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1549 minutes), recalées par quantiles."
       },
       "attributes": {
-        "technique": 76,
-        "physical": 82,
-        "mental": 78,
-        "tactical": 80,
+        "technique": 61,
+        "physical": 75,
+        "mental": 69,
+        "tactical": 74,
         "scale": 100
       },
       "notes": null
@@ -389,18 +396,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 71,
+        "overall": 59,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "calcule",
+        "base": "statistiques",
+        "saisonDeReference": "2025-2026",
+        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (428 minutes), recalées par quantiles."
       },
       "attributes": {
-        "technique": 72,
-        "physical": 80,
-        "mental": 66,
-        "tactical": 66,
+        "technique": 63,
+        "physical": 68,
+        "mental": 56,
+        "tactical": 68,
         "scale": 100
       },
       "notes": null
@@ -434,18 +442,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 89,
+        "overall": 84,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "calcule",
+        "base": "statistiques",
+        "saisonDeReference": "2025-2026",
+        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (2398 minutes), recalées par quantiles."
       },
       "attributes": {
-        "technique": 94,
+        "technique": 64,
         "physical": 82,
-        "mental": 90,
-        "tactical": 90,
+        "mental": 80,
+        "tactical": 78,
         "scale": 100
       },
       "notes": null
@@ -479,18 +488,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 79,
+        "overall": 74,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "calcule",
+        "base": "statistiques",
+        "saisonDeReference": "2025-2026",
+        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (2147 minutes), recalées par quantiles."
       },
       "attributes": {
-        "technique": 86,
-        "physical": 72,
-        "mental": 78,
-        "tactical": 80,
+        "technique": 76,
+        "physical": 58,
+        "mental": 77,
+        "tactical": 86,
         "scale": 100
       },
       "notes": null
@@ -524,18 +534,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 79,
+        "overall": 72,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "calcule",
+        "base": "statistiques",
+        "saisonDeReference": "2025-2026",
+        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1769 minutes), recalées par quantiles."
       },
       "attributes": {
-        "technique": 78,
-        "physical": 82,
-        "mental": 82,
-        "tactical": 74,
+        "technique": 62,
+        "physical": 55,
+        "mental": 73,
+        "tactical": 75,
         "scale": 100
       },
       "notes": null
@@ -569,18 +580,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 82,
+        "overall": 77,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "calcule",
+        "base": "statistiques",
+        "saisonDeReference": "2025-2026",
+        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (2705 minutes), recalées par quantiles."
       },
       "attributes": {
-        "technique": 84,
-        "physical": 84,
-        "mental": 78,
-        "tactical": 82,
+        "technique": 69,
+        "physical": 75,
+        "mental": 74,
+        "tactical": 60,
         "scale": 100
       },
       "notes": null
@@ -614,18 +626,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 72,
+        "overall": 59,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "calcule",
+        "base": "statistiques",
+        "saisonDeReference": "2025-2026",
+        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (405 minutes), recalées par quantiles."
       },
       "attributes": {
-        "technique": 72,
-        "physical": 78,
-        "mental": 72,
-        "tactical": 66,
+        "technique": 65,
+        "physical": 67,
+        "mental": 56,
+        "tactical": 57,
         "scale": 100
       },
       "notes": null
@@ -659,18 +672,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 86,
+        "overall": 83,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "calcule",
+        "base": "statistiques",
+        "saisonDeReference": "2025-2026",
+        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (2953 minutes), recalées par quantiles."
       },
       "attributes": {
-        "technique": 80,
-        "physical": 96,
-        "mental": 84,
-        "tactical": 84,
+        "technique": 63,
+        "physical": 75,
+        "mental": 80,
+        "tactical": 81,
         "scale": 100
       },
       "notes": null
@@ -704,18 +718,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 70,
+        "overall": 64,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "a-priori",
+        "base": "rang-de-draft",
+        "saisonDeReference": null,
+        "calculation": "Modèle notes-v1 : aucune statistique NBA ; note a priori selon le rang de draft 2026."
       },
       "attributes": {
-        "technique": 78,
-        "physical": 70,
-        "mental": 66,
-        "tactical": 66,
+        "technique": 64,
+        "physical": 64,
+        "mental": 64,
+        "tactical": 64,
         "scale": 100
       },
       "notes": null
@@ -749,18 +764,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 71,
+        "overall": 73,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "calcule",
+        "base": "statistiques",
+        "saisonDeReference": "2025-2026",
+        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (448 minutes), recalées par quantiles."
       },
       "attributes": {
-        "technique": 66,
-        "physical": 86,
-        "mental": 68,
-        "tactical": 64,
+        "technique": 68,
+        "physical": 81,
+        "mental": 61,
+        "tactical": 72,
         "scale": 100
       },
       "notes": null
@@ -794,18 +810,19 @@
       "sourcePlayerId": null,
       "rosterStatus": "submitted-user-approved-pending-official-verification",
       "ratings": {
-        "overall": 80,
+        "overall": 77,
         "scale": 100,
-        "source": "provisional",
-        "calculation": "rounded arithmetic mean of technique, physical, mental and tactical",
-        "status": "provisional-pending-rating-model-v1",
-        "note": "Valeurs provisoires du 18/11/2026, alignées sur une référence tierce privée ; à remplacer par le modèle de notes v1 (docs/DECISIONS_2026-11.md, réponse 2)."
+        "source": "notes-v1",
+        "status": "calcule",
+        "base": "statistiques",
+        "saisonDeReference": "2024-2025",
+        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2024-2025 (2111 minutes), recalées par quantiles."
       },
       "attributes": {
-        "technique": 88,
-        "physical": 68,
-        "mental": 84,
-        "tactical": 80,
+        "technique": 61,
+        "physical": 51,
+        "mental": 85,
+        "tactical": 83,
         "scale": 100
       },
       "notes": null

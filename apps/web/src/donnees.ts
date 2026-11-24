@@ -13,7 +13,7 @@ import {
 import type { EquipeDuMatch, ReglagesMatch, ReglesMatch } from '@basket-legends/engine';
 import registreBrut from '../../../data/franchises.json';
 import reglesBrutes from '../../../data/regles/nba-2026-27.json';
-import reglagesBruts from '../../../data/moteur/match-v0.json';
+import reglagesBruts from '../../../data/moteur/match-v1.json';
 
 const effectifsBruts = import.meta.glob<unknown>('../../../data/rosters/2026-27/*.json', { eager: true, import: 'default' });
 

@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "datasetId": "basket-legends-moteur-match-v0",
-  "status": "provisoire-non-calibre",
-  "note": "Valeurs de départ du modèle de match rapide (tranche 1), choisies pour produire des matchs plausibles. Aucune n’est une statistique sourcée. La tranche 2 les recale sur les statistiques 2025-2026 relevées (saison régulière, Play-In et playoffs séparés).",
+  "datasetId": "basket-legends-moteur-match-v1",
+  "status": "calibre",
+  "note": "Réglages du modèle de match, calibrés le 24/11/2026 sur 1 000 matchs (npm run sonde) contre les moyennes de la saison régulière 2025-2026 (data/statistiques/2025-26/ligue.json), avec les notes du modèle v1. Les réglages restent des paramètres du modèle, pas des statistiques : seules les cibles sont sourcées.",
   "possession": {
-    "dureeMoyenneSecondes": 14.5,
+    "dureeMoyenneSecondes": 13.87,
     "dureeEcartSecondes": 4.5,
     "dureeMinimaleSecondes": 4,
     "tempsRestantMinimalPourTirer": 2
   },
   "tirs": {
     "repartition": {
-      "cercle": 0.34,
-      "miDistance": 0.24,
-      "troisPoints": 0.42
+      "cercle": 0.249,
+      "miDistance": 0.355,
+      "troisPoints": 0.396
     },
     "profilParGroupe": {
       "meneur": {
@@ -33,45 +33,46 @@
       }
     },
     "reussiteDeBase": {
-      "cercle": 0.62,
-      "miDistance": 0.41,
-      "troisPoints": 0.345
+      "cercle": 0.662,
+      "miDistance": 0.415,
+      "troisPoints": 0.323
     },
     "sensibiliteParPoint": 0.006,
-    "avantageDomicile": 0.012,
+    "avantageDomicile": 0.02,
     "usageEchelle": 14
   },
   "lancersFrancs": {
-    "reussiteDeBase": 0.74,
+    "reussiteDeBase": 0.767,
     "sensibiliteParPoint": 0.006,
     "reussiteMin": 0.4,
     "reussiteMax": 0.95
   },
   "pertesDeBalle": {
-    "probabiliteDeBase": 0.13,
+    "probabiliteDeBase": 0.125,
     "sensibiliteParPoint": 0.003,
-    "partInterceptions": 0.55
+    "partInterceptions": 0.57
   },
   "fautes": {
     "surTirParType": {
-      "cercle": 0.2,
-      "miDistance": 0.07,
-      "troisPoints": 0.025
+      "cercle": 0.216,
+      "miDistance": 0.076,
+      "troisPoints": 0.027
     },
     "partPanierAvecFaute": 0.22,
-    "horsTirParPossession": 0.1
+    "horsTirParPossession": 0.104
   },
   "rebonds": {
-    "offensifDeBase": 0.25,
+    "offensifDeBase": 0.258,
     "sensibiliteParPoint": 0.004,
     "poidsParGroupe": {
       "meneur": 0.6,
       "ailier": 1.1,
       "interieur": 2
-    }
+    },
+    "partRebondsDEquipe": 0.118
   },
   "passes": {
-    "probabiliteSurPanier": 0.6,
+    "probabiliteSurPanier": 0.632,
     "poidsParGroupe": {
       "meneur": 2.2,
       "ailier": 1,
@@ -80,9 +81,9 @@
   },
   "contres": {
     "probabiliteSurEchecParType": {
-      "cercle": 0.3,
-      "miDistance": 0.1,
-      "troisPoints": 0.03
+      "cercle": 0.332,
+      "miDistance": 0.11,
+      "troisPoints": 0.033
     },
     "poidsParGroupe": {
       "meneur": 0.4,

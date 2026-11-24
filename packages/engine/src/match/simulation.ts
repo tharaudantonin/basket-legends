@@ -9,8 +9,7 @@
 // son adresse face à la défense présente, de sa fraîcheur et du terrain. Faute sur tir → lancers ; échec → contre
 // éventuel puis rebond, offensif (horloge à 14 s) ou défensif. Fautes d'équipe et pénalité par période (règles de la
 // saison). Fatigue : chaque joueur perd de la fraîcheur sur le terrain et en regagne sur le banc ; le staff remplace
-// à ballon mort. Simplifications de la tranche 1, notées dans docs/SIMULATION_MATCH.md : pas de temps-mort, pas de
-// faute offensive, pas de rebond d'équipe, horloge à 14 s après une faute hors tir sans pénalité.
+// à ballon mort. Simplifications notées dans docs/SIMULATION_MATCH.md : pas de temps-mort, pas de faute offensive.
 import { creerHasard, type Hasard } from '../hasard';
 import { construireBoxScore } from './boxscore';
 import { empreinteBoxScore } from './empreinte';
@@ -202,6 +201,10 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
     const ecart = moyenne(presents(attaque).map(forceRebond)) - moyenne(presents(def).map(forceRebond));
     const offensif = h.chance(borner(G.rebonds.offensifDeBase + G.rebonds.sensibiliteParPoint * ecart, 0.08, 0.5));
     const camp = offensif ? attaque : def;
+    if (h.chance(G.rebonds.partRebondsDEquipe)) {
+      ecrire({ type: 'rebond_equipe', ...repere(), equipe: camp, offensif });
+      return camp;
+    }
     const preneur = choisirParmi(presents(camp), (e) => Math.max(1, forceRebond(e)) ** 2);
     ecrire({ type: 'rebond', ...repere(), equipe: camp, joueur: preneur.j.id, offensif });
     return camp;
@@ -248,7 +251,8 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
 
       // Faute défensive hors tir.
       if (h.chance(G.fautes.horsTirParPossession)) {
-        ecouler(Math.round(duree * (0.3 + 0.6 * h.reel())));
+        const ecoule = Math.round(duree * (0.3 + 0.6 * h.reel()));
+        ecouler(ecoule);
         const fautif = choisirParmi(defenseurs, (e) => Math.max(1, 110 - e.j.tactique));
         const victime = choisirParmi(attaquants, (e) => Math.exp((effectif(e) - 70) / G.tirs.usageEchelle));
         if (commettreFaute(def, fautif, victime, 'hors_tir')) {
@@ -259,7 +263,8 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
         }
         faireTourner(0);
         faireTourner(1);
-        horloge = R.horlogeApresRebondOffensifSecondes;
+        // Rule No. 7, Section IV, 5.1 : l'horloge garde sa valeur, ou remonte au minimum si elle était plus basse.
+        horloge = Math.max(horloge - ecoule / 10, R.horlogeMinimaleApresFauteDefensiveSecondes);
         continue;
       }
 

@@ -95,7 +95,7 @@ describe('paramètres du match (tranche 1)', () => {
 
   it('refusent une répartition des tirs qui ne fait pas 1', () => {
     const s = copie(sources);
-    (s.reglagesMatch['match-v0.json'] as { tirs: { repartition: { cercle: number } } }).tirs.repartition.cercle += 0.1;
+    (s.reglagesMatch['match-v1.json'] as { tirs: { repartition: { cercle: number } } }).tirs.repartition.cercle += 0.1;
     expect(verifierDonnees(s).erreurs.some((e) => e.includes('répartition des tirs'))).toBe(true);
   });
 });

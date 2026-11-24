@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-modele-notes-v1",
+  "version": "notes-v1",
+  "status": "proposition",
+  "note": "Modèle de notes v1 (tranche 2, 24/11/2026). Formule maison à partir des statistiques 2025-2026 sourcées, recalée par quantiles sur l’échelle « NBA » (décision du 23/11/2026). Les poids et ancrages sont des choix de conception, à valider par Antonin ; les corrections manuelles seront marquées « corrigé par Antonin ».",
+  "statistiques": "data/statistiques/2025-26/joueurs.json",
+  "retrecissement": {
+    "minutesDePrior": 400,
+    "tentativesDePriorTirs": 150,
+    "tentativesDePriorTrois": 100,
+    "tentativesDePriorLancers": 50,
+    "minutesPourLaReference": 500
+  },
+  "poids": {
+    "globale": {
+      "gameScore": 1,
+      "minutesParMatch": 0.8,
+      "partTitulaire": 0.3
+    },
+    "technique": {
+      "ts": 1,
+      "points": 0.6,
+      "trois": 0.4,
+      "lancers": 0.4,
+      "troisTentes": 0.3
+    },
+    "physique": {
+      "rebondsOffensifs": 0.6,
+      "rebondsDefensifs": 0.6,
+      "contres": 0.5,
+      "lancersTentes": 0.3,
+      "taille": 0.4
+    },
+    "mental": {
+      "usage": 0.6,
+      "passesSurPertes": 0.5,
+      "lancers": 0.3,
+      "minutesParMatch": 0.5
+    },
+    "tactique": {
+      "passes": 0.7,
+      "interceptions": 0.7,
+      "contres": 0.3,
+      "rebondsDefensifs": 0.3,
+      "fautes": -0.3,
+      "pertes": -0.3
+    }
+  },
+  "ancrages": {
+    "globale": [
+      [
+        0,
+        58
+      ],
+      [
+        0.1,
+        63
+      ],
+      [
+        0.25,
+        67
+      ],
+      [
+        0.5,
+        72
+      ],
+      [
+        0.75,
+        76
+      ],
+      [
+        0.9,
+        81
+      ],
+      [
+        0.97,
+        87
+      ],
+      [
+        0.99,
+        91
+      ],
+      [
+        1,
+        96
+      ]
+    ],
+    "attributs": [
+      [
+        0,
+        50
+      ],
+      [
+        0.1,
+        58
+      ],
+      [
+        0.25,
+        64
+      ],
+      [
+        0.5,
+        70
+      ],
+      [
+        0.75,
+        76
+      ],
+      [
+        0.9,
+        82
+      ],
+      [
+        0.97,
+        88
+      ],
+      [
+        1,
+        95
+      ]
+    ]
+  },
+  "sansStatistique": {
+    "parRangDeDraft": [
+      [
+        1,
+        73
+      ],
+      [
+        5,
+        70
+      ],
+      [
+        14,
+        67
+      ],
+      [
+        30,
+        64
+      ],
+      [
+        60,
+        60
+      ]
+    ],
+    "nonDrafte": 58
+  },
+  "bornes": {
+    "min": 40,
+    "max": 99
+  }
+}

@@ -16,8 +16,9 @@ Construire Basket Legends, un jeu web de management basketball profond, jouable 
 - `docs/SOURCES.md` et `data/sources.json` : hiérarchie des sources, provenance et version du snapshot.
 - `docs/DATA_PARITY.md` : héritage historique et profils statistiques des franchises.
 - `docs/IDENTITY_CONCEPTS.md` : décisions graphiques et état des assets.
-- `docs/SIMULATION_MATCH.md` : moteur de match (tranche 1), ses simplifications et le match de référence.
-- `data/regles/` : règles NBA versionnées par saison, chacune avec sa référence ; `data/moteur/` : réglages du modèle de match.
+- `docs/SIMULATION_MATCH.md` : moteur de match (tranches 1 et 2), sa calibration, ses simplifications et le match de référence.
+- `docs/NOTES_JOUEURS.md` : modèle de notes v1, ses données et ses limites.
+- `data/regles/` : règles NBA versionnées par saison, chacune avec sa section du Rulebook ; `data/moteur/` : réglages calibrés du modèle de match ; `data/statistiques/2025-26/` : statistiques sourcées (joueurs et ligue) ; `data/modeles/` : paramètres du modèle de notes.
 En cas de contradiction, les décisions les plus récentes et explicitement validées par l'utilisateur priment. Documenter les changements dans les fichiers correspondants.
 
 ## Décisions produit non négociables
@@ -40,7 +41,7 @@ En cas de contradiction, les décisions les plus récentes et explicitement vali
 ## Notes des joueurs (décisions des 23 et 24/11/2026)
 - **Échelle « NBA » :** un joueur NBA de rotation se situe autour de 70-75, les superstars au-delà de 90. Les joueurs hors NBA (G League, prospects, joueurs libres générés) se situent entre 40 et 67.
 - **Méthode :** les notes sont produites par une formule maison, versionnée et refaisable, à partir des statistiques 2025-2026 sourcées, puis recalées sur l'échelle par quantiles. Les corrections manuelles sont marquées « corrigé par Antonin ».
-- **NBA 2K :** les notes de NBA 2K ne servent que de banc d'essai privé, hors du dépôt. Aucune note 2K ne doit entrer dans le jeu ni dans le dépôt. Les valeurs actuelles (`ratings`, `attributes`, `notes.nba2k27` des effectifs) sont provisoires et seront remplacées par le modèle v1.
+- **NBA 2K :** les notes de NBA 2K ne servent que de banc d'essai privé, hors du dépôt. Aucune note 2K ne doit entrer dans le jeu ni dans le dépôt. Depuis la tranche 2 (24/11/2026), `ratings` et `attributes` des effectifs sont calculés par le modèle v1 (`npm run notes`) ; le banc d'essai 2K est `basket-legends-prive/banc-essai-2k.py`.
 
 ## Noms réels des joueurs (décision du 24/11/2026)
 - Aucun vrai nom de joueur dans le dépôt (migration faite à la tranche 0, le 24/11/2026). La table de correspondance (vrai nom → nom fictif), les notes NBA 2K et la sauvegarde des effectifs d'origine sont dans `C:\Users\thara\Projets\basket-legends-prive\`, hors du dépôt. L'historique Git d'avant le 24/11/2026 contient encore les vrais noms (dépôt privé).
@@ -67,9 +68,11 @@ Jeu web qui tourne entièrement dans le navigateur, comme Rugby Legends : Vite +
 - `npm install` : installe les paquets (aucune nouvelle dépendance sans la proposer, avec sa raison).
 - `npm run dev` : lance le jeu sur http://localhost:5180.
 - `npm test` : tests (Vitest).
-- `npm run sonde [n]` : joue n matchs rapides et affiche les moyennes (mesure pour la calibration).
+- `npm run sonde [n]` : joue n matchs rapides et compare les moyennes aux cibles 2025-26 et à leurs fourchettes (calibration).
+- `npm run notes` : recalcule les notes des effectifs avec le modèle de `data/modeles/`.
+- `npm run parcours` : parcours Playwright dans le navigateur (Chrome installé en local, Chromium en CI).
 - `npm run verifier` : contrôle des données de `data/` (schémas Zod, noms fictifs, empreintes des vrais noms, miroir CSV, mensurations, numéros).
-- `npm run ci` : tout ce que vérifie l'intégration continue (types, lint, format, tests, données, construction).
+- `npm run ci` : tout ce que vérifie l'intégration continue (types, lint, format, tests, données, construction, parcours).
 
 ## Conventions de code (décision du 24/11/2026)
 - Identifiants, commentaires et messages en français, comme Rugby Legends.
@@ -104,4 +107,4 @@ Le développement est privé et local. Tout ce qui bloquerait une publication pu
 9. Ne jamais déclarer une fonctionnalité terminée sans test ou vérification pertinente.
 
 ## Prochaine tâche
-Tranche 0 faite le 24/11/2026 (socle, CI, migration des données, schémas Zod ; détail : `docs/DECISIONS_2026-11.md`). Tranche 1 faite le 24/11/2026 (choix de franchise, effectif, match rapide déterministe dans un Web Worker, box score ; détail : `docs/SIMULATION_MATCH.md`). Prochaine : tranche 2 de `docs/AUDIT_2026-11.md` § 7, en un seul chantier : vérification des règles 2026-27 contre le Rulebook, relevé sourcé des statistiques 2025-2026, modèle de notes v1, calibration du moteur (`npm run sonde`) sur 1 000 matchs, premiers parcours Playwright.
+Tranche 0 faite le 24/11/2026 (socle, CI, migration des données, schémas Zod ; détail : `docs/DECISIONS_2026-11.md`). Tranche 1 faite le 24/11/2026 (choix de franchise, effectif, match rapide déterministe dans un Web Worker, box score ; détail : `docs/SIMULATION_MATCH.md`). Tranche 2 faite le 24/11/2026 (règles validées, statistiques 2025-26 sourcées, modèle de notes v1, moteur calibré, parcours Playwright ; détail : `docs/NOTES_JOUEURS.md`, `docs/SIMULATION_MATCH.md`). Prochaine : tranche 3 de `docs/AUDIT_2026-11.md` § 7, en un seul chantier : mode commenté possession par possession (même résultat qu'en mode rapide), fins de match tactiques et temps-morts, données de la fiche joueur (graphique d'adresse), détection des matchs et performances marquants dans le journal.

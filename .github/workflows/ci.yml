@@ -26,3 +26,7 @@ jobs:
         run: npm run verifier
       - name: Construction
         run: npm run build
+      - name: Navigateur des parcours
+        run: npx playwright install --with-deps chromium
+      - name: Parcours (Playwright)
+        run: npm run parcours

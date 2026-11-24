@@ -141,6 +141,7 @@ export const schemaRegles = z.strictObject({
     rangFauteEquipePenaliteProlongation: entier(1),
     finDePeriodeSecondes: entier(0),
     rangFauteEquipeFinDePeriode: entier(1),
+    horlogeMinimaleApresFauteDefensiveSecondes: entier(1),
   }),
   possessionDebutDePeriode: z.strictObject({
     valeur: z.array(z.enum(['entre-deux', 'gagnant', 'perdant'])).min(1),
@@ -172,7 +173,7 @@ export const schemaReglagesMatch = z.strictObject({
   lancersFrancs: z.strictObject({ reussiteDeBase: proba, sensibiliteParPoint: z.number().min(0), reussiteMin: proba, reussiteMax: proba }),
   pertesDeBalle: z.strictObject({ probabiliteDeBase: proba, sensibiliteParPoint: z.number().min(0), partInterceptions: proba }),
   fautes: z.strictObject({ surTirParType: parTir(proba), partPanierAvecFaute: proba, horsTirParPossession: proba }),
-  rebonds: z.strictObject({ offensifDeBase: proba, sensibiliteParPoint: z.number().min(0), poidsParGroupe: parGroupe(positif) }),
+  rebonds: z.strictObject({ offensifDeBase: proba, sensibiliteParPoint: z.number().min(0), poidsParGroupe: parGroupe(positif), partRebondsDEquipe: proba }),
   passes: z.strictObject({ probabiliteSurPanier: proba, poidsParGroupe: parGroupe(positif) }),
   contres: z.strictObject({ probabiliteSurEchecParType: parTir(proba), poidsParGroupe: parGroupe(positif) }),
   fatigue: z.strictObject({
@@ -187,3 +188,133 @@ export const schemaReglagesMatch = z.strictObject({
 
 export type Regles = z.infer<typeof schemaRegles>;
 export type ReglagesMatchFichier = z.infer<typeof schemaReglagesMatch>;
+
+// --- Tranche 2 : statistiques 2025-2026 et modèle de notes. ---
+
+const entierPositif = z.number().int().min(0);
+const minutes = z.number().min(0);
+const lignesCommunes = {
+  age: z.number().int().min(15).max(50),
+  equipe: z.string().min(2),
+  matchs: entierPositif,
+  minutes,
+  tirsReussis: entierPositif,
+  tirsTentes: entierPositif,
+  troisReussis: entierPositif,
+  troisTentes: entierPositif,
+  lancersReussis: entierPositif,
+  lancersTentes: entierPositif,
+  rebondsOffensifs: entierPositif,
+  rebondsDefensifs: entierPositif,
+  passes: entierPositif,
+  interceptions: entierPositif,
+  contres: entierPositif,
+  pertes: entierPositif,
+  fautes: entierPositif,
+  points: entierPositif,
+};
+/** Les totaux d'une saison chez Basketball-Reference (saison régulière, playoffs). */
+export const schemaTotauxSaison = z.strictObject({
+  ...lignesCommunes,
+  equipes: z.array(z.string().min(2)).min(1),
+  poste: z.string().min(1),
+  titularisations: entierPositif,
+});
+/** Les totaux du Play-In chez NBA.com (pas de titularisations ni de poste). */
+export const schemaTotauxPlayIn = z.strictObject(lignesCommunes);
+
+const source = z.strictObject({ fournisseur: z.string().min(1), titre: z.string().min(1), url: z.url(), perimetre: z.string().min(1) });
+
+/** data/statistiques/2025-26/joueurs.json : totaux par joueur, sans nom réel ni identifiant de fournisseur. */
+export const schemaStatistiquesJoueurs = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.literal('basket-legends-statistiques-joueurs-2025-26'),
+  saison: saison,
+  consulteLe: date,
+  note: z.string(),
+  sources: z.strictObject({
+    saisonReguliere: source,
+    playIn: source,
+    playoffs: source,
+    saison2024_25: source,
+    draft2026: source,
+    conditions: z.string().min(1),
+  }),
+  champs: z.record(z.string(), z.strictObject({ unite: z.string().min(1), definition: z.string().min(1) })),
+  joueurs: z.record(
+    idJoueur,
+    z.strictObject({
+      saisonReguliere: schemaTotauxSaison.optional(),
+      playIn: schemaTotauxPlayIn.optional(),
+      playoffs: schemaTotauxSaison.optional(),
+      saison2024_25: schemaTotauxSaison.optional(),
+      draft2026: z.strictObject({ choix: z.number().int().min(1).max(60) }).optional(),
+    }),
+  ),
+});
+
+const parMatch = z.number().positive();
+/** data/statistiques/2025-26/ligue.json : moyennes de la ligue, cibles de la calibration du moteur. */
+export const schemaStatistiquesLigue = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.literal('basket-legends-statistiques-ligue-2025-26'),
+  saison: saison,
+  competition: z.string(),
+  consulteLe: date,
+  sources: z.record(z.string(), z.strictObject({ fournisseur: z.string(), titre: z.string(), url: z.url() })),
+  parEquipeParMatch: z.strictObject({
+    unite: z.string(),
+    points: parMatch,
+    tirsReussis: parMatch,
+    tirsTentes: parMatch,
+    troisReussis: parMatch,
+    troisTentes: parMatch,
+    lancersReussis: parMatch,
+    lancersTentes: parMatch,
+    rebondsOffensifs: parMatch,
+    rebondsDefensifs: parMatch,
+    passes: parMatch,
+    interceptions: parMatch,
+    contres: parMatch,
+    pertes: parMatch,
+    fautes: parMatch,
+  }),
+  pourcentages: z.strictObject({ tirs: proba, trois: proba, lancers: proba }),
+  avance: z.record(z.string(), z.strictObject({ valeur: z.number(), definition: z.string() })),
+  tirsParDistance: z.looseObject({
+    zero_trois_pieds: z.strictObject({ part: proba, reussite: proba }),
+    trois_dix_pieds: z.strictObject({ part: proba, reussite: proba }),
+    dix_seize_pieds: z.strictObject({ part: proba, reussite: proba }),
+    seize_pieds_ligne: z.strictObject({ part: proba, reussite: proba }),
+    trois_points: z.strictObject({ part: proba, reussite: proba }),
+  }),
+  domicile: z.strictObject({ victoires: entierPositif, defaites: entierPositif, definition: z.string() }),
+});
+
+const ancrages = z.array(z.tuple([z.number(), z.number()])).min(2);
+const poidsIndice = z.record(z.string(), z.number());
+/** data/modeles/notes-v<n>.json : les paramètres du modèle de notes. */
+export const schemaParametresNotes = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.string().regex(/^basket-legends-modele-notes-v\d+$/),
+  version: z.string().regex(/^notes-v\d+$/),
+  status: z.enum(['proposition', 'valide']),
+  note: z.string(),
+  statistiques: z.string().min(1),
+  retrecissement: z.strictObject({
+    minutesDePrior: positif,
+    tentativesDePriorTirs: positif,
+    tentativesDePriorTrois: positif,
+    tentativesDePriorLancers: positif,
+    minutesPourLaReference: z.number().min(0),
+  }),
+  poids: z.strictObject({ globale: poidsIndice, technique: poidsIndice, physique: poidsIndice, mental: poidsIndice, tactique: poidsIndice }),
+  ancrages: z.strictObject({ globale: ancrages, attributs: ancrages }),
+  sansStatistique: z.strictObject({ parRangDeDraft: ancrages, nonDrafte: z.number().int().min(40).max(67) }),
+  bornes: z.strictObject({ min: z.number().int().min(1), max: z.number().int().max(100) }),
+});
+
+export type TotauxSaison = z.infer<typeof schemaTotauxSaison>;
+export type StatistiquesJoueurs = z.infer<typeof schemaStatistiquesJoueurs>;
+export type StatistiquesLigue = z.infer<typeof schemaStatistiquesLigue>;
+export type ParametresNotes = z.infer<typeof schemaParametresNotes>;

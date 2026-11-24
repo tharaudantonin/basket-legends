@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-statistiques-ligue-2025-26",
+  "saison": "2025-2026",
+  "competition": "saison régulière",
+  "consulteLe": "2026-11-24",
+  "sources": {
+    "saison": {
+      "fournisseur": "Basketball-Reference (Sports Reference LLC)",
+      "titre": "2025-26 NBA Season Summary (Team Per Game Stats, Advanced Stats, Shooting Stats — ligne « League Average »)",
+      "url": "https://www.basketball-reference.com/leagues/NBA_2026.html"
+    },
+    "classements": {
+      "fournisseur": "Basketball-Reference (Sports Reference LLC)",
+      "titre": "2025-26 NBA Standings (Expanded Standings, colonne Home)",
+      "url": "https://www.basketball-reference.com/leagues/NBA_2026_standings.html"
+    }
+  },
+  "parEquipeParMatch": {
+    "unite": "par équipe et par match",
+    "points": 115.6,
+    "tirsReussis": 42,
+    "tirsTentes": 89.1,
+    "troisReussis": 13.3,
+    "troisTentes": 37,
+    "lancersReussis": 18.4,
+    "lancersTentes": 23.5,
+    "rebondsOffensifs": 11.4,
+    "rebondsDefensifs": 32.4,
+    "passes": 26.7,
+    "interceptions": 8.4,
+    "contres": 4.8,
+    "pertes": 14.5,
+    "fautes": 19.9
+  },
+  "pourcentages": {
+    "tirs": 0.471,
+    "trois": 0.36,
+    "lancers": 0.783
+  },
+  "avance": {
+    "rythme": {
+      "valeur": 99.4,
+      "definition": "Possessions par 48 minutes (Pace)."
+    },
+    "efficaciteOffensive": {
+      "valeur": 115.8,
+      "definition": "Points par 100 possessions (ORtg)."
+    },
+    "tauxDePertes": {
+      "valeur": 0.127,
+      "definition": "Balles perdues par possession jouée (TOV%)."
+    },
+    "tauxDeRebondsOffensifs": {
+      "valeur": 0.26,
+      "definition": "Part des rebonds offensifs disponibles prise par l’attaque (ORB%)."
+    },
+    "lancersParTir": {
+      "valeur": 0.206,
+      "definition": "Lancers francs réussis par tir tenté (FT/FGA)."
+    }
+  },
+  "tirsParDistance": {
+    "definition": "Part des tirs tentés et réussite, par distance au panier (Shooting Stats, League Average).",
+    "zero_trois_pieds": {
+      "part": 0.231,
+      "reussite": 0.703
+    },
+    "trois_dix_pieds": {
+      "part": 0.209,
+      "reussite": 0.463
+    },
+    "dix_seize_pieds": {
+      "part": 0.095,
+      "reussite": 0.446
+    },
+    "seize_pieds_ligne": {
+      "part": 0.049,
+      "reussite": 0.401
+    },
+    "trois_points": {
+      "part": 0.415,
+      "reussite": 0.36
+    },
+    "partPassesSurPaniersA2": 0.537,
+    "partPassesSurPaniersA3": 0.854
+  },
+  "domicile": {
+    "victoires": 679,
+    "defaites": 546,
+    "definition": "Bilan cumulé des 30 équipes à domicile ; les 10 matchs sur terrain neutre sont exclus."
+  }
+}

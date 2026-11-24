@@ -74,3 +74,20 @@ Ces références sont utiles pour la découverte des joueurs, la lecture des eff
 Les notes de NBA 2K (relevées par exemple sur 2KRatings) ne sont pas une source de données du jeu. Elles servent uniquement de banc d'essai privé pour mesurer l'écart du modèle de notes de Basket Legends : elles sont conservées hors du dépôt, dans `C:\Users\thara\Projets\basket-legends-prive\`, et ne sont jamais livrées dans le jeu. Les valeurs `notes.nba2k27` encore présentes dans les effectifs seront retirées du dépôt à la tranche 0.
 
 Les statistiques 2025-2026 de calibration sont relevées sur NBA.com ou Basketball-Reference, dans le respect de leurs conditions d'utilisation, avec la provenance exigée au § 4.
+
+## 9. Relevé des statistiques 2025-2026 (24 novembre 2026)
+
+Fait le 24/11/2026 dans le navigateur, page par page (pas d'extraction automatisée en masse), pour un usage privé de calibration :
+
+| Compétition | Fournisseur | Page | Joueurs de l'effectif |
+|---|---|---|---|
+| Saison régulière 2025-26 | Basketball-Reference | https://www.basketball-reference.com/leagues/NBA_2026_totals.html | 441 |
+| Play-In 2026 | NBA.com / NBA Stats | https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=PlayIn&PerMode=Totals | 86 |
+| Playoffs 2026 | Basketball-Reference | https://www.basketball-reference.com/playoffs/NBA_2026_totals.html | 207 |
+| Saison régulière 2024-25 (joueurs absents en 2025-26) | Basketball-Reference | https://www.basketball-reference.com/leagues/NBA_2025_totals.html | 8 |
+| Draft 2026 | Basketball-Reference | https://www.basketball-reference.com/draft/NBA_2026.html | 53 |
+| Moyennes de la ligue | Basketball-Reference | https://www.basketball-reference.com/leagues/NBA_2026.html et `NBA_2026_standings.html` | — |
+
+Basketball-Reference ne publie pas de totaux séparés du Play-In : ils viennent de NBA.com. Le rattachement aux identifiants du jeu se fait par le nom réel normalisé, hors du dépôt ; chaque transcription a été contrôlée par une somme de contrôle sur toutes les colonnes. Résultat dans `data/statistiques/2025-26/` (sources, date, unité et définition de chaque champ) ; détail et usage : `docs/NOTES_JOUEURS.md`. Les conditions de réutilisation de Basketball-Reference et de NBA.com restent à examiner avant toute publication (porte de publication).
+
+Règlement : `data/regles/nba-2026-27.json` vérifié le 24/11/2026 contre les pages des règles 3, 5, 6, 7, 9 et 12 de https://official.nba.com/rulebook/ (édition 2026-27) et la page « 2026-27 Points of Emphasis ».

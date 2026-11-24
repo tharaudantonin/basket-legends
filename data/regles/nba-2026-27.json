@@ -3,122 +3,128 @@
   "datasetId": "basket-legends-regles-nba-2026-27",
   "season": "2026-2027",
   "league": "NBA",
-  "status": "review_required",
+  "status": "validated",
   "source": {
     "title": "NBA Official Rulebook",
     "url": "https://official.nba.com/rulebook/",
-    "edition": "à confirmer : édition applicable à la saison 2026-2027",
-    "verifiedAt": null,
-    "note": "Valeurs reportées depuis le règlement NBA connu ; vérification ligne à ligne contre l’édition 2026-27 à faire avant le statut « validated » (GAME_RULES.md § 8)."
+    "edition": "2026-27 NBA Rulebook (pages HTML des règles sur official.nba.com, qui renvoient au PDF de l’édition 2026-27)",
+    "verifiedAt": "2026-11-24",
+    "note": "Vérifié le 24/11/2026 contre les pages des règles 3, 5, 6, 7, 9 et 12 et la page « 2026-27 Points of Emphasis » (29/09/2026), qui n’annonce aucun changement sur ces valeurs. Le PDF lui-même n’a pas pu être lu (délai dépassé) : à relire si une différence est signalée."
   },
   "parametres": {
     "joueursSurLeTerrain": {
       "valeur": 5,
       "unite": "joueurs",
       "definition": "Nombre de joueurs de chaque équipe sur le terrain.",
-      "reference": "Rule No. 3"
+      "reference": "Rule No. 3, Section I, 1 (« Each team shall consist of five players »)"
     },
     "periodesReglementaires": {
       "valeur": 4,
       "unite": "périodes",
       "definition": "Nombre de quart-temps du temps réglementaire.",
-      "reference": "Rule No. 5"
+      "reference": "Rule No. 5, Sections IV et VI (premier à quatrième quart-temps)"
     },
     "dureePeriodeSecondes": {
       "valeur": 720,
       "unite": "secondes",
       "definition": "Durée d’un quart-temps (12 minutes).",
-      "reference": "Rule No. 5"
+      "reference": "Rule No. 5, Section II, 1"
     },
     "dureeProlongationSecondes": {
       "valeur": 300,
       "unite": "secondes",
       "definition": "Durée d’une prolongation (5 minutes), jouée en cas d’égalité.",
-      "reference": "Rule No. 5"
+      "reference": "Rule No. 5, Section II, 2"
     },
     "horlogeDePossessionSecondes": {
       "valeur": 24,
       "unite": "secondes",
       "definition": "Temps de possession avant de devoir tirer.",
-      "reference": "Rule No. 7"
+      "reference": "Rule No. 7, Section I"
     },
     "horlogeApresRebondOffensifSecondes": {
       "valeur": 14,
       "unite": "secondes",
-      "definition": "Temps de possession après un rebond offensif (remise à 14).",
-      "reference": "Rule No. 7"
+      "definition": "Horloge remise à 14 s quand l’attaque reprend le ballon après un tir manqué qui a touché le cercle (rebond offensif).",
+      "reference": "Rule No. 7, Section IV, 4.1"
     },
     "valeurPanierInterieur": {
       "valeur": 2,
       "unite": "points",
       "definition": "Valeur d’un panier marqué à l’intérieur de la ligne à trois points.",
-      "reference": "Rule No. 5"
+      "reference": "Rule No. 5, Section I, 2"
     },
     "valeurPanierATroisPoints": {
       "valeur": 3,
       "unite": "points",
       "definition": "Valeur d’un panier marqué derrière la ligne à trois points.",
-      "reference": "Rule No. 5"
+      "reference": "Rule No. 5, Section I, 3"
     },
     "valeurLancerFranc": {
       "valeur": 1,
       "unite": "points",
       "definition": "Valeur d’un lancer franc réussi.",
-      "reference": "Rule No. 5"
+      "reference": "Rule No. 5, Section I, 6"
     },
     "lancersFrancsFauteSurTirInterieur": {
       "valeur": 2,
       "unite": "lancers",
       "definition": "Lancers accordés pour une faute sur un tir à deux points manqué.",
-      "reference": "Rule No. 12"
+      "reference": "Rule No. 12-B, Section I, 5.2.4 (« two/three free throw attempts »)"
     },
     "lancersFrancsFauteSurTirATroisPoints": {
       "valeur": 3,
       "unite": "lancers",
       "definition": "Lancers accordés pour une faute sur un tir à trois points manqué.",
-      "reference": "Rule No. 12"
+      "reference": "Rule No. 12-B, Section I, 5.2.4 (« two/three free throw attempts »)"
     },
     "lancersFrancsPanierAvecFaute": {
       "valeur": 1,
       "unite": "lancers",
       "definition": "Lancer accordé quand le tir est réussi malgré la faute.",
-      "reference": "Rule No. 12"
+      "reference": "Rule No. 12-B, Section I, 5.2.3"
     },
     "lancersFrancsPenalite": {
       "valeur": 2,
       "unite": "lancers",
-      "definition": "Lancers accordés pour une faute défensive hors tir quand l’équipe fautive est en pénalité.",
-      "reference": "Rule No. 12"
+      "definition": "Lancers accordés pour une faute défensive hors tir quand l’équipe fautive est en pénalité (un lancer plus un lancer de pénalité).",
+      "reference": "Rule No. 12-B, Section I, 5.2.5"
     },
     "fautesPersonnellesExclusion": {
       "valeur": 6,
       "unite": "fautes",
       "definition": "Nombre de fautes personnelles qui exclut un joueur du match.",
-      "reference": "Rule No. 3 et Rule No. 12"
+      "reference": "Rule No. 3, Section I, 1"
     },
     "rangFauteEquipePenalite": {
       "valeur": 5,
       "unite": "rang",
-      "definition": "Rang de la faute d’équipe, dans un quart-temps, à partir duquel l’adversaire tire des lancers.",
-      "reference": "Rule No. 12"
+      "definition": "Rang de la faute d’équipe, dans un quart-temps, à partir duquel l’adversaire tire des lancers (quatre fautes d’équipe sans pénalité).",
+      "reference": "Rule No. 12-B, Section V, 1 et 1.1"
     },
     "rangFauteEquipePenaliteProlongation": {
       "valeur": 4,
       "unite": "rang",
-      "definition": "Même rang pour une prolongation.",
-      "reference": "Rule No. 12"
+      "definition": "Même rang pour une prolongation (trois fautes d’équipe sans pénalité).",
+      "reference": "Rule No. 12-B, Section V, 1.2 et 1.4"
     },
     "finDePeriodeSecondes": {
       "valeur": 120,
       "unite": "secondes",
       "definition": "Les deux dernières minutes d’une période, où une règle de pénalité particulière s’applique.",
-      "reference": "Rule No. 12"
+      "reference": "Rule No. 12-B, Section V, 1.3"
     },
     "rangFauteEquipeFinDePeriode": {
       "valeur": 2,
       "unite": "rang",
-      "definition": "Rang de la faute d’équipe commise dans les deux dernières minutes qui met en pénalité une équipe qui ne l’est pas encore.",
-      "reference": "Rule No. 12"
+      "definition": "Une équipe pas encore en pénalité a droit à une faute d’équipe sans pénalité dans les deux dernières minutes : la deuxième la met en pénalité.",
+      "reference": "Rule No. 12-B, Section V, 1.3"
+    },
+    "horlogeMinimaleApresFauteDefensiveSecondes": {
+      "valeur": 14,
+      "unite": "secondes",
+      "definition": "Après une faute défensive hors tir (remise en jeu en zone avant), l’horloge garde sa valeur ou remonte à 14 s, la plus grande des deux.",
+      "reference": "Rule No. 7, Section IV, 5.1"
     }
   },
   "possessionDebutDePeriode": {
@@ -129,6 +135,6 @@
       "gagnant"
     ],
     "definition": "Qui a le ballon au début de chaque quart-temps : entre-deux au premier, puis l’équipe qui a perdu l’entre-deux (2e et 3e), puis celle qui l’a gagné (4e). Chaque prolongation commence par un entre-deux.",
-    "reference": "Rule No. 6"
+    "reference": "Rule No. 6, Section I, 1 et 2 ; Section V, 1.2"
   }
 }

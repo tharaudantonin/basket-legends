@@ -44,7 +44,7 @@ Toute règle implémentée doit être associée à une saison d'application, une
 
 Les paramètres exacts doivent être confirmés contre l'édition officielle du Rulebook applicable à la saison choisie avant de marquer cette section comme validée.
 
-Tranche 1 (24/11/2026) : les paramètres utilisés par le match rapide sont dans `data/regles/nba-2026-27.json`, chacun avec sa référence ; statut `review_required` (vérification ligne à ligne contre l'édition 2026-27 à faire). Ce qui est simulé et ce qui ne l'est pas encore : `docs/SIMULATION_MATCH.md` § 4.
+Tranche 1 (24/11/2026) : les paramètres utilisés par le match rapide sont dans `data/regles/nba-2026-27.json`, chacun avec sa référence. Tranche 2 (24/11/2026) : vérifiés contre les pages du Rulebook 2026-27 (official.nba.com), section par section ; statut `validated`. Le PDF de l'édition n'a pas pu être lu : à relire en cas de doute. Ce qui est simulé et ce qui ne l'est pas encore : `docs/SIMULATION_MATCH.md` § 4.
 
 ## 4. Plan de transcription du NBA Official Rulebook
 

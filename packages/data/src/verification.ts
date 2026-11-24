@@ -2,7 +2,19 @@
 // Chaque problème est décrit en français, avec le fichier et l'élément concernés.
 import { createHash } from 'node:crypto';
 import { initialesDe, normaliserNom, partiesDuNom } from './noms';
-import { schemaBanques, schemaEffectif, schemaEmpreintes, schemaReglagesMatch, schemaRegistre, schemaRegles, type Effectif, type Registre } from './schemas';
+import {
+  schemaBanques,
+  schemaEffectif,
+  schemaEmpreintes,
+  schemaParametresNotes,
+  schemaReglagesMatch,
+  schemaRegistre,
+  schemaRegles,
+  schemaStatistiquesJoueurs,
+  schemaStatistiquesLigue,
+  type Effectif,
+  type Registre,
+} from './schemas';
 
 /** Les numéros partagés volontairement, à titre provisoire (docs/DECISIONS_2026-11.md, réponse 10 ; docs/PLAYER_MIRROR.md § 5). */
 export const NUMEROS_PARTAGES_ADMIS: Record<string, string[]> = { chicago: ['7'], toronto: ['9'] };
@@ -20,6 +32,10 @@ export interface SourcesDonnees {
   regles: Record<string, unknown>;
   /** Tranche 1 : contenu de chaque fichier de data/moteur/, par nom de fichier. */
   reglagesMatch: Record<string, unknown>;
+  /** Tranche 2 : contenu de data/statistiques/2025-26/, par nom de fichier. */
+  statistiques: Record<string, unknown>;
+  /** Tranche 2 : contenu de data/modeles/, par nom de fichier. */
+  modelesNotes: Record<string, unknown>;
 }
 
 export interface Rapport {
@@ -219,6 +235,41 @@ export function verifierDonnees(sources: SourcesDonnees): Rapport {
     if (Math.abs(somme - 1) > 1e-9) erreurs.push(`${chemin} : la répartition des tirs doit faire 1 (elle fait ${somme})`);
     if (g.fatigue.seuilRetour < g.fatigue.seuilRemplacement) erreurs.push(`${chemin} : le seuil de retour doit être au moins le seuil de remplacement`);
     if (g.status === 'provisoire-non-calibre') avertissements.push(`${chemin} : réglages provisoires, non calibrés (tranche 2)`);
+  }
+
+  // 7. Tranche 2 : statistiques 2025-2026 et modèle de notes.
+  const statsJoueurs = schemaStatistiquesJoueurs.safeParse(sources.statistiques['joueurs.json']);
+  if (!statsJoueurs.success) erreurs.push(...messagesZod('data/statistiques/2025-26/joueurs.json', statsJoueurs));
+  else {
+    for (const id of Object.keys(statsJoueurs.data.joueurs)) {
+      if (!idsJoueurs.has(id)) erreurs.push(`data/statistiques/2025-26/joueurs.json : ${id} absent des effectifs`);
+    }
+  }
+  const statsLigue = schemaStatistiquesLigue.safeParse(sources.statistiques['ligue.json']);
+  if (!statsLigue.success) erreurs.push(...messagesZod('data/statistiques/2025-26/ligue.json', statsLigue));
+  else {
+    const d = statsLigue.data.tirsParDistance;
+    const parts = d.zero_trois_pieds.part + d.trois_dix_pieds.part + d.dix_seize_pieds.part + d.seize_pieds_ligne.part + d.trois_points.part;
+    if (Math.abs(parts - 1) > 0.002) erreurs.push(`data/statistiques/2025-26/ligue.json : les parts de tirs par distance font ${parts.toFixed(3)} au lieu de 1`);
+  }
+  const versions = new Set<string>();
+  for (const [fichier, contenu] of Object.entries(sources.modelesNotes)) {
+    const lu = schemaParametresNotes.safeParse(contenu);
+    if (!lu.success) {
+      erreurs.push(...messagesZod(`data/modeles/${fichier}`, lu));
+      continue;
+    }
+    versions.add(lu.data.version);
+    if (lu.data.status === 'proposition') avertissements.push(`data/modeles/${fichier} : modèle de notes au statut « proposition », à valider par Antonin`);
+  }
+  for (const fichier of fichiers) {
+    const lu = schemaEffectif.safeParse(sources.effectifs[fichier]);
+    if (!lu.success) continue;
+    for (const j of lu.data.players) {
+      if (j.ratings.correction === 'corrigé par Antonin') continue;
+      if (!versions.has(j.ratings.source))
+        erreurs.push(`data/rosters/2026-27/${fichier} : ${j.id} a une note de source « ${j.ratings.source} », d'aucun modèle de notes connu`);
+    }
   }
 
   return { erreurs, avertissements, joueurs };

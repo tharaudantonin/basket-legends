@@ -21,6 +21,8 @@ export function lireSources(racine: string): SourcesDonnees {
     empreintes: json('data/noms/empreintes.json'),
     regles: lireDossier('data/regles'),
     reglagesMatch: lireDossier('data/moteur'),
+    statistiques: lireDossier('data/statistiques/2025-26'),
+    modelesNotes: lireDossier('data/modeles'),
   };
 }
 
