@@ -30,9 +30,10 @@ interface Props {
   onRetour: () => void;
   onJouer: (d: DemandeMatch) => void;
   onFiche: (joueur: string) => void;
+  onSaison: () => void;
 }
 
-export function EcranEffectif({ franchise, derniere, enCours, onRetour, onJouer, onFiche }: Props) {
+export function EcranEffectif({ franchise, derniere, enCours, onRetour, onJouer, onFiche, onSaison }: Props) {
   const f = franchiseDe(franchise);
   const effectif = effectifDe(franchise);
   const equipe = useMemo(() => equipeDe(franchise), [franchise]);
@@ -57,6 +58,16 @@ export function EcranEffectif({ franchise, derniere, enCours, onRetour, onJouer,
           Effectif {effectif.snapshot.season} · {effectif.players.length} joueurs
         </p>
       </header>
+
+      <section className="carte" aria-labelledby="titre-carriere">
+        <h2 id="titre-carriere">Carrière</h2>
+        <p>
+          Dirigez {f.fictionalName} pendant la saison {effectif.snapshot.season} : 82 matchs, All-Star Game, Play-In, playoffs et palmarès.
+        </p>
+        <button type="button" className="principal" disabled={enCours} onClick={onSaison}>
+          Commencer la saison
+        </button>
+      </section>
 
       <section className="carte" aria-labelledby="titre-match">
         <h2 id="titre-match">Match</h2>

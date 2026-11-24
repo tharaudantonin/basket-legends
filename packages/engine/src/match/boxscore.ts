@@ -42,6 +42,7 @@ export function construireBoxScore(
             poste: j.poste,
             titulaire: titulaires[c]?.includes(j.id) ?? false,
             exclu: false,
+            blesse: false,
             ...ligneVide(),
           },
         ]),
@@ -117,6 +118,9 @@ export function construireBoxScore(
         break;
       case 'exclusion':
         l(ev.equipe, ev.joueur).exclu = true;
+        break;
+      case 'blessure':
+        l(ev.equipe, ev.joueur).blesse = true;
         break;
       case 'remplacement':
         surTerrain[ev.equipe] = surTerrain[ev.equipe].map((id) => (id === ev.sortant ? ev.entrant : id));

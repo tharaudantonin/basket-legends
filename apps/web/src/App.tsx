@@ -1,31 +1,52 @@
-// Tranches 1 et 3 : choisir une franchise → voir l'effectif → simuler un match (rapide ou commenté, même moteur, même
-// résultat) → lire le box score → ouvrir la fiche d'un joueur.
-import { useState } from 'react';
-import type { ResultatMatch } from '@basket-legends/engine';
+// Tranches 1 à 4 : choisir une franchise → voir l'effectif → jouer un match isolé (rapide ou commenté) ou lancer la
+// saison 2026-27 (calendrier, classements, Play-In, playoffs, palmarès), sauvegardée dans le navigateur.
+import { useEffect, useState } from 'react';
+import { nouvelleGraine, type ResultatMatch } from '@basket-legends/engine';
+import type { Cible, EtatSaison, ResumeMatch, Sauvegarde } from '@basket-legends/league';
 import { ChoixFranchise } from './ecrans/ChoixFranchise';
 import { EcranEffectif, type DemandeMatch } from './ecrans/Effectif';
 import { EcranBoxScore } from './ecrans/BoxScore';
 import { EcranCommente } from './ecrans/Commente';
 import { EcranFicheJoueur } from './ecrans/FicheJoueur';
+import { EcranSaison } from './ecrans/Saison';
 import { equipeDe, regles, reglages } from './donnees';
-import { simulerDansLeMoteur } from './moteur';
+import { avancerDansLeMoteur, nouvelleSaisonDansLeMoteur, rejouerDansLeMoteur, simulerDansLeMoteur } from './moteur';
+import { charger, enregistrer } from './sauvegarde';
 
 type Ecran =
   | { nom: 'choix' }
   | { nom: 'effectif'; franchise: string; derniere?: DemandeMatch }
-  | { nom: 'match'; franchise: string; demande: DemandeMatch; resultat: ResultatMatch }
-  | { nom: 'commente'; franchise: string; demande: DemandeMatch; resultat: ResultatMatch }
-  | { nom: 'fiche'; joueur: string; resultat?: ResultatMatch; retour: Ecran };
+  | { nom: 'match'; franchise: string; demande?: DemandeMatch; resultat: ResultatMatch; retour: Ecran }
+  | { nom: 'commente'; franchise: string; demande?: DemandeMatch; resultat: ResultatMatch; retour: Ecran }
+  | { nom: 'fiche'; joueur: string; resultat?: ResultatMatch; retour: Ecran }
+  | { nom: 'saison' };
 
 export function App() {
   const [ecran, setEcran] = useState<Ecran>({ nom: 'choix' });
   const [enCours, setEnCours] = useState(false);
   const [erreur, setErreur] = useState<string>();
+  const [sauvegarde, setSauvegarde] = useState<Sauvegarde>();
 
-  const jouer = async (franchise: string, demande: DemandeMatch) => {
+  useEffect(() => {
+    charger()
+      .then(setSauvegarde)
+      .catch((e: unknown) => setErreur(e instanceof Error ? e.message : String(e)));
+  }, []);
+
+  const tache = async (action: () => Promise<void>) => {
     setEnCours(true);
     setErreur(undefined);
     try {
+      await action();
+    } catch (e) {
+      setErreur(e instanceof Error ? e.message : String(e));
+    } finally {
+      setEnCours(false);
+    }
+  };
+
+  const jouer = (franchise: string, demande: DemandeMatch) =>
+    tache(async () => {
       const [domicile, exterieur] = demande.aDomicile ? [franchise, demande.adversaire] : [demande.adversaire, franchise];
       const resultat = await simulerDansLeMoteur({
         graine: demande.graine,
@@ -34,22 +55,52 @@ export function App() {
         regles,
         reglages,
       });
-      setEcran({ nom: demande.mode === 'commente' ? 'commente' : 'match', franchise, demande, resultat });
-    } catch (e) {
-      setErreur(e instanceof Error ? e.message : String(e));
-    } finally {
-      setEnCours(false);
-    }
-  };
+      const retour: Ecran = { nom: 'effectif', franchise, derniere: demande };
+      setEcran({ nom: demande.mode === 'commente' ? 'commente' : 'match', franchise, demande, resultat, retour });
+    });
+
+  const garder = async (etat: EtatSaison) => setSauvegarde(await enregistrer(etat, sauvegarde));
+
+  const commencerSaison = (franchise: string) =>
+    tache(async () => {
+      if (sauvegarde && !window.confirm('Une partie est déjà enregistrée : la remplacer par une nouvelle saison ?')) return;
+      const etat = await nouvelleSaisonDansLeMoteur(nouvelleGraine(Date.now()), franchise);
+      setSauvegarde(await enregistrer(etat));
+      setEcran({ nom: 'saison' });
+    });
+
+  const avancer = (cible: Cible) =>
+    tache(async () => {
+      if (!sauvegarde) return;
+      await garder(await avancerDansLeMoteur(sauvegarde.etat, cible));
+    });
+
+  const revivre = (m: ResumeMatch, mode: 'rapide' | 'commente') =>
+    tache(async () => {
+      if (!sauvegarde) return;
+      const resultat = await rejouerDansLeMoteur(sauvegarde.etat, m);
+      setEcran({
+        nom: mode === 'commente' ? 'commente' : 'match',
+        franchise: sauvegarde.etat.franchise,
+        resultat,
+        retour: { nom: 'saison' },
+      });
+    });
 
   return (
     <main className="page">
       {erreur && (
         <p className="erreur" role="alert">
-          Le match n'a pas pu être simulé : {erreur}
+          {erreur}
         </p>
       )}
-      {ecran.nom === 'choix' && <ChoixFranchise onChoisir={(franchise) => setEcran({ nom: 'effectif', franchise })} />}
+      {ecran.nom === 'choix' && (
+        <ChoixFranchise
+          onChoisir={(franchise) => setEcran({ nom: 'effectif', franchise })}
+          sauvegarde={sauvegarde}
+          onReprendre={() => setEcran({ nom: 'saison' })}
+        />
+      )}
       {ecran.nom === 'effectif' && (
         <EcranEffectif
           franchise={ecran.franchise}
@@ -58,13 +109,24 @@ export function App() {
           onRetour={() => setEcran({ nom: 'choix' })}
           onJouer={(demande) => void jouer(ecran.franchise, demande)}
           onFiche={(joueur) => setEcran({ nom: 'fiche', joueur, retour: ecran })}
+          onSaison={() => void commencerSaison(ecran.franchise)}
+        />
+      )}
+      {ecran.nom === 'saison' && sauvegarde && (
+        <EcranSaison
+          etat={sauvegarde.etat}
+          enCours={enCours}
+          onAvancer={(cible) => void avancer(cible)}
+          onRevivre={(m, mode) => void revivre(m, mode)}
+          onFiche={(joueur) => setEcran({ nom: 'fiche', joueur, retour: ecran })}
+          onQuitter={() => setEcran({ nom: 'choix' })}
         />
       )}
       {ecran.nom === 'commente' && (
         <EcranCommente
           resultat={ecran.resultat}
           onBoxScore={() => setEcran({ ...ecran, nom: 'match' })}
-          onRetour={() => setEcran({ nom: 'effectif', franchise: ecran.franchise, derniere: ecran.demande })}
+          onRetour={() => setEcran(ecran.retour)}
         />
       )}
       {ecran.nom === 'match' && (
@@ -72,13 +134,18 @@ export function App() {
           franchise={ecran.franchise}
           resultat={ecran.resultat}
           enCours={enCours}
-          onRejouer={() => void jouer(ecran.franchise, { ...ecran.demande, mode: 'rapide' })}
-          onRetour={() => setEcran({ nom: 'effectif', franchise: ecran.franchise, derniere: ecran.demande })}
+          onRejouer={ecran.demande ? () => void jouer(ecran.franchise, { ...ecran.demande!, mode: 'rapide' }) : undefined}
+          onRetour={() => setEcran(ecran.retour)}
           onFiche={(joueur) => setEcran({ nom: 'fiche', joueur, resultat: ecran.resultat, retour: ecran })}
         />
       )}
       {ecran.nom === 'fiche' && (
-        <EcranFicheJoueur joueur={ecran.joueur} resultat={ecran.resultat} onRetour={() => setEcran(ecran.retour)} />
+        <EcranFicheJoueur
+          joueur={ecran.joueur}
+          resultat={ecran.resultat}
+          saison={sauvegarde?.etat}
+          onRetour={() => setEcran(ecran.retour)}
+        />
       )}
     </main>
   );

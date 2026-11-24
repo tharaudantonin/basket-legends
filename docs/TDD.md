@@ -20,7 +20,7 @@ Toute nouvelle dépendance est proposée avec sa raison avant d'être ajoutée.
 ```text
 apps/web/            écrans, thèmes, sauvegardes IndexedDB
 packages/engine/     moteur pur : possessions, règles versionnées par saison, hasard déterministe
-packages/league/     saison, calendrier, CBA, Draft, IA de GM, progression, carrière (à créer)
+packages/league/     saison (créé en tranche 4), puis CBA, Draft, IA de GM, progression, carrière
 packages/data/       schémas Zod, chargement, vérificateur des données
 data/                données de référence immuables et versionnées
 tools/               calibration, migrations, imports privés

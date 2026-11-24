@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "datasetId": "basket-legends-moteur-match-v2",
+  "datasetId": "basket-legends-moteur-match-v3",
   "status": "calibre",
-  "note": "Réglages du modèle de match (tranche 3) : ceux de la v1, plus les temps-morts, les fins de match tactiques et la position des tirs, recalibrés le 24/11/2026 sur 1 000 matchs (npm run sonde) contre les moyennes de la saison régulière 2025-2026. Les réglages sont des paramètres du modèle, pas des statistiques : seules les cibles sont sourcées.",
+  "note": "Réglages du modèle de match (tranche 4) : ceux de la v2, plus l’endurance propre à chaque joueur et les blessures en match. Calibrés sur 1 000 matchs (npm run sonde) contre les moyennes de la saison régulière 2025-2026 ; les fréquences et durées de blessure sont des choix du modèle, sans cible sourcée.",
   "possession": {
     "dureeMoyenneSecondes": 13.95,
     "dureeEcartSecondes": 4.5,
@@ -39,7 +39,7 @@
     },
     "sensibiliteParPoint": 0.006,
     "avantageDomicile": 0.02,
-    "usageEchelle": 14
+    "usageEchelle": 35
   },
   "lancersFrancs": {
     "reussiteDeBase": 0.763,
@@ -62,7 +62,7 @@
     "horsTirParPossession": 0.1
   },
   "rebonds": {
-    "offensifDeBase": 0.249,
+    "offensifDeBase": 0.256,
     "sensibiliteParPoint": 0.004,
     "poidsParGroupe": {
       "meneur": 0.6,
@@ -81,9 +81,9 @@
   },
   "contres": {
     "probabiliteSurEchecParType": {
-      "cercle": 0.339,
-      "miDistance": 0.112,
-      "troisPoints": 0.034
+      "cercle": 0.325,
+      "miDistance": 0.108,
+      "troisPoints": 0.033
     },
     "poidsParGroupe": {
       "meneur": 0.4,
@@ -96,7 +96,8 @@
     "recuperationParMinute": 5,
     "seuilRemplacement": 72,
     "seuilRetour": 90,
-    "malusParPointPerdu": 0.12
+    "malusParPointPerdu": 0.12,
+    "effetEndurance": 0.3
   },
   "rotation": {
     "profondeur": 10,
@@ -127,5 +128,25 @@
       "dixSeize": 0.095,
       "seizeLigne": 0.049
     }
+  },
+  "blessures": {
+    "probabiliteParMinute": 0.0007,
+    "gravites": [
+      {
+        "part": 0.55,
+        "matchsMin": 1,
+        "matchsMax": 3
+      },
+      {
+        "part": 0.35,
+        "matchsMin": 4,
+        "matchsMax": 15
+      },
+      {
+        "part": 0.1,
+        "matchsMin": 16,
+        "matchsMax": 50
+      }
+    ]
   }
 }

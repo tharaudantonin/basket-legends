@@ -4,6 +4,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { moyennesDuJoueur, schemaStatistiquesJoueurs, type MoyennesJoueur } from '@basket-legends/data';
 import { adresseParTranche, coordonnees, tirsDuJoueur, type ResultatMatch, type TrancheTir } from '@basket-legends/engine';
+import type { EtatSaison, LigneSaison } from '@basket-legends/league';
 import { effectifDe, franchiseDe, franchiseDuJoueur, regles } from '../donnees';
 import { encreSur, pourcentage, taille } from '../format';
 
@@ -11,6 +12,8 @@ interface Props {
   joueur: string;
   /** Le match d'où l'on vient, pour son graphique d'adresse. */
   resultat?: ResultatMatch;
+  /** Tranche 4 : la saison en cours, pour les statistiques simulées du joueur. */
+  saison?: EtatSaison;
   onRetour: () => void;
 }
 
@@ -106,7 +109,7 @@ function GraphiqueAdresse({ resultat, joueur }: { resultat: ResultatMatch; joueu
   );
 }
 
-export function EcranFicheJoueur({ joueur, resultat, onRetour }: Props) {
+export function EcranFicheJoueur({ joueur, resultat, saison, onRetour }: Props) {
   const franchise = franchiseDuJoueur(joueur);
   const f = franchiseDe(franchise);
   const j = effectifDe(franchise).players.find((x) => x.id === joueur);
@@ -143,6 +146,58 @@ export function EcranFicheJoueur({ joueur, resultat, onRetour }: Props) {
         <section className="carte" aria-labelledby="titre-adresse">
           <h2 id="titre-adresse">Graphique d'adresse du match</h2>
           <GraphiqueAdresse resultat={resultat} joueur={joueur} />
+        </section>
+      )}
+
+      {saison && (saison.statistiques[joueur] || saison.statistiquesPlayoffs[joueur]) && (
+        <section className="carte" aria-labelledby="titre-saison">
+          <h2 id="titre-saison">Saison {saison.saison.replace('-', '–')} (simulée)</h2>
+          <div className="defilement">
+            <table className="tableau">
+              <thead>
+                <tr>
+                  <th scope="col" className="gauche">
+                    Phase
+                  </th>
+                  <th scope="col">MJ</th>
+                  <th scope="col">MIN</th>
+                  <th scope="col">PTS</th>
+                  <th scope="col">REB</th>
+                  <th scope="col">PD</th>
+                  <th scope="col">TIRS</th>
+                  <th scope="col">3 PTS</th>
+                  <th scope="col">LF</th>
+                </tr>
+              </thead>
+              <tbody>
+                {(
+                  [
+                    ['Saison régulière', saison.statistiques[joueur]],
+                    ['Playoffs', saison.statistiquesPlayoffs[joueur]],
+                  ] as [string, LigneSaison | undefined][]
+                )
+                  .filter((x): x is [string, LigneSaison] => Boolean(x[1]?.matchs))
+                  .map(([libelle, t]) => (
+                    <tr key={libelle}>
+                      <th scope="row" className="gauche">
+                        {libelle}
+                      </th>
+                      <td>{t.matchs}</td>
+                      <td>{decimale(t.dixiemes / 600 / t.matchs)}</td>
+                      <td className="note">{decimale(t.points / t.matchs)}</td>
+                      <td>{decimale((t.rebondsOffensifs + t.rebondsDefensifs) / t.matchs)}</td>
+                      <td>{decimale(t.passes / t.matchs)}</td>
+                      <td>{pourcentage(t.tirsReussis, t.tirsTentes)}</td>
+                      <td>{pourcentage(t.troisReussis, t.troisTentes)}</td>
+                      <td>{pourcentage(t.lancersReussis, t.lancersTentes)}</td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          </div>
+          {(saison.blessures[joueur] ?? 0) > 0 && (
+            <p className="avertissement">Blessé : encore {saison.blessures[joueur]} match(s) d'absence.</p>
+          )}
         </section>
       )}
 

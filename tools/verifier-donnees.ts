@@ -23,6 +23,7 @@ export function lireSources(racine: string): SourcesDonnees {
     reglagesMatch: lireDossier('data/moteur'),
     statistiques: lireDossier('data/statistiques/2025-26'),
     modelesNotes: lireDossier('data/modeles'),
+    ligue: lireDossier('data/ligue'),
   };
 }
 

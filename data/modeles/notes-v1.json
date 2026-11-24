@@ -3,7 +3,7 @@
   "datasetId": "basket-legends-modele-notes-v1",
   "version": "notes-v1",
   "status": "valide",
-  "note": "Modèle de notes v1 (tranche 2, 24/11/2026). Formule maison à partir des statistiques 2025-2026 sourcées, recalée par quantiles sur l’échelle « NBA » (décision du 23/11/2026). Poids et ancrages validés par Antonin le 24/11/2026 ; les corrections manuelles seront marquées « corrigé par Antonin ».",
+  "note": "Modèle de notes v1 (tranche 2, 24/11/2026). Formule maison à partir des statistiques 2025-2026 sourcées, recalée par quantiles sur l’échelle « NBA » (décision du 23/11/2026). Poids et ancrages validés par Antonin le 24/11/2026 ; les corrections manuelles seront marquées « corrigé par Antonin ». Tranche 4 : indice d’endurance ajouté (minutes par match, titularisations), recalé sur les ancrages des attributs ; à valider.",
   "statistiques": "data/statistiques/2025-26/joueurs.json",
   "retrecissement": {
     "minutesDePrior": 400,
@@ -45,6 +45,10 @@
       "rebondsDefensifs": 0.3,
       "fautes": -0.3,
       "pertes": -0.3
+    },
+    "endurance": {
+      "minutesParMatch": 1,
+      "partTitulaire": 0.3
     }
   },
   "ancrages": {

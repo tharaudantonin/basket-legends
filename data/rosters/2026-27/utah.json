@@ -87,6 +87,7 @@
         "physical": 70,
         "mental": 73,
         "tactical": 58,
+        "endurance": 75,
         "scale": 100
       },
       "notes": null
@@ -133,6 +134,7 @@
         "physical": 77,
         "mental": 65,
         "tactical": 69,
+        "endurance": 59,
         "scale": 100
       },
       "notes": null
@@ -179,6 +181,7 @@
         "physical": 77,
         "mental": 58,
         "tactical": 51,
+        "endurance": 59,
         "scale": 100
       },
       "notes": null
@@ -225,6 +228,7 @@
         "physical": 69,
         "mental": 66,
         "tactical": 68,
+        "endurance": 55,
         "scale": 100
       },
       "notes": null
@@ -271,6 +275,7 @@
         "physical": 60,
         "mental": 78,
         "tactical": 86,
+        "endurance": 72,
         "scale": 100
       },
       "notes": null
@@ -317,6 +322,7 @@
         "physical": 82,
         "mental": 71,
         "tactical": 73,
+        "endurance": 71,
         "scale": 100
       },
       "notes": null
@@ -363,6 +369,7 @@
         "physical": 66,
         "mental": 88,
         "tactical": 72,
+        "endurance": 83,
         "scale": 100
       },
       "notes": null
@@ -409,6 +416,7 @@
         "physical": 60,
         "mental": 59,
         "tactical": 64,
+        "endurance": 62,
         "scale": 100
       },
       "notes": null
@@ -455,6 +463,7 @@
         "physical": 81,
         "mental": 57,
         "tactical": 63,
+        "endurance": 66,
         "scale": 100
       },
       "notes": null
@@ -501,6 +510,7 @@
         "physical": 70,
         "mental": 60,
         "tactical": 68,
+        "endurance": 50,
         "scale": 100
       },
       "notes": null
@@ -547,6 +557,7 @@
         "physical": 78,
         "mental": 76,
         "tactical": 64,
+        "endurance": 79,
         "scale": 100
       },
       "notes": null
@@ -593,6 +604,7 @@
         "physical": 78,
         "mental": 84,
         "tactical": 67,
+        "endurance": 87,
         "scale": 100
       },
       "notes": null
@@ -639,6 +651,7 @@
         "physical": 57,
         "mental": 71,
         "tactical": 59,
+        "endurance": 72,
         "scale": 100
       },
       "notes": null
@@ -685,6 +698,7 @@
         "physical": 85,
         "mental": 69,
         "tactical": 85,
+        "endurance": 74,
         "scale": 100
       },
       "notes": null
@@ -731,6 +745,7 @@
         "physical": 64,
         "mental": 52,
         "tactical": 71,
+        "endurance": 66,
         "scale": 100
       },
       "notes": null
@@ -777,6 +792,7 @@
         "physical": 72,
         "mental": 72,
         "tactical": 72,
+        "endurance": 72,
         "scale": 100
       },
       "notes": null
@@ -823,6 +839,7 @@
         "physical": 65,
         "mental": 75,
         "tactical": 55,
+        "endurance": 71,
         "scale": 100
       },
       "notes": null

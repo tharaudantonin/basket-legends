@@ -69,7 +69,7 @@ export const schemaJoueur = z.strictObject({
   sourcePlayerId: z.string().nullable(),
   rosterStatus: z.string(),
   ratings: z.looseObject({ overall: note, scale: z.literal(100), source: z.string(), status: z.string() }),
-  attributes: z.strictObject({ technique: note, physical: note, mental: note, tactical: note, scale: z.literal(100) }),
+  attributes: z.strictObject({ technique: note, physical: note, mental: note, tactical: note, endurance: note, scale: z.literal(100) }),
   notes: z.strictObject({ archetype: z.string().optional() }).nullable(),
 });
 
@@ -195,6 +195,7 @@ export const schemaReglagesMatch = z.strictObject({
     seuilRemplacement: z.number().min(0).max(100),
     seuilRetour: z.number().min(0).max(100),
     malusParPointPerdu: z.number().min(0),
+    effetEndurance: z.number().min(0).max(1),
   }),
   rotation: z.strictObject({ profondeur: z.number().int().min(5), relaisMinimalSecondes: z.number().min(0) }),
   tempsMorts: z.strictObject({ serieAdverseDeclencheur: z.number().int().min(1), bonusActionPreparee: z.number().min(0), recuperationParMinute: z.number().min(0) }),
@@ -209,6 +210,10 @@ export const schemaReglagesMatch = z.strictObject({
     malusTirPresse: proba,
     partTroisEnRetardDeTrois: proba,
     margeDernierTirSecondes: positif,
+  }),
+  blessures: z.strictObject({
+    probabiliteParMinute: proba,
+    gravites: z.array(z.strictObject({ part: proba, matchsMin: z.number().int().min(1), matchsMax: z.number().int().min(1) })).min(1),
   }),
   positions: z.strictObject({
     partTroisDansLesCoins: proba,
@@ -341,7 +346,7 @@ export const schemaParametresNotes = z.strictObject({
     tentativesDePriorLancers: positif,
     minutesPourLaReference: z.number().min(0),
   }),
-  poids: z.strictObject({ globale: poidsIndice, technique: poidsIndice, physique: poidsIndice, mental: poidsIndice, tactique: poidsIndice }),
+  poids: z.strictObject({ globale: poidsIndice, technique: poidsIndice, physique: poidsIndice, mental: poidsIndice, tactique: poidsIndice, endurance: poidsIndice }),
   ancrages: z.strictObject({ globale: ancrages, attributs: ancrages }),
   sansStatistique: z.strictObject({ parRangDeDraft: ancrages, nonDrafte: z.number().int().min(40).max(67) }),
   bornes: z.strictObject({ min: z.number().int().min(1), max: z.number().int().max(100) }),
@@ -351,3 +356,86 @@ export type TotauxSaison = z.infer<typeof schemaTotauxSaison>;
 export type StatistiquesJoueurs = z.infer<typeof schemaStatistiquesJoueurs>;
 export type StatistiquesLigue = z.infer<typeof schemaStatistiquesLigue>;
 export type ParametresNotes = z.infer<typeof schemaParametresNotes>;
+
+// --- Tranche 4 : structure de la saison. ---
+
+const sourceLigue = z.strictObject({ fournisseur: z.string().min(1), url: z.url(), niveau: z.enum(['primaire', 'secondaire']), consulteLe: date });
+const critere = z.enum([
+  'confrontations',
+  'vainqueur-division',
+  'bilan-division',
+  'bilan-conference',
+  'bilan-qualifiables-conference',
+  'bilan-qualifiables-autre-conference',
+  'difference-points',
+]);
+
+/** data/ligue/saison-<saison>.json : conférences, calendrier, Play-In, playoffs, départages, récompenses, All-Star. */
+export const schemaSaisonLigue = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.string().regex(/^basket-legends-ligue-\d{4}-\d{2}$/),
+  saison: saison,
+  note: z.string(),
+  conferences: z
+    .array(
+      z.strictObject({
+        id: z.string().min(1),
+        nom: z.string().min(1),
+        divisions: z.array(z.strictObject({ id: z.string().min(1), nom: z.string().min(1), franchises: z.array(idFranchise).min(1) })).min(1),
+      }),
+    )
+    .length(2),
+  sourceAlignement: sourceLigue,
+  calendrier: z.strictObject({
+    matchsParEquipe: z.number().int().positive(),
+    contreChaqueAdversaireDeDivision: z.number().int().min(0),
+    adversairesDeConferenceA4Matchs: z.number().int().min(0),
+    adversairesDeConferenceA3Matchs: z.number().int().min(0),
+    contreChaqueAdversaireDeLAutreConference: z.number().int().min(0),
+    premierJour: date,
+    dernierJour: date,
+    note: z.string(),
+    sources: z.array(sourceLigue).min(1),
+  }),
+  playIn: z.strictObject({
+    qualifiesDirects: z.number().int().min(1),
+    rangsDuPlayIn: z.tuple([z.number().int(), z.number().int()]),
+    note: z.string(),
+    source: sourceLigue,
+  }),
+  playoffs: z.strictObject({
+    equipesParConference: z.number().int().min(2),
+    victoiresPourGagnerUneSerie: z.number().int().min(1),
+    appariementsPremierTour: z.array(z.tuple([z.number().int(), z.number().int()])).min(1),
+    receveurParMatch: z.array(z.enum(['haut', 'bas'])).min(1),
+    note: z.string(),
+    sources: z.array(sourceLigue).min(1),
+  }),
+  departages: z.strictObject({
+    deuxEquipes: z.array(critere).min(1),
+    plusieursEquipes: z.array(critere).min(1),
+    dernierRecours: z.literal('tirage'),
+    note: z.string(),
+    source: sourceLigue,
+  }),
+  recompenses: z.strictObject({
+    matchsMinimum: z.number().int().min(0),
+    minutesPourCompter: z.number().min(0),
+    concernees: z.array(z.string()),
+    sansMinimum: z.array(z.string()),
+    equipesAllNba: z.number().int().min(1),
+    joueursParEquipeAllNba: z.number().int().min(1),
+    note: z.string(),
+    sources: z.array(sourceLigue).min(1),
+  }),
+  allStar: z.strictObject({
+    titulairesParConference: z.number().int().min(1),
+    remplacantsParConference: z.number().int().min(0),
+    poidsDuVote: z.strictObject({ fans: proba, joueurs: proba, medias: proba }),
+    sansPoste: z.boolean(),
+    partDeLaSaison: proba,
+    note: z.string(),
+    source: sourceLigue,
+  }),
+});
+export type SaisonLigue = z.infer<typeof schemaSaisonLigue>;

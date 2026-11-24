@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-ligue-2026-27",
+  "saison": "2026-2027",
+  "note": "Structure de la saison NBA 2026-27 appliquée aux franchises de Basket Legends (chacune prend la place de son club de référence). Les noms des conférences et divisions sont des traductions géographiques.",
+  "conferences": [
+    {
+      "id": "est",
+      "nom": "Conférence Est",
+      "divisions": [
+        {
+          "id": "atlantique",
+          "nom": "Division Atlantique",
+          "franchises": [
+            "boston",
+            "brooklyn",
+            "new-york",
+            "philadelphia",
+            "toronto"
+          ]
+        },
+        {
+          "id": "centrale",
+          "nom": "Division Centrale",
+          "franchises": [
+            "chicago",
+            "cleveland",
+            "detroit",
+            "indianapolis",
+            "milwaukee"
+          ]
+        },
+        {
+          "id": "sud-est",
+          "nom": "Division Sud-Est",
+          "franchises": [
+            "atlanta",
+            "charlotte",
+            "miami",
+            "orlando",
+            "washington"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ouest",
+      "nom": "Conférence Ouest",
+      "divisions": [
+        {
+          "id": "nord-ouest",
+          "nom": "Division Nord-Ouest",
+          "franchises": [
+            "denver",
+            "minnesota",
+            "oklahoma-city",
+            "portland",
+            "utah"
+          ]
+        },
+        {
+          "id": "pacifique",
+          "nom": "Division Pacifique",
+          "franchises": [
+            "golden-state",
+            "clippers",
+            "lakers",
+            "phoenix",
+            "sacramento"
+          ]
+        },
+        {
+          "id": "sud-ouest",
+          "nom": "Division Sud-Ouest",
+          "franchises": [
+            "dallas",
+            "houston",
+            "memphis",
+            "new-orleans",
+            "san-antonio"
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceAlignement": {
+    "fournisseur": "NBA.com — Standings 2025-26 (liste des équipes par division)",
+    "url": "https://www.nba.com/standings?Season=2025-26",
+    "niveau": "primaire",
+    "consulteLe": "2026-11-24"
+  },
+  "calendrier": {
+    "matchsParEquipe": 82,
+    "contreChaqueAdversaireDeDivision": 4,
+    "adversairesDeConferenceA4Matchs": 6,
+    "adversairesDeConferenceA3Matchs": 4,
+    "contreChaqueAdversaireDeLAutreConference": 2,
+    "premierJour": "2026-10-20",
+    "dernierJour": "2027-04-11",
+    "note": "Formule en place depuis 2004-05 : 16 matchs de division, 24 + 12 matchs de conférence, 30 contre l’autre conférence. Les matchs de la NBA Cup comptent dans les 82 ; la Cup elle-même n’est pas simulée (simplification de la tranche 4).",
+    "sources": [
+      {
+        "fournisseur": "NBA.com — 2026-27 regular season schedule (dates, 82 matchs dont 80 fixés d’avance)",
+        "url": "https://www.nba.com/news/2026-27-nba-regular-season-schedule",
+        "niveau": "primaire",
+        "consulteLe": "2026-11-24"
+      },
+      {
+        "fournisseur": "NBA.com — schedule takeaways 2023-24 (formule 4/4/3/2)",
+        "url": "https://www.nba.com/news/5-schedule-takeaways-2023-24-schedule",
+        "niveau": "primaire",
+        "consulteLe": "2026-11-24"
+      }
+    ]
+  },
+  "playIn": {
+    "qualifiesDirects": 6,
+    "rangsDuPlayIn": [
+      7,
+      10
+    ],
+    "note": "Le 7e reçoit le 8e (le vainqueur est 7e), le 9e reçoit le 10e (le perdant est éliminé), le perdant de 7-8 reçoit le vainqueur de 9-10 (le vainqueur est 8e).",
+    "source": {
+      "fournisseur": "NBA.com — NBA Play-In Tournament",
+      "url": "https://www.nba.com/news/nba-play-in-tournament",
+      "niveau": "primaire",
+      "consulteLe": "2026-11-24"
+    }
+  },
+  "playoffs": {
+    "equipesParConference": 8,
+    "victoiresPourGagnerUneSerie": 4,
+    "appariementsPremierTour": [
+      [
+        1,
+        8
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        2,
+        7
+      ]
+    ],
+    "receveurParMatch": [
+      "haut",
+      "haut",
+      "bas",
+      "bas",
+      "haut",
+      "bas",
+      "haut"
+    ],
+    "note": "Séries au meilleur des sept matchs, format 2-2-1-1-1, tableau fixe sans nouveau classement entre les tours ; avantage du terrain à la meilleure tête de série dans la conférence, au meilleur bilan en finale.",
+    "sources": [
+      {
+        "fournisseur": "Sports Illustrated — NBA Playoffs format",
+        "url": "https://www.si.com/nba/nba-playoffs-format-key-dates-and-more",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-24"
+      },
+      {
+        "fournisseur": "Ticketmaster — NBA Playoffs seeding explained",
+        "url": "https://blog.ticketmaster.com/nba-playoffs-format-explained",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-24"
+      }
+    ]
+  },
+  "departages": {
+    "deuxEquipes": [
+      "confrontations",
+      "vainqueur-division",
+      "bilan-division",
+      "bilan-conference",
+      "bilan-qualifiables-conference",
+      "bilan-qualifiables-autre-conference",
+      "difference-points"
+    ],
+    "plusieursEquipes": [
+      "vainqueur-division",
+      "confrontations",
+      "bilan-division",
+      "bilan-conference",
+      "bilan-qualifiables-conference",
+      "difference-points"
+    ],
+    "dernierRecours": "tirage",
+    "note": "S’appliquent aux places de playoffs, de Play-In et au titre de division (départagé d’abord). « bilan-division » seulement si les équipes sont de la même division ; « qualifiables » : équipes aux dix meilleurs bilans de leur conférence, ex aequo compris. Départage partiel : on reprend les critères depuis le début pour les équipes encore à égalité.",
+    "source": {
+      "fournisseur": "NBA.com — Standings, tiebreaker procedures",
+      "url": "https://www.nba.com/standings?Season=2025-26",
+      "niveau": "primaire",
+      "consulteLe": "2026-11-24"
+    }
+  },
+  "recompenses": {
+    "matchsMinimum": 65,
+    "minutesPourCompter": 20,
+    "concernees": [
+      "mvp",
+      "defenseur",
+      "progression",
+      "all-nba"
+    ],
+    "sansMinimum": [
+      "rookie",
+      "sixieme-homme"
+    ],
+    "equipesAllNba": 3,
+    "joueursParEquipeAllNba": 5,
+    "note": "Règle des 65 matchs (CBA 2023) : un match compte à partir de 20 minutes. Les exceptions (deux matchs entre 15 et 20 minutes, blessure de fin de saison après 62 matchs) ne sont pas simulées. Équipes All-NBA sans poste.",
+    "sources": [
+      {
+        "fournisseur": "Yahoo Sports — Explaining the NBA’s 65-game rule",
+        "url": "https://sports.yahoo.com/explaining-nbas-65-game-rule-030826797.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-24"
+      },
+      {
+        "fournisseur": "Hoops Rumors — glossary, 65-game rule",
+        "url": "https://hoopsrumors.com/2024/03/hoops-rumors-glossary-65-game-rule.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-24"
+      }
+    ]
+  },
+  "allStar": {
+    "titulairesParConference": 5,
+    "remplacantsParConference": 7,
+    "poidsDuVote": {
+      "fans": 0.5,
+      "joueurs": 0.25,
+      "medias": 0.25
+    },
+    "sansPoste": true,
+    "partDeLaSaison": 0.6,
+    "note": "Titulaires : moyenne pondérée des rangs (fans 50 %, joueurs 25 %, médias 25 %), sans poste ; remplaçants choisis par les entraîneurs. Le match oppose l’Est à l’Ouest (décision du 24/11/2026, réponse 9), alors que l’édition 2026 réelle était un tournoi à trois équipes. Date : après 60 % de la saison (choix du jeu).",
+    "source": {
+      "fournisseur": "NBA Communications — 2026 All-Star starters voting results",
+      "url": "https://pr.nba.com/2026-nba-all-star-game-starters-voting-results",
+      "niveau": "primaire",
+      "consulteLe": "2026-11-24"
+    }
+  }
+}

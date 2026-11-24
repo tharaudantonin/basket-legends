@@ -31,6 +31,8 @@ export interface JoueurDuMatch {
   physique: number;
   mental: number;
   tactique: number;
+  /** Tranche 4 : endurance (1-100) ; 70 = fatigue moyenne du modèle. */
+  endurance: number;
   tailleCm: number;
 }
 
@@ -86,7 +88,7 @@ export interface ReglesMatch {
 type ParTir = Record<TypeTir, number>;
 type ParGroupe = Record<Groupe, number>;
 
-/** Les réglages du modèle (data/moteur/match-v2.json), calibrés en tranche 2. */
+/** Les réglages du modèle (data/moteur/match-v3.json), calibrés en tranche 2. */
 export interface ReglagesMatch {
   possession: {
     dureeMoyenneSecondes: number;
@@ -114,6 +116,8 @@ export interface ReglagesMatch {
     seuilRemplacement: number;
     seuilRetour: number;
     malusParPointPerdu: number;
+    /** Effet de l'endurance : la perte de fraîcheur varie de ± cet effet entre l'endurance 40 et l'endurance 100. */
+    effetEndurance: number;
   };
   rotation: { profondeur: number; relaisMinimalSecondes: number };
   tempsMorts: {
@@ -137,6 +141,12 @@ export interface ReglagesMatch {
     partTroisEnRetardDeTrois: number;
     /** Temps laissé au plus sur le chronomètre quand une équipe garde le ballon pour le dernier tir. */
     margeDernierTirSecondes: number;
+  };
+  blessures: {
+    /** Probabilité qu'un joueur sur le terrain se blesse, par minute jouée. */
+    probabiliteParMinute: number;
+    /** Durées d'indisponibilité, en matchs, et leur part. */
+    gravites: { part: number; matchsMin: number; matchsMax: number }[];
   };
   positions: {
     partTroisDansLesCoins: number;
@@ -220,6 +230,8 @@ export type Evenement =
       restants: number;
     })
   | (Repere & { type: 'exclusion'; equipe: Camp; joueur: string })
+  /** Tranche 4 : blessure en match ; le joueur sort au prochain arrêt de jeu et manque les matchs indiqués. */
+  | (Repere & { type: 'blessure'; equipe: Camp; joueur: string; matchsAbsent: number })
   | (Repere & { type: 'remplacement'; equipe: Camp; entrant: string; sortant: string })
   | (Repere & { type: 'fin_periode'; score: [number, number] });
 
@@ -251,6 +263,7 @@ export interface LigneJoueur extends LigneStatistique {
   poste: string;
   titulaire: boolean;
   exclu: boolean;
+  blesse: boolean;
 }
 
 export interface BoxEquipe {

@@ -29,7 +29,7 @@ describe('match rapide déterministe', () => {
     // Si ce test échoue, le moteur, les règles, les réglages ou les effectifs ont changé : vérifier que c'est voulu,
     // puis mettre à jour l'empreinte en le notant dans docs/SIMULATION_MATCH.md.
     const r = simulerMatch(entree(2026, 'boston', 'new-york'));
-    expect(r.empreinte).toBe('f69b9934b578d77d');
+    expect(r.empreinte).toBe('ad47660b78b2fb88');
   });
 
   it('ne modifie pas les équipes reçues', () => {

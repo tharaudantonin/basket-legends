@@ -31,6 +31,8 @@ export interface NotesJoueur {
   physique: number;
   mental: number;
   tactique: number;
+  /** Tranche 4 : endurance (courbe de fatigue propre au joueur). */
+  endurance: number;
   base: BaseDeLaNote;
   /** La saison de statistiques utilisée (null si aucune). */
   saisonDeReference: '2025-2026' | '2024-2025' | null;
@@ -162,6 +164,7 @@ export function calculerNotes(joueurs: readonly EntreeNotes[], stats: Statistiqu
     physique: mesures.map((x) => indice(x, P.poids.physique)),
     mental: mesures.map((x) => indice(x, P.poids.mental)),
     tactique: mesures.map((x) => indice(x, P.poids.tactique)),
+    endurance: mesures.map((x) => indice(x, P.poids.endurance)),
   };
 
   // 3. Recalage par quantiles.
@@ -176,6 +179,7 @@ export function calculerNotes(joueurs: readonly EntreeNotes[], stats: Statistiqu
       physique: arrondi(noteDuQuantile(qs.physique[i]!, P.ancrages.attributs)),
       mental: arrondi(noteDuQuantile(qs.mental[i]!, P.ancrages.attributs)),
       tactique: arrondi(noteDuQuantile(qs.tactique[i]!, P.ancrages.attributs)),
+      endurance: arrondi(noteDuQuantile(qs.endurance[i]!, P.ancrages.attributs)),
       base: 'statistiques',
       saisonDeReference: base.saison,
       minutes: base.t.minutes,
@@ -194,6 +198,7 @@ export function calculerNotes(joueurs: readonly EntreeNotes[], stats: Statistiqu
       physique: note,
       mental: note,
       tactique: note,
+      endurance: note,
       base: choix !== undefined ? 'rang-de-draft' : 'sans-statistique',
       saisonDeReference: null,
       minutes: 0,

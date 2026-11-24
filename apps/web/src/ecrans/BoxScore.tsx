@@ -2,14 +2,15 @@
 // fiche de chaque joueur avec son graphique d'adresse.
 import { useMemo } from 'react';
 import { detecterMoments, type BoxEquipe, type LigneStatistique, type ResultatMatch } from '@basket-legends/engine';
-import { franchiseDe, regles } from '../donnees';
+import { paletteDe, regles } from '../donnees';
 import { encreSur, minutes, pourcentage, signe } from '../format';
 
 interface Props {
   franchise: string;
   resultat: ResultatMatch;
   enCours: boolean;
-  onRejouer: () => void;
+  /** Absent pour un match de saison : on le revit, on ne le rejoue pas. */
+  onRejouer?: () => void;
   onRetour: () => void;
   onFiche: (joueur: string) => void;
 }
@@ -47,7 +48,7 @@ function Cellules({ l }: { l: LigneStatistique }) {
 }
 
 function TableEquipe({ e, onFiche }: { e: BoxEquipe; onFiche: (joueur: string) => void }) {
-  const f = franchiseDe(e.id);
+  const f = { palette: paletteDe(e.id) };
   const joueurs = [...e.joueurs].sort((a, b) => Number(b.titulaire) - Number(a.titulaire) || b.dixiemes - a.dixiemes);
   const t = e.totaux;
   return (
@@ -116,6 +117,7 @@ function TableEquipe({ e, onFiche }: { e: BoxEquipe; onFiche: (joueur: string) =
                   </button>
                   {j.titulaire && <span className="etiquette">5</span>}
                   {j.exclu && <span className="etiquette alerte">6 F</span>}
+                  {j.blesse && <span className="etiquette alerte">Blessé</span>}
                 </th>
                 {j.dixiemes > 0 ? (
                   <Cellules l={j} />
@@ -156,8 +158,8 @@ export function EcranBoxScore({ franchise, resultat, enCours, onRejouer, onRetou
   const { boxScore: b } = resultat;
   const moments = useMemo(() => detecterMoments(resultat), [resultat]);
   const [dom, ext] = b.equipes;
-  const fDom = franchiseDe(dom.id);
-  const fExt = franchiseDe(ext.id);
+  const fDom = { palette: paletteDe(dom.id) };
+  const fExt = { palette: paletteDe(ext.id) };
   const vainqueur = dom.points > ext.points ? dom : ext;
   const victoire = vainqueur.id === franchise;
   return (
@@ -238,11 +240,13 @@ export function EcranBoxScore({ franchise, resultat, enCours, onRejouer, onRetou
           Graine <strong>{resultat.graine}</strong> · empreinte du box score <code>{resultat.empreinte}</code>
         </p>
         <div className="boutons">
-          <button type="button" onClick={onRejouer} disabled={enCours}>
-            Rejouer avec la même graine
-          </button>
+          {onRejouer && (
+            <button type="button" onClick={onRejouer} disabled={enCours}>
+              Rejouer avec la même graine
+            </button>
+          )}
           <button type="button" className="principal" onClick={onRetour}>
-            Retour à l'effectif
+            {onRejouer ? "Retour à l'effectif" : 'Retour à la saison'}
           </button>
         </div>
       </section>

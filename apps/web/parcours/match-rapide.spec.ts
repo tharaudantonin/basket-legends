@@ -3,7 +3,7 @@
 import { expect, test } from '@playwright/test';
 
 /** Empreinte du match de référence (packages/engine/tests/match.test.ts, docs/SIMULATION_MATCH.md § 5). */
-const EMPREINTE_REFERENCE = 'f69b9934b578d77d';
+const EMPREINTE_REFERENCE = 'ad47660b78b2fb88';
 
 test('choisir une franchise affiche son effectif noté', async ({ page }) => {
   await page.goto('/');

@@ -39,6 +39,7 @@ interface EtatJoueur {
   energie: number;
   fautes: number;
   exclu: boolean;
+  blesse: boolean;
   /** Temps de jeu total (dixièmes) au moment de son entrée sur le terrain. */
   entree: number;
 }
@@ -116,7 +117,7 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
 
   const preparer = (equipe: EquipeDuMatch): EtatEquipe => {
     if (equipe.joueurs.length < R.joueursSurLeTerrain) throw new Error(`${equipe.nom} n'a pas assez de joueurs pour jouer.`);
-    const joueurs = new Map(equipe.joueurs.map((j) => [j.id, { j, energie: 100, fautes: 0, exclu: false, entree: 0 }]));
+    const joueurs = new Map(equipe.joueurs.map((j) => [j.id, { j, energie: 100, fautes: 0, exclu: false, blesse: false, entree: 0 }]));
     return {
       equipe,
       joueurs,
@@ -164,7 +165,17 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
     tempsDeJeu += d;
     const minutes = d / 600;
     for (const c of [0, 1] as const) {
-      for (const e of presents(c)) e.energie = Math.max(0, e.energie - G.fatigue.perteParMinute * minutes);
+      for (const e of presents(c)) {
+        // Tranche 4 : chaque joueur se fatigue selon son endurance.
+        const facteur = 1 - G.fatigue.effetEndurance * ((e.j.endurance - 70) / 30);
+        e.energie = Math.max(0, e.energie - G.fatigue.perteParMinute * Math.max(0.2, facteur) * minutes);
+        // Blessure en match : il finit l'action, le staff le sort au prochain arrêt de jeu.
+        if (!e.blesse && h.chance(G.blessures.probabiliteParMinute * minutes)) {
+          e.blesse = true;
+          const g = h.pondere(G.blessures.gravites, (x) => x.part);
+          ecrire({ type: 'blessure', ...repere(), equipe: c, joueur: e.j.id, matchsAbsent: h.entier(g.matchsMin, g.matchsMax) });
+        }
+      }
       recuperer(c, minutes, G.fatigue.recuperationParMinute, false);
     }
   };
@@ -173,7 +184,7 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
   const choisirParmi = (liste: EtatJoueur[], poids: (e: EtatJoueur) => number): EtatJoueur => h.pondere(liste, poids);
 
   // --- Remplacements, seulement à ballon mort. ---
-  const disponible = (e: EtatJoueur, seuil: number): boolean => !e.exclu && e.energie >= seuil;
+  const disponible = (e: EtatJoueur, seuil: number): boolean => !e.exclu && !e.blesse && e.energie >= seuil;
   const remplacer = (c: Camp, sortant: string, entrant: string): void => {
     const eq = equipes[c];
     eq.surTerrain = eq.surTerrain.map((id) => (id === sortant ? entrant : id));
@@ -190,8 +201,9 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
   };
   const faireTourner = (c: Camp): void => {
     const eq = equipes[c];
-    // 1. Joueurs exclus : remplacés par n'importe quel joueur valide (s'il n'y en a plus, l'exclu reste, comme le permet le règlement).
-    for (const e of presents(c).filter((x) => x.exclu)) {
+    // 1. Joueurs exclus ou blessés : remplacés par n'importe quel joueur valide (s'il n'y en a plus, il reste, comme le
+    //    permet le règlement pour l'exclu).
+    for (const e of presents(c).filter((x) => x.exclu || x.blesse)) {
       const r = meilleurRemplacant(c, e, 0, true);
       if (r) remplacer(c, e.j.id, r.j.id);
     }
@@ -578,7 +590,7 @@ export function simulerMatch(entree: EntreeMatch): ResultatMatch {
         const eq = equipes[c];
         for (const id of titulaires[c]) {
           const e = etat(c, id);
-          if (eq.surTerrain.includes(id) || e.exclu || e.energie < G.fatigue.seuilRemplacement) continue;
+          if (eq.surTerrain.includes(id) || e.exclu || e.blesse || e.energie < G.fatigue.seuilRemplacement) continue;
           const cible = presents(c)
             .filter((x) => !titulaires[c].includes(x.j.id))
             .sort((x, y) => Number(x.j.groupe !== e.j.groupe) - Number(y.j.groupe !== e.j.groupe) || effectif(x) - effectif(y))[0];

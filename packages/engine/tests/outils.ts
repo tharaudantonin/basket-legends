@@ -8,7 +8,7 @@ const racine = join(import.meta.dirname, '../../..');
 const json = (chemin: string): unknown => JSON.parse(readFileSync(join(racine, chemin), 'utf8'));
 
 export const regles = valeursDesRegles(schemaRegles.parse(json('data/regles/nba-2026-27.json')));
-export const reglages = reglagesDuMoteur(schemaReglagesMatch.parse(json('data/moteur/match-v2.json')));
+export const reglages = reglagesDuMoteur(schemaReglagesMatch.parse(json('data/moteur/match-v3.json')));
 export const equipes: EquipeDuMatch[] = readdirSync(join(racine, 'data/rosters/2026-27'))
   .filter((f) => f.endsWith('.json'))
   .sort()

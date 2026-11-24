@@ -2,8 +2,8 @@
 // commentaire possession par possession, avec le score, le chronomètre et les statistiques d'équipe en direct.
 // Le rythme d'affichage dépend de l'écran seulement ; il ne touche jamais au match.
 import { useEffect, useMemo, useState } from 'react';
-import { boxScoreAuMoment, chrono, commenterMatch, nomDePeriode, type ResultatMatch } from '@basket-legends/engine';
-import { equipeDe, franchiseDe, regles } from '../donnees';
+import { boxScoreAuMoment, chrono, commenterMatch, nomDePeriode, type EquipeDuMatch, type ResultatMatch } from '@basket-legends/engine';
+import { paletteDe, regles } from '../donnees';
 import { encreSur, pourcentage } from '../format';
 
 interface Props {
@@ -21,10 +21,11 @@ const VITESSES = [
 export function EcranCommente({ resultat, onBoxScore, onRetour }: Props) {
   const N = regles.periodesReglementaires;
   const lignes = useMemo(() => commenterMatch(resultat, N), [resultat, N]);
-  const equipes = useMemo(() => {
-    const [a, b] = resultat.boxScore.equipes;
-    return [equipeDe(a.id), equipeDe(b.id)] as [ReturnType<typeof equipeDe>, ReturnType<typeof equipeDe>];
-  }, [resultat]);
+  // Les équipes telles qu'elles ont joué (absents exclus) : le box score les liste dans le même ordre.
+  const equipes = useMemo(
+    () => resultat.boxScore.equipes.map((e) => ({ id: e.id, nom: e.nom, joueurs: e.joueurs })) as unknown as [EquipeDuMatch, EquipeDuMatch],
+    [resultat],
+  );
   const [position, setPosition] = useState(0);
   const [enLecture, setEnLecture] = useState(true);
   const [vitesse, setVitesse] = useState(1);
@@ -48,7 +49,7 @@ export function EcranCommente({ resultat, onBoxScore, onRetour }: Props) {
     <>
       <header className="tableau-score direct" aria-label="Tableau d'affichage">
         {direct.equipes.map((e) => {
-          const f = franchiseDe(e.id);
+          const f = { palette: paletteDe(e.id) };
           return (
             <div key={e.id} className="camp" style={{ background: f.palette.primary, color: encreSur(f.palette.primary) }}>
               <span className="camp-nom">{e.nom}</span>

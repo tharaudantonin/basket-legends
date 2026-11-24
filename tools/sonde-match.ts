@@ -41,7 +41,7 @@ export function chargerLigue(racine: string): StatistiquesLigue {
 export function sonder(racine: string, nombre: number, reglagesForces?: ReglagesMatch): Rapport {
   const json = (chemin: string): unknown => JSON.parse(readFileSync(join(racine, chemin), 'utf8'));
   const regles = valeursDesRegles(schemaRegles.parse(json('data/regles/nba-2026-27.json')));
-  const reglages = reglagesForces ?? reglagesDuMoteur(schemaReglagesMatch.parse(json('data/moteur/match-v2.json')));
+  const reglages = reglagesForces ?? reglagesDuMoteur(schemaReglagesMatch.parse(json('data/moteur/match-v3.json')));
   const equipes = readdirSync(join(racine, 'data/rosters/2026-27'))
     .filter((f) => f.endsWith('.json'))
     .sort()

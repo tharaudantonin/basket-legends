@@ -16,7 +16,7 @@ export function notesDuDepot(racine: string): Map<string, NotesJoueur> {
   const dossier = 'data/rosters/2026-27';
   const joueurs = readdirSync(join(racine, dossier))
     .filter((f) => f.endsWith('.json'))
-    .flatMap((f) => schemaEffectif.parse(json(`${dossier}/${f}`)).players)
+    .flatMap((f) => (json(`${dossier}/${f}`) as { players: { id: string; measurements: { height: { heightCm: number } } }[] }).players)
     .map((j) => ({ id: j.id, tailleCm: j.measurements.height.heightCm }));
   return new Map(calculerNotes(joueurs, stats, P).map((n) => [n.id, n]));
 }
@@ -38,7 +38,14 @@ export function noteDuJoueur(n: NotesJoueur, version: string) {
       saisonDeReference: n.saisonDeReference,
       calculation: calcul,
     },
-    attributes: { technique: n.technique, physical: n.physique, mental: n.mental, tactical: n.tactique, scale: 100 },
+    attributes: {
+      technique: n.technique,
+      physical: n.physique,
+      mental: n.mental,
+      tactical: n.tactique,
+      endurance: n.endurance,
+      scale: 100,
+    },
   };
 }
 

@@ -6,7 +6,18 @@
 import type { BoxScore, Camp, Evenement, ResultatMatch, TypeTir } from './types';
 
 export type GenreCommentaire =
-  'periode' | 'entre_deux' | 'panier' | 'echec' | 'lancers' | 'perte' | 'faute' | 'exclusion' | 'temps_mort' | 'changement' | 'rebond';
+  | 'periode'
+  | 'entre_deux'
+  | 'panier'
+  | 'echec'
+  | 'lancers'
+  | 'perte'
+  | 'faute'
+  | 'exclusion'
+  | 'blessure'
+  | 'temps_mort'
+  | 'changement'
+  | 'rebond';
 
 export interface LigneCommentaire {
   /** Index, dans le journal, du dernier événement couvert par la ligne (pour rejouer le match jusqu'à ce point). */
@@ -191,6 +202,14 @@ export function commenterMatch(resultat: ResultatMatch, periodesReglementaires: 
           equipe: ev.equipe,
           genre: 'exclusion',
           texte: `${nom(ev.joueur)} est exclu après sa sixième faute.`,
+          important: true,
+        });
+        break;
+      case 'blessure':
+        pousser(i, ev, {
+          equipe: ev.equipe,
+          genre: 'blessure',
+          texte: `${nom(ev.joueur)} se blesse et sortira au prochain arrêt de jeu (absent ${ev.matchsAbsent} match${ev.matchsAbsent > 1 ? 's' : ''}).`,
           important: true,
         });
         break;

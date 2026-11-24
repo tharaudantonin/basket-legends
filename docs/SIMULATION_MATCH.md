@@ -15,7 +15,7 @@ Critères de sortie (`docs/AUDIT_2026-11.md` § 7) :
 | Élément | Fichier | Rôle |
 |---|---|---|
 | Règles NBA de la saison | `data/regles/nba-2026-27.json` | Chaque valeur avec unité, définition et section du NBA Official Rulebook 2026-27. Statut `validated` (24/11/2026). |
-| Réglages du modèle | `data/moteur/match-v2.json` | Probabilités de base, sensibilités, fatigue, rotation. Statut `calibre`. |
+| Réglages du modèle | `data/moteur/match-v3.json` | Probabilités de base, sensibilités, fatigue, rotation. Statut `calibre`. |
 | Cibles de calibration | `data/statistiques/2025-26/ligue.json` | Moyennes de la ligue 2025-26 par équipe et par match (Basketball-Reference). |
 | Schémas | `packages/data/src/schemas.ts` | `schemaRegles`, `schemaReglagesMatch` ; contrôlés par `npm run verifier`. |
 | Passage données → moteur | `packages/data/src/match.ts` | `valeursDesRegles`, `reglagesDuMoteur`, `equipeDuMatch`. |
@@ -83,7 +83,7 @@ Les 19 mesures sont dans leurs fourchettes ; environ 4 ms par match. `packages/e
 
 ## 5. Match de référence
 
-Boston Beacons (domicile) – New York Skyliners, graine 2026 : empreinte `f69b9934b578d77d` depuis la tranche 3 (temps-morts, fins de match, recalibrage ; `a87497bc0d7ba6d3` en tranche 2, `1edb4029b0bb24a2` en tranche 1). Le mode commenté et le mode rapide donnent la même empreinte : testé dans Node (`packages/engine/tests/presentation.test.ts`) et dans le navigateur (`apps/web/parcours/`). Toute modification du moteur, des règles, des réglages ou des effectifs qui change cette empreinte doit être voulue et notée ici.
+Boston Beacons (domicile) – New York Skyliners, graine 2026 : empreinte `ad47660b78b2fb88` depuis la tranche 4 (endurance, blessures, usage recalé ; `f69b9934b578d77d` en tranche 3 avec les temps-morts et fins de match ; `a87497bc0d7ba6d3` en tranche 2, `1edb4029b0bb24a2` en tranche 1). Le mode commenté et le mode rapide donnent la même empreinte : testé dans Node (`packages/engine/tests/presentation.test.ts`) et dans le navigateur (`apps/web/parcours/`). Toute modification du moteur, des règles, des réglages ou des effectifs qui change cette empreinte doit être voulue et notée ici.
 
 ## 6. Mode commenté, moments marquants, fiche joueur (tranche 3)
 
@@ -91,3 +91,10 @@ Boston Beacons (domicile) – New York Skyliners, graine 2026 : empreinte `f69b9
 - **Commentaire :** une ligne par action (panier avec passe, tir manqué avec contre et rebond, série de lancers, perte ou interception, faute, exclusion, temps-mort, changements groupés, début et fin de période). Les tournures varient selon la position de l'événement dans le journal, sans hasard. Moments forts mis en avant : panier au buzzer, panier qui donne l'avantage ou égalise dans la dernière minute, exclusion, temps-mort de fin de match, fins de période.
 - **Moments marquants :** 30, 40 et 50 points, triple-double, 20 rebonds, 15 passes, 6 contres ou interceptions, 8 tirs à trois points, adresse parfaite sur 10 tirs ; victoire au buzzer, panier décisif dans les 10 dernières secondes, prolongations, remontée de 15 points ou plus, écart de 30 points, série de 15 points. Seuils de présentation, rassemblés dans `SEUILS_MOMENTS`. `interetDuMatch` servira au « match de la semaine » (tranche 4).
 - **Fiche joueur :** notes du modèle v1 et leur calcul, moyennes sourcées 2025-26 par compétition (saison régulière, Play-In, playoffs ; 2024-25 pour les absents), avec le lien vers la source ; depuis un box score, le graphique d'adresse du match (demi-terrain schématique et réussite par zone). La mise en forme définitive viendra avec le chantier visuel.
+
+## 7. Endurance, blessures et répartition des tirs (tranche 4)
+
+- **Endurance :** chaque joueur a un indice d'endurance (modèle de notes, `docs/NOTES_JOUEURS.md`) ; sa perte de fraîcheur sur le terrain varie de ± 30 % autour de la valeur du modèle (`fatigue.effetEndurance`). Le joueur le plus utilisé joue environ 37 minutes, le 8e environ 15.
+- **Blessures en match :** événement `blessure` (probabilité par minute jouée, durée d'absence tirée), le joueur sort au prochain arrêt de jeu ; la saison (`docs/SAISON.md`) le rend indisponible pour les matchs suivants. Paramètres du modèle, non sourcés.
+- **Répartition des tirs entre joueurs :** l'échelle d'usage passe de 14 à 35 pour retrouver la distribution réelle des marqueurs 2025-26 (sur une saison simulée : 1er 32,7, 5e 27,4, 10e 25,7, 30e 20,4 points par match, pour 33,5 / 28,3 / 26,0 / 20,1 dans les statistiques relevées). Les moyennes d'équipe ne servaient pas à mesurer cette concentration : c'est désormais testé sur une saison complète (`packages/league/tests/saison.test.ts`).
+- Les 19 mesures d'équipe restent dans leurs fourchettes (`npm run sonde`, 24/11/2026) ; taux de prolongations 1,5 %.

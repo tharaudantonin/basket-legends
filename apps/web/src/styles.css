@@ -531,3 +531,65 @@ button[aria-pressed='true'] {
   stroke: #b3362f;
   stroke-width: 0.25;
 }
+
+/* Tranche 4 : saison. */
+.onglets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+}
+tr.qualifie td:first-child {
+  box-shadow: inset 3px 0 0 #1f7a4d;
+}
+tr.play-in td:first-child {
+  box-shadow: inset 3px 0 0 #c9a227;
+}
+tr.mon-equipe {
+  font-weight: 700;
+}
+.actualites {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.actualites li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgb(0 0 0 / 8%);
+}
+.actualites h3 {
+  margin: 0.1rem 0;
+  font-size: 1rem;
+}
+.actualites p {
+  margin: 0.2rem 0;
+}
+.actualites .importance-3 h3 {
+  font-size: 1.15rem;
+}
+.actualite-date {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+.leaders {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+.champion {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.palmares {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.5rem 1rem;
+}
+.palmares dt {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+.palmares dd {
+  margin: 0;
+  font-weight: 600;
+}

@@ -13,6 +13,7 @@ const joueur = (id: string, poste: string, note: number): JoueurDuMatch => ({
   physique: note,
   mental: note,
   tactique: note,
+  endurance: 70,
   tailleCm: 200,
 });
 

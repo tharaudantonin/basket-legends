@@ -10,6 +10,7 @@ import {
   schemaReglagesMatch,
   schemaRegistre,
   schemaRegles,
+  schemaSaisonLigue,
   schemaStatistiquesJoueurs,
   schemaStatistiquesLigue,
   type Effectif,
@@ -36,6 +37,8 @@ export interface SourcesDonnees {
   statistiques: Record<string, unknown>;
   /** Tranche 2 : contenu de data/modeles/, par nom de fichier. */
   modelesNotes: Record<string, unknown>;
+  /** Tranche 4 : contenu de data/ligue/, par nom de fichier. */
+  ligue: Record<string, unknown>;
 }
 
 export interface Rapport {
@@ -270,6 +273,21 @@ export function verifierDonnees(sources: SourcesDonnees): Rapport {
       if (!versions.has(j.ratings.source))
         erreurs.push(`data/rosters/2026-27/${fichier} : ${j.id} a une note de source « ${j.ratings.source} », d'aucun modèle de notes connu`);
     }
+  }
+
+  // 8. Tranche 4 : structure de la saison.
+  if (!Object.keys(sources.ligue).length) erreurs.push('data/ligue : aucun fichier de saison');
+  for (const [fichier, contenu] of Object.entries(sources.ligue)) {
+    const chemin = `data/ligue/${fichier}`;
+    const lu = schemaSaisonLigue.safeParse(contenu);
+    if (!lu.success) {
+      erreurs.push(...messagesZod(chemin, lu));
+      continue;
+    }
+    const listees = lu.data.conferences.flatMap((c) => c.divisions.flatMap((d) => d.franchises));
+    if (new Set(listees).size !== listees.length) erreurs.push(`${chemin} : une franchise figure dans deux divisions`);
+    for (const id of idsFranchises) if (!listees.includes(id)) erreurs.push(`${chemin} : la franchise « ${id} » n'est dans aucune division`);
+    for (const id of listees) if (!idsFranchises.has(id)) erreurs.push(`${chemin} : franchise « ${id} » inconnue du registre`);
   }
 
   return { erreurs, avertissements, joueurs };
