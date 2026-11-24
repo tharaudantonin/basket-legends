@@ -1,7 +1,7 @@
 # Brooklyn Bridges
 
 > Dossier de direction artistique — Brooklyn  
-> Statut : Ouvert — à co-concevoir  
+> Statut : territoire et palette validés (17 novembre 2026) ; logos, maillots, parquet et salle à co-concevoir  
 > Franchise de référence sportive : Brooklyn Nets
 
 ## 1. Identité et positionnement

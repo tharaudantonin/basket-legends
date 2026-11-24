@@ -1,7 +1,7 @@
 # Oklahoma City Storm Riders
 
 > Dossier de direction artistique — Oklahoma City  
-> Statut : ouvert — à co-concevoir  
+> Statut : territoire et palette validés (17 novembre 2026) ; logos, maillots, parquet et salle à co-concevoir  
 > Franchise de référence sportive : Oklahoma City Thunder
 
 ## 1. Identité et positionnement

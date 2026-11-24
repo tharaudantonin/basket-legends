@@ -1,7 +1,7 @@
 # Denver Peaks
 
 > Dossier de direction artistique — Denver  
-> Statut : Ouvert — à co-concevoir  
+> Statut : territoire et palette validés (17 novembre 2026) ; logos, maillots, parquet et salle à co-concevoir  
 > Franchise de référence sportive : Denver Nuggets
 
 ## 1. Identité et positionnement

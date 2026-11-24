@@ -1,7 +1,7 @@
 # Portland Timberbears
 
 > Dossier de direction artistique — Portland  
-> Statut : ouvert — à co-concevoir  
+> Statut : territoire et palette validés (17 novembre 2026) ; logos, maillots, parquet et salle à co-concevoir  
 > Franchise de référence sportive : Portland Trail Blazers
 
 ## 1. Identité et positionnement

@@ -1,7 +1,7 @@
 # Philadelphia Founders
 
 > Dossier de direction artistique — Philadelphia  
-> Statut : Ouvert — à co-concevoir  
+> Statut : territoire et palette validés (17 novembre 2026) ; logos, maillots, parquet et salle à co-concevoir  
 > Franchise de référence sportive : Philadelphia 76ers
 
 ## 1. Identité et positionnement

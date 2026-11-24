@@ -66,6 +66,10 @@
 - [ ] Préparer les issues techniques et la séquence de développement Claude Code.
 
 ## Phase 4 — Implémentation V1
+
+Découpage en tranches verticales, chacune avec un livrable jouable ou testable : `docs/AUDIT_2026-11.md` § 7 (T0 socle et données, T1 match rapide déterministe et box score, … T5 mode interactif V1).
+
+- [ ] Tranche 0 : migration des identifiants de franchise (`franchises.json` fait foi), noms fictifs, sortie des vrais noms et des notes NBA 2K vers le dossier privé, schémas Zod, `datasetId` et `snapshot.status` normalisés, `paletteProposal` renommé en `palette`.
 - [ ] Monorepo, CI, lint et tests (tranche 0 de `docs/AUDIT_2026-11.md` § 7).
 - [ ] Shell UI et création de carrière.
 - [ ] Référentiel des franchises, joueurs et saisons.

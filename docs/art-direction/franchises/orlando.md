@@ -1,7 +1,7 @@
 # Orlando Comets
 
 > Dossier de direction artistique — Orlando  
-> Statut : Ouvert — à co-concevoir  
+> Statut : territoire et palette validés (17 novembre 2026) ; logos, maillots, parquet et salle à co-concevoir  
 > Franchise de référence sportive : Orlando Magic
 
 ## 1. Identité et positionnement

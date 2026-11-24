@@ -1,7 +1,7 @@
 # Miami Tropics
 
 > Dossier de direction artistique — Miami  
-> Statut : Ouvert — à co-concevoir  
+> Statut : territoire et palette validés (17 novembre 2026) ; logos, maillots, parquet et salle à co-concevoir  
 > Franchise de référence sportive : Miami Heat
 
 ## 1. Identité et positionnement

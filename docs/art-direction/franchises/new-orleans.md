@@ -1,7 +1,7 @@
 # New Orleans Royal
 
 > Dossier de direction artistique — New Orleans  
-> Statut : ouvert — à co-concevoir  
+> Statut : territoire et palette validés (17 novembre 2026) ; logos, maillots, parquet et salle à co-concevoir  
 > Franchise de référence sportive : New Orleans Pelicans
 
 ## 1. Identité et positionnement

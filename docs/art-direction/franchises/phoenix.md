@@ -1,7 +1,7 @@
 # Phoenix Scorpions
 
 > Dossier de direction artistique — Phoenix  
-> Statut : ouvert — à co-concevoir  
+> Statut : territoire et palette validés (17 novembre 2026) ; logos, maillots, parquet et salle à co-concevoir  
 > Franchise de référence sportive : Phoenix Suns
 
 ## 1. Identité et positionnement

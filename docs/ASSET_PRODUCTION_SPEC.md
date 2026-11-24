@@ -97,8 +97,7 @@ Les SVG sont les sources maîtresses pour les éléments vectoriels. Les exports
 ## 7. Statut
 
 - Directions artistiques : 30/30 approuvées.
-- Palettes HEX retranscrites depuis les décisions consolidées : 21/30.
-- Palettes restant à retranscrire : 9/30.
+- Palettes HEX retranscrites et validées : 30/30.
 - Assets finaux : production à lancer.
 - Revue juridique : à effectuer.
 

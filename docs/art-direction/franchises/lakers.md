@@ -1,7 +1,7 @@
 # Los Angeles Stars
 
 > Dossier de direction artistique — Los Angeles  
-> Statut : ouvert — à co-concevoir  
+> Statut : territoire et palette validés (17 novembre 2026) ; logos, maillots, parquet et salle à co-concevoir  
 > Franchise de référence sportive : Los Angeles Lakers
 
 ## 1. Identité et positionnement

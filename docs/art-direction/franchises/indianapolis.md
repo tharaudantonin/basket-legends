@@ -1,7 +1,7 @@
 # Indianapolis Racers
 
 > Dossier de direction artistique — Indianapolis  
-> Statut : Ouvert — à co-concevoir  
+> Statut : territoire et palette validés (17 novembre 2026) ; logos, maillots, parquet et salle à co-concevoir  
 > Franchise de référence sportive : Indiana Pacers
 
 ## 1. Identité et positionnement

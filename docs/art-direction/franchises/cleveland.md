@@ -1,7 +1,7 @@
 # Cleveland Sentinels
 
 > Dossier de direction artistique — Cleveland  
-> Statut : Ouvert — à co-concevoir  
+> Statut : territoire et palette validés (17 novembre 2026) ; logos, maillots, parquet et salle à co-concevoir  
 > Franchise de référence sportive : Cleveland Cavaliers
 
 ## 1. Identité et positionnement
