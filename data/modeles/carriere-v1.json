@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-modele-carriere",
+  "version": "carriere-v1",
+  "statut": "proposition",
+  "note": "Modèle de carrière de la tranche 8 (24/11/2026). Courbe d’âge : montée jusqu’au pic (27 ans, « around 27 or 28 years old », Vaci et al. 2019, p. 1549), déclin ensuite, d’abord rapide puis plus lent (« the rate of the decline is not constant and slows down in older age », p. 1550). Les montants (points de note par saison), les profils par attribut, les retraites et la règle des effectifs sont des choix du modèle, calés pour que la distribution des notes reste stable sur 20 saisons (docs/CARRIERE.md). Contrôle de vraisemblance : durée moyenne de carrière des joueurs restés au moins deux saisons, 9,0 ans (Foutzopoulos et al. 2024, tableau 1, joueurs draftés de 1999 à 2006).",
+  "sources": [
+    {
+      "fournisseur": "Behavior Research Methods (Springer)",
+      "titre": "Vaci, Cocić, Gula et Bilalić, « Large data and Bayesian modeling—aging curves of NBA players », 51(4), p. 1544-1564",
+      "url": "https://eprints.whiterose.ac.uk/159117/1/Large%20data%20and%20Bayesian%20modeling-aging%20curves%20of%20NBA%20players.pdf",
+      "niveau": "primaire",
+      "publieLe": "2019-01-25",
+      "consulteLe": "2026-11-24"
+    },
+    {
+      "fournisseur": "MPRA (Munich Personal RePEc Archive), document n° 121540",
+      "titre": "Foutzopoulos, Pandis et Tsagris, « Predicting full retirement attainment of NBA players »",
+      "url": "https://mpra.ub.uni-muenchen.de/121540/1/MPRA_paper_121540.pdf",
+      "niveau": "primaire",
+      "publieLe": "2024-07-23",
+      "consulteLe": "2026-11-24"
+    }
+  ],
+  "progression": {
+    "evolution": {
+      "19": 2.2,
+      "20": 1.9,
+      "21": 1.6,
+      "22": 1.3,
+      "23": 1,
+      "24": 0.7,
+      "25": 0.4,
+      "26": 0.1,
+      "27": -0.2,
+      "28": -0.6,
+      "29": -1,
+      "30": -1.5,
+      "31": -1.8,
+      "32": -2.3,
+      "33": -2.8,
+      "34": -3.2,
+      "36": -3.4,
+      "38": -3
+    },
+    "ecart": {
+      "19": 2.4,
+      "23": 2.2,
+      "27": 2,
+      "31": 1.8,
+      "35": 2
+    },
+    "rattrapage": {
+      "19": 0.2,
+      "22": 0.18,
+      "25": 0.14,
+      "26": 0.1
+    },
+    "agePic": 27,
+    "profils": [
+      {
+        "attributs": [
+          "vitesse",
+          "contre",
+          "interception",
+          "defenseExterieure",
+          "rebondOffensif"
+        ],
+        "apres": 27,
+        "parAn": -0.8,
+        "max": 6,
+        "note": "Qualités athlétiques : déclinent plus tôt que la note (choix du modèle)."
+      },
+      {
+        "attributs": [
+          "qiOffensif",
+          "qiDefensif",
+          "passe",
+          "lancersFrancs",
+          "tirATroisPoints",
+          "tirMiDistance"
+        ],
+        "apres": 24,
+        "parAn": 0.5,
+        "max": 4,
+        "note": "Adresse et lecture du jeu : progressent plus longtemps que la note (choix du modèle)."
+      }
+    ],
+    "ecartAttribut": 1.2,
+    "compression": {
+      "debut": 88
+    },
+    "endurance": {
+      "apres": 30,
+      "parAn": -1
+    },
+    "bornes": [
+      25,
+      99
+    ]
+  },
+  "retraite": {
+    "ageMax": 41,
+    "sousContrat": {
+      "age": 33,
+      "base": 0.05,
+      "parAn": 0.08,
+      "parPoint": 0.02,
+      "seuil": 72
+    },
+    "sansContrat": {
+      "age": 25,
+      "base": 0.15,
+      "parAn": 0.08,
+      "parPoint": 0.06,
+      "seuil": 62
+    }
+  },
+  "effectifs": {
+    "standardVises": 14,
+    "dureeProlongation": 1,
+    "noteMinProlongation": 62,
+    "ageMaxProlongation": 38,
+    "ageMaxTwoWay": 24,
+    "ageFinDeveloppement": 26
+  },
+  "demenagement": {
+    "probabiliteParSaison": 0.125,
+    "delaiMinimum": 15
+  }
+}

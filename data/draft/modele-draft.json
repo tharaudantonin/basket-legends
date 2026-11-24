@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "datasetId": "basket-legends-modele-draft",
   "statut": "proposition",
-  "note": "Choix du modèle (aucune cible sourcée) pour générer les classes de Draft et le vivier de joueurs originaux, et pour le scouting à notes incertaines. Échelle hors NBA 40-67 (décision du 24/11/2026). À valider par Antonin.",
+  "note": "Choix du modèle (aucune cible sourcée) pour générer les classes de Draft et pour le scouting à notes incertaines. Depuis la tranche 8 (réponse 22), les prospects suivent l’échelle des vrais rookies : notes a priori du modèle de notes selon le rang (73 au 1er choix, 64 au 30e, 60 au 60e). Le vivier hors NBA garde l’échelle 40-67. Potentiel recalé avec la carrière sur 20 saisons. À valider par Antonin.",
   "classe": {
     "taille": 100,
     "ages": {
@@ -84,18 +84,18 @@
       }
     },
     "note": {
-      "moyenne": 50,
+      "moyenne": 60.5,
       "ecartTalent": 5,
-      "parAnnee": 1.5,
+      "parAnnee": 1,
       "bruit": 2,
-      "min": 40,
-      "max": 67
+      "min": 45,
+      "max": 73
     },
     "potentiel": {
-      "marge": 14,
-      "ecartTalent": 7,
+      "marge": 4,
+      "ecartTalent": 7.5,
       "ecartPropre": 4,
-      "parAnneeDAge": 3,
+      "parAnneeDAge": 2,
       "max": 97
     },
     "details": {

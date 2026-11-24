@@ -4,6 +4,8 @@ import type { DecisionMatch, EquipeDuMatch, JoueurDuMatch, ReglagesMatch, Regles
 import type { DonneesSalariales } from './cba';
 import type { DonneesDraft } from './draft/draft';
 import type { EtatDraft } from './draft/types';
+import type { ArchiveSaison, Univers } from './carriere/types';
+import type { DonneesCarriere } from './carriere/univers';
 
 export type CritereDepartage =
   | 'confrontations'
@@ -59,6 +61,13 @@ export interface ContexteLigue {
   salaires: DonneesSalariales;
   /** Tranche 7 : loterie, propriété des choix, génération des prospects et scouting (absent : pas de Draft). */
   draft?: DonneesDraft;
+  /**
+   * Tranche 8 : l'univers de la saison (joueurs, effectifs, contrats, identités). Pour la première saison, celui des
+   * données de référence ; ensuite, celui de l'état de la saison. Absent : pas de carrière (une seule saison).
+   */
+  univers?: Univers;
+  /** Tranche 8 : modèle de carrière (progression, retraites, effectifs) et villes d'accueil. */
+  carriere?: DonneesCarriere;
 }
 
 export type Phase = 'reguliere' | 'play-in' | 'playoffs' | 'terminee';
@@ -213,7 +222,8 @@ export interface Actualite {
     | 'playoffs'
     | 'palmares'
     | 'finances'
-    | 'draft';
+    | 'draft'
+    | 'intersaison';
 }
 
 export interface EtatSaison {
@@ -247,6 +257,10 @@ export interface EtatSaison {
   derniereSemaine: number;
   /** Tranche 7 : la Draft qui suit la saison (classe, scouting du GM, loterie, choix). Absente des sauvegardes plus anciennes. */
   draft?: EtatDraft;
+  /** Tranche 8 : l'univers de cette saison (absent pour la première saison : celui des données de référence). */
+  univers?: Univers;
+  /** Tranche 8 : les saisons déjà jouées de la carrière, de la plus ancienne à la plus récente. */
+  archives?: ArchiveSaison[];
 }
 
 export type { EquipeDuMatch, JoueurDuMatch };

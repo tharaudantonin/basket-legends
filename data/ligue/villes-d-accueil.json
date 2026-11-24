@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-villes-d-accueil",
+  "statut": "proposition",
+  "note": "Villes sans équipe NBA citées comme marchés possibles d’expansion ou de déménagement (décision du 24/11/2026, réponse 7 : liste fermée). Conférence : rattachement géographique proposé par le jeu (une franchise ne déménage que vers une ville de sa conférence, docs/CARRIERE.md § 7). Noms : propositions originales à valider par Antonin, puis à soumettre à la revue juridique de la porte de publication (homonymes possibles dans d’autres sports).",
+  "villes": [
+    {
+      "id": "seattle",
+      "ville": "Seattle",
+      "pays": "États-Unis",
+      "conference": "ouest",
+      "abreviation": "SEA",
+      "noms": [
+        "Cascades",
+        "Evergreens"
+      ],
+      "statutNoms": "proposition",
+      "sources": [
+        {
+          "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
+          "titre": "NBA expansion FAQ: Cities, draft, teams and the league’s future",
+          "url": "https://www.espn.co.uk/nba/story/_/id/41286389/nba-expansion-cities-draft-teams-leagues-line",
+          "niveau": "secondaire",
+          "publieLe": "2024-09-17",
+          "consulteLe": "2026-11-24"
+        },
+        {
+          "fournisseur": "Front Office Sports (Alex Schiffer)",
+          "titre": "NBA Expansion Heats Up in Vegas, Slows in Seattle",
+          "url": "https://frontofficesports.com/article/nba-expansion-heats-up-vegas-slows-seattle/",
+          "niveau": "secondaire",
+          "publieLe": "2026-07-09",
+          "consulteLe": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "las-vegas",
+      "ville": "Las Vegas",
+      "pays": "États-Unis",
+      "conference": "ouest",
+      "abreviation": "LVG",
+      "noms": [
+        "Neons",
+        "Mirages"
+      ],
+      "statutNoms": "proposition",
+      "sources": [
+        {
+          "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
+          "titre": "NBA expansion FAQ: Cities, draft, teams and the league’s future",
+          "url": "https://www.espn.co.uk/nba/story/_/id/41286389/nba-expansion-cities-draft-teams-leagues-line",
+          "niveau": "secondaire",
+          "publieLe": "2024-09-17",
+          "consulteLe": "2026-11-24"
+        },
+        {
+          "fournisseur": "Front Office Sports (Alex Schiffer)",
+          "titre": "NBA Expansion Heats Up in Vegas, Slows in Seattle",
+          "url": "https://frontofficesports.com/article/nba-expansion-heats-up-vegas-slows-seattle/",
+          "niveau": "secondaire",
+          "publieLe": "2026-07-09",
+          "consulteLe": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "mexico",
+      "ville": "Mexico",
+      "pays": "Mexique",
+      "conference": "ouest",
+      "abreviation": "MEX",
+      "noms": [
+        "Volcanes",
+        "Quetzales"
+      ],
+      "statutNoms": "proposition",
+      "sources": [
+        {
+          "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
+          "titre": "NBA expansion FAQ: Cities, draft, teams and the league’s future",
+          "url": "https://www.espn.co.uk/nba/story/_/id/41286389/nba-expansion-cities-draft-teams-leagues-line",
+          "niveau": "secondaire",
+          "publieLe": "2024-09-17",
+          "consulteLe": "2026-11-24"
+        },
+        {
+          "fournisseur": "NTD / The Epoch Times (Ross Kelly)",
+          "titre": "Top Potential NBA Expansion Cities If Las Vegas and Seattle Don’t Land Teams",
+          "url": "https://www.ntd.com/top-potential-nba-expansion-cities-if-las-vegas-and-seattle-dont-land-teams_1135239.html",
+          "niveau": "secondaire",
+          "publieLe": "2026-03-28",
+          "consulteLe": "2026-11-24"
+        },
+        {
+          "fournisseur": "Sports Illustrated, On SI (Jeremy Brener)",
+          "titre": "3 Potential Blazers Relocation Cities If Moda Center Deal Fails",
+          "url": "https://www.si.com/nba/trailblazers/onsi/3-potential-blazers-relocation-cities-if-moda-center-deal-fails",
+          "niveau": "secondaire",
+          "publieLe": "2026-07-29",
+          "consulteLe": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "kansas-city",
+      "ville": "Kansas City",
+      "pays": "États-Unis",
+      "conference": "ouest",
+      "abreviation": "KCF",
+      "noms": [
+        "Fountains",
+        "Plainsmen"
+      ],
+      "statutNoms": "proposition",
+      "sources": [
+        {
+          "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
+          "titre": "NBA expansion FAQ: Cities, draft, teams and the league’s future",
+          "url": "https://www.espn.co.uk/nba/story/_/id/41286389/nba-expansion-cities-draft-teams-leagues-line",
+          "niveau": "secondaire",
+          "publieLe": "2024-09-17",
+          "consulteLe": "2026-11-24"
+        },
+        {
+          "fournisseur": "Sports Illustrated, On SI (Jeremy Brener)",
+          "titre": "3 Potential Blazers Relocation Cities If Moda Center Deal Fails",
+          "url": "https://www.si.com/nba/trailblazers/onsi/3-potential-blazers-relocation-cities-if-moda-center-deal-fails",
+          "niveau": "secondaire",
+          "publieLe": "2026-07-29",
+          "consulteLe": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "vancouver",
+      "ville": "Vancouver",
+      "pays": "Canada",
+      "conference": "ouest",
+      "abreviation": "VAN",
+      "noms": [
+        "Orcas",
+        "Tidewater"
+      ],
+      "statutNoms": "proposition",
+      "sources": [
+        {
+          "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
+          "titre": "NBA expansion FAQ: Cities, draft, teams and the league’s future",
+          "url": "https://www.espn.co.uk/nba/story/_/id/41286389/nba-expansion-cities-draft-teams-leagues-line",
+          "niveau": "secondaire",
+          "publieLe": "2024-09-17",
+          "consulteLe": "2026-11-24"
+        },
+        {
+          "fournisseur": "NTD / The Epoch Times (Ross Kelly)",
+          "titre": "Top Potential NBA Expansion Cities If Las Vegas and Seattle Don’t Land Teams",
+          "url": "https://www.ntd.com/top-potential-nba-expansion-cities-if-las-vegas-and-seattle-dont-land-teams_1135239.html",
+          "niveau": "secondaire",
+          "publieLe": "2026-03-28",
+          "consulteLe": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "san-jose",
+      "ville": "San José",
+      "pays": "États-Unis",
+      "conference": "ouest",
+      "abreviation": "SJV",
+      "noms": [
+        "Voltage",
+        "Circuit"
+      ],
+      "statutNoms": "proposition",
+      "sources": [
+        {
+          "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
+          "titre": "NBA expansion FAQ: Cities, draft, teams and the league’s future",
+          "url": "https://www.espn.co.uk/nba/story/_/id/41286389/nba-expansion-cities-draft-teams-leagues-line",
+          "niveau": "secondaire",
+          "publieLe": "2024-09-17",
+          "consulteLe": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "austin",
+      "ville": "Austin",
+      "pays": "États-Unis",
+      "conference": "ouest",
+      "abreviation": "AUS",
+      "noms": [
+        "Armadillos",
+        "Hill Country"
+      ],
+      "statutNoms": "proposition",
+      "sources": [
+        {
+          "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
+          "titre": "NBA expansion FAQ: Cities, draft, teams and the league’s future",
+          "url": "https://www.espn.co.uk/nba/story/_/id/41286389/nba-expansion-cities-draft-teams-leagues-line",
+          "niveau": "secondaire",
+          "publieLe": "2024-09-17",
+          "consulteLe": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "louisville",
+      "ville": "Louisville",
+      "pays": "États-Unis",
+      "conference": "est",
+      "abreviation": "LOU",
+      "noms": [
+        "Thoroughbreds",
+        "Bourbons"
+      ],
+      "statutNoms": "proposition",
+      "sources": [
+        {
+          "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
+          "titre": "NBA expansion FAQ: Cities, draft, teams and the league’s future",
+          "url": "https://www.espn.co.uk/nba/story/_/id/41286389/nba-expansion-cities-draft-teams-leagues-line",
+          "niveau": "secondaire",
+          "publieLe": "2024-09-17",
+          "consulteLe": "2026-11-24"
+        },
+        {
+          "fournisseur": "NTD / The Epoch Times (Ross Kelly)",
+          "titre": "Top Potential NBA Expansion Cities If Las Vegas and Seattle Don’t Land Teams",
+          "url": "https://www.ntd.com/top-potential-nba-expansion-cities-if-las-vegas-and-seattle-dont-land-teams_1135239.html",
+          "niveau": "secondaire",
+          "publieLe": "2026-03-28",
+          "consulteLe": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "montreal",
+      "ville": "Montréal",
+      "pays": "Canada",
+      "conference": "est",
+      "abreviation": "MTL",
+      "noms": [
+        "Aurores",
+        "Voyageurs"
+      ],
+      "statutNoms": "proposition",
+      "sources": [
+        {
+          "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
+          "titre": "NBA expansion FAQ: Cities, draft, teams and the league’s future",
+          "url": "https://www.espn.co.uk/nba/story/_/id/41286389/nba-expansion-cities-draft-teams-leagues-line",
+          "niveau": "secondaire",
+          "publieLe": "2024-09-17",
+          "consulteLe": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "virginia-beach",
+      "ville": "Virginia Beach",
+      "pays": "États-Unis",
+      "conference": "est",
+      "abreviation": "VAB",
+      "noms": [
+        "Breakers",
+        "Lighthouses"
+      ],
+      "statutNoms": "proposition",
+      "sources": [
+        {
+          "fournisseur": "NTD / The Epoch Times (Ross Kelly)",
+          "titre": "Top Potential NBA Expansion Cities If Las Vegas and Seattle Don’t Land Teams",
+          "url": "https://www.ntd.com/top-potential-nba-expansion-cities-if-las-vegas-and-seattle-dont-land-teams_1135239.html",
+          "niveau": "secondaire",
+          "publieLe": "2026-03-28",
+          "consulteLe": "2026-11-24"
+        },
+        {
+          "fournisseur": "Sports Illustrated, On SI (Jeremy Brener)",
+          "titre": "3 Potential Blazers Relocation Cities If Moda Center Deal Fails",
+          "url": "https://www.si.com/nba/trailblazers/onsi/3-potential-blazers-relocation-cities-if-moda-center-deal-fails",
+          "niveau": "secondaire",
+          "publieLe": "2026-07-29",
+          "consulteLe": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "saint-louis",
+      "ville": "Saint-Louis",
+      "pays": "États-Unis",
+      "conference": "est",
+      "abreviation": "STL",
+      "noms": [
+        "Arches",
+        "Riverboats"
+      ],
+      "statutNoms": "proposition",
+      "sources": [
+        {
+          "fournisseur": "NTD / The Epoch Times (Ross Kelly)",
+          "titre": "Top Potential NBA Expansion Cities If Las Vegas and Seattle Don’t Land Teams",
+          "url": "https://www.ntd.com/top-potential-nba-expansion-cities-if-las-vegas-and-seattle-dont-land-teams_1135239.html",
+          "niveau": "secondaire",
+          "publieLe": "2026-03-28",
+          "consulteLe": "2026-11-24"
+        }
+      ]
+    }
+  ]
+}

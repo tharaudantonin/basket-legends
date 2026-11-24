@@ -1,7 +1,7 @@
 // Tranche 6 : la masse salariale. Pour sa franchise : contrats, repères de la CBA (plafond, taxe, aprons), exceptions,
 // taxe estimée et un contrôle de signature ; pour la ligue : la situation des 30 équipes. Mise en forme sobre : le rendu
 // définitif viendra avec le chantier visuel.
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import {
   LIBELLES_MOYEN,
   LIBELLES_NIVEAU,
@@ -14,11 +14,9 @@ import {
   type DemandeSignature,
   type MoyenDeSignature,
 } from '@basket-legends/league';
-import { effectifs, fichierCba, salaires } from '../donnees';
+import { fichierCba } from '../donnees';
 import { dollars } from '../format';
-
-const joueursDe = (equipe: string): string[] => effectifs.get(equipe)?.players.map((p) => p.id) ?? [];
-const nomDe = (equipe: string): string => effectifs.get(equipe)?.franchise.fictionalName ?? equipe;
+import { equipesActives, joueursDeLEquipe as joueursDe, nomEquipe as nomDe, nomJoueur, salairesActifs } from '../vue';
 
 export const LIBELLES_TYPE: Record<ContratJoueur['type'], string> = {
   standard: 'Standard',
@@ -53,15 +51,16 @@ interface Props {
 }
 
 export function MasseSalariale({ franchise, onFiche }: Props) {
+  // Tranche 8 : la saison affichée (contrats de l'univers de la partie, CBA des données reconduite).
+  const salaires = salairesActifs();
   const P = salaires.cba;
   const saison = saisonCourte(salaires.saison);
-  const situations = useMemo(
-    () => [...effectifs.keys()].map((e) => situationEquipe(salaires, e, joueursDe(e))).sort((a, b) => b.masse - a.masse),
-    [],
-  );
+  const situations = equipesActives()
+    .map((e) => situationEquipe(salaires, e, joueursDe(e)))
+    .sort((a, b) => b.masse - a.masse);
   const s = situations.find((x) => x.equipe === franchise)!;
   const controle = controlerEquipe(salaires, s);
-  const joueurs = effectifs.get(franchise)!.players;
+  const joueurs = joueursDe(franchise).map((id) => ({ id, nom: nomJoueur(id) }));
   const contrats = joueurs
     .map((j) => ({ j, c: salaires.contrats[j.id] }))
     .sort(
@@ -159,7 +158,7 @@ export function MasseSalariale({ franchise, onFiche }: Props) {
                 <tr key={j.id}>
                   <th scope="row" className="gauche">
                     <button type="button" className="lien" onClick={() => onFiche(j.id)}>
-                      {j.fictionalDisplayName}
+                      {j.nom}
                     </button>
                   </th>
                   <td>{c ? LIBELLES_TYPE[c.type] : '–'}</td>

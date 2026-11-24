@@ -1,6 +1,7 @@
 // Tranches 1 à 5 : choisir une franchise → voir l'effectif → jouer un match isolé (rapide, commenté ou interactif) ou
 // lancer la saison 2026-27 (calendrier, classements, Play-In, playoffs, palmarès), sauvegardée dans le navigateur ; les
-// matchs de sa franchise peuvent s'y jouer en interactif, repris au même point après un rechargement.
+// matchs de sa franchise peuvent s'y jouer en interactif, repris au même point après un rechargement. Tranche 8 : la
+// carrière continue saison après saison (intersaison, univers de la partie affiché par les écrans).
 import { useEffect, useState } from 'react';
 import { nouvelleGraine, type Camp, type DecisionMatch, type EntreeMatch, type ResultatMatch } from '@basket-legends/engine';
 import { observationsRestantes, type Cible, type EtatSaison, type ResumeMatch, type Sauvegarde } from '@basket-legends/league';
@@ -18,9 +19,11 @@ import {
   nouvelleSaisonDansLeMoteur,
   prochainMatchDansLeMoteur,
   rejouerDansLeMoteur,
+  saisonSuivanteDansLeMoteur,
   simulerDansLeMoteur,
 } from './moteur';
 import { charger, enregistrer } from './sauvegarde';
+import { activerUnivers } from './vue';
 
 type Ecran =
   | { nom: 'choix' }
@@ -47,6 +50,8 @@ export function App() {
   const [enCours, setEnCours] = useState(false);
   const [erreur, setErreur] = useState<string>();
   const [sauvegarde, setSauvegarde] = useState<Sauvegarde>();
+  // Tranche 8 : les écrans montrent l'univers de la saison enregistrée (celui des données pour la première saison).
+  activerUnivers(sauvegarde?.etat.univers);
 
   useEffect(() => {
     charger()
@@ -161,6 +166,13 @@ export function App() {
       await garder(await avancerDraftDansLeMoteur(sauvegarde.etat, prospect));
     });
 
+  /** Tranche 8 : intersaison (progression, retraites, contrats, effectifs) et saison suivante. */
+  const saisonSuivante = () =>
+    tache(async () => {
+      if (!sauvegarde) return;
+      await garder(await saisonSuivanteDansLeMoteur(sauvegarde.etat));
+    });
+
   const revivre = (m: ResumeMatch, mode: 'rapide' | 'commente') =>
     tache(async () => {
       if (!sauvegarde) return;
@@ -210,6 +222,7 @@ export function App() {
           onObserver={(p, d) => void observer(p, d)}
           onDeleguer={(d) => void deleguer(d)}
           onAvancerDraft={(p) => void avancerDraft(p)}
+          onSaisonSuivante={() => void saisonSuivante()}
         />
       )}
       {ecran.nom === 'interactif' && (

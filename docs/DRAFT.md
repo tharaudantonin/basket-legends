@@ -25,7 +25,7 @@ Le modèle de notes v2 (16 attributs détaillés) et le moteur v5 de la même tr
 | `data/vivier/2026-27.json` | 320 joueurs générés et leurs paramètres | `proposition` | Choix du modèle |
 | `data/noms/banques.json` | Banques complétées pour la génération (§ 10) | — | Listes écrites pour le jeu |
 
-Scripts : `tools/migrations/2026-11-24-tranche7-draft.ts`, `…-echelle-rookies.ts`, `…-banques.ts`, `…-vivier.ts`, `…-ages.ts`. `npm run verifier` contrôle ces fichiers (schémas Zod, franchises connues, nombre d'attributions par règle, 40-67 pour les prospects et le vivier, échelle croissante, noms jamais réels ni repris) et signale les statuts « à recouper » et « proposition ».
+Scripts : `tools/migrations/2026-11-24-tranche7-draft.ts`, `…-echelle-rookies.ts`, `…-banques.ts`, `…-vivier.ts`, `…-ages.ts`. `npm run verifier` contrôle ces fichiers (schémas Zod, franchises connues, nombre d'attributions par règle, 40-73 pour les prospects (réponse 22) et 40-67 pour le vivier, échelle croissante, noms jamais réels ni repris) et signale les statuts « à recouper » et « proposition ».
 
 ## 3. Loterie 3-2-1 (`packages/league/src/draft/loterie.ts`)
 
@@ -52,8 +52,8 @@ Le fichier suit la page de synthèse RealGM. Six écarts avec la page détaillé
 ## 5. Prospects (`prospects.ts`, `modele-draft.json` bloc `classe`)
 
 Chaque prospect a un talent latent (gaussien) ; les 100 talents sont triés, le meilleur porte l'identifiant `p<année>-001`.
-- **Note actuelle** = 50 + 5 × talent + 1,5 × (âge − 19) + bruit (écart-type 2), bornée à 40-67.
-- **Potentiel** = note + marge, marge = 14 + 7 × talent + part propre (écart-type 4) − 3 × (âge − 19), au plus 97.
+- **Note actuelle** = 60,5 + 5 × talent + 1 × (âge − 19) + bruit (écart-type 2), bornée à 45-73. Depuis la tranche 8 (réponse 22), les prospects suivent l'échelle des vrais rookies : le talent du 1er d'une classe de 100 (environ +2,3 écarts-types) donne 73, celui du 30e (environ +0,5) 64, celui du 60e (environ −0,25) 60, comme les notes a priori du modèle de notes (`docs/NOTES_JOUEURS.md` § 3). Avant : 50 + 5 × talent + 1,5 × (âge − 19), bornée à 40-67.
+- **Potentiel** = note + marge, marge = 4 + 7,5 × talent + part propre (écart-type 4) − 2 × (âge − 19), au moins 0, au plus 97 (recalé avec la carrière sur 20 saisons, `docs/CARRIERE.md` § 8 ; avant : 14 + 7 × talent − 3 × (âge − 19)).
 - **Âge** 19 à 22 (40 %, 25 %, 20 %, 15 %) ; **origine** université 65 %, international 25 %, G League 10 % ; pays tiré selon l'origine ; poste, taille par poste, poids par IMC moyen 24,2.
 - **Attributs détaillés** : note + profil du groupe de poste + écart propre (écart-type 6), bornés à 25-85 ; les familles en sont les moyennes.
 - **Nom** tiré dans les banques du pays : jamais un nom réel interdit (empreintes), jamais un nom du snapshot ou du vivier, jamais deux fois le même (200 essais, sinon erreur).
@@ -72,7 +72,7 @@ Valeur d'un prospect pour une équipe, selon ses propres rapports : 0,45 × note
 
 ## 8. Soirée de Draft et contrats des rookies
 
-`avancerDraft` fait les choix jusqu'au prochain choix du GM (non délégué) ou jusqu'à la fin ; le Web Worker l'exécute (`draft-avancer`). À la fin, `recruesDeLaDraft` donne à chaque choix du 1er tour les quatre salaires de l'échelle (deux saisons garanties, deux options de l'équipe), en proportion du plafond : montant de l'échelle 2026 × plafond ÷ 164 961 000 $. La relation est observée sur 2025 et 2026 (+6,67 %, exactement la hausse du plafond) et reste à recouper avec l'article VIII de la CBA 2023. **Montants provisoires :** le dépôt n'a que la CBA 2026-27 ; le plafond 2026-27 sert tant que celui de 2027-28 n'est pas relevé (`plafond.provisoire`). Les recrues du 2e tour n'ont pas de salaire fixé. Les recrues ne rejoignent pas encore les effectifs : cela vient avec la carrière multi-saisons (tranche 8) et les signatures (tranche 9).
+`avancerDraft` fait les choix jusqu'au prochain choix du GM (non délégué) ou jusqu'à la fin ; le Web Worker l'exécute (`draft-avancer`). À la fin, `recruesDeLaDraft` donne à chaque choix du 1er tour les quatre salaires de l'échelle (deux saisons garanties, deux options de l'équipe), en proportion du plafond : montant de l'échelle 2026 × plafond ÷ 164 961 000 $. La relation est observée sur 2025 et 2026 (+6,67 %, exactement la hausse du plafond) et reste à recouper avec l'article VIII de la CBA 2023. **Montants provisoires :** le dépôt n'a que la CBA 2026-27 ; le plafond 2026-27 sert tant que celui de 2027-28 n'est pas relevé (`plafond.provisoire`). Les recrues du 2e tour n'ont pas de salaire fixé. Depuis la tranche 8, les recrues rejoignent les effectifs à l'intersaison : contrat de l'échelle pour le 1er tour, two-way s'il reste une place pour le 2e tour (`docs/CARRIERE.md` § 3).
 
 ## 9. Vivier de joueurs générés (`data/vivier/2026-27.json`)
 
@@ -98,7 +98,7 @@ Onglet **Draft** de l'écran de saison : classe triée par consensus ou par rapp
 
 ## 13. Tests
 
-- `packages/league/tests/draft.test.ts` : loterie (déterminisme, contrôle des catégories, plancher sur 400 tirages, probabilités du n° 1 par catégorie sur 3 000 tirages, limites et historique réel) ; propriété des choix 2027 (60 choix attribués sur 50 ordres différents, protection, meilleur de deux choix) ; classe (déterminisme, 40-67, potentiel ≥ note, noms) ; scouting (fourchette qui se resserre, erreur propre à chaque équipe, couverture d'environ 90 %, budget) ; saison complète puis loterie, 60 choix, arrêt au choix du GM, délégation déterministe, recrues et contrats ; échelle des rookies.
+- `packages/league/tests/draft.test.ts` : loterie (déterminisme, contrôle des catégories, plancher sur 400 tirages, probabilités du n° 1 par catégorie sur 3 000 tirages, limites et historique réel) ; propriété des choix 2027 (60 choix attribués sur 50 ordres différents, protection, meilleur de deux choix) ; classe (déterminisme, 40-73, potentiel ≥ note, noms) ; scouting (fourchette qui se resserre, erreur propre à chaque équipe, couverture d'environ 90 %, budget) ; saison complète puis loterie, 60 choix, arrêt au choix du GM, délégation déterministe, recrues et contrats ; échelle des rookies.
 - `packages/data/tests/noms-generes.test.ts` : SHA-256 contre `node:crypto`, banques suffisantes pour chaque pays, refus des noms interdits.
 - `apps/web/parcours/draft.spec.ts` : scouter, lire la loterie et l'ordre des choix, faire la Draft, voir le vivier.
 
@@ -107,5 +107,5 @@ Onglet **Draft** de l'écran de saison : classe triée par consensus ou par rapp
 1. Table officielle des probabilités de la loterie 3-2-1 (réponse 13) ; recouper le mécanisme du tirage.
 2. `choix-2027.json` : recouper les règles et les six écarts avec une source primaire ou une seconde source.
 3. `modele-draft.json` et le vivier : moyennes, écarts, âges, origines, poids du choix du staff.
-4. Incohérence à arbitrer : un prospect est noté entre 40 et 67 (décision du 24/11/2026), alors que le modèle de notes donne 73 au 1er choix 2026 (note a priori par rang de draft, `docs/NOTES_JOUEURS.md` § 3). Un n° 1 généré entrera donc dans la ligue nettement sous le n° 1 réel de 2026.
+4. ~~Incohérence entre l'échelle 40-67 des prospects et la note a priori de 73 au 1er choix réel~~ : tranchée le 24/11/2026 (réponse 22, échelle des vrais rookies).
 5. Plafond 2027-28 (contrats des rookies provisoires).

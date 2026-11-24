@@ -1,9 +1,10 @@
 // Parcours de la tranche 7 : scouter la classe pendant la saison (fourchettes, observations), puis, la saison terminée,
 // lire la loterie 3-2-1 et l'ordre des 60 choix, et faire la soirée de Draft (choix du GM ou délégation au staff).
+// Tranche 8 : puis passer à la saison suivante (intersaison) et retrouver la saison écoulée dans l'histoire.
 import { expect, test } from '@playwright/test';
 
-test('le GM scoute la classe, lit la loterie et fait sa Draft', async ({ page }) => {
-  test.setTimeout(90_000);
+test('le GM scoute la classe, lit la loterie, fait sa Draft et passe à la saison suivante', async ({ page }) => {
+  test.setTimeout(120_000);
   page.on('dialog', (d) => void d.accept());
   await page.goto('/');
   await page.getByRole('button', { name: /Boston Beacons/ }).click();
@@ -55,4 +56,20 @@ test('le GM scoute la classe, lit la loterie et fait sa Draft', async ({ page })
   // Le vivier des joueurs hors NBA.
   await page.getByRole('button', { name: 'Hors NBA' }).click();
   await expect(page.getByRole('region', { name: 'Vivier' }).locator('tbody tr')).toHaveCount(320);
+
+  // Tranche 8 : l'intersaison, puis la saison suivante, jouable, avec la saison écoulée dans l'histoire.
+  await page.getByRole('button', { name: 'Passer à la saison 2027–2028' }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('2027–2028', { timeout: 30_000 });
+  await expect(page.getByRole('status').filter({ hasText: 'Saison régulière' })).toBeVisible();
+  await page.getByRole('button', { name: 'Histoire' }).click();
+  await expect(page.getByTestId('histoire').locator('tbody tr')).toHaveCount(1);
+  await page.getByRole('button', { name: 'Masse salariale' }).click();
+  await expect(page.getByRole('heading', { name: 'Masse salariale 2027-28' })).toBeVisible();
+  await page.getByRole('button', { name: 'Jour suivant' }).click();
+  await expect(
+    page
+      .getByRole('status')
+      .filter({ hasText: /2027–2028|Saison régulière/ })
+      .first(),
+  ).toBeVisible();
 });

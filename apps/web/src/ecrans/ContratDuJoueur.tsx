@@ -1,10 +1,11 @@
 // Tranche 6 : le contrat d'un joueur sur sa fiche (salaires par saison, options, garanti, ancienneté, draft).
-import { salaireMinimum, salaireMaximum } from '@basket-legends/league';
-import { salaires } from '../donnees';
+import { saisonCourte, salaireMinimum, salaireMaximum } from '@basket-legends/league';
+import { salairesActifs } from '../vue';
 import { dollars } from '../format';
 import { LIBELLES_TYPE, Salaire } from './MasseSalariale';
 
 export function ContratDuJoueur({ joueur }: { joueur: string }) {
+  const salaires = salairesActifs();
   const c = salaires.contrats[joueur];
   if (!c) return null;
   const P = salaires.cba;
@@ -14,7 +15,7 @@ export function ContratDuJoueur({ joueur }: { joueur: string }) {
       <p>
         {LIBELLES_TYPE[c.type]}
         {c.type === 'two-way' &&
-          ` : ${dollars(P.salaireTwoWay)} en 2026-27, hors masse salariale ; ni Play-In ni playoffs, ${P.matchsMaxTwoWay} matchs au plus`}
+          ` : ${dollars(P.salaireTwoWay)} en ${saisonCourte(salaires.saison)}, hors masse salariale ; ni Play-In ni playoffs, ${P.matchsMaxTwoWay} matchs au plus`}
         {c.anciennete !== null && ` · ${c.anciennete} saison${c.anciennete > 1 ? 's' : ''} NBA`}
         {c.draft ? ` · drafté en ${c.draft.annee} (${c.draft.tour === 1 ? '1er' : '2e'} tour, ${c.draft.rang}e choix)` : ' · non drafté'}
       </p>
@@ -44,7 +45,7 @@ export function ContratDuJoueur({ joueur }: { joueur: string }) {
       )}
       {c.anciennete !== null && (
         <p className="aide">
-          Pour un nouveau contrat en 2026-27 : minimum {dollars(salaireMinimum(P, c.anciennete))}, maximum{' '}
+          Pour un nouveau contrat en {saisonCourte(salaires.saison)} : minimum {dollars(salaireMinimum(P, c.anciennete))}, maximum{' '}
           {dollars(salaireMaximum(P, c.anciennete))}.{c.note ? ` ${c.note.charAt(0).toUpperCase()}${c.note.slice(1)}.` : ''}
         </p>
       )}

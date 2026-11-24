@@ -14,7 +14,8 @@ import {
   type Estimation,
   type Prospect,
 } from '@basket-legends/league';
-import { effectifs, fichierLoterie, modeleDraft, reglesLoterie, salaires } from '../donnees';
+import { fichierLoterie, modeleDraft, reglesLoterie } from '../donnees';
+import { abreviationEquipe as abreviation, nomEquipe, salairesActifs } from '../vue';
 import { dollars, taille } from '../format';
 
 interface Props {
@@ -27,8 +28,6 @@ interface Props {
   onAvancerDraft: (prospect?: string) => void;
 }
 
-const nomEquipe = (id: string): string => effectifs.get(id)?.franchise.fictionalName ?? id;
-const abreviation = (id: string): string => effectifs.get(id)?.franchise.referenceAbbreviation ?? id;
 const fourchette = (e: Estimation) => `${e.valeur} (${e.bas}–${e.haut})`;
 const ORIGINES: Record<Prospect['origine'], string> = { universite: 'Université', international: 'International', 'g-league': 'G League' };
 const CATEGORIES = Object.fromEntries(fichierLoterie.categories.map((c) => [c.id, c]));
@@ -199,7 +198,7 @@ export function EcranDraft({ etat, enCours, onObserver, onDeleguer, onAvancerDra
             <p className="aide">
               Salaires du 1er tour : échelle des rookies à 120 %, rapportée au plafond{' '}
               {draft.recrues[0].plafond.provisoire
-                ? `${salaires.saison} (provisoire : le plafond ${draft.annee}-${draft.annee + 1} n’est pas encore dans les données)`
+                ? `${salairesActifs().saison} (provisoire : le plafond ${draft.annee}-${draft.annee + 1} n’est pas encore dans les données)`
                 : draft.recrues[0].plafond.saison}
               . Deux saisons garanties, puis deux options de l’équipe.
             </p>

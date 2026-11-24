@@ -1,7 +1,7 @@
 // Tranche 4 : les sauvegardes, dans IndexedDB (API du navigateur, sans dépendance). Une seule partie pour l'instant,
 // rangée sous la clé « principale ». Le format est versionné et validé à la lecture (packages/league/src/sauvegarde.ts).
 import { creerSauvegarde, lireSauvegarde, type EtatSaison, type Sauvegarde } from '@basket-legends/league';
-import { fichierReglages, fichierRegles } from './donnees';
+import { fichierCarriere, fichierReglages, fichierRegles } from './donnees';
 
 const BASE = 'basket-legends';
 const MAGASIN = 'parties';
@@ -32,7 +32,12 @@ async function transaction<T>(mode: IDBTransactionMode, action: (magasin: IDBObj
 }
 
 /** Les versions des données de la partie : une partie ne se rejoue à l'identique qu'avec les mêmes. */
-const versions = () => ({ regles: fichierRegles.datasetId, moteur: fichierReglages.datasetId, notes: 'notes-v2' });
+const versions = () => ({
+  regles: fichierRegles.datasetId,
+  moteur: fichierReglages.datasetId,
+  notes: 'notes-v2',
+  carriere: fichierCarriere.version,
+});
 
 export async function enregistrer(etat: EtatSaison, precedente?: Sauvegarde): Promise<Sauvegarde> {
   const s = creerSauvegarde(etat, versions(), new Date().toISOString(), precedente?.creeLe);

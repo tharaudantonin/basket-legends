@@ -129,3 +129,18 @@ Relevés pour la tranche 7 ; détail, statuts et écarts : `docs/DRAFT.md` § 2.
 | Échelle des rookies 2025 (recoupement de la croissance) | Hoops Rumors | https://www.hoopsrumors.com/2025/07/rookie-scale-salaries-for-2025-nba-first-round-picks.html | secondaire |
 
 Non relevé : la table officielle des probabilités de la loterie 3-2-1 (PDF de la NBA, lecture automatique refusée) ; Antonin la fournit (réponse 13). Les âges de saison (`seasonAge`) viennent du relevé du § 9 (convention de Basketball-Reference, âge au 1er février) ou des dates de naissance ci-dessus. Le modèle des prospects, le scouting et le vivier ne reposent sur aucune source : ce sont des choix du modèle.
+
+## 13. Carrière multi-saisons (24 novembre 2026)
+
+Relevés pour la tranche 8 ; détail et part de choix du modèle : `docs/CARRIERE.md`.
+
+| Données | Fournisseur | Page | Niveau |
+|---|---|---|---|
+| Forme de la courbe d'âge (pic vers 27-28 ans, déclin qui ralentit avec l'âge) | Vaci, Cocić, Gula et Bilalić, *Behavior Research Methods* 51(4), p. 1544-1564 (2019) | https://eprints.whiterose.ac.uk/159117/1/Large%20data%20and%20Bayesian%20modeling-aging%20curves%20of%20NBA%20players.pdf | primaire |
+| Durée moyenne de carrière (contrôle de vraisemblance des retraites) | Foutzopoulos, Pandis et Tsagris, MPRA n° 121540 (2024), tableau 1 | https://mpra.ub.uni-muenchen.de/121540/1/MPRA_paper_121540.pdf | primaire |
+| Villes citées pour une expansion | ESPN (17/09/2024) | https://www.espn.co.uk/nba/story/_/id/41286389/nba-expansion-cities-draft-teams-leagues-line | secondaire |
+| Las Vegas et Seattle, état du dossier d'expansion | Front Office Sports (09/07/2026) | https://frontofficesports.com/article/nba-expansion-heats-up-vegas-slows-seattle/ | secondaire |
+| Autres marchés possibles | NTD / The Epoch Times (28/03/2026) | https://www.ntd.com/top-potential-nba-expansion-cities-if-las-vegas-and-seattle-dont-land-teams_1135239.html | secondaire |
+| Villes de déménagement évoquées pour Portland | Sports Illustrated, On SI (29/07/2026) | https://www.si.com/nba/trailblazers/onsi/3-potential-blazers-relocation-cities-if-moda-center-deal-fails | secondaire |
+
+Chaque ville de `data/ligue/villes-d-accueil.json` porte ses propres sources. Les sources des villes établissent seulement qu'un marché est cité ; le rattachement à une conférence et les noms de franchise sont des choix du jeu. Les montants de la progression, les profils par attribut, les retraites, la règle provisoire des contrats et les fourchettes de stabilité ne reposent sur aucune source : ce sont des choix du modèle.

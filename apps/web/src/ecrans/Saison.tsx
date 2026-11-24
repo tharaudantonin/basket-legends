@@ -13,14 +13,26 @@ import {
   type LigneSaison,
   type ResumeMatch,
 } from '@basket-legends/league';
-import { effectifs, franchiseDe, paletteDe, structure } from '../donnees';
+import { franchiseDe, paletteDe, structure } from '../donnees';
+import { nomEquipe, nomJoueur, surnomEquipe as court } from '../vue';
 import { encreSur } from '../format';
 import { MasseSalariale } from './MasseSalariale';
 import { EcranDraft } from './Draft';
 import { Vivier } from './Vivier';
+import { Histoire } from './Histoire';
 
 type Onglet =
-  'calendrier' | 'classements' | 'actualites' | 'leaders' | 'all-star' | 'playoffs' | 'palmares' | 'salaires' | 'draft' | 'vivier';
+  | 'calendrier'
+  | 'classements'
+  | 'actualites'
+  | 'leaders'
+  | 'all-star'
+  | 'playoffs'
+  | 'palmares'
+  | 'salaires'
+  | 'draft'
+  | 'vivier'
+  | 'histoire';
 
 interface Props {
   etat: EtatSaison;
@@ -35,23 +47,10 @@ interface Props {
   onObserver: (prospect: string, delta: number) => void;
   onDeleguer: (delegue: boolean) => void;
   onAvancerDraft: (prospect?: string) => void;
+  /** Tranche 8 : l'intersaison puis la saison suivante (saison terminée, Draft comprise). */
+  onSaisonSuivante: () => void;
 }
 
-const nomEquipe = (id: string): string =>
-  id === 'all-star-est'
-    ? 'Étoiles de l’Est'
-    : id === 'all-star-ouest'
-      ? 'Étoiles de l’Ouest'
-      : (effectifs.get(id)?.franchise.fictionalName ?? id);
-const court = (id: string): string => nomEquipe(id).split(' ').slice(1).join(' ') || nomEquipe(id);
-const nomJoueur = (id: string | undefined): string => {
-  if (!id) return '—';
-  for (const e of effectifs.values()) {
-    const j = e.players.find((p) => p.id === id);
-    if (j) return j.fictionalDisplayName;
-  }
-  return id;
-};
 const dateFr = (d: string): string =>
   new Date(`${d}T12:00:00Z`).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
 const pct3 = (x: number): string => x.toFixed(3).replace(/^0/, '');
@@ -82,6 +81,7 @@ export function EcranSaison({
   onObserver,
   onDeleguer,
   onAvancerDraft,
+  onSaisonSuivante,
 }: Props) {
   const [onglet, setOnglet] = useState<Onglet>('calendrier');
   const [seulementMonEquipe, setSeulementMonEquipe] = useState(false);
@@ -104,7 +104,10 @@ export function EcranSaison({
     ['salaires', 'Masse salariale'],
     ['draft', 'Draft'],
     ['vivier', 'Hors NBA'],
+    ['histoire', 'Histoire'],
   ];
+  const draftFaite = !etat.draft || Boolean(etat.draft.terminee);
+  const suivante = `${Number(etat.saison.slice(0, 4)) + 1}–${Number(etat.saison.slice(5, 9)) + 1}`;
 
   return (
     <>
@@ -116,7 +119,7 @@ export function EcranSaison({
           ← Accueil
         </button>
         <h1>
-          {f.fictionalName} · {etat.saison.replace('-', '–')}
+          {nomEquipe(etat.franchise)} · {etat.saison.replace('-', '–')}
         </h1>
         <p role="status">
           {PHASES[etat.phase]} · {dateFr(etat.date)} · bilan {moi.victoires}-{moi.defaites}
@@ -155,6 +158,18 @@ export function EcranSaison({
             {etat.matchInteractif ? 'Reprendre le match interactif' : 'Prochain match en interactif'}
           </button>
         )}
+        {fini && (
+          <button
+            type="button"
+            className="principal"
+            disabled={enCours || !draftFaite}
+            title={draftFaite ? undefined : 'La Draft doit être terminée (onglet Draft).'}
+            onClick={onSaisonSuivante}
+          >
+            Passer à la saison {suivante}
+          </button>
+        )}
+        {fini && !draftFaite && <span className="aide">Terminez d’abord la Draft (onglet Draft) pour passer à la saison suivante.</span>}
         {enCours && <span className="aide">Simulation…</span>}
       </section>
 
@@ -349,6 +364,7 @@ export function EcranSaison({
         <EcranDraft etat={etat} enCours={enCours} onObserver={onObserver} onDeleguer={onDeleguer} onAvancerDraft={onAvancerDraft} />
       )}
       {onglet === 'vivier' && <Vivier />}
+      {onglet === 'histoire' && <Histoire etat={etat} onFiche={onFiche} />}
 
       {onglet === 'all-star' && (
         <section className="carte" aria-label="All-Star Game">

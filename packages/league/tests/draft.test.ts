@@ -134,10 +134,10 @@ describe('classe de Draft', () => {
     expect(genererClasse(D.modele, D.noms, 2026, 2028, D.nomsPris)[0]!.nom).not.toBe(undefined);
   });
 
-  it('reste sur l’échelle hors NBA (40-67) avec un potentiel au moins égal à la note', () => {
+  it('suit l’échelle des vrais rookies (40-73) avec un potentiel au moins égal à la note', () => {
     for (const p of classe) {
       expect(p.note).toBeGreaterThanOrEqual(40);
-      expect(p.note).toBeLessThanOrEqual(67);
+      expect(p.note).toBeLessThanOrEqual(73);
       expect(p.potentiel).toBeGreaterThanOrEqual(p.note);
       expect(p.potentiel).toBeLessThanOrEqual(D.modele.classe.potentiel.max);
       expect(Object.keys(D.modele.classe.ages)).toContain(String(p.age));

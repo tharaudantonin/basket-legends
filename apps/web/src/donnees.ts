@@ -16,6 +16,12 @@ import {
   modeleDeDraft,
   reglesDeLaLoterie,
   valeursDesRegles,
+  donneesDeCarriere,
+  historiqueDesChoix,
+  schemaHistoriqueLoterie,
+  schemaModeleCarriere,
+  schemaVillesDAccueil,
+  universInitial,
   type Effectif,
   type Franchise,
 } from '@basket-legends/data';
@@ -29,6 +35,9 @@ import contratsBruts from '../../../data/contrats/2026-27.json';
 import vivierBrut from '../../../data/vivier/2026-27.json';
 import modeleDraftBrut from '../../../data/draft/modele-draft.json';
 import loterieBrute from '../../../data/draft/loterie-2027-2029.json';
+import historiqueBrut from '../../../data/draft/historique-loterie.json';
+import modeleCarriereBrut from '../../../data/modeles/carriere-v1.json';
+import villesBrutes from '../../../data/ligue/villes-d-accueil.json';
 import { structureDeLaLigue } from '@basket-legends/data';
 
 const effectifsBruts = import.meta.glob<unknown>('../../../data/rosters/2026-27/*.json', { eager: true, import: 'default' });
@@ -58,6 +67,19 @@ export const effectifs = new Map<string, Effectif>(
     return [e.franchise.id, e];
   }),
 );
+
+/** Tranche 8 : l'univers de la première saison (snapshot et vivier) et le modèle de carrière. */
+export const universDeDepart = universInitial(
+  fichierLigue.saison,
+  [...effectifs.values()],
+  vivier,
+  salaires,
+  historiqueDesChoix(schemaHistoriqueLoterie.parse(historiqueBrut)),
+);
+export const fichierCarriere = schemaModeleCarriere.parse(modeleCarriereBrut);
+export const donneesCarriere = donneesDeCarriere(fichierCarriere, schemaVillesDAccueil.parse(villesBrutes), registre, [
+  ...effectifs.values(),
+]);
 
 export function effectifDe(id: string): Effectif {
   const e = effectifs.get(id);
