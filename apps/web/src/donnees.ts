@@ -17,7 +17,7 @@ import {
 import type { EquipeDuMatch, ReglagesMatch, ReglesMatch } from '@basket-legends/engine';
 import registreBrut from '../../../data/franchises.json';
 import reglesBrutes from '../../../data/regles/nba-2026-27.json';
-import reglagesBruts from '../../../data/moteur/match-v4.json';
+import reglagesBruts from '../../../data/moteur/match-v5.json';
 import ligueBrute from '../../../data/ligue/saison-2026-27.json';
 import cbaBrute from '../../../data/cba/nba-2026-27.json';
 import contratsBruts from '../../../data/contrats/2026-27.json';

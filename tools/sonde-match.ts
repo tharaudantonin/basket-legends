@@ -41,7 +41,7 @@ function chargerMoteur(racine: string): { regles: ReglesMatch; reglages: Reglage
   const json = (chemin: string): unknown => JSON.parse(readFileSync(join(racine, chemin), 'utf8'));
   return {
     regles: valeursDesRegles(schemaRegles.parse(json('data/regles/nba-2026-27.json'))),
-    reglages: reglagesDuMoteur(schemaReglagesMatch.parse(json('data/moteur/match-v4.json'))),
+    reglages: reglagesDuMoteur(schemaReglagesMatch.parse(json('data/moteur/match-v5.json'))),
     equipes: readdirSync(join(racine, 'data/rosters/2026-27'))
       .filter((f) => f.endsWith('.json'))
       .sort()

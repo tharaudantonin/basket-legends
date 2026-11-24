@@ -32,7 +32,7 @@ async function transaction<T>(mode: IDBTransactionMode, action: (magasin: IDBObj
 }
 
 /** Les versions des données de la partie : une partie ne se rejoue à l'identique qu'avec les mêmes. */
-const versions = () => ({ regles: fichierRegles.datasetId, moteur: fichierReglages.datasetId, notes: 'notes-v1' });
+const versions = () => ({ regles: fichierRegles.datasetId, moteur: fichierReglages.datasetId, notes: 'notes-v2' });
 
 export async function enregistrer(etat: EtatSaison, precedente?: Sauvegarde): Promise<Sauvegarde> {
   const s = creerSauvegarde(etat, versions(), new Date().toISOString(), precedente?.creeLe);

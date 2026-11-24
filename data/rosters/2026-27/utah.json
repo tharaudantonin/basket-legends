@@ -25,7 +25,7 @@
     "officialSourceVerification": "pending",
     "note": "Do not infer NBA person IDs, contract type, two-way status, contract terms, or statistics from this file. Verify separately against official NBA records before marking those fields verified.",
     "names": "Noms fictifs aux mêmes initiales, proposés le 24/11/2026 et à relire (nameStatus). La table de correspondance avec les vrais noms est gardée hors du dépôt.",
-    "ratings": "Notes et attributs du modèle notes-v1 (data/modeles/notes-v1.json, docs/NOTES_JOUEURS.md), calculés par npm run notes."
+    "ratings": "Notes et attributs du modèle notes-v2 (data/modeles/notes-v2.json, docs/NOTES_JOUEURS.md), calculés par npm run notes."
   },
   "units": {
     "canonical": "metric",
@@ -76,11 +76,11 @@
       "ratings": {
         "overall": 74,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1988 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1988 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 64,
@@ -88,6 +88,24 @@
         "mental": 73,
         "tactical": 58,
         "endurance": 75,
+        "details": {
+          "tirCercle": 68,
+          "tirMiDistance": 63,
+          "tirATroisPoints": 70,
+          "lancersFrancs": 66,
+          "passe": 58,
+          "maniement": 65,
+          "defenseExterieure": 68,
+          "defenseInterieure": 72,
+          "interception": 66,
+          "contre": 76,
+          "rebondOffensif": 74,
+          "rebondDefensif": 63,
+          "vitesse": 65,
+          "force": 64,
+          "qiOffensif": 52,
+          "qiDefensif": 60
+        },
         "scale": 100
       },
       "notes": null
@@ -123,11 +141,11 @@
       "ratings": {
         "overall": 66,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (44 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (44 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 69,
@@ -135,6 +153,24 @@
         "mental": 65,
         "tactical": 69,
         "endurance": 59,
+        "details": {
+          "tirCercle": 76,
+          "tirMiDistance": 70,
+          "tirATroisPoints": 71,
+          "lancersFrancs": 70,
+          "passe": 70,
+          "maniement": 70,
+          "defenseExterieure": 56,
+          "defenseInterieure": 78,
+          "interception": 66,
+          "contre": 78,
+          "rebondOffensif": 78,
+          "rebondDefensif": 75,
+          "vitesse": 58,
+          "force": 76,
+          "qiOffensif": 68,
+          "qiDefensif": 71
+        },
         "scale": 100
       },
       "notes": null
@@ -170,11 +206,11 @@
       "ratings": {
         "overall": 64,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (450 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (450 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 67,
@@ -182,6 +218,24 @@
         "mental": 58,
         "tactical": 51,
         "endurance": 59,
+        "details": {
+          "tirCercle": 78,
+          "tirMiDistance": 67,
+          "tirATroisPoints": 68,
+          "lancersFrancs": 67,
+          "passe": 64,
+          "maniement": 64,
+          "defenseExterieure": 51,
+          "defenseInterieure": 71,
+          "interception": 55,
+          "contre": 73,
+          "rebondOffensif": 85,
+          "rebondDefensif": 70,
+          "vitesse": 56,
+          "force": 83,
+          "qiOffensif": 66,
+          "qiDefensif": 51
+        },
         "scale": 100
       },
       "notes": null
@@ -217,11 +271,11 @@
       "ratings": {
         "overall": 61,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (119 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (119 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 62,
@@ -229,6 +283,24 @@
         "mental": 66,
         "tactical": 68,
         "endurance": 55,
+        "details": {
+          "tirCercle": 65,
+          "tirMiDistance": 72,
+          "tirATroisPoints": 62,
+          "lancersFrancs": 75,
+          "passe": 72,
+          "maniement": 74,
+          "defenseExterieure": 61,
+          "defenseInterieure": 70,
+          "interception": 66,
+          "contre": 73,
+          "rebondOffensif": 68,
+          "rebondDefensif": 69,
+          "vitesse": 75,
+          "force": 62,
+          "qiOffensif": 63,
+          "qiDefensif": 69
+        },
         "scale": 100
       },
       "notes": null
@@ -264,11 +336,11 @@
       "ratings": {
         "overall": 75,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1517 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1517 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 61,
@@ -276,6 +348,24 @@
         "mental": 78,
         "tactical": 86,
         "endurance": 72,
+        "details": {
+          "tirCercle": 66,
+          "tirMiDistance": 62,
+          "tirATroisPoints": 52,
+          "lancersFrancs": 61,
+          "passe": 92,
+          "maniement": 83,
+          "defenseExterieure": 79,
+          "defenseInterieure": 59,
+          "interception": 79,
+          "contre": 66,
+          "rebondOffensif": 54,
+          "rebondDefensif": 59,
+          "vitesse": 81,
+          "force": 67,
+          "qiOffensif": 87,
+          "qiDefensif": 64
+        },
         "scale": 100
       },
       "notes": null
@@ -311,11 +401,11 @@
       "ratings": {
         "overall": 75,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1801 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1801 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 68,
@@ -323,6 +413,24 @@
         "mental": 71,
         "tactical": 73,
         "endurance": 71,
+        "details": {
+          "tirCercle": 81,
+          "tirMiDistance": 70,
+          "tirATroisPoints": 61,
+          "lancersFrancs": 65,
+          "passe": 71,
+          "maniement": 72,
+          "defenseExterieure": 67,
+          "defenseInterieure": 78,
+          "interception": 76,
+          "contre": 75,
+          "rebondOffensif": 80,
+          "rebondDefensif": 87,
+          "vitesse": 63,
+          "force": 81,
+          "qiOffensif": 68,
+          "qiDefensif": 65
+        },
         "scale": 100
       },
       "notes": null
@@ -358,11 +466,11 @@
       "ratings": {
         "overall": 84,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1786 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1786 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 86,
@@ -370,6 +478,24 @@
         "mental": 88,
         "tactical": 72,
         "endurance": 83,
+        "details": {
+          "tirCercle": 66,
+          "tirMiDistance": 84,
+          "tirATroisPoints": 76,
+          "lancersFrancs": 91,
+          "passe": 81,
+          "maniement": 86,
+          "defenseExterieure": 78,
+          "defenseInterieure": 64,
+          "interception": 69,
+          "contre": 60,
+          "rebondOffensif": 52,
+          "rebondDefensif": 62,
+          "vitesse": 82,
+          "force": 62,
+          "qiOffensif": 81,
+          "qiDefensif": 68
+        },
         "scale": 100
       },
       "notes": null
@@ -405,11 +531,11 @@
       "ratings": {
         "overall": 63,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (908 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (908 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 77,
@@ -417,6 +543,24 @@
         "mental": 59,
         "tactical": 64,
         "endurance": 62,
+        "details": {
+          "tirCercle": 69,
+          "tirMiDistance": 80,
+          "tirATroisPoints": 81,
+          "lancersFrancs": 79,
+          "passe": 59,
+          "maniement": 51,
+          "defenseExterieure": 72,
+          "defenseInterieure": 61,
+          "interception": 74,
+          "contre": 62,
+          "rebondOffensif": 73,
+          "rebondDefensif": 52,
+          "vitesse": 72,
+          "force": 63,
+          "qiOffensif": 71,
+          "qiDefensif": 67
+        },
         "scale": 100
       },
       "notes": null
@@ -452,11 +596,11 @@
       "ratings": {
         "overall": 72,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1207 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1207 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 82,
@@ -464,6 +608,24 @@
         "mental": 57,
         "tactical": 63,
         "endurance": 66,
+        "details": {
+          "tirCercle": 93,
+          "tirMiDistance": 76,
+          "tirATroisPoints": 69,
+          "lancersFrancs": 55,
+          "passe": 60,
+          "maniement": 62,
+          "defenseExterieure": 55,
+          "defenseInterieure": 80,
+          "interception": 61,
+          "contre": 83,
+          "rebondOffensif": 80,
+          "rebondDefensif": 73,
+          "vitesse": 60,
+          "force": 75,
+          "qiOffensif": 88,
+          "qiDefensif": 66
+        },
         "scale": 100
       },
       "notes": null
@@ -499,11 +661,11 @@
       "ratings": {
         "overall": 62,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (26 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (26 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 74,
@@ -511,6 +673,24 @@
         "mental": 60,
         "tactical": 68,
         "endurance": 50,
+        "details": {
+          "tirCercle": 71,
+          "tirMiDistance": 73,
+          "tirATroisPoints": 73,
+          "lancersFrancs": 70,
+          "passe": 72,
+          "maniement": 72,
+          "defenseExterieure": 61,
+          "defenseInterieure": 69,
+          "interception": 68,
+          "contre": 71,
+          "rebondOffensif": 74,
+          "rebondDefensif": 69,
+          "vitesse": 70,
+          "force": 74,
+          "qiOffensif": 73,
+          "qiDefensif": 69
+        },
         "scale": 100
       },
       "notes": null
@@ -546,11 +726,11 @@
       "ratings": {
         "overall": 79,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1454 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1454 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 75,
@@ -558,6 +738,24 @@
         "mental": 76,
         "tactical": 64,
         "endurance": 79,
+        "details": {
+          "tirCercle": 72,
+          "tirMiDistance": 71,
+          "tirATroisPoints": 71,
+          "lancersFrancs": 74,
+          "passe": 55,
+          "maniement": 73,
+          "defenseExterieure": 70,
+          "defenseInterieure": 80,
+          "interception": 73,
+          "contre": 84,
+          "rebondOffensif": 65,
+          "rebondDefensif": 76,
+          "vitesse": 66,
+          "force": 76,
+          "qiOffensif": 56,
+          "qiDefensif": 67
+        },
         "scale": 100
       },
       "notes": null
@@ -593,11 +791,11 @@
       "ratings": {
         "overall": 87,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1443 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1443 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 87,
@@ -605,6 +803,24 @@
         "mental": 84,
         "tactical": 67,
         "endurance": 87,
+        "details": {
+          "tirCercle": 81,
+          "tirMiDistance": 90,
+          "tirATroisPoints": 74,
+          "lancersFrancs": 90,
+          "passe": 60,
+          "maniement": 80,
+          "defenseExterieure": 73,
+          "defenseInterieure": 78,
+          "interception": 66,
+          "contre": 73,
+          "rebondOffensif": 75,
+          "rebondDefensif": 73,
+          "vitesse": 60,
+          "force": 80,
+          "qiOffensif": 68,
+          "qiDefensif": 79
+        },
         "scale": 100
       },
       "notes": null
@@ -640,11 +856,11 @@
       "ratings": {
         "overall": 72,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1156 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1156 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 80,
@@ -652,6 +868,24 @@
         "mental": 71,
         "tactical": 59,
         "endurance": 72,
+        "details": {
+          "tirCercle": 71,
+          "tirMiDistance": 84,
+          "tirATroisPoints": 84,
+          "lancersFrancs": 79,
+          "passe": 68,
+          "maniement": 64,
+          "defenseExterieure": 68,
+          "defenseInterieure": 62,
+          "interception": 60,
+          "contre": 56,
+          "rebondOffensif": 66,
+          "rebondDefensif": 55,
+          "vitesse": 66,
+          "force": 62,
+          "qiOffensif": 77,
+          "qiDefensif": 65
+        },
         "scale": 100
       },
       "notes": null
@@ -687,11 +921,11 @@
       "ratings": {
         "overall": 76,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1083 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1083 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 57,
@@ -699,6 +933,24 @@
         "mental": 69,
         "tactical": 85,
         "endurance": 74,
+        "details": {
+          "tirCercle": 78,
+          "tirMiDistance": 50,
+          "tirATroisPoints": 66,
+          "lancersFrancs": 51,
+          "passe": 80,
+          "maniement": 74,
+          "defenseExterieure": 73,
+          "defenseInterieure": 81,
+          "interception": 81,
+          "contre": 75,
+          "rebondOffensif": 82,
+          "rebondDefensif": 93,
+          "vitesse": 57,
+          "force": 92,
+          "qiOffensif": 71,
+          "qiDefensif": 77
+        },
         "scale": 100
       },
       "notes": null
@@ -734,11 +986,11 @@
       "ratings": {
         "overall": 64,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1354 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1354 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 59,
@@ -746,6 +998,24 @@
         "mental": 52,
         "tactical": 71,
         "endurance": 66,
+        "details": {
+          "tirCercle": 61,
+          "tirMiDistance": 52,
+          "tirATroisPoints": 74,
+          "lancersFrancs": 54,
+          "passe": 59,
+          "maniement": 52,
+          "defenseExterieure": 77,
+          "defenseInterieure": 61,
+          "interception": 81,
+          "contre": 64,
+          "rebondOffensif": 76,
+          "rebondDefensif": 60,
+          "vitesse": 76,
+          "force": 69,
+          "qiOffensif": 60,
+          "qiDefensif": 70
+        },
         "scale": 100
       },
       "notes": null
@@ -781,11 +1051,11 @@
       "ratings": {
         "overall": 72,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "a-priori",
         "base": "rang-de-draft",
         "saisonDeReference": null,
-        "calculation": "Modèle notes-v1 : aucune statistique NBA ; note a priori selon le rang de draft 2026."
+        "calculation": "Modèle notes-v2 : aucune statistique NBA ; note a priori selon le rang de draft 2026."
       },
       "attributes": {
         "technique": 72,
@@ -793,6 +1063,24 @@
         "mental": 72,
         "tactical": 72,
         "endurance": 72,
+        "details": {
+          "tirCercle": 72,
+          "tirMiDistance": 72,
+          "tirATroisPoints": 72,
+          "lancersFrancs": 72,
+          "passe": 72,
+          "maniement": 72,
+          "defenseExterieure": 72,
+          "defenseInterieure": 72,
+          "interception": 72,
+          "contre": 72,
+          "rebondOffensif": 72,
+          "rebondDefensif": 72,
+          "vitesse": 72,
+          "force": 72,
+          "qiOffensif": 72,
+          "qiDefensif": 72
+        },
         "scale": 100
       },
       "notes": null
@@ -828,11 +1116,11 @@
       "ratings": {
         "overall": 74,
         "scale": 100,
-        "source": "notes-v1",
+        "source": "notes-v2",
         "status": "calcule",
         "base": "statistiques",
         "saisonDeReference": "2025-2026",
-        "calculation": "Modèle notes-v1 : statistiques de saison régulière 2025-2026 (1762 minutes), recalées par quantiles."
+        "calculation": "Modèle notes-v2 : statistiques de saison régulière 2025-2026 (1762 minutes), recalées par quantiles."
       },
       "attributes": {
         "technique": 81,
@@ -840,6 +1128,24 @@
         "mental": 75,
         "tactical": 55,
         "endurance": 71,
+        "details": {
+          "tirCercle": 70,
+          "tirMiDistance": 78,
+          "tirATroisPoints": 78,
+          "lancersFrancs": 77,
+          "passe": 64,
+          "maniement": 74,
+          "defenseExterieure": 70,
+          "defenseInterieure": 62,
+          "interception": 67,
+          "contre": 59,
+          "rebondOffensif": 66,
+          "rebondDefensif": 63,
+          "vitesse": 70,
+          "force": 72,
+          "qiOffensif": 63,
+          "qiDefensif": 61
+        },
         "scale": 100
       },
       "notes": null

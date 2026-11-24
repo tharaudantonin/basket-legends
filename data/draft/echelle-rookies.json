@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-echelle-rookies",
+  "note": "Échelle des rookies des choix de premier tour, à 120 % (maximum autorisé, signé par presque tous les choix de premier tour ; la cap hold d’un choix non signé vaut aussi 120 %). Montants en dollars par saison du contrat.",
+  "draftDeReference": 2026,
+  "plafondDeReference": 164961000,
+  "bornes": {
+    "minimum": 0.8,
+    "maximum": 1.2,
+    "definition": "Un choix de premier tour peut signer entre 80 % et 120 % de l’échelle de son rang ; les montants ci-dessous sont à 120 %."
+  },
+  "saisonsGaranties": 2,
+  "optionsEquipe": [
+    3,
+    4
+  ],
+  "evolution": {
+    "regle": "proportionnelle-au-plafond",
+    "statut": "derive",
+    "definition": "Échelle d’une Draft future = montants de la Draft de référence × plafond salarial de la saison de la Draft ÷ plafond de référence. Observé : +6,67 % de 2025 à 2026 à chaque rang, comme le plafond (154 647 000 → 164 961 000 $). À recouper avec l’article VIII de la CBA 2023."
+  },
+  "rangs": [
+    {
+      "rang": 1,
+      "montants": [
+        14748000,
+        15485760,
+        16223040,
+        20457253
+      ]
+    },
+    {
+      "rang": 2,
+      "montants": [
+        13195320,
+        13855320,
+        14515320,
+        18318334
+      ]
+    },
+    {
+      "rang": 3,
+      "montants": [
+        11849760,
+        12441840,
+        13034880,
+        16476088
+      ]
+    },
+    {
+      "rang": 4,
+      "montants": [
+        10683720,
+        11217960,
+        11752320,
+        14866685
+      ]
+    },
+    {
+      "rang": 5,
+      "montants": [
+        9674760,
+        10158240,
+        10641960,
+        13483363
+      ]
+    },
+    {
+      "rang": 6,
+      "montants": [
+        8787000,
+        9226440,
+        9666000,
+        12256488
+      ]
+    },
+    {
+      "rang": 7,
+      "montants": [
+        8021640,
+        8422920,
+        8823600,
+        11205972
+      ]
+    },
+    {
+      "rang": 8,
+      "montants": [
+        7348680,
+        7716120,
+        8083680,
+        10282441
+      ]
+    },
+    {
+      "rang": 9,
+      "montants": [
+        6754800,
+        7093080,
+        7430640,
+        9466635
+      ]
+    },
+    {
+      "rang": 10,
+      "montants": [
+        6417360,
+        6738000,
+        7058520,
+        8999613
+      ]
+    },
+    {
+      "rang": 11,
+      "montants": [
+        6096240,
+        6401280,
+        6706200,
+        8899127
+      ]
+    },
+    {
+      "rang": 12,
+      "montants": [
+        5791680,
+        6081480,
+        6371160,
+        8779458
+      ]
+    },
+    {
+      "rang": 13,
+      "montants": [
+        5502000,
+        5777280,
+        6052200,
+        8648594
+      ]
+    },
+    {
+      "rang": 14,
+      "montants": [
+        5227200,
+        5488560,
+        5750160,
+        8515987
+      ]
+    },
+    {
+      "rang": 15,
+      "montants": [
+        4965480,
+        5213760,
+        5461920,
+        8373123
+      ]
+    },
+    {
+      "rang": 16,
+      "montants": [
+        4717320,
+        4953240,
+        5189400,
+        7960540
+      ]
+    },
+    {
+      "rang": 17,
+      "montants": [
+        4481280,
+        4705440,
+        4929360,
+        7571497
+      ]
+    },
+    {
+      "rang": 18,
+      "montants": [
+        4257480,
+        4470000,
+        4683120,
+        7202639
+      ]
+    },
+    {
+      "rang": 19,
+      "montants": [
+        4065720,
+        4268880,
+        4472640,
+        6887866
+      ]
+    },
+    {
+      "rang": 20,
+      "montants": [
+        3902760,
+        4097880,
+        4292880,
+        6619621
+      ]
+    },
+    {
+      "rang": 21,
+      "montants": [
+        3746760,
+        3934320,
+        4121760,
+        6565964
+      ]
+    },
+    {
+      "rang": 22,
+      "montants": [
+        3597120,
+        3776760,
+        3956760,
+        6508870
+      ]
+    },
+    {
+      "rang": 23,
+      "montants": [
+        3453360,
+        3626160,
+        3798360,
+        6445817
+      ]
+    },
+    {
+      "rang": 24,
+      "montants": [
+        3315360,
+        3481080,
+        3646800,
+        6378253
+      ]
+    },
+    {
+      "rang": 25,
+      "montants": [
+        3182280,
+        3341280,
+        3500880,
+        6305085
+      ]
+    },
+    {
+      "rang": 26,
+      "montants": [
+        3076920,
+        3230520,
+        3384480,
+        6102217
+      ]
+    },
+    {
+      "rang": 27,
+      "montants": [
+        2988120,
+        3137640,
+        3287400,
+        5930470
+      ]
+    },
+    {
+      "rang": 28,
+      "montants": [
+        2969520,
+        3118560,
+        3266880,
+        5896718
+      ]
+    },
+    {
+      "rang": 29,
+      "montants": [
+        2948280,
+        3095640,
+        3243120,
+        5853832
+      ]
+    },
+    {
+      "rang": 30,
+      "montants": [
+        2926800,
+        3073080,
+        3219840,
+        5811811
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "fournisseur": "Hoops Rumors",
+      "titre": "Rookie Scale Salaries For 2026 NBA First-Round Picks",
+      "url": "https://www.hoopsrumors.com/2026/07/rookie-scale-salaries-for-2026-nba-first-round-picks.html",
+      "niveau": "secondaire",
+      "publieLe": "2026-07-02",
+      "consulteLe": "2026-11-24"
+    },
+    {
+      "fournisseur": "Hoops Rumors",
+      "titre": "Rookie Scale Salaries For 2025 NBA First-Round Picks (recoupement de la croissance)",
+      "url": "https://www.hoopsrumors.com/2025/07/rookie-scale-salaries-for-2025-nba-first-round-picks.html",
+      "niveau": "secondaire",
+      "publieLe": "2025-07-02",
+      "consulteLe": "2026-11-24"
+    }
+  ]
+}

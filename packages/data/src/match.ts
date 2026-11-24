@@ -29,6 +29,7 @@ export function joueurDuMatch(j: Joueur): JoueurDuMatch {
     tactique: j.attributes.tactical,
     endurance: j.attributes.endurance,
     tailleCm: j.measurements.height.heightCm,
+    detail: j.attributes.details,
   };
 }
 

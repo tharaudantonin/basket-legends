@@ -1,17 +1,18 @@
-// Tranche 2 : le modèle de notes v1 (packages/data/src/notes.ts).
+// Tranches 2 et 7 : le modèle de notes (v1, puis v2 avec les attributs détaillés) (packages/data/src/notes.ts).
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { ATTRIBUTS_DETAILLES } from '@basket-legends/engine';
 import { noteDuJoueur, notesDuDepot } from '../../../tools/calculer-notes';
 import { lireSources } from '../../../tools/verifier-donnees';
 import { calculerNotes, noteDuQuantile, schemaParametresNotes, schemaStatistiquesJoueurs, type EntreeNotes, type StatistiquesJoueurs } from '../src';
 
 const racine = join(import.meta.dirname, '../../..');
 const json = (chemin: string): unknown => JSON.parse(readFileSync(join(racine, chemin), 'utf8'));
-const P = schemaParametresNotes.parse(json('data/modeles/notes-v1.json'));
+const P = schemaParametresNotes.parse(json('data/modeles/notes-v2.json'));
 const stats = schemaStatistiquesJoueurs.parse(json(P.statistiques));
 const effectifs = Object.values(lireSources(racine).effectifs) as {
-  players: { id: string; measurements: { height: { heightCm: number } }; ratings: Record<string, unknown>; attributes: Record<string, number> }[];
+  players: { id: string; measurements: { height: { heightCm: number }; weight: { weightKg: number } }; ratings: Record<string, unknown>; attributes: Record<string, number> }[];
 }[];
 const joueurs: EntreeNotes[] = effectifs.flatMap((e) => e.players.map((j) => ({ id: j.id, tailleCm: j.measurements.height.heightCm })));
 
@@ -29,7 +30,7 @@ describe('noteDuQuantile', () => {
   });
 });
 
-describe('modèle de notes v1', () => {
+describe('modèle de notes v2', () => {
   const notes = calculerNotes(joueurs, stats, P);
   const parId = new Map(notes.map((n) => [n.id, n]));
 
@@ -106,5 +107,43 @@ describe('fiche joueur : statistiques sourcées', () => {
     // Recrue sans statistique NBA : aucune ligne, rien d'inventé.
     const recrue = Object.entries(stats.joueurs).find(([, x]) => x.draft2026 && !x.saisonReguliere)![0];
     expect(moyennesDuJoueur(stats, recrue)).toEqual([]);
+  });
+});
+
+describe('modèle de notes v2 : attributs détaillés (tranche 7)', () => {
+  const v1 = schemaParametresNotes.parse(json('data/modeles/notes-v1.json'));
+  const entrees = effectifs.flatMap((e) =>
+    e.players.map((j) => ({ id: j.id, tailleCm: j.measurements.height.heightCm, poidsKg: j.measurements.weight.weightKg })),
+  );
+  const notesV2 = calculerNotes(entrees, stats, P);
+
+  it('garde exactement la note globale et les familles validées du v1', () => {
+    const notesV1 = calculerNotes(entrees, stats, v1);
+    for (let i = 0; i < notesV1.length; i++) {
+      const { details, ...sansDetails } = notesV2[i]!;
+      expect(details).toBeDefined();
+      expect(sansDetails).toEqual(notesV1[i]);
+    }
+  });
+
+  it('donne 16 attributs détaillés sur l’échelle des attributs', () => {
+    for (const n of notesV2) {
+      expect(Object.keys(n.details!)).toEqual([...ATTRIBUTS_DETAILLES]);
+      for (const v of Object.values(n.details!)) expect(v).toBeGreaterThanOrEqual(P.bornes.min);
+    }
+  });
+
+  it('classe les lancers francs comme le pourcentage aux lancers mesuré', () => {
+    // Deux joueurs avec beaucoup de lancers : le meilleur pourcentage donne la meilleure note.
+    const avecLancers = notesV2
+      .map((n) => ({ n, t: stats.joueurs[n.id]?.saisonReguliere }))
+      .filter((x) => x.t && x.t.lancersTentes >= 300)
+      .sort((a, b) => a.t!.lancersReussis / a.t!.lancersTentes - b.t!.lancersReussis / b.t!.lancersTentes);
+    expect(avecLancers.length).toBeGreaterThan(10);
+    expect(avecLancers.at(-1)!.n.details!.lancersFrancs).toBeGreaterThan(avecLancers[0]!.n.details!.lancersFrancs);
+  });
+
+  it('chaque attribut détaillé a un niveau de confiance', () => {
+    expect(Object.keys(P.confianceDetails ?? {}).sort()).toEqual([...ATTRIBUTS_DETAILLES].sort());
   });
 });

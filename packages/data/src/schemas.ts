@@ -1,6 +1,7 @@
 // Schémas Zod des données de référence (tranche 0). Ils décrivent les fichiers tels qu'ils sont dans `data/` :
 // les noms de champs déjà établis sont conservés (CLAUDE.md, « Conventions de code »).
 import { z } from 'zod';
+import { ATTRIBUTS_DETAILLES, type AttributDetaille } from '@basket-legends/engine';
 
 const hex = z.string().regex(/^#[0-9A-F]{6}$/, 'couleur HEX en majuscules attendue (#RRGGBB)');
 const date = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'date AAAA-MM-JJ attendue');
@@ -69,7 +70,16 @@ export const schemaJoueur = z.strictObject({
   sourcePlayerId: z.string().nullable(),
   rosterStatus: z.string(),
   ratings: z.looseObject({ overall: note, scale: z.literal(100), source: z.string(), status: z.string() }),
-  attributes: z.strictObject({ technique: note, physical: note, mental: note, tactical: note, endurance: note, scale: z.literal(100) }),
+  attributes: z.strictObject({
+    technique: note,
+    physical: note,
+    mental: note,
+    tactical: note,
+    endurance: note,
+    /** Tranche 7 : attributs détaillés du modèle de notes v2. */
+    details: z.strictObject(Object.fromEntries(ATTRIBUTS_DETAILLES.map((a) => [a, note])) as Record<AttributDetaille, typeof note>),
+    scale: z.literal(100),
+  }),
   notes: z.strictObject({ archetype: z.string().optional() }).nullable(),
 });
 
@@ -183,6 +193,8 @@ export const schemaReglagesMatch = z.strictObject({
     sensibiliteParPoint: z.number().min(0),
     avantageDomicile: z.number(),
     usageEchelle: positif,
+    /** Tranche 7 : un joueur tire plus souvent dans la zone où il est adroit (échelle de l'exponentielle, en points). */
+    preferenceZoneEchelle: positif.optional(),
   }),
   lancersFrancs: z.strictObject({ reussiteDeBase: proba, sensibiliteParPoint: z.number().min(0), reussiteMin: proba, reussiteMax: proba }),
   pertesDeBalle: z.strictObject({ probabiliteDeBase: proba, sensibiliteParPoint: z.number().min(0), partInterceptions: proba }),
@@ -363,6 +375,10 @@ export const schemaParametresNotes = z.strictObject({
   ancrages: z.strictObject({ globale: ancrages, attributs: ancrages }),
   sansStatistique: z.strictObject({ parRangDeDraft: ancrages, nonDrafte: z.number().int().min(40).max(67) }),
   bornes: z.strictObject({ min: z.number().int().min(1), max: z.number().int().max(100) }),
+  /** Tranche 7 (modèle v2) : un indice par attribut détaillé, recalé sur les ancrages des attributs. */
+  poidsDetailles: z.record(z.enum(ATTRIBUTS_DETAILLES), poidsIndice).optional(),
+  /** Tranche 7 : niveau de confiance de chaque attribut détaillé (mesuré, dérivé d'une statistique, ou estimé). */
+  confianceDetails: z.record(z.enum(ATTRIBUTS_DETAILLES), z.enum(['mesure', 'derive', 'estime'])).optional(),
 });
 
 export type TotauxSaison = z.infer<typeof schemaTotauxSaison>;

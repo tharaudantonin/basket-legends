@@ -64,7 +64,7 @@ describe('match interactif de la saison', () => {
     const decisions: DecisionMatch[] = [{ arret: 0, equipe: camp, genre: 'plan', plan: { defense: 'zone' } }];
     const avant = rejouerMatch(ctx, etat, { ...match, decisions }, { arrets: true });
     const enCours = { ...etat, matchInteractif: { id: match.id, decisions, arret: 37 } };
-    const s = creerSauvegarde(enCours, { regles: 'nba-2026-27', moteur: 'match-v4', notes: 'notes-v1' }, '2026-11-24T12:00:00Z');
+    const s = creerSauvegarde(enCours, { regles: 'nba-2026-27', moteur: 'match-v5', notes: 'notes-v2' }, '2026-11-24T12:00:00Z');
     const relue = lireSauvegarde(JSON.parse(JSON.stringify(s))).etat;
     expect(relue.matchInteractif).toEqual(enCours.matchInteractif);
     const repris = rejouerMatch(ctx, relue, { ...match, decisions: relue.matchInteractif!.decisions }, { arrets: true });
@@ -73,7 +73,7 @@ describe('match interactif de la saison', () => {
   });
 
   it('une sauvegarde de la tranche 4 (sans match interactif) reste lisible', () => {
-    const s = creerSauvegarde(depart, { regles: 'nba-2026-27', moteur: 'match-v3', notes: 'notes-v1' }, '2026-11-24T12:00:00Z');
+    const s = creerSauvegarde(depart, { regles: 'nba-2026-27', moteur: 'match-v3', notes: 'notes-v2' }, '2026-11-24T12:00:00Z');
     expect(lireSauvegarde(JSON.parse(JSON.stringify(s))).etat).toEqual(depart);
   });
 });
