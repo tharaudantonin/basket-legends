@@ -1,6 +1,16 @@
 // Tranche 4 : passage des données de référence au contexte de la ligue (packages/league).
 import type { ReglagesMatch, ReglesMatch } from '@basket-legends/engine';
-import type { ContexteLigue, DonneesCarriere, DonneesDraft, DonneesMarche, DonneesSalariales, ParametresCba, StructureLigue, Univers } from '@basket-legends/league';
+import type {
+  ContexteLigue,
+  DonneesCarriere,
+  DonneesClub,
+  DonneesDraft,
+  DonneesMarche,
+  DonneesSalariales,
+  ParametresCba,
+  StructureLigue,
+  Univers,
+} from '@basket-legends/league';
 import { equipeDuMatch } from './match';
 import type { CbaFichier, ContratsFichier, Effectif, SaisonLigue, StatistiquesJoueurs } from './schemas';
 
@@ -40,7 +50,7 @@ export function contexteDeLaLigue(
   stats: StatistiquesJoueurs,
   salaires: DonneesSalariales,
   draft?: DonneesDraft,
-  carriere?: { univers: Univers; donnees: DonneesCarriere; marche?: DonneesMarche },
+  carriere?: { univers: Univers; donnees: DonneesCarriere; marche?: DonneesMarche; club?: DonneesClub },
 ): ContexteLigue {
   const equipes = Object.fromEntries(effectifs.map((e) => [e.franchise.id, equipeDuMatch(e)]));
   const recrues = Object.entries(stats.joueurs)
@@ -55,5 +65,6 @@ export function contexteDeLaLigue(
     ...(draft ? { draft } : {}),
     ...(carriere ? { univers: carriere.univers, carriere: carriere.donnees } : {}),
     ...(carriere?.marche ? { marche: carriere.marche } : {}),
+    ...(carriere?.club ? { club: carriere.club } : {}),
   };
 }

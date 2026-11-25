@@ -102,9 +102,11 @@ export function composerOffre(
 function cibles(M: ModeleMarche, u: Univers, acheteur: string, vendeur: string): string[] {
   const notes = (u.effectifs[acheteur] ?? []).map((j) => u.joueurs[j]!.note).sort((a, b) => b - a);
   const seuil = notes[6] ?? 60;
+  // Tranche 10 (réponse 53) : les joueurs qui ont demandé à partir passent en tête (leur équipe les cède plus volontiers).
+  const demande = (j: string) => (u.club?.demandes[j] ? 1 : 0);
   return (u.effectifs[vendeur] ?? [])
-    .filter((j) => u.contrats[j]?.type === 'standard' && u.joueurs[j]!.note > seuil && u.joueurs[j]!.age >= 24)
-    .sort((a, b) => u.joueurs[b]!.note - u.joueurs[a]!.note || (a < b ? -1 : 1))
+    .filter((j) => u.contrats[j]?.type === 'standard' && !u.contrats[j]?.dixJours && u.joueurs[j]!.note > seuil && u.joueurs[j]!.age >= 24)
+    .sort((a, b) => demande(b) - demande(a) || u.joueurs[b]!.note - u.joueurs[a]!.note || (a < b ? -1 : 1))
     .slice(0, M.echangesIa.candidatsParTentative);
 }
 

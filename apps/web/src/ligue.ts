@@ -10,7 +10,18 @@ import modeleDraftBrut from '../../../data/draft/modele-draft.json';
 import echelleBrute from '../../../data/draft/echelle-rookies.json';
 import banquesBrutes from '../../../data/noms/banques.json';
 import empreintesBrutes from '../../../data/noms/empreintes.json';
-import { donneesCarriere, donneesMarche, effectifs, fichierLigue, reglages, regles, salaires, universDeDepart, vivier } from './donnees';
+import {
+  donneesCarriere,
+  donneesClub,
+  donneesMarche,
+  effectifs,
+  fichierLigue,
+  reglages,
+  regles,
+  salaires,
+  universDeDepart,
+  vivier,
+} from './donnees';
 
 // Tranche 7 : propriété des choix de chaque Draft relevée (data/draft/choix-<année>.json).
 const choixBruts = import.meta.glob<unknown>('../../../data/draft/choix-*.json', { eager: true, import: 'default' });
@@ -38,7 +49,7 @@ export function contexteLigue(): ContexteLigue {
       [...effectifs.values()],
       nomsDuVivier(vivier),
     ),
-    { univers: universDeDepart, donnees: donneesCarriere, marche: donneesMarche },
+    { univers: universDeDepart, donnees: donneesCarriere, marche: donneesMarche, club: donneesClub },
   );
   return contexte;
 }

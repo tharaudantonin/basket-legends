@@ -1,6 +1,6 @@
 # Marché — tranche 9 (25 novembre 2026)
 
-> Statut : **implémenté et testé**. Échanges, free agency par journées, IA des GM, staff, délégations, composition par le GM, économie pluriannuelle. Décisions appliquées : réponses 24 à 45 de `docs/DECISIONS_2026-11.md` (« Tout en (a) »). Les règles de la CBA sont **sourcées** (Hoops Rumors, NBA.com, RealGM, NBC Sports, Yardbarker ; sources secondaires à recouper avec le texte de la CBA avant publication) ; les modèles `data/modeles/marche-v1.json` et `staff-v1.json` sont des **propositions** à valider par Antonin.
+> Statut : **implémenté et testé**. Échanges, free agency par journées, IA des GM, staff, délégations, composition par le GM, économie pluriannuelle. Décisions appliquées : réponses 24 à 45 de `docs/DECISIONS_2026-11.md` (« Tout en (a) »). Les règles de la CBA sont **sourcées** (Hoops Rumors, NBA.com, RealGM, NBC Sports, Yardbarker ; sources secondaires à recouper avec le texte de la CBA avant publication) ; les modèles `data/modeles/marche-v1.json` et `staff-v1.json` ont été **validés** par Antonin le 25/11/2026 (réponse 47).
 
 ## 1. Ce que fait la tranche 9
 
@@ -22,8 +22,8 @@ Code : `packages/league/src/marche/` (`valeur`, `plafond`, `operations`, `echang
 | `data/ligue/transactions-2026-27.json` | Dates 2026-27 (négociations 30/06, signatures 06/07, contrats garantis 10/01, date limite 11/02/2027, ballottage pour la phase finale 01/03) ; volumes 2025-26 : 58 échanges (Draft 2025 → date limite), 212 signatures standard. | NBA.com (primaire), Basketball-Reference (comptage automatique) |
 | `data/draft/choix-2028.json` à `choix-2033.json` | Propriété des choix : échanges, protections, droits d'échange de rang, dettes reportées (« si le choix n'a pas déjà été transmis » : champ `cas`), choix confisqués (Clippers 2029-2033, Indiana 2029), choix gelés (BOS, MIN, PHX 2032 ; CLE 2033). Les montages les plus complexes sont simplifiés et notés dans `ecarts`. | RealGM, pages de synthèse (secondaire, à recouper) |
 | `data/contrats/2026-27.json` (`saisonsAvecEquipe`) | Horloge de Bird au début de 2026-27 : saisons avec l'équipe sans en changer comme agent libre (un échange ne la remet pas à zéro). 495 relevées (équipes 2024-25 et 2025-26, échanges de 2025 et 2026 de Basketball-Reference ; rookies : saisons depuis leur Draft), 28 approximées (joueurs sans statistique en 2025-26). Relevés bruts dans `basket-legends-prive/anciennete-2026-27/`. | Basketball-Reference |
-| `data/modeles/marche-v1.json` | Modèle du marché (§ 3 à 6), statut **proposition**. | Salaire de marché calé sur les contrats 2026-27 ; le reste : choix du modèle |
-| `data/modeles/staff-v1.json` | Modèle du staff (§ 7), statut **proposition**. | Choix du modèle |
+| `data/modeles/marche-v1.json` | Modèle du marché (§ 3 à 6), statut **valide** (réponse 47). | Salaire de marché calé sur les contrats 2026-27 ; le reste : choix du modèle |
+| `data/modeles/staff-v1.json` | Modèle du staff (§ 7), statut **valide** (réponse 47). | Choix du modèle |
 
 Validations du 25/11/2026 (réponse 26) : `notes-v2.json`, `modele-draft.json`, `vivier/2026-27.json`, `carriere-v1.json` et les noms des villes d'accueil passent au statut `valide` (`tools/migrations/2026-11-25-tranche9-validations.ts`, idempotente).
 
@@ -104,9 +104,9 @@ Le test (`packages/league/tests/marche.test.ts`) joue 10 saisons accélérées e
 
 ## 12. Limites et points à valider
 
-1. Modèles `marche-v1.json` et `staff-v1.json` (statut « proposition ») : valeur, stratégies, personnalité des GM, agents libres (fidélité, masse minimale et espace inutilisé, dernière journée), volumes de l'IA, effets du staff, répartition des plans, fourchettes du critère de sortie (dont la borne de 20 échanges, la taxe à 1-18 et la masse à 0,80-1,05).
+1. Modèles `marche-v1.json` et `staff-v1.json` (validés le 25/11/2026, réponse 47) : valeur, stratégies, personnalité des GM, agents libres (fidélité, masse minimale et espace inutilisé, dernière journée), volumes de l'IA, effets du staff, répartition des plans, fourchettes du critère de sortie (dont la borne de 20 échanges, la taxe à 1-18 et la masse à 0,80-1,05).
 2. Niveau de la masse salariale : baisse de 0,99 à environ 0,85 du seuil de taxe, puis stabilité (§ 10).
-3. Règles non appliquées : 105 % du salaire moyen (Early Bird), cap holds exacts (190 % / 150 % / 300 % / 250 % selon le salaire précédent ; le jeu prend 150 % pour Bird), exceptions de joueur échangé (TPE) non simultanées, délai de deux mois avant d'agréger un joueur reçu, contrats de 10 jours et two-way en saison (tranche 10), primes, prolongations en cours de contrat, sign-and-trade, argent dans les échanges, protections choisies par le GM sur ses choix.
+3. Règles non appliquées : 105 % du salaire moyen (Early Bird), cap holds exacts (190 % / 150 % / 300 % / 250 % selon le salaire précédent ; le jeu prend 150 % pour Bird), exceptions de joueur échangé (TPE) non simultanées, délai de deux mois avant d'agréger un joueur reçu, contrats de 10 jours et two-way en saison (faits à la tranche 10 : `docs/CLUB.md`), primes, prolongations en cours de contrat, sign-and-trade, argent dans les échanges, protections choisies par le GM sur ses choix.
 4. Approximations : horloge de Bird des coupés-resignés et de 2023-24 non relevées ; délai de signature des agents libres de l'été 2026 non relevé (aucun joueur du snapshot n'est bloqué jusqu'au 15 décembre) ; ballottage instantané ; les membres du staff ne sont pas payés.
 5. Choix 2028-2033 : montages simplifiés (BKN-PHX-NYK-WAS 2028, droit d'échange CHA-MIN 2029-2030, choix « non précisés » de 2033) ; à recouper (porte de publication).
 6. Volume d'échanges inférieur au réel (environ 30 contre 58).

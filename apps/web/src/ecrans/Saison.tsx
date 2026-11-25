@@ -21,6 +21,7 @@ import { EcranDraft } from './Draft';
 import { Vivier } from './Vivier';
 import { Histoire } from './Histoire';
 import { AgentsLibres, Bureau, Echanges, Journal, Staff, type Agir } from './Marche';
+import { Club, DecisionsDuClub, GLeague } from './Club';
 
 type Onglet =
   | 'calendrier'
@@ -38,7 +39,9 @@ type Onglet =
   | 'marche'
   | 'echanges'
   | 'staff'
-  | 'transactions';
+  | 'transactions'
+  | 'club'
+  | 'g-league';
 
 interface Props {
   etat: EtatSaison;
@@ -110,7 +113,9 @@ export function EcranSaison({
   const matchParId = useMemo(() => new Map(etat.matchs.map((m) => [m.id, m])), [etat.matchs]);
 
   const ouverts = (etat.bureau ?? []).filter((m) => m.statut === 'ouvert').length;
+  const enAttente = (etat.club?.messages ?? []).filter((m) => m.reponse === undefined).length;
   const onglets: [Onglet, string][] = [
+    ['club', enAttente ? `Club (${enAttente})` : 'Club'],
     ['bureau', ouverts ? `Bureau (${ouverts})` : 'Bureau'],
     ['marche', etat.phase === 'intersaison' ? 'Free agency' : 'Joueurs libres'],
     ['echanges', 'Échanges'],
@@ -126,6 +131,7 @@ export function EcranSaison({
     ['salaires', 'Masse salariale'],
     ['draft', 'Draft'],
     ['vivier', 'Hors NBA'],
+    ['g-league', 'G League'],
     ['histoire', 'Histoire'],
   ];
   const draftFaite = !etat.draft || Boolean(etat.draft.terminee);
@@ -207,6 +213,8 @@ export function EcranSaison({
           {enCours && <span className="aide">Simulation…</span>}
         </section>
       )}
+
+      <DecisionsDuClub etat={etat} enCours={enCours} onAction={onAction} />
 
       <nav className="onglets" aria-label="Rubriques de la saison">
         {onglets.map(([id, libelle]) => (
@@ -405,6 +413,8 @@ export function EcranSaison({
       {onglet === 'echanges' && <Echanges etat={etat} enCours={enCours} onAction={onAction} onFiche={onFiche} />}
       {onglet === 'staff' && <Staff etat={etat} enCours={enCours} onAction={onAction} onFiche={onFiche} />}
       {onglet === 'transactions' && <Journal etat={etat} />}
+      {onglet === 'club' && <Club etat={etat} enCours={enCours} onAction={onAction} onFiche={onFiche} />}
+      {onglet === 'g-league' && <GLeague etat={etat} onFiche={onFiche} />}
 
       {onglet === 'all-star' && (
         <section className="carte" aria-label="All-Star Game">

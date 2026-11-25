@@ -20,3 +20,4 @@ export { schemaSauvegarde, VERSION_SAUVEGARDE, creerSauvegarde, lireSauvegarde, 
 export * from './draft';
 export * from './carriere';
 export * from './marche';
+export * from './club';

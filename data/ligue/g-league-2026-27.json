@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-g-league-2026-27",
+  "saison": "2026-2027",
+  "note": "Format de la saison 2026-27 de la NBA G League (relevé le 25/11/2026). 31 équipes, dont 30 affiliées, une par franchise NBA (depuis 2024-25) ; le jeu ne simule que les 30 affiliées (réponse 48), l’équipe indépendante est laissée de côté. Tip-Off Tournament de 14 matchs en quatre régions, à partir du 6 novembre 2026 ; Winter Showcase en décembre (huit qualifiés : le premier de chaque région et les quatre meilleurs suivants, élimination directe) ; bilans remis à zéro, saison régulière de 36 matchs par conférence ; playoffs : huit équipes par conférence, à partir du 30 mars 2027, finale au meilleur des trois matchs. Dates de fin du Tip-Off et de la saison régulière, et dates exactes du Showcase : estimées (la FAQ se contredit sur la reprise, 19 ou 27 décembre).",
+  "equipes": 31,
+  "affiliees": 30,
+  "tipOff": {
+    "matchs": 14,
+    "regions": 4,
+    "debut": "2026-11-06",
+    "fin": "2026-12-16"
+  },
+  "showcase": {
+    "qualifies": 8,
+    "debut": "2026-12-19",
+    "fin": "2026-12-22"
+  },
+  "saisonReguliere": {
+    "matchs": 36,
+    "debut": "2026-12-27",
+    "fin": "2027-03-28"
+  },
+  "playoffs": {
+    "parConference": 8,
+    "debut": "2027-03-30",
+    "finaleVictoires": 2
+  },
+  "sources": [
+    {
+      "fournisseur": "NBA G League",
+      "titre": "What You Need to Know About the NBA G League",
+      "url": "https://gleague.nba.com/about",
+      "niveau": "primaire",
+      "consulteLe": "2026-11-25"
+    },
+    {
+      "fournisseur": "NBA G League",
+      "titre": "Frequently Asked Questions: NBA G League",
+      "url": "https://gleague.nba.com/faq",
+      "niveau": "primaire",
+      "consulteLe": "2026-11-25"
+    },
+    {
+      "fournisseur": "NBA Communications",
+      "titre": "NBA G League’s 25th season tips off Nov. 7 (calendrier 2025-26)",
+      "url": "https://pr.nba.com/2025-26-nba-g-league-schedule/",
+      "niveau": "primaire",
+      "consulteLe": "2026-11-25"
+    }
+  ]
+}

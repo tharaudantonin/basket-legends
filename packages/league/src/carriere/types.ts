@@ -5,6 +5,7 @@ import type { AttributsDetailles } from '@basket-legends/engine';
 import type { ContratJoueur, SituationPubliee } from '../cba';
 import type { ChoixTransmis, HistoriqueChoix, ProprieteChoix } from '../draft/types';
 import type { MembreStaff, StaffEquipe, Transaction } from '../marche/types';
+import type { ClubUnivers } from '../club/types';
 
 export interface Familles {
   technique: number;
@@ -102,6 +103,8 @@ export interface Univers {
   exceptionsUtilisees?: Record<string, string[]>;
   /** Journal des transactions de la saison. */
   journal?: Transaction[];
+  /** Tranche 10 : propriétaires, moral des joueurs, assignations en G League, carrière du GM (absent : `initialiserClub`). */
+  club?: ClubUnivers;
 }
 
 /** Ce qu'on garde d'une saison terminée. */
@@ -125,6 +128,9 @@ export interface ArchiveSaison {
   demenagement?: { franchise: string; de: string; vers: string };
   /** Tranche 9 : échanges et signatures de la saison (critère de sortie). */
   transactions?: { echanges: number; signatures: number };
+  /** Tranche 10 : GM licenciés à la fin de la saison, champion de G League. */
+  licenciements?: string[];
+  championGLeague?: string;
 }
 
 /** Bilan d'une intersaison (pour les actualités et les tests). */

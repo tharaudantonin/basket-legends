@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "datasetId": "basket-legends-modele-marche",
   "version": "marche-v1",
-  "statut": "proposition",
-  "note": "Modèle du marché de la tranche 9 (25/11/2026) : valeur d’un joueur, force d’une équipe, valeur des choix, stratégies et personnalité des GM de l’IA, agents libres, échanges de l’IA et critère de sortie (« 10 saisons au pilote automatique sans dérive »). Le salaire de marché selon la note est calé sur les moyennes des contrats 2026-27 des vétérans (hors échelle des rookies, data/contrats/2026-27.json) ; tous les autres paramètres sont des choix du modèle, sans cible sourcée, à valider par Antonin. Les volumes d’échanges et de signatures visés viennent de data/ligue/transactions-2026-27.json. Personnalité des joueurs : traits de personnage générés (réponse 35), jamais présentés comme relevés.",
+  "statut": "valide",
+  "note": "Modèle du marché de la tranche 9 (25/11/2026) : valeur d’un joueur, force d’une équipe, valeur des choix, stratégies et personnalité des GM de l’IA, agents libres, échanges de l’IA et critère de sortie (« 10 saisons au pilote automatique sans dérive »). Le salaire de marché selon la note est calé sur les moyennes des contrats 2026-27 des vétérans (hors échelle des rookies, data/contrats/2026-27.json) ; tous les autres paramètres sont des choix du modèle, sans cible sourcée. Les volumes d’échanges et de signatures visés viennent de data/ligue/transactions-2026-27.json. Personnalité des joueurs : traits de personnage générés (réponse 35), jamais présentés comme relevés. Validé par Antonin le 25/11/2026 (réponse 47).",
   "valeur": {
     "salaireSelonNote": [
       [

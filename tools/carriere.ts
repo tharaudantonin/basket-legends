@@ -4,6 +4,9 @@
 // en quelques secondes. Avec `--matchs`, chaque saison est jouée en entier par le moteur (environ 4 s par saison).
 // Tranche 9 : `--marche` mesure aussi le marché (critère de sortie, réponse 43 : « 10 saisons au pilote automatique sans
 // dérive », fourchettes de data/modeles/marche-v1.json) ; la franchise du joueur est pilotée par son staff (réponse 45).
+// Tranche 10 : `--club` mesure aussi la vie du club (critère de sortie, réponse 56 : licenciements de GM dans la
+// fourchette du relevé réel, moral moyen stable, effet du moral en match de moyenne nulle ; data/modeles/club-v1.json).
+// Il suppose `--matchs` (le moral et les rendez-vous du propriétaire naissent des matchs) et le marché.
 import {
   avancer,
   avancerDraft,
@@ -12,7 +15,11 @@ import {
   mesurerUnivers,
   mesurerMarche,
   ecartsDuMarche,
+  mesurerClub,
+  ecartsDuClub,
+  type MesuresClub,
   nouvellePartie,
+  actionDuGm,
   DELEGATIONS_STAFF,
   nouvelleSaison,
   passerALaSaisonSuivante,
@@ -25,7 +32,8 @@ import { chargerContexte } from '../packages/league/tests/outils';
 const args = process.argv.slice(2);
 const saisons = Number(args.find((a) => /^\d+$/.test(a)) ?? 20);
 const avecMatchs = args.includes('--matchs');
-const avecMarche = args.includes('--marche');
+const avecClub = args.includes('--club');
+const avecMarche = args.includes('--marche') || avecClub;
 const graine = Number(args.find((a) => a.startsWith('--graine='))?.slice(9) ?? 2026);
 
 const base = chargerContexte(false, true);
@@ -33,6 +41,7 @@ let etat: EtatSaison = avecMarche ? nouvellePartie(base, graine, 'boston') : nou
 if (avecMarche) etat.delegations = { ...DELEGATIONS_STAFF };
 const M = base.marche!.modele;
 const lignesMarche: string[] = [];
+const mesuresClub: MesuresClub[] = [];
 const ecartsMarche: string[] = [];
 if (avecMarche) {
   const m0 = mesurerMarche(M, base.salaires.cba, etat.univers!);
@@ -46,7 +55,11 @@ for (let s = 1; s <= saisons; s++) {
   const ctx = contexteDeLaSaison(base, etat);
   if (avecMatchs) {
     etat = avancer(ctx, etat, 'fin');
-    etat = avancerDraft(ctx, { ...etat, draft: { ...etat.draft!, delegue: true } });
+    if (avecClub) mesuresClub.push(mesurerClub(etat));
+    // Licencié, le GM du joueur choisit la première offre avant la Draft (pilote automatique).
+    if (etat.club?.licenciement)
+      etat = actionDuGm(base, etat, { genre: 'offre-emploi', franchise: etat.club.licenciement.offres[0]! }).etat;
+    etat = avancerDraft(contexteDeLaSaison(base, etat), { ...etat, draft: { ...etat.draft!, delegue: true } });
   } else etat = terminerSansMatchs(ctx, etat);
   etat = passerALaSaisonSuivante(base, etat);
   const a = etat.archives!.at(-1)!;
@@ -99,4 +112,14 @@ if (avecMarche) {
       : 'Marché : toutes les saisons dans leurs fourchettes.',
   );
 }
-if (ecarts.length || ecartsMarche.length) process.exitCode = 1;
+const ecartsClub = avecClub ? ecartsDuClub(base.club!.modele, mesuresClub) : [];
+if (avecClub) {
+  console.log('\nClub (saison par saison) :');
+  for (const m of mesuresClub)
+    console.log(`  ${JSON.stringify({ ...m, moralMoyen: +m.moralMoyen.toFixed(1), effetMoyen: +m.effetMoyen.toExponential(2) })}`);
+  console.log(`  Relevé réel des changements de direction : ${JSON.stringify(base.club!.licenciementsReleves)}.`);
+  console.log(
+    ecartsClub.length ? `Club hors fourchette (${ecartsClub.length}) :\n  ${ecartsClub.join('\n  ')}` : 'Club : critère de sortie tenu.',
+  );
+}
+if (ecarts.length || ecartsMarche.length || ecartsClub.length) process.exitCode = 1;

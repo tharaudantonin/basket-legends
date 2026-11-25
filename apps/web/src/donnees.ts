@@ -26,6 +26,10 @@ import {
   schemaModeleMarche,
   schemaModeleStaff,
   schemaTransactions,
+  donneesDuClub,
+  schemaModeleClub,
+  schemaGLeague,
+  schemaDirections,
   type Effectif,
   type Franchise,
 } from '@basket-legends/data';
@@ -45,6 +49,9 @@ import villesBrutes from '../../../data/ligue/villes-d-accueil.json';
 import marcheBrut from '../../../data/modeles/marche-v1.json';
 import staffBrut from '../../../data/modeles/staff-v1.json';
 import transactionsBrutes from '../../../data/ligue/transactions-2026-27.json';
+import clubBrut from '../../../data/modeles/club-v1.json';
+import gLeagueBrute from '../../../data/ligue/g-league-2026-27.json';
+import directionsBrutes from '../../../data/ligue/directions.json';
 import { structureDeLaLigue } from '@basket-legends/data';
 
 const effectifsBruts = import.meta.glob<unknown>('../../../data/rosters/2026-27/*.json', { eager: true, import: 'default' });
@@ -92,6 +99,10 @@ export const donneesCarriere = donneesDeCarriere(fichierCarriere, schemaVillesDA
 export const fichierMarche = schemaModeleMarche.parse(marcheBrut);
 export const fichierStaff = schemaModeleStaff.parse(staffBrut);
 export const donneesMarche = donneesDuMarche(fichierMarche, fichierStaff, schemaTransactions.parse(transactionsBrutes));
+
+/** Tranche 10 : modèle du club, format de la G League, changements de direction relevés. */
+export const fichierClub = schemaModeleClub.parse(clubBrut);
+export const donneesClub = donneesDuClub(fichierClub, schemaGLeague.parse(gLeagueBrute), schemaDirections.parse(directionsBrutes));
 
 export function effectifDe(id: string): Effectif {
   const e = effectifs.get(id);
