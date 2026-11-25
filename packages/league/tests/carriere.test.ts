@@ -200,7 +200,8 @@ describe('changement de franchise', () => {
   it('arrive en moyenne une fois toutes les 8 saisons', () => {
     let n = 0;
     const essais = 400;
-    for (let g = 0; g < essais; g++) if (demenager(C, structuredClone(u0), 'boston', g, '2027-2028', base.structure)) n++;
+    for (let g = 0; g < essais; g++)
+      if (demenager(C, { ...u0, franchises: structuredClone(u0.franchises) }, 'boston', g, '2027-2028', base.structure)) n++;
     expect(n / essais).toBeGreaterThan(0.08);
     expect(n / essais).toBeLessThan(0.17);
   });

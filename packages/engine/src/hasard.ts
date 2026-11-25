@@ -50,14 +50,18 @@ function construire(depart: number): Hasard {
       return liste[Math.floor(suivant() * liste.length)] as (typeof liste)[number];
     },
     pondere: (liste, poids) => {
-      const total = liste.reduce((s, x) => s + Math.max(0, poids(x)), 0);
+      // Performance (25/11/2026) : chaque poids n'est calculé qu'une fois ; mêmes valeurs, même ordre, même résultat.
+      const n = liste.length;
+      const p = new Array<number>(n);
+      let total = 0;
+      for (let i = 0; i < n; i++) total += p[i] = Math.max(0, poids(liste[i]!));
       if (total <= 0) return hasard.choisir(liste);
       let tirage = suivant() * total;
-      for (const x of liste) {
-        tirage -= Math.max(0, poids(x));
-        if (tirage < 0) return x;
+      for (let i = 0; i < n; i++) {
+        tirage -= p[i]!;
+        if (tirage < 0) return liste[i]!;
       }
-      return liste[liste.length - 1] as (typeof liste)[number];
+      return liste[n - 1] as (typeof liste)[number];
     },
     chance: (p) => suivant() < p,
     etat: () => a,

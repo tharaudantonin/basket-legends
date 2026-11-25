@@ -80,7 +80,7 @@ La récidive (taxe payée 3 des 4 dernières saisons, `data/cba/`) se calcule su
 
 Mesures sur les joueurs sous contrat standard NBA, comparées à la saison 2026-27 ; fourchettes tolérées (**choisies pour le jeu, non sourcées**) : moyenne ±1,5 ; 10e, 50e et 90e centiles ±2,5 ; joueurs à 80 ou plus ±30 % ; joueurs à 90 ou plus ±5 ; âge moyen ±1,5 ; population totale ±10 %.
 
-`npm run carriere [saisons] [-- --matchs] [-- --graine=n]` : sans `--matchs`, chaque saison est « accélérée » (`terminerSansMatchs` : aucun match, ordre de la Draft selon la force des effectifs, choix du staff) ; 20 saisons en 4 secondes environ. Avec `--matchs`, chaque saison est jouée par le moteur (environ 4,8 s par saison). Le mode accéléré ne sert qu'à la calibration.
+`npm run carriere [saisons] [-- --matchs] [-- --graine=n]` : sans `--matchs`, chaque saison est « accélérée » (`terminerSansMatchs` : aucun match, ordre de la Draft selon la force des effectifs, choix du staff) ; 20 saisons en 4 secondes environ. Avec `--matchs`, chaque saison est jouée par le moteur (environ 4,8 s par saison, 2,6 s depuis l'accélération du moteur du 25/11/2026, `docs/SAISON.md`). Le mode accéléré ne sert qu'à la calibration.
 
 Résultats du 24/11/2026 (20 saisons accélérées) :
 
