@@ -23,6 +23,9 @@ import {
   schemaVivier,
   schemaModeleCarriere,
   schemaVillesDAccueil,
+  schemaModeleMarche,
+  schemaModeleStaff,
+  schemaTransactions,
   type Effectif,
   type Registre,
 } from './schemas';
@@ -274,6 +277,30 @@ export function verifierDonnees(sources: SourcesDonnees): Rapport {
   }
   const versions = new Set<string>();
   for (const [fichier, contenu] of Object.entries(sources.modelesNotes)) {
+    // Tranche 9 : modèles du marché et du staff.
+    if (fichier.startsWith('marche-') || fichier.startsWith('staff-')) {
+      const chemin = `data/modeles/${fichier}`;
+      const marche = fichier.startsWith('marche-');
+      const lu = marche ? schemaModeleMarche.safeParse(contenu) : schemaModeleStaff.safeParse(contenu);
+      if (!lu.success) {
+        erreurs.push(...messagesZod(chemin, lu));
+        continue;
+      }
+      if (lu.data.statut !== 'valide') avertissements.push(`${chemin} : modèle au statut « proposition », à valider par Antonin`);
+      if (marche) {
+        const m = schemaModeleMarche.parse(contenu);
+        const s = m.valeur.salaireSelonNote;
+        if (s.some(([n, x], i) => i > 0 && (n <= s[i - 1]![0] || x < s[i - 1]![1])))
+          erreurs.push(`${chemin} : le salaire de marché doit croître avec la note`);
+      } else {
+        const m = schemaModeleStaff.parse(contenu);
+        for (const [nom, r] of Object.entries(m.preferences)) {
+          const total = Object.values(r).reduce((t, x) => t + x, 0);
+          if (Math.abs(total - 1) > 1e-9) erreurs.push(`${chemin} : les préférences « ${nom} » font ${total} au lieu de 1`);
+        }
+      }
+      continue;
+    }
     // Tranche 8 : le modèle de carrière vit aussi dans data/modeles/.
     if (fichier.startsWith('carriere-')) {
       const chemin = `data/modeles/${fichier}`;
@@ -336,6 +363,18 @@ export function verifierDonnees(sources: SourcesDonnees): Rapport {
         for (const n of v.noms) if (nomsFranchises.includes(`${v.ville} ${n}`)) erreurs.push(`${chemin} : « ${v.ville} ${n} » est déjà le nom d'une franchise`);
       }
       if (lu.data.statut !== 'valide') avertissements.push(`${chemin} : villes d'accueil et noms au statut « proposition », à valider par Antonin`);
+      continue;
+    }
+    // Tranche 9 : dates et volumes des transactions.
+    if (fichier.startsWith('transactions-')) {
+      const lu = schemaTransactions.safeParse(contenu);
+      if (!lu.success) {
+        erreurs.push(...messagesZod(chemin, lu));
+        continue;
+      }
+      const D = lu.data.dates;
+      if (!(D.negociationsAgentsLibres <= D.signaturesAgentsLibres && D.contratsGarantis < D.dateLimiteBallottagePhaseFinale))
+        erreurs.push(`${chemin} : dates des transactions dans le désordre`);
       continue;
     }
     const lu = schemaSaisonLigue.safeParse(contenu);
@@ -432,9 +471,13 @@ export function verifierDonnees(sources: SourcesDonnees): Rapport {
         for (const r of tour) {
           for (const m of r.membres) if ('original' in m) equipeConnue(chemin, m.original);
           if (r.condition) equipeConnue(chemin, r.condition.original);
-          for (const liste of [...Object.values(r.attributions), ...Object.values(r.attributionsSinon ?? {})])
+          for (const liste of [
+            ...Object.values(r.attributions),
+            ...Object.values(r.attributionsSinon ?? {}),
+            ...(r.cas ?? []).flatMap((c) => Object.values(c.attributions)),
+          ])
             for (const a of liste)
-              for (const b of [a.beneficiaire, a.sinon]) if (b !== undefined && !b.startsWith('@')) equipeConnue(chemin, b);
+              for (const b of [a.beneficiaire, a.sinon]) if (b !== undefined && !b.startsWith('@') && b !== 'confisque') equipeConnue(chemin, b);
           for (const [n, liste] of Object.entries(r.attributions))
             if (liste.length !== Number(n)) erreurs.push(`${chemin} : « ${r.description} » prévoit ${liste.length} attribution(s) pour ${n} choix`);
         }

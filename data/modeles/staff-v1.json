@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-modele-staff",
+  "version": "staff-v1",
+  "statut": "proposition",
+  "note": "Modèle du staff de la tranche 9 (25/11/2026, réponses 18, 39 et 40). Quatre postes par franchise, staff original généré (noms des banques de noms, compétences tirées). Effets bornés et de moyenne nulle (réponse 39) : précision du scouting de la Draft, durée des blessures, progression des joueurs de 25 ans au plus. L’entraîneur fixe les plans de jeu de son équipe (réponse 40), répartis autour du plan par défaut de sorte que l’effet moyen sur la ligue reste nul (vérifié avec `npm run sonde -- --staff` : le rythme lent réduit davantage les pertes que le rythme rapide ne les augmente, d’où un peu plus d’entraîneurs « rapides »). Tous les paramètres sont des choix du modèle, à valider par Antonin.",
+  "postes": [
+    {
+      "id": "entraineur",
+      "libelle": "Entraîneur principal",
+      "competences": [
+        "tactique",
+        "motivation"
+      ]
+    },
+    {
+      "id": "developpement",
+      "libelle": "Entraîneur du développement",
+      "competences": [
+        "developpement"
+      ]
+    },
+    {
+      "id": "recruteur",
+      "libelle": "Directeur du recrutement",
+      "competences": [
+        "scouting"
+      ]
+    },
+    {
+      "id": "medical",
+      "libelle": "Responsable médical",
+      "competences": [
+        "medical"
+      ]
+    }
+  ],
+  "competence": {
+    "moyenne": 60,
+    "ecartType": 10,
+    "bornes": [
+      35,
+      90
+    ],
+    "reference": 60,
+    "etendue": 30
+  },
+  "effets": {
+    "scouting": [
+      0.85,
+      1.15
+    ],
+    "blessures": [
+      0.85,
+      1.15
+    ],
+    "progression": {
+      "max": 0.2,
+      "ageMax": 25
+    }
+  },
+  "preferences": {
+    "rythme": {
+      "lent": 0.25,
+      "normal": 0.5,
+      "rapide": 0.25
+    },
+    "defense": {
+      "individuelle": 0.9,
+      "zone": 0.1
+    },
+    "troisPoints": {
+      "moins": 0.25,
+      "normal": 0.5,
+      "plus": 0.25
+    }
+  },
+  "libresParPoste": 6,
+  "ages": [
+    32,
+    68
+  ]
+}

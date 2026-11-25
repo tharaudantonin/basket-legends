@@ -19,6 +19,10 @@ import { situationEquipe } from './cba';
 import { cumuler } from './statistiques';
 import type { Actualite, Bilan, ContexteLigue, EtatPlayIn, EtatSaison, NatureMatch, ResumeMatch, Serie } from './types';
 import { nouvelleDraft, preparerDraft } from './draft/draft';
+import { composerSelonLOrdre, contexteDeLaSaison, joueurDuMatchCarriere } from './carriere/univers';
+import { compositionDuMatch } from './marche/operations';
+import { facteurBlessures } from './marche/staff';
+import { journeeDeMarche } from './marche/ia';
 
 export type Cible = 'jour' | 'semaine' | 'all-star' | 'fin-reguliere' | 'fin';
 
@@ -71,12 +75,37 @@ function publier(etat: EtatSaison, a: Omit<Actualite, 'id'>): void {
 }
 
 /** Les deux équipes d'un match, sans leurs absents (au moins cinq joueurs : le moins blessé revient sinon). */
+/** Ce qu'il faut de l'état pour rejouer un match : All-Star Game, compositions notées et ordre des matchs. */
+export type EtatPourRejouer = Pick<EtatSaison, 'allStar'> &
+  Partial<Pick<EtatSaison, 'compositions'>> & { matchs?: Pick<ResumeMatch, 'id'>[] };
+
+/** La position d'un match dans la saison (les matchs déjà joués ; un match à jouer vient après eux). */
+const positionDuMatch = (etat: EtatPourRejouer, id: number): number => {
+  const i = etat.matchs?.findIndex((x) => x.id === id) ?? -1;
+  return i >= 0 ? i : (etat.matchs?.length ?? 0);
+};
+
+/** Tranche 9 : l'équipe telle qu'elle était à un match (après un échange ou un changement de composition en saison). */
+function equipeAuMatch(ctx: ContexteLigue, etat: EtatPourRejouer, id: string, position: number): { equipe: EquipeDuMatch; ordre: boolean } {
+  const base = ctx.equipes[id]!;
+  const note = compositionDuMatch(etat, id, position);
+  const u = ctx.univers;
+  if (!note || !u) return { equipe: base, ordre: !!base.ordreDuGm };
+  const joueurs = note.joueurs
+    .filter((j) => u.joueurs[j])
+    .map((j) => ({ ...joueurDuMatchCarriere(u.joueurs[j]!), ...(note.numeros?.[j] !== undefined ? { numero: note.numeros[j]! } : {}) }));
+  const e = note.ordre ? composerSelonLOrdre(id, base.nom, joueurs, note.joueurs) : composerEquipe(id, base.nom, joueurs);
+  const plan = note.plan ?? base.plan;
+  return { equipe: plan ? { ...e, plan } : e, ordre: !!note.ordre };
+}
+
 export function equipesDuMatch(
   ctx: ContexteLigue,
-  etat: Pick<EtatSaison, 'allStar'>,
-  m: Pick<ResumeMatch, 'domicile' | 'exterieur' | 'absents'>,
+  etat: EtatPourRejouer,
+  m: Pick<ResumeMatch, 'domicile' | 'exterieur' | 'absents'> & { id?: number },
 ): [EquipeDuMatch, EquipeDuMatch] {
   const absents = new Set(m.absents);
+  const position = m.id === undefined ? (etat.matchs?.length ?? 0) : positionDuMatch(etat, m.id);
   const equipe = (id: string): EquipeDuMatch => {
     if (id === ID_ALL_STAR.est || id === ID_ALL_STAR.ouest) {
       const conf = id === ID_ALL_STAR.est ? 'est' : 'ouest';
@@ -90,21 +119,18 @@ export function equipesDuMatch(
         .filter(Boolean);
       return composerEquipe(id, nomDe(ctx, id), joueurs);
     }
-    const base = ctx.equipes[id]!;
+    const { equipe: base, ordre } = equipeAuMatch(ctx, etat, id, position);
     const presents = base.joueurs.filter((j) => !absents.has(j.id));
     const joueurs = presents.length >= ctx.regles.joueursSurLeTerrain ? presents : base.joueurs;
-    return composerEquipe(base.id, base.nom, joueurs);
+    // Tranche 9 : l'ordre choisi par le GM est gardé (sans les absents) ; sinon le staff recompose.
+    const e = ordre ? { id: base.id, nom: base.nom, joueurs } : composerEquipe(base.id, base.nom, joueurs);
+    return base.plan ? { ...e, plan: base.plan } : e;
   };
   return [equipe(m.domicile), equipe(m.exterieur)];
 }
 
 /** Rejoue un match de la saison à l'identique (mode commenté, box score), avec les décisions du coach s'il y en a. */
-export function rejouerMatch(
-  ctx: ContexteLigue,
-  etat: Pick<EtatSaison, 'allStar'>,
-  m: ResumeMatch,
-  options: OptionsSimulation = {},
-): ResultatMatch {
+export function rejouerMatch(ctx: ContexteLigue, etat: EtatPourRejouer, m: ResumeMatch, options: OptionsSimulation = {}): ResultatMatch {
   const [domicile, exterieur] = equipesDuMatch(ctx, etat, m);
   const reglages = m.neutre ? { ...ctx.reglages, tirs: { ...ctx.reglages.tirs, avantageDomicile: 0 } } : ctx.reglages;
   return simulerMatch(
@@ -173,15 +199,19 @@ function jouerMatch(
   }
   for (const ev of r.evenements) {
     if (ev.type !== 'blessure') continue;
-    etat.blessures[ev.joueur] = Math.max(etat.blessures[ev.joueur] ?? 0, ev.matchsAbsent);
-    if (ev.matchsAbsent >= 10)
+    // Tranche 9 : le responsable médical de l'équipe allonge ou raccourcit l'absence (effet borné, de moyenne nulle).
+    const equipe = r.boxScore.equipes[ev.equipe].id;
+    const staff = ctx.marche ? ctx.univers?.staff?.[equipe] : undefined;
+    const absence = staff ? Math.max(1, Math.round(ev.matchsAbsent * facteurBlessures(ctx.marche!.staff, staff))) : ev.matchsAbsent;
+    etat.blessures[ev.joueur] = Math.max(etat.blessures[ev.joueur] ?? 0, absence);
+    if (absence >= 10)
       publier(etat, {
         date,
         genre: 'blessure',
         importance: 2,
-        equipes: [r.boxScore.equipes[ev.equipe].id],
+        equipes: [equipe],
         titre: `${nomJoueur(ctx, ev.joueur)} blessé`,
-        texte: `${nomJoueur(ctx, ev.joueur)} (${nomDe(ctx, r.boxScore.equipes[ev.equipe].id)}) se blesse et sera absent ${ev.matchsAbsent} matchs.`,
+        texte: `${nomJoueur(ctx, ev.joueur)} (${nomDe(ctx, equipe)}) se blesse et sera absent ${absence} matchs.`,
       });
   }
   const min = ctx.structure.recompenses.minutesPourCompter;
@@ -539,15 +569,31 @@ function pas(ctx: ContexteLigue, etat: EtatSaison): void {
   if (etat.phase === 'playoffs') return jourDePlayoffs(ctx, etat);
 }
 
+/**
+ * Un pas de saison suivi du marché du jour (tranche 9 : échanges de l'IA jusqu'à la date limite). Rend le contexte à
+ * utiliser ensuite : recalculé si une transaction a changé l'univers.
+ */
+function pasEtMarche(ctx: ContexteLigue, etat: EtatSaison): ContexteLigue {
+  const regulier = etat.phase === 'reguliere' && !(!etat.allStar && etat.jour >= jourDuAllStar(ctx, etat));
+  pas(ctx, etat);
+  if (!regulier || !ctx.marche || !etat.univers) return ctx;
+  const version = etat.univers.version;
+  journeeDeMarche(ctx, etat);
+  return etat.univers.version !== version ? contexteDeLaSaison(ctx.base ?? ctx, etat) : ctx;
+}
+
 /** Avance la saison jusqu'à la cible ; rend un nouvel état (l'ancien n'est pas modifié). */
-export function avancer(ctx: ContexteLigue, etatInitial: EtatSaison, cible: Cible): EtatSaison {
+export function avancer(ctxInitial: ContexteLigue, etatInitial: EtatSaison, cible: Cible): EtatSaison {
+  if (etatInitial.phase === 'intersaison') throw new Error('La saison n’a pas commencé : terminez d’abord l’intersaison.');
   const etat = structuredClone(etatInitial);
+  let ctx = ctxInitial;
   const fini = () => etat.phase === 'terminee';
-  if (cible === 'jour') pas(ctx, etat);
-  else if (cible === 'semaine') for (let k = 0; k < 7 && !fini(); k++) pas(ctx, etat);
-  else if (cible === 'all-star') while (!etat.allStar && etat.phase === 'reguliere') pas(ctx, etat);
-  else if (cible === 'fin-reguliere') while (etat.phase === 'reguliere') pas(ctx, etat);
-  else while (!fini()) pas(ctx, etat);
+  const p = () => (ctx = pasEtMarche(ctx, etat));
+  if (cible === 'jour') p();
+  else if (cible === 'semaine') for (let k = 0; k < 7 && !fini(); k++) p();
+  else if (cible === 'all-star') while (!etat.allStar && etat.phase === 'reguliere') p();
+  else if (cible === 'fin-reguliere') while (etat.phase === 'reguliere') p();
+  else while (!fini()) p();
   return etat;
 }
 
@@ -557,7 +603,7 @@ export function avancer(ctx: ContexteLigue, etatInitial: EtatSaison, cible: Cibl
  * moyen sûr de connaître l'identifiant d'un match de Play-In ou de playoffs, attribué au fil de la saison.
  */
 export function matchDuProchainPas(ctx: ContexteLigue, etat: EtatSaison): ResumeMatch | undefined {
-  if (etat.phase === 'terminee') return undefined;
+  if (etat.phase === 'terminee' || etat.phase === 'intersaison') return undefined;
   const essai = structuredClone(etat);
   delete essai.matchInteractif;
   const avant = essai.matchs.length;

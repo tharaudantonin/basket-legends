@@ -56,6 +56,7 @@ const dateFr = (d: string): string =>
 const pct3 = (x: number): string => x.toFixed(3).replace(/^0/, '');
 const decimale = (x: number) => x.toLocaleString('fr-FR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 const PHASES: Record<EtatSaison['phase'], string> = {
+  intersaison: 'Intersaison',
   reguliere: 'Saison régulière',
   'play-in': 'Play-In',
   playoffs: 'Playoffs',

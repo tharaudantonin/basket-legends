@@ -6,6 +6,7 @@ import type { DonneesDraft } from './draft/draft';
 import type { EtatDraft } from './draft/types';
 import type { ArchiveSaison, Univers } from './carriere/types';
 import type { DonneesCarriere } from './carriere/univers';
+import type { CompositionNotee, CompteursMarche, Delegations, DonneesMarche, EtatIntersaison, MessageBureau } from './marche/types';
 
 export type CritereDepartage =
   | 'confrontations'
@@ -68,9 +69,14 @@ export interface ContexteLigue {
   univers?: Univers;
   /** Tranche 8 : modèle de carrière (progression, retraites, effectifs) et villes d'accueil. */
   carriere?: DonneesCarriere;
+  /** Tranche 9 : modèles du marché et du staff, dates des transactions (absent : pas de marché). */
+  marche?: DonneesMarche;
+  /** Tranche 9 : le contexte des données de référence, pour recalculer celui de la saison après une transaction. */
+  base?: ContexteLigue;
 }
 
-export type Phase = 'reguliere' | 'play-in' | 'playoffs' | 'terminee';
+/** Tranche 9 : « intersaison » — la saison est créée, la free agency se joue avant le premier match. */
+export type Phase = 'intersaison' | 'reguliere' | 'play-in' | 'playoffs' | 'terminee';
 export type NatureMatch = 'reguliere' | 'play-in' | 'playoffs' | 'all-star';
 
 export interface MatchPrevu {
@@ -223,7 +229,8 @@ export interface Actualite {
     | 'palmares'
     | 'finances'
     | 'draft'
-    | 'intersaison';
+    | 'intersaison'
+    | 'marche';
 }
 
 export interface EtatSaison {
@@ -261,6 +268,16 @@ export interface EtatSaison {
   univers?: Univers;
   /** Tranche 8 : les saisons déjà jouées de la carrière, de la plus ancienne à la plus récente. */
   archives?: ArchiveSaison[];
+  // --- Tranche 9 : marché, staff et délégations. ---
+  /** Équipe → effectifs notés à chaque changement en cours de saison (rejeu des matchs à l'identique). */
+  compositions?: Record<string, CompositionNotee[]>;
+  /** Cinq de départ puis rotation choisis par le GM (délégation « rotation » au niveau « gm »). */
+  compositionManuelle?: string[];
+  delegations?: Delegations;
+  bureau?: MessageBureau[];
+  /** La free agency de l'intersaison (phase « intersaison »). */
+  intersaison?: EtatIntersaison;
+  marche?: CompteursMarche;
 }
 
 export type { EquipeDuMatch, JoueurDuMatch };

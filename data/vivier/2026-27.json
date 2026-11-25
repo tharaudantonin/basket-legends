@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "datasetId": "basket-legends-vivier-2026-27",
-  "statut": "proposition",
-  "note": "Joueurs originaux générés hors NBA (échelle 40-67) pour approcher les 840 joueurs du GDD : 160 en développement, 160 libres. Choix du modèle, sans cible sourcée ; à valider par Antonin. Notes et attributs vrais (le scouting à notes incertaines ne concerne que les prospects de la Draft).",
+  "statut": "valide",
+  "note": "Joueurs originaux générés hors NBA (échelle 40-67) pour approcher les 840 joueurs du GDD : 160 en développement, 160 libres. Choix du modèle, sans cible sourcée ; à valider par Antonin. Notes et attributs vrais (le scouting à notes incertaines ne concerne que les prospects de la Draft). Validé par Antonin le 25/11/2026 (réponse 26).",
   "graine": 2026,
   "modele": {
     "developpement": {

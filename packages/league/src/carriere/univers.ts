@@ -7,6 +7,8 @@ import type { ContexteLigue, EtatSaison, StructureLigue } from '../types';
 import { ajouterJours } from '../calendrier';
 import type { ModeleCarriere } from './modele';
 import type { JoueurCarriere, Univers } from './types';
+import { salairesDeLUnivers } from '../marche/operations';
+import { planDuStaff } from '../marche/staff';
 
 /** Une ville d'accueil possible pour un changement de franchise (data/ligue/villes-d-accueil.json, sans les sources). */
 export interface VilleDAccueil {
@@ -74,17 +76,32 @@ export function joueurDuMatchCarriere(j: JoueurCarriere): JoueurDuMatch {
 export const nomDeFranchise = (base: ContexteLigue, u: Univers | undefined, id: string): string =>
   u?.franchises[id]?.nom ?? base.equipes[id]?.nom ?? id;
 
+/** Tranche 9 : ce qui, dans l'état, change la composition d'une équipe (cinq du GM, délégation de la rotation). */
+export type ChoixDeComposition = Pick<EtatSaison, 'franchise' | 'compositionManuelle' | 'delegations'>;
+
+/** Range l'effectif selon l'ordre du GM (cinq de départ puis rotation) ; les joueurs absents de l'ordre suivent, rangés par le staff. */
+export function composerSelonLOrdre(id: string, nom: string, joueurs: readonly JoueurDuMatch[], ordre: readonly string[]): EquipeDuMatch {
+  const parId = new Map(joueurs.map((j) => [j.id, j]));
+  const ranges = ordre.filter((x) => parId.has(x)).map((x) => parId.get(x)!);
+  const reste = composerEquipe(
+    id,
+    nom,
+    joueurs.filter((j) => !ordre.includes(j.id)),
+  ).joueurs;
+  return { id, nom, joueurs: [...ranges, ...reste], ordreDuGm: true };
+}
+
 /** Le contexte de la saison d'un univers, à partir du contexte des données de référence. */
-export function contexteDeLUnivers(base: ContexteLigue, u: Univers): ContexteLigue {
+export function contexteDeLUnivers(base: ContexteLigue, u: Univers, choix?: ChoixDeComposition): ContexteLigue {
+  const manuelle = choix?.delegations?.rotation === 'gm' && choix.compositionManuelle?.length ? choix.compositionManuelle : undefined;
   const equipes: Record<string, EquipeDuMatch> = Object.fromEntries(
-    Object.keys(base.equipes).map((id) => [
-      id,
-      composerEquipe(
-        id,
-        nomDeFranchise(base, u, id),
-        (u.effectifs[id] ?? []).map((j) => joueurDuMatchCarriere(u.joueurs[j]!)),
-      ),
-    ]),
+    Object.keys(base.equipes).map((id) => {
+      const nom = nomDeFranchise(base, u, id);
+      const joueurs = (u.effectifs[id] ?? []).map((j) => joueurDuMatchCarriere(u.joueurs[j]!));
+      const e = manuelle && id === choix!.franchise ? composerSelonLOrdre(id, nom, joueurs, manuelle) : composerEquipe(id, nom, joueurs);
+      const plan = planDuStaff(u.staff?.[id]);
+      return [id, plan ? { ...e, plan } : e];
+    }),
   );
   const noms = [...Object.values(u.joueurs).map((j) => j.nom), ...Object.values(u.retraites).map((r) => r.nom)];
   return {
@@ -93,15 +110,25 @@ export function contexteDeLUnivers(base: ContexteLigue, u: Univers): ContexteLig
     equipes,
     recrues: u.recrues,
     pointsParMatchPrecedents: u.pointsParMatchPrecedents,
-    salaires: { saison: u.saison, cba: base.salaires.cba, contrats: u.contrats, equipes: u.equipes },
+    salaires: u.plafonds
+      ? salairesDeLUnivers(base.salaires.cba, u)
+      : { saison: u.saison, cba: base.salaires.cba, contrats: u.contrats, equipes: u.equipes },
     ...(base.draft
-      ? { draft: { ...base.draft, historique: u.historiqueLoterie, nomsPris: [...new Set([...base.draft.nomsPris, ...noms])] } }
+      ? {
+          draft: {
+            ...base.draft,
+            historique: u.historiqueLoterie,
+            nomsPris: [...new Set([...base.draft.nomsPris, ...noms])],
+            ...(u.choix ? { proprietes: u.choix, transmis: u.choixTransmis ?? {} } : {}),
+          },
+        }
       : {}),
     univers: u,
+    base,
   };
 }
 
 /** Le contexte de la saison d'un état : celui de son univers, ou celui des données pour la première saison. */
-export function contexteDeLaSaison(base: ContexteLigue, etat: Pick<EtatSaison, 'univers'>): ContexteLigue {
-  return etat.univers ? contexteDeLUnivers(base, etat.univers) : base;
+export function contexteDeLaSaison(base: ContexteLigue, etat: Pick<EtatSaison, 'univers'> & Partial<ChoixDeComposition>): ContexteLigue {
+  return etat.univers ? contexteDeLUnivers(base, etat.univers, etat as ChoixDeComposition) : base;
 }

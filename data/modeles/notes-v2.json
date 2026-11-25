@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "datasetId": "basket-legends-modele-notes-v2",
   "version": "notes-v2",
-  "status": "proposition",
-  "note": "Modèle de notes v2 (tranche 7, 24/11/2026, réponse 14). Reprend sans changement les paramètres validés du v1 (note globale, quatre familles, endurance, ancrages, notes a priori) et ajoute 16 attributs détaillés, chacun recalé sur les ancrages des attributs. Les poids détaillés sont des choix du modèle, à valider par Antonin. Les statistiques ne séparent pas les tirs près du cercle et à mi-distance : ces deux attributs sont estimés (adresse à deux points, lancers, taille).",
+  "status": "valide",
+  "note": "Modèle de notes v2 (tranche 7, 24/11/2026, réponse 14). Reprend sans changement les paramètres validés du v1 (note globale, quatre familles, endurance, ancrages, notes a priori) et ajoute 16 attributs détaillés, chacun recalé sur les ancrages des attributs. Les poids détaillés sont des choix du modèle. Les statistiques ne séparent pas les tirs près du cercle et à mi-distance : ces deux attributs sont estimés (adresse à deux points, lancers, taille). Validé par Antonin le 25/11/2026 (réponse 26).",
   "statistiques": "data/statistiques/2025-26/joueurs.json",
   "retrecissement": {
     "minutesDePrior": 400,

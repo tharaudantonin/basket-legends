@@ -1,0 +1,670 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-choix-2029",
+  "annee": 2029,
+  "statut": "a-recouper",
+  "note": "Propriété des choix de la Draft 2029 au 25/11/2026 (échanges, protections, droits d’échange de rang, choix confisqués ou gelés). Les choix non cités restent à leur équipe. Relevé sur la page de synthèse de RealGM et reformulé ; les montages les plus complexes sont simplifiés (voir « ecarts »). À recouper avant publication (source secondaire). Les détenteurs « @… » sont des étapes de calcul ; « confisque » : choix retiré de la Draft.",
+  "tours": {
+    "1": [
+      {
+        "membres": [
+          {
+            "original": "boston"
+          },
+          {
+            "original": "portland"
+          },
+          {
+            "original": "milwaukee"
+          }
+        ],
+        "attributions": {
+          "3": [
+            {
+              "beneficiaire": "portland"
+            },
+            {
+              "beneficiaire": "washington"
+            },
+            {
+              "beneficiaire": "portland"
+            }
+          ]
+        },
+        "description": "Le plus et le moins favorable de BOS, POR et MIL à POR, le deuxième à WAS"
+      },
+      {
+        "membres": [
+          {
+            "original": "dallas"
+          },
+          {
+            "original": "phoenix"
+          },
+          {
+            "original": "houston"
+          }
+        ],
+        "attributions": {
+          "3": [
+            {
+              "beneficiaire": "houston"
+            },
+            {
+              "beneficiaire": "houston"
+            },
+            {
+              "beneficiaire": "brooklyn"
+            }
+          ]
+        },
+        "description": "Les deux plus favorables de DAL, PHX et HOU à HOU, l’autre à BKN"
+      },
+      {
+        "membres": [
+          {
+            "original": "new-york"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "brooklyn"
+            }
+          ]
+        },
+        "description": "NYK → BKN"
+      },
+      {
+        "membres": [
+          {
+            "original": "lakers"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "dallas"
+            }
+          ]
+        },
+        "description": "LAL → DAL"
+      },
+      {
+        "membres": [
+          {
+            "original": "utah"
+          },
+          {
+            "original": "cleveland"
+          },
+          {
+            "original": "minnesota",
+            "rangs": [
+              6,
+              30
+            ]
+          }
+        ],
+        "attributions": {
+          "2": [
+            {
+              "beneficiaire": "utah"
+            },
+            {
+              "beneficiaire": "charlotte"
+            }
+          ],
+          "3": [
+            {
+              "beneficiaire": "utah"
+            },
+            {
+              "beneficiaire": "utah"
+            },
+            {
+              "beneficiaire": "charlotte"
+            }
+          ]
+        },
+        "description": "MIN protégé 1-5 ; les plus favorables de UTA, CLE et MIN 6-30 à UTA, le moins favorable à CHA (simplifié)"
+      },
+      {
+        "membres": [
+          {
+            "original": "denver"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "denver"
+            }
+          ]
+        },
+        "cas": [
+          {
+            "si": [
+              {
+                "annee": 2027,
+                "tour": 1,
+                "original": "denver",
+                "detenteur": "oklahoma-city",
+                "oui": true
+              }
+            ],
+            "attributions": {
+              "1": [
+                {
+                  "beneficiaire": "oklahoma-city",
+                  "rangs": [
+                    6,
+                    30
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "si": [
+              {
+                "annee": 2027,
+                "tour": 1,
+                "original": "denver",
+                "detenteur": "oklahoma-city",
+                "oui": false
+              },
+              {
+                "annee": 2028,
+                "tour": 1,
+                "original": "denver",
+                "detenteur": "oklahoma-city",
+                "oui": false
+              }
+            ],
+            "attributions": {
+              "1": [
+                {
+                  "beneficiaire": "oklahoma-city",
+                  "rangs": [
+                    6,
+                    30
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "description": "DEN 6-30 à OKC si le 1er tour 2027 a été transmis, ou si ni 2027 ni 2028 ne l’ont été"
+      },
+      {
+        "membres": [
+          {
+            "original": "indianapolis"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "confisque"
+            }
+          ]
+        },
+        "description": "IND : choix confisqué par la ligue"
+      },
+      {
+        "membres": [
+          {
+            "original": "philadelphia"
+          },
+          {
+            "original": "clippers",
+            "rangs": [
+              4,
+              30
+            ]
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "philadelphia"
+            }
+          ],
+          "2": [
+            {
+              "beneficiaire": "philadelphia"
+            },
+            {
+              "beneficiaire": "clippers"
+            }
+          ]
+        },
+        "description": "LAC protégé 1-3 ; PHI prend le plus favorable de son choix et de LAC 4-30"
+      },
+      {
+        "membres": [
+          {
+            "original": "memphis"
+          },
+          {
+            "original": "orlando",
+            "rangs": [
+              3,
+              30
+            ]
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "memphis"
+            }
+          ],
+          "2": [
+            {
+              "beneficiaire": "memphis"
+            },
+            {
+              "beneficiaire": "orlando"
+            }
+          ]
+        },
+        "description": "ORL protégé 1-2 ; MEM prend le plus favorable de son choix et de ORL 3-30"
+      }
+    ],
+    "2": [
+      {
+        "membres": [
+          {
+            "original": "atlanta"
+          },
+          {
+            "original": "miami"
+          }
+        ],
+        "attributions": {
+          "2": [
+            {
+              "beneficiaire": "charlotte"
+            },
+            {
+              "beneficiaire": "oklahoma-city"
+            }
+          ]
+        },
+        "description": "Le plus favorable de ATL et MIA à CHA, l’autre à OKC"
+      },
+      {
+        "membres": [
+          {
+            "original": "cleveland"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "atlanta"
+            }
+          ]
+        },
+        "description": "CLE → ATL"
+      },
+      {
+        "membres": [
+          {
+            "original": "boston"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "oklahoma-city"
+            }
+          ]
+        },
+        "description": "BOS → OKC"
+      },
+      {
+        "membres": [
+          {
+            "original": "dallas"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "brooklyn"
+            }
+          ]
+        },
+        "description": "DAL → BKN"
+      },
+      {
+        "membres": [
+          {
+            "original": "golden-state"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "brooklyn"
+            }
+          ]
+        },
+        "description": "GSW → BKN"
+      },
+      {
+        "membres": [
+          {
+            "original": "memphis"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "brooklyn"
+            }
+          ]
+        },
+        "description": "MEM → BKN (via PHX)"
+      },
+      {
+        "membres": [
+          {
+            "original": "phoenix"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "new-york"
+            }
+          ]
+        },
+        "description": "PHX → NYK"
+      },
+      {
+        "membres": [
+          {
+            "original": "denver"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "oklahoma-city"
+            }
+          ]
+        },
+        "cas": [
+          {
+            "si": [
+              {
+                "annee": 2027,
+                "tour": 1,
+                "original": "denver",
+                "detenteur": "oklahoma-city",
+                "oui": true
+              }
+            ],
+            "attributions": {
+              "1": [
+                {
+                  "beneficiaire": "charlotte"
+                }
+              ]
+            }
+          },
+          {
+            "si": [
+              {
+                "annee": 2028,
+                "tour": 1,
+                "original": "denver",
+                "detenteur": "oklahoma-city",
+                "oui": true
+              }
+            ],
+            "attributions": {
+              "1": [
+                {
+                  "beneficiaire": "charlotte"
+                }
+              ]
+            }
+          },
+          {
+            "si": [
+              {
+                "annee": 2029,
+                "tour": 1,
+                "original": "denver",
+                "detenteur": "oklahoma-city",
+                "oui": true
+              }
+            ],
+            "attributions": {
+              "1": [
+                {
+                  "beneficiaire": "charlotte"
+                }
+              ]
+            }
+          }
+        ],
+        "description": "DEN à CHA si DEN a transmis à OKC son premier 1er tour d’ici 2029, sinon à OKC"
+      },
+      {
+        "membres": [
+          {
+            "original": "detroit"
+          },
+          {
+            "original": "milwaukee"
+          },
+          {
+            "original": "new-york"
+          }
+        ],
+        "attributions": {
+          "3": [
+            {
+              "beneficiaire": "detroit"
+            },
+            {
+              "beneficiaire": "detroit"
+            },
+            {
+              "beneficiaire": "chicago"
+            }
+          ]
+        },
+        "description": "Les deux plus favorables de DET, MIL et NYK à DET, l’autre à CHI"
+      },
+      {
+        "membres": [
+          {
+            "original": "houston"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "memphis"
+            }
+          ]
+        },
+        "description": "HOU → MEM (via OKC, WAS et DAL)"
+      },
+      {
+        "membres": [
+          {
+            "original": "indianapolis"
+          },
+          {
+            "original": "washington"
+          }
+        ],
+        "attributions": {
+          "2": [
+            {
+              "beneficiaire": "indianapolis"
+            },
+            {
+              "beneficiaire": "portland"
+            }
+          ]
+        },
+        "description": "Le plus favorable de IND et WAS à IND, l’autre à POR"
+      },
+      {
+        "membres": [
+          {
+            "original": "clippers"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "san-antonio"
+            }
+          ]
+        },
+        "description": "LAC → SAS (via PHI)"
+      },
+      {
+        "membres": [
+          {
+            "original": "lakers"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "memphis"
+            }
+          ]
+        },
+        "description": "LAL → MEM (via WAS)"
+      },
+      {
+        "membres": [
+          {
+            "original": "new-orleans"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "san-antonio"
+            }
+          ]
+        },
+        "description": "NOP → SAS"
+      },
+      {
+        "membres": [
+          {
+            "original": "sacramento"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "new-york"
+            }
+          ]
+        },
+        "description": "SAC → NYK (via WAS et HOU)"
+      },
+      {
+        "membres": [
+          {
+            "original": "minnesota"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "charlotte"
+            }
+          ]
+        },
+        "condition": {
+          "original": "minnesota",
+          "rangs": [
+            6,
+            30
+          ]
+        },
+        "attributionsSinon": {
+          "1": [
+            {
+              "beneficiaire": "utah"
+            }
+          ]
+        },
+        "description": "MIN à CHA si son 1er tour 2029 est transmis (6-30), sinon à UTA"
+      },
+      {
+        "membres": [
+          {
+            "original": "orlando"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "memphis"
+            }
+          ]
+        },
+        "condition": {
+          "original": "orlando",
+          "rangs": [
+            1,
+            2
+          ]
+        },
+        "attributionsSinon": {
+          "1": [
+            {
+              "beneficiaire": "orlando"
+            }
+          ]
+        },
+        "description": "ORL à MEM si son 1er tour est entre 1 et 2, sinon gardé"
+      },
+      {
+        "membres": [
+          {
+            "original": "portland"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "memphis"
+            }
+          ]
+        },
+        "description": "POR → MEM (via PHI et IND)"
+      }
+    ]
+  },
+  "ecarts": [
+    "1er tour CHA-MIN-UTA-CLE : le droit d’échange de rang de CHA avec MIN et le choix « le moins favorable » promis à PHX ne sont pas repris.",
+    "1er tour IND : confisqué (choix détenu par LAC, confisqué par la ligue selon RealGM)."
+  ],
+  "sources": [
+    {
+      "fournisseur": "RealGM",
+      "titre": "2029 NBA Draft Picks",
+      "url": "https://basketball.realgm.com/nba/draft/future_drafts/summary/2029",
+      "niveau": "secondaire",
+      "consulteLe": "2026-11-25"
+    }
+  ]
+}

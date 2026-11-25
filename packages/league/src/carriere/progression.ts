@@ -42,9 +42,16 @@ function decalage(M: ModeleCarriere['progression'], attribut: string, age: numbe
  * Le joueur une saison plus tard : âge + 1, note, attributs et familles. `graine` et `saison` rendent le tirage
  * reproductible ; la nouvelle saison est ajoutée à l'historique des notes.
  */
-export function vieillir(M: ModeleCarriere['progression'], j: JoueurCarriere, graine: number, nouvelleSaison: string): JoueurCarriere {
+export function vieillir(
+  M: ModeleCarriere['progression'],
+  j: JoueurCarriere,
+  graine: number,
+  nouvelleSaison: string,
+  /** Tranche 9 : points ajoutés par l'entraîneur du développement de son équipe (0 : référence). */
+  bonus = 0,
+): JoueurCarriere {
   const h = creerHasard(graine, `progression-${nouvelleSaison}-${j.id}`);
-  const brut = evolutionAttendue(M, j) + gaussien(h, 0, valeurParAge(M.ecart, j.age));
+  const brut = evolutionAttendue(M, j) + gaussien(h, 0, valeurParAge(M.ecart, j.age)) + bonus;
   const [, max] = M.bornes;
   const delta = brut > 0 && j.note > M.compression.debut ? (brut * (max - j.note)) / (max - M.compression.debut) : brut;
   const note = Math.round(borner(j.note + delta, M.bornes));

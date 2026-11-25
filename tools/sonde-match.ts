@@ -13,10 +13,19 @@ import {
   schemaReglagesMatch,
   schemaRegles,
   schemaStatistiquesLigue,
+  schemaModeleStaff,
   valeursDesRegles,
   type StatistiquesLigue,
 } from '@basket-legends/data';
-import { simulerMatch, type EquipeDuMatch, type PlanDeJeu, type ReglagesMatch, type ReglesMatch } from '@basket-legends/engine';
+import { preferencesReparties, type ModeleStaff } from '@basket-legends/league';
+import {
+  creerHasard,
+  simulerMatch,
+  type EquipeDuMatch,
+  type PlanDeJeu,
+  type ReglagesMatch,
+  type ReglesMatch,
+} from '@basket-legends/engine';
 
 export interface Mesure {
   cle: string;
@@ -58,9 +67,16 @@ function affiche(equipes: EquipeDuMatch[], g: number): [EquipeDuMatch, EquipeDuM
 }
 
 /** Joue `nombre` matchs (calendrier fixe, graines 0…n-1) et compare aux cibles de la ligue. */
-export function sonder(racine: string, nombre: number, reglagesForces?: ReglagesMatch): Rapport {
+export function sonder(
+  racine: string,
+  nombre: number,
+  reglagesForces?: ReglagesMatch,
+  plans?: Record<string, Partial<PlanDeJeu>>,
+): Rapport {
   const charge = chargerMoteur(racine);
-  const { regles, equipes } = charge;
+  const { regles } = charge;
+  // Tranche 9 : chaque équipe peut jouer le plan de son entraîneur (`--staff`).
+  const equipes = plans ? charge.equipes.map((e) => ({ ...e, plan: plans[e.id] })) : charge.equipes;
   const reglages = reglagesForces ?? charge.reglages;
   const L = chargerLigue(racine);
 
@@ -229,7 +245,20 @@ const appelDirect = process.argv[1]?.replace(/\\/g, '/').endsWith('tools/sonde-m
 if (appelDirect) {
   const arguments_ = process.argv.slice(2);
   const nombre = Number(arguments_.find((a) => /^\d+$/.test(a)) ?? 1000);
-  const r = sonder(process.cwd(), nombre);
+  // Tranche 9 (réponse 39) : `--staff` donne à chaque équipe le plan de son entraîneur, tiré comme dans une partie
+  // (data/modeles/staff-v1.json, préférences), pour revérifier la calibration avec les plans des équipes de l'IA.
+  let plans: Record<string, Partial<PlanDeJeu>> | undefined;
+  if (arguments_.includes('--staff')) {
+    const staff = schemaModeleStaff.parse(JSON.parse(readFileSync(join(process.cwd(), 'data/modeles/staff-v1.json'), 'utf8')));
+    const graine = Number(arguments_.find((a) => a.startsWith('--graine='))?.slice(9) ?? 2026);
+    const fichiers = readdirSync(join(process.cwd(), 'data/rosters/2026-27'))
+      .filter((f) => f.endsWith('.json'))
+      .sort();
+    // Seules les préférences servent ici (le reste du fichier est ignoré).
+    const prefs = preferencesReparties(staff as unknown as ModeleStaff, fichiers.length, creerHasard(graine, 'staff-preferences'));
+    plans = Object.fromEntries(fichiers.map((f, i) => [f.replace('.json', ''), prefs[i]!]));
+  }
+  const r = sonder(process.cwd(), nombre, undefined, plans);
   for (const m of r.mesures) {
     const cible = m.cible === undefined ? '' : `   cible ${m.cible.toFixed(1).padStart(6)} ± ${(m.tolerance ?? 0).toFixed(1)}`;
     const etat = m.cible === undefined ? '' : r.horsFourchette.includes(m) ? '   HORS FOURCHETTE' : '   ok';

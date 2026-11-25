@@ -25,7 +25,7 @@ const etat = z.looseObject({
   saison: z.string(),
   graine: z.number().int(),
   franchise: z.string(),
-  phase: z.enum(['reguliere', 'play-in', 'playoffs', 'terminee']),
+  phase: z.enum(['intersaison', 'reguliere', 'play-in', 'playoffs', 'terminee']),
   calendrier: z.array(
     z.looseObject({
       date: z.string(),

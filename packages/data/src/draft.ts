@@ -60,7 +60,12 @@ export function historiqueDesChoix(f: HistoriqueLoterieFichier): HistoriqueChoix
   return h;
 }
 
-export const proprieteDesChoix = (f: ChoixDraftFichier): ProprieteChoix => ({ annee: f.annee, statut: f.statut, tours: f.tours });
+export const proprieteDesChoix = (f: ChoixDraftFichier): ProprieteChoix => ({
+  annee: f.annee,
+  statut: f.statut,
+  tours: f.tours,
+  ...(f.geles ? { geles: f.geles } : {}),
+});
 
 export function modeleDeDraft(f: ModeleDraftFichier): ModeleDraft {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

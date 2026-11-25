@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "datasetId": "basket-legends-villes-d-accueil",
-  "statut": "proposition",
-  "note": "Villes sans équipe NBA citées comme marchés possibles d’expansion ou de déménagement (décision du 24/11/2026, réponse 7 : liste fermée). Conférence : rattachement géographique proposé par le jeu (une franchise ne déménage que vers une ville de sa conférence, docs/CARRIERE.md § 7). Noms : propositions originales à valider par Antonin, puis à soumettre à la revue juridique de la porte de publication (homonymes possibles dans d’autres sports).",
+  "statut": "valide",
+  "note": "Villes sans équipe NBA citées comme marchés possibles d’expansion ou de déménagement (décision du 24/11/2026, réponse 7 : liste fermée). Conférence : rattachement géographique proposé par le jeu (une franchise ne déménage que vers une ville de sa conférence, docs/CARRIERE.md § 7). Noms : originaux, validés par Antonin le 25/11/2026 (réponse 26), à soumettre à la revue juridique de la porte de publication (homonymes possibles dans d’autres sports).",
   "villes": [
     {
       "id": "seattle",
@@ -14,7 +14,7 @@
         "Cascades",
         "Evergreens"
       ],
-      "statutNoms": "proposition",
+      "statutNoms": "valide",
       "sources": [
         {
           "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
@@ -44,7 +44,7 @@
         "Neons",
         "Mirages"
       ],
-      "statutNoms": "proposition",
+      "statutNoms": "valide",
       "sources": [
         {
           "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
@@ -74,7 +74,7 @@
         "Volcanes",
         "Quetzales"
       ],
-      "statutNoms": "proposition",
+      "statutNoms": "valide",
       "sources": [
         {
           "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
@@ -112,7 +112,7 @@
         "Fountains",
         "Plainsmen"
       ],
-      "statutNoms": "proposition",
+      "statutNoms": "valide",
       "sources": [
         {
           "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
@@ -142,7 +142,7 @@
         "Orcas",
         "Tidewater"
       ],
-      "statutNoms": "proposition",
+      "statutNoms": "valide",
       "sources": [
         {
           "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
@@ -172,7 +172,7 @@
         "Voltage",
         "Circuit"
       ],
-      "statutNoms": "proposition",
+      "statutNoms": "valide",
       "sources": [
         {
           "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
@@ -194,7 +194,7 @@
         "Armadillos",
         "Hill Country"
       ],
-      "statutNoms": "proposition",
+      "statutNoms": "valide",
       "sources": [
         {
           "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
@@ -216,7 +216,7 @@
         "Thoroughbreds",
         "Bourbons"
       ],
-      "statutNoms": "proposition",
+      "statutNoms": "valide",
       "sources": [
         {
           "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
@@ -246,7 +246,7 @@
         "Aurores",
         "Voyageurs"
       ],
-      "statutNoms": "proposition",
+      "statutNoms": "valide",
       "sources": [
         {
           "fournisseur": "ESPN (Tim Bontemps, Kevin Pelton, Brian Windhorst)",
@@ -268,7 +268,7 @@
         "Breakers",
         "Lighthouses"
       ],
-      "statutNoms": "proposition",
+      "statutNoms": "valide",
       "sources": [
         {
           "fournisseur": "NTD / The Epoch Times (Ross Kelly)",
@@ -298,7 +298,7 @@
         "Arches",
         "Riverboats"
       ],
-      "statutNoms": "proposition",
+      "statutNoms": "valide",
       "sources": [
         {
           "fournisseur": "NTD / The Epoch Times (Ross Kelly)",

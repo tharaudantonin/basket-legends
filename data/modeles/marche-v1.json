@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-modele-marche",
+  "version": "marche-v1",
+  "statut": "proposition",
+  "note": "Modèle du marché de la tranche 9 (25/11/2026) : valeur d’un joueur, force d’une équipe, valeur des choix, stratégies et personnalité des GM de l’IA, agents libres, échanges de l’IA et critère de sortie (« 10 saisons au pilote automatique sans dérive »). Le salaire de marché selon la note est calé sur les médianes des contrats 2026-27 des vétérans (hors échelle des rookies, data/contrats/2026-27.json) ; tous les autres paramètres sont des choix du modèle, sans cible sourcée, à valider par Antonin. Les volumes d’échanges et de signatures visés viennent de data/ligue/transactions-2026-27.json. Personnalité des joueurs : traits de personnage générés (réponse 35), jamais présentés comme relevés.",
+  "valeur": {
+    "salaireSelonNote": [
+      [
+        55,
+        0.012
+      ],
+      [
+        60,
+        0.014
+      ],
+      [
+        68,
+        0.015
+      ],
+      [
+        71,
+        0.03
+      ],
+      [
+        73,
+        0.042
+      ],
+      [
+        75,
+        0.067
+      ],
+      [
+        77,
+        0.115
+      ],
+      [
+        79,
+        0.165
+      ],
+      [
+        81,
+        0.205
+      ],
+      [
+        83,
+        0.245
+      ],
+      [
+        86,
+        0.27
+      ],
+      [
+        89,
+        0.3
+      ],
+      [
+        92,
+        0.35
+      ]
+    ],
+    "calage": "Médianes de la part du plafond (164,961 M$) des contrats standard 2026-27 des vétérans par tranche de note : 60-64 1,5 %, 67-70 1,5 %, 70-72 3,2 %, 72-74 3,9 %, 74-76 6,7 %, 76-78 12,4 %, 78-80 18,3 %, 80-82 20,0 %, 82-84 25,3 %, 86-88 26,6 %, 88-90 30,4 %, 90 et plus 30,4 % (328 contrats), lissées pour rester croissantes ; au-delà de 90, le maximum de l’ancienneté borne la demande.",
+    "primeStar": {
+      "seuil": 80,
+      "parPoint": 0.06
+    },
+    "horizon": 3,
+    "actualisation": 0.85,
+    "retenueApresContrat": 0.5
+  },
+  "force": {
+    "poids": [
+      1,
+      0.95,
+      0.9,
+      0.85,
+      0.8,
+      0.6,
+      0.5,
+      0.35,
+      0.25
+    ],
+    "valeurPoint": 12000000
+  },
+  "choix": {
+    "valeurParRang": [
+      [
+        1,
+        30000000
+      ],
+      [
+        3,
+        24000000
+      ],
+      [
+        5,
+        19000000
+      ],
+      [
+        10,
+        12000000
+      ],
+      [
+        14,
+        9000000
+      ],
+      [
+        20,
+        6000000
+      ],
+      [
+        30,
+        3500000
+      ],
+      [
+        31,
+        1500000
+      ],
+      [
+        45,
+        800000
+      ],
+      [
+        60,
+        300000
+      ]
+    ],
+    "actualisationParAn": 0.9,
+    "incertitudeParAn": 0.2
+  },
+  "strategies": {
+    "pretendant": {
+      "rangForceMax": 6,
+      "present": 1.6,
+      "futur": 0.6
+    },
+    "playoffs": {
+      "rangForceMax": 14,
+      "present": 1.1,
+      "futur": 0.9
+    },
+    "transition": {
+      "rangForceMax": 22,
+      "present": 0.5,
+      "futur": 1.1
+    },
+    "reconstruction": {
+      "rangForceMax": 30,
+      "present": 0.3,
+      "futur": 1.5
+    }
+  },
+  "gm": {
+    "patience": [
+      0.3,
+      0.9
+    ],
+    "aversionTaxe": 0.7,
+    "aversionTaxeRecidiviste": 0.4,
+    "margeAcceptation": 0.05,
+    "refusAvantFermeture": 3
+  },
+  "personnalite": {
+    "moyenne": 50,
+    "ecartType": 15,
+    "bornes": [
+      10,
+      90
+    ]
+  },
+  "agentsLibres": {
+    "journees": 10,
+    "baisseDemandeParJournee": 0.025,
+    "demandePlancher": 0.75,
+    "poids": {
+      "argent": 1,
+      "victoire": 0.25,
+      "role": 0.2,
+      "fidelite": 0.1
+    },
+    "dureeSelonAge": [
+      [
+        24,
+        4
+      ],
+      [
+        28,
+        4
+      ],
+      [
+        31,
+        3
+      ],
+      [
+        33,
+        2
+      ],
+      [
+        50,
+        1
+      ]
+    ],
+    "offresParEquipeParJournee": 2,
+    "hausseParDefaut": 0.05,
+    "seuilOptionJoueur": 1,
+    "seuilOffreQualificative": 0.9,
+    "noteMinNba": 60,
+    "fideliteEquipe": 4000000
+  },
+  "echangesIa": {
+    "tentativesParJourSaison": 2,
+    "tentativesParJourneeIntersaison": 20,
+    "candidatsParTentative": 8,
+    "propositionsAuGmParSaison": 4
+  },
+  "critereSortie": {
+    "saisons": 10,
+    "standardParEquipe": [
+      13,
+      15
+    ],
+    "equipesTaxe": [
+      3,
+      18
+    ],
+    "equipesDeuxiemeApron": [
+      0,
+      6
+    ],
+    "correlationSalaireNoteMin": 0.5,
+    "noteMaxAgentLibreNonSigne": 75,
+    "joueurs85ParEquipeMax": 4,
+    "echangesParSaison": [
+      20,
+      100
+    ],
+    "signaturesParSaison": [
+      80,
+      320
+    ],
+    "giniForceMax": 0.06
+  }
+}
