@@ -91,3 +91,4 @@ export {
   ecrireAuBureau,
 } from './ia';
 export { mesurerMarche, ecartsDuMarche, type MesuresMarche } from './mesures';
+export { actionDuGm, type ActionDuGm, type ReponseDuGm } from './gm';

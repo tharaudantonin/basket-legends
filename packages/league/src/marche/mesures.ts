@@ -5,7 +5,7 @@
 import { saisonCourte, salaireDeLaSaison } from '../cba';
 import type { Univers } from '../carriere/types';
 import type { ParametresCba } from '../cba';
-import { situationDansLUnivers } from './operations';
+import { cbaDeLUnivers, situationDansLUnivers } from './operations';
 import type { ModeleMarche } from './types';
 import { force } from './valeur';
 
@@ -14,6 +14,8 @@ export interface MesuresMarche {
   standardMin: number;
   standardMax: number;
   equipesTaxe: number;
+  /** Masse moyenne des 30 équipes rapportée au seuil de taxe de la saison. */
+  masseSurTaxe: number;
   equipesDeuxiemeApron: number;
   /** Corrélation entre salaire de la saison et note (contrats standard hors échelle des rookies). */
   correlationSalaireNote: number;
@@ -65,6 +67,8 @@ export function mesurerMarche(M: ModeleMarche, P0: ParametresCba, u: Univers): M
     standardMin: Math.min(...situations.map((s) => s.effectif.standard)),
     standardMax: Math.max(...situations.map((s) => s.effectif.standard)),
     equipesTaxe: situations.filter((s) => s.taxe > 0).length,
+    masseSurTaxe:
+      Math.round((100 * situations.reduce((t, s) => t + s.masse, 0)) / situations.length / cbaDeLUnivers(P0, u).seuilTaxe) / 100,
     equipesDeuxiemeApron: situations.filter((s) => s.niveau === 'deuxieme-apron').length,
     correlationSalaireNote:
       Math.round(
@@ -99,6 +103,7 @@ export function ecartsDuMarche(M: ModeleMarche, m: MesuresMarche, volumes?: { ec
   if (m.standardMin < C.standardParEquipe[0] || m.standardMax > C.standardParEquipe[1])
     e.push(`${m.saison} contrats standard : ${m.standardMin} à ${m.standardMax}`);
   if (!dans(m.equipesTaxe, C.equipesTaxe)) e.push(`${m.saison} équipes à la taxe : ${m.equipesTaxe}`);
+  if (!dans(m.masseSurTaxe, C.masseSurTaxe)) e.push(`${m.saison} masse moyenne / seuil de taxe : ${m.masseSurTaxe}`);
   if (!dans(m.equipesDeuxiemeApron, C.equipesDeuxiemeApron))
     e.push(`${m.saison} équipes au-delà du second apron : ${m.equipesDeuxiemeApron}`);
   if (m.correlationSalaireNote < C.correlationSalaireNoteMin) e.push(`${m.saison} corrélation salaire-note : ${m.correlationSalaireNote}`);

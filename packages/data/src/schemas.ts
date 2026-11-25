@@ -923,6 +923,7 @@ export const schemaModeleMarche = z.strictObject({
     seuilOffreQualificative: positif,
     noteMinNba: z.number().int().min(40).max(80),
     fideliteEquipe: dollars,
+    valeurEspaceInutilise: proba,
   }),
   echangesIa: z.strictObject({
     tentativesParJourSaison: z.number().min(0).max(10),
@@ -934,6 +935,7 @@ export const schemaModeleMarche = z.strictObject({
     saisons: z.number().int().min(1),
     standardParEquipe: intervalle,
     equipesTaxe: intervalle,
+    masseSurTaxe: intervalle,
     equipesDeuxiemeApron: intervalle,
     correlationSalaireNoteMin: z.number().min(-1).max(1),
     noteMaxAgentLibreNonSigne: z.number().int(),

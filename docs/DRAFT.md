@@ -1,6 +1,6 @@
 # Draft, scouting et vivier — tranche 7 (24 novembre 2026)
 
-> Statut : **implémenté et testé**. Les règles de la loterie et la propriété des choix 2027 sont **à recouper** ; le modèle des prospects, le scouting, le vivier et les choix du staff sont des **propositions** à valider par Antonin. Décisions appliquées : réponses 12 à 17 de `docs/DECISIONS_2026-11.md`.
+> Statut : **implémenté et testé**. Les règles de la loterie et la propriété des choix 2027 à 2033 sont **à recouper** ; le modèle des prospects, le scouting, le vivier et les choix du staff ont été **validés** par Antonin le 25/11/2026 (réponse 26). Décisions appliquées : réponses 12 à 17 de `docs/DECISIONS_2026-11.md`.
 
 ## 1. Ce que fait la tranche 7 (volet Draft)
 
@@ -21,8 +21,8 @@ Le modèle de notes v2 (16 attributs détaillés) et le moteur v5 de la même tr
 | `data/draft/historique-loterie.json` | Rang du choix propre de chaque équipe aux loteries 2025 et 2026 | relevé | NBA.com, résultat 2025 et page explicative 2026 (primaires) |
 | `data/draft/choix-2027.json` | Propriété des choix 2027 (échanges, protections, meilleur/moins bon de deux choix, conditions) | `a-recouper` | RealGM, pages de synthèse 2027 et détaillée (secondaires) |
 | `data/draft/echelle-rookies.json` | Échelle des rookies 2026 à 120 %, 4 saisons par rang | `derive` pour l'évolution | Hoops Rumors, échelles 2026 et 2025 (secondaires) |
-| `data/draft/modele-draft.json` | Génération des prospects, scouting, choix du staff | `proposition` | Choix du modèle, aucune cible sourcée |
-| `data/vivier/2026-27.json` | 320 joueurs générés et leurs paramètres | `proposition` | Choix du modèle |
+| `data/draft/modele-draft.json` | Génération des prospects, scouting, choix du staff | `valide` (25/11/2026) | Choix du modèle, aucune cible sourcée |
+| `data/vivier/2026-27.json` | 320 joueurs générés et leurs paramètres | `valide` (25/11/2026) | Choix du modèle |
 | `data/noms/banques.json` | Banques complétées pour la génération (§ 10) | — | Listes écrites pour le jeu |
 
 Scripts : `tools/migrations/2026-11-24-tranche7-draft.ts`, `…-echelle-rookies.ts`, `…-banques.ts`, `…-vivier.ts`, `…-ages.ts`. `npm run verifier` contrôle ces fichiers (schémas Zod, franchises connues, nombre d'attributions par règle, 40-73 pour les prospects (réponse 22) et 40-67 pour le vivier, échelle croissante, noms jamais réels ni repris) et signale les statuts « à recouper » et « proposition ».
@@ -47,7 +47,7 @@ Simplification : la loterie est tirée à la fin de la saison (après la Finale)
 
 Chaque règle désigne des choix (choix propre d'une équipe, éventuellement seulement dans une plage de rangs, ou choix déjà attribué à un détenteur provisoire « @… »), les range du plus favorable au moins favorable et les attribue selon leur nombre ; une protection renvoie le choix à son équipe (ou à un autre bénéficiaire) hors de la plage prévue ; une condition peut porter sur le rang d'un choix de 1er tour. Le code refuse un choix désigné deux fois et un détenteur provisoire jamais résolu.
 
-Le fichier suit la page de synthèse RealGM. Six écarts avec la page détaillée sont listés dans `ecarts` (SAS 1er tour, BOS/ORL, MEM et ATL 2e tour, droit d'échange LAC/TOR, pages 2028-2033 tronquées). **À recouper ligne à ligne** (porte de publication : source secondaire). Les choix 2028 à 2033 sont reportés aux échanges (tranche 9).
+Le fichier suit la page de synthèse RealGM. Six écarts avec la page détaillée sont listés dans `ecarts` (SAS 1er tour, BOS/ORL, MEM et ATL 2e tour, droit d'échange LAC/TOR, pages 2028-2033 tronquées). **À recouper ligne à ligne** (porte de publication : source secondaire). Les choix 2028 à 2033 ont été relevés à la tranche 9 (`data/draft/choix-2028.json` à `choix-2033.json`, avec dettes reportées, choix confisqués et gelés ; `docs/MARCHE.md` § 2) ; depuis, la propriété des choix vit dans l'univers de la partie et change avec les échanges. Tranche 9 : le recruteur de chaque équipe rend ses rapports plus ou moins précis (écart-type × 0,85 à 1,15, `docs/MARCHE.md` § 7).
 
 ## 5. Prospects (`prospects.ts`, `modele-draft.json` bloc `classe`)
 
@@ -58,7 +58,7 @@ Chaque prospect a un talent latent (gaussien) ; les 100 talents sont triés, le 
 - **Attributs détaillés** : note + profil du groupe de poste + écart propre (écart-type 6), bornés à 25-85 ; les familles en sont les moyennes.
 - **Nom** tiré dans les banques du pays : jamais un nom réel interdit (empreintes), jamais un nom du snapshot ou du vivier, jamais deux fois le même (200 essais, sinon erreur).
 
-Tous ces nombres sont des choix du modèle à valider.
+Tous ces nombres sont des choix du modèle, validés par Antonin le 25/11/2026 (réponse 26).
 
 ## 6. Scouting à notes incertaines (`scouting.ts`)
 

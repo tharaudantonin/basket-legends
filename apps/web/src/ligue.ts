@@ -46,9 +46,12 @@ export function contexteLigue(): ContexteLigue {
 const cache = new Map<string, ContexteLigue>();
 
 /** Tranche 8 : le contexte de la saison d'un état (son univers, ou celui des données pour la première saison). */
-export function contexteDe(etat: Pick<EtatSaison, 'saison' | 'graine' | 'univers'>): ContexteLigue {
+export function contexteDe(
+  etat: Pick<EtatSaison, 'saison' | 'graine' | 'univers'> & Partial<Pick<EtatSaison, 'franchise' | 'compositionManuelle' | 'delegations'>>,
+): ContexteLigue {
   if (!etat.univers) return contexteLigue();
-  const cle = `${etat.saison}:${etat.graine}`;
+  // Tranche 9 : le contexte change avec chaque transaction (version de l'univers) et avec la composition du GM.
+  const cle = `${etat.saison}:${etat.graine}:${etat.univers.version ?? 0}:${etat.delegations?.rotation ?? ''}:${etat.compositionManuelle?.join(',') ?? ''}`;
   let ctx = cache.get(cle);
   if (!ctx) {
     ctx = contexteDeLaSaison(contexteLigue(), etat);

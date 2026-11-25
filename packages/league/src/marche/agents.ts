@@ -206,7 +206,7 @@ export function ouvrirAgentsLibres(ctx: ContexteLigue, etat: EtatSaison, echus: 
   for (const [e, js] of Object.entries(echus)) for (const j of js) ajouter(j, e);
   // Joueurs libres hors NBA, au niveau NBA : ils rejoignent le marché.
   for (const [j, statut] of Object.entries(u.horsNba))
-    if (statut === 'libre' && (u.joueurs[j]?.note ?? 0) >= M.agentsLibres.noteMinNba && !I.agents[j]) ajouter(j, null);
+    if ((u.joueurs[j]?.note ?? 0) >= (statut === 'libre' ? M.agentsLibres.noteMinNba : 70) && !I.agents[j]) ajouter(j, null);
   // Le staff renonce aux droits des agents libres qu'il ne veut pas garder (libère l'espace des cap holds) : joueur sous
   // le niveau NBA, ou qui coûterait plus qu'il ne rapporte au salaire qu'il demande.
   for (const a of Object.values(I.agents)) {
@@ -431,36 +431,47 @@ function offresDeLIa(ctx: ContexteLigue, etat: EtatSaison, equipe: string, journ
   const strategie = strategieDe(M, forces, equipe);
   const notes = (u.effectifs[equipe] ?? []).map((j) => u.joueurs[j]!.note);
   const fAvant = force(M, notes);
+  // Argent qui ne coûte rien (ou peu) : sous la masse minimale de la CBA, l'équipe paiera la différence de toute façon ;
+  // sous le plafond, l'espace inutilisé serait perdu (part du modèle).
+  const masse = masseAvecHolds(ctx, etat, equipe);
+  const gratuit = (salaire: number) =>
+    Math.min(salaire, Math.max(0, P.masseMinimale - masse)) +
+    M.agentsLibres.valeurEspaceInutilise * Math.min(salaire, Math.max(0, P.plafondSalarial - Math.max(masse, P.masseMinimale)));
   const candidats = Object.values(I.agents)
     .filter((a) => !prises.has(a.joueur) && u.joueurs[a.joueur])
     .map((a) => {
       const j = u.joueurs[a.joueur]!;
       const demande = demandeCourante(M, a, journee);
-      const duree = Math.min(a.duree, 4);
-      const c: ContratJoueur = {
-        type: 'standard',
-        salaires: salairesDuContrat(Sc, demande, duree, M.agentsLibres.hausseParDefaut),
-        garanti: null,
-        anciennete: 0,
-        draft: null,
-      };
-      const v = valeurDuJoueur(M, Mc, P, j, c, Sc);
       const gain = (force(M, [...notes, j.note]) - fAvant) * M.force.valeurPoint * M.strategies[strategie].present;
       const jeune = j.age <= 24 ? M.strategies[strategie].futur : 1;
       const garde = a.ancienne === equipe && !I.renonces[equipe]?.includes(a.joueur) ? M.agentsLibres.fideliteEquipe : 0;
-      return { a, demande, duree, score: v.present + jeune * v.futur + gain + garde };
+      // La durée offerte : celle qui donne le plus de valeur à l'équipe (un vétéran en déclin : un contrat court).
+      let meilleur = { duree: Math.min(a.duree, 4), score: -Infinity };
+      for (let duree = 1; duree <= Math.min(a.duree, 4); duree++) {
+        const c: ContratJoueur = {
+          type: 'standard',
+          salaires: salairesDuContrat(Sc, demande, duree, M.agentsLibres.hausseParDefaut),
+          garanti: null,
+          anciennete: 0,
+          draft: null,
+        };
+        const v = valeurDuJoueur(M, Mc, P, j, c, Sc);
+        const score = v.present + jeune * v.futur + gain + garde + gratuit(demande) - 0.05 * Math.abs(duree - a.duree) * demande;
+        if (score > meilleur.score) meilleur = { duree, score };
+      }
+      return { a, demande, duree: meilleur.duree, score: meilleur.score };
     })
     .filter((x) => x.score > 0 && (!amelioration || peutFaireDeLaPlace(u, equipe, x.a.joueur)))
     .sort((x, y) => y.score - x.score || (x.a.joueur < y.a.joueur ? -1 : 1));
   const offres: Offre[] = [];
   for (const x of candidats) {
     if (offres.length >= Math.min(places, M.agentsLibres.offresParEquipeParJournee)) break;
-    // L'équipe offre la demande du jour si elle le peut ; à la dernière journée, ce qu'elle peut (au moins la moitié).
+    // L'équipe offre la demande du jour si elle le peut ; à la dernière journée, ce qu'elle peut (au moins 35 %).
     let salaire = x.demande;
     let moyen = moyensPourOffrir(ctx, etat, equipe, x.a, salaire)[0];
     if (!moyen && derniere) {
       const capacite = capaciteDOffre(ctx, etat, equipe, x.a);
-      if (capacite && capacite.max >= x.demande * 0.5) {
+      if (capacite && capacite.max >= x.demande * 0.35) {
         salaire = capacite.max;
         moyen = capacite.moyen;
       }
@@ -605,8 +616,8 @@ function resoudreJournee(ctx: ContexteLigue, etat: EtatSaison, decider: (equipe:
   for (const [joueur, offres] of [...parJoueur].sort(([a], [b]) => (a < b ? -1 : 1))) {
     const a = I.agents[joueur]!;
     const demande = demandeCourante(M, a, I.journee);
-    // À la dernière journée, l'agent accepte la meilleure offre d'au moins la moitié de sa demande (sinon, le camp).
-    const seuil = I.journee >= I.journees ? 0.5 : 0.98;
+    // À la dernière journée, l'agent accepte la meilleure offre d'au moins 35 % de sa demande (la mid-level d'un vétéran ; sinon, le camp).
+    const seuil = I.journee >= I.journees ? 0.35 : 0.98;
     const valides = offres.filter((o) => o.salaire >= demande * seuil && verifierOffre(ctx, etat, o).length === 0);
     if (!valides.length) continue;
     const meilleure = valides

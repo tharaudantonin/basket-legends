@@ -1,6 +1,6 @@
 # Notes des joueurs — modèles v1 (tranche 2) et v2 (tranche 7), 24 novembre 2026
 
-> Statut : **implémenté et testé**. Paramètres du v1 **validés par Antonin le 24/11/2026** (`data/modeles/notes-v1.json`, statut `valide`). Depuis la tranche 7, les effectifs sont notés par le v2 (`data/modeles/notes-v2.json`, statut `proposition`), qui reprend le v1 sans changement et ajoute 16 attributs détaillés (§ 8).
+> Statut : **implémenté et testé**. Paramètres du v1 **validés par Antonin le 24/11/2026** (`data/modeles/notes-v1.json`, statut `valide`). Depuis la tranche 7, les effectifs sont notés par le v2 (`data/modeles/notes-v2.json`, statut `valide` depuis le 25/11/2026, réponse 26), qui reprend le v1 sans changement et ajoute 16 attributs détaillés (§ 8).
 
 ## 1. Ce que demandent les décisions
 
@@ -59,11 +59,11 @@ Le relevé (24/11/2026) est décrit dans `docs/SOURCES.md` § 9. Les relevés br
 
 Ajout du 24/11/2026 pour la courbe de fatigue propre à chaque joueur (amélioration validée, rangée en tranche 4) : indice `endurance` = minutes par match (poids 1) et part de titularisations (0,3), recalé sur les ancrages des attributs ; les joueurs sans statistique reçoivent leur note a priori. Stocké dans `attributes.endurance` des effectifs. Les autres paramètres, validés, n'ont pas changé : les notes et les quatre autres attributs sont identiques.
 
-## 8. Modèle v2 : 16 attributs détaillés (tranche 7, proposition)
+## 8. Modèle v2 : 16 attributs détaillés (tranche 7, validé le 25/11/2026)
 
 Décision du 24/11/2026 (réponse 14) : environ 16 attributs en début de tranche 7, les quatre familles restent. `data/modeles/notes-v2.json` (écrit par `tools/migrations/2026-11-24-tranche7-notes-v2.ts`) reprend **sans changement** les paramètres validés du v1 : note globale, familles, endurance, ancrages, notes a priori. Les notes et les quatre familles des 523 joueurs sont identiques à celles du v1 (testé). `npm run notes` écrit en plus `attributes.details`.
 
-Chaque attribut détaillé est un indice (somme pondérée de scores centrés-réduits, comme au § 3), recalé sur les ancrages des attributs. Deux mesures s'ajoutent : `deux` (adresse à deux points, rétrécie comme le TS% avec 150 tirs) et `poids` (kg, des mensurations). Les poids sont des choix du modèle, à valider. Le niveau de confiance de chaque attribut est consigné dans `confianceDetails` :
+Chaque attribut détaillé est un indice (somme pondérée de scores centrés-réduits, comme au § 3), recalé sur les ancrages des attributs. Deux mesures s'ajoutent : `deux` (adresse à deux points, rétrécie comme le TS% avec 150 tirs) et `poids` (kg, des mensurations). Les poids sont des choix du modèle, validés tels quels par Antonin le 25/11/2026 (réponse 26). Le niveau de confiance de chaque attribut est consigné dans `confianceDetails` :
 
 | Attribut | Composantes (poids) | Confiance |
 |---|---|---|

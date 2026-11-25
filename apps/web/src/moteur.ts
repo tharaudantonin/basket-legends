@@ -1,6 +1,6 @@
 // Tranches 1, 4 et 5 : l'appel au moteur, côté interface (un seul Web Worker, réponses rangées par numéro de demande).
 import type { EntreeMatch, OptionsSimulation, ResultatMatch } from '@basket-legends/engine';
-import type { Cible, EtatSaison, ResumeMatch } from '@basket-legends/league';
+import type { ActionDuGm, Cible, EtatSaison, ReponseDuGm, ResumeMatch } from '@basket-legends/league';
 import type { MessageVersMoteur, ReponseDuMoteur } from './moteur.worker';
 
 let worker: Worker | undefined;
@@ -49,7 +49,17 @@ export const rejouerDansLeMoteur = async (e: EtatSaison, match: ResumeMatch, opt
   resultat(
     await demander({
       type: 'saison-rejouer',
-      etat: { allStar: e.allStar, saison: e.saison, graine: e.graine, ...(e.univers ? { univers: e.univers } : {}) },
+      etat: {
+        allStar: e.allStar,
+        saison: e.saison,
+        graine: e.graine,
+        franchise: e.franchise,
+        matchs: e.matchs.map((x) => ({ id: x.id })),
+        ...(e.univers ? { univers: e.univers } : {}),
+        ...(e.compositions ? { compositions: e.compositions } : {}),
+        ...(e.compositionManuelle ? { compositionManuelle: e.compositionManuelle } : {}),
+        ...(e.delegations ? { delegations: e.delegations } : {}),
+      },
       match,
       ...(options ? { options } : {}),
     }),
@@ -66,3 +76,9 @@ export const avancerDraftDansLeMoteur = async (e: EtatSaison, choixDuGm?: string
 /** Tranche 8 : l'intersaison (progression, retraites, contrats, effectifs) et la saison suivante. */
 export const saisonSuivanteDansLeMoteur = async (e: EtatSaison): Promise<EtatSaison> =>
   etat(await demander({ type: 'saison-suivante', etat: e }));
+/** Tranche 9 : une action du GM (marché, intersaison, staff, composition, délégations). */
+export const actionDansLeMoteur = async (e: EtatSaison, action: ActionDuGm): Promise<ReponseDuGm> => {
+  const r = await demander({ type: 'gm', etat: e, action });
+  if (!('gm' in r)) throw new Error('Réponse inattendue du moteur.');
+  return r.gm;
+};

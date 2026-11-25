@@ -145,7 +145,7 @@ export function verifierEchange(ctx: ContexteLigue, etat: EtatSaison, prop: Prop
   if (!echangesOuverts(ctx, etat)) motifs.push('Les échanges sont fermés (date limite passée ou phase finale).');
   if (prop.equipes[0] === prop.equipes[1]) motifs.push('Un échange se fait entre deux équipes différentes.');
   if (!prop.actifs[0].length && !prop.actifs[1].length) motifs.push('L’échange est vide.');
-  const annees = anneesEchangeables(P, u, etat.phase === 'terminee' || etat.phase === 'intersaison');
+  const annees = anneesEchangeables(P, u, etat.phase === 'terminee');
   // Copie de travail pour vérifier les effectifs et la règle Stepien après l'échange.
   const avecChoix = prop.actifs.some((l) => l.some((a) => a.type === 'choix'));
   const apres: Univers = { ...u, effectifs: { ...u.effectifs }, choix: avecChoix ? structuredClone(u.choix ?? {}) : u.choix };
@@ -324,7 +324,7 @@ export function executerEchange(ctx: ContexteLigue, etat: EtatSaison, prop: Prop
   if (!v.legal) throw new Error(`Échange illégal : ${v.motifs.join(' ')}`);
   const u = universDe(ctx, etat);
   const P = cbaDeLUnivers(P0(ctx), u);
-  const annees = anneesEchangeables(P, u, etat.phase === 'terminee' || etat.phase === 'intersaison');
+  const annees = anneesEchangeables(P, u, etat.phase === 'terminee');
   const avant = prop.equipes.map((e) => ({
     joueurs: [...(u.effectifs[e] ?? [])],
     numeros: Object.fromEntries((u.effectifs[e] ?? []).map((j) => [j, u.joueurs[j]?.numero ?? ''])),
@@ -371,7 +371,7 @@ export function executerEchange(ctx: ContexteLigue, etat: EtatSaison, prop: Prop
 export function actifsDe(ctx: ContexteLigue, etat: EtatSaison, equipe: string): Actif[] {
   const u = universLu(ctx, etat);
   const P = cbaDeLUnivers(P0(ctx), u);
-  const annees = anneesEchangeables(P, u, etat.phase === 'terminee' || etat.phase === 'intersaison');
+  const annees = anneesEchangeables(P, u, etat.phase === 'terminee');
   const vus = new Set<string>();
   const choix: Actif[] = [];
   for (const d of droitsSurLesChoix(u, equipe, annees)) {

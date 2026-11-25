@@ -20,6 +20,7 @@ import { MasseSalariale } from './MasseSalariale';
 import { EcranDraft } from './Draft';
 import { Vivier } from './Vivier';
 import { Histoire } from './Histoire';
+import { AgentsLibres, Bureau, Echanges, Journal, Staff, type Agir } from './Marche';
 
 type Onglet =
   | 'calendrier'
@@ -32,7 +33,12 @@ type Onglet =
   | 'salaires'
   | 'draft'
   | 'vivier'
-  | 'histoire';
+  | 'histoire'
+  | 'bureau'
+  | 'marche'
+  | 'echanges'
+  | 'staff'
+  | 'transactions';
 
 interface Props {
   etat: EtatSaison;
@@ -49,6 +55,8 @@ interface Props {
   onAvancerDraft: (prospect?: string) => void;
   /** Tranche 8 : l'intersaison puis la saison suivante (saison terminée, Draft comprise). */
   onSaisonSuivante: () => void;
+  /** Tranche 9 : les actions du GM (marché, intersaison, staff, composition, délégations). */
+  onAction: Agir;
 }
 
 const dateFr = (d: string): string =>
@@ -83,8 +91,15 @@ export function EcranSaison({
   onDeleguer,
   onAvancerDraft,
   onSaisonSuivante,
+  onAction,
 }: Props) {
-  const [onglet, setOnglet] = useState<Onglet>('calendrier');
+  const [onglet, setOnglet] = useState<Onglet>(etat.phase === 'intersaison' ? 'marche' : 'calendrier');
+  // Tranche 9 : l'intersaison s'ouvre sur la free agency (ajustement pendant le rendu, quand la phase change).
+  const [phaseVue, setPhaseVue] = useState(etat.phase);
+  if (phaseVue !== etat.phase) {
+    setPhaseVue(etat.phase);
+    if (etat.phase === 'intersaison') setOnglet('marche');
+  }
   const [seulementMonEquipe, setSeulementMonEquipe] = useState(false);
   const f = franchiseDe(etat.franchise);
   const bilans = useMemo(() => calculerBilans(structure, etat.matchs), [etat.matchs]);
@@ -94,7 +109,13 @@ export function EcranSaison({
   const fini = etat.phase === 'terminee';
   const matchParId = useMemo(() => new Map(etat.matchs.map((m) => [m.id, m])), [etat.matchs]);
 
+  const ouverts = (etat.bureau ?? []).filter((m) => m.statut === 'ouvert').length;
   const onglets: [Onglet, string][] = [
+    ['bureau', ouverts ? `Bureau (${ouverts})` : 'Bureau'],
+    ['marche', etat.phase === 'intersaison' ? 'Free agency' : 'Joueurs libres'],
+    ['echanges', 'Échanges'],
+    ['staff', 'Staff et composition'],
+    ['transactions', 'Transactions'],
     ['calendrier', 'Calendrier'],
     ['classements', 'Classements'],
     ['actualites', 'Actualités'],
@@ -129,50 +150,63 @@ export function EcranSaison({
         </p>
       </header>
 
-      <section className="carte commandes" aria-label="Avancer dans la saison">
-        {(
-          [
-            ['jour', 'Jour suivant'],
-            ['semaine', 'Une semaine'],
-            ['all-star', 'Jusqu’au All-Star Game'],
-            ['fin-reguliere', 'Fin de la saison régulière'],
-            ['fin', 'Jusqu’au titre'],
-          ] as [Cible, string][]
-        ).map(([cible, libelle]) => (
-          <button
-            key={cible}
-            type="button"
-            className={cible === 'jour' ? 'principal' : undefined}
-            disabled={
-              enCours ||
-              fini ||
-              (cible === 'all-star' && (Boolean(etat.allStar) || etat.phase !== 'reguliere')) ||
-              (cible === 'fin-reguliere' && etat.phase !== 'reguliere')
-            }
-            onClick={() => onAvancer(cible)}
-          >
-            {libelle}
+      {etat.phase === 'intersaison' && (
+        <section className="carte commandes" aria-label="Intersaison">
+          <p>
+            Intersaison : free agency journée {etat.intersaison?.journee ?? 0} sur {etat.intersaison?.journees ?? 0}. Faites vos offres et
+            vos échanges, puis terminez la free agency pour lancer la saison.
+          </p>
+          <button type="button" className="principal" disabled={enCours} onClick={() => setOnglet('marche')}>
+            Aller à la free agency
           </button>
-        ))}
-        {!fini && (
-          <button type="button" disabled={enCours} onClick={onInteractif}>
-            {etat.matchInteractif ? 'Reprendre le match interactif' : 'Prochain match en interactif'}
-          </button>
-        )}
-        {fini && (
-          <button
-            type="button"
-            className="principal"
-            disabled={enCours || !draftFaite}
-            title={draftFaite ? undefined : 'La Draft doit être terminée (onglet Draft).'}
-            onClick={onSaisonSuivante}
-          >
-            Passer à la saison {suivante}
-          </button>
-        )}
-        {fini && !draftFaite && <span className="aide">Terminez d’abord la Draft (onglet Draft) pour passer à la saison suivante.</span>}
-        {enCours && <span className="aide">Simulation…</span>}
-      </section>
+        </section>
+      )}
+      {etat.phase !== 'intersaison' && (
+        <section className="carte commandes" aria-label="Avancer dans la saison">
+          {(
+            [
+              ['jour', 'Jour suivant'],
+              ['semaine', 'Une semaine'],
+              ['all-star', 'Jusqu’au All-Star Game'],
+              ['fin-reguliere', 'Fin de la saison régulière'],
+              ['fin', 'Jusqu’au titre'],
+            ] as [Cible, string][]
+          ).map(([cible, libelle]) => (
+            <button
+              key={cible}
+              type="button"
+              className={cible === 'jour' ? 'principal' : undefined}
+              disabled={
+                enCours ||
+                fini ||
+                (cible === 'all-star' && (Boolean(etat.allStar) || etat.phase !== 'reguliere')) ||
+                (cible === 'fin-reguliere' && etat.phase !== 'reguliere')
+              }
+              onClick={() => onAvancer(cible)}
+            >
+              {libelle}
+            </button>
+          ))}
+          {!fini && (
+            <button type="button" disabled={enCours} onClick={onInteractif}>
+              {etat.matchInteractif ? 'Reprendre le match interactif' : 'Prochain match en interactif'}
+            </button>
+          )}
+          {fini && (
+            <button
+              type="button"
+              className="principal"
+              disabled={enCours || !draftFaite}
+              title={draftFaite ? undefined : 'La Draft doit être terminée (onglet Draft).'}
+              onClick={onSaisonSuivante}
+            >
+              Passer à la saison {suivante}
+            </button>
+          )}
+          {fini && !draftFaite && <span className="aide">Terminez d’abord la Draft (onglet Draft) pour passer à la saison suivante.</span>}
+          {enCours && <span className="aide">Simulation…</span>}
+        </section>
+      )}
 
       <nav className="onglets" aria-label="Rubriques de la saison">
         {onglets.map(([id, libelle]) => (
@@ -366,6 +400,11 @@ export function EcranSaison({
       )}
       {onglet === 'vivier' && <Vivier />}
       {onglet === 'histoire' && <Histoire etat={etat} onFiche={onFiche} />}
+      {onglet === 'bureau' && <Bureau etat={etat} enCours={enCours} onAction={onAction} onFiche={onFiche} />}
+      {onglet === 'marche' && <AgentsLibres etat={etat} enCours={enCours} onAction={onAction} onFiche={onFiche} />}
+      {onglet === 'echanges' && <Echanges etat={etat} enCours={enCours} onAction={onAction} onFiche={onFiche} />}
+      {onglet === 'staff' && <Staff etat={etat} enCours={enCours} onAction={onAction} onFiche={onFiche} />}
+      {onglet === 'transactions' && <Journal etat={etat} />}
 
       {onglet === 'all-star' && (
         <section className="carte" aria-label="All-Star Game">

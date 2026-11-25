@@ -48,6 +48,8 @@ export interface ModeleMarche {
     noteMinNba: number;
     /** Valeur (dollars) qu'une équipe accorde à garder son propre agent libre (continuité, droits de Bird). */
     fideliteEquipe: number;
+    /** Part du salaire qui ne coûte rien à une équipe sous le plafond (espace qui serait perdu). */
+    valeurEspaceInutilise: number;
   };
   echangesIa: {
     tentativesParJourSaison: number;
@@ -59,6 +61,8 @@ export interface ModeleMarche {
     saisons: number;
     standardParEquipe: Intervalle;
     equipesTaxe: Intervalle;
+    /** Masse salariale moyenne des équipes rapportée au seuil de taxe. */
+    masseSurTaxe: Intervalle;
     equipesDeuxiemeApron: Intervalle;
     correlationSalaireNoteMin: number;
     noteMaxAgentLibreNonSigne: number;

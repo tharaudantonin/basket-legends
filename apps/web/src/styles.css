@@ -637,3 +637,26 @@ tr.mon-equipe {
   font-weight: 600;
   background: color-mix(in srgb, currentColor 8%, transparent);
 }
+
+/* Tranche 9 : marché (mise en forme sobre ; le rendu définitif viendra avec le chantier visuel). */
+.echange {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 0.75rem 0;
+}
+.colonne-echange {
+  max-height: 26rem;
+  overflow-y: auto;
+}
+.ligne-actif {
+  display: block;
+  padding: 0.15rem 0;
+}
+.formulaire-offre input[type='number'] {
+  width: 6rem;
+}
+.avis {
+  border-left: 3px solid currentColor;
+  padding-left: 0.75rem;
+}

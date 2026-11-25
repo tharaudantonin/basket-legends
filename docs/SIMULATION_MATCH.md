@@ -156,3 +156,7 @@ Le moteur lit les 16 attributs détaillés du modèle de notes v2 (`docs/NOTES_J
 **Calibration (24/11/2026, `npm run sonde 1000`) :** les 19 mesures sont dans leurs fourchettes, 0 hors fourchette : 116,7 points (cible 115,6), 89,3 tirs à 47,4 % (89,1 / 47,1 %), 36,9 tirs à 3 pts à 36,2 % (37,0 / 36,0 %), 23,7 lancers à 78,7 % (23,5 / 78,3 %), rebonds 11,3 / 32,7 (11,4 / 32,4), 26,9 passes (26,7), 8,2 interceptions et 4,9 contres (8,4 / 4,8), 14,4 pertes et 20,1 fautes (14,5 / 19,9), près du cercle 23,6 % des tirs à 70,5 % (23,1 / 70,3 %), mi-distance 35,0 % à 45,0 % (35,3 / 45,0 %), 57,2 % de victoires à domicile (55,4 %). 2,97 ms par match ; non sourcés : prolongations 1,8 %, joueur le plus utilisé 37,1 minutes, 8e joueur 15,2.
 
 Empreinte du match de référence : `0a6f4ed165d89e1e` (§ 5), mise à jour dans les tests et les parcours.
+
+## 10. Plans de jeu des entraîneurs (tranche 9)
+
+Chaque équipe joue le plan de son entraîneur principal (`EquipeDuMatch.plan` : rythme, défense, part du tir à trois points ; réponse 40) ; le coach du joueur peut le changer en match comme avant. Les préférences sont réparties en proportions exactes sur les 30 équipes (`data/modeles/staff-v1.json`). Calibration revérifiée (réponse 39) : `npm run sonde 2000 -- --staff --graine=n` et saisons complètes avec et sans plans (`docs/MARCHE.md` § 7). Le match de référence et son empreinte ne changent pas (plan par défaut).
