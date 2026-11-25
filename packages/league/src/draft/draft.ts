@@ -154,6 +154,7 @@ export const prochainChoix = (draft: EtatDraft): ChoixDeDraft | undefined =>
 export function avancerDraft(ctx: ContexteLigue, etatInitial: EtatSaison, choixDuGm?: string): EtatSaison {
   const etat = structuredClone(etatInitial);
   if (!etat.draft) throw new Error('Pas de Draft dans cette partie.');
+  if (etat.club?.licenciement) throw new Error('Vous avez été licencié : choisissez d’abord votre nouvelle franchise.');
   etat.draft = preparerDraft(ctx, etat);
   const draft = etat.draft;
   for (let c = prochainChoix(draft); c; c = prochainChoix(draft)) {

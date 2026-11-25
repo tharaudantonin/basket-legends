@@ -147,6 +147,8 @@ export interface EquipeDuMatch {
   plan?: Partial<PlanDeJeu>;
   /** Tranche 9 : ordre (cinq de départ, rotation) imposé par le GM : la ligue ne le recompose pas. */
   ordreDuGm?: boolean;
+  /** Tranche 10 : forme du jour (moral du groupe), ajoutée à la réussite de ses tirs ; bornée par la ligue, de moyenne nulle. */
+  forme?: number;
 }
 
 /** Qui a le ballon au début d'une période : entre-deux, ou l'équipe qui a gagné / perdu l'entre-deux initial. */

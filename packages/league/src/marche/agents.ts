@@ -41,6 +41,7 @@ import {
 import { personnalite } from './personnalite';
 import type { AgentLibre, EtatIntersaison, ModeleMarche, MoyenOffre, Offre } from './types';
 import { force, notesProjetees, salaireDeMarche, valeurDuJoueur } from './valeur';
+import { facteurFidelite } from '../club/vestiaire';
 
 const M$ = (x: number) => `${(x / 1e6).toLocaleString('fr-FR', { maximumFractionDigits: 2 })} M$`;
 const P0 = (ctx: ContexteLigue) => (ctx.base ?? ctx).salaires.cba;
@@ -586,7 +587,10 @@ function scoreDeLOffre(ctx: ContexteLigue, etat: EtatSaison, o: Offre, demande: 
   const note = u.joueurs[o.joueur]!.note;
   const devant = (u.effectifs[o.equipe] ?? []).filter((j) => (u.joueurs[j]?.note ?? 0) > note).length;
   const role = (devant < 5 ? 1 : devant < 8 ? 0.5 : 0) * (p.role / 50);
-  const fidelite = (a.ancienne === o.equipe ? 1 : 0) * (p.fidelite / 50);
+  // Tranche 10 (réponse 53) : un joueur au moral bas tient moins à rester ; un joueur heureux, davantage.
+  const club = (ctx.base ?? ctx).club;
+  const moral = club ? facteurFidelite(club.modele, u.club, o.joueur) : 1;
+  const fidelite = (a.ancienne === o.equipe ? 1 : 0) * (p.fidelite / 50) * moral;
   const duree = -0.05 * Math.abs(o.duree - a.duree);
   return W.argent * (moyenne / demande) + W.victoire * victoire + W.role * role + W.fidelite * fidelite + duree;
 }

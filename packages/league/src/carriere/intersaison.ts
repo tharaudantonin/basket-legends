@@ -21,6 +21,9 @@ import { plafondSuivant } from '../marche/plafond';
 import { bonusProgression } from '../marche/staff';
 import { DELEGATIONS_PAR_DEFAUT, DELEGATIONS_STAFF, type Offre } from '../marche/types';
 import { demenager } from './demenagement';
+import { debutDeSaisonDuClub, intersaisonDuClub } from '../club';
+import { bonusGLeague } from '../club/gleague';
+import { accepterOffre, initialiserClub, proposerDemenagement } from '../club/proprietaire';
 import { vieillir } from './progression';
 import type { ArchiveSaison, BilanIntersaison, JoueurCarriere, Univers } from './types';
 import { contexteDeLaSaison, contexteDeLUnivers, nomDeFranchise, saisonSuivante } from './univers';
@@ -87,6 +90,8 @@ function archiver(ctx: ContexteLigue, etat: EtatSaison): ArchiveSaison {
     ...(premier ? { premierChoix: { joueur: premier.prospect, equipe: premier.equipe } } : {}),
     retraites: [],
     ...(etat.marche ? { transactions: { echanges: etat.marche.echanges, signatures: etat.marche.signatures } } : {}),
+    ...(etat.univers?.club?.licenciements[etat.saison]?.length ? { licenciements: etat.univers.club.licenciements[etat.saison] } : {}),
+    ...(etat.club?.gLeague?.champion ? { championGLeague: etat.club.gLeague.champion } : {}),
   };
 }
 
@@ -123,6 +128,11 @@ function ouvrir(ctx: ContexteLigue, etat: EtatSaison): Ouverture {
   const Nc = saisonCourte(N);
   const u: Univers = structuredClone(u0);
   if (base.marche) initialiserMarche(base, u, etat.graine);
+  // Tranche 10 : le moral retombe vers son niveau de départ ; assignations en G League et rattachements finissent.
+  if (base.club && base.marche) {
+    initialiserClub(base, u, etat.graine, etat.franchise);
+    intersaisonDuClub(base, u);
+  }
   u.saison = N;
   const bilan: BilanIntersaison = { progressions: [], retraites: [], prolongations: [], liberes: [], signatures: [], recrues: [] };
   const equipeDe: Record<string, string> = {};
@@ -149,7 +159,9 @@ function ouvrir(ctx: ContexteLigue, etat: EtatSaison): Ouverture {
   for (const id of Object.keys(u.joueurs).sort()) {
     const avant = u.joueurs[id]!;
     const e = equipeDe[id];
-    const bonus = base.marche && e ? bonusProgression(base.marche.staff, u.staff?.[e], avant.age) : 0;
+    // Tranche 10 : un jeune qui a assez joué en G League progresse un peu plus (borné).
+    const bonus =
+      (base.marche && e ? bonusProgression(base.marche.staff, u.staff?.[e], avant.age) : 0) + bonusGLeague(base, etat, id, avant.age);
     const apres = vieillir(M.progression, avant, etat.graine, N, bonus);
     u.joueurs[id] = apres;
     bilan.progressions.push({ joueur: id, avant: avant.note, apres: apres.note });
@@ -374,6 +386,7 @@ function completerSansMarche(ctx: ContexteLigue, o: Ouverture, ordre: string[]):
  * commence directement.
  */
 export function ouvrirIntersaison(base: ContexteLigue, etat: EtatSaison): EtatSaison {
+  if (etat.club?.licenciement) throw new Error('Vous avez été licencié : choisissez d’abord votre nouvelle franchise.');
   if (!intersaisonPossible(etat)) throw new Error('La saison n’est pas terminée (Draft comprise).');
   const ctx = contexteDeLaSaison(base, etat);
   const archive = archiver(ctx, etat);
@@ -399,6 +412,8 @@ export function ouvrirIntersaison(base: ContexteLigue, etat: EtatSaison): EtatSa
     suivant.delegations ??= { ...DELEGATIONS_PAR_DEFAUT };
     suivant.intersaison = ouvrirAgentsLibres(ctxN, suivant, o.echus);
     prolongerAvantMarche(ctxN, suivant);
+    // Tranche 10 (réponse 54) : le propriétaire peut proposer un déménagement (rare).
+    if (base.club && suivant.univers?.club && !o.bilan.demenagement) proposerDemenagement(ctxN, suivant);
   }
   return suivant;
 }
@@ -458,7 +473,11 @@ export function terminerIntersaison(base: ContexteLigue, etatInitial: EtatSaison
     if (!I.terminee) camp(contexteDeLaSaison(base, etat), etat);
   }
   for (const m of etat.bureau ?? []) if (m.statut === 'ouvert' && m.action?.type === 'alignement') m.statut = 'expire';
+  // Tranche 10 : un déménagement resté sans réponse est abandonné ; objectifs de la saison, G League.
+  if (etat.club?.demenagement?.statut === 'ouvert') etat.club.demenagement.statut = 'refuse';
+  for (const m of etat.bureau ?? []) if (m.statut === 'ouvert' && m.titre === 'Projet de déménagement') m.statut = 'expire';
   etat.phase = 'reguliere';
+  debutDeSaisonDuClub(contexteDeLaSaison(base, etat), etat);
   const u = etat.univers!;
   if (etat.compositionManuelle) {
     const effectif = u.effectifs[etat.franchise] ?? [];
@@ -501,7 +520,13 @@ export function terminerIntersaison(base: ContexteLigue, etatInitial: EtatSaison
  * L'intersaison complète au pilote automatique (outils, tests ; réponse 45) : le staff décide aussi pour la franchise
  * du joueur. Rend l'état de la saison suivante, prête à jouer.
  */
-export function passerALaSaisonSuivante(base: ContexteLigue, etat: EtatSaison): EtatSaison {
+export function passerALaSaisonSuivante(base: ContexteLigue, etatInitial: EtatSaison): EtatSaison {
+  // Tranche 10 : licencié, le GM du joueur accepte la première offre (pilote automatique).
+  let etat = etatInitial;
+  if (etat.club?.licenciement) {
+    etat = structuredClone(etat);
+    accepterOffre(contexteDeLaSaison(base, etat), etat, etat.club!.licenciement!.offres[0]!);
+  }
   const ouverte = ouvrirIntersaison(base, {
     ...etat,
     delegations: { ...(etat.delegations ?? DELEGATIONS_PAR_DEFAUT), ...DELEGATIONS_STAFF },

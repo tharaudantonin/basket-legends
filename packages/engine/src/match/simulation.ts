@@ -175,6 +175,8 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
     };
   };
   const equipes: [EtatEquipe, EtatEquipe] = [preparer(entree.domicile), preparer(entree.exterieur)];
+  // Tranche 10 : forme de chaque équipe (effet borné du moral du groupe, calculé par la ligue) ; absente, aucun effet.
+  const forme: [number, number] = [entree.domicile.forme ?? 0, entree.exterieur.forme ?? 0];
   const titulaires = equipes.map((e) => e.surTerrain.slice()) as [string[], string[]];
 
   const etat = (c: Camp, id: string): EtatJoueur => equipes[c].joueurs.get(id) as EtatJoueur;
@@ -746,7 +748,8 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
         G.tirs.reussiteDeBase[tir] +
           (zone ? zone.reussite[tir] : 0) +
           G.tirs.sensibiliteParPoint * (adresse(tireur, tir) - opposition) +
-          (attaque === 0 ? G.tirs.avantageDomicile : 0) -
+          (attaque === 0 ? G.tirs.avantageDomicile : 0) +
+          forme[attaque] -
           (presse ? F.malusTirPresse : 0) +
           (preparee ? G.tempsMorts.bonusActionPreparee : 0),
         0.02,

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-changements-direction",
+  "note": "Relevé partiel (recherches du 25/11/2026), à recouper avant publication : aucune source ne donne la liste complète. Il fixe l’ordre de grandeur des licenciements de GM de la tranche 10 : 5 changements relevés pour 2024-25, au moins 3 pour 2025-26. Les noms des dirigeants ne sont pas repris (certaines adresses des sources en contiennent). Fourchette du jeu (data/modeles/club-v1.json, critereSortie) : 1 à 7 par saison.",
+  "definition": "Changement du premier responsable des opérations basket (président des opérations ou GM) d’une franchise, à son initiative ou à celle de la franchise, entre la fin d’une saison régulière et la fin de la saison suivante.",
+  "changements": [
+    {
+      "franchise": "atlanta",
+      "mois": "2025-04",
+      "saison": "2024-2025",
+      "nature": "licenciement",
+      "source": {
+        "fournisseur": "ESPN",
+        "titre": "Atlanta : le GM licencié, son adjoint promu (titre sans les noms)",
+        "url": "https://www.espn.com/nba/story/_/id/44784004/hawks-promote-onsi-saleh-gm-firing-landry-fields",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    {
+      "franchise": "denver",
+      "mois": "2025-04",
+      "saison": "2024-2025",
+      "nature": "licenciement",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "NBA 2025 Offseason Check-In: Denver Nuggets",
+        "url": "https://www.hoopsrumors.com/offseason-check-in/page/3",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    {
+      "franchise": "sacramento",
+      "mois": "2025-04",
+      "saison": "2024-2025",
+      "nature": "depart",
+      "source": {
+        "fournisseur": "Bleacher Report",
+        "titre": "Sacramento : départ du GM après le Play-In (titre sans les noms)",
+        "url": "https://bleacherreport.com/articles/25187376-monte-mcnair-reportedly-out-kings-gm-after-nba-play-loss-mavericks",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    {
+      "franchise": "phoenix",
+      "mois": "2025-05",
+      "saison": "2024-2025",
+      "nature": "depart",
+      "source": {
+        "fournisseur": "Sports Illustrated",
+        "titre": "Phoenix : nouveau GM promu en interne (titre sans les noms)",
+        "url": "https://www.si.com/nba/suns-new-general-manager-brian-gregory-still-searching-head-coach",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    {
+      "franchise": "toronto",
+      "mois": "2025-06",
+      "saison": "2024-2025",
+      "nature": "licenciement",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Toronto : départ du président des opérations basket (fil de nouvelles)",
+        "url": "https://www.hoopsrumors.com/masai-ujiri",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    {
+      "franchise": "dallas",
+      "mois": "2025-11",
+      "saison": "2025-2026",
+      "nature": "licenciement",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "NBA 2026 Offseason Check-In: Dallas Mavericks",
+        "url": "https://www.hoopsrumors.com/2026/09/nba-2026-offseason-check-in-dallas-mavericks.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    {
+      "franchise": "chicago",
+      "mois": "2026-04",
+      "saison": "2025-2026",
+      "nature": "licenciement",
+      "source": {
+        "fournisseur": "TSN (ESPN)",
+        "titre": "Why the Bulls fired their front office with just one week left in the regular season",
+        "url": "https://www.tsn.ca/nba/article/why-bulls-fired-their-front-office-with-just-one-week-left-in-regular-season-n1-48413848/",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    {
+      "franchise": "philadelphia",
+      "mois": "2026-05",
+      "saison": "2025-2026",
+      "nature": "licenciement",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "NBA 2026 Offseason Check-In: Philadelphia 76ers",
+        "url": "https://www.hoopsrumors.com/2026/08/nba-2026-offseason-check-in-philadelphia-76ers.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    }
+  ],
+  "completude": {
+    "2024-2025": "partiel",
+    "2025-2026": "partiel"
+  }
+}

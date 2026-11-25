@@ -1,7 +1,7 @@
 // Tranche 8 : changement de franchise (décisions du 24/11/2026, réponses 6 à 8). Très rare : en moyenne un changement
 // toutes les 8 saisons pour toute la ligue, vers une liste fermée de villes sans équipe NBA (data/ligue/villes-d-accueil.json,
-// chaque ville sourcée). L'IA choisit la franchise ; celle du joueur ne déménage jamais sans son accord (la proposition du
-// propriétaire viendra avec la tranche 10). La franchise garde son histoire (palmarès, records), sa conférence et sa
+// chaque ville sourcée). L'IA choisit la franchise ; celle du joueur ne déménage jamais sans son accord (tranche 10 : son
+// propriétaire peut le lui proposer, club/proprietaire.ts). La franchise garde son histoire (palmarès, records), sa conférence et sa
 // division ; une ville n'accueille qu'une franchise. Tirage déterministe (graine de la saison).
 import { creerHasard } from '@basket-legends/engine';
 import type { StructureLigue } from '../types';

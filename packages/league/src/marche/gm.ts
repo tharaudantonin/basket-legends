@@ -29,6 +29,11 @@ import {
 import { planDuStaff } from './staff';
 import type { AvisEchange, Delegations, MembreStaff, Offre, PropositionEchange, VerdictEchange } from './types';
 import { valeurDuJoueur } from './valeur';
+import { accepterOffre, repondreDemenagement } from '../club/proprietaire';
+import { repondreAuMessage } from '../club/vestiaire';
+import { convertirTwoWay, garderJusquALaFin, signerDixJours, signerTwoWayEnSaison } from '../club/contrats';
+import { assignerEnGLeague } from '../club/gleague';
+import type { Role } from '../club/types';
 
 export type ActionDuGm =
   | { genre: 'echange-evaluer'; proposition: PropositionEchange }
@@ -47,7 +52,17 @@ export type ActionDuGm =
   | { genre: 'signer-libre'; joueur: string; salaire: number; duree: number }
   | { genre: 'delegations'; delegations: Delegations }
   | { genre: 'composition'; ordre: string[] | null }
-  | { genre: 'staff'; membre: string };
+  | { genre: 'staff'; membre: string }
+  // Tranche 10 : vie du club et contrats en cours de saison.
+  | { genre: 'club-message'; id: number; choix: number }
+  | { genre: 'offre-emploi'; franchise: string }
+  | { genre: 'demenagement'; accepter: boolean }
+  | { genre: 'two-way'; joueur: string }
+  | { genre: 'convertir'; joueur: string }
+  | { genre: 'dix-jours'; joueur: string; hardship: boolean }
+  | { genre: 'garder-dix-jours'; joueur: string }
+  | { genre: 'assigner'; joueur: string; assigner: boolean }
+  | { genre: 'role'; joueur: string; role: Role | null };
 
 export interface ReponseDuGm {
   etat: EtatSaison;
@@ -238,5 +253,28 @@ export function actionDuGm(base: ContexteLigue, etatInitial: EtatSaison, action:
       return { etat, message: composer(ctx, etat, action.ordre) };
     case 'staff':
       return { etat, message: engager(ctx, etat, action.membre) };
+    case 'club-message':
+      return { etat, message: repondreAuMessage(ctx, etat, action.id, action.choix) };
+    case 'offre-emploi':
+      return { etat, message: accepterOffre(ctx, etat, action.franchise) };
+    case 'demenagement':
+      return { etat, message: repondreDemenagement(ctx, etat, action.accepter) };
+    case 'two-way':
+      return { etat, message: signerTwoWayEnSaison(ctx, etat, gm, action.joueur) };
+    case 'convertir':
+      return { etat, message: convertirTwoWay(ctx, etat, gm, action.joueur) };
+    case 'dix-jours':
+      return { etat, message: signerDixJours(ctx, etat, gm, action.joueur, action.hardship) };
+    case 'garder-dix-jours':
+      return { etat, message: garderJusquALaFin(ctx, etat, gm, action.joueur) };
+    case 'assigner':
+      return { etat, message: assignerEnGLeague(ctx, etat, gm, action.joueur, action.assigner) };
+    case 'role': {
+      const u = etat.univers!;
+      if (!u.club || !u.effectifs[gm]?.includes(action.joueur)) throw new Error('Ce joueur n’est pas dans votre effectif.');
+      if (action.role) u.club.roles[action.joueur] = action.role;
+      else delete u.club.roles[action.joueur];
+      return { etat, message: action.role ? 'Rôle promis : il comptera sur ce temps de jeu.' : 'Plus de rôle promis.' };
+    }
   }
 }

@@ -14,6 +14,10 @@ import {
   schemaModeleMarche,
   schemaModeleStaff,
   schemaTransactions,
+  donneesDuClub,
+  schemaModeleClub,
+  schemaGLeague,
+  schemaDirections,
   donneesSalariales,
   lireDonneesDeDraft,
   nomsDuVivier,
@@ -62,6 +66,11 @@ export function chargerContexte(avecDraft = false, avecCarriere = false): Contex
           schemaModeleMarche.parse(json('data/modeles/marche-v1.json')),
           schemaModeleStaff.parse(json('data/modeles/staff-v1.json')),
           schemaTransactions.parse(json('data/ligue/transactions-2026-27.json')),
+        ),
+        club: donneesDuClub(
+          schemaModeleClub.parse(json('data/modeles/club-v1.json')),
+          schemaGLeague.parse(json('data/ligue/g-league-2026-27.json')),
+          schemaDirections.parse(json('data/ligue/directions.json')),
         ),
       }
     : undefined;

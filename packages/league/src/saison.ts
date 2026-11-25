@@ -23,6 +23,7 @@ import { composerSelonLOrdre, contexteDeLaSaison, joueurDuMatchCarriere } from '
 import { compositionDuMatch } from './marche/operations';
 import { facteurBlessures } from './marche/staff';
 import { journeeDeMarche } from './marche/ia';
+import { apresMatch, finDeSaisonDuClub, formeDuMatch, journeeDuClub } from './club';
 
 export type Cible = 'jour' | 'semaine' | 'all-star' | 'fin-reguliere' | 'fin';
 
@@ -102,7 +103,7 @@ function equipeAuMatch(ctx: ContexteLigue, etat: EtatPourRejouer, id: string, po
 export function equipesDuMatch(
   ctx: ContexteLigue,
   etat: EtatPourRejouer,
-  m: Pick<ResumeMatch, 'domicile' | 'exterieur' | 'absents'> & { id?: number },
+  m: Pick<ResumeMatch, 'domicile' | 'exterieur' | 'absents'> & { id?: number; forme?: [number, number] },
 ): [EquipeDuMatch, EquipeDuMatch] {
   const absents = new Set(m.absents);
   const position = m.id === undefined ? (etat.matchs?.length ?? 0) : positionDuMatch(etat, m.id);
@@ -126,7 +127,14 @@ export function equipesDuMatch(
     const e = ordre ? { id: base.id, nom: base.nom, joueurs } : composerEquipe(base.id, base.nom, joueurs);
     return base.plan ? { ...e, plan: base.plan } : e;
   };
-  return [equipe(m.domicile), equipe(m.exterieur)];
+  const [d, e] = [equipe(m.domicile), equipe(m.exterieur)];
+  // Tranche 10 : la forme du jour (moral du groupe), notée dans le résumé du match.
+  return m.forme
+    ? [
+        { ...d, forme: m.forme[0] },
+        { ...e, forme: m.forme[1] },
+      ]
+    : [d, e];
 }
 
 /** Rejoue un match de la saison à l'identique (mode commenté, box score), avec les décisions du coach s'il y en a. */
@@ -157,8 +165,15 @@ function jouerMatch(
   const phaseFinale = nature === 'play-in' || nature === 'playoffs';
   const nonQualifie = (j: string) =>
     contrats[j]?.type === 'two-way' &&
-    (phaseFinale ? !cba.twoWayEnPhaseFinale : nature === 'reguliere' && (etat.statistiques[j]?.matchs ?? 0) >= cba.matchsMaxTwoWay);
-  const absents = effectifs.filter((j) => (etat.blessures[j] ?? 0) > 0 || nonQualifie(j)).sort();
+    (phaseFinale
+      ? !cba.twoWayEnPhaseFinale
+      : nature === 'reguliere' && (etat.statistiques[j]?.matchs ?? 0) >= (contrats[j]?.limiteMatchs ?? cba.matchsMaxTwoWay));
+  // Tranche 10 : les joueurs assignés en G League et ceux écartés par le GM (sanction) manquent aussi le match.
+  const club = nature === 'all-star' ? undefined : etat.club;
+  const assignes = nature === 'all-star' ? undefined : etat.univers?.club?.assignes;
+  const absents = effectifs
+    .filter((j) => (etat.blessures[j] ?? 0) > 0 || nonQualifie(j) || !!assignes?.[j] || (club?.ecartes[j] ?? 0) > 0)
+    .sort();
   const graine = graineDuMatch(etat.graine, id);
   const resume: ResumeMatch = {
     id,
@@ -175,6 +190,8 @@ function jouerMatch(
     moments: [],
     ...(neutre ? { neutre } : {}),
   };
+  const forme = nature === 'all-star' ? undefined : formeDuMatch(ctx, etat, domicile, exterieur);
+  if (forme) resume.forme = forme;
   // Tranche 5 : le match interactif de la franchise du joueur se joue avec les décisions du coach.
   if (etat.matchInteractif?.id === id) {
     if (etat.matchInteractif.decisions.length) resume.decisions = etat.matchInteractif.decisions;
@@ -191,6 +208,15 @@ function jouerMatch(
   etat.date = date;
 
   if (nature === 'all-star') return resume;
+  // Tranche 10 : moral après le match ; matchs consécutifs manqués (exception de difficulté) ; sanctions purgées.
+  if (club) {
+    apresMatch(ctx, etat, r, resume);
+    for (const j of effectifs) {
+      if ((etat.blessures[j] ?? 0) > 0) club.absences[j] = (club.absences[j] ?? 0) + 1;
+      else delete club.absences[j];
+      if (club.ecartes[j]) delete club.ecartes[j];
+    }
+  }
   // Blessures : les absents ont manqué un match de plus ; les nouveaux blessés sont indisponibles.
   for (const j of absents.filter((x) => etat.blessures[x])) {
     const reste = (etat.blessures[j] ?? 0) - 1;
@@ -529,6 +555,8 @@ function terminer(ctx: ContexteLigue, etat: EtatSaison, finale: Serie): void {
       ? `${taxes.map((s) => `${nomDe(ctx, s.equipe)} ${m(s.taxe)}${s.recidiviste ? ' (récidiviste)' : ''}`).join(' ; ')}.`
       : 'Aucune équipe ne dépasse le seuil de taxe.',
   });
+  // Tranche 10 : fin de la G League, bilan du propriétaire, licenciements.
+  finDeSaisonDuClub(ctx, etat);
   // Tranche 7 : la loterie se tire à la fin de la saison ; les 60 choix sont fixés.
   if (ctx.draft && etat.draft) {
     etat.draft = preparerDraft(ctx, etat);
@@ -576,9 +604,11 @@ function pas(ctx: ContexteLigue, etat: EtatSaison): void {
 function pasEtMarche(ctx: ContexteLigue, etat: EtatSaison): ContexteLigue {
   const regulier = etat.phase === 'reguliere' && !(!etat.allStar && etat.jour >= jourDuAllStar(ctx, etat));
   pas(ctx, etat);
-  if (!regulier || !ctx.marche || !etat.univers) return ctx;
+  if (!etat.univers || etat.phase === 'terminee') return ctx;
   const version = etat.univers.version;
-  journeeDeMarche(ctx, etat);
+  // Tranche 10 : la vie du club (propriétaire, vestiaire, G League, contrats en saison), chaque jour joué.
+  journeeDuClub(ctx, etat);
+  if (regulier && ctx.marche) journeeDeMarche(ctx, etat);
   return etat.univers.version !== version ? contexteDeLaSaison(ctx.base ?? ctx, etat) : ctx;
 }
 

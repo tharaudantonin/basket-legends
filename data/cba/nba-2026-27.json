@@ -539,6 +539,57 @@
         "niveau": "secondaire",
         "consulteLe": "2026-11-25"
       }
+    },
+    "dixJours": {
+      "valeur": {
+        "premierJour": "01-05",
+        "jours": 10,
+        "matchsMin": 3,
+        "joursSaison": 174,
+        "parJoueurEtEquipe": 2,
+        "joursRestantsMin": 10
+      },
+      "unite": "date (MM-JJ), jours, matchs",
+      "definition": "Contrat de 10 jours : signé à partir du 5 janvier, il couvre 10 jours (jour de la signature compris), prolongé jusqu’à trois matchs de l’équipe s’il en compte moins ; salaire = minimum de l’ancienneté du joueur × 10/174 (174 jours de saison régulière). Deux contrats de 10 jours au plus avec la même équipe, ensuite elle le signe jusqu’à la fin de la saison ou le laisse partir. Contrat standard : il prend une place parmi les 15 (sauf exception de difficulté). Pas de contrat standard de 10 jours à moins de 10 jours de la fin de la saison régulière.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: 10-Day Contract (03/01/2024)",
+        "url": "https://hoopsrumors.com/2024/01/hoops-rumors-glossary-10-day-contract.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "hardship": {
+      "valeur": {
+        "blessesMin": 4,
+        "matchsManquesMin": 3,
+        "joursRestantsMin": 14
+      },
+      "unite": "joueurs, matchs, jours",
+      "definition": "Exception de difficulté (hardship) : une équipe dont l’effectif de 15 est complet et qui a au moins quatre joueurs blessés ou malades, chacun absent depuis au moins trois matchs consécutifs et encore absent au moins deux semaines, signe un contrat de 10 jours hors des 15 (à tout moment de la saison). Une exception par groupe de quatre ; une de plus pour chaque joueur au-delà (cinq joueurs : deux). Quand l’équipe ne remplit plus les conditions, elle revient à 15.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Hardship Exception (05/12/2023)",
+        "url": "https://hoopsrumors.com/2023/12/hoops-rumors-glossary-hardship-exception.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "twoWayEnSaison": {
+      "valeur": {
+        "dateLimiteSignature": "03-04",
+        "joursSaison": 174,
+        "matchsEquipeIncomplete": 90
+      },
+      "unite": "date (MM-JJ), jours, matchs",
+      "definition": "Two-way en cours de saison : pas de signature après le 4 mars ; limite de 50 matchs actifs au prorata des jours restants (jours restants ÷ 174 × 50, arrondi) ; conversion en contrat standard possible jusqu’au dernier jour de la saison régulière (place parmi les 15 nécessaire) ; une équipe à moins de 15 contrats standard est limitée à 90 matchs actifs de two-way au total.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Active Game Limits For Two-Way Players In 2025/26 (18/11/2025)",
+        "url": "https://www.hoopsrumors.com/2025/11/active-game-limits-for-two-way-players-in-2025-26.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
     }
   },
   "recoupements": [
@@ -581,6 +632,20 @@
       "fournisseur": "Hoops Rumors",
       "titre": "Hoops Rumors Glossary: Ted Stepien Rule (05/2024)",
       "url": "https://www.hoopsrumors.com/2024/05/hoops-rumors-glossary-ted-stepien-rule-5.html",
+      "niveau": "secondaire",
+      "consulteLe": "2026-11-25"
+    },
+    {
+      "fournisseur": "Hoops Rumors",
+      "titre": "NBA Teams Can’t Sign Players To Two-Way Deals After Wednesday (02/03/2026)",
+      "url": "https://www.hoopsrumors.com/2026/03/nba-teams-cant-sign-players-to-two-way-deals-after-wednesday.html",
+      "niveau": "secondaire",
+      "consulteLe": "2026-11-25"
+    },
+    {
+      "fournisseur": "Hoops Rumors",
+      "titre": "How The Grizzlies Are Carrying A 22-Man Roster (01/04/2026)",
+      "url": "https://www.hoopsrumors.com/2026/04/how-the-grizzlies-are-carrying-a-22-man-roster.html",
       "niveau": "secondaire",
       "consulteLe": "2026-11-25"
     }

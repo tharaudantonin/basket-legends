@@ -19,3 +19,4 @@ export {
 } from './draft';
 export { universInitial, donneesDeCarriere, modeleDeCarriere } from './carriere';
 export { donneesDuMarche } from './marche';
+export { donneesDuClub } from './club';

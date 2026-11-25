@@ -6,6 +6,7 @@ import type { DonneesDraft } from './draft/draft';
 import type { EtatDraft } from './draft/types';
 import type { ArchiveSaison, Univers } from './carriere/types';
 import type { DonneesCarriere } from './carriere/univers';
+import type { DonneesClub, EtatClub } from './club/types';
 import type { CompositionNotee, CompteursMarche, Delegations, DonneesMarche, EtatIntersaison, MessageBureau } from './marche/types';
 
 export type CritereDepartage =
@@ -73,6 +74,8 @@ export interface ContexteLigue {
   marche?: DonneesMarche;
   /** Tranche 9 : le contexte des données de référence, pour recalculer celui de la saison après une transaction. */
   base?: ContexteLigue;
+  /** Tranche 10 : modèle du club (propriétaire, vestiaire, G League) et format de la G League (absent : pas de vie du club). */
+  club?: DonneesClub;
 }
 
 /** Tranche 9 : « intersaison » — la saison est créée, la free agency se joue avant le premier match. */
@@ -111,6 +114,8 @@ export interface ResumeMatch {
   neutre?: boolean;
   /** Tranche 5 : décisions du coach (match joué en mode interactif) ; avec la graine et les absents, elles suffisent à le rejouer. */
   decisions?: DecisionMatch[];
+  /** Tranche 10 : forme des deux équipes (effet du moral du groupe, en points de réussite au tir), pour rejouer le match. */
+  forme?: [number, number];
 }
 
 /** Tranche 5 : le match interactif en cours de la franchise du joueur (enregistré à chaque décision). */
@@ -230,7 +235,9 @@ export interface Actualite {
     | 'finances'
     | 'draft'
     | 'intersaison'
-    | 'marche';
+    | 'marche'
+    | 'club'
+    | 'g-league';
 }
 
 export interface EtatSaison {
@@ -278,6 +285,8 @@ export interface EtatSaison {
   /** La free agency de l'intersaison (phase « intersaison »). */
   intersaison?: EtatIntersaison;
   marche?: CompteursMarche;
+  /** Tranche 10 : objectifs et rendez-vous du propriétaire, messages du vestiaire, G League, contrats en saison. */
+  club?: EtatClub;
 }
 
 export type { EquipeDuMatch, JoueurDuMatch };

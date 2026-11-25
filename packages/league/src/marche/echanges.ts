@@ -86,7 +86,9 @@ export function strategieDe(M: ModeleMarche, forces: Record<string, number>, equ
 
 /** La personnalité du GM d'une franchise (fixe pour une partie) : patience et aversion pour la taxe. */
 export function gmDe(M: ModeleMarche, u: Univers, graine: number, equipe: string): { patience: number; aversionTaxe: number } {
-  const h = creerHasard(graine, `gm-${equipe}`);
+  // Tranche 10 : un GM licencié est remplacé ; son successeur a sa propre personnalité.
+  const rang = u.club?.proprietaires[equipe]?.gm ?? 0;
+  const h = creerHasard(graine, rang ? `gm-${equipe}-${rang}` : `gm-${equipe}`);
   const [a, b] = M.gm.patience;
   // Réponse 41 : les récidivistes au snapshot (et depuis) paient plus volontiers la taxe.
   const aversionTaxe = u.equipes[equipe]?.recidiviste ? M.gm.aversionTaxeRecidiviste : M.gm.aversionTaxe;

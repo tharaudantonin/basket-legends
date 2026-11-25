@@ -568,6 +568,27 @@ export const schemaCba = z.strictObject({
     estimationsPlafond: parametreCba(
       z.array(z.strictObject({ saison: z.string().regex(/^\d{4}-\d{2}$/), plafondSalarial: dollars, seuilTaxe: dollars })).min(1),
     ),
+    // Tranche 10 (25/11/2026) : contrats en cours de saison.
+    dixJours: parametreCba(
+      z.strictObject({
+        premierJour: z.string().regex(/^\d{2}-\d{2}$/),
+        jours: z.number().int().min(1),
+        matchsMin: z.number().int().min(0),
+        joursSaison: z.number().int().min(1),
+        parJoueurEtEquipe: z.number().int().min(1),
+        joursRestantsMin: z.number().int().min(0),
+      }),
+    ),
+    hardship: parametreCba(
+      z.strictObject({ blessesMin: z.number().int().min(1), matchsManquesMin: z.number().int().min(1), joursRestantsMin: z.number().int().min(0) }),
+    ),
+    twoWayEnSaison: parametreCba(
+      z.strictObject({
+        dateLimiteSignature: z.string().regex(/^\d{2}-\d{2}$/),
+        joursSaison: z.number().int().min(1),
+        matchsEquipeIncomplete: z.number().int().min(0),
+      }),
+    ),
   }),
   recoupements: z.array(sourceContrat),
 });
@@ -980,3 +1001,170 @@ export const schemaModeleStaff = z.strictObject({
   ages: intervalle,
 });
 export type ModeleStaffFichier = z.infer<typeof schemaModeleStaff>;
+
+// --- Tranche 10 : G League, changements de direction, modèle du club. ---
+
+/** data/ligue/g-league-AAAA-AA.json : format de la saison de G League (équipes affiliées, Tip-Off, saison, playoffs). */
+export const schemaGLeague = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.string().regex(/^basket-legends-g-league-\d{4}-\d{2}$/),
+  saison,
+  note: z.string(),
+  equipes: z.number().int().min(1),
+  affiliees: z.number().int().min(1),
+  tipOff: z.strictObject({ matchs: z.number().int().min(1), regions: z.number().int().min(1), debut: date, fin: date }),
+  showcase: z.strictObject({ qualifies: z.number().int().min(2), debut: date, fin: date }),
+  saisonReguliere: z.strictObject({ matchs: z.number().int().min(1), debut: date, fin: date }),
+  playoffs: z.strictObject({ parConference: z.number().int().min(2), debut: date, finaleVictoires: z.number().int().min(1) }),
+  sources: z.array(sourceDraft).min(1),
+});
+export type GLeagueFichier = z.infer<typeof schemaGLeague>;
+
+/** data/ligue/directions.json : changements de direction sportive relevés (critère de sortie de la tranche 10). */
+export const schemaDirections = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.literal('basket-legends-changements-direction'),
+  note: z.string(),
+  definition: z.string().min(1),
+  changements: z
+    .array(
+      z.strictObject({
+        franchise: z.string().regex(/^[a-z-]+$/),
+        mois: z.string().regex(/^\d{4}-\d{2}$/),
+        saison,
+        nature: z.enum(['licenciement', 'depart']),
+        source: sourceDraft,
+      }),
+    )
+    .min(1),
+  completude: z.record(saison, z.enum(['complet', 'partiel'])),
+});
+export type DirectionsFichier = z.infer<typeof schemaDirections>;
+
+const listeNombres = z.array(z.number()).min(1);
+const choixMessage = z.strictObject({
+  texte: z.string().min(1),
+  defaut: z.boolean().optional(),
+  effets: z.strictObject({
+    joueur: listeNombres.optional(),
+    joueur2: listeNombres.optional(),
+    groupe: listeNombres.optional(),
+    confiance: listeNombres.optional(),
+  }),
+  chance: z.literal('meneurs').optional(),
+  action: z.enum(['promesse', 'ecarter', 'gleague', 'role', 'echange', 'garder']).optional(),
+});
+const profilProprietaire = z.strictObject({ part: proba, depart: z.number(), seuil: z.number(), severite: positif, toleranceTaxe: dollars });
+const triple = z.tuple([z.number(), z.number(), z.number()]);
+const temperament = z.strictObject({ part: proba, variation: positif, tempsDeJeu: z.number().min(0) });
+
+/** data/modeles/club-v<n>.json : propriétaire, vestiaire, G League et critère de sortie (tranche 10). */
+export const schemaModeleClub = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.literal('basket-legends-modele-club'),
+  version: z.string().regex(/^club-v\d+$/),
+  statut: z.enum(['proposition', 'valide']),
+  note: z.string(),
+  proprietaire: z.strictObject({
+    profils: z.strictObject({ exigeant: profilProprietaire, patient: profilProprietaire, ambitieux: profilProprietaire }),
+    recidivisteAmbitieux: proba,
+    objectifs: z
+      .array(
+        z.strictObject({
+          jusqua: z.number().int().min(1).max(30),
+          type: z.enum(['titre', 'finale-conference', 'playoffs', 'play-in', 'reconstruction']),
+          rangConference: z.number().int().min(1).max(15),
+          victoiresMin: z.number().int().min(0).max(82).optional(),
+        }),
+      )
+      .min(1),
+    rendezVous: z.array(proba).min(1),
+    confiance: z.strictObject({
+      parPlace: positif,
+      miSaison: positif,
+      finSaison: positif,
+      plafondHausse: positif,
+      plafondBaisse: positif,
+      titre: z.number().min(0),
+      finale: z.number().min(0),
+      objectifTenuMarge: z.number().min(0),
+      taxeParDixMillions: z.number().min(0),
+      demenagementRefuse: z.number().min(0),
+    }),
+    reputation: z.strictObject({
+      depart: z.number(),
+      objectifTenu: z.number().min(0),
+      objectifManque: z.number().min(0),
+      titre: z.number().min(0),
+      finale: z.number().min(0),
+      licenciement: z.number().min(0),
+      ecartOffres: z.number().min(0),
+    }),
+    offres: z.number().int().min(1),
+    propositionDemenagement: proba,
+    textes: z.strictObject({
+      bon: z.array(z.string().min(1)).min(1),
+      moyen: z.array(z.string().min(1)).min(1),
+      mauvais: z.array(z.string().min(1)).min(1),
+      licenciement: z.array(z.string().min(1)).min(1),
+      demenagement: z.array(z.string().min(1)).min(1),
+    }),
+  }),
+  vestiaire: z.strictObject({
+    moral: z.strictObject({
+      depart: z.number(),
+      recrue: z.number(),
+      victoire: z.number(),
+      defaite: z.number(),
+      retour: proba,
+      intersaison: proba,
+      poidsMeneur: positif,
+      demandeSeuil: z.number(),
+      demandeJours: z.number().int().min(1),
+      promesseRompue: z.number(),
+      minutesRotation: z.number().min(0),
+      minutesTitulaire: z.number().min(0),
+    }),
+    tempsDeJeu: z.strictObject({ titulaire: triple, rotation: triple, banc: triple }),
+    roles: z.strictObject({ titulaires: z.number().int().min(1), rotation: z.number().int().min(1) }),
+    temperaments: z.strictObject({ meneur: temperament, calme: temperament, sanguin: temperament, discret: temperament }),
+    meneurMental: z.number().int().min(1).max(100),
+    effetMatch: z.strictObject({ parPoint: z.number().min(0), max: z.number().min(0).max(0.05) }),
+    fidelite: intervalle,
+    messages: z.strictObject({ parJour: z.number().int().min(0), parSaison: z.number().int().min(0), delai: z.number().int().min(1) }),
+    chances: z.record(z.string(), proba),
+    seuils: z.record(z.string(), z.number()),
+    evenements: z
+      .array(
+        z.strictObject({
+          id: z.string().regex(/^[A-Z]{3}-\d{3}$/),
+          de: z.enum(['adjoint', 'proprietaire', 'recrutement']),
+          titre: z.string().min(1),
+          texte: z.string().min(1),
+          choix: z.array(choixMessage).min(2),
+        }),
+      )
+      .min(1),
+  }),
+  gLeague: z.strictObject({
+    effectif: z.number().int().min(8),
+    forceTop: z.array(positif).min(5),
+    echelle: positif,
+    avantageDomicile: z.number(),
+    pointsMoyens: positif,
+    ecartPoints: positif,
+    minutes: z.array(z.number().min(0)).min(5),
+    progression: z.strictObject({ matchsMin: z.number().int().min(0), bonus: z.number().min(0).max(2), ageMax: z.number().int() }),
+    assignationAncienneteMax: z.number().int().min(0),
+    rangAssignationIa: z.number().int().min(1),
+  }),
+  contratsIa: z.strictObject({ noteMinHardship: z.number(), noteMinConversion: z.number(), ageMaxTwoWay: z.number().int() }),
+  critereSortie: z.strictObject({
+    saisons: z.number().int().min(1),
+    licenciementsParSaison: intervalle,
+    moralMoyen: intervalle,
+    deriveMoralMax: positif,
+    effetMoyenMax: positif,
+  }),
+});
+export type ModeleClubFichier = z.infer<typeof schemaModeleClub>;

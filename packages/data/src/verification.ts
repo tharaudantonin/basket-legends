@@ -25,6 +25,9 @@ import {
   schemaVillesDAccueil,
   schemaModeleMarche,
   schemaModeleStaff,
+  schemaModeleClub,
+  schemaGLeague,
+  schemaDirections,
   schemaTransactions,
   type Effectif,
   type Registre,
@@ -301,6 +304,26 @@ export function verifierDonnees(sources: SourcesDonnees): Rapport {
       }
       continue;
     }
+    // Tranche 10 : modèle du club (propriétaire, vestiaire, G League).
+    if (fichier.startsWith('club-')) {
+      const chemin = `data/modeles/${fichier}`;
+      const lu = schemaModeleClub.safeParse(contenu);
+      if (!lu.success) {
+        erreurs.push(...messagesZod(chemin, lu));
+        continue;
+      }
+      const m = lu.data;
+      if (m.statut !== 'valide') avertissements.push(`${chemin} : modèle au statut « proposition », à valider par Antonin`);
+      const parts = (r: Record<string, { part: number }>) => Object.values(r).reduce((t, x) => t + x.part, 0);
+      if (Math.abs(parts(m.proprietaire.profils) - 1) > 1e-9) erreurs.push(`${chemin} : les parts des profils de propriétaires ne font pas 1`);
+      if (Math.abs(parts(m.vestiaire.temperaments) - 1) > 1e-9) erreurs.push(`${chemin} : les parts des tempéraments ne font pas 1`);
+      const o = m.proprietaire.objectifs;
+      if (o.some((x, i) => i > 0 && x.jusqua <= o[i - 1]!.jusqua) || o.at(-1)!.jusqua < 30) erreurs.push(`${chemin} : objectifs mal rangés (rang de force croissant, jusqu'à 30)`);
+      if (m.gLeague.minutes.reduce((t, x) => t + x, 0) !== 240) erreurs.push(`${chemin} : les minutes de G League ne font pas 240`);
+      for (const ev of m.vestiaire.evenements)
+        if (ev.choix.filter((c) => c.defaut).length !== 1) erreurs.push(`${chemin} : ${ev.id} doit avoir exactement une réponse par défaut`);
+      continue;
+    }
     // Tranche 8 : le modèle de carrière vit aussi dans data/modeles/.
     if (fichier.startsWith('carriere-')) {
       const chemin = `data/modeles/${fichier}`;
@@ -363,6 +386,29 @@ export function verifierDonnees(sources: SourcesDonnees): Rapport {
         for (const n of v.noms) if (nomsFranchises.includes(`${v.ville} ${n}`)) erreurs.push(`${chemin} : « ${v.ville} ${n} » est déjà le nom d'une franchise`);
       }
       if (lu.data.statut !== 'valide') avertissements.push(`${chemin} : villes d'accueil et noms au statut « proposition », à valider par Antonin`);
+      continue;
+    }
+    // Tranche 10 : format de la G League, changements de direction relevés.
+    if (fichier.startsWith('g-league-')) {
+      const lu = schemaGLeague.safeParse(contenu);
+      if (!lu.success) {
+        erreurs.push(...messagesZod(chemin, lu));
+        continue;
+      }
+      const G = lu.data;
+      if (G.affiliees > G.equipes || G.affiliees !== idsFranchises.size) erreurs.push(`${chemin} : ${G.affiliees} équipes affiliées pour ${idsFranchises.size} franchises`);
+      if (!(G.tipOff.debut < G.tipOff.fin && G.tipOff.fin < G.showcase.debut && G.showcase.fin < G.saisonReguliere.debut && G.saisonReguliere.fin < G.playoffs.debut))
+        erreurs.push(`${chemin} : dates de la saison de G League dans le désordre`);
+      continue;
+    }
+    if (fichier === 'directions.json') {
+      const lu = schemaDirections.safeParse(contenu);
+      if (!lu.success) {
+        erreurs.push(...messagesZod(chemin, lu));
+        continue;
+      }
+      for (const c of lu.data.changements) if (!idsFranchises.has(c.franchise)) erreurs.push(`${chemin} : franchise « ${c.franchise} » inconnue`);
+      if (Object.values(lu.data.completude).includes('partiel')) avertissements.push(`${chemin} : relevé partiel des changements de direction, à recouper`);
       continue;
     }
     // Tranche 9 : dates et volumes des transactions.

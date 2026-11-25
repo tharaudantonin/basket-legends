@@ -1,0 +1,560 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-modele-club",
+  "version": "club-v1",
+  "statut": "proposition",
+  "note": "Modèle du club de la tranche 10 (25/11/2026, réponses 48 à 56), transposé de Rugby Legends (président, objectifs, confiance, réputation, vestiaire, messages à choix ; contenu/manager/carriere.yaml et vestiaire.yaml, commit 19dd48f) et adapté à la NBA (82 matchs, conférences, playoffs, taxe de luxe). Tous les paramètres sont des choix du jeu, aucun n’est relevé ; ils sont réglés à la mesure (`npm run carriere 10 -- --matchs --club`). Le profil des propriétaires est hérité du miroir pour la tolérance à la taxe (récidivistes au snapshot plus souvent « ambitieux », réponse 51), le reste est tiré et présenté comme généré. À valider par Antonin.",
+  "proprietaire": {
+    "profils": {
+      "exigeant": {
+        "part": 0.3,
+        "depart": 55,
+        "seuil": 30,
+        "severite": 1.3,
+        "toleranceTaxe": 0
+      },
+      "patient": {
+        "part": 0.4,
+        "depart": 65,
+        "seuil": 20,
+        "severite": 0.7,
+        "toleranceTaxe": 10000000
+      },
+      "ambitieux": {
+        "part": 0.3,
+        "depart": 60,
+        "seuil": 25,
+        "severite": 1,
+        "toleranceTaxe": 60000000
+      }
+    },
+    "recidivisteAmbitieux": 0.7,
+    "objectifs": [
+      {
+        "jusqua": 3,
+        "type": "titre",
+        "rangConference": 1
+      },
+      {
+        "jusqua": 7,
+        "type": "finale-conference",
+        "rangConference": 3
+      },
+      {
+        "jusqua": 14,
+        "type": "playoffs",
+        "rangConference": 6
+      },
+      {
+        "jusqua": 20,
+        "type": "play-in",
+        "rangConference": 10
+      },
+      {
+        "jusqua": 30,
+        "type": "reconstruction",
+        "rangConference": 13,
+        "victoiresMin": 25
+      }
+    ],
+    "rendezVous": [
+      0.33,
+      0.66
+    ],
+    "confiance": {
+      "parPlace": 3,
+      "miSaison": 0.6,
+      "finSaison": 1.5,
+      "plafondHausse": 15,
+      "plafondBaisse": 30,
+      "titre": 15,
+      "finale": 5,
+      "objectifTenuMarge": 15,
+      "taxeParDixMillions": 3,
+      "demenagementRefuse": 5
+    },
+    "reputation": {
+      "depart": 50,
+      "objectifTenu": 8,
+      "objectifManque": 10,
+      "titre": 12,
+      "finale": 5,
+      "licenciement": 10,
+      "ecartOffres": 15
+    },
+    "offres": 3,
+    "propositionDemenagement": 0.03,
+    "textes": {
+      "bon": [
+        "Le propriétaire vous félicite : {club} est en avance sur son objectif ({objectif}).",
+        "Le propriétaire est satisfait du travail accompli. Continuez comme ça."
+      ],
+      "moyen": [
+        "Le propriétaire attend mieux : l’objectif ({objectif}) reste à portée, mais il ne faut plus traîner.",
+        "Le propriétaire vous rappelle l’objectif de la saison : {objectif}."
+      ],
+      "mauvais": [
+        "Le propriétaire est inquiet : {club} est loin de son objectif ({objectif}). Sa patience a des limites.",
+        "Réunion tendue avec le propriétaire : les résultats ne sont pas au niveau attendu ({objectif})."
+      ],
+      "licenciement": [
+        "Le propriétaire met fin à votre mission à {club}. Les résultats ne suivaient pas.",
+        "C’est terminé : le propriétaire de {club} a décidé de se séparer de vous."
+      ],
+      "demenagement": [
+        "Le propriétaire de {club} étudie un départ pour {ville}. Il veut votre avis avant de trancher."
+      ]
+    }
+  },
+  "vestiaire": {
+    "moral": {
+      "depart": 65,
+      "recrue": 65,
+      "victoire": 0.8,
+      "defaite": -0.8,
+      "retour": 0.02,
+      "intersaison": 0.5,
+      "poidsMeneur": 2,
+      "demandeSeuil": 30,
+      "demandeJours": 14,
+      "promesseRompue": -15,
+      "minutesRotation": 12,
+      "minutesTitulaire": 26
+    },
+    "tempsDeJeu": {
+      "titulaire": [
+        -1.5,
+        -0.3,
+        0.4
+      ],
+      "rotation": [
+        -0.8,
+        0.3,
+        0.6
+      ],
+      "banc": [
+        -0.1,
+        0.4,
+        0.6
+      ]
+    },
+    "roles": {
+      "titulaires": 5,
+      "rotation": 4
+    },
+    "temperaments": {
+      "meneur": {
+        "part": 0.15,
+        "variation": 1,
+        "tempsDeJeu": 1
+      },
+      "calme": {
+        "part": 0.35,
+        "variation": 0.5,
+        "tempsDeJeu": 1
+      },
+      "sanguin": {
+        "part": 0.2,
+        "variation": 1.4,
+        "tempsDeJeu": 1
+      },
+      "discret": {
+        "part": 0.3,
+        "variation": 1,
+        "tempsDeJeu": 0.5
+      }
+    },
+    "meneurMental": 81,
+    "effetMatch": {
+      "parPoint": 0.0001,
+      "max": 0.003
+    },
+    "fidelite": [
+      0.5,
+      1.3
+    ],
+    "messages": {
+      "parJour": 1,
+      "parSaison": 12,
+      "delai": 3
+    },
+    "chances": {
+      "VES-001": 0.5,
+      "VES-002": 0.02,
+      "VES-002_par_sanguin": 0.01,
+      "VES-003": 0.3,
+      "VES-004": 1,
+      "VES-005": 0.1,
+      "VES-006": 0.5,
+      "PRO-001": 0.5,
+      "PRO-002": 0.3
+    },
+    "seuils": {
+      "VES-001_moral": 50,
+      "VES-001_matchs": 3,
+      "VES-003_age": 28,
+      "VES-003_rang": 5,
+      "VES-003_defaites": 3,
+      "VES-005_age": 22,
+      "VES-005_potentiel": 70,
+      "VES-006_defaites": 5,
+      "PRO-001_confiance": 45
+    },
+    "evenements": [
+      {
+        "id": "VES-001",
+        "de": "adjoint",
+        "titre": "Temps de jeu réclamé",
+        "texte": "{joueur} est passé à votre bureau. Trois matchs presque sans jouer : il ne comprend pas, on lui avait promis un rôle.",
+        "choix": [
+          {
+            "texte": "« Tu joues gros au prochain match, je te le promets. »",
+            "effets": {
+              "joueur": [
+                12
+              ]
+            },
+            "action": "promesse"
+          },
+          {
+            "texte": "« Je t’explique mes choix : gagne ta place à l’entraînement. »",
+            "defaut": true,
+            "effets": {
+              "joueur": [
+                5,
+                -5
+              ]
+            }
+          },
+          {
+            "texte": "« C’est le staff qui fait l’équipe. »",
+            "effets": {
+              "joueur": [
+                -10
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "VES-002",
+        "de": "adjoint",
+        "titre": "Accrochage à l’entraînement",
+        "texte": "Ça a chauffé à l’entraînement : {joueur} et {joueur2} en sont venus aux mains. Le groupe attend votre réaction.",
+        "choix": [
+          {
+            "texte": "« Les deux sont écartés du prochain match. »",
+            "effets": {
+              "joueur": [
+                -10
+              ],
+              "joueur2": [
+                -10
+              ],
+              "groupe": [
+                3,
+                3,
+                -1
+              ]
+            },
+            "action": "ecarter"
+          },
+          {
+            "texte": "« Les cadres règlent ça entre eux. »",
+            "defaut": true,
+            "effets": {
+              "groupe": [
+                4,
+                -4
+              ]
+            },
+            "chance": "meneurs"
+          },
+          {
+            "texte": "« On oublie, place au match. »",
+            "effets": {
+              "groupe": [
+                -2
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "VES-003",
+        "de": "adjoint",
+        "titre": "Un cadre conteste",
+        "texte": "Après une nouvelle défaite, {joueur} a remis en cause le plan de jeu devant tout le monde. Plusieurs joueurs ont acquiescé.",
+        "choix": [
+          {
+            "texte": "« On en parle en tête à tête, tu as peut-être raison. »",
+            "effets": {
+              "joueur": [
+                8
+              ],
+              "groupe": [
+                2,
+                -2
+              ]
+            }
+          },
+          {
+            "texte": "« Le plan ne change pas. »",
+            "defaut": true,
+            "effets": {
+              "joueur": [
+                -8
+              ],
+              "groupe": [
+                2,
+                -3
+              ]
+            }
+          },
+          {
+            "texte": "« Tu seras sur le banc au prochain match. »",
+            "effets": {
+              "joueur": [
+                -15
+              ],
+              "groupe": [
+                3,
+                -4
+              ]
+            },
+            "action": "ecarter"
+          }
+        ]
+      },
+      {
+        "id": "VES-004",
+        "de": "adjoint",
+        "titre": "Demande d’échange",
+        "texte": "{joueur} ne se sent plus à sa place et demande officiellement à être échangé. Son agent a déjà appelé deux équipes.",
+        "choix": [
+          {
+            "texte": "« D’accord, on va te trouver une équipe. »",
+            "effets": {
+              "joueur": [
+                10
+              ]
+            },
+            "action": "echange"
+          },
+          {
+            "texte": "« Tu restes : tu as un contrat. »",
+            "effets": {
+              "joueur": [
+                -10
+              ],
+              "groupe": [
+                -2
+              ]
+            },
+            "action": "garder"
+          },
+          {
+            "texte": "« On en reparle à l’intersaison. »",
+            "defaut": true,
+            "effets": {
+              "joueur": [
+                0,
+                -5
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "VES-005",
+        "de": "recrutement",
+        "titre": "Un jeune s’impatiente",
+        "texte": "{joueur} ne joue presque pas. Le recrutement pense qu’il progresserait plus vite avec des minutes.",
+        "choix": [
+          {
+            "texte": "« Il part en G League pour jouer. »",
+            "effets": {
+              "joueur": [
+                5,
+                -5
+              ]
+            },
+            "action": "gleague"
+          },
+          {
+            "texte": "« Il entre dans la rotation. »",
+            "effets": {
+              "joueur": [
+                10
+              ]
+            },
+            "action": "role"
+          },
+          {
+            "texte": "« Patience : son tour viendra. »",
+            "defaut": true,
+            "effets": {
+              "joueur": [
+                -3
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "VES-006",
+        "de": "adjoint",
+        "titre": "Le groupe doute",
+        "texte": "Cinq défaites de suite : le vestiaire est silencieux. {joueur} propose de réunir l’équipe.",
+        "choix": [
+          {
+            "texte": "« Réunion de toute l’équipe, ce soir. »",
+            "effets": {
+              "groupe": [
+                3,
+                -2
+              ]
+            }
+          },
+          {
+            "texte": "« Laissons les cadres reprendre la main. »",
+            "defaut": true,
+            "effets": {
+              "groupe": [
+                4,
+                -3
+              ]
+            },
+            "chance": "meneurs"
+          },
+          {
+            "texte": "« On travaille, on ne parle pas. »",
+            "effets": {
+              "groupe": [
+                -1,
+                1
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRO-001",
+        "de": "proprietaire",
+        "titre": "Le propriétaire s’inquiète",
+        "texte": "Le propriétaire vous convoque : {club} est loin de son objectif ({objectif}). Il attend un plan.",
+        "choix": [
+          {
+            "texte": "« Les résultats vont venir, je m’y engage. »",
+            "effets": {
+              "confiance": [
+                6,
+                -6
+              ]
+            }
+          },
+          {
+            "texte": "« Il faut du temps : le projet est sur plusieurs saisons. »",
+            "defaut": true,
+            "effets": {
+              "confiance": [
+                3,
+                -3
+              ]
+            }
+          },
+          {
+            "texte": "« J’ai besoin de renforts. »",
+            "effets": {
+              "confiance": [
+                -2
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRO-002",
+        "de": "proprietaire",
+        "titre": "La taxe de luxe",
+        "texte": "Le propriétaire a vu la facture : {club} paiera la taxe de luxe, au-delà de ce qu’il accepte. Il vous demande des comptes.",
+        "choix": [
+          {
+            "texte": "« Je vais alléger la masse salariale. »",
+            "effets": {
+              "confiance": [
+                4
+              ]
+            }
+          },
+          {
+            "texte": "« C’est le prix d’une équipe qui gagne. »",
+            "defaut": true,
+            "effets": {
+              "confiance": [
+                3,
+                -6
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "gLeague": {
+    "effectif": 12,
+    "forceTop": [
+      1,
+      0.9,
+      0.8,
+      0.7,
+      0.6,
+      0.5,
+      0.4,
+      0.3
+    ],
+    "echelle": 6,
+    "avantageDomicile": 1.5,
+    "pointsMoyens": 115,
+    "ecartPoints": 12,
+    "minutes": [
+      34,
+      32,
+      30,
+      28,
+      26,
+      22,
+      18,
+      14,
+      12,
+      10,
+      8,
+      6
+    ],
+    "progression": {
+      "matchsMin": 20,
+      "bonus": 0.4,
+      "ageMax": 24
+    },
+    "assignationAncienneteMax": 2,
+    "rangAssignationIa": 13
+  },
+  "contratsIa": {
+    "noteMinHardship": 55,
+    "noteMinConversion": 62,
+    "ageMaxTwoWay": 24
+  },
+  "critereSortie": {
+    "saisons": 10,
+    "licenciementsParSaison": [
+      1,
+      7
+    ],
+    "moralMoyen": [
+      55,
+      75
+    ],
+    "deriveMoralMax": 6,
+    "effetMoyenMax": 0.001
+  }
+}

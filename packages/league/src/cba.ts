@@ -52,6 +52,17 @@ export interface ParametresCba {
   delaiEchangeApresSignature: { mois: number; dateMin: string };
   croissancePlafondMax: number;
   estimationsPlafond: { saison: string; plafondSalarial: number; seuilTaxe: number }[];
+  // Tranche 10 : contrats en cours de saison (docs/CLUB.md § 5).
+  dixJours: {
+    premierJour: string;
+    jours: number;
+    matchsMin: number;
+    joursSaison: number;
+    parJoueurEtEquipe: number;
+    joursRestantsMin: number;
+  };
+  hardship: { blessesMin: number; matchsManquesMin: number; joursRestantsMin: number };
+  twoWayEnSaison: { dateLimiteSignature: string; joursSaison: number; matchsEquipeIncomplete: number };
 }
 
 export interface ContratJoueur {
@@ -67,6 +78,10 @@ export interface ContratJoueur {
   saisonsAvecEquipeStatut?: 'releve' | 'approximation';
   /** Tranche 9 : date de signature comme agent libre (délai avant de pouvoir l'échanger). */
   signeLe?: string;
+  /** Tranche 10 : contrat de 10 jours (fin, rang du contrat avec cette équipe, exception de difficulté). */
+  dixJours?: { fin: string; numero: number; hardship: boolean };
+  /** Tranche 10 : limite de matchs d'un two-way signé en cours de saison (au prorata). */
+  limiteMatchs?: number;
 }
 
 /** La situation publiée d'une équipe au relevé (masse, taxe, récidiviste, plafond strict) et ce que les contrats n'expliquent pas. */
@@ -219,7 +234,9 @@ export function situationEquipe(D: DonneesSalariales, equipe: string, joueurs: r
   const contrats = joueurs.reduce((s, j) => s + salaireDeLaSaison(D.contrats[j], saison), 0);
   const autresCharges = publiee?.autresCharges ?? 0;
   const masse = contrats + autresCharges;
-  const compter = (t: ContratJoueur['type']) => joueurs.filter((j) => D.contrats[j]?.type === t).length;
+  // Tranche 10 : un contrat de 10 jours signé grâce à l'exception de difficulté (hardship) ne prend pas de place parmi les 15.
+  const compter = (t: ContratJoueur['type']) =>
+    joueurs.filter((j) => D.contrats[j]?.type === t && !D.contrats[j]?.dixJours?.hardship).length;
   return {
     equipe,
     masse,

@@ -19,6 +19,9 @@ import { nouvelleSaison } from '../saison';
 import type { ContexteLigue, EtatSaison } from '../types';
 import { cbaDeLaSaison } from './plafond';
 import { genererStaff } from './staff';
+import { debutDeSaisonDuClub } from '../club';
+import { initialiserClub } from '../club/proprietaire';
+import { contexteDeLaSaison } from '../carriere/univers';
 import { DELEGATIONS_PAR_DEFAUT, type CompositionNotee, type DroitsBird, type Transaction } from './types';
 import { saisonCourteSuivante } from './valeur';
 
@@ -58,6 +61,11 @@ export function nouvellePartie(ctx: ContexteLigue, graine: number, franchise: st
   etat.delegations = { ...DELEGATIONS_PAR_DEFAUT };
   etat.bureau = [];
   etat.marche = { echanges: 0, signatures: 0, refus: {}, propositions: 0 };
+  // Tranche 10 : propriétaires, vestiaire, objectifs de la saison, G League.
+  if (ctx.club && etat.univers) {
+    initialiserClub(ctx, etat.univers, graine, franchise);
+    debutDeSaisonDuClub(contexteDeLaSaison(ctx, etat), etat);
+  }
   return etat;
 }
 
@@ -69,6 +77,7 @@ export function universDe(ctx: ContexteLigue, etat: EtatSaison): Univers {
     etat.univers = structuredClone(base.univers);
   }
   initialiserMarche(base, etat.univers, etat.graine);
+  if (base.club && !etat.univers.club) initialiserClub(base, etat.univers, etat.graine, etat.franchise);
   etat.marche ??= { echanges: 0, signatures: 0, refus: {}, propositions: 0 };
   etat.delegations ??= { ...DELEGATIONS_PAR_DEFAUT };
   etat.bureau ??= [];
