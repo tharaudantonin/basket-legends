@@ -17,3 +17,4 @@ export {
 export * from './cba';
 export { schemaSauvegarde, VERSION_SAUVEGARDE, creerSauvegarde, lireSauvegarde, type Sauvegarde } from './sauvegarde';
 export * from './draft';
+export * from './carriere';

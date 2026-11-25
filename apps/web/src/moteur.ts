@@ -46,7 +46,14 @@ export const nouvelleSaisonDansLeMoteur = async (graine: number, franchise: stri
 export const avancerDansLeMoteur = async (e: EtatSaison, cible: Cible): Promise<EtatSaison> =>
   etat(await demander({ type: 'saison-avancer', etat: e, cible }));
 export const rejouerDansLeMoteur = async (e: EtatSaison, match: ResumeMatch, options?: OptionsSimulation): Promise<ResultatMatch> =>
-  resultat(await demander({ type: 'saison-rejouer', allStar: e.allStar, match, ...(options ? { options } : {}) }));
+  resultat(
+    await demander({
+      type: 'saison-rejouer',
+      etat: { allStar: e.allStar, saison: e.saison, graine: e.graine, ...(e.univers ? { univers: e.univers } : {}) },
+      match,
+      ...(options ? { options } : {}),
+    }),
+  );
 /** Tranche 5 : le match de la franchise du joueur au prochain jour de saison, s'il y en a un. */
 export const prochainMatchDansLeMoteur = async (e: EtatSaison): Promise<ResumeMatch | undefined> => {
   const r = await demander({ type: 'saison-prochain-match', etat: e });
@@ -56,3 +63,6 @@ export const prochainMatchDansLeMoteur = async (e: EtatSaison): Promise<ResumeMa
 /** Tranche 7 : fait les choix de la Draft jusqu'au prochain choix du GM (ou jusqu'à la fin s'il délègue). */
 export const avancerDraftDansLeMoteur = async (e: EtatSaison, choixDuGm?: string): Promise<EtatSaison> =>
   etat(await demander({ type: 'draft-avancer', etat: e, ...(choixDuGm ? { choixDuGm } : {}) }));
+/** Tranche 8 : l'intersaison (progression, retraites, contrats, effectifs) et la saison suivante. */
+export const saisonSuivanteDansLeMoteur = async (e: EtatSaison): Promise<EtatSaison> =>
+  etat(await demander({ type: 'saison-suivante', etat: e }));

@@ -21,6 +21,8 @@ import {
   schemaStatistiquesJoueurs,
   schemaStatistiquesLigue,
   schemaVivier,
+  schemaModeleCarriere,
+  schemaVillesDAccueil,
   type Effectif,
   type Registre,
 } from './schemas';
@@ -272,6 +274,28 @@ export function verifierDonnees(sources: SourcesDonnees): Rapport {
   }
   const versions = new Set<string>();
   for (const [fichier, contenu] of Object.entries(sources.modelesNotes)) {
+    // Tranche 8 : le modèle de carrière vit aussi dans data/modeles/.
+    if (fichier.startsWith('carriere-')) {
+      const chemin = `data/modeles/${fichier}`;
+      const lu = schemaModeleCarriere.safeParse(contenu);
+      if (!lu.success) {
+        erreurs.push(...messagesZod(chemin, lu));
+        continue;
+      }
+      const P = lu.data.progression;
+      const ages = Object.keys(P.evolution)
+        .map(Number)
+        .sort((a, b) => a - b);
+      for (let i = 1; i < ages.length; i++)
+        if (P.evolution[String(ages[i])]! > P.evolution[String(ages[i - 1])]! + 1e-9 && ages[i]! <= P.agePic)
+          erreurs.push(`${chemin} : l'évolution moyenne doit baisser avec l'âge jusqu'au pic (${ages[i - 1]} → ${ages[i]})`);
+      if ((P.evolution[String(P.agePic)] ?? 0) > 0.5 || (P.evolution[String(P.agePic)] ?? 0) < -0.5)
+        erreurs.push(`${chemin} : l'évolution au pic (${P.agePic} ans) doit être proche de 0`);
+      if (lu.data.retraite.sousContrat.age <= lu.data.retraite.sansContrat.age)
+        avertissements.push(`${chemin} : un joueur NBA prend sa retraite plus tôt qu'un joueur hors NBA`);
+      if (lu.data.statut !== 'valide') avertissements.push(`${chemin} : modèle de carrière au statut « proposition », à valider par Antonin`);
+      continue;
+    }
     const lu = schemaParametresNotes.safeParse(contenu);
     if (!lu.success) {
       erreurs.push(...messagesZod(`data/modeles/${fichier}`, lu));
@@ -291,9 +315,29 @@ export function verifierDonnees(sources: SourcesDonnees): Rapport {
   }
 
   // 8. Tranche 4 : structure de la saison.
-  if (!Object.keys(sources.ligue).length) erreurs.push('data/ligue : aucun fichier de saison');
+  if (!Object.keys(sources.ligue).some((f) => f.startsWith('saison-'))) erreurs.push('data/ligue : aucun fichier de saison');
   for (const [fichier, contenu] of Object.entries(sources.ligue)) {
     const chemin = `data/ligue/${fichier}`;
+    // Tranche 8 : villes d'accueil des changements de franchise.
+    if (fichier === 'villes-d-accueil.json') {
+      const lu = schemaVillesDAccueil.safeParse(contenu);
+      if (!lu.success) {
+        erreurs.push(...messagesZod(chemin, lu));
+        continue;
+      }
+      const villesNba = new Set(franchises.map((f) => normaliserNom(String(f.city))));
+      const vues = new Set<string>();
+      for (const v of lu.data.villes) {
+        for (const cle of [`id:${v.id}`, `ville:${normaliserNom(v.ville)}`, `abr:${v.abreviation}`]) {
+          if (vues.has(cle)) erreurs.push(`${chemin} : ${cle} en double`);
+          vues.add(cle);
+        }
+        if (villesNba.has(normaliserNom(v.ville))) erreurs.push(`${chemin} : ${v.ville} a déjà une franchise`);
+        for (const n of v.noms) if (nomsFranchises.includes(`${v.ville} ${n}`)) erreurs.push(`${chemin} : « ${v.ville} ${n} » est déjà le nom d'une franchise`);
+      }
+      if (lu.data.statut !== 'valide') avertissements.push(`${chemin} : villes d'accueil et noms au statut « proposition », à valider par Antonin`);
+      continue;
+    }
     const lu = schemaSaisonLigue.safeParse(contenu);
     if (!lu.success) {
       erreurs.push(...messagesZod(chemin, lu));
@@ -402,7 +446,8 @@ export function verifierDonnees(sources: SourcesDonnees): Rapport {
         continue;
       }
       const n = lu.data.classe.note;
-      if (n.min < 40 || n.max > 67) erreurs.push(`${chemin} : les notes des prospects doivent rester entre 40 et 67 (décision du 24/11/2026)`);
+      // Tranche 8 (réponse 22) : échelle des vrais rookies, au plus la note a priori du 1er choix (73, docs/NOTES_JOUEURS.md § 3).
+      if (n.min < 40 || n.max > 73) erreurs.push(`${chemin} : les notes des prospects doivent rester entre 40 et 73 (réponse 22 du 24/11/2026)`);
       if (lu.data.scouting.observationsDuConsensus > lu.data.scouting.observationsMax)
         erreurs.push(`${chemin} : le consensus dépasse le plafond d'observations`);
     } else if (fichier === 'echelle-rookies.json') {

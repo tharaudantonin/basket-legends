@@ -64,6 +64,16 @@ const etat = z.looseObject({
       selections: z.record(z.string(), z.string()),
     })
     .optional(),
+  // Tranche 8 : univers de la carrière et archives des saisons jouées (facultatifs : la première saison n'en a pas).
+  univers: z
+    .looseObject({
+      saison: z.string(),
+      joueurs: z.record(z.string(), z.looseObject({ id: z.string(), age: z.number().int(), note: z.number() })),
+      effectifs: z.record(z.string(), z.array(z.string())),
+      horsNba: z.record(z.string(), z.enum(['developpement', 'libre'])),
+    })
+    .optional(),
+  archives: z.array(z.looseObject({ saison: z.string(), champion: z.string(), retraites: z.array(z.string()) })).optional(),
 });
 
 export const schemaSauvegarde = z.strictObject({
@@ -71,7 +81,7 @@ export const schemaSauvegarde = z.strictObject({
   creeLe: z.string(),
   modifieLe: z.string(),
   /** Versions des données qui ont produit la partie (une partie ne se rejoue à l'identique qu'avec les mêmes). */
-  donnees: z.strictObject({ regles: z.string(), moteur: z.string(), notes: z.string() }),
+  donnees: z.strictObject({ regles: z.string(), moteur: z.string(), notes: z.string(), carriere: z.string().optional() }),
   etat,
 });
 

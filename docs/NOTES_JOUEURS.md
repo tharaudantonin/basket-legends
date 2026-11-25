@@ -33,7 +33,7 @@ Le relevé (24/11/2026) est décrit dans `docs/SOURCES.md` § 9. Les relevés br
 | Tactique | passes (0,7), interceptions (0,7), contres (0,3), rebonds défensifs (0,3), fautes (−0,3), pertes (−0,3) |
 
 4. **Recalage par quantiles :** le rang du joueur parmi les 449 joueurs notés sur statistiques donne sa note, par interpolation entre les ancrages (quantile → note) : globale 0 → 58, 0,10 → 63, 0,25 → 67, 0,50 → 72, 0,75 → 76, 0,90 → 81, 0,97 → 87, 0,99 → 91, 1 → 96 ; attributs 0 → 50, 0,10 → 58, 0,25 → 64, 0,50 → 70, 0,75 → 76, 0,90 → 82, 0,97 → 88, 1 → 95.
-5. **Sans statistique NBA :** note a priori, la même pour les quatre attributs. Recrue draftée : selon le rang (1er choix 73, 5e 70, 14e 67, 30e 64, 60e 60). Ni statistique ni draft : 58. Ces notes portent `ratings.status = "a-priori"` et un astérisque dans l'interface.
+5. **Sans statistique NBA :** note a priori, la même pour les quatre attributs. Recrue draftée : selon le rang (1er choix 73, 5e 70, 14e 67, 30e 64, 60e 60). Ni statistique ni draft : 58. Ces notes portent `ratings.status = "a-priori"` et un astérisque dans l'interface. Depuis la tranche 8 (réponse 22), les prospects générés suivent la même échelle selon leur rang (`docs/DRAFT.md` § 5) ; l'évolution des notes au fil des saisons est décrite dans `docs/CARRIERE.md`.
 
 `npm run notes` réécrit `ratings` et `attributes` des effectifs (et rien d'autre). Une note dont `ratings.correction` vaut « corrigé par Antonin » est gardée telle quelle.
 

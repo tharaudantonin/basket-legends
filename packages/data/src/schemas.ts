@@ -721,3 +721,74 @@ export const schemaVivier = z.strictObject({
 });
 export type JoueurGenereFichier = z.infer<typeof schemaJoueurGenere>;
 export type VivierFichier = z.infer<typeof schemaVivier>;
+
+// --- Tranche 8 : modèle de carrière (progression, retraites, effectifs, changements de franchise) et villes d'accueil. ---
+
+const tableParAge = z.record(z.string().regex(/^\d+$/), z.number());
+const probaRetraite = z.strictObject({
+  age: z.number().int().min(18).max(45),
+  base: z.number().min(0).max(1),
+  parAn: z.number().min(0).max(1),
+  parPoint: z.number().min(0).max(1),
+  seuil: z.number().min(0).max(100),
+});
+export const schemaModeleCarriere = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.literal('basket-legends-modele-carriere'),
+  version: z.string().regex(/^carriere-v\d+$/),
+  statut: z.enum(['proposition', 'valide']),
+  note: z.string(),
+  sources: z.array(sourceDraft).min(1),
+  progression: z.strictObject({
+    evolution: tableParAge,
+    ecart: tableParAge,
+    rattrapage: tableParAge,
+    agePic: z.number().int().min(20).max(35),
+    profils: z.array(
+      z.strictObject({
+        attributs: z.array(z.enum(ATTRIBUTS_DETAILLES)).min(1),
+        apres: z.number().int(),
+        parAn: z.number(),
+        max: z.number().min(0),
+        note: z.string(),
+      }),
+    ),
+    ecartAttribut: z.number().min(0),
+    compression: z.strictObject({ debut: z.number().int().min(1).max(98) }),
+    endurance: z.strictObject({ apres: z.number().int(), parAn: z.number() }),
+    bornes: z.tuple([z.number().int().min(1), z.number().int().max(99)]),
+  }),
+  retraite: z.strictObject({ ageMax: z.number().int().min(30).max(50), sousContrat: probaRetraite, sansContrat: probaRetraite }),
+  effectifs: z.strictObject({
+    standardVises: z.number().int().min(13).max(15),
+    dureeProlongation: z.number().int().min(1).max(5),
+    noteMinProlongation: z.number().int().min(0).max(99),
+    ageMaxProlongation: z.number().int().min(25).max(45),
+    ageMaxTwoWay: z.number().int().min(18).max(35),
+    ageFinDeveloppement: z.number().int().min(20).max(35),
+  }),
+  demenagement: z.strictObject({ probabiliteParSaison: z.number().min(0).max(1), delaiMinimum: z.number().int().min(1) }),
+});
+export type ModeleCarriereFichier = z.infer<typeof schemaModeleCarriere>;
+
+export const schemaVillesDAccueil = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.literal('basket-legends-villes-d-accueil'),
+  statut: z.enum(['proposition', 'valide']),
+  note: z.string(),
+  villes: z
+    .array(
+      z.strictObject({
+        id: z.string().regex(/^[a-z-]+$/),
+        ville: z.string().min(2),
+        pays: z.string().min(2),
+        conference: z.enum(['est', 'ouest']),
+        abreviation: z.string().regex(/^[A-Z]{3}$/),
+        noms: z.array(z.string().min(2)).min(1),
+        statutNoms: z.literal('proposition'),
+        sources: z.array(sourceDraft).min(1),
+      }),
+    )
+    .min(1),
+});
+export type VillesDAccueilFichier = z.infer<typeof schemaVillesDAccueil>;

@@ -1,11 +1,13 @@
 // Tranche 3 : la fiche joueur (version fonctionnelle et sobre ; la mise en forme définitive viendra avec le chantier
 // visuel). Identité fictive, notes du modèle v1, statistiques sourcées 2025-26 par compétition et, quand on vient d'un
-// match, son graphique d'adresse tiré du journal.
+// match, son graphique d'adresse tiré du journal. Tranche 8 : âge, notes et équipe de la saison affichée, et carrière
+// dans la partie (une ligne par saison jouée, note au début de chaque saison).
 import { useEffect, useMemo, useState } from 'react';
-import { moyennesDuJoueur, schemaStatistiquesJoueurs, type MoyennesJoueur } from '@basket-legends/data';
+import { moyennesDuJoueur, schemaStatistiquesJoueurs, type Joueur, type MoyennesJoueur } from '@basket-legends/data';
 import { adresseParTranche, coordonnees, tirsDuJoueur, type ResultatMatch, type TrancheTir } from '@basket-legends/engine';
 import type { EtatSaison, LigneSaison } from '@basket-legends/league';
-import { effectifDe, franchiseDe, franchiseDuJoueur, regles } from '../donnees';
+import { effectifs, paletteDe, regles } from '../donnees';
+import { equipeDuJoueur, joueurActif, nomEquipe, universActif } from '../vue';
 import { encreSur, pourcentage, taille } from '../format';
 import { ContratDuJoueur } from './ContratDuJoueur';
 
@@ -110,39 +112,88 @@ function GraphiqueAdresse({ resultat, joueur }: { resultat: ResultatMatch; joueu
   );
 }
 
+/** Le joueur tel qu'il est dans la saison affichée, avec, pour un joueur du snapshot, sa fiche des données de référence. */
+function joueurDeLaFiche(id: string) {
+  let snapshot: Joueur | undefined;
+  let equipeSnapshot: string | undefined;
+  for (const [e, x] of effectifs) {
+    const p = x.players.find((j) => j.id === id);
+    if (p) {
+      snapshot = p;
+      equipeSnapshot = e;
+    }
+  }
+  const u = universActif();
+  const c = joueurActif(id);
+  const retraite = u.retraites[id];
+  const equipe = c ? equipeDuJoueur(id) : retraite ? undefined : equipeSnapshot;
+  return { snapshot, carriere: c, retraite, equipe };
+}
+
 export function EcranFicheJoueur({ joueur, resultat, saison, onRetour }: Props) {
-  const franchise = franchiseDuJoueur(joueur);
-  const f = franchiseDe(franchise);
-  const j = effectifDe(franchise).players.find((x) => x.id === joueur);
+  const { snapshot, carriere, retraite, equipe } = joueurDeLaFiche(joueur);
   const moyennes = useMoyennes(joueur);
-  if (!j) return <p className="erreur">Joueur inconnu : {joueur}</p>;
-  const r = j.ratings as typeof j.ratings & { calculation?: string };
+  const palette = paletteDe(equipe ?? '');
+  if (!snapshot && !carriere && !retraite) return <p className="erreur">Joueur inconnu : {joueur}</p>;
+  const nom = carriere?.nom ?? retraite?.nom ?? snapshot?.fictionalDisplayName ?? joueur;
+  const r = snapshot?.ratings as (Joueur['ratings'] & { calculation?: string }) | undefined;
+  const note = carriere?.note ?? snapshot?.ratings.overall;
+  const fam =
+    carriere?.familles ??
+    (snapshot && {
+      technique: snapshot.attributes.technique,
+      physique: snapshot.attributes.physical,
+      mental: snapshot.attributes.mental,
+      tactique: snapshot.attributes.tactical,
+    });
+  const tailleCm = carriere?.tailleCm ?? snapshot?.measurements.height.heightCm;
+  const poids = carriere?.poidsKg ?? snapshot?.measurements.weight.weightKg;
   const aJoueCeMatch = resultat?.boxScore.equipes.some((e) => e.joueurs.some((x) => x.id === joueur && x.dixiemes > 0));
+  const archives = saison?.archives ?? [];
+  const lignes = archives.filter((a) => a.statistiques[joueur]);
+  const aEvolue = carriere && carriere.notes.length > 1;
 
   return (
     <>
       <header
         className="bandeau"
-        style={{ background: f.palette.primary, color: encreSur(f.palette.primary), borderBottomColor: f.palette.accent }}
+        style={{ background: palette.primary, color: encreSur(palette.primary), borderBottomColor: palette.accent }}
       >
         <button type="button" className="retour" onClick={onRetour}>
           ← Retour
         </button>
-        <h1>{j.fictionalDisplayName}</h1>
+        <h1>{nom}</h1>
         <p>
-          N° {j.jerseyNumber} · {f.fictionalName} · {taille(j.measurements.height.heightCm)}, {j.measurements.weight.weightKg} kg
+          {carriere?.numero || snapshot?.jerseyNumber ? `N° ${carriere?.numero || snapshot?.jerseyNumber} · ` : ''}
+          {equipe ? nomEquipe(equipe) : retraite ? `Retraité (${retraite.saison.replace('-', '–')})` : 'Hors NBA'}
+          {carriere ? ` · ${carriere.age} ans` : ''}
+          {tailleCm ? ` · ${taille(tailleCm)}` : ''}
+          {poids ? `, ${poids} kg` : ''}
         </p>
       </header>
 
-      <section className="carte" aria-labelledby="titre-notes">
-        <h2 id="titre-notes">Notes</h2>
-        <p className="notes-joueur">
-          <span className="note-globale">{j.ratings.overall}</span> Technique {j.attributes.technique} · Physique {j.attributes.physical} ·
-          Mental {j.attributes.mental} · Tactique {j.attributes.tactical}
+      {note !== undefined && fam && (
+        <section className="carte" aria-labelledby="titre-notes">
+          <h2 id="titre-notes">Notes</h2>
+          <p className="notes-joueur">
+            <span className="note-globale">{note}</span> Technique {fam.technique} · Physique {fam.physique} · Mental {fam.mental} ·
+            Tactique {fam.tactique}
+          </p>
+          {!aEvolue && r?.calculation && <p className="aide">{r.calculation}</p>}
+          {aEvolue && (
+            <p className="aide" data-testid="evolution-notes">
+              Évolution dans la partie : {carriere.notes.map((n) => `${n.saison.slice(0, 4)} ${n.note}`).join(' → ')} (modèle de
+              progression, docs/CARRIERE.md).
+            </p>
+          )}
+        </section>
+      )}
+      {retraite && (
+        <p className="carte aide">
+          A pris sa retraite à {retraite.age} ans, à la fin de la saison {retraite.saison.replace('-', '–')} (meilleure note :{' '}
+          {retraite.noteMax}).
         </p>
-        {r.calculation && <p className="aide">{r.calculation}</p>}
-      </section>
-
+      )}
       <ContratDuJoueur joueur={joueur} />
 
       {resultat && aJoueCeMatch && (
@@ -204,69 +255,114 @@ export function EcranFicheJoueur({ joueur, resultat, saison, onRetour }: Props) 
         </section>
       )}
 
-      <section className="carte" aria-labelledby="titre-stats">
-        <h2 id="titre-stats">Statistiques réelles de référence</h2>
-        {moyennes === undefined ? (
-          <p className="aide">Chargement…</p>
-        ) : moyennes.length === 0 ? (
-          <p className="aide">Aucune statistique NBA relevée pour ce joueur (recrue ou joueur sans match) : rien n'est inventé.</p>
-        ) : (
+      {lignes.length > 0 && (
+        <section className="carte" aria-labelledby="titre-carriere">
+          <h2 id="titre-carriere">Carrière dans la partie</h2>
           <div className="defilement">
             <table className="tableau">
               <thead>
                 <tr>
                   <th scope="col" className="gauche">
-                    Compétition
+                    Saison
+                  </th>
+                  <th scope="col" className="gauche">
+                    Équipe
                   </th>
                   <th scope="col">MJ</th>
                   <th scope="col">MIN</th>
                   <th scope="col">PTS</th>
                   <th scope="col">REB</th>
                   <th scope="col">PD</th>
-                  <th scope="col">INT</th>
-                  <th scope="col">CTR</th>
-                  <th scope="col">BP</th>
-                  <th scope="col">TIRS</th>
-                  <th scope="col">3 PTS</th>
-                  <th scope="col">LF</th>
                 </tr>
               </thead>
               <tbody>
-                {moyennes.map((m) => (
-                  <tr key={m.competition}>
-                    <th scope="row" className="gauche">
-                      {m.libelle}
-                    </th>
-                    <td>{m.matchs}</td>
-                    <td>{decimale(m.minutes)}</td>
-                    <td className="note">{decimale(m.points)}</td>
-                    <td>{decimale(m.rebonds)}</td>
-                    <td>{decimale(m.passes)}</td>
-                    <td>{decimale(m.interceptions)}</td>
-                    <td>{decimale(m.contres)}</td>
-                    <td>{decimale(m.pertes)}</td>
-                    <td>{pct(m.pctTirs)}</td>
-                    <td>{pct(m.pctTrois)}</td>
-                    <td>{pct(m.pctLancers)}</td>
-                  </tr>
-                ))}
+                {lignes.map((a) => {
+                  const [e, mj, min, pts, reb, pd] = a.statistiques[joueur]!;
+                  return (
+                    <tr key={a.saison}>
+                      <th scope="row" className="gauche">
+                        {a.saison.replace('-', '–')}
+                      </th>
+                      <td className="gauche">{a.noms[e] ?? e}</td>
+                      <td>{mj}</td>
+                      <td>{decimale(min / Math.max(1, mj))}</td>
+                      <td className="note">{decimale(pts / Math.max(1, mj))}</td>
+                      <td>{decimale(reb / Math.max(1, mj))}</td>
+                      <td>{decimale(pd / Math.max(1, mj))}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
-            <p className="aide">
-              Moyennes par match recalculées à partir des totaux. Sources :{' '}
-              {[...new Map(moyennes.map((m) => [m.source.url, m.source])).values()].map((s, i) => (
-                <span key={s.url}>
-                  {i > 0 && ', '}
-                  <a href={s.url} rel="noreferrer" target="_blank">
-                    {s.fournisseur}
-                  </a>
-                </span>
-              ))}
-              .
-            </p>
           </div>
-        )}
-      </section>
+        </section>
+      )}
+
+      {snapshot && (
+        <section className="carte" aria-labelledby="titre-stats">
+          <h2 id="titre-stats">Statistiques réelles de référence</h2>
+          {moyennes === undefined ? (
+            <p className="aide">Chargement…</p>
+          ) : moyennes.length === 0 ? (
+            <p className="aide">Aucune statistique NBA relevée pour ce joueur (recrue ou joueur sans match) : rien n'est inventé.</p>
+          ) : (
+            <div className="defilement">
+              <table className="tableau">
+                <thead>
+                  <tr>
+                    <th scope="col" className="gauche">
+                      Compétition
+                    </th>
+                    <th scope="col">MJ</th>
+                    <th scope="col">MIN</th>
+                    <th scope="col">PTS</th>
+                    <th scope="col">REB</th>
+                    <th scope="col">PD</th>
+                    <th scope="col">INT</th>
+                    <th scope="col">CTR</th>
+                    <th scope="col">BP</th>
+                    <th scope="col">TIRS</th>
+                    <th scope="col">3 PTS</th>
+                    <th scope="col">LF</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {moyennes.map((m) => (
+                    <tr key={m.competition}>
+                      <th scope="row" className="gauche">
+                        {m.libelle}
+                      </th>
+                      <td>{m.matchs}</td>
+                      <td>{decimale(m.minutes)}</td>
+                      <td className="note">{decimale(m.points)}</td>
+                      <td>{decimale(m.rebonds)}</td>
+                      <td>{decimale(m.passes)}</td>
+                      <td>{decimale(m.interceptions)}</td>
+                      <td>{decimale(m.contres)}</td>
+                      <td>{decimale(m.pertes)}</td>
+                      <td>{pct(m.pctTirs)}</td>
+                      <td>{pct(m.pctTrois)}</td>
+                      <td>{pct(m.pctLancers)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p className="aide">
+                Moyennes par match recalculées à partir des totaux. Sources :{' '}
+                {[...new Map(moyennes.map((m) => [m.source.url, m.source])).values()].map((s, i) => (
+                  <span key={s.url}>
+                    {i > 0 && ', '}
+                    <a href={s.url} rel="noreferrer" target="_blank">
+                      {s.fournisseur}
+                    </a>
+                  </span>
+                ))}
+                .
+              </p>
+            </div>
+          )}
+        </section>
+      )}
     </>
   );
 }

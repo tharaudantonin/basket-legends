@@ -52,6 +52,8 @@ interface EtatJoueur {
   blesse: boolean;
   /** Temps de jeu total (dixièmes) au moment de son entrée sur le terrain. */
   entree: number;
+  /** Sur le terrain : tenu à jour par `synchroniser` (lire seulement après l'avoir appelé). */
+  terrain: boolean;
 }
 
 interface EtatEquipe {
@@ -70,7 +72,12 @@ interface EtatEquipe {
 }
 
 const borner = (x: number, min: number, max: number): number => Math.min(max, Math.max(min, x));
-const moyenne = (xs: number[]): number => xs.reduce((s, x) => s + x, 0) / Math.max(1, xs.length);
+/** La moyenne de f sur la liste ; même ordre d'addition qu'un `reduce` depuis 0, donc le même résultat au bit près. */
+function moyenne<T>(xs: readonly T[], f: (x: T) => number): number {
+  let s = 0;
+  for (let i = 0; i < xs.length; i++) s += f(xs[i]!);
+  return s / Math.max(1, xs.length);
+}
 const autre = (c: Camp): Camp => (c === 0 ? 1 : 0);
 
 /** Tirage gaussien (Box-Muller) à partir du hasard déterministe. */
@@ -148,7 +155,9 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
 
   const preparer = (equipe: EquipeDuMatch): EtatEquipe => {
     if (equipe.joueurs.length < R.joueursSurLeTerrain) throw new Error(`${equipe.nom} n'a pas assez de joueurs pour jouer.`);
-    const joueurs = new Map(equipe.joueurs.map((j) => [j.id, { j, energie: 100, fautes: 0, exclu: false, blesse: false, entree: 0 }]));
+    const joueurs = new Map(
+      equipe.joueurs.map((j) => [j.id, { j, energie: 100, fautes: 0, exclu: false, blesse: false, entree: 0, terrain: false }]),
+    );
     return {
       equipe,
       joueurs,
@@ -166,7 +175,24 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
   const titulaires = equipes.map((e) => e.surTerrain.slice()) as [string[], string[]];
 
   const etat = (c: Camp, id: string): EtatJoueur => equipes[c].joueurs.get(id) as EtatJoueur;
-  const presents = (c: Camp): EtatJoueur[] => equipes[c].surTerrain.map((id) => etat(c, id));
+  // Performance (25/11/2026) : les joueurs sur le terrain sont gardés en cache tant que `surTerrain` ne change pas.
+  // `surTerrain` n'est jamais modifié en place (chaque changement crée un nouveau tableau) : comparer l'identité suffit.
+  // Le tableau rendu est partagé : un appelant qui veut le trier ou le modifier en fait d'abord une copie.
+  const cache = equipes.map(() => ({ ids: null as string[] | null, presents: [] as EtatJoueur[] }));
+  const tousLesJoueurs = equipes.map((eq) => [...eq.joueurs.values()]) as [EtatJoueur[], EtatJoueur[]];
+  const rotationDe = equipes.map((eq, c) => eq.rotation.map((id) => etat(c as Camp, id))) as [EtatJoueur[], EtatJoueur[]];
+  const synchroniser = (c: Camp) => {
+    const k = cache[c]!;
+    const ids = equipes[c].surTerrain;
+    if (k.ids !== ids) {
+      k.ids = ids;
+      k.presents = ids.map((id) => etat(c, id));
+      for (const e of tousLesJoueurs[c]) e.terrain = false;
+      for (const e of k.presents) e.terrain = true;
+    }
+    return k;
+  };
+  const presents = (c: Camp): readonly EtatJoueur[] => synchroniser(c).presents;
   const malus = (e: EtatJoueur): number => G.fatigue.malusParPointPerdu * (100 - e.energie);
   const effectif = (e: EtatJoueur): number => e.j.note - malus(e);
   const ecrire = (ev: Evenement): void => {
@@ -186,8 +212,10 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
 
   // Le temps passe : fraîcheur et chronomètre.
   const recuperer = (c: Camp, minutes: number, parMinute: number, aussiSurLeTerrain: boolean): void => {
-    for (const e of equipes[c].joueurs.values()) {
-      if (aussiSurLeTerrain || !equipes[c].surTerrain.includes(e.j.id)) e.energie = Math.min(100, e.energie + parMinute * minutes);
+    synchroniser(c);
+    const gain = parMinute * minutes;
+    for (const e of tousLesJoueurs[c]) {
+      if (aussiSurLeTerrain || !e.terrain) e.energie = Math.min(100, e.energie + gain);
     }
   };
   const ecouler = (dixiemes: number): void => {
@@ -212,7 +240,7 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
   };
 
   // Tirages pondérés de joueurs (départage stable : l'ordre du terrain).
-  const choisirParmi = (liste: EtatJoueur[], poids: (e: EtatJoueur) => number): EtatJoueur => h.pondere(liste, poids);
+  const choisirParmi = (liste: readonly EtatJoueur[], poids: (e: EtatJoueur) => number): EtatJoueur => h.pondere(liste, poids);
 
   // --- Remplacements, seulement à ballon mort. ---
   const disponible = (e: EtatJoueur, seuil: number): boolean => !e.exclu && !e.blesse && e.energie >= seuil;
@@ -224,11 +252,22 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
   };
   const meilleurRemplacant = (c: Camp, sortant: EtatJoueur, seuil: number, toutLeBanc: boolean): EtatJoueur | undefined => {
     const eq = equipes[c];
-    const vivier = toutLeBanc ? eq.rotation : eq.rotation.slice(0, G.rotation.profondeur);
-    const candidats = vivier.map((id) => etat(c, id)).filter((e) => !eq.surTerrain.includes(e.j.id) && disponible(e, seuil));
-    if (!candidats.length) return undefined;
+    const n = toutLeBanc ? eq.rotation.length : Math.min(eq.rotation.length, G.rotation.profondeur);
+    synchroniser(c);
     const valeur = (e: EtatJoueur) => effectif(e) + (e.j.groupe === sortant.j.groupe ? 10 : 0);
-    return candidats.reduce((m, e) => (valeur(e) > valeur(m) ? e : m));
+    // Le premier des meilleurs, dans l'ordre de la rotation.
+    let meilleur: EtatJoueur | undefined;
+    let meilleureValeur = 0;
+    for (let i = 0; i < n; i++) {
+      const e = rotationDe[c][i]!;
+      if (e.terrain || !disponible(e, seuil)) continue;
+      const v = valeur(e);
+      if (!meilleur || v > meilleureValeur) {
+        meilleur = e;
+        meilleureValeur = v;
+      }
+    }
+    return meilleur;
   };
   const faireTourner = (c: Camp): void => {
     const eq = equipes[c];
@@ -241,19 +280,36 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
     // Tranche 5 : quand le coach gère lui-même les changements, le staff ne fait plus que les changements forcés.
     if (plans[c].remplacements === 'coach') return;
     // 2. Joueurs fatigués, les plus fatigués d'abord.
-    for (const e of presents(c).sort((a, b) => a.energie - b.energie)) {
-      if (e.energie >= G.fatigue.seuilRemplacement) continue;
-      const r = meilleurRemplacant(c, e, G.fatigue.seuilRetour, false);
-      if (r) remplacer(c, e.j.id, r.j.id);
+    if (presents(c).some((e) => e.energie < G.fatigue.seuilRemplacement)) {
+      for (const e of presents(c)
+        .slice()
+        .sort((a, b) => a.energie - b.energie)) {
+        if (e.energie >= G.fatigue.seuilRemplacement) continue;
+        const r = meilleurRemplacant(c, e, G.fatigue.seuilRetour, false);
+        if (r) remplacer(c, e.j.id, r.j.id);
+      }
     }
     // 3. Retour des meilleurs reposés à la place d'un joueur moins bon du même groupe, après un relais minimal.
     const relais = G.rotation.relaisMinimalSecondes * 10;
-    for (const id of eq.rotation.slice(0, G.rotation.profondeur)) {
-      const r = etat(c, id);
-      if (eq.surTerrain.includes(id) || !disponible(r, G.fatigue.seuilRetour)) continue;
-      const cible = presents(c)
-        .filter((e) => e.j.groupe === r.j.groupe && tempsDeJeu - e.entree >= relais && effectif(e) + 3 < effectif(r))
-        .sort((a, b) => effectif(a) - effectif(b))[0];
+    const n = Math.min(eq.rotation.length, G.rotation.profondeur);
+    for (let i = 0; i < n; i++) {
+      const id = eq.rotation[i]!;
+      const r = rotationDe[c][i]!;
+      synchroniser(c);
+      if (r.terrain || !disponible(r, G.fatigue.seuilRetour)) continue;
+      // Le moins bon des joueurs remplaçables (le premier dans l'ordre du terrain en cas d'égalité).
+      const valeurR = effectif(r);
+      let cible: EtatJoueur | undefined;
+      let valeurCible = 0;
+      for (const e of presents(c)) {
+        if (e.j.groupe !== r.j.groupe || tempsDeJeu - e.entree < relais) continue;
+        const v = effectif(e);
+        if (!(v + 3 < valeurR)) continue;
+        if (!cible || v < valeurCible) {
+          cible = e;
+          valeurCible = v;
+        }
+      }
       if (cible) remplacer(c, cible.j.id, id);
     }
   };
@@ -485,7 +541,7 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
     ((offensif ? e.j.detail.rebondOffensif : e.j.detail.rebondDefensif) - malus(e) + (e.j.tailleCm - 200) * 0.5);
   const rebond = (attaque: Camp): Camp => {
     const def = autre(attaque);
-    const ecart = moyenne(presents(attaque).map((e) => forceRebond(e, true))) - moyenne(presents(def).map((e) => forceRebond(e, false)));
+    const ecart = moyenne(presents(attaque), (e) => forceRebond(e, true)) - moyenne(presents(def), (e) => forceRebond(e, false));
     // Tranche 5 : la zone protège moins le rebond défensif (pas de vis-à-vis à écarter).
     const zone = plans[def].defense === 'zone' ? G.plans.zone.rebondOffensif : 0;
     const offensif = h.chance(borner(G.rebonds.offensifDeBase + G.rebonds.sensibiliteParPoint * ecart + zone, 0.08, 0.5));
@@ -513,23 +569,37 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
       : tir
         ? e.j.detail.defenseExterieure
         : (e.j.detail.defenseInterieure + e.j.detail.defenseExterieure) / 2) - malus(e);
-  const defense = (c: Camp, tir?: TypeTir): number => moyenne(presents(c).map((e) => valeurDefensive(e, tir)));
+  const defense = (c: Camp, tir?: TypeTir): number => moyenne(presents(c), (e) => valeurDefensive(e, tir));
   /**
    * Tranche 5 : les vis-à-vis en défense individuelle. Les attaquants, du plus dangereux au moins dangereux, reçoivent
    * le meilleur défenseur libre de leur groupe (arrière, ailier, intérieur), à défaut le meilleur défenseur libre.
    */
-  const visAVis = (attaque: Camp): Map<string, EtatJoueur> => {
-    const libres = presents(autre(attaque));
-    const paires = new Map<string, EtatJoueur>();
-    for (const a of presents(attaque).sort((x, y) => effectif(y) - effectif(x))) {
-      const memes = libres.filter((d) => d.j.groupe === a.j.groupe);
-      const vivier = memes.length ? memes : libres;
-      if (!vivier.length) break;
-      const d = vivier.reduce((m, x) => (valeurDefensive(x) > valeurDefensive(m) ? x : m));
+  // Performance (25/11/2026) : l'attribution ne tire aucun hasard ; on s'arrête dès que le tireur a son défenseur.
+  const defenseurDirect = (attaque: Camp, tireur: EtatJoueur): EtatJoueur | undefined => {
+    const libres = presents(autre(attaque)).slice();
+    const attaquants = presents(attaque)
+      .slice()
+      .sort((x, y) => effectif(y) - effectif(x));
+    for (const a of attaquants) {
+      // Le meilleur défenseur libre du même groupe, à défaut le meilleur libre (le premier en cas d'égalité).
+      let d: EtatJoueur | undefined;
+      let valeurD = 0;
+      for (const memeGroupe of [true, false]) {
+        for (const x of libres) {
+          if (memeGroupe && x.j.groupe !== a.j.groupe) continue;
+          const v = valeurDefensive(x);
+          if (!d || v > valeurD) {
+            d = x;
+            valeurD = v;
+          }
+        }
+        if (d) break;
+      }
+      if (!d) return undefined;
+      if (a === tireur) return d;
       libres.splice(libres.indexOf(d), 1);
-      paires.set(a.j.id, d);
     }
-    return paires;
+    return undefined;
   };
   /** Tranche 7 : un joueur cherche les tirs de la zone où il est adroit. */
   const preference = (e: EtatJoueur, tir: TypeTir): number => {
@@ -613,7 +683,7 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
 
       // Perte de balle.
       const T = G.pertesDeBalle;
-      const maitrise = moyenne(attaquants.map((e) => (e.j.detail.maniement + e.j.detail.qiOffensif) / 2 - malus(e)));
+      const maitrise = moyenne(attaquants, (e) => (e.j.detail.maniement + e.j.detail.qiOffensif) / 2 - malus(e));
       const pPerte = T.probabiliteDeBase - T.sensibiliteParPoint * (maitrise - defense(def)) + rythme.pertes + (zone?.pertes ?? 0);
       if (h.chance(borner(pPerte, 0.04, 0.3))) {
         ecouler(Math.round(duree * (0.3 + 0.6 * h.reel())));
@@ -664,7 +734,7 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
       // Tranche 5 : en défense individuelle, le défenseur direct pèse sur la qualité du tir (et sa taille près du cercle) ;
       // en zone, l'opposition est collective.
       const D = G.defenseurDirect;
-      const direct = zone ? undefined : visAVis(attaque).get(tireur.j.id);
+      const direct = zone ? undefined : defenseurDirect(attaque, tireur);
       const opposition = direct
         ? (1 - D.poids) * defense(def, tir) +
           D.poids * (valeurDefensive(direct, tir) + (tir === 'cercle' ? D.tailleCercleParCm * (direct.j.tailleCm - tireur.j.tailleCm) : 0))
