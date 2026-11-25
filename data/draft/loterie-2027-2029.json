@@ -8,7 +8,7 @@
     2029
   ],
   "statut": "a-recouper",
-  "note": "Loterie « 3-2-1 » adoptée le 28/05/2026 pour les Drafts 2027 à 2029. Sourcé : 16 équipes, boules par catégorie, 16 choix tirés, plancher au 12e choix pour les trois pires bilans, limites de choix consécutifs, choix 17 à 30 au bilan inverse des 14 autres équipes, 2e tour au bilan inverse des 30. À recouper avec la table officielle des probabilités (PDF de la NBA non lu) : le mécanisme exact du tirage, l’application du plancher et des limites, le départage des bilans égaux (tirage au sort déterministe dans le jeu).",
+  "note": "Loterie « 3-2-1 » adoptée le 28/05/2026 pour les Drafts 2027 à 2029. Sourcé : 16 équipes, boules par catégorie, 16 choix tirés, plancher au 12e choix pour les trois pires bilans, limites de choix consécutifs, choix 17 à 30 au bilan inverse des 14 autres équipes, 2e tour au bilan inverse des 30. Le 25/11/2026, Antonin a transmis une table des probabilités par choix et par catégorie issue d’une analyse communautaire (Reddit, URL non fournie) : le mécanisme du jeu la reproduit à 0,02 point près (calcul exact, contrôlé par simulation dans les tests). À recouper avec la table officielle de la NBA : application du plancher entre les trois reléguées (la table ne donne que leur moyenne), limites de choix consécutifs, départage des bilans égaux (tirage au sort déterministe dans le jeu).",
   "choixTires": 16,
   "categories": [
     {

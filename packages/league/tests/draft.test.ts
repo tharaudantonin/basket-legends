@@ -66,6 +66,26 @@ describe('loterie 3-2-1', () => {
     expect(moyenne('non-qualifiees')).toBeCloseTo(3 / 37, 1);
   });
 
+  it('reproduit la table des probabilités par choix fournie par Antonin le 25/11/2026 (source communautaire, à recouper)', () => {
+    // Table par catégorie (moyenne des équipes de la catégorie), en % : choix 1 à 16. Transmise par Antonin, issue d'une
+    // analyse communautaire publiée sur Reddit (URL non fournie) ; pas encore recoupée avec la table officielle de la NBA.
+    const table: Record<ParticipantLoterie['categorie'], number[]> = {
+      releguees: [5.4, 5.48, 5.57, 5.69, 5.8, 5.92, 6.04, 6.18, 6.34, 8.11, 14.39, 25.07, 0, 0, 0, 0],
+      'non-qualifiees': [8.11, 8.0, 7.85, 7.71, 7.54, 7.39, 7.16, 6.94, 6.68, 6.04, 4.39, 1.84, 7.0, 6.1, 4.73, 2.53],
+      'play-in-9-10': [5.41, 5.49, 5.58, 5.67, 5.81, 5.92, 6.04, 6.18, 6.33, 6.12, 4.72, 2.14, 8.8, 9.25, 9.27, 7.29],
+      'perdants-7-8': [2.7, 2.83, 2.97, 3.12, 3.3, 3.51, 3.75, 4.03, 4.39, 4.49, 3.65, 1.7, 7.93, 10.16, 14.97, 26.51],
+    };
+    const p = probabilitesDeLaLoterie(D.loterie, participants, 20_000, 5);
+    for (const [cat, attendu] of Object.entries(table) as [ParticipantLoterie['categorie'], number[]][]) {
+      const ids = participants.filter((x) => x.categorie === cat).map((x) => x.equipe);
+      for (let r = 0; r < 16; r++) {
+        const simule = (100 * ids.reduce((s, e) => s + p[e]![r]!, 0)) / ids.length;
+        // Bruit de 20 000 tirages : moins de 0,35 point d'écart-type pour la catégorie la moins nombreuse.
+        expect(Math.abs(simule - attendu[r]!), `${cat}, choix ${r + 1}`).toBeLessThan(1);
+      }
+    }
+  });
+
   it('applique les limites : pas de n° 1 deux fois de suite, pas de top 5 trois fois de suite', () => {
     expect(rangInterdit(D.loterie, [1], 1)).toBe(true);
     expect(rangInterdit(D.loterie, [1], 2)).toBe(false);
