@@ -56,7 +56,10 @@ test('le GM scoute la classe, lit la loterie, fait sa Draft et passe à la saiso
 
   // Le vivier des joueurs hors NBA.
   await page.getByRole('button', { name: 'Hors NBA' }).click();
-  await expect(page.getByRole('region', { name: 'Vivier' }).locator('tbody tr')).toHaveCount(320);
+  // Tranche 10 : l'IA en signe quelques-uns en cours de saison (two-way, exception de difficulté).
+  const vivier = await page.getByRole('region', { name: 'Vivier' }).locator('tbody tr').count();
+  expect(vivier).toBeGreaterThan(290);
+  expect(vivier).toBeLessThanOrEqual(320);
 
   // Tranche 8 : l'intersaison, puis la saison suivante, jouable, avec la saison écoulée dans l'histoire.
   // Tranche 9 : l'intersaison s'ouvre sur la free agency (journées) ; une journée, puis le camp.
