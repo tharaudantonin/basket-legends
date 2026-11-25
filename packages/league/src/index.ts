@@ -13,8 +13,10 @@ export {
   graineDuMatch,
   ID_ALL_STAR,
   type Cible,
+  type EtatPourRejouer,
 } from './saison';
 export * from './cba';
 export { schemaSauvegarde, VERSION_SAUVEGARDE, creerSauvegarde, lireSauvegarde, type Sauvegarde } from './sauvegarde';
 export * from './draft';
 export * from './carriere';
+export * from './marche';

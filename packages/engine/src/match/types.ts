@@ -143,6 +143,10 @@ export interface EquipeDuMatch {
   id: string;
   nom: string;
   joueurs: JoueurDuMatch[];
+  /** Tranche 9 : le plan de jeu de son entraîneur (absent : plan par défaut). Le coach peut le changer en match. */
+  plan?: Partial<PlanDeJeu>;
+  /** Tranche 9 : ordre (cinq de départ, rotation) imposé par le GM : la ligue ne le recompose pas. */
+  ordreDuGm?: boolean;
 }
 
 /** Qui a le ballon au début d'une période : entre-deux, ou l'équipe qui a gagné / perdu l'entre-deux initial. */

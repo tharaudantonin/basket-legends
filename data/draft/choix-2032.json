@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-choix-2032",
+  "annee": 2032,
+  "statut": "a-recouper",
+  "note": "Propriété des choix de la Draft 2032 au 25/11/2026 (échanges, protections, droits d’échange de rang, choix confisqués ou gelés). Les choix non cités restent à leur équipe. Relevé sur la page de synthèse de RealGM et reformulé ; les montages les plus complexes sont simplifiés (voir « ecarts »). À recouper avant publication (source secondaire). Les détenteurs « @… » sont des étapes de calcul ; « confisque » : choix retiré de la Draft.",
+  "tours": {
+    "1": [
+      {
+        "membres": [
+          {
+            "original": "denver"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "brooklyn"
+            }
+          ]
+        },
+        "description": "DEN → BKN"
+      },
+      {
+        "membres": [
+          {
+            "original": "clippers"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "confisque"
+            }
+          ]
+        },
+        "description": "LAC : choix confisqué par la ligue"
+      }
+    ],
+    "2": [
+      {
+        "membres": [
+          {
+            "original": "atlanta"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "oklahoma-city"
+            }
+          ]
+        },
+        "description": "ATL → OKC"
+      },
+      {
+        "membres": [
+          {
+            "original": "lakers"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "oklahoma-city"
+            }
+          ]
+        },
+        "description": "LAL → OKC (via ATL)"
+      },
+      {
+        "membres": [
+          {
+            "original": "washington"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "lakers"
+            }
+          ]
+        },
+        "description": "WAS → LAL"
+      },
+      {
+        "membres": [
+          {
+            "original": "cleveland"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "utah"
+            }
+          ]
+        },
+        "description": "CLE → UTA"
+      },
+      {
+        "membres": [
+          {
+            "original": "dallas"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "new-york"
+            }
+          ]
+        },
+        "description": "DAL → NYK"
+      },
+      {
+        "membres": [
+          {
+            "original": "denver"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "brooklyn"
+            }
+          ]
+        },
+        "description": "DEN → BKN"
+      },
+      {
+        "membres": [
+          {
+            "original": "sacramento"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "denver"
+            }
+          ]
+        },
+        "description": "SAC → DEN (via CLE)"
+      },
+      {
+        "membres": [
+          {
+            "original": "miami"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "brooklyn"
+            }
+          ]
+        },
+        "description": "MIA → BKN"
+      },
+      {
+        "membres": [
+          {
+            "original": "toronto"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "brooklyn"
+            }
+          ]
+        },
+        "description": "TOR → BKN"
+      },
+      {
+        "membres": [
+          {
+            "original": "milwaukee"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "charlotte"
+            }
+          ]
+        },
+        "description": "MIL → CHA"
+      },
+      {
+        "membres": [
+          {
+            "original": "minnesota"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "charlotte"
+            }
+          ]
+        },
+        "description": "MIN → CHA"
+      },
+      {
+        "membres": [
+          {
+            "original": "houston"
+          },
+          {
+            "original": "phoenix"
+          }
+        ],
+        "attributions": {
+          "2": [
+            {
+              "beneficiaire": "chicago"
+            },
+            {
+              "beneficiaire": "phoenix"
+            }
+          ]
+        },
+        "description": "Le plus favorable de HOU et PHX à CHI, l’autre à PHX"
+      },
+      {
+        "membres": [
+          {
+            "original": "golden-state"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "memphis",
+              "rangs": [
+                51,
+                60
+              ]
+            }
+          ]
+        },
+        "description": "GSW : 31-50 gardé, 51-60 à MEM"
+      },
+      {
+        "membres": [
+          {
+            "original": "memphis"
+          },
+          {
+            "original": "philadelphia"
+          }
+        ],
+        "attributions": {
+          "2": [
+            {
+              "beneficiaire": "@mp2-haut"
+            },
+            {
+              "beneficiaire": "philadelphia"
+            }
+          ]
+        },
+        "description": "MEM peut échanger son choix contre celui de PHI"
+      },
+      {
+        "membres": [
+          {
+            "detenteur": "@mp2-haut"
+          },
+          {
+            "original": "utah"
+          }
+        ],
+        "attributions": {
+          "2": [
+            {
+              "beneficiaire": "memphis"
+            },
+            {
+              "beneficiaire": "washington"
+            }
+          ]
+        },
+        "description": "MEM prend le plus favorable de (MEM ou PHI) et de UTA, l’autre à WAS"
+      }
+    ]
+  },
+  "geles": [
+    "boston",
+    "minnesota",
+    "phoenix"
+  ],
+  "ecarts": [
+    "1er tour LAC : confisqué. 1ers tours de BOS, MIN et PHX gelés jusqu’en 2027-28 (second apron)."
+  ],
+  "sources": [
+    {
+      "fournisseur": "RealGM",
+      "titre": "2032 NBA Draft Picks",
+      "url": "https://basketball.realgm.com/nba/draft/future_drafts/summary/2032",
+      "niveau": "secondaire",
+      "consulteLe": "2026-11-25"
+    }
+  ]
+}

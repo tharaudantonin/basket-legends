@@ -62,14 +62,30 @@ export interface RegleChoix {
   condition?: { original: string; rangs: [number, number] };
   /** Attributions quand la condition n'est pas remplie. */
   attributionsSinon?: Record<string, AttributionChoix[]>;
+  /** Tranche 9 : conditions sur les Drafts précédentes ; le premier cas rempli donne ses attributions. */
+  cas?: { si: ConditionTransmis[]; attributions: Record<string, AttributionChoix[]> }[];
   description: string;
 }
+
+/** Tranche 9 : « le choix de `original` au tour `tour` de la Draft `annee` a (oui) ou n'a pas (non) été fait par `detenteur` ». */
+export interface ConditionTransmis {
+  annee: number;
+  tour: 1 | 2;
+  original: string;
+  detenteur: string;
+  oui: boolean;
+}
+
+/** Tranche 9 : qui a fait chaque choix des Drafts passées (année → choix), pour les conditions des années suivantes. */
+export type ChoixTransmis = Record<string, { tour: 1 | 2; original: string; detenteur: string }[]>;
 
 /** data/draft/choix-<année>.json, sans les sources. */
 export interface ProprieteChoix {
   annee: number;
   statut: 'a-recouper' | 'valide';
   tours: Record<'1' | '2', RegleChoix[]>;
+  /** Tranche 9 : équipes dont le choix de premier tour est gelé (ni échangeable, ni protégé). */
+  geles?: string[];
 }
 
 export interface ChoixDeDraft {

@@ -1,6 +1,6 @@
 # Carrière multi-saisons — tranche 8 (24 novembre 2026)
 
-> Statut : **implémenté et testé**. À la fin d'une saison (Draft comprise), « Passer à la saison suivante » fait vieillir et progresser les 840 joueurs environ, décide des retraites et des contrats, accueille la classe de Draft, tire un éventuel changement de franchise et lance la saison suivante, qui se joue comme la première. Les paramètres du modèle sont des **propositions à valider** (`data/modeles/carriere-v1.json`, statut `proposition`) ; les noms des villes d'accueil sont des **propositions** (`data/ligue/villes-d-accueil.json`).
+> Statut : **implémenté et testé**. À la fin d'une saison (Draft comprise), « Passer à la saison suivante » fait vieillir et progresser les 840 joueurs environ, décide des retraites et des contrats, accueille la classe de Draft, tire un éventuel changement de franchise et lance la saison suivante, qui se joue comme la première. Les paramètres du modèle et les noms des villes d'accueil ont été **validés** par Antonin le 25/11/2026 (réponse 26 ; `data/modeles/carriere-v1.json` et `data/ligue/villes-d-accueil.json`, statut `valide`). Depuis la tranche 9, l'intersaison passe par la free agency (`docs/MARCHE.md`).
 
 ## 1. Ce que fait la tranche 8
 
@@ -43,7 +43,7 @@ Dans l'ordre, tout déterministe (graine de la saison, tirée de la précédente
 6. **Ligue** : historique de la loterie (rang des choix du 1er tour), recrues, points par match de la saison passée, taxes payées (récidive : 3 des 4 dernières saisons, § 5).
 7. **Changement de franchise** (§ 7).
 
-**Règle provisoire** jusqu'à la free agency et l'IA de GM (tranche 9) : prolongations et signatures sont automatiques, pour toutes les équipes, y compris celle du joueur ; les options (joueur, équipe) sont toutes exercées. 14 contrats standard est la taille la plus fréquente au snapshot (16 équipes sur 30) ; le snapshot en compte 435, la saison 2 et les suivantes 420.
+**Tranche 9 :** la règle provisoire (prolongations d'une saison au même salaire, signatures au minimum, options toutes exercées) ne s'applique plus que sans données du marché. Le jeu ouvre l'intersaison en phase « intersaison » : options décidées, contrats échus, free agency par journées, puis camp (`docs/MARCHE.md` § 6). La règle des prolongations est conservée pour les équipes de l'IA avant le marché, au salaire demandé et si le joueur accepte (elle garde la distribution des notes stable : sans elle, le 10e centile montait à 67-68). Chaque saison avec l'équipe ajoute un an à l'horloge de Bird. 14 contrats standard est la taille la plus fréquente au snapshot (16 équipes sur 30).
 
 ## 4. Retraites
 
@@ -74,7 +74,7 @@ La récidive (taxe payée 3 des 4 dernières saisons, `data/cba/`) se calcule su
 - L'IA choisit la franchise parmi celles qui n'ont pas déménagé depuis 15 saisons ; **jamais celle du joueur** (sa proposition par le propriétaire viendra avec la confiance du propriétaire, tranche 10).
 - La ville vient de la liste fermée (`data/ligue/villes-d-accueil.json`), parmi celles qui n'ont pas de franchise et sont rattachées à la même conférence ; la franchise garde sa conférence, sa division, son identifiant, son palmarès et ses archives. Nouveau nom : la ville et l'un de ses deux noms proposés ; l'ancienne identité est gardée (`anciennes`).
 - **11 villes** (marchés cités par la presse pour une expansion ou un déménagement) : Seattle, Las Vegas, Mexico, Kansas City, Vancouver, San José, Austin (Ouest) ; Louisville, Montréal, Virginia Beach, Saint-Louis (Est). Sources : ESPN (17/09/2024), Front Office Sports (09/07/2026), NTD (28/03/2026), Sports Illustrated (29/07/2026), toutes secondaires (`docs/SOURCES.md` § 13). Le rattachement à une conférence est un choix du jeu (géographie).
-- Les noms (« Seattle Cascades », « Montréal Aurores »…) sont des **propositions** à valider par Antonin, puis à soumettre à la revue juridique (porte de publication). Les identités visuelles viendront avec le chantier visuel.
+- Les noms (« Seattle Cascades », « Montréal Aurores »…) ont été validés par Antonin le 25/11/2026 (réponse 26) ; ils restent à soumettre à la revue juridique (porte de publication). Les identités visuelles viendront avec le chantier visuel.
 
 ## 8. Calibration et stabilité (`mesures.ts`, `npm run carriere`)
 
@@ -91,7 +91,7 @@ Résultats du 24/11/2026 (20 saisons accélérées) :
 | 42 | 10e centile à 67 deux saisons (+3) ; 8 changements de franchise en 20 saisons (tirage extrême, la fréquence moyenne est vérifiée à part). |
 | 1 | Moyenne jusqu'à 74,1 (+1,8) et 88 joueurs à 80+ (+35 %) entre 2037 et 2043, 10e centile à 67, 1 seul joueur à 90+ une saison. |
 
-Avec les matchs joués (3 saisons, graine 2026) : stable. **Limite** : la stabilité est démontrée pour la graine du test et vérifiée sur cinq graines ; deux graines sur cinq sortent ponctuellement d'une fourchette, sans dérive continue. Une ligue un peu plus forte ou plus faible selon les générations reste plausible ; resserrer davantage demanderait un rappel vers la moyenne qui n'a pas de fondement sourcé.
+Avec les matchs joués (3 saisons, graine 2026) : stable. **Tranche 9** (free agency, échanges, staff) : les 20 saisons accélérées restent dans leurs fourchettes pour les graines 2026 (test), 7 et 99 ; 20 saisons accélérées prennent désormais environ 85 s (la free agency et les échanges de l'IA se jouent à chaque intersaison). Avec les matchs (10 saisons, graine 2026, `npm run carriere 10 -- --matchs --marche`) : toutes les saisons dans leurs fourchettes. **Limite** : la stabilité est démontrée pour la graine du test et vérifiée sur cinq graines ; deux graines sur cinq sortent ponctuellement d'une fourchette, sans dérive continue. Une ligue un peu plus forte ou plus faible selon les générations reste plausible ; resserrer davantage demanderait un rappel vers la moyenne qui n'a pas de fondement sourcé.
 
 ## 9. Tests
 
@@ -99,9 +99,7 @@ Avec les matchs joués (3 saisons, graine 2026) : stable. **Limite** : la stabil
 
 ## 10. À valider ou à relever
 
-1. Paramètres du modèle de carrière (`carriere-v1.json`) : courbe, écarts, rattrapage, profils, retraites, effectifs.
-2. Fourchettes de stabilité du § 8.
-3. Noms des 11 villes d'accueil, et rattachement de chaque ville à une conférence.
-4. Règle provisoire des contrats (§ 3), remplacée par la free agency et l'IA de GM en tranche 9.
+1. ~~Paramètres du modèle de carrière~~, ~~fourchettes de stabilité~~, ~~noms et conférences des villes d'accueil~~ : validés le 25/11/2026 (réponse 26).
+4. ~~Règle provisoire des contrats~~ : remplacée par la free agency (tranche 9, `docs/MARCHE.md`).
 5. CBA des saisons suivantes (§ 6) et saisons réellement payées pour la récidive (§ 5).
 6. Âge maximal de 41 ans : choix du modèle.

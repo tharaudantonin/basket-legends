@@ -7,12 +7,14 @@ import { calculerBilans, pctBilan } from '../classement';
 import type { Bilan, ContexteLigue, EtatSaison } from '../types';
 import { tirerLoterie } from './loterie';
 import { appliquerProprietes } from './proprietes';
+import { facteurScouting } from '../marche/staff';
 import { genererClasse } from './prospects';
 import { observationsDe, rapport } from './scouting';
 import type {
   ChoixDeDraft,
   EtatDraft,
   GenerateurDeNoms,
+  ChoixTransmis,
   HistoriqueChoix,
   ModeleDraft,
   ParticipantLoterie,
@@ -27,6 +29,8 @@ export interface DonneesDraft {
   loterie: ReglesLoterie;
   /** Année → propriété des choix ; une année absente : chaque équipe garde ses choix. */
   proprietes: Record<string, ProprieteChoix>;
+  /** Tranche 9 : qui a fait les choix des Drafts passées (conditions des choix futurs). */
+  transmis?: ChoixTransmis;
   historique: HistoriqueChoix;
   modele: ModeleDraft;
   noms: GenerateurDeNoms;
@@ -98,10 +102,14 @@ export function preparerDraft(ctx: ContexteLigue, etat: EtatSaison): EtatDraft {
   const rangs1 = Object.fromEntries([...loterie.ordre, ...autres].map((e, i) => [e, i + 1]));
   const rangs2 = Object.fromEntries(ordreBilan.map((e, i) => [e, ordreBilan.length + i + 1]));
   const P = D.proprietes[String(draft.annee)];
-  const choix: ChoixDeDraft[] = [
-    ...appliquerProprietes(1, rangs1, P?.tours['1'] ?? []),
-    ...appliquerProprietes(2, rangs2, P?.tours['2'] ?? [], rangs1),
-  ];
+  const transmis = D.transmis ?? {};
+  const premier = appliquerProprietes(1, rangs1, P?.tours['1'] ?? [], rangs1, transmis);
+  // Les conditions du 2e tour peuvent viser le 1er tour de la même Draft.
+  const avecPremier = {
+    ...transmis,
+    [String(draft.annee)]: premier.map((c) => ({ tour: 1 as const, original: c.original, detenteur: c.detenteur })),
+  };
+  const choix: ChoixDeDraft[] = [...premier, ...appliquerProprietes(2, rangs2, P?.tours['2'] ?? [], rangs1, avecPremier)];
   return { ...draft, loterie: { ...loterie, participants }, choix };
 }
 
@@ -110,7 +118,9 @@ export function valeurPourLEquipe(ctx: ContexteLigue, etat: EtatSaison, equipe: 
   const D = ctx.draft!;
   const draft = etat.draft!;
   const demandees = equipe === etat.franchise ? draft.observations : undefined;
-  const r = rapport(D.modele.scouting, etat.graine, equipe, p, observationsDe(D.modele.scouting, demandees, p.id));
+  const staff = ctx.marche ? ctx.univers?.staff?.[equipe] : undefined;
+  const precision = ctx.marche && staff ? facteurScouting(ctx.marche.staff, staff) : 1;
+  const r = rapport(D.modele.scouting, etat.graine, equipe, p, observationsDe(D.modele.scouting, demandees, p.id), precision);
   const I = D.modele.choixIa;
   // Besoin : un groupe de poste peu fourni dans l'effectif vaut un petit bonus.
   const groupe = groupeDuPoste(p.poste);

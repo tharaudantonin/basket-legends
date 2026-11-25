@@ -3,7 +3,8 @@
 // première saison n'en a pas : elle joue l'univers des données de référence (data/), identique pour toutes les parties.
 import type { AttributsDetailles } from '@basket-legends/engine';
 import type { ContratJoueur, SituationPubliee } from '../cba';
-import type { HistoriqueChoix } from '../draft/types';
+import type { ChoixTransmis, HistoriqueChoix, ProprieteChoix } from '../draft/types';
+import type { MembreStaff, StaffEquipe, Transaction } from '../marche/types';
 
 export interface Familles {
   technique: number;
@@ -83,6 +84,24 @@ export interface Univers {
   pointsParMatchPrecedents: Record<string, number>;
   /** Équipes ayant payé la taxe de luxe, par saison (récidive : 3 des 4 saisons précédentes). */
   taxesPayees: Record<string, string[]>;
+  // --- Tranche 9 (absent des univers plus anciens : `initialiserMarche` les complète). ---
+  /** Incrémenté à chaque transaction (le contexte de la saison est recalculé). */
+  version?: number;
+  /** Propriété des choix de Draft à venir (année → règles), modifiée par les échanges. */
+  choix?: Record<string, ProprieteChoix>;
+  /** Qui a fait chaque choix des Drafts passées (conditions des choix futurs). */
+  choixTransmis?: ChoixTransmis;
+  staff?: Record<string, StaffEquipe>;
+  /** Membres du staff sans équipe (recrutables). */
+  staffLibre?: MembreStaff[];
+  /** Argent mort (joueurs coupés, étalement) : équipe → saison courte (« 2027-28 ») → montant. */
+  argentMort?: Record<string, Record<string, number>>;
+  /** Plafond et seuil de taxe de chaque saison (estimations relevées, puis croissance tirée) : saison courte → montants. */
+  plafonds?: Record<string, { plafondSalarial: number; seuilTaxe: number }>;
+  /** Exceptions déjà utilisées dans la saison (une seule fois chacune), par équipe. */
+  exceptionsUtilisees?: Record<string, string[]>;
+  /** Journal des transactions de la saison. */
+  journal?: Transaction[];
 }
 
 /** Ce qu'on garde d'une saison terminée. */
@@ -104,6 +123,8 @@ export interface ArchiveSaison {
   retraites: string[];
   /** Changement de franchise de l'intersaison. */
   demenagement?: { franchise: string; de: string; vers: string };
+  /** Tranche 9 : échanges et signatures de la saison (critère de sortie). */
+  transactions?: { echanges: number; signatures: number };
 }
 
 /** Bilan d'une intersaison (pour les actualités et les tests). */

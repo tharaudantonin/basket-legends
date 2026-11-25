@@ -10,6 +10,10 @@ import {
   schemaRegistre,
   schemaVillesDAccueil,
   universInitial,
+  donneesDuMarche,
+  schemaModeleMarche,
+  schemaModeleStaff,
+  schemaTransactions,
   donneesSalariales,
   lireDonneesDeDraft,
   nomsDuVivier,
@@ -53,6 +57,11 @@ export function chargerContexte(avecDraft = false, avecCarriere = false): Contex
           schemaVillesDAccueil.parse(json('data/ligue/villes-d-accueil.json')),
           schemaRegistre.parse(json('data/franchises.json')),
           effectifs,
+        ),
+        marche: donneesDuMarche(
+          schemaModeleMarche.parse(json('data/modeles/marche-v1.json')),
+          schemaModeleStaff.parse(json('data/modeles/staff-v1.json')),
+          schemaTransactions.parse(json('data/ligue/transactions-2026-27.json')),
         ),
       }
     : undefined;

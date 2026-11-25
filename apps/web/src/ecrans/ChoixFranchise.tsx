@@ -10,7 +10,13 @@ interface Props {
   onReprendre: () => void;
 }
 
-const PHASES = { reguliere: 'saison régulière', 'play-in': 'Play-In', playoffs: 'playoffs', terminee: 'saison terminée' } as const;
+const PHASES = {
+  intersaison: 'intersaison',
+  reguliere: 'saison régulière',
+  'play-in': 'Play-In',
+  playoffs: 'playoffs',
+  terminee: 'saison terminée',
+} as const;
 
 export function ChoixFranchise({ onChoisir, sauvegarde, onReprendre }: Props) {
   const triees = [...franchises].sort((a, b) => a.fictionalName.localeCompare(b.fictionalName, 'fr'));

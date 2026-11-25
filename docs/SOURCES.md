@@ -144,3 +144,26 @@ Relevés pour la tranche 8 ; détail et part de choix du modèle : `docs/CARRIER
 | Villes de déménagement évoquées pour Portland | Sports Illustrated, On SI (29/07/2026) | https://www.si.com/nba/trailblazers/onsi/3-potential-blazers-relocation-cities-if-moda-center-deal-fails | secondaire |
 
 Chaque ville de `data/ligue/villes-d-accueil.json` porte ses propres sources. Les sources des villes établissent seulement qu'un marché est cité ; le rattachement à une conférence et les noms de franchise sont des choix du jeu. Les montants de la progression, les profils par attribut, les retraites, la règle provisoire des contrats et les fourchettes de stabilité ne reposent sur aucune source : ce sont des choix du modèle.
+
+## 14. Marché — tranche 9 (25 novembre 2026)
+
+Consultées le 25/11/2026 dans le navigateur ; détail par paramètre dans `data/cba/nba-2026-27.json` et `docs/MARCHE.md` § 2.
+
+| Domaine | Source | Niveau |
+|---|---|---|
+| Correspondance des salaires, marge indexée | Hoops Rumors, *Glossary: Traded Player Exception* (06/2024) | secondaire |
+| Aprons (restrictions, agrégation, gel des choix) | Hoops Rumors, *Glossary: Tax Aprons* (01/2025) | secondaire |
+| Droits de Bird, Early Bird, Non-Bird | Hoops Rumors, glossaire (03-04/2026) | secondaire |
+| Offre qualificative | Hoops Rumors, *Glossary: Qualifying Offer* (05/2026) | secondaire |
+| Agents libres restreints, deux jours pour s'aligner, moratoire | NBA.com, *NBA Free Agency explained* (30/06/2026) | primaire |
+| Ballottage, étalement | Hoops Rumors, *Waivers* (06/2024), *Stretch Provision* (08/2024) | secondaire |
+| Règle Stepien ; choix sur sept ans | Hoops Rumors (05/2024 ; 12/2024) | secondaire |
+| Délai après la signature d'un agent libre | Yardbarker (reprise de Hoops Rumors) | secondaire |
+| Lissage du plafond (10 %) | RealGM Wiretap (02/04/2023) | secondaire |
+| Estimation du plafond 2027-28 | NBC Sports (13/09/2026, d'après The Athletic) | secondaire |
+| Dates clés 2026-27 | NBA.com, *2026-27 NBA key dates* (14/11/2026) | primaire |
+| Volumes d'échanges et de signatures 2025-26 | Basketball-Reference, pages de transactions 2025 et 2026 | secondaire |
+| Propriété des choix 2028-2033 | RealGM, *Future Drafts* (pages de synthèse) | secondaire |
+| Horloge de Bird (équipes 2024-25, échanges 2025-2026) | Basketball-Reference (relevés bruts dans `basket-legends-prive/anciennete-2026-27/`) | secondaire |
+
+Une source n'a pas pu être lue : la FAQ de Larry Coon (cbafaq.com), certificat refusé par le navigateur.

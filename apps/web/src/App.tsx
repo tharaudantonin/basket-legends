@@ -4,7 +4,15 @@
 // carrière continue saison après saison (intersaison, univers de la partie affiché par les écrans).
 import { useEffect, useState } from 'react';
 import { nouvelleGraine, type Camp, type DecisionMatch, type EntreeMatch, type ResultatMatch } from '@basket-legends/engine';
-import { observationsRestantes, type Cible, type EtatSaison, type ResumeMatch, type Sauvegarde } from '@basket-legends/league';
+import {
+  observationsRestantes,
+  type Cible,
+  type EtatSaison,
+  type ResumeMatch,
+  type Sauvegarde,
+  type ActionDuGm,
+  type ReponseDuGm,
+} from '@basket-legends/league';
 import { ChoixFranchise } from './ecrans/ChoixFranchise';
 import { EcranEffectif, type DemandeMatch } from './ecrans/Effectif';
 import { EcranBoxScore } from './ecrans/BoxScore';
@@ -14,6 +22,7 @@ import { EcranSaison } from './ecrans/Saison';
 import { EcranInteractif } from './ecrans/Interactif';
 import { equipeDe, modeleDraft, regles, reglages } from './donnees';
 import {
+  actionDansLeMoteur,
   avancerDansLeMoteur,
   avancerDraftDansLeMoteur,
   nouvelleSaisonDansLeMoteur,
@@ -173,6 +182,18 @@ export function App() {
       await garder(await saisonSuivanteDansLeMoteur(sauvegarde.etat));
     });
 
+  /** Tranche 9 : une action du GM (marché, intersaison, staff, composition, délégations) ; rend la réponse à afficher. */
+  const agir = async (action: ActionDuGm): Promise<ReponseDuGm | undefined> => {
+    let reponse: ReponseDuGm | undefined;
+    await tache(async () => {
+      if (!sauvegarde) return;
+      reponse = await actionDansLeMoteur(sauvegarde.etat, action);
+      const lecture = action.genre === 'echange-evaluer' || action.genre === 'ce-qu-il-faudrait' || action.genre === 'offre-reaction';
+      if (!lecture) await garder(reponse.etat);
+    });
+    return reponse;
+  };
+
   const revivre = (m: ResumeMatch, mode: 'rapide' | 'commente') =>
     tache(async () => {
       if (!sauvegarde) return;
@@ -223,6 +244,7 @@ export function App() {
           onDeleguer={(d) => void deleguer(d)}
           onAvancerDraft={(p) => void avancerDraft(p)}
           onSaisonSuivante={() => void saisonSuivante()}
+          onAction={agir}
         />
       )}
       {ecran.nom === 'interactif' && (

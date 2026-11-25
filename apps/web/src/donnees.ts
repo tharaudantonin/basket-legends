@@ -22,6 +22,10 @@ import {
   schemaModeleCarriere,
   schemaVillesDAccueil,
   universInitial,
+  donneesDuMarche,
+  schemaModeleMarche,
+  schemaModeleStaff,
+  schemaTransactions,
   type Effectif,
   type Franchise,
 } from '@basket-legends/data';
@@ -38,6 +42,9 @@ import loterieBrute from '../../../data/draft/loterie-2027-2029.json';
 import historiqueBrut from '../../../data/draft/historique-loterie.json';
 import modeleCarriereBrut from '../../../data/modeles/carriere-v1.json';
 import villesBrutes from '../../../data/ligue/villes-d-accueil.json';
+import marcheBrut from '../../../data/modeles/marche-v1.json';
+import staffBrut from '../../../data/modeles/staff-v1.json';
+import transactionsBrutes from '../../../data/ligue/transactions-2026-27.json';
 import { structureDeLaLigue } from '@basket-legends/data';
 
 const effectifsBruts = import.meta.glob<unknown>('../../../data/rosters/2026-27/*.json', { eager: true, import: 'default' });
@@ -80,6 +87,11 @@ export const fichierCarriere = schemaModeleCarriere.parse(modeleCarriereBrut);
 export const donneesCarriere = donneesDeCarriere(fichierCarriere, schemaVillesDAccueil.parse(villesBrutes), registre, [
   ...effectifs.values(),
 ]);
+
+/** Tranche 9 : modèles du marché et du staff, dates et volumes des transactions. */
+export const fichierMarche = schemaModeleMarche.parse(marcheBrut);
+export const fichierStaff = schemaModeleStaff.parse(staffBrut);
+export const donneesMarche = donneesDuMarche(fichierMarche, fichierStaff, schemaTransactions.parse(transactionsBrutes));
 
 export function effectifDe(id: string): Effectif {
   const e = effectifs.get(id);

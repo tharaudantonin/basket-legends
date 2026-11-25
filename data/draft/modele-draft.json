@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "datasetId": "basket-legends-modele-draft",
-  "statut": "proposition",
-  "note": "Choix du modèle (aucune cible sourcée) pour générer les classes de Draft et pour le scouting à notes incertaines. Depuis la tranche 8 (réponse 22), les prospects suivent l’échelle des vrais rookies : notes a priori du modèle de notes selon le rang (73 au 1er choix, 64 au 30e, 60 au 60e). Le vivier hors NBA garde l’échelle 40-67. Potentiel recalé avec la carrière sur 20 saisons. À valider par Antonin.",
+  "statut": "valide",
+  "note": "Choix du modèle (aucune cible sourcée) pour générer les classes de Draft et pour le scouting à notes incertaines. Depuis la tranche 8 (réponse 22), les prospects suivent l’échelle des vrais rookies : notes a priori du modèle de notes selon le rang (73 au 1er choix, 64 au 30e, 60 au 60e). Le vivier hors NBA garde l’échelle 40-67. Potentiel recalé avec la carrière sur 20 saisons. Validé par Antonin le 25/11/2026 (réponse 26).",
   "classe": {
     "taille": 100,
     "ages": {

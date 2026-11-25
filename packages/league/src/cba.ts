@@ -24,6 +24,34 @@ export interface ParametresCba {
   contratsStandardMax: number;
   contratsTwoWayMax: number;
   taxe: { largeurTranche: number; taux: number[]; tauxRecidiviste: number[]; hausseParTrancheSuivante: number };
+  // Tranche 9 : échanges, droits de Bird, agents libres restreints, ballottage, choix futurs, plafonds à venir.
+  margeEchange: { montant: number; plafondDeReference: number };
+  partEchangeBasse: number;
+  partEchangeHaute: number;
+  supplementEchange: number;
+  partEchangeApron: number;
+  agregationInterditeDeuxiemeApron: boolean;
+  saisonsBird: number;
+  saisonsEarlyBird: number;
+  dureeMaxBird: number;
+  dureeMaxAutre: number;
+  hausseMaxBird: number;
+  hausseMaxAutre: number;
+  earlyBird: { partDuPrecedent: number; dureeMin: number };
+  nonBird: { partDuPrecedent: number; partDuMinimum: number };
+  agentLibreRestreint: {
+    ancienneteMax: number;
+    partVeteran: number;
+    minimumPlus: number;
+    partRookiePremierChoix: number;
+    partRookieDernierChoix: number;
+    delaiAlignementJours: number;
+  };
+  ballottage: { delaiJours: number; etalementFacteur: number; etalementPlus: number; etalementGarantiMin: number };
+  choixFuturs: { anneesMax: number; stepien: boolean; gelDeuxiemeApronAnnees: number };
+  delaiEchangeApresSignature: { mois: number; dateMin: string };
+  croissancePlafondMax: number;
+  estimationsPlafond: { saison: string; plafondSalarial: number; seuilTaxe: number }[];
 }
 
 export interface ContratJoueur {
@@ -34,6 +62,11 @@ export interface ContratJoueur {
   anciennete: number | null;
   draft: { annee: number; tour: number; rang: number } | null;
   note?: string;
+  /** Tranche 9 : horloge de Bird (saisons avec l'équipe sans en changer comme agent libre). */
+  saisonsAvecEquipe?: number;
+  saisonsAvecEquipeStatut?: 'releve' | 'approximation';
+  /** Tranche 9 : date de signature comme agent libre (délai avant de pouvoir l'échanger). */
+  signeLe?: string;
 }
 
 /** La situation publiée d'une équipe au relevé (masse, taxe, récidiviste, plafond strict) et ce que les contrats n'expliquent pas. */

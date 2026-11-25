@@ -144,7 +144,10 @@ export function simulerMatch(entree: EntreeMatch, options: OptionsSimulation = {
   // Action préparée pendant un temps-mort de fin de match : vaut pour le prochain tir de ce camp.
   let actionPreparee: Camp | null = null;
   // Tranche 5 : plans de jeu, arrêts de jeu et décisions du coach.
-  const plans: [PlanDeJeu, PlanDeJeu] = [{ ...PLAN_PAR_DEFAUT }, { ...PLAN_PAR_DEFAUT }];
+  const plans: [PlanDeJeu, PlanDeJeu] = [
+    { ...PLAN_PAR_DEFAUT, ...entree.domicile.plan },
+    { ...PLAN_PAR_DEFAUT, ...entree.exterieur.plan },
+  ];
   const decisionsParArret = new Map<number, { d: DecisionMatch; rang: number }[]>();
   (entree.decisions ?? []).forEach((d, rang) => {
     decisionsParArret.set(d.arret, [...(decisionsParArret.get(d.arret) ?? []), { d, rang }]);

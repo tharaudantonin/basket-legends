@@ -17,9 +17,17 @@ function estimer(vraie: number, ecart: number, graine: number, sel: string): Est
 }
 
 /** Ce que l'équipe `equipe` croit savoir du prospect après `observations` observations. */
-export function rapport(M: ModeleDraft['scouting'], graine: number, equipe: string, p: Prospect, observations: number): RapportDeScouting {
+export function rapport(
+  M: ModeleDraft['scouting'],
+  graine: number,
+  equipe: string,
+  p: Prospect,
+  observations: number,
+  /** Tranche 9 : précision du recruteur de l'équipe (facteur de l'écart-type, 1 : référence). */
+  precision = 1,
+): RapportDeScouting {
   const obs = Math.min(observations, M.observationsMax);
-  const facteur = 1 / Math.sqrt(1 + obs);
+  const facteur = precision / Math.sqrt(1 + obs);
   const sel = (quoi: string) => `scouting:${equipe}:${p.id}:${quoi}`;
   return {
     prospect: p.id,

@@ -10,6 +10,8 @@ Critère de sortie (`docs/AUDIT_2026-11.md` § 7) : saison complète en moins de
 
 Performance (25/11/2026) : sur le PC d'Antonin (Ryzen 9 5900HS), la première saison jouée sous Vitest prenait 9,5 à 14,5 s dès la tranche 6 (4 à 5 s hors Vitest, mesures très variables d'une exécution à l'autre), et le test dépassait le seuil. Le moteur de match a été accéléré sans changer aucun résultat (mêmes empreintes de match, même état de fin de saison au bit près) : joueurs sur le terrain gardés en cache, défenseur direct cherché pour le seul tireur, moyennes et tirages pondérés sans tableaux intermédiaires. Mesuré en alternance sur ce PC : 5,1 s → 2,6 s par saison hors Vitest, 2 à 5 s sous Vitest. Le seuil de 10 s est inchangé.
 
+Tranche 9 (25/11/2026) : chaque jour de saison régulière, jusqu'à la date limite des échanges, le marché de l'IA peut conclure des échanges et faire des propositions au GM (`docs/MARCHE.md` § 5) ; le contexte de la saison est recalculé après chaque transaction et les matchs déjà joués se rejouent avec leurs effectifs. Une saison complète avec le marché prend environ 4 à 5,5 s hors Vitest (2,6 s sans). Une partie commence avec son univers, son staff et ses délégations (`nouvellePartie`) ; la saison suivante commence en phase « intersaison ».
+
 ## 2. Données et sources (`data/ligue/saison-2026-27.json`)
 
 | Bloc | Contenu | Source |

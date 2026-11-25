@@ -10,9 +10,20 @@ export {
   saisonSuivante,
   anneesEntre,
   structureDeLaSaison,
+  composerSelonLOrdre,
+  type ChoixDeComposition,
   type DonneesCarriere,
   type VilleDAccueil,
 } from './univers';
-export { universSuivant, passerALaSaisonSuivante, intersaisonPossible, graineDeLaSaison, probabiliteDeRetraite } from './intersaison';
+export {
+  universSuivant,
+  passerALaSaisonSuivante,
+  ouvrirIntersaison,
+  jouerJourneeIntersaison,
+  terminerIntersaison,
+  intersaisonPossible,
+  graineDeLaSaison,
+  probabiliteDeRetraite,
+} from './intersaison';
 export { terminerSansMatchs } from './acceleree';
 export { mesurerUnivers, ecartsDeStabilite, FOURCHETTES_STABILITE, type MesuresUnivers } from './mesures';

@@ -1,7 +1,10 @@
 // Tranche 7 : qui choisit à chaque rang, une fois appliqués les choix échangés (protections, droits d'échange de rang,
 // choix « le plus favorable / le moins favorable » d'un groupe). Les règles viennent de data/draft/choix-<année>.json ;
 // elles s'appliquent dans l'ordre du fichier, sur les choix propres placés à leur rang par la loterie et le bilan.
-import type { AttributionChoix, ChoixDeDraft, RegleChoix } from './types';
+import type { AttributionChoix, ChoixDeDraft, ChoixTransmis, RegleChoix } from './types';
+
+/** Le bénéficiaire spécial d'un choix confisqué par la ligue (il disparaît de la Draft). */
+export const CONFISQUE = 'confisque';
 
 const dans = (rang: number, plage?: [number, number]): boolean => !plage || (rang >= plage[0] && rang <= plage[1]);
 
@@ -14,7 +17,10 @@ export function appliquerProprietes(
   rangs: Record<string, number>,
   regles: readonly RegleChoix[],
   rangsPremierTour: Record<string, number> = tour === 1 ? rangs : {},
+  transmis: ChoixTransmis = {},
 ): ChoixDeDraft[] {
+  const fait = (c: { annee: number; tour: 1 | 2; original: string; detenteur: string }) =>
+    (transmis[String(c.annee)] ?? []).some((x) => x.tour === c.tour && x.original === c.original && x.detenteur === c.detenteur);
   const choix: ChoixDeDraft[] = Object.entries(rangs).map(([original, rang]) => ({ tour, rang, original, detenteur: original }));
   const designesParOriginal = new Set<string>();
   for (const regle of regles) {
@@ -39,6 +45,8 @@ export function appliquerProprietes(
         throw new Error(`Condition sur le 1er tour de « ${regle.condition.original} » sans son rang (${regle.description}).`);
       if (!dans(r, regle.condition.rangs)) table = regle.attributionsSinon ?? {};
     }
+    const cas = regle.cas?.find((c) => c.si.every((x) => fait(x) === x.oui));
+    if (cas) table = cas.attributions;
     const attributions: AttributionChoix[] | undefined = table[String(designes.length)];
     if (!attributions) {
       if (designes.length === 0) continue;
@@ -52,5 +60,5 @@ export function appliquerProprietes(
   }
   const provisoire = choix.find((c) => c.detenteur.startsWith('@'));
   if (provisoire) throw new Error(`Choix de « ${provisoire.original} » laissé à un détenteur provisoire (${provisoire.detenteur}).`);
-  return choix.sort((a, b) => a.rang - b.rang);
+  return choix.filter((c) => c.detenteur !== CONFISQUE).sort((a, b) => a.rang - b.rang);
 }

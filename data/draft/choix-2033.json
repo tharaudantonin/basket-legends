@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-choix-2033",
+  "annee": 2033,
+  "statut": "a-recouper",
+  "note": "Propriété des choix de la Draft 2033 au 25/11/2026 (échanges, protections, droits d’échange de rang, choix confisqués ou gelés). Les choix non cités restent à leur équipe. Relevé sur la page de synthèse de RealGM et reformulé ; les montages les plus complexes sont simplifiés (voir « ecarts »). À recouper avant publication (source secondaire). Les détenteurs « @… » sont des étapes de calcul ; « confisque » : choix retiré de la Draft.",
+  "tours": {
+    "1": [
+      {
+        "membres": [
+          {
+            "original": "lakers"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "utah"
+            }
+          ]
+        },
+        "description": "LAL → UTA"
+      },
+      {
+        "membres": [
+          {
+            "original": "miami"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "milwaukee"
+            }
+          ]
+        },
+        "description": "MIA → MIL"
+      },
+      {
+        "membres": [
+          {
+            "original": "minnesota"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "charlotte"
+            }
+          ]
+        },
+        "description": "MIN → CHA"
+      },
+      {
+        "membres": [
+          {
+            "original": "phoenix"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "charlotte"
+            }
+          ]
+        },
+        "description": "PHX → CHA"
+      },
+      {
+        "membres": [
+          {
+            "original": "toronto"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "clippers"
+            }
+          ]
+        },
+        "description": "TOR → LAC"
+      },
+      {
+        "membres": [
+          {
+            "original": "clippers"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "confisque"
+            }
+          ]
+        },
+        "description": "LAC : choix confisqué par la ligue"
+      }
+    ],
+    "2": [
+      {
+        "membres": [
+          {
+            "original": "dallas"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "washington"
+            }
+          ]
+        },
+        "description": "DAL → WAS"
+      },
+      {
+        "membres": [
+          {
+            "original": "houston"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "charlotte"
+            }
+          ]
+        },
+        "description": "HOU → CHA"
+      },
+      {
+        "membres": [
+          {
+            "original": "miami"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "milwaukee"
+            }
+          ]
+        },
+        "description": "MIA → MIL"
+      },
+      {
+        "membres": [
+          {
+            "original": "minnesota"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "charlotte"
+            }
+          ]
+        },
+        "description": "MIN → CHA"
+      },
+      {
+        "membres": [
+          {
+            "original": "oklahoma-city"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "memphis"
+            }
+          ]
+        },
+        "description": "OKC → MEM"
+      },
+      {
+        "membres": [
+          {
+            "original": "phoenix"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "new-york"
+            }
+          ]
+        },
+        "description": "PHX → NYK"
+      },
+      {
+        "membres": [
+          {
+            "original": "sacramento"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "atlanta"
+            }
+          ]
+        },
+        "description": "SAC → ATL"
+      },
+      {
+        "membres": [
+          {
+            "original": "toronto"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "clippers"
+            }
+          ]
+        },
+        "description": "TOR → LAC"
+      },
+      {
+        "membres": [
+          {
+            "original": "washington"
+          }
+        ],
+        "attributions": {
+          "1": [
+            {
+              "beneficiaire": "memphis"
+            }
+          ]
+        },
+        "description": "WAS → MEM"
+      }
+    ]
+  },
+  "geles": [
+    "cleveland"
+  ],
+  "ecarts": [
+    "1er tour LAC : confisqué. 1er tour de CLE gelé jusqu’en 2028-29 (second apron).",
+    "2e tour : choix « très protégé et non précisé » de DET à LAC, et choix « non précisés » de NOP à MEM : non repris."
+  ],
+  "sources": [
+    {
+      "fournisseur": "RealGM",
+      "titre": "2033 NBA Draft Picks",
+      "url": "https://basketball.realgm.com/nba/draft/future_drafts/summary/2033",
+      "niveau": "secondaire",
+      "consulteLe": "2026-11-25"
+    }
+  ]
+}

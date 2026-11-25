@@ -529,6 +529,45 @@ export const schemaCba = z.strictObject({
         hausseParTrancheSuivante: z.number().min(0),
       }),
     ),
+    // Tranche 9 (25/11/2026) : échanges, droits de Bird, agents libres restreints, ballottage, choix futurs, plafonds à venir.
+    margeEchange: parametreCba(z.strictObject({ montant: dollars, plafondDeReference: dollars })),
+    partEchangeBasse: parametreCba(positif),
+    partEchangeHaute: parametreCba(positif),
+    supplementEchange: parametreCba(dollars),
+    partEchangeApron: parametreCba(positif),
+    agregationInterditeDeuxiemeApron: parametreCba(z.boolean()),
+    saisonsBird: parametreCba(z.number().int().min(1)),
+    saisonsEarlyBird: parametreCba(z.number().int().min(1)),
+    dureeMaxBird: parametreCba(z.number().int().min(1)),
+    dureeMaxAutre: parametreCba(z.number().int().min(1)),
+    hausseMaxBird: parametreCba(proba),
+    hausseMaxAutre: parametreCba(proba),
+    earlyBird: parametreCba(z.strictObject({ partDuPrecedent: positif, dureeMin: z.number().int().min(1) })),
+    nonBird: parametreCba(z.strictObject({ partDuPrecedent: positif, partDuMinimum: positif })),
+    agentLibreRestreint: parametreCba(
+      z.strictObject({
+        ancienneteMax: z.number().int().min(0),
+        partVeteran: positif,
+        minimumPlus: dollars,
+        partRookiePremierChoix: positif,
+        partRookieDernierChoix: positif,
+        delaiAlignementJours: z.number().int().min(0),
+      }),
+    ),
+    ballottage: parametreCba(
+      z.strictObject({
+        delaiJours: z.number().int().min(0),
+        etalementFacteur: z.number().int().min(1),
+        etalementPlus: z.number().int().min(0),
+        etalementGarantiMin: dollars,
+      }),
+    ),
+    choixFuturs: parametreCba(z.strictObject({ anneesMax: z.number().int().min(1), stepien: z.boolean(), gelDeuxiemeApronAnnees: z.number().int().min(1) })),
+    delaiEchangeApresSignature: parametreCba(z.strictObject({ mois: z.number().int().min(0), dateMin: z.string().regex(/^\d{2}-\d{2}$/) })),
+    croissancePlafondMax: parametreCba(proba),
+    estimationsPlafond: parametreCba(
+      z.array(z.strictObject({ saison: z.string().regex(/^\d{4}-\d{2}$/), plafondSalarial: dollars, seuilTaxe: dollars })).min(1),
+    ),
   }),
   recoupements: z.array(sourceContrat),
 });
@@ -542,6 +581,9 @@ export const schemaContrat = z.strictObject({
   draft: z.strictObject({ annee: z.number().int(), tour: z.number().int().min(1).max(2), rang: z.number().int().min(1).max(60) }).nullable(),
   sources: z.array(z.string().min(1)),
   note: z.string().optional(),
+  /** Tranche 9 : saisons complètes avec l'équipe actuelle avant 2026-27, sans changer d'équipe comme agent libre (horloge de Bird, plafonnée à 3). */
+  saisonsAvecEquipe: z.number().int().min(0).max(3).optional(),
+  saisonsAvecEquipeStatut: z.enum(['releve', 'approximation']).optional(),
 });
 
 /** data/contrats/AAAA-AA.json : le contrat de chaque joueur et la situation salariale publiée de chaque équipe. */
@@ -626,6 +668,28 @@ const regleChoix = z.strictObject({
   attributions: z.record(z.string().regex(/^\d+$/), z.array(attributionChoix)),
   condition: z.strictObject({ original: idFranchise, rangs: plage }).optional(),
   attributionsSinon: z.record(z.string().regex(/^\d+$/), z.array(attributionChoix)).optional(),
+  /**
+   * Tranche 9 : conditions sur les Drafts précédentes (« si ce choix n'a pas déjà été transmis »). Le premier cas dont
+   * toutes les conditions sont remplies donne ses attributions ; sinon, `attributions` (ou la condition ci-dessus).
+   */
+  cas: z
+    .array(
+      z.strictObject({
+        si: z
+          .array(
+            z.strictObject({
+              annee: z.number().int(),
+              tour: z.union([z.literal(1), z.literal(2)]),
+              original: idFranchise,
+              detenteur: idFranchise,
+              oui: z.boolean(),
+            }),
+          )
+          .min(1),
+        attributions: z.record(z.string().regex(/^\d+$/), z.array(attributionChoix)),
+      }),
+    )
+    .optional(),
   description: z.string().min(1),
 });
 export const schemaChoixDraft = z.strictObject({
@@ -635,6 +699,8 @@ export const schemaChoixDraft = z.strictObject({
   statut: z.enum(['a-recouper', 'valide']),
   note: z.string(),
   tours: z.strictObject({ '1': z.array(regleChoix), '2': z.array(regleChoix) }),
+  /** Tranche 9 : choix de premier tour gelés (masse au-delà du second apron) : ils ne peuvent pas être échangés. */
+  geles: z.array(idFranchise).optional(),
   ecarts: z.array(z.string()),
   sources: z.array(sourceDraft).min(1),
 });
@@ -785,10 +851,132 @@ export const schemaVillesDAccueil = z.strictObject({
         conference: z.enum(['est', 'ouest']),
         abreviation: z.string().regex(/^[A-Z]{3}$/),
         noms: z.array(z.string().min(2)).min(1),
-        statutNoms: z.literal('proposition'),
+        statutNoms: z.enum(['proposition', 'valide']),
         sources: z.array(sourceDraft).min(1),
       }),
     )
     .min(1),
 });
 export type VillesDAccueilFichier = z.infer<typeof schemaVillesDAccueil>;
+
+// --- Tranche 9 : calendrier et volumes des transactions, modèle du marché, modèle du staff. ---
+
+/** data/ligue/transactions-AAAA-AA.json : dates des transactions d'une saison et volumes relevés (calibration de l'IA). */
+export const schemaTransactions = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.string().regex(/^basket-legends-transactions-\d{4}-\d{2}$/),
+  saison,
+  note: z.string(),
+  dates: z.strictObject({
+    negociationsAgentsLibres: date,
+    signaturesAgentsLibres: date,
+    contratsGarantis: date,
+    dateLimiteEchanges: date,
+    dateLimiteBallottagePhaseFinale: date,
+  }),
+  volumes: z.strictObject({
+    echanges: z.strictObject({ valeur: z.number().int().min(0), du: date, au: date, definition: z.string().min(1) }),
+    signatures: z.strictObject({ valeur: z.number().int().min(0), du: date, au: date, definition: z.string().min(1) }),
+  }),
+  sources: z.array(sourceDraft).min(1),
+});
+export type TransactionsFichier = z.infer<typeof schemaTransactions>;
+
+const intervalle = z.tuple([z.number(), z.number()]);
+const strategie = z.strictObject({ rangForceMax: z.number().int().min(1).max(30), present: z.number().min(0), futur: z.number().min(0) });
+
+/** data/modeles/marche-v<n>.json : valeur des joueurs, IA des GM, agents libres, échanges et critère de sortie (tranche 9). */
+export const schemaModeleMarche = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.literal('basket-legends-modele-marche'),
+  version: z.string().regex(/^marche-v\d+$/),
+  statut: z.enum(['proposition', 'valide']),
+  note: z.string(),
+  valeur: z.strictObject({
+    salaireSelonNote: ancrages,
+    calage: z.string().min(1),
+    primeStar: z.strictObject({ seuil: z.number(), parPoint: z.number().min(0) }),
+    horizon: z.number().int().min(1).max(6),
+    actualisation: proba,
+    retenueApresContrat: proba,
+  }),
+  force: z.strictObject({ poids: z.array(positif).min(5).max(15), valeurPoint: dollars }),
+  choix: z.strictObject({ valeurParRang: ancrages, actualisationParAn: proba, incertitudeParAn: proba }),
+  strategies: z.strictObject({ pretendant: strategie, playoffs: strategie, transition: strategie, reconstruction: strategie }),
+  gm: z.strictObject({
+    patience: intervalle,
+    aversionTaxe: z.number().min(0),
+    aversionTaxeRecidiviste: z.number().min(0),
+    margeAcceptation: z.number().min(0),
+    refusAvantFermeture: z.number().int().min(1),
+  }),
+  personnalite: z.strictObject({ moyenne: z.number(), ecartType: z.number().min(0), bornes: intervalle }),
+  agentsLibres: z.strictObject({
+    journees: z.number().int().min(1).max(30),
+    baisseDemandeParJournee: proba,
+    demandePlancher: proba,
+    poids: z.strictObject({ argent: z.number().min(0), victoire: z.number().min(0), role: z.number().min(0), fidelite: z.number().min(0) }),
+    dureeSelonAge: z.array(z.tuple([z.number().int(), z.number().int().min(1).max(5)])).min(1),
+    offresParEquipeParJournee: z.number().int().min(1),
+    hausseParDefaut: proba,
+    seuilOptionJoueur: positif,
+    seuilOffreQualificative: positif,
+    noteMinNba: z.number().int().min(40).max(80),
+    fideliteEquipe: dollars,
+    valeurEspaceInutilise: proba,
+  }),
+  echangesIa: z.strictObject({
+    tentativesParJourSaison: z.number().min(0).max(10),
+    tentativesParJourneeIntersaison: z.number().int().min(0),
+    candidatsParTentative: z.number().int().min(1),
+    propositionsAuGmParSaison: z.number().min(0),
+  }),
+  critereSortie: z.strictObject({
+    saisons: z.number().int().min(1),
+    standardParEquipe: intervalle,
+    equipesTaxe: intervalle,
+    masseSurTaxe: intervalle,
+    equipesDeuxiemeApron: intervalle,
+    correlationSalaireNoteMin: z.number().min(-1).max(1),
+    noteMaxAgentLibreNonSigne: z.number().int(),
+    joueurs85ParEquipeMax: z.number().int().min(1),
+    echangesParSaison: intervalle,
+    signaturesParSaison: intervalle,
+    giniForceMax: proba,
+  }),
+});
+export type ModeleMarcheFichier = z.infer<typeof schemaModeleMarche>;
+
+const repartition = <T extends string>(cles: readonly [T, ...T[]]) => z.record(z.enum(cles), proba);
+
+/** data/modeles/staff-v<n>.json : postes du staff, compétences et effets bornés (tranche 9, réponse 39). */
+export const schemaModeleStaff = z.strictObject({
+  schemaVersion: z.literal(1),
+  datasetId: z.literal('basket-legends-modele-staff'),
+  version: z.string().regex(/^staff-v\d+$/),
+  statut: z.enum(['proposition', 'valide']),
+  note: z.string(),
+  postes: z
+    .array(
+      z.strictObject({
+        id: z.enum(['entraineur', 'developpement', 'recruteur', 'medical']),
+        libelle: z.string().min(1),
+        competences: z.array(z.enum(['tactique', 'developpement', 'motivation', 'scouting', 'medical'])).min(1),
+      }),
+    )
+    .length(4),
+  competence: z.strictObject({ moyenne: z.number(), ecartType: z.number().min(0), bornes: intervalle, reference: z.number(), etendue: positif }),
+  effets: z.strictObject({
+    scouting: intervalle,
+    blessures: intervalle,
+    progression: z.strictObject({ max: z.number().min(0).max(2), ageMax: z.number().int() }),
+  }),
+  preferences: z.strictObject({
+    rythme: repartition(['lent', 'normal', 'rapide']),
+    defense: repartition(['individuelle', 'zone']),
+    troisPoints: repartition(['moins', 'normal', 'plus']),
+  }),
+  libresParPoste: z.number().int().min(1),
+  ages: intervalle,
+});
+export type ModeleStaffFichier = z.infer<typeof schemaModeleStaff>;

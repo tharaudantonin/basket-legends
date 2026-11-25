@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "basket-legends-transactions-2026-27",
+  "saison": "2026-2027",
+  "note": "Dates des transactions de la saison 2026-27 (NBA.com, primaire) et volumes de la saison 2025-26 (Basketball-Reference, comptage automatique des paragraphes de la page des transactions : un paragraphe par échange ; signatures hors two-way, contrats de 10 jours et Exhibit 10). Les volumes servent de cibles à l’IA des GM (fourchettes du critère de sortie, data/modeles/marche-v1.json). Les dates des saisons suivantes sont décalées comme le calendrier (docs/CARRIERE.md § 6).",
+  "dates": {
+    "negociationsAgentsLibres": "2026-06-30",
+    "signaturesAgentsLibres": "2026-07-06",
+    "contratsGarantis": "2027-01-10",
+    "dateLimiteEchanges": "2027-02-11",
+    "dateLimiteBallottagePhaseFinale": "2027-03-01"
+  },
+  "volumes": {
+    "echanges": {
+      "valeur": 58,
+      "du": "2025-06-20",
+      "au": "2026-02-05",
+      "definition": "Échanges de la Draft 2025 à la date limite du 5 février 2026 : 10 autour de la Draft, 19 en juillet-octobre, 29 en saison."
+    },
+    "signatures": {
+      "valeur": 212,
+      "du": "2025-07-01",
+      "au": "2026-06-21",
+      "definition": "Signatures de contrats standard de la saison 2025-26 (182 l’été, 10 avant la date limite, 20 après), two-way, 10 jours et Exhibit 10 exclus."
+    }
+  },
+  "sources": [
+    {
+      "fournisseur": "NBA.com",
+      "titre": "2026-27 NBA key dates (mis à jour le 14/11/2026)",
+      "url": "https://www.nba.com/news/key-dates",
+      "niveau": "primaire",
+      "consulteLe": "2026-11-25"
+    },
+    {
+      "fournisseur": "Basketball-Reference",
+      "titre": "2025-26 NBA Transactions",
+      "url": "https://www.basketball-reference.com/leagues/NBA_2026_transactions.html",
+      "niveau": "secondaire",
+      "consulteLe": "2026-11-25"
+    },
+    {
+      "fournisseur": "Basketball-Reference",
+      "titre": "2024-25 NBA Transactions",
+      "url": "https://www.basketball-reference.com/leagues/NBA_2025_transactions.html",
+      "niveau": "secondaire",
+      "consulteLe": "2026-11-25"
+    }
+  ]
+}

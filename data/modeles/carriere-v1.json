@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "datasetId": "basket-legends-modele-carriere",
   "version": "carriere-v1",
-  "statut": "proposition",
-  "note": "Modèle de carrière de la tranche 8 (24/11/2026). Courbe d’âge : montée jusqu’au pic (27 ans, « around 27 or 28 years old », Vaci et al. 2019, p. 1549), déclin ensuite, d’abord rapide puis plus lent (« the rate of the decline is not constant and slows down in older age », p. 1550). Les montants (points de note par saison), les profils par attribut, les retraites et la règle des effectifs sont des choix du modèle, calés pour que la distribution des notes reste stable sur 20 saisons (docs/CARRIERE.md). Contrôle de vraisemblance : durée moyenne de carrière des joueurs restés au moins deux saisons, 9,0 ans (Foutzopoulos et al. 2024, tableau 1, joueurs draftés de 1999 à 2006).",
+  "statut": "valide",
+  "note": "Modèle de carrière de la tranche 8 (24/11/2026). Courbe d’âge : montée jusqu’au pic (27 ans, « around 27 or 28 years old », Vaci et al. 2019, p. 1549), déclin ensuite, d’abord rapide puis plus lent (« the rate of the decline is not constant and slows down in older age », p. 1550). Les montants (points de note par saison), les profils par attribut, les retraites et la règle des effectifs sont des choix du modèle, calés pour que la distribution des notes reste stable sur 20 saisons (docs/CARRIERE.md). Contrôle de vraisemblance : durée moyenne de carrière des joueurs restés au moins deux saisons, 9,0 ans (Foutzopoulos et al. 2024, tableau 1, joueurs draftés de 1999 à 2006). Validé par Antonin le 25/11/2026 (réponse 26).",
   "sources": [
     {
       "fournisseur": "Behavior Research Methods (Springer)",

@@ -1,7 +1,7 @@
 // Tranche 8 : la ligue telle qu'elle est dans la saison affichée. La première saison montre l'univers des données de
 // référence ; les suivantes, l'univers de la partie (effectifs, contrats, identités après un changement de ville,
 // retraités). L'application l'active à chaque changement de sauvegarde ; les écrans le lisent par ces fonctions.
-import type { DonneesSalariales, JoueurCarriere, Univers } from '@basket-legends/league';
+import { salairesDeLUnivers, type DonneesSalariales, type JoueurCarriere, type Univers } from '@basket-legends/league';
 import { effectifs, salaires, universDeDepart } from './donnees';
 
 let actif: Univers = universDeDepart;
@@ -15,7 +15,11 @@ export const estPremiereSaison = (): boolean => actif === universDeDepart;
 
 /** CBA de la saison (celle des données, reconduite) et contrats de l'univers. */
 export const salairesActifs = (): DonneesSalariales =>
-  estPremiereSaison() ? salaires : { saison: actif.saison, cba: salaires.cba, contrats: actif.contrats, equipes: actif.equipes };
+  estPremiereSaison()
+    ? salaires
+    : actif.plafonds
+      ? salairesDeLUnivers(salaires.cba, actif)
+      : { saison: actif.saison, cba: salaires.cba, contrats: actif.contrats, equipes: actif.equipes };
 
 export function nomEquipe(id: string): string {
   if (id === 'all-star-est') return 'Étoiles de l’Est';

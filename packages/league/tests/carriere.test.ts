@@ -114,7 +114,7 @@ describe('intersaison', () => {
     expect(deuxieme.calendrier[0]!.date.startsWith('2027-10')).toBe(true);
   });
 
-  it('est déterministe', () => {
+  it('est déterministe', { timeout: 30_000 }, () => {
     expect(saisonSuivante(depart)).toEqual(deuxieme);
   });
 

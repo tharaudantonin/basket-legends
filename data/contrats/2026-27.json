@@ -79,6 +79,14 @@
     "autresCharges": {
       "unite": "dollars",
       "definition": "Masse publiée moins la somme des salaires 2026-27 des contrats standard de l’effectif."
+    },
+    "saisonsAvecEquipe": {
+      "unite": "saisons",
+      "definition": "Horloge de Bird au début de 2026-27 : saisons complètes ou partielles avec l’équipe actuelle (2024-25 et 2025-26), sans en changer comme agent libre ; un échange ne la remet pas à zéro (Hoops Rumors, Bird Rights). Relevé : équipes de chaque saison et échanges de Basketball-Reference ; joueur de l’échelle des rookies : saisons depuis sa Draft. Approximation (statut) : joueur sans statistique en 2025-26 (2 s’il a fini 2024-25 avec la même équipe, sinon 0). Les coupés-resignés et la saison 2023-24 ne sont pas relevés (plafond à 3 sans effet : les droits de Bird s’acquièrent en fin de 2026-27 dès 2)."
+    },
+    "saisonsAvecEquipeStatut": {
+      "unite": "statut",
+      "definition": "« releve » ou « approximation » (voir saisonsAvecEquipe)."
     }
   },
   "bilan": {
@@ -118,7 +126,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0002": {
       "type": "standard",
@@ -150,7 +160,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0003": {
       "type": "two-way",
@@ -161,7 +173,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0004": {
       "type": "standard",
@@ -178,7 +192,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0005": {
       "type": "standard",
@@ -212,7 +228,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0006": {
       "type": "standard",
@@ -237,7 +255,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0007": {
       "type": "standard",
@@ -271,7 +291,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0008": {
       "type": "standard",
@@ -292,7 +314,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0009": {
       "type": "standard",
@@ -324,7 +348,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0010": {
       "type": "standard",
@@ -353,7 +379,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0011": {
       "type": "standard",
@@ -369,7 +397,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0012": {
       "type": "standard",
@@ -389,7 +419,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0013": {
       "type": "standard",
@@ -419,7 +451,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0014": {
       "type": "standard",
@@ -443,7 +477,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0015": {
       "type": "standard",
@@ -476,7 +512,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0016": {
       "type": "standard",
@@ -505,7 +543,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0017": {
       "type": "two-way",
@@ -520,7 +560,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0018": {
       "type": "two-way",
@@ -535,7 +577,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0019": {
       "type": "standard",
@@ -569,7 +613,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0020": {
       "type": "standard",
@@ -589,7 +635,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0021": {
       "type": "standard",
@@ -609,7 +657,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0022": {
       "type": "standard",
@@ -634,7 +684,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0023": {
       "type": "standard",
@@ -664,7 +716,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0024": {
       "type": "standard",
@@ -693,7 +747,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0025": {
       "type": "standard",
@@ -717,7 +773,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0026": {
       "type": "two-way",
@@ -732,7 +790,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0027": {
       "type": "standard",
@@ -764,7 +824,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0028": {
       "type": "standard",
@@ -801,7 +863,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0029": {
       "type": "standard",
@@ -829,7 +893,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0030": {
       "type": "standard",
@@ -855,7 +921,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0031": {
       "type": "standard",
@@ -888,7 +956,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0032": {
       "type": "standard",
@@ -921,7 +991,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0033": {
       "type": "standard",
@@ -950,7 +1022,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0034": {
       "type": "two-way",
@@ -965,7 +1039,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0035": {
       "type": "two-way",
@@ -980,7 +1056,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0036": {
       "type": "standard",
@@ -1014,7 +1092,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0037": {
       "type": "standard",
@@ -1035,7 +1115,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0038": {
       "type": "standard",
@@ -1065,7 +1147,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0039": {
       "type": "standard",
@@ -1085,7 +1169,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0040": {
       "type": "standard",
@@ -1119,7 +1205,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0041": {
       "type": "two-way",
@@ -1130,7 +1218,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0042": {
       "type": "standard",
@@ -1154,7 +1244,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0043": {
       "type": "standard",
@@ -1179,7 +1271,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0044": {
       "type": "two-way",
@@ -1190,7 +1284,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0045": {
       "type": "standard",
@@ -1210,7 +1306,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0046": {
       "type": "standard",
@@ -1240,7 +1338,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0047": {
       "type": "standard",
@@ -1265,7 +1365,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0048": {
       "type": "standard",
@@ -1295,7 +1397,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0049": {
       "type": "standard",
@@ -1320,7 +1424,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0050": {
       "type": "standard",
@@ -1350,7 +1456,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0051": {
       "type": "standard",
@@ -1374,7 +1482,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0052": {
       "type": "standard",
@@ -1404,7 +1514,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0053": {
       "type": "two-way",
@@ -1415,7 +1527,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0054": {
       "type": "standard",
@@ -1440,7 +1554,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0055": {
       "type": "standard",
@@ -1474,7 +1590,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0056": {
       "type": "two-way",
@@ -1485,7 +1603,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0057": {
       "type": "standard",
@@ -1505,7 +1625,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0058": {
       "type": "two-way",
@@ -1516,7 +1638,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0059": {
       "type": "standard",
@@ -1545,7 +1669,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0060": {
       "type": "standard",
@@ -1574,7 +1700,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0061": {
       "type": "standard",
@@ -1604,7 +1732,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0062": {
       "type": "standard",
@@ -1634,7 +1764,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0063": {
       "type": "standard",
@@ -1675,7 +1807,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0064": {
       "type": "standard",
@@ -1695,7 +1829,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0065": {
       "type": "standard",
@@ -1724,7 +1860,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0066": {
       "type": "standard",
@@ -1750,7 +1888,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0067": {
       "type": "standard",
@@ -1774,7 +1914,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0068": {
       "type": "standard",
@@ -1808,7 +1950,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0069": {
       "type": "standard",
@@ -1836,7 +1980,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0070": {
       "type": "standard",
@@ -1856,7 +2002,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0071": {
       "type": "two-way",
@@ -1867,7 +2015,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0072": {
       "type": "standard",
@@ -1893,7 +2043,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0073": {
       "type": "standard",
@@ -1917,7 +2069,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0074": {
       "type": "standard",
@@ -1941,7 +2095,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0075": {
       "type": "standard",
@@ -1971,7 +2127,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0076": {
       "type": "standard",
@@ -1999,7 +2157,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0077": {
       "type": "two-way",
@@ -2014,7 +2174,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0078": {
       "type": "standard",
@@ -2039,7 +2201,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0079": {
       "type": "standard",
@@ -2064,7 +2228,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0080": {
       "type": "standard",
@@ -2085,7 +2251,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0081": {
       "type": "standard",
@@ -2105,7 +2273,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0082": {
       "type": "standard",
@@ -2130,7 +2300,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0083": {
       "type": "standard",
@@ -2146,7 +2318,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0084": {
       "type": "two-way",
@@ -2157,7 +2331,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0085": {
       "type": "standard",
@@ -2177,7 +2353,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0086": {
       "type": "standard",
@@ -2211,7 +2389,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0087": {
       "type": "standard",
@@ -2240,7 +2420,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0088": {
       "type": "standard",
@@ -2274,7 +2456,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0089": {
       "type": "standard",
@@ -2302,7 +2486,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0090": {
       "type": "standard",
@@ -2322,7 +2508,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0091": {
       "type": "standard",
@@ -2355,7 +2543,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0092": {
       "type": "standard",
@@ -2384,7 +2574,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0093": {
       "type": "standard",
@@ -2404,7 +2596,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0094": {
       "type": "standard",
@@ -2432,7 +2626,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0095": {
       "type": "two-way",
@@ -2443,7 +2639,9 @@
       "sources": [
         "nba.com"
       ],
-      "note": "two-way au snapshot du 17/11/2026 (libéré le 18/11/2026, après le snapshot)"
+      "note": "two-way au snapshot du 17/11/2026 (libéré le 18/11/2026, après le snapshot)",
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0096": {
       "type": "standard",
@@ -2480,7 +2678,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0097": {
       "type": "standard",
@@ -2512,7 +2712,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0098": {
       "type": "two-way",
@@ -2523,7 +2725,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0099": {
       "type": "standard",
@@ -2540,7 +2744,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0100": {
       "type": "standard",
@@ -2569,7 +2775,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0101": {
       "type": "standard",
@@ -2602,7 +2810,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0102": {
       "type": "standard",
@@ -2618,7 +2828,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0103": {
       "type": "standard",
@@ -2644,7 +2856,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0104": {
       "type": "two-way",
@@ -2655,7 +2869,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0105": {
       "type": "standard",
@@ -2688,7 +2904,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0106": {
       "type": "standard",
@@ -2709,7 +2927,9 @@
         "basketball-reference",
         "nba.com"
       ],
-      "note": "signé après avoir été libéré par une autre équipe : salaire 2026-27 = montant garanti publié ; durée au-delà non relevée"
+      "note": "signé après avoir été libéré par une autre équipe : salaire 2026-27 = montant garanti publié ; durée au-delà non relevée",
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0107": {
       "type": "two-way",
@@ -2724,7 +2944,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0108": {
       "type": "standard",
@@ -2745,7 +2967,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0109": {
       "type": "standard",
@@ -2765,7 +2989,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0110": {
       "type": "standard",
@@ -2789,7 +3015,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0111": {
       "type": "standard",
@@ -2814,7 +3042,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0112": {
       "type": "standard",
@@ -2839,7 +3069,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0113": {
       "type": "standard",
@@ -2863,7 +3095,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0114": {
       "type": "standard",
@@ -2879,7 +3113,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0115": {
       "type": "standard",
@@ -2900,7 +3136,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0116": {
       "type": "two-way",
@@ -2915,7 +3153,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0117": {
       "type": "standard",
@@ -2948,7 +3188,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0118": {
       "type": "standard",
@@ -2977,7 +3219,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0119": {
       "type": "standard",
@@ -3007,7 +3251,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0120": {
       "type": "two-way",
@@ -3022,7 +3268,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0121": {
       "type": "standard",
@@ -3055,7 +3303,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0122": {
       "type": "standard",
@@ -3071,7 +3321,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0123": {
       "type": "standard",
@@ -3105,7 +3357,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0124": {
       "type": "standard",
@@ -3130,7 +3384,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0125": {
       "type": "standard",
@@ -3155,7 +3411,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0126": {
       "type": "standard",
@@ -3180,7 +3438,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0127": {
       "type": "standard",
@@ -3200,7 +3460,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0128": {
       "type": "two-way",
@@ -3215,7 +3477,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0129": {
       "type": "standard",
@@ -3249,7 +3513,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0130": {
       "type": "standard",
@@ -3279,7 +3545,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0131": {
       "type": "standard",
@@ -3307,7 +3575,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0132": {
       "type": "two-way",
@@ -3322,7 +3592,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0133": {
       "type": "standard",
@@ -3347,7 +3619,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0134": {
       "type": "standard",
@@ -3381,7 +3655,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0135": {
       "type": "two-way",
@@ -3396,7 +3672,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0136": {
       "type": "standard",
@@ -3417,7 +3695,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0137": {
       "type": "standard",
@@ -3445,7 +3725,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0138": {
       "type": "standard",
@@ -3466,7 +3748,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0139": {
       "type": "standard",
@@ -3492,7 +3776,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0140": {
       "type": "standard",
@@ -3513,7 +3799,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0141": {
       "type": "standard",
@@ -3545,7 +3833,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0142": {
       "type": "standard",
@@ -3565,7 +3855,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0143": {
       "type": "standard",
@@ -3601,7 +3893,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0144": {
       "type": "standard",
@@ -3621,7 +3915,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0145": {
       "type": "standard",
@@ -3641,7 +3937,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0146": {
       "type": "standard",
@@ -3657,7 +3955,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0147": {
       "type": "standard",
@@ -3686,7 +3986,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0148": {
       "type": "standard",
@@ -3712,7 +4014,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0149": {
       "type": "two-way",
@@ -3727,7 +4031,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0150": {
       "type": "standard",
@@ -3747,7 +4053,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0151": {
       "type": "standard",
@@ -3772,7 +4080,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0152": {
       "type": "standard",
@@ -3792,7 +4102,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0153": {
       "type": "standard",
@@ -3812,7 +4124,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0154": {
       "type": "standard",
@@ -3840,7 +4154,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0155": {
       "type": "two-way",
@@ -3851,7 +4167,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0156": {
       "type": "standard",
@@ -3876,7 +4194,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0157": {
       "type": "standard",
@@ -3897,7 +4217,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0158": {
       "type": "two-way",
@@ -3912,7 +4234,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0159": {
       "type": "standard",
@@ -3940,7 +4264,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0160": {
       "type": "standard",
@@ -3972,7 +4298,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0161": {
       "type": "standard",
@@ -4008,7 +4336,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0162": {
       "type": "standard",
@@ -4024,7 +4354,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0163": {
       "type": "two-way",
@@ -4035,7 +4367,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0164": {
       "type": "standard",
@@ -4061,7 +4395,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0165": {
       "type": "standard",
@@ -4089,7 +4425,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0166": {
       "type": "standard",
@@ -4106,7 +4444,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0167": {
       "type": "standard",
@@ -4131,7 +4471,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0168": {
       "type": "two-way",
@@ -4142,7 +4484,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0169": {
       "type": "standard",
@@ -4171,7 +4515,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0170": {
       "type": "standard",
@@ -4205,7 +4551,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0171": {
       "type": "two-way",
@@ -4220,7 +4568,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0172": {
       "type": "standard",
@@ -4241,7 +4591,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0173": {
       "type": "standard",
@@ -4261,7 +4613,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0174": {
       "type": "standard",
@@ -4281,7 +4635,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0175": {
       "type": "standard",
@@ -4297,7 +4653,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0176": {
       "type": "standard",
@@ -4338,7 +4696,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0177": {
       "type": "standard",
@@ -4358,7 +4718,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0178": {
       "type": "standard",
@@ -4378,7 +4740,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0179": {
       "type": "two-way",
@@ -4389,7 +4753,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0180": {
       "type": "standard",
@@ -4418,7 +4784,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0181": {
       "type": "standard",
@@ -4438,7 +4806,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0182": {
       "type": "standard",
@@ -4462,7 +4832,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0183": {
       "type": "two-way",
@@ -4473,7 +4845,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0184": {
       "type": "standard",
@@ -4507,7 +4881,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0185": {
       "type": "two-way",
@@ -4518,7 +4894,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0186": {
       "type": "standard",
@@ -4543,7 +4921,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0187": {
       "type": "standard",
@@ -4567,7 +4947,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0188": {
       "type": "standard",
@@ -4587,7 +4969,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0189": {
       "type": "standard",
@@ -4603,7 +4987,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0190": {
       "type": "standard",
@@ -4645,7 +5031,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0191": {
       "type": "standard",
@@ -4670,7 +5058,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0192": {
       "type": "standard",
@@ -4699,7 +5089,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0193": {
       "type": "standard",
@@ -4728,7 +5120,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0194": {
       "type": "standard",
@@ -4744,7 +5138,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0195": {
       "type": "standard",
@@ -4768,7 +5164,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0196": {
       "type": "standard",
@@ -4788,7 +5186,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0197": {
       "type": "standard",
@@ -4812,7 +5212,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0198": {
       "type": "two-way",
@@ -4823,7 +5225,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0199": {
       "type": "standard",
@@ -4843,7 +5247,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0200": {
       "type": "standard",
@@ -4868,7 +5274,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0201": {
       "type": "standard",
@@ -4905,7 +5313,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0202": {
       "type": "two-way",
@@ -4920,7 +5330,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0203": {
       "type": "standard",
@@ -4953,7 +5365,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0204": {
       "type": "standard",
@@ -4979,7 +5393,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0205": {
       "type": "standard",
@@ -5004,7 +5420,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0206": {
       "type": "standard",
@@ -5040,7 +5458,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0207": {
       "type": "standard",
@@ -5056,7 +5476,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0208": {
       "type": "standard",
@@ -5097,7 +5519,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0209": {
       "type": "standard",
@@ -5130,7 +5554,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0210": {
       "type": "two-way",
@@ -5141,7 +5567,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0211": {
       "type": "standard",
@@ -5158,7 +5586,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0212": {
       "type": "two-way",
@@ -5173,7 +5603,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0213": {
       "type": "standard",
@@ -5198,7 +5630,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0214": {
       "type": "standard",
@@ -5226,7 +5660,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0215": {
       "type": "standard",
@@ -5246,7 +5682,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0216": {
       "type": "standard",
@@ -5266,7 +5704,9 @@
       "sources": [
         "salaryswish:pacers"
       ],
-      "note": "two-way converti en contrat standard de 3 ans en février 2026"
+      "note": "two-way converti en contrat standard de 3 ans en février 2026",
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0217": {
       "type": "standard",
@@ -5291,7 +5731,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0218": {
       "type": "standard",
@@ -5311,7 +5753,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0219": {
       "type": "standard",
@@ -5335,7 +5779,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0220": {
       "type": "standard",
@@ -5363,7 +5809,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0221": {
       "type": "standard",
@@ -5387,7 +5835,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0222": {
       "type": "standard",
@@ -5408,7 +5858,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0223": {
       "type": "standard",
@@ -5432,7 +5884,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0224": {
       "type": "two-way",
@@ -5447,7 +5901,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0225": {
       "type": "two-way",
@@ -5462,7 +5918,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0226": {
       "type": "standard",
@@ -5486,7 +5944,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0227": {
       "type": "standard",
@@ -5507,7 +5967,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0228": {
       "type": "standard",
@@ -5531,7 +5993,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0229": {
       "type": "standard",
@@ -5565,7 +6029,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0230": {
       "type": "two-way",
@@ -5576,7 +6042,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0231": {
       "type": "standard",
@@ -5605,7 +6073,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0232": {
       "type": "standard",
@@ -5638,7 +6108,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0233": {
       "type": "standard",
@@ -5663,7 +6135,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0234": {
       "type": "standard",
@@ -5688,7 +6162,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0235": {
       "type": "two-way",
@@ -5699,7 +6175,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0236": {
       "type": "standard",
@@ -5732,7 +6210,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0237": {
       "type": "standard",
@@ -5752,7 +6232,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0238": {
       "type": "standard",
@@ -5772,7 +6254,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0239": {
       "type": "standard",
@@ -5805,7 +6289,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0240": {
       "type": "two-way",
@@ -5816,7 +6302,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0241": {
       "type": "standard",
@@ -5845,7 +6333,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0242": {
       "type": "standard",
@@ -5869,7 +6359,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0243": {
       "type": "standard",
@@ -5894,7 +6386,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0244": {
       "type": "standard",
@@ -5914,7 +6408,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0245": {
       "type": "standard",
@@ -5939,7 +6435,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0246": {
       "type": "standard",
@@ -5959,7 +6457,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0247": {
       "type": "standard",
@@ -5993,7 +6493,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0248": {
       "type": "standard",
@@ -6023,7 +6525,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0249": {
       "type": "standard",
@@ -6049,7 +6553,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0250": {
       "type": "standard",
@@ -6074,7 +6580,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0251": {
       "type": "standard",
@@ -6095,7 +6603,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0252": {
       "type": "standard",
@@ -6116,7 +6626,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0253": {
       "type": "standard",
@@ -6141,7 +6653,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0254": {
       "type": "standard",
@@ -6175,7 +6689,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0255": {
       "type": "two-way",
@@ -6190,7 +6706,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0256": {
       "type": "standard",
@@ -6211,7 +6729,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0257": {
       "type": "standard",
@@ -6231,7 +6751,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0258": {
       "type": "standard",
@@ -6259,7 +6781,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0259": {
       "type": "standard",
@@ -6280,7 +6804,9 @@
         "basketball-reference",
         "nba.com"
       ],
-      "note": "signé après avoir été libéré par une autre équipe : salaire 2026-27 = montant garanti publié ; durée au-delà non relevée"
+      "note": "signé après avoir été libéré par une autre équipe : salaire 2026-27 = montant garanti publié ; durée au-delà non relevée",
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0260": {
       "type": "two-way",
@@ -6295,7 +6821,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0261": {
       "type": "two-way",
@@ -6310,7 +6838,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0262": {
       "type": "standard",
@@ -6339,7 +6869,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0263": {
       "type": "standard",
@@ -6364,7 +6896,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0264": {
       "type": "standard",
@@ -6389,7 +6923,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0265": {
       "type": "standard",
@@ -6418,7 +6954,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0266": {
       "type": "standard",
@@ -6443,7 +6981,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0267": {
       "type": "standard",
@@ -6472,7 +7012,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0268": {
       "type": "two-way",
@@ -6483,7 +7025,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0269": {
       "type": "standard",
@@ -6499,7 +7043,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0270": {
       "type": "standard",
@@ -6519,7 +7065,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0271": {
       "type": "two-way",
@@ -6530,7 +7078,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0272": {
       "type": "standard",
@@ -6550,7 +7100,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0273": {
       "type": "two-way",
@@ -6561,7 +7113,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0274": {
       "type": "standard",
@@ -6593,7 +7147,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0275": {
       "type": "standard",
@@ -6630,7 +7186,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0276": {
       "type": "standard",
@@ -6650,7 +7208,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0277": {
       "type": "standard",
@@ -6675,7 +7235,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0278": {
       "type": "standard",
@@ -6695,7 +7257,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0279": {
       "type": "standard",
@@ -6716,7 +7280,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0280": {
       "type": "standard",
@@ -6737,7 +7303,9 @@
         "basketball-reference",
         "nba.com"
       ],
-      "note": "signé après avoir été libéré par une autre équipe : salaire 2026-27 = montant garanti publié ; durée au-delà non relevée"
+      "note": "signé après avoir été libéré par une autre équipe : salaire 2026-27 = montant garanti publié ; durée au-delà non relevée",
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0281": {
       "type": "standard",
@@ -6767,7 +7335,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0282": {
       "type": "standard",
@@ -6801,7 +7371,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0283": {
       "type": "standard",
@@ -6835,7 +7407,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0284": {
       "type": "standard",
@@ -6864,7 +7438,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0285": {
       "type": "standard",
@@ -6892,7 +7468,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0286": {
       "type": "standard",
@@ -6912,7 +7490,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0287": {
       "type": "standard",
@@ -6942,7 +7522,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0288": {
       "type": "standard",
@@ -6963,7 +7545,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0289": {
       "type": "two-way",
@@ -6978,7 +7562,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0290": {
       "type": "standard",
@@ -6998,7 +7584,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0291": {
       "type": "standard",
@@ -7018,7 +7606,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0292": {
       "type": "standard",
@@ -7051,7 +7641,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0293": {
       "type": "two-way",
@@ -7062,7 +7654,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0294": {
       "type": "standard",
@@ -7087,7 +7681,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0295": {
       "type": "two-way",
@@ -7098,7 +7694,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0296": {
       "type": "standard",
@@ -7119,7 +7717,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0297": {
       "type": "standard",
@@ -7151,7 +7751,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0298": {
       "type": "standard",
@@ -7180,7 +7782,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0299": {
       "type": "standard",
@@ -7206,7 +7810,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0300": {
       "type": "standard",
@@ -7234,7 +7840,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0301": {
       "type": "standard",
@@ -7264,7 +7872,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0302": {
       "type": "two-way",
@@ -7279,7 +7889,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0303": {
       "type": "standard",
@@ -7307,7 +7919,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0304": {
       "type": "standard",
@@ -7327,7 +7941,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0305": {
       "type": "standard",
@@ -7364,7 +7980,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0306": {
       "type": "standard",
@@ -7392,7 +8010,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0307": {
       "type": "standard",
@@ -7425,7 +8045,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0308": {
       "type": "standard",
@@ -7450,7 +8072,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0309": {
       "type": "standard",
@@ -7470,7 +8094,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0310": {
       "type": "standard",
@@ -7495,7 +8121,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0311": {
       "type": "standard",
@@ -7515,7 +8143,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0312": {
       "type": "standard",
@@ -7547,7 +8177,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0313": {
       "type": "two-way",
@@ -7558,7 +8190,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0314": {
       "type": "standard",
@@ -7584,7 +8218,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0315": {
       "type": "standard",
@@ -7610,7 +8246,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0316": {
       "type": "two-way",
@@ -7625,7 +8263,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0317": {
       "type": "standard",
@@ -7657,7 +8297,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0318": {
       "type": "two-way",
@@ -7668,7 +8310,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0319": {
       "type": "standard",
@@ -7698,7 +8342,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0320": {
       "type": "standard",
@@ -7724,7 +8370,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0321": {
       "type": "standard",
@@ -7757,7 +8405,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0322": {
       "type": "standard",
@@ -7781,7 +8431,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0323": {
       "type": "standard",
@@ -7806,7 +8458,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0324": {
       "type": "standard",
@@ -7827,7 +8481,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0325": {
       "type": "standard",
@@ -7852,7 +8508,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0326": {
       "type": "standard",
@@ -7878,7 +8536,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0327": {
       "type": "standard",
@@ -7906,7 +8566,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0328": {
       "type": "standard",
@@ -7931,7 +8593,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0329": {
       "type": "two-way",
@@ -7946,7 +8610,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0330": {
       "type": "standard",
@@ -7966,7 +8632,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0331": {
       "type": "standard",
@@ -7996,7 +8664,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0332": {
       "type": "two-way",
@@ -8007,7 +8677,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0333": {
       "type": "standard",
@@ -8023,7 +8695,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0334": {
       "type": "standard",
@@ -8047,7 +8721,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0335": {
       "type": "two-way",
@@ -8058,7 +8734,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0336": {
       "type": "standard",
@@ -8082,7 +8760,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0337": {
       "type": "standard",
@@ -8111,7 +8791,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0338": {
       "type": "standard",
@@ -8144,7 +8826,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0339": {
       "type": "standard",
@@ -8173,7 +8857,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0340": {
       "type": "standard",
@@ -8193,7 +8879,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0341": {
       "type": "standard",
@@ -8219,7 +8907,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0342": {
       "type": "standard",
@@ -8251,7 +8941,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0343": {
       "type": "standard",
@@ -8271,7 +8963,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0344": {
       "type": "standard",
@@ -8296,7 +8990,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0345": {
       "type": "two-way",
@@ -8311,7 +9007,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0346": {
       "type": "standard",
@@ -8336,7 +9034,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0347": {
       "type": "standard",
@@ -8356,7 +9056,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0348": {
       "type": "two-way",
@@ -8371,7 +9073,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0349": {
       "type": "standard",
@@ -8403,7 +9107,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0350": {
       "type": "standard",
@@ -8428,7 +9134,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0351": {
       "type": "standard",
@@ -8448,7 +9156,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0352": {
       "type": "two-way",
@@ -8463,7 +9173,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0353": {
       "type": "standard",
@@ -8487,7 +9199,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0354": {
       "type": "standard",
@@ -8517,7 +9231,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0355": {
       "type": "two-way",
@@ -8528,7 +9244,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0356": {
       "type": "standard",
@@ -8565,7 +9283,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0357": {
       "type": "standard",
@@ -8593,7 +9313,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0358": {
       "type": "standard",
@@ -8629,7 +9351,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0359": {
       "type": "standard",
@@ -8663,7 +9387,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0360": {
       "type": "standard",
@@ -8689,7 +9415,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0361": {
       "type": "standard",
@@ -8714,7 +9442,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0362": {
       "type": "two-way",
@@ -8729,7 +9459,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0363": {
       "type": "standard",
@@ -8759,7 +9491,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0364": {
       "type": "standard",
@@ -8793,7 +9527,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0365": {
       "type": "standard",
@@ -8814,7 +9550,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0366": {
       "type": "standard",
@@ -8855,7 +9593,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0367": {
       "type": "standard",
@@ -8891,7 +9631,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0368": {
       "type": "standard",
@@ -8916,7 +9658,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0369": {
       "type": "standard",
@@ -8932,7 +9676,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0370": {
       "type": "standard",
@@ -8969,7 +9715,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0371": {
       "type": "standard",
@@ -8997,7 +9745,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0372": {
       "type": "standard",
@@ -9017,7 +9767,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0373": {
       "type": "standard",
@@ -9038,7 +9790,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0374": {
       "type": "standard",
@@ -9055,7 +9809,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0375": {
       "type": "standard",
@@ -9075,7 +9831,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0376": {
       "type": "standard",
@@ -9104,7 +9862,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0377": {
       "type": "two-way",
@@ -9115,7 +9875,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0378": {
       "type": "standard",
@@ -9141,7 +9903,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0379": {
       "type": "standard",
@@ -9161,7 +9925,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0380": {
       "type": "two-way",
@@ -9172,7 +9938,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0381": {
       "type": "two-way",
@@ -9187,7 +9955,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0382": {
       "type": "standard",
@@ -9216,7 +9986,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0383": {
       "type": "standard",
@@ -9246,7 +10018,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0384": {
       "type": "standard",
@@ -9279,7 +10053,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0385": {
       "type": "standard",
@@ -9299,7 +10075,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0386": {
       "type": "standard",
@@ -9331,7 +10109,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0387": {
       "type": "standard",
@@ -9348,7 +10128,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0388": {
       "type": "standard",
@@ -9373,7 +10155,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0389": {
       "type": "standard",
@@ -9401,7 +10185,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0390": {
       "type": "standard",
@@ -9422,7 +10208,9 @@
         "basketball-reference",
         "nba.com"
       ],
-      "note": "signé après avoir été libéré par une autre équipe : salaire 2026-27 = montant garanti publié ; durée au-delà non relevée"
+      "note": "signé après avoir été libéré par une autre équipe : salaire 2026-27 = montant garanti publié ; durée au-delà non relevée",
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0391": {
       "type": "standard",
@@ -9452,7 +10240,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0392": {
       "type": "standard",
@@ -9473,7 +10263,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0393": {
       "type": "standard",
@@ -9502,7 +10294,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0394": {
       "type": "two-way",
@@ -9513,7 +10307,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0395": {
       "type": "standard",
@@ -9533,7 +10329,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0396": {
       "type": "standard",
@@ -9558,7 +10356,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0397": {
       "type": "two-way",
@@ -9569,7 +10369,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0398": {
       "type": "standard",
@@ -9597,7 +10399,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0399": {
       "type": "standard",
@@ -9631,7 +10435,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0400": {
       "type": "two-way",
@@ -9646,7 +10452,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0401": {
       "type": "standard",
@@ -9671,7 +10479,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0402": {
       "type": "standard",
@@ -9699,7 +10509,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0403": {
       "type": "standard",
@@ -9719,7 +10531,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0404": {
       "type": "standard",
@@ -9752,7 +10566,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0405": {
       "type": "standard",
@@ -9768,7 +10584,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0406": {
       "type": "standard",
@@ -9788,7 +10606,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0407": {
       "type": "standard",
@@ -9820,7 +10640,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0408": {
       "type": "standard",
@@ -9846,7 +10668,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0409": {
       "type": "standard",
@@ -9875,7 +10699,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0410": {
       "type": "standard",
@@ -9903,7 +10729,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0411": {
       "type": "standard",
@@ -9928,7 +10756,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0412": {
       "type": "standard",
@@ -9953,7 +10783,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0413": {
       "type": "standard",
@@ -9990,7 +10822,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0414": {
       "type": "standard",
@@ -10015,7 +10849,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0415": {
       "type": "standard",
@@ -10045,7 +10881,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0416": {
       "type": "standard",
@@ -10079,7 +10917,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0417": {
       "type": "two-way",
@@ -10090,7 +10930,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0418": {
       "type": "two-way",
@@ -10101,7 +10943,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0419": {
       "type": "two-way",
@@ -10112,7 +10956,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0420": {
       "type": "standard",
@@ -10140,7 +10986,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0421": {
       "type": "standard",
@@ -10164,7 +11012,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0422": {
       "type": "standard",
@@ -10196,7 +11046,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0423": {
       "type": "standard",
@@ -10212,7 +11064,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0424": {
       "type": "standard",
@@ -10232,7 +11086,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0425": {
       "type": "standard",
@@ -10258,7 +11114,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0426": {
       "type": "standard",
@@ -10288,7 +11146,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0427": {
       "type": "standard",
@@ -10309,7 +11169,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0428": {
       "type": "standard",
@@ -10334,7 +11196,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0429": {
       "type": "two-way",
@@ -10345,7 +11209,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0430": {
       "type": "standard",
@@ -10370,7 +11236,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0431": {
       "type": "standard",
@@ -10391,7 +11259,9 @@
         "basketball-reference",
         "nba.com"
       ],
-      "note": "signé après avoir été libéré par une autre équipe : salaire 2026-27 = montant garanti publié ; durée au-delà non relevée"
+      "note": "signé après avoir été libéré par une autre équipe : salaire 2026-27 = montant garanti publié ; durée au-delà non relevée",
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0432": {
       "type": "standard",
@@ -10415,7 +11285,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0433": {
       "type": "standard",
@@ -10431,7 +11303,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0434": {
       "type": "standard",
@@ -10463,7 +11337,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0435": {
       "type": "two-way",
@@ -10478,7 +11354,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0436": {
       "type": "standard",
@@ -10506,7 +11384,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0437": {
       "type": "two-way",
@@ -10517,7 +11397,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0438": {
       "type": "standard",
@@ -10541,7 +11423,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0439": {
       "type": "standard",
@@ -10575,7 +11459,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0440": {
       "type": "two-way",
@@ -10586,7 +11472,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0441": {
       "type": "standard",
@@ -10611,7 +11499,9 @@
       "sources": [
         "salaryswish:kings"
       ],
-      "note": "two-way converti en contrat standard de 4 ans en février 2026"
+      "note": "two-way converti en contrat standard de 4 ans en février 2026",
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0442": {
       "type": "standard",
@@ -10631,7 +11521,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0443": {
       "type": "standard",
@@ -10665,7 +11557,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0444": {
       "type": "standard",
@@ -10686,7 +11580,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0445": {
       "type": "two-way",
@@ -10701,7 +11597,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0446": {
       "type": "standard",
@@ -10726,7 +11624,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0447": {
       "type": "standard",
@@ -10762,7 +11662,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0448": {
       "type": "two-way",
@@ -10773,7 +11675,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0449": {
       "type": "standard",
@@ -10793,7 +11697,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0450": {
       "type": "standard",
@@ -10813,7 +11719,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0451": {
       "type": "standard",
@@ -10838,7 +11746,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0452": {
       "type": "standard",
@@ -10862,7 +11772,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0453": {
       "type": "standard",
@@ -10891,7 +11803,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0454": {
       "type": "standard",
@@ -10911,7 +11825,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0455": {
       "type": "standard",
@@ -10931,7 +11847,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0456": {
       "type": "two-way",
@@ -10946,7 +11864,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0457": {
       "type": "standard",
@@ -10976,7 +11896,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0458": {
       "type": "standard",
@@ -11002,7 +11924,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0459": {
       "type": "standard",
@@ -11026,7 +11950,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0460": {
       "type": "standard",
@@ -11058,7 +11984,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0461": {
       "type": "two-way",
@@ -11073,7 +12001,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0462": {
       "type": "standard",
@@ -11103,7 +12033,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0463": {
       "type": "standard",
@@ -11127,7 +12059,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0464": {
       "type": "standard",
@@ -11147,7 +12081,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0465": {
       "type": "two-way",
@@ -11158,7 +12094,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0466": {
       "type": "standard",
@@ -11183,7 +12121,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0467": {
       "type": "standard",
@@ -11199,7 +12139,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0468": {
       "type": "standard",
@@ -11233,7 +12175,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0469": {
       "type": "standard",
@@ -11267,7 +12211,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0470": {
       "type": "standard",
@@ -11295,7 +12241,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0471": {
       "type": "standard",
@@ -11337,7 +12285,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0472": {
       "type": "standard",
@@ -11357,7 +12307,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0473": {
       "type": "standard",
@@ -11389,7 +12341,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0474": {
       "type": "standard",
@@ -11409,7 +12363,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0475": {
       "type": "standard",
@@ -11425,7 +12381,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0476": {
       "type": "two-way",
@@ -11436,7 +12394,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0477": {
       "type": "standard",
@@ -11469,7 +12429,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0478": {
       "type": "standard",
@@ -11503,7 +12465,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0479": {
       "type": "standard",
@@ -11524,7 +12488,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0480": {
       "type": "standard",
@@ -11553,7 +12519,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0481": {
       "type": "standard",
@@ -11578,7 +12546,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0482": {
       "type": "two-way",
@@ -11593,7 +12563,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0483": {
       "type": "standard",
@@ -11623,7 +12595,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0484": {
       "type": "standard",
@@ -11656,7 +12630,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0485": {
       "type": "standard",
@@ -11684,7 +12660,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0486": {
       "type": "standard",
@@ -11717,7 +12695,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0487": {
       "type": "two-way",
@@ -11728,7 +12708,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0488": {
       "type": "standard",
@@ -11754,7 +12736,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0489": {
       "type": "standard",
@@ -11784,7 +12768,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0490": {
       "type": "standard",
@@ -11808,7 +12794,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0491": {
       "type": "standard",
@@ -11828,7 +12816,9 @@
       "sources": [
         "salaryswish:jazz"
       ],
-      "note": "minimum vétéran d’un an (salaire 3 506 659 $, imputé 2 449 421 $) ; réclamé sur waivers le 17/10/2026"
+      "note": "minimum vétéran d’un an (salaire 3 506 659 $, imputé 2 449 421 $) ; réclamé sur waivers le 17/10/2026",
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0492": {
       "type": "two-way",
@@ -11843,7 +12833,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0493": {
       "type": "standard",
@@ -11869,7 +12861,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0494": {
       "type": "standard",
@@ -11894,7 +12888,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0495": {
       "type": "standard",
@@ -11935,7 +12931,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0496": {
       "type": "standard",
@@ -11955,7 +12953,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0497": {
       "type": "standard",
@@ -11980,7 +12980,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0498": {
       "type": "two-way",
@@ -11995,7 +12997,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0499": {
       "type": "standard",
@@ -12028,7 +13032,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0500": {
       "type": "standard",
@@ -12056,7 +13062,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0501": {
       "type": "standard",
@@ -12081,7 +13089,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0502": {
       "type": "standard",
@@ -12105,7 +13115,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0503": {
       "type": "standard",
@@ -12130,7 +13142,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0504": {
       "type": "standard",
@@ -12164,7 +13178,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0505": {
       "type": "standard",
@@ -12185,7 +13201,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0506": {
       "type": "standard",
@@ -12206,7 +13224,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0507": {
       "type": "two-way",
@@ -12217,7 +13237,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "approximation"
     },
     "j0508": {
       "type": "standard",
@@ -12243,7 +13265,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0509": {
       "type": "standard",
@@ -12264,7 +13288,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0510": {
       "type": "standard",
@@ -12285,7 +13311,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 3,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0511": {
       "type": "standard",
@@ -12310,7 +13338,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0512": {
       "type": "standard",
@@ -12344,7 +13374,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0513": {
       "type": "standard",
@@ -12370,7 +13402,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0514": {
       "type": "standard",
@@ -12386,7 +13420,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0515": {
       "type": "standard",
@@ -12416,7 +13452,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0516": {
       "type": "standard",
@@ -12441,7 +13479,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0517": {
       "type": "standard",
@@ -12469,7 +13509,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0518": {
       "type": "two-way",
@@ -12484,7 +13526,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 0,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0519": {
       "type": "standard",
@@ -12514,7 +13558,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0520": {
       "type": "standard",
@@ -12540,7 +13586,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0521": {
       "type": "standard",
@@ -12565,7 +13613,9 @@
       "sources": [
         "salaryswish:wizards"
       ],
-      "note": "two-way converti en contrat standard de 3 ans le 21/02/2026"
+      "note": "two-way converti en contrat standard de 3 ans le 21/02/2026",
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0522": {
       "type": "two-way",
@@ -12580,7 +13630,9 @@
       "sources": [
         "hoops-rumors",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 1,
+      "saisonsAvecEquipeStatut": "releve"
     },
     "j0523": {
       "type": "standard",
@@ -12613,7 +13665,9 @@
       "sources": [
         "basketball-reference",
         "nba.com"
-      ]
+      ],
+      "saisonsAvecEquipe": 2,
+      "saisonsAvecEquipeStatut": "releve"
     }
   },
   "equipes": {

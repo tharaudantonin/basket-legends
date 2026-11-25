@@ -265,6 +265,280 @@
         "niveau": "secondaire",
         "consulteLe": "2026-11-24"
       }
+    },
+    "margeEchange": {
+      "valeur": {
+        "montant": 7500000,
+        "plafondDeReference": 136021000
+      },
+      "unite": "dollars",
+      "definition": "Échange simultané d’une équipe au-dessus du plafond et sous le premier apron : elle peut recevoir le plus grand de (le plus petit de 200 % des salaires cédés + 250 000 $ et des salaires cédés + cette marge) et de 125 % des salaires cédés + 250 000 $. La marge (7,5 M$ en 2023-24, plafond de 136,021 M$) suit le plafond chaque saison.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Traded Player Exception (06/2024)",
+        "url": "https://www.hoopsrumors.com/2024/06/hoops-rumors-glossary-traded-player-exception-5.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "partEchangeBasse": {
+      "valeur": 2,
+      "unite": "rapport",
+      "definition": "Part des salaires cédés qu’une équipe sous le premier apron peut recevoir pour les petits montants (200 %).",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Traded Player Exception (06/2024)",
+        "url": "https://www.hoopsrumors.com/2024/06/hoops-rumors-glossary-traded-player-exception-5.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "partEchangeHaute": {
+      "valeur": 1.25,
+      "unite": "rapport",
+      "definition": "Part des salaires cédés qu’une équipe sous le premier apron peut recevoir pour les gros montants (125 %).",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Traded Player Exception (06/2024)",
+        "url": "https://www.hoopsrumors.com/2024/06/hoops-rumors-glossary-traded-player-exception-5.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "supplementEchange": {
+      "valeur": 250000,
+      "unite": "dollars",
+      "definition": "Supplément ajouté aux parts de 200 % et 125 % ; un échange qui laisse l’équipe à moins de 250 000 $ au-dessus du plafond n’a pas à respecter la correspondance.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Traded Player Exception (06/2024)",
+        "url": "https://www.hoopsrumors.com/2024/06/hoops-rumors-glossary-traded-player-exception-5.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "partEchangeApron": {
+      "valeur": 1,
+      "unite": "rapport",
+      "definition": "Une équipe au-dessus d’un apron après l’échange ne peut recevoir plus de 100 % des salaires cédés.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Traded Player Exception (06/2024)",
+        "url": "https://www.hoopsrumors.com/2024/06/hoops-rumors-glossary-traded-player-exception-5.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "agregationInterditeDeuxiemeApron": {
+      "valeur": true,
+      "unite": "booléen",
+      "definition": "Au-dessus du second apron, une équipe ne peut pas additionner les salaires de plusieurs joueurs pour en recevoir un.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Tax Aprons (01/2025)",
+        "url": "https://www.hoopsrumors.com/2025/01/hoops-rumors-glossary-tax-aprons-2.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "saisonsBird": {
+      "valeur": 3,
+      "unite": "saisons",
+      "definition": "Saisons avec la même équipe, sans en changer comme agent libre, pour avoir les droits de Bird (un échange ne remet pas l’horloge à zéro).",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Bird Rights (03/2026)",
+        "url": "https://www.hoopsrumors.com/2026/03/hoops-rumors-glossary-bird-rights-8.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "saisonsEarlyBird": {
+      "valeur": 2,
+      "unite": "saisons",
+      "definition": "Saisons avec la même équipe pour avoir les droits « Early Bird ».",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Early Bird Rights (03/2026)",
+        "url": "https://www.hoopsrumors.com/2026/03/hoops-rumors-glossary-early-bird-rights-9.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "dureeMaxBird": {
+      "valeur": 5,
+      "unite": "saisons",
+      "definition": "Durée maximale d’un contrat signé avec les droits de Bird.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Bird Rights (03/2026)",
+        "url": "https://www.hoopsrumors.com/2026/03/hoops-rumors-glossary-bird-rights-8.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "dureeMaxAutre": {
+      "valeur": 4,
+      "unite": "saisons",
+      "definition": "Durée maximale d’un contrat signé avec les droits Early Bird ou Non-Bird.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Early Bird Rights (03/2026)",
+        "url": "https://www.hoopsrumors.com/2026/03/hoops-rumors-glossary-early-bird-rights-9.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "hausseMaxBird": {
+      "valeur": 0.08,
+      "unite": "part par saison",
+      "definition": "Hausse annuelle maximale d’un contrat signé avec les droits de Bird ou Early Bird.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Bird Rights (03/2026)",
+        "url": "https://www.hoopsrumors.com/2026/03/hoops-rumors-glossary-bird-rights-8.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "hausseMaxAutre": {
+      "valeur": 0.05,
+      "unite": "part par saison",
+      "definition": "Hausse annuelle maximale d’un contrat signé avec les droits Non-Bird (et, dans le jeu, avec l’espace ou une exception).",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Non-Bird Rights (04/2026)",
+        "url": "https://www.hoopsrumors.com/2026/04/hoops-rumors-glossary-non-bird-rights-9.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "earlyBird": {
+      "valeur": {
+        "partDuPrecedent": 1.75,
+        "dureeMin": 2
+      },
+      "unite": "rapport, saisons",
+      "definition": "Early Bird : au plus 175 % du salaire précédent (ou 105 % du salaire moyen de la ligue, non relevé, non appliqué), contrat d’au moins deux saisons.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Early Bird Rights (03/2026)",
+        "url": "https://www.hoopsrumors.com/2026/03/hoops-rumors-glossary-early-bird-rights-9.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "nonBird": {
+      "valeur": {
+        "partDuPrecedent": 1.2,
+        "partDuMinimum": 1.2
+      },
+      "unite": "rapport",
+      "definition": "Non-Bird : au plus le plus grand de 120 % du salaire précédent et de 120 % du salaire minimum.",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Non-Bird Rights (04/2026)",
+        "url": "https://www.hoopsrumors.com/2026/04/hoops-rumors-glossary-non-bird-rights-9.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "agentLibreRestreint": {
+      "valeur": {
+        "ancienneteMax": 3,
+        "partVeteran": 1.35,
+        "minimumPlus": 200000,
+        "partRookiePremierChoix": 1.4,
+        "partRookieDernierChoix": 1.6,
+        "delaiAlignementJours": 2
+      },
+      "unite": "saisons, rapports, dollars, jours",
+      "definition": "Agent libre restreint : fin d’un contrat de l’échelle des rookies (1er tour) ou trois saisons d’expérience au plus. Offre qualificative : 135 % du salaire précédent ou le minimum + 200 000 $ ; 140 % (1er choix) à 160 % (30e choix) du dernier salaire de l’échelle pour un rookie (classes 2023 et suivantes ; entre les deux, interpolation linéaire, choix du jeu). L’équipe d’origine a deux jours pour s’aligner sur une offre (NBA.com, primaire).",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Qualifying Offer (05/2026)",
+        "url": "https://www.hoopsrumors.com/2026/05/hoops-rumors-glossary-qualifying-offer-3.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "ballottage": {
+      "valeur": {
+        "delaiJours": 2,
+        "etalementFacteur": 2,
+        "etalementPlus": 1,
+        "etalementGarantiMin": 500000
+      },
+      "unite": "jours, rapport, dollars",
+      "definition": "Un joueur coupé reste 48 heures en ballottage (priorité au plus mauvais bilan). Étalement : le salaire garanti restant (plus de 500 000 $) se répartit sur deux fois les saisons restantes, plus une ; coupé après le 31 août, la saison en cours se paie normalement (Hoops Rumors, Stretch Provision).",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "Hoops Rumors Glossary: Waivers (06/2024)",
+        "url": "https://www.hoopsrumors.com/2024/06/hoops-rumors-glossary-waivers-4.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "choixFuturs": {
+      "valeur": {
+        "anneesMax": 7,
+        "stepien": true,
+        "gelDeuxiemeApronAnnees": 7
+      },
+      "unite": "années",
+      "definition": "Choix échangeables jusqu’à sept ans (Hoops Rumors, 12/2024) ; règle Stepien : jamais sans 1er tour deux Drafts futures de suite (Hoops Rumors, 05/2024) ; au-delà du second apron en fin de saison, le 1er tour à sept ans est gelé (Hoops Rumors, Tax Aprons).",
+      "source": {
+        "fournisseur": "Hoops Rumors",
+        "titre": "What Each NBA Team Can, Can’t Do On The Trade Market (12/2024)",
+        "url": "https://hoopsrumors.com/2024/12/what-each-nba-team-can-cant-do-on-the-trade-market.html",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "delaiEchangeApresSignature": {
+      "valeur": {
+        "mois": 3,
+        "dateMin": "12-15"
+      },
+      "unite": "mois, date",
+      "definition": "Un agent libre signé ne peut pas être échangé pendant trois mois, ni avant le 15 décembre (le plus tard des deux).",
+      "source": {
+        "fournisseur": "Yardbarker (Hoops Rumors)",
+        "titre": "Players Who Can’t Be Traded Until December 15",
+        "url": "https://www.yardbarker.com/nba/articles/players_who_cant_be_traded_until_december_15/s1_14822_44136964",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "croissancePlafondMax": {
+      "valeur": 0.1,
+      "unite": "part par saison",
+      "definition": "Lissage de la CBA 2023 : le plafond augmente d’au plus 10 % par saison.",
+      "source": {
+        "fournisseur": "RealGM",
+        "titre": "New NBA CBA Includes Cap Smoothing Provision (02/04/2023)",
+        "url": "https://basketball.realgm.com/wiretap/271018/New-NBA-CBA-Includes-Cap-Smoothing-Provision",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
+    },
+    "estimationsPlafond": {
+      "valeur": [
+        {
+          "saison": "2027-28",
+          "plafondSalarial": 176000000,
+          "seuilTaxe": 213000000
+        }
+      ],
+      "unite": "dollars",
+      "definition": "Estimation de la NBA communiquée aux équipes le 12/09/2026 (The Athletic, reprise par NBC Sports) ; officielle en juin 2027.",
+      "source": {
+        "fournisseur": "NBC Sports",
+        "titre": "NBA informs teams of slight increase in salary cap projection for 2027-28 season to $176 million (13/09/2026)",
+        "url": "https://www.nbcsports.com/nba/news/nba-informs-teams-of-slight-increase-in-salary-cap-projection-for-2027-28-season-to-176-million",
+        "niveau": "secondaire",
+        "consulteLe": "2026-11-25"
+      }
     }
   },
   "recoupements": [
@@ -281,6 +555,34 @@
       "url": "https://www.nbpa.com/cba",
       "niveau": "primaire",
       "consulteLe": "2026-11-24"
+    },
+    {
+      "fournisseur": "Hoops Rumors",
+      "titre": "Hoops Rumors Glossary: Tax Aprons (01/2025)",
+      "url": "https://www.hoopsrumors.com/2025/01/hoops-rumors-glossary-tax-aprons-2.html",
+      "niveau": "secondaire",
+      "consulteLe": "2026-11-25"
+    },
+    {
+      "fournisseur": "NBA.com",
+      "titre": "NBA Free Agency explained (mis à jour le 30/06/2026)",
+      "url": "https://www.nba.com/news/free-agency-explained",
+      "niveau": "primaire",
+      "consulteLe": "2026-11-25"
+    },
+    {
+      "fournisseur": "Hoops Rumors",
+      "titre": "Hoops Rumors Glossary: Stretch Provision (08/2024)",
+      "url": "https://www.hoopsrumors.com/2024/08/hoops-rumors-glossary-stretch-provision-3.html",
+      "niveau": "secondaire",
+      "consulteLe": "2026-11-25"
+    },
+    {
+      "fournisseur": "Hoops Rumors",
+      "titre": "Hoops Rumors Glossary: Ted Stepien Rule (05/2024)",
+      "url": "https://www.hoopsrumors.com/2024/05/hoops-rumors-glossary-ted-stepien-rule-5.html",
+      "niveau": "secondaire",
+      "consulteLe": "2026-11-25"
     }
   ]
 }
