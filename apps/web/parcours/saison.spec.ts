@@ -12,7 +12,8 @@ test('une saison se lance, se sauvegarde et se joue jusqu’au titre', async ({ 
   await expect(statut).toBeVisible();
 
   await page.getByRole('button', { name: 'Une semaine' }).click();
-  await expect(statut).toContainText(/bilan [1-9]/);
+  // Au moins un match joué, gagné ou perdu : la graine vient de l'horloge, le premier match peut être une défaite.
+  await expect(statut).toContainText(/bilan (?!0-0\b)\d+-\d+/);
   const avant = await statut.textContent();
 
   // La partie est enregistrée dans le navigateur : on la retrouve après rechargement.

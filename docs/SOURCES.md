@@ -128,7 +128,7 @@ Relevés pour la tranche 7 ; détail, statuts et écarts : `docs/DRAFT.md` § 2.
 | Dates de naissance des 74 joueurs sans statistiques (effectifs 2026-27) | Basketball-Reference | https://www.basketball-reference.com/teams/<ÉQUIPE>/2027.html (30 pages, relevé brut hors du dépôt) | secondaire |
 | Échelle des rookies 2025 (recoupement de la croissance) | Hoops Rumors | https://www.hoopsrumors.com/2025/07/rookie-scale-salaries-for-2025-nba-first-round-picks.html | secondaire |
 
-Non relevé : la table officielle des probabilités de la loterie 3-2-1 (PDF de la NBA, lecture automatique refusée) ; Antonin la fournit (réponse 13). Les âges de saison (`seasonAge`) viennent du relevé du § 9 (convention de Basketball-Reference, âge au 1er février) ou des dates de naissance ci-dessus. Le modèle des prospects, le scouting et le vivier ne reposent sur aucune source : ce sont des choix du modèle.
+Non relevé : la table officielle des probabilités de la loterie 3-2-1 (PDF de la NBA, lecture automatique refusée ; réponse 13). Une table communautaire (analyse publiée sur Reddit, URL non fournie) a été transmise par Antonin le 25/11/2026 : niveau inférieur à la presse (§ 2), elle sert de contrôle, pas de source (`docs/DRAFT.md` § 3). Relu le 25/11/2026, `https://www.nba.com/news/nba-draft-lottery-explainer` affichait la version du 1er juin 2026 (loterie 2026) et aucune table 3-2-1. Les âges de saison (`seasonAge`) viennent du relevé du § 9 (convention de Basketball-Reference, âge au 1er février) ou des dates de naissance ci-dessus. Le modèle des prospects, le scouting et le vivier ne reposent sur aucune source : ce sont des choix du modèle.
 
 ## 13. Carrière multi-saisons (24 novembre 2026)
 

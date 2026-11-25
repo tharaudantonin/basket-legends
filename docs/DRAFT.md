@@ -37,7 +37,7 @@ Scripts : `tools/migrations/2026-11-24-tranche7-draft.ts`, `…-echelle-rookies.
 - limites : une équipe interdite pour un rang est écartée de ce tirage (compté comme tirage refait) ;
 - égalités de bilan : départagées par un tirage déterministe.
 
-La table officielle des probabilités (PDF de la NBA) n'a pas pu être lue : Antonin la fournit (réponse 13). Le critère de sortie de la tranche (« probabilités conformes à la source ») reste donc **ouvert** : `probabilitesDeLaLoterie` (simulation) servira à comparer le mécanisme à la table dès qu'elle sera relevée.
+La table officielle des probabilités (PDF de la NBA) n'a pas pu être lue (réponse 13). Le 25/11/2026, Antonin a transmis une table des probabilités par choix (1 à 16) et par catégorie, issue d'une analyse communautaire publiée sur Reddit (URL non fournie). Le calcul exact du mécanisme du jeu la reproduit à 0,02 point près pour les 64 valeurs (par exemple 25,06 % contre 25,07 % pour le 12e choix d'une reléguée, 26,52 % contre 26,51 % pour le 16e choix d'un perdant 7-8), et `draft.test.ts` la contrôle sur 20 000 tirages. Le critère de sortie de la tranche (« probabilités conformes à la source ») est donc tenu **par rapport à cette table communautaire** ; il reste à recouper avec la table officielle. Limite : la table ne donne que la moyenne des trois reléguées, elle ne vérifie donc pas l'ordre d'application du plancher entre elles (dans le jeu, de la pire à la meilleure au bilan : 13,2 % de choisir 12e pour le pire bilan, 39,7 % pour le 3e pire), ni les limites de choix consécutifs.
 
 L'historique 2025-2026 alimente les limites dès 2027 : Washington (n° 1 en 2026) ne peut pas être n° 1 ; Utah (5e en 2025, 2e en 2026) ne peut pas être dans le top 5. San Antonio (2025) et Miami (2026), listés deux fois sans précision, sont laissés de côté. Pendant la carrière, l'historique devra s'allonger à chaque Draft (tranche 8, carrière multi-saisons).
 
@@ -98,13 +98,13 @@ Onglet **Draft** de l'écran de saison : classe triée par consensus ou par rapp
 
 ## 13. Tests
 
-- `packages/league/tests/draft.test.ts` : loterie (déterminisme, contrôle des catégories, plancher sur 400 tirages, probabilités du n° 1 par catégorie sur 3 000 tirages, limites et historique réel) ; propriété des choix 2027 (60 choix attribués sur 50 ordres différents, protection, meilleur de deux choix) ; classe (déterminisme, 40-73, potentiel ≥ note, noms) ; scouting (fourchette qui se resserre, erreur propre à chaque équipe, couverture d'environ 90 %, budget) ; saison complète puis loterie, 60 choix, arrêt au choix du GM, délégation déterministe, recrues et contrats ; échelle des rookies.
+- `packages/league/tests/draft.test.ts` : loterie (déterminisme, contrôle des catégories, plancher sur 400 tirages, probabilités du n° 1 par catégorie sur 3 000 tirages, table par choix de la source communautaire sur 20 000 tirages, limites et historique réel) ; propriété des choix 2027 (60 choix attribués sur 50 ordres différents, protection, meilleur de deux choix) ; classe (déterminisme, 40-73, potentiel ≥ note, noms) ; scouting (fourchette qui se resserre, erreur propre à chaque équipe, couverture d'environ 90 %, budget) ; saison complète puis loterie, 60 choix, arrêt au choix du GM, délégation déterministe, recrues et contrats ; échelle des rookies.
 - `packages/data/tests/noms-generes.test.ts` : SHA-256 contre `node:crypto`, banques suffisantes pour chaque pays, refus des noms interdits.
 - `apps/web/parcours/draft.spec.ts` : scouter, lire la loterie et l'ordre des choix, faire la Draft, voir le vivier.
 
 ## 14. À valider ou à relever
 
-1. Table officielle des probabilités de la loterie 3-2-1 (réponse 13) ; recouper le mécanisme du tirage.
+1. Table officielle des probabilités de la loterie 3-2-1 (réponse 13) : la table communautaire du 25/11/2026 est reproduite (§ 3) ; reste à la recouper avec la NBA, ainsi que le plancher entre reléguées et les limites.
 2. `choix-2027.json` : recouper les règles et les six écarts avec une source primaire ou une seconde source.
 3. `modele-draft.json` et le vivier : moyennes, écarts, âges, origines, poids du choix du staff.
 4. ~~Incohérence entre l'échelle 40-67 des prospects et la note a priori de 73 au 1er choix réel~~ : tranchée le 24/11/2026 (réponse 22, échelle des vrais rookies).
